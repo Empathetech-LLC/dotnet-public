@@ -10,11 +10,13 @@ class FAHBanner extends StatelessWidget {
   final TextStyle? titleStyle;
   final TextStyle? contentStyle;
   final TextStyle? contentLinkStyle;
+  final bool limitedSpace;
 
   const FAHBanner({
     required this.titleStyle,
     required this.contentStyle,
     required this.contentLinkStyle,
+    this.limitedSpace = false,
   });
 
   @override
@@ -27,9 +29,10 @@ class FAHBanner extends StatelessWidget {
       children: [
         // Description && links //
 
-        Row(
+        EzRowCol(
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
+          limitedSpace: limitedSpace,
           children: [
             // Icon
             // Scales with text
@@ -42,7 +45,7 @@ class FAHBanner extends StatelessWidget {
                   (CircleAvatarRadius *
                       sqrt(MediaQuery.of(context).textScaleFactor)),
             ),
-            EzSpacer.row(spacer),
+            EzSpacer.swap(spacer, limitedSpace: limitedSpace),
 
             // External links && info
             EzSelectableText.rich(TextSpan(children: [

@@ -139,7 +139,7 @@ class _AppScreen extends StatelessWidget {
               radius: CircleAvatarRadius *
                   sqrt(MediaQuery.of(context).textScaleFactor),
             ),
-            limitedSpace ? EzSpacer(spacer) : EzSpacer.row(spacer),
+            EzSpacer.swap(spacer, limitedSpace: limitedSpace),
 
             // Info
             Column(

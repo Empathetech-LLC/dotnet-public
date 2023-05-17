@@ -75,9 +75,9 @@ class _PlanScreenState extends State<PlanScreen> {
         contents: [
           Container(
             child: EzSelectableText(
-              '''Much of the technology of today is specifically designed to manipulate its users. To the extent at which many people, the founder of Empathetech very much included, don't feel comfortable around their own devices.
+              '''Much of the technology of today is specifically designed to manipulate its users. To the extent that many people, the founder of Empathetech very much included, don't feel comfortable around their own devices.
 
-Luckily, there's a great community of people working together to make sure innovation isn't controlled by greed.''',
+Fortunately, there's an amazing community of people working together to put the power in the hands of the consumer.''',
               style: contentStyle,
               textAlign: TextAlign.left,
             ),
@@ -96,7 +96,7 @@ Luckily, there's a great community of people working together to make sure innov
 
 What does that mean in this context? It means Empathetech will build slow and fix things. Empathetech will take the time to do it right. And once we figure it out, we're not going to be shy about what we've learned.
 
-Because knowledge is corrupted into power when it's hoarded. And because not everyone is born with the same head start.''',
+Because knowledge is one of the few things we can give without losing. And because not everyone is born with the same head start.''',
               style: contentStyle,
               textAlign: TextAlign.left,
             ),
@@ -147,11 +147,11 @@ So, make a social media app that is designed to be self hosted. Build the app we
         contents: [
           Container(
             child: EzSelectableText(
-              '''Smoke Signal is the social media solution to that small problem. EFUI is the library Empathetech built to create apps with user-first design.
+              '''Smoke Signal is the app to solve that small problem. EFUI is the library Empathetech built to create apps with a user-first design.
 
-EFUI is where the real momentum begins. Empathetech's true focus, uncoupled from the founder's story, is to work towards a world in which everyone can truly be who they dream to be.
+EFUI is where the real momentum begins. Empathetech's true focus is to create a world where everyone can become who they dreamed of being.
 
-No person or entity will be able to block or tear you from your path, because there will always be a worldwide community who wants to see what you're capable of.
+No person or entity will be able to block or tear you from your path, because there will always be a worldwide community of people who want to see what you're capable of.
 
 Big task huh? Yes and no. Not if we share the burden. Empathetech can invent new technology to empower our creatives, then commit its surplus to the educators inspiring them. But more on that later.''',
               style: contentStyle,
@@ -187,7 +187,7 @@ Luckily, in a past life, he was a DevOps engineer. So, Empathetech is going to t
             child: EzSelectableText(
               '''Please read the following to yourself in a Pinocchio style voice:
 
-Become a real company!
+I wanna be a real company!
 
 Once Empathetech can efficiently be run by one person, imagine how much more work could be done with more people!
 
@@ -229,7 +229,7 @@ Let's get the marketing rolling, so we can get eyeballs on, wallets open, people
                 ),
                 TextSpan(
                   text:
-                      '''. Committing its profits to equity in tech education.''',
+                      ''', committing its profits to equity in tech education.''',
                   style: contentStyle,
                 ),
               ]),

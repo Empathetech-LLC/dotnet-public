@@ -36,7 +36,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
   Widget build(BuildContext context) {
     return DotNetScaffold(
       body: EzScreen(
-        child: EzScreenScroller(
+        child: EzScrollView(
           children: [
             // Functionality disclaimer
             EzWarning(

@@ -32,7 +32,7 @@ class _StyleSettingsScreenState extends State<StyleSettingsScreen> {
   Widget build(BuildContext context) {
     return DotNetScaffold(
       body: EzScreen(
-        child: EzScreenScroller(
+        child: EzScrollView(
           children: [
             // Title
             EzSelectableText('Make it yours!', style: headlineSmall(context)),

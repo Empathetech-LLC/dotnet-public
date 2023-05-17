@@ -35,87 +35,105 @@ class _ColorSettingsScreenState extends State<ColorSettingsScreen> {
   Widget build(BuildContext context) {
     return DotNetScaffold(
       body: EzScreen(
-        child: EzScreenScroller(
+        child: EzScrollView(
           children: [
             // Title
             EzSelectableText('Make it yours!', style: headlineSmall(context)),
             EzSpacer(paragraphSpacer),
 
-            // Theme colors //
+            // Settings
+            EzScrollView(
+              scrollDirection: Axis.horizontal,
+              mainAxisSize: MainAxisSize.min,
+              primary: false,
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  // Theme colors //
 
-            // Base
-            EzColorSetting(
-              toControl: isLight ? lightThemeColorKey : darkThemeColorKey,
-              message: 'Theme',
-            ),
-            EzSpacer(buttonSpacer),
+                  // Base
+                  EzColorSetting(
+                    toControl: isLight ? lightThemeColorKey : darkThemeColorKey,
+                    message: 'Theme',
+                  ),
+                  EzSpacer(buttonSpacer),
 
-            // Text
-            EzColorSetting(
-              toControl:
-                  isLight ? lightThemeTextColorKey : darkThemeTextColorKey,
-              message: 'Theme text',
-              textBackgroundKey:
-                  isLight ? lightThemeColorKey : darkThemeColorKey,
-            ),
-            EzSpacer(buttonSpacer),
+                  // Text
+                  EzColorSetting(
+                    toControl: isLight
+                        ? lightThemeTextColorKey
+                        : darkThemeTextColorKey,
+                    message: 'Theme text',
+                    textBackgroundKey:
+                        isLight ? lightThemeColorKey : darkThemeColorKey,
+                  ),
+                  EzSpacer(buttonSpacer),
 
-            // Page colors //
+                  // Page colors //
 
-            // Base
-            EzColorSetting(
-              toControl:
-                  isLight ? lightBackgroundColorKey : darkBackgroundColorKey,
-              message: 'Page',
-            ),
-            EzSpacer(buttonSpacer),
+                  // Base
+                  EzColorSetting(
+                    toControl: isLight
+                        ? lightBackgroundColorKey
+                        : darkBackgroundColorKey,
+                    message: 'Page',
+                  ),
+                  EzSpacer(buttonSpacer),
 
-            // Text
-            EzColorSetting(
-              toControl: isLight
-                  ? lightBackgroundTextColorKey
-                  : darkBackgroundTextColorKey,
-              message: 'Page text',
-              textBackgroundKey:
-                  isLight ? lightBackgroundColorKey : darkBackgroundColorKey,
-            ),
-            EzSpacer(buttonSpacer),
+                  // Text
+                  EzColorSetting(
+                    toControl: isLight
+                        ? lightBackgroundTextColorKey
+                        : darkBackgroundTextColorKey,
+                    message: 'Page text',
+                    textBackgroundKey: isLight
+                        ? lightBackgroundColorKey
+                        : darkBackgroundColorKey,
+                  ),
+                  EzSpacer(buttonSpacer),
 
-            // Button colors //
+                  // Button colors //
 
-            // Base
-            EzColorSetting(
-              toControl: isLight ? lightButtonColorKey : darkButtonColorKey,
-              message: 'Buttons',
-            ),
-            EzSpacer(buttonSpacer),
+                  // Base
+                  EzColorSetting(
+                    toControl:
+                        isLight ? lightButtonColorKey : darkButtonColorKey,
+                    message: 'Buttons',
+                  ),
+                  EzSpacer(buttonSpacer),
 
-            // Text
-            EzColorSetting(
-              toControl:
-                  isLight ? lightButtonTextColorKey : darkButtonTextColorKey,
-              message: 'Button text',
-              textBackgroundKey:
-                  isLight ? lightButtonColorKey : darkButtonColorKey,
-            ),
-            EzSpacer(buttonSpacer),
+                  // Text
+                  EzColorSetting(
+                    toControl: isLight
+                        ? lightButtonTextColorKey
+                        : darkButtonTextColorKey,
+                    message: 'Button text',
+                    textBackgroundKey:
+                        isLight ? lightButtonColorKey : darkButtonColorKey,
+                  ),
+                  EzSpacer(buttonSpacer),
 
-            // Accent colors //
+                  // Accent colors //
 
-            // Base
-            EzColorSetting(
-              toControl: isLight ? lightAccentColorKey : darkAccentColorKey,
-              message: 'Accent',
-            ),
-            EzSpacer(buttonSpacer),
+                  // Base
+                  EzColorSetting(
+                    toControl:
+                        isLight ? lightAccentColorKey : darkAccentColorKey,
+                    message: 'Accent',
+                  ),
+                  EzSpacer(buttonSpacer),
 
-            // Text
-            EzColorSetting(
-              toControl:
-                  isLight ? lightAccentTextColorKey : darkAccentTextColorKey,
-              message: 'Accent text',
-              textBackgroundKey:
-                  isLight ? lightAccentColorKey : darkAccentColorKey,
+                  // Text
+                  EzColorSetting(
+                    toControl: isLight
+                        ? lightAccentTextColorKey
+                        : darkAccentTextColorKey,
+                    message: 'Accent text',
+                    textBackgroundKey:
+                        isLight ? lightAccentColorKey : darkAccentColorKey,
+                  ),
+                ],
+              ),
             ),
             EzSpacer(buttonSpacer),
           ],

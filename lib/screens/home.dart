@@ -52,21 +52,38 @@ class _HomeScreenState extends State<HomeScreen> {
 
   final double margin = EzConfig.instance.prefs[marginKey];
 
-  late final TextStyle? titleStyle = titleLarge(context);
+  late final TextStyle? headerStyle = headlineSmall(context);
 
   @override
   Widget build(BuildContext context) {
     return DotNetScaffold(
       body: EzScreen(
         margin: EdgeInsets.zero,
-        child: _videoController.value.isInitialized
-            ? EzVideoPlayer(
-                controller: _videoController,
-                iconColor: isLight ? Colors.black : Colors.white,
-                sliderVis: ButtonVis.alwaysOff,
-                variableVolume: false,
-              )
-            : Container(),
+        child: Stack(
+          alignment: AlignmentDirectional.topCenter,
+          children: [
+            // Video background
+            Positioned.fill(
+              child: _videoController.value.isInitialized
+                  ? EzVideoPlayer(
+                      controller: _videoController,
+                      iconColor: isLight ? Colors.black : Colors.white,
+                      sliderVis: ButtonVis.alwaysOff,
+                      variableVolume: false,
+                    )
+                  : Container(),
+            ),
+
+            // Tag line
+            Positioned(
+              top: margin,
+              child: EzSelectableText(
+                'Good bytes only',
+                style: headerStyle,
+              ),
+            ),
+          ],
+        ),
       ),
       fab: const SettingsFAB(),
     );

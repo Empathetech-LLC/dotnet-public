@@ -67,6 +67,8 @@ class _HomeScreenState extends State<HomeScreen> {
               child: _videoController.value.isInitialized
                   ? EzVideoPlayer(
                       controller: _videoController,
+                      semantics:
+                          'Empathetech logo animation. Animation work done by https://www.fiverr.com/graphic_alert',
                       iconColor: isLight ? Colors.black : Colors.white,
                       sliderVis: ButtonVis.alwaysOff,
                       variableVolume: false,
@@ -78,7 +80,7 @@ class _HomeScreenState extends State<HomeScreen> {
             Positioned(
               top: margin,
               child: EzSelectableText(
-                'Good bytes only',
+                'Bringing the OS to us',
                 style: headerStyle,
               ),
             ),

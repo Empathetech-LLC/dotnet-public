@@ -160,11 +160,10 @@ class _AppScreen extends StatelessWidget {
                   ),
                   EzWebLink(
                     text: 'GitHub\n',
-                    recognizer: EzWebLink.onTap(
-                      url: Uri.parse(
-                          'https://github.com/Empathetech-LLC/smoke_signal'),
-                    ),
+                    url: Uri.parse(
+                        'https://github.com/Empathetech-LLC/smoke_signal'),
                     style: descriptorLinkStyle,
+                    semanticsLabel: 'Open the Smoke Signal project on GitHub',
                   ),
                 ])),
               ],
@@ -184,10 +183,9 @@ Smoke Signal is highly user accessible and customizable, much like the web-app y
           ),
           EzWebLink(
             text: 'fediverse',
-            recognizer: EzWebLink.onTap(
-              url: Uri.parse('https://en.wikipedia.org/wiki/Fediverse'),
-            ),
+            url: Uri.parse('https://en.wikipedia.org/wiki/Fediverse'),
             style: contentLinkStyle,
+            semanticsLabel: 'Open the Wikipedia page for Fediverse',
           ),
           TextSpan(
             text: ''' goodness.
@@ -237,10 +235,10 @@ class _OpenSourceScreen extends StatelessWidget {
         EzSelectableText.rich(
           EzWebLink(
             text: 'Empathetech Flutter UI',
-            recognizer: EzWebLink.onTap(
-              url: Uri.parse('https://pub.dev/packages/empathetech_flutter_ui'),
-            ),
+            url: Uri.parse('https://pub.dev/packages/empathetech_flutter_ui'),
             style: headingLinkStyle,
+            semanticsLabel:
+                'Open the Empathetech Flutter UI package on pub.dev',
           ),
           textAlign: TextAlign.left,
         ),
@@ -260,10 +258,9 @@ class _OpenSourceScreen extends StatelessWidget {
         EzSelectableText.rich(
           EzWebLink(
             text: 'Empathetech SS API',
-            recognizer: EzWebLink.onTap(
-              url: Uri.parse('https://pub.dev/packages/empathetech_ss_api'),
-            ),
+            url: Uri.parse('https://pub.dev/packages/empathetech_ss_api'),
             style: headingLinkStyle,
+            semanticsLabel: 'Open the Smoke Signal API package on pub.dev',
           ),
           textAlign: TextAlign.left,
         ),
@@ -279,11 +276,10 @@ class _OpenSourceScreen extends StatelessWidget {
             ),
             EzWebLink(
               text: 'fork-able',
-              recognizer: EzWebLink.onTap(
-                url: Uri.parse(
-                    'https://docs.github.com/en/get-started/quickstart/fork-a-repo'),
-              ),
+              url: Uri.parse(
+                  'https://docs.github.com/en/get-started/quickstart/fork-a-repo'),
               style: contentLinkStyle,
+              semanticsLabel: 'Open documentation on what forked repos are',
             ),
             TextSpan(
               text: ' pieces.',

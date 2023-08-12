@@ -76,12 +76,12 @@ class _FoldingScreenState extends State<FoldingScreen> {
                 ),
                 EzWebLink(
                   text: 'world’s largest supercomputer.',
-                  recognizer: EzWebLink.onTap(
-                    url: Uri.parse(
-                      'https://www.tomshardware.com/news/folding-at-home-worlds-top-supercomputers-coronavirus-covid-19',
-                    ),
+                  url: Uri.parse(
+                    'https://www.tomshardware.com/news/folding-at-home-worlds-top-supercomputers-coronavirus-covid-19',
                   ),
                   style: answerLinkStyle,
+                  semanticsLabel:
+                      "Open a topic relevant Tom's Hardware article",
                 ),
                 TextSpan(
                   text:
@@ -110,11 +110,11 @@ NOTE: Again, shout-out to: desktop computer. Mobile devices should not be used f
                 ),
                 EzWebLink(
                   text: 'download and install',
-                  recognizer: EzWebLink.onTap(
-                    url: Uri.parse(
-                        'https://foldingathome.org/start-folding/?lng=en-US'),
-                  ),
+                  url: Uri.parse(
+                      'https://foldingathome.org/start-folding/?lng=en-US'),
                   style: answerLinkStyle,
+                  semanticsLabel:
+                      'Open the official Folding at Home installation instructions webpage',
                 ),
                 TextSpan(
                   text:
@@ -142,10 +142,10 @@ NOTE: Again, shout-out to: desktop computer. Mobile devices should not be used f
                 ),
                 EzWebLink(
                   text: 'team #1063265',
-                  recognizer: EzWebLink.onTap(
-                    url: Uri.parse(EmpathetechFoldingTeam),
-                  ),
+                  url: Uri.parse(EmpathetechFoldingTeam),
                   style: answerLinkStyle,
+                  semanticsLabel:
+                      'Open the Empathetech Folding at Home team page',
                 ),
               ]),
               textAlign: TextAlign.left,

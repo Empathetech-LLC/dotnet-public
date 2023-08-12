@@ -1,10 +1,10 @@
 import 'utils.dart';
-import '../screens/screens.dart';
 
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 
 import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class FAHBanner extends StatelessWidget {
   final TextStyle? titleStyle;
@@ -36,8 +36,9 @@ class FAHBanner extends StatelessWidget {
           children: [
             // Icon
             // Scales with text
-            Image(
+            EzImage(
               image: const AssetImage(fahIconPath),
+              semanticLabel: 'Folding at home icon',
               width: 2.0 *
                   (CircleAvatarRadius *
                       sqrt(MediaQuery.of(context).textScaleFactor)),
@@ -59,20 +60,16 @@ class FAHBanner extends StatelessWidget {
               ),
               EzWebLink(
                 text: 'team\n',
-                recognizer: EzWebLink.onTap(
-                  url: Uri.parse(EmpathetechFoldingTeam),
-                ),
+                url: Uri.parse(EmpathetechFoldingTeam),
                 style: contentLinkStyle,
+                semanticsLabel:
+                    'Open the Empathetech Folding at Home team page',
               ),
               EzLink(
                 text: '\nWhat\'s folding@home?\n',
-                recognizer: EzLink.onTap(
-                  action: () => pushScreen(
-                    context: context,
-                    screen: const FoldingScreen(),
-                  ),
-                ),
+                action: () => context.goNamed('folding'),
                 style: contentLinkStyle,
+                semanticsLabel: 'Open a local FAQ about Folding at Home',
               ),
             ])),
           ],

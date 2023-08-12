@@ -1,8 +1,7 @@
-import '../screens/screens.dart';
-
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class InternalLinks extends StatelessWidget {
   final GlobalKey? key;
@@ -64,49 +63,39 @@ class InternalLinks extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final EzSelectableText products = EzSelectableText.rich(EzLink(
-      text: 'Products',
-      style: style,
-      recognizer: EzLink.onTap(
-        action: () => pushScreen(
-          context: context,
-          screen: const ProductsScreen(),
-        ),
+    final EzSelectableText products = EzSelectableText.rich(
+      EzLink(
+        text: 'Products',
+        style: style,
+        action: () => context.goNamed('products'),
+        semanticsLabel: 'Go to the products page',
       ),
-    ));
+    );
 
     EzSelectableText team = EzSelectableText.rich(EzLink(
       text: 'The Team',
       style: style,
-      recognizer: EzLink.onTap(
-        action: () => pushScreen(
-          context: context,
-          screen: const TeamScreen(),
-        ),
-      ),
+      action: () => context.goNamed('team'),
+      semanticsLabel: 'Go to the Empathetech team page',
     ));
 
-    final EzSelectableText plan = EzSelectableText.rich(EzLink(
-      text: 'The Plan',
-      style: style,
-      recognizer: EzLink.onTap(
-        action: () => pushScreen(
-          context: context,
-          screen: const PlanScreen(),
-        ),
+    final EzSelectableText plan = EzSelectableText.rich(
+      EzLink(
+        text: 'The Plan',
+        style: style,
+        action: () => context.goNamed('plan'),
+        semanticsLabel: 'Go to the Empathetech business plan page',
       ),
-    ));
+    );
 
-    final EzSelectableText contribute = EzSelectableText.rich(EzLink(
-      text: 'Contribute',
-      style: style,
-      recognizer: EzLink.onTap(
-        action: () => pushScreen(
-          context: context,
-          screen: const ContributeScreen(),
-        ),
+    final EzSelectableText contribute = EzSelectableText.rich(
+      EzLink(
+        text: 'Contribute',
+        style: style,
+        action: () => context.goNamed('contribute'),
+        semanticsLabel: 'Go to the contributions page',
       ),
-    ));
+    );
 
     // Return build //
 

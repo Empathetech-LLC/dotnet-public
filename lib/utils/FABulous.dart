@@ -1,8 +1,7 @@
-import '../screens/screens.dart';
-
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 
 class SettingsFAB extends StatelessWidget {
@@ -16,10 +15,7 @@ class SettingsFAB extends StatelessWidget {
     final double fabSize = EzConfig.instance.prefs[circleDiameterKey];
 
     return ElevatedButton(
-      onPressed: () => pushScreen(
-        context: context,
-        screen: const SettingsScreen(),
-      ),
+      onPressed: () => context.goNamed('settings'),
       child: Center(
         child: Icon(
           PlatformIcons(context).settings,

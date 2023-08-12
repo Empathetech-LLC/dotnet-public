@@ -1,9 +1,9 @@
-import 'screens.dart';
 import '../utils/utils.dart';
 
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 
 class SettingsScreen extends StatefulWidget {
@@ -42,7 +42,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
             EzWarning(
               warning: 'ATTENTION',
               message:
-                  'Each setting will preview changes\nReload the page to apply\nPer-reset changes are unlimited!',
+                  'Changes will auto-save and take effect when you reload the page.\nHave fun!',
               style: headlineSmall(context),
             ),
             EzSpacer(paragraphSpacer),
@@ -57,20 +57,14 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
             // Color settings
             ElevatedButton(
-              onPressed: () => pushScreen(
-                context: context,
-                screen: const ColorSettingsScreen(),
-              ),
+              onPressed: () => context.goNamed('color-settings'),
               child: const Text('Colors'),
             ),
             EzSpacer(buttonSpacer),
 
             // Style settings
             ElevatedButton(
-              onPressed: () => pushScreen(
-                context: context,
-                screen: const StyleSettingsScreen(),
-              ),
+              onPressed: () => context.goNamed('style-settings'),
               child: const Text('Styling'),
             ),
             EzSpacer(paragraphSpacer),

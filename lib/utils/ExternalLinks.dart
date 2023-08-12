@@ -2,6 +2,7 @@ import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ExternalLinks extends StatelessWidget {
   final GlobalKey? key;
@@ -35,7 +36,7 @@ class ExternalLinks extends StatelessWidget {
         MouseRegion(
           cursor: SystemMouseCursors.click,
           child: GestureDetector(
-            onTap: () => openLink(Uri.parse(EmpathetechGitHub)),
+            onTap: () => launchUrl(Uri.parse(EmpathetechGitHub)),
             child: const Icon(LineIcons.github),
           ),
         ),

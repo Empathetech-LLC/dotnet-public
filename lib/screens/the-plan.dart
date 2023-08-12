@@ -222,10 +222,10 @@ Let's get the marketing rolling, so we can get eyeballs on, wallets open, people
                 EzWebLink(
                   text: 'Certified B Corp',
                   style: contentLinkStyle,
-                  recognizer: EzWebLink.onTap(
-                    url: Uri.parse(
-                        'https://www.bcorporation.net/en-us/certification/'),
-                  ),
+                  url: Uri.parse(
+                      'https://www.bcorporation.net/en-us/certification/'),
+                  semanticsLabel:
+                      'Open the official B Corp certification information webpage',
                 ),
                 TextSpan(
                   text:

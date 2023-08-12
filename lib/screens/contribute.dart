@@ -4,6 +4,7 @@ import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ContributeScreen extends StatefulWidget {
   const ContributeScreen({Key? key}) : super(key: key);
@@ -97,10 +98,10 @@ class _Content extends StatelessWidget {
         EzSelectableText.rich(TextSpan(children: [
           EzLink(
             text: 'Reach out',
-            recognizer: EzLink.onTap(
-              action: () => copyToClipboard(string: EmpathetechSupport),
-            ),
+            action: () => copyToClipboard(string: EmpathetechSupport),
             style: contentLinkStyle,
+            semanticsLabel:
+                'Copy the Empathetech support email to your clipboard',
           ),
           TextSpan(
             text: ' about becoming a ',
@@ -108,10 +109,9 @@ class _Content extends StatelessWidget {
           ),
           EzWebLink(
             text: 'GitHub contributor',
-            recognizer: EzWebLink.onTap(
-              url: Uri.parse(EmpathetechGitHub),
-            ),
+            url: Uri.parse(EmpathetechGitHub),
             style: contentLinkStyle,
+            semanticsLabel: 'Open the Empathetech-LLC GitHub page',
           ),
         ])),
         EzSpacer(2 * spacer),
@@ -132,14 +132,14 @@ class _Content extends StatelessWidget {
           children: [
             // Venmo
             ElevatedButton(
-              onPressed: () => openLink(Uri.parse(EmpathetechVenmo)),
+              onPressed: () => launchUrl(Uri.parse(EmpathetechVenmo)),
               child: Text('Venmo'),
             ),
             EzSpacer.swap(buttonSpacer, limitedSpace: limitedSpace),
 
             // PayPal
             ElevatedButton.icon(
-              onPressed: () => openLink(Uri.parse(EmpathetechPayPal)),
+              onPressed: () => launchUrl(Uri.parse(EmpathetechPayPal)),
               icon: Icon(LineIcons.github),
               label: Text('PayPal'),
             ),
@@ -147,7 +147,7 @@ class _Content extends StatelessWidget {
 
             // CashApp
             ElevatedButton(
-              onPressed: () => openLink(Uri.parse(EmpathetechCashApp)),
+              onPressed: () => launchUrl(Uri.parse(EmpathetechCashApp)),
               child: Text('CashApp'),
             ),
           ],

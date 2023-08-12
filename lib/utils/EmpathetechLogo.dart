@@ -1,9 +1,9 @@
 import 'utils.dart';
-import '../screens/screens.dart';
 
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class EmpathetechLogo extends StatelessWidget {
   final bool isLight;
@@ -22,8 +22,8 @@ class EmpathetechLogo extends StatelessWidget {
     return MouseRegion(
       cursor: SystemMouseCursors.click,
       child: GestureDetector(
-        onTap: () => pushScreen(context: context, screen: const HomeScreen()),
-        child: Image(
+        onTap: () => context.goNamed('home'),
+        child: EzImage(
           // Colors are purposefully opposite
           // Matches the AppBar from DotNetScaffold.dart
           image: AssetImage(isLight ? darkLogoPath : lightLogoPath),

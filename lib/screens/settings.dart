@@ -27,8 +27,15 @@ class _SettingsScreenState extends State<SettingsScreen> {
   final double buttonSpacer = EzConfig.instance.prefs[buttonSpacingKey];
   final double paragraphSpacer = EzConfig.instance.prefs[paragraphSpacingKey];
 
+  late final Color? buttonColor = Theme.of(context).highlightColor;
+
   late final TextStyle? resetLinkStyle =
       titleLarge(context)?.copyWith(decoration: TextDecoration.underline);
+  late final TextStyle? labelStyle = labelLarge(context);
+  late final TextStyle? labelLinkStyle = labelStyle?.copyWith(
+    color: buttonColor,
+    decoration: TextDecoration.underline,
+  );
 
   // Build page //
 
@@ -89,6 +96,31 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 ),
               ),
             ),
+            EzSpacer(3 * paragraphSpacer),
+
+            // EFUI shoutout
+            EzSelectableText.rich(TextSpan(children: [
+              TextSpan(
+                text: "Don\'t cha wish your frontend was fun like ",
+                style: labelStyle,
+              ),
+              EzWebLink(
+                text: "me?\n",
+                url: Uri.parse(
+                    "https://github.com/Empathetech-LLC/dotnet-public/blob/main/lib/screens/settings.dart"),
+                style: labelLinkStyle,
+                semanticsLabel:
+                    'Open a GitHub link to the source code for this page',
+              ),
+              EzWebLink(
+                text: "Don\'t cha?",
+                url: Uri.parse(
+                    "https://github.com/Empathetech-LLC/empathetech_flutter_ui"),
+                style: labelLinkStyle,
+                semanticsLabel:
+                    'Open a GitHub link to the UI package making all this possible',
+              ),
+            ])),
             EzSpacer(paragraphSpacer),
           ],
         ),

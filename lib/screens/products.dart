@@ -192,7 +192,8 @@ Smoke Signal is highly user accessible and customizable, much like the web-app y
 
 Inside the app, members can create Signals that send a notification to everyone in the group when a user becomes active. The notification is sender anonymous and its description/payload/message/etc is entirely up to the group. It's like lighting a signal fire - you get a lot of information the moment you see it, but you won't get the full picture until you show up yourself. On top of activity notifications being fully customizable: Smoke Signal has zero automated notifications. The only time you'll get a ping is when a fellow member wants you to.
 
-Why not light your first Signal? And see what other products we have that put you in control. We're not FAANG, we don't bite.''',
+Smoke Signal is pre-release. However, the codebase is open source and fully functional. Empathetech takes pride in top-down accessibilty, so it's our hope that the code is easy to work with!
+Have fun, and reach out if there's something you'd like to see in official release!''',
             style: contentStyle,
           )
         ])),
@@ -246,7 +247,30 @@ class _OpenSourceScreen extends StatelessWidget {
 
         // Description
         EzSelectableText(
-          'EFUI is a Flutter library for quickly building platform aware, user accessible, and customizable UIs. This very site (web-app) was built using EFUI! With EFUI, there\'s very little in the way of a good idea becoming a great product.',
+          "EFUI is a Flutter library for quickly building platform aware, user accessible, and customizable UIs. This very site (web-app) was built using EFUI! With Empathetech, there\'s very little in the way of a good idea becoming a great product.",
+          style: contentStyle,
+          textAlign: TextAlign.left,
+        ),
+        EzSpacer(spacer),
+
+        // dotnet-public //
+
+        // Title
+        EzSelectableText.rich(
+          EzWebLink(
+            text: 'dotnet-public',
+            url: Uri.parse('https://github.com/Empathetech-LLC/dotnet-public'),
+            style: headingLinkStyle,
+            semanticsLabel:
+                "Open the GitHub repo hosting all of this site\'s Flutter code",
+          ),
+          textAlign: TextAlign.left,
+        ),
+        EzSpacer(padding),
+
+        // Description
+        EzSelectableText(
+          "We want people to use EFUI, and what better way than to lead by example? The link above will take you to a copy of the Flutter code you're interacting with right now",
           style: contentStyle,
           textAlign: TextAlign.left,
         ),

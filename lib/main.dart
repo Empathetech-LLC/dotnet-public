@@ -6,7 +6,6 @@ import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
-import 'package:flutter_web_plugins/url_strategy.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() async {
@@ -21,9 +20,6 @@ void main() async {
 
   // Set device orientations
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
-
-  // Improves URL readability for web apps
-  usePathUrlStrategy();
 
   runApp(const ETechDotNet());
 }

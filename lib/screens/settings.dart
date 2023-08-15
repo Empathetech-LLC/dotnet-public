@@ -48,8 +48,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
             // Functionality disclaimer
             EzWarning(
               warning: 'ATTENTION',
-              message:
-                  'Changes will auto-save and take effect when you reload the page.\nHave fun!',
+              message: """Each button will preview it\'s settting
+Reload this (or any) page for the changes to take full effect
+Have fun!""",
               style: headlineSmall(context),
             ),
             EzSpacer(paragraphSpacer),

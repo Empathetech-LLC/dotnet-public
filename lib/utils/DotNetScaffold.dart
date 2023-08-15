@@ -185,7 +185,7 @@ class _SmallBuild extends StatelessWidget {
             toolbarHeight: toolbarHeight,
 
             // Leading
-            automaticallyImplyLeading: false,
+            automaticallyImplyLeading: (leftHandedUser) ? true : false,
             leading: (leftHandedUser) ? null : iconLinks,
             leadingWidth: (leftHandedUser)
                 ? null // Drawer

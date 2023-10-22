@@ -5,30 +5,16 @@ import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 
-class LayoutSize extends InheritedWidget {
-  final bool isLimited;
-
-  const LayoutSize({
-    Key? key,
-    required Widget child,
-    required this.isLimited,
-  }) : super(key: key, child: child);
-
-  static LayoutSize? of(BuildContext context) {
-    return context.dependOnInheritedWidgetOfExactType<LayoutSize>();
-  }
-
-  @override
-  bool updateShouldNotify(LayoutSize old) => isLimited != old.isLimited;
-}
-
 class DotNetScaffold extends StatelessWidget {
   final Key? key;
-  final Widget body;
-  final Widget fab;
 
   /// Optional [TabBar] widget for pages with sub-pages
   final TabBar? tabBar;
+
+  final Widget body;
+
+  /// [FloatingActionButton]
+  final Widget fab;
 
   const DotNetScaffold({
     this.key,
@@ -41,7 +27,7 @@ class DotNetScaffold extends StatelessWidget {
   Widget build(BuildContext context) {
     // Gather theme data //
 
-    final bool leftHandedUser = EzConfig.instance.dominantSide == Hand.left;
+    final bool leftHandedUser = EzConfig.instance.dominantHand == Hand.left;
     final bool isLight = !PlatformTheme.of(context)!.isDark;
 
     // Reverse the colors of the app bar to highlight it
@@ -50,9 +36,10 @@ class DotNetScaffold extends StatelessWidget {
 
     final TextStyle appBarTextStyle = buildHeadlineSmall(appBarTextColor);
     final TextStyle drawerTextStyle = buildHeadlineSmall(appBarColor);
-    final double textScalar = MediaQuery.of(context).textScaleFactor;
 
+    final double textScalar = MediaQuery.of(context).textScaleFactor;
     final double iconSize = appBarTextStyle.fontSize!;
+
     final IconThemeData appBarIconData = IconThemeData(
       color: appBarTextColor,
       size: iconSize,
@@ -82,40 +69,50 @@ class DotNetScaffold extends StatelessWidget {
       height: toolbarHeight,
     );
 
-    final InternalLinks drawerLinks = InternalLinks(
+    final IconLinks drawerIcons = IconLinks(
+      context: context,
+      iconSize: iconSize,
+      color: drawerTextStyle.color,
+      spacer: buttonSpacer,
+      margin: margin,
+    );
+
+    final DotNetDrawer drawer = DotNetDrawer(
+      context: context,
       style: drawerTextStyle,
       scalar: textScalar,
       spacer: buttonSpacer,
-      isDrawer: true,
+      header: drawerIcons,
     );
 
-    final InternalLinks pageLinks = InternalLinks(
-      style: appBarTextStyle,
-      scalar: textScalar,
-      spacer: buttonSpacer,
-    );
-
-    final ExternalLinks iconLinks = ExternalLinks(
+    final IconLinks pageIcons = IconLinks(
+      context: context,
       iconSize: iconSize,
       spacer: buttonSpacer,
       margin: margin,
     );
 
-    // Threshold =
-    // width of the elements in the large app bar +
-    // a double space on either side
-    final double threshold =
-        logo.width + pageLinks.width + iconLinks.width + 4 * buttonSpacer;
+    final PageLinks pageLinks = PageLinks(
+      context: context,
+      style: appBarTextStyle,
+      scalar: textScalar,
+      spacer: buttonSpacer,
+    );
 
-    // Return build(s) //
+    final double threshold = logo.width +
+        buttonSpacer +
+        pageLinks.width +
+        buttonSpacer +
+        pageIcons.width;
+
+    // Define the build(s) //
 
     final _SmallBuild smallBuild = _SmallBuild(
       appBarTheme: appBarTheme,
       leftHandedUser: leftHandedUser,
       toolbarHeight: toolbarHeight,
-      iconLinks: iconLinks,
       logo: logo,
-      drawer: drawerLinks,
+      drawer: drawer,
       tabBar: tabBar,
       tabBarHeight: tabBarHeight,
       body: body,
@@ -128,23 +125,26 @@ class DotNetScaffold extends StatelessWidget {
       toolbarHeight: toolbarHeight,
       logo: logo,
       pageLinks: pageLinks,
-      iconLinks: iconLinks,
+      pageIcons: pageIcons,
       tabBar: tabBar,
       tabBarHeight: tabBarHeight,
       body: body,
       fab: fab,
     );
 
-    return (widthOf(context) <= threshold)
-        ? LayoutSize(isLimited: true, child: smallBuild)
-        : LayoutSize(isLimited: false, child: largeBuild);
+    // Return the build //
+
+    return EzSwapScaffold(
+      small: smallBuild,
+      large: largeBuild,
+      threshold: threshold,
+    );
   }
 }
 
 class _SmallBuild extends StatelessWidget {
   final AppBarTheme appBarTheme;
-  final ExternalLinks iconLinks;
-  final InternalLinks drawer;
+  final DotNetDrawer drawer;
   final EmpathetechLogo logo;
   final TabBar? tabBar;
   final double width = double.infinity;
@@ -158,7 +158,6 @@ class _SmallBuild extends StatelessWidget {
   /// Has a mobile-like layout
   const _SmallBuild({
     required this.appBarTheme,
-    required this.iconLinks,
     required this.drawer,
     required this.logo,
     required this.tabBar,
@@ -182,14 +181,11 @@ class _SmallBuild extends StatelessWidget {
                 .copyWith(labelColor: appBarTheme.titleTextStyle?.color),
           ),
           child: AppBar(
+            excludeHeaderSemantics: true,
             toolbarHeight: toolbarHeight,
 
             // Leading
             automaticallyImplyLeading: (leftHandedUser) ? true : false,
-            leading: (leftHandedUser) ? null : iconLinks,
-            leadingWidth: (leftHandedUser)
-                ? null // Drawer
-                : iconLinks.width, // ExternalLinks
 
             // Title
             title: logo,
@@ -197,7 +193,7 @@ class _SmallBuild extends StatelessWidget {
             centerTitle: true,
 
             // Actions (aka trailing)
-            actions: (leftHandedUser) ? iconLinks.rowChildren : null,
+            actions: (leftHandedUser) ? [EzBackAction()] : null,
 
             // Bottom (aka tab bar)
             bottom: (tabBar != null)
@@ -230,8 +226,8 @@ class _SmallBuild extends StatelessWidget {
 
 class _LargeBuild extends StatelessWidget {
   final AppBarTheme appBarTheme;
-  final ExternalLinks iconLinks;
-  final InternalLinks pageLinks;
+  final IconLinks pageIcons;
+  final PageLinks pageLinks;
   final EmpathetechLogo logo;
   final TabBar? tabBar;
   final double width = double.infinity;
@@ -245,7 +241,7 @@ class _LargeBuild extends StatelessWidget {
   /// Has a traditional footer-less web page layout
   const _LargeBuild({
     required this.appBarTheme,
-    required this.iconLinks,
+    required this.pageIcons,
     required this.pageLinks,
     required this.logo,
     required this.tabBar,
@@ -269,13 +265,14 @@ class _LargeBuild extends StatelessWidget {
                 .copyWith(labelColor: appBarTheme.titleTextStyle?.color),
           ),
           child: AppBar(
+            excludeHeaderSemantics: true,
             toolbarHeight: toolbarHeight,
 
             // Leading
             automaticallyImplyLeading: false,
-            leading: (leftHandedUser) ? iconLinks : logo,
+            leading: (leftHandedUser) ? pageIcons : logo,
             leadingWidth: (leftHandedUser)
-                ? iconLinks.width // ExternalLinks
+                ? pageIcons.width // IconLinks
                 : toolbarHeight, // Logo
 
             // Title
@@ -284,7 +281,7 @@ class _LargeBuild extends StatelessWidget {
             centerTitle: true,
 
             // Action (aka trailing)
-            actions: (leftHandedUser) ? [logo] : iconLinks.rowChildren,
+            actions: (leftHandedUser) ? [logo] : pageIcons.rowChildren,
 
             // Bottom (aka tab bar)
             bottom: (tabBar != null)

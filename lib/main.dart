@@ -7,90 +7,85 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   // Initialize EzConfig
   final SharedPreferences prefs = await SharedPreferences.getInstance();
-  EzConfig(
-    assetPaths: assets,
-    preferences: prefs,
-  );
+  EzConfig(assetPaths: assets, preferences: prefs);
 
   // Set device orientations
-  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.landscapeLeft,
+    DeviceOrientation.landscapeRight,
+  ]);
 
   runApp(const ETechDotNet());
 }
 
 final GoRouter _router = GoRouter(
-  initialLocation: '/',
+  initialLocation: homeRoute,
   routes: <RouteBase>[
     GoRoute(
-      name: 'home',
-      path: '/',
+      name: homeRoute,
+      path: homeRoute,
       builder: (BuildContext context, GoRouterState state) {
         return const HomeScreen();
       },
       routes: <RouteBase>[
         GoRoute(
-          name: 'products',
-          path: 'products',
+          name: productsRoute,
+          path: productsRoute,
           builder: (BuildContext context, GoRouterState state) {
             return const ProductsScreen();
           },
         ),
         GoRoute(
-          name: 'team',
-          path: 'the-team',
-          builder: (BuildContext context, GoRouterState state) {
-            return const TeamScreen();
-          },
-        ),
-        GoRoute(
-          name: 'plan',
-          path: 'the-plan',
+          name: planRoute,
+          path: planRoute,
           builder: (BuildContext context, GoRouterState state) {
             return const PlanScreen();
           },
         ),
         GoRoute(
-          name: 'contribute',
-          path: 'contribute',
+          name: teamRoute,
+          path: teamRoute,
           builder: (BuildContext context, GoRouterState state) {
-            return const ContributeScreen();
+            return const TeamScreen();
           },
         ),
         GoRoute(
-          name: 'settings',
-          path: 'settings',
+          name: supportRoute,
+          path: supportRoute,
+          builder: (BuildContext context, GoRouterState state) {
+            return const SupportScreen();
+          },
+        ),
+        GoRoute(
+          name: settingsRoute,
+          path: settingsRoute,
           builder: (BuildContext context, GoRouterState state) {
             return const SettingsScreen();
           },
           routes: <RouteBase>[
             GoRoute(
-              name: 'color-settings',
-              path: 'color-settings',
+              name: colorSettingsRoute,
+              path: colorSettingsRoute,
               builder: (BuildContext context, GoRouterState state) {
                 return const ColorSettingsScreen();
               },
             ),
             GoRoute(
-              name: 'style-settings',
-              path: 'style-settings',
+              name: styleSettingsRoute,
+              path: styleSettingsRoute,
               builder: (BuildContext context, GoRouterState state) {
                 return const StyleSettingsScreen();
               },
             ),
           ],
-        ),
-        GoRoute(
-          name: 'folding',
-          path: 'fah-faq',
-          builder: (BuildContext context, GoRouterState state) {
-            return const FoldingScreen();
-          },
         ),
       ],
     ),
@@ -104,9 +99,15 @@ class ETechDotNet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return EzApp(
-      title: appTitle,
-      routerConfig: _router,
+    return EzAppProvider(
+      app: PlatformApp.router(
+        debugShowCheckedModeBanner: false,
+        supportedLocales: Lang.supportedLocales + EFUILang.supportedLocales,
+        localizationsDelegates:
+            Lang.localizationsDelegates + EFUILang.localizationsDelegates,
+        title: empathetech,
+        routerConfig: _router,
+      ),
     );
   }
 }

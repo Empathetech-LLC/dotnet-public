@@ -14,28 +14,21 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  // Set page/tab title //
-
-  @override
-  void initState() {
-    super.initState();
-    setPageTitle(context: context, title: 'Empathetech');
-  }
-
-  // Setup background video //
+  // Set page/tab title and background video //
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
+    setPageTitle(context, empathetech);
     _initializeVideoController();
   }
 
-  late bool isLight = !PlatformTheme.of(context)!.isDark;
+  late bool _isLight = !PlatformTheme.of(context)!.isDark;
   late final VideoPlayerController _videoController;
 
   void _initializeVideoController() {
     _videoController = VideoPlayerController.asset(
-      isLight ? lightLogoVideoPath : darkLogoVideoPath,
+      _isLight ? lightLogoVideoPath : darkLogoVideoPath,
       videoPlayerOptions: VideoPlayerOptions(
         allowBackgroundPlayback: false,
         mixWithOthers: false,
@@ -48,14 +41,14 @@ class _HomeScreenState extends State<HomeScreen> {
       });
   }
 
-  // Build page //
-
-  final double margin = EzConfig.instance.prefs[marginKey];
-
-  late final TextStyle? headerStyle = headlineSmall(context);
-
   @override
   Widget build(BuildContext context) {
+    // Gather theme data //
+
+    final TextStyle? headerStyle = headlineSmall(context);
+
+    // Return the build //
+
     return DotNetScaffold(
       body: EzScreen(
         margin: EdgeInsets.zero,
@@ -67,22 +60,18 @@ class _HomeScreenState extends State<HomeScreen> {
               child: _videoController.value.isInitialized
                   ? EzVideoPlayer(
                       controller: _videoController,
-                      semantics:
-                          'Empathetech logo animation. Animation work done by https://www.fiverr.com/graphic_alert',
-                      iconColor: isLight ? Colors.black : Colors.white,
                       sliderVis: ButtonVis.alwaysOff,
                       variableVolume: false,
+                      iconColor: _isLight ? Colors.black : Colors.white,
+                      semantics: Lang.of(context)!.hsVideoSemantics,
                     )
-                  : Container(),
+                  : SizedBox.shrink(),
             ),
 
-            // Tag line
+            // Slogan
             Positioned(
-              top: margin,
-              child: EzSelectableText(
-                'Bringing the OS to us',
-                style: headerStyle,
-              ),
+              top: EzConfig.instance.prefs[marginKey],
+              child: EzText(Lang.of(context)!.hsSlogan, style: headerStyle),
             ),
           ],
         ),

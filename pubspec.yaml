@@ -1,0 +1,64 @@
+name: dotnet
+description: "Empathetech's mission is to re-balance the power in tech by making open source software more accessible."
+publish_to: 'none'
+
+version: 2.0.1
+
+environment:
+  sdk: '>=3.1.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.18.1
+
+  # Flutter/Google
+  video_player: ^2.7.2
+  go_router: ^12.0.0
+  shared_preferences: ^2.2.1
+  url_launcher: ^6.1.14
+
+  # Community
+  flutter_platform_widgets: ^3.3.5
+  line_icons: ^2.0.3
+  
+  empathetech_flutter_ui: ^4.2.0
+  # empathetech_flutter_ui:
+  #   path: ../empathetech_flutter_ui
+  
+dev_dependencies:
+  dependency_validator: ^3.2.3
+  flutter_native_splash: ^2.3.2
+  flutter_launcher_icons: ^0.13.1
+  
+flutter:
+  generate: true
+  uses-material-design: true
+
+  assets:
+    - assets/
+    - assets/dark-animation.mp4
+    - assets/light-animation.mp4
+    - assets/dark-logo.png
+    - assets/light-logo.png
+    - assets/founder.png
+    - assets/fah.png
+    - assets/smoke-signal-icon.png
+
+flutter_launcher_icons:
+  image_path: assets/dark-logo.png
+  adaptive_icon_foreground: assets/dark-logo.png
+  adaptive_icon_background: "#000000"
+  android: true
+  ios: true
+  remove_alpha_ios: true
+  windows:
+    generate: true
+  macos:
+    generate: true
+
+flutter_native_splash:
+  color: "#000000"
+  image: assets/dark-logo.png

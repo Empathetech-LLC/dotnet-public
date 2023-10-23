@@ -144,36 +144,44 @@ class LangEn extends Lang {
 
   @override
   String get plsIDProblemContent =>
-      'Through their actions, big tech have shown they not only prioritize profits over our wellbeing, they\'re willing to sacrifice it for maxmial profits.';
+      'Through their actions, big tech have shown they not only prioritize profits over our wellbeing, they\'re willing to sacrifice it for maximal profits.';
 
   @override
   String get plsBeSolution => 'Be a part of the solution';
 
   @override
   String get plsBeSolutionContent =>
-      'Fortunately, there are amazing people all over the world working together towards a better narrative. One where the service providers and the customers have an active, healthy, and mutually benefitial relationship.\n\nThe open source community.\n\nSoftware is considered open source when the code is freely available for anyone to view (always), modify (often), and/or distribute (sometimes). It\'s software built by folx who recognize shared problems require shared solutions. Collaborative development creates better human experiences and allows for unlimited innovation.\n\nThe sub-problem is: making the switch from closed to open source software takes way too much time, energy, and prior knowledge.\n\nThat\'s where we come in.';
+      'Fortunately, there are amazing people all over the world working together towards a better narrative. One where the service providers and the customers have an active, healthy, and mutually beneficial relationship.\n\nThe open source community.\n\nSoftware is considered open source when the code is freely available for anyone to view (always), modify (often), and/or distribute (sometimes). It\'s software built by folx who recognize shared problems require shared solutions. Collaborative development creates better human experiences and allows for unlimited innovation.\n\nSo, how do we make the switch from closed to open source? It takes a lot of time, energy, and prior knowledge.\n\nThat\'s where we come in.';
 
   @override
   String get plsProvideValue => 'Provide value';
 
   @override
   String get plsProvideValueContent1 =>
-      'Our mission is to re-balance the power in tech by making open source software more accessible.\n\nWe will build bridges between the open source community and those without enough time, energy, or prior knowledge.\nWe will build accessible, cross-platofrm applications for easily managing an ecosystem of open source tools.\n\nBut, you can\'t build bridges (or apps) without a strong foundation! That\'s why ';
+      'Our mission is to re-balance the power in tech by making open source software more accessible.\n\nWe will build bridges between the open source community and those without enough time, energy, or prior knowledge.\nWe will build accessible, cross-platform applications for easily managing an ecosystem of open source tools.\n\nBut, you can\'t build bridges (or apps) without a strong foundation! That\'s why ';
 
   @override
   String get plsProvideValueContent2 =>
-      ' exists. We take pride in meeting words with actions, and have pro-actively made our UI open source.\n\nEven if we don\'t make a cent from publishing EFUI, it can make the internet a more accessible place. And that\'s enough.';
+      ' exists. We take pride in meeting words with actions, and have pro-actively made our UI open source.';
 
   @override
   String get plsDoItRight => 'Do it right';
 
   @override
   String get plsDoItRightContent1 =>
-      'Software as a Service (SaaS). To some, it may seem we\'ve already contradicted ourselves; SaaS products are generally built to benefit wallets, not people. And we\'re supposed to change that, right? Right!\n\nIf the service providers remember to stay Empathetech, SaaS can benefit everyone.\n\nFor starters: a closed source ecosystem of open source software would be paradoxical. So, while official licensing commitments will come with the official launch, we aim to release under a ';
+      'If the service providers remember to stay Empathetech, ';
 
   @override
   String get plsDoItRightContent1Fix =>
-      'Software as a Service (SaaS). To some, it may seem we\'ve already contradicted ourselves; SaaS products are generally built to benefit wallets, not people. And we\'re supposed to change that, right? Right!\n\nIf the service providers remember to stay Empathetic, SaaS can benefit everyone.\n\nFor starters: a closed source ecosystem of open source software would be paradoxical. So, while official licensing commitments will come with the official launch, we aim to release under a ';
+      'If the service providers remember to stay Empathetic, ';
+
+  @override
+  String get plsSaaSHint =>
+      'Open the Wikipedia article for software as a service';
+
+  @override
+  String get plsDoItRightContent2 =>
+      ' can benefit everyone.\n\nFor starters: a closed source ecosystem of open source software would be paradoxical. So, while official licensing commitments will come with the official launch, we aim to release under a ';
 
   @override
   String get plsDualLicense => 'dual license';
@@ -183,19 +191,19 @@ class LangEn extends Lang {
       'Open the Wikipedia article for Multi-licensing';
 
   @override
-  String get plsDoItRightContent2 =>
+  String get plsDoItRightContent3 =>
       '. Like we said: a shared problem requires a shared solution. One small team can\'t ';
 
   @override
   String get plsBigTechHint => 'Open the Wikipedia article for Big Tech';
 
   @override
-  String get plsDoItRightContent3 =>
-      ' the world alone.\n\nBeyond the pinky promise of dual-licensing, some real commitments we are ready to make...\n\n\t1. For any/all Empathetech SaaS products, there will always be a lifetime option.\n\t2. We find selling personal information to be immoral. We prefer charging money for services provided over auctioning digital identities.\n\nAlso, let\'s briefly return to the bridges metaphor. A bridge without a place to go, or anyone that wants to use it, isn\'t a bridge; it\'s a waste of resources. That\'s why we\'re ready to make a couple more commitments:\n\n1. Regardless of official structure (currently: LLC) Empathetech will operate as a not-for-profit, mission based entity. Meaning...\n\ta. 100% of net profit derived from our open source ecosystem app(s) will be commited back to the projects they are built upon\n\tb. 100% of net profit dervied from other products/services (merch, consulting, etc.) will be committed to promoting global equity in tech education';
+  String get plsDoItRightContent4 =>
+      ' the world alone.\n\nFor the closed source version(s), we are fully ready to commit that...\n\n\t1. All Empathetech made SaaS products will have a lifetime option.\n\t2. We find selling personal information to be immoral; we will never auction your digital identity. That\'s why we charge for our services.\n\nAlso, let\'s briefly return to the bridges metaphor. A bridge without a place to go, or anyone that wants to use it, isn\'t a bridge; it\'s a waste of resources. That\'s why we\'re ready to make another commitment:\n\nRegardless of official structure (currently LLC) Empathetech will operate as a not-for-profit, mission based entity. Meaning...\n\t100% of net profit derived from our open source ecosystem app(s) will be commited back to the projects they are built upon\n\t100% of net profit derived from all other sources (consulting, donations, merch, etc.) will be committed to promoting global equity in tech education';
 
   @override
-  String get plsDoItRightContent3Fix =>
-      ' the world alone.\n\nBeyond the pinky promise of dual-licensing, some real commitments we are ready to make...\n\n\t1. For any/all Empathetic SaaS products, there will always be a lifetime option.\n\t2. We find selling personal information to be immoral. We prefer charging money for services provided over auctioning digital identities.\n\nAlso, let\'s briefly return to the bridges metaphor. A bridge without a place to go, or anyone that wants to use it, isn\'t a bridge; it\'s a waste of resources. That\'s why we\'re ready to make a couple more commitments:\n\n1. Regardless of official structure (currently: LLC) Empathetic will operate as a not-for-profit, mission based entity. Meaning...\n\ta. 100% of net profit derived from our open source ecosystem app(s) will be commited back to the projects they are built upon\n\tb. 100% of net profit dervied from other products/services (merch, consulting, etc.) will be committed to promoting global equity in tech education';
+  String get plsDoItRightContent4Fix =>
+      ' the world alone.\n\nFor the closed source version(s), we are fully ready to commit that...\n\n\t1. All Empathetic made SaaS products will have be a lifetime option.\n\t2. We find selling personal information to be immoral; we will never auction your digital identity. That\'s why we charge for our services.\n\nAlso, let\'s briefly return to the bridges metaphor. A bridge without a place to go, or anyone that wants to use it, isn\'t a bridge; it\'s a waste of resources. That\'s why we\'re ready to make another commitment:\n\nRegardless of official structure (currently LLC) Empathetic will operate as a not-for-profit, mission based entity. Meaning...\n\t100% of net profit derived from our open source ecosystem app(s) will be commited back to the projects they are built upon\n\t100% of net profit derived from all other sources (consulting, dontations, merch, etc.) will be committed to promoting global equity in tech education';
 
   @override
   String get tsPageTitle => 'Team';

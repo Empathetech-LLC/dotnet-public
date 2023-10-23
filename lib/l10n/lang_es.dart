@@ -14,19 +14,19 @@ class LangEs extends Lang {
   String get gReachOut => 'Comunícate';
 
   @override
-  String get gGitHint => 'Abrir la página de GitHub de Empática LLC';
+  String get gGitHint => 'Abrir la página de GitHub de Empathetic LLC';
 
   @override
-  String get gLinkedHint => 'Abrir la página de LinkedIn de Empática LLC';
+  String get gLinkedHint => 'Abrir la página de LinkedIn de Empathetic LLC';
 
   @override
-  String get gMastodonHint => 'Abrir la página de Mastodon de Empática LLC';
+  String get gMastodonHint => 'Abrir la página de Mastodon de Empathetic LLC';
 
   @override
-  String get gEmailHint => 'Abrir un correo electrónico a Empática LLC';
+  String get gEmailHint => 'Abrir un correo electrónico a Empathetic LLC';
 
   @override
-  String get gEFUIHint => 'Empática Flutter UI';
+  String get gEFUIHint => 'Empathetic Flutter UI';
 
   @override
   String get gEFUILinkHint =>
@@ -49,10 +49,10 @@ class LangEs extends Lang {
 
   @override
   String get hsLogoHint =>
-      'Logo de Empática LLC. Actívalo para ir a la página principal.';
+      'Logo de Empathetic LLC. Actívalo para ir a la página principal.';
 
   @override
-  String get hsVideoSemantics => 'Animación del logo de Empática LLC.';
+  String get hsVideoSemantics => 'Animación del logo de Empathetic LLC.';
 
   @override
   String get ssDontCha => '¿No desearías?';
@@ -148,14 +148,14 @@ class LangEs extends Lang {
 
   @override
   String get plsIDProblemContent =>
-      'Traducido por IA:\nA través de sus acciones, las grandes tecnológicas han demostrado que no solo priorizan las ganancias sobre nuestro bienestar, sino que están dispuestas a sacrificarlo para obtener las máximas ganancias.';
+      'Traducido por IA:\nA través de sus acciones, las grandes tecnológicas han demostrado que no solo priorizan las ganancias sobre nuestro bienestar, sino que están dispuestas a sacrificarlo para obtener las ganancias máximas.';
 
   @override
   String get plsBeSolution => 'Sé parte de la solución';
 
   @override
   String get plsBeSolutionContent =>
-      'Traducido por IA:\nAfortunadamente, hay personas increíbles en todo el mundo trabajando juntas hacia una narrativa mejor. Una donde los proveedores de servicios y los clientes tienen una relación activa, saludable y mutuamente beneficiosa.\n\nLa comunidad de código abierto.\n\nEl software se considera de código abierto cuando el código está disponible de forma gratuita para que cualquiera lo vea (siempre), modifique (a menudo) y/o distribuya (a veces). Es software construido por personas que reconocen que los problemas compartidos requieren soluciones compartidas. El desarrollo colaborativo crea mejores experiencias humanas y permite una innovación ilimitada.\n\nEl sub-problema es: hacer el cambio de software cerrado a software de código abierto lleva demasiado tiempo, energía y conocimiento previo.\n\nAhí es donde entramos nosotros.';
+      'Traducido por IA:\nAfortunadamente, hay personas increíbles en todo el mundo trabajando juntas hacia una narrativa mejor. Una donde los proveedores de servicios y los clientes tienen una relación activa, saludable y mutuamente beneficiosa.\n\nLa comunidad de código abierto.\n\nEl software se considera de código abierto cuando el código está disponible gratuitamente para que cualquiera lo vea (siempre), modifique (a menudo) y/o distribuya (a veces). Es software construido por personas que reconocen que los problemas compartidos requieren soluciones compartidas. El desarrollo colaborativo crea mejores experiencias humanas y permite una innovación ilimitada.\n\nEntonces, ¿cómo hacemos el cambio de código cerrado a código abierto? Requiere mucho tiempo, energía y conocimiento previo.\n\nAhí es donde entramos nosotros.';
 
   @override
   String get plsProvideValue => 'Proporciona valor';
@@ -166,41 +166,49 @@ class LangEs extends Lang {
 
   @override
   String get plsProvideValueContent2 =>
-      ' existe. Nos enorgullece cumplir las palabras con hechos, y hemos hecho proactivamente nuestro UI de código abierto.\n\nIncluso si no ganamos un centavo al publicar EFUI, puede hacer que la internet sea un lugar más accesible. Y eso es suficiente.';
+      ' existe. Nos enorgullece cumplir las palabras con hechos, y hemos hecho proactivamente nuestro UI de código abierto.';
 
   @override
   String get plsDoItRight => 'Hazlo bien';
 
   @override
   String get plsDoItRightContent1 =>
-      'Traducido por IA:\nSoftware como Servicio (SaaS). Para algunos, puede parecer que ya nos hemos contradicho; los productos SaaS generalmente están diseñados para beneficiar a las billeteras, no a las personas. ¿Y se supone que debemos cambiar eso, verdad? ¡Correcto!\n\nSi los proveedores de servicios recuerdan mantenerse Empathetech, SaaS puede beneficiar a todos.\n\nPara empezar: un ecosistema de código cerrado de software de código abierto sería paradójico. Así que, aunque los compromisos oficiales de licencia vendrán con el lanzamiento oficial, nuestro objetivo es lanzar bajo una ';
+      'Traducido por IA:\n Si los proveedores de servicios recuerdan mantenerse Empathetech, ';
 
   @override
   String get plsDoItRightContent1Fix =>
-      'Traducido por IA: Software como Servicio (SaaS). Para algunos, puede parecer que ya nos hemos contradicho; los productos SaaS generalmente están diseñados para beneficiar a las billeteras, no a las personas. ¿Y se supone que debemos cambiar eso, verdad? ¡Correcto!\n\nSi los proveedores de servicios recuerdan mantenerse Empática, SaaS puede beneficiar a todos.\n\nPara empezar: un ecosistema de código cerrado de software de código abierto sería paradójico. Así que, aunque los compromisos oficiales de licencia vendrán con el lanzamiento oficial, nuestro objetivo es lanzar bajo una ';
+      'Traducido por IA: Si los proveedores de servicios recuerdan mantenerse Empathetic, ';
+
+  @override
+  String get plsSaaSHint =>
+      'Abre el artículo de Wikipedia para software como servicio';
+
+  @override
+  String get plsDoItRightContent2 =>
+      ' puede beneficiar a todos.\n\nPara empezar: un ecosistema de código cerrado de software de código abierto sería paradójico. Así que, aunque los compromisos oficiales de licencia vendrán con el lanzamiento oficial, nuestro objetivo es lanzar bajo una ';
 
   @override
   String get plsDualLicense => 'licencia dual';
 
   @override
   String get plsDualLicenseHint =>
-      'Abre el artículo de Wikipedia para Multi-licencia.';
+      'Abre el artículo de Wikipedia para Multi-licencia';
 
   @override
-  String get plsDoItRightContent2 =>
+  String get plsDoItRightContent3 =>
       '. Como dijimos: un problema compartido requiere una solución compartida. Un equipo pequeño no puede ';
 
   @override
   String get plsBigTechHint =>
-      'Abre el artículo de Wikipedia para las grandes tecnológicas.';
+      'Abre el artículo de Wikipedia para las grandes tecnológicas';
 
   @override
-  String get plsDoItRightContent3 =>
-      ' cambiar el mundo solo.\n\nMás allá de la promesa simbólica de doble licencia, algunos compromisos reales que estamos listos para hacer...\n\n\t1. Para cualquier/todos los productos SaaS de Empathetech, siempre habrá una opción de por vida.\n\t2. Nos parece inmoral vender información personal. Preferimos cobrar dinero por los servicios proporcionados en lugar de subastar identidades digitales.\n\nAdemás, volvamos brevemente a la metáfora de los puentes. Un puente sin un lugar a donde ir, o sin nadie que quiera usarlo, no es un puente; es un desperdicio de recursos. Por eso estamos listos para hacer un par de compromisos más:\n\n1. Independientemente de la estructura oficial (actualmente: LLC) Empathetech operará como una entidad basada en la misión sin fines de lucro. Es decir...\n\ta. El 100% del beneficio neto derivado de nuestra(s) aplicación(es) de ecosistema de código abierto se comprometerá de nuevo a los proyectos en los que se basan\n\tb. El 100% del beneficio neto derivado de otros productos/servicios (merchandising, consultoría, etc.) se comprometerá a promover la equidad global en la educación tecnológica';
+  String get plsDoItRightContent4 =>
+      ' cambiar el mundo solo.\n\nPara la(s) versión(es) de código cerrado, estamos completamente listos para comprometernos a que...\n\n\t1. Todos los productos SaaS creados por Empathetech tendrán una opción de por vida.\n\t2. Consideramos que vender información personal es inmoral; nunca subastaremos tu identidad digital. Por eso cobramos por nuestros servicios.\n\nAdemás, volvamos brevemente a la metáfora de los puentes. Un puente sin un lugar a donde ir, o sin nadie que quiera usarlo, no es un puente; es un desperdicio de recursos. Por eso estamos listos para hacer otro compromiso:\n\nIndependientemente de la estructura oficial (actualmente LLC) Empathetech operará como una entidad sin fines de lucro, basada en una misión. Lo que significa...\n\t100% del beneficio neto obtenido de nuestra(s) aplicación(es) de ecosistema de código abierto será destinado nuevamente a los proyectos en los que se basan\n\t100% del beneficio neto obtenido de todas las demás fuentes (consultoría, donaciones, mercancía, etc.) será destinado a promover la equidad global en la educación tecnológica';
 
   @override
-  String get plsDoItRightContent3Fix =>
-      ' cambiar el mundo solo.\n\nMás allá de la promesa simbólica de doble licencia, algunos compromisos reales que estamos listos para hacer...\n\n\t1. Para cualquier/todos los productos SaaS de Empática, siempre habrá una opción de por vida.\n\t2. Nos parece inmoral vender información personal. Preferimos cobrar dinero por los servicios proporcionados en lugar de subastar identidades digitales.\n\nAdemás, volvamos brevemente a la metáfora de los puentes. Un puente sin un lugar a donde ir, o sin nadie que quiera usarlo, no es un puente; es un desperdicio de recursos. Por eso estamos listos para hacer un par de compromisos más:\n\n1. Independientemente de la estructura oficial (actualmente: LLC) Empática operará como una entidad basada en la misión sin fines de lucro. Es decir...\n\ta. El 100% del beneficio neto derivado de nuestra(s) aplicación(es) de ecosistema de código abierto se comprometerá de nuevo a los proyectos en los que se basan\n\tb. El 100% del beneficio neto derivado de otros productos/servicios (merchandising, consultoría, etc.) se comprometerá a promover la equidad global en la educación tecnológica';
+  String get plsDoItRightContent4Fix =>
+      ' cambiar el mundo solo.\n\nPara la(s) versión(es) de código cerrado, estamos completamente listos para comprometernos a que...\n\n\t1. Todos los productos SaaS creados por Empathetic tendrán una opción de por vida.\n\t2. Consideramos que vender información personal es inmoral; nunca subastaremos tu identidad digital. Por eso cobramos por nuestros servicios.\n\nAdemás, volvamos brevemente a la metáfora de los puentes. Un puente sin un lugar a donde ir, o sin nadie que quiera usarlo, no es un puente; es un desperdicio de recursos. Por eso estamos listos para hacer otro compromiso:\n\nIndependientemente de la estructura oficial (actualmente LLC) Empathetic operará como una entidad sin fines de lucro, basada en una misión. Lo que significa...\n\t100% del beneficio neto obtenido de nuestra(s) aplicación(es) de ecosistema de código abierto será destinado nuevamente a los proyectos en los que se basan\n\t100% del beneficio neto obtenido de todas las demás fuentes (consultoría, donaciones, mercancía, etc.) será destinado a promover la equidad global en la educación tecnológica';
 
   @override
   String get tsPageTitle => 'Equipo';
@@ -209,7 +217,7 @@ class LangEs extends Lang {
   String get tsCore => 'Núcleo';
 
   @override
-  String get tsTheFounderImageHint => 'Una foto del fundador de Empática LLC';
+  String get tsTheFounderImageHint => 'Una foto del fundador de Empathetic LLC';
 
   @override
   String get tsTheFounder => 'El Fundador';
@@ -232,7 +240,7 @@ class LangEs extends Lang {
 
   @override
   String get tsGADescriptionFix =>
-      'Realizó el trabajo de After Effects para la animación del logo de Empática LLC';
+      'Realizó el trabajo de After Effects para la animación del logo de Empathetic LLC';
 
   @override
   String get spsPageTitle => 'Apoyo';
@@ -268,7 +276,7 @@ class LangEs extends Lang {
   String get fahIntro => 'Empathetech tiene un equipo en Folding@home: ';
 
   @override
-  String get fahIntroFix => 'Empática tiene un equipo en folding at home: ';
+  String get fahIntroFix => 'Empathetic tiene un equipo en folding at home: ';
 
   @override
   String get fahTeamHint => 'Abrir la página del equipo de folding at home';
@@ -286,5 +294,5 @@ class LangEs extends Lang {
 
   @override
   String get fahStatsFix =>
-      'Traducido por IA: ¡Juntos, hemos acumulado más de 100 millones de puntos!\nEso coloca a Empática en el top 2% de todos los equipos a nivel mundial!';
+      'Traducido por IA: ¡Juntos, hemos acumulado más de 100 millones de puntos!\nEso coloca a Empathetic en el top 2% de todos los equipos a nivel mundial!';
 }

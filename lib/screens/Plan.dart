@@ -146,13 +146,26 @@ class _PlanScreenState extends State<PlanScreen> {
               semantics: Lang.of(context)!.plsDoItRightContent1Fix,
             ),
             EzInlineLink(
+              "SaaS",
+              style: _contentLinkStyle,
+              semanticsLabel: Lang.of(context)!.plsSaaSHint,
+              url: Uri.parse(
+                "https://en.wikipedia.org/wiki/Software_as_a_service",
+              ),
+            ),
+            EzPlainText(
+              Lang.of(context)!.plsDoItRightContent2,
+              context: context,
+              style: _contentStyle,
+            ),
+            EzInlineLink(
               Lang.of(context)!.plsDualLicense,
               style: _contentLinkStyle,
               semanticsLabel: Lang.of(context)!.plsDualLicenseHint,
               url: Uri.parse("https://en.wikipedia.org/wiki/Multi-licensing"),
             ),
             EzPlainText(
-              Lang.of(context)!.plsDoItRightContent2,
+              Lang.of(context)!.plsDoItRightContent3,
               context: context,
               style: _contentStyle,
             ),
@@ -163,10 +176,10 @@ class _PlanScreenState extends State<PlanScreen> {
               url: Uri.parse("https://en.wikipedia.org/wiki/Big_Tech"),
             ),
             EzPlainText(
-              Lang.of(context)!.plsDoItRightContent3,
+              Lang.of(context)!.plsDoItRightContent4,
               context: context,
               style: _contentStyle,
-              semantics: Lang.of(context)!.plsDoItRightContent3Fix,
+              semantics: Lang.of(context)!.plsDoItRightContent4Fix,
             ),
           ],
           textAlign: TextAlign.left,

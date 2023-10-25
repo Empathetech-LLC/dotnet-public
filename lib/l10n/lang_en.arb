@@ -18,6 +18,7 @@
   "hsSlogan": "Bringing OSS\nTo us",
   "hsLogoHint": "Empathetic LLC logo. Activate to go to the home page.",
   "hsVideoSemantics": "Empathetic LLC logo animation.",
+  "hsiOSWebVideo": "Currently, Flutter's video player does not work on iOS.\nWe apologize for the boring home page.",
 
   "ssDontCha": "Don't cha?",
   "ssDontChaHint": "GitHub link to the source code for this screen",

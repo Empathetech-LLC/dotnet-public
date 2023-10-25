@@ -190,6 +190,12 @@ abstract class Lang {
   /// **'Empathetic LLC logo animation.'**
   String get hsVideoSemantics;
 
+  /// No description provided for @hsiOSWebVideo.
+  ///
+  /// In en, this message translates to:
+  /// **'Currently, Flutter\'s video player does not work on iOS.\nWe apologize for the boring home page.'**
+  String get hsiOSWebVideo;
+
   /// No description provided for @ssDontCha.
   ///
   /// In en, this message translates to:

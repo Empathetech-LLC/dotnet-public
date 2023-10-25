@@ -3,6 +3,7 @@ import '../utils/utils.dart';
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -37,6 +38,107 @@ class _SupportScreenState extends State<SupportScreen> {
   final double _padding = EzConfig.instance.prefs[paddingKey];
   final double _textSpacer = EzConfig.instance.prefs[textSpacingKey];
   final double _buttonSpacer = EzConfig.instance.prefs[buttonSpacingKey];
+
+  // Define the buttons //
+
+  /// At the time of writing, there is a visual bug with [ElevatedButton.icon] on iOS browsers
+  List<Widget> _directDonations(BuildContext context) {
+    return (kIsWeb && defaultTargetPlatform == TargetPlatform.iOS)
+        ? [
+            // PayPal
+            ElevatedButton(
+              onPressed: () => launchUrl(Uri.parse(EmpathetechPayPal)),
+              child: const Text("PayPal"),
+            ),
+            EzSwapSpacer(_buttonSpacer),
+
+            // Venmo
+            ElevatedButton(
+              onPressed: () => launchUrl(Uri.parse(EmpathetechVenmo)),
+              child: const Text("Venmo"),
+            ),
+            EzSwapSpacer(_buttonSpacer),
+
+            // CashApp
+            ElevatedButton(
+              onPressed: () => launchUrl(Uri.parse(EmpathetechCashApp)),
+              child: const Text("CashApp"),
+            ),
+          ]
+        : [
+            // PayPal
+            ElevatedButton.icon(
+              onPressed: () => launchUrl(Uri.parse(EmpathetechPayPal)),
+              icon: Icon(LineIcons.paypal),
+              label: const Text("PayPal"),
+            ),
+            EzSwapSpacer(_buttonSpacer),
+
+            // Venmo
+            ElevatedButton(
+              onPressed: () => launchUrl(Uri.parse(EmpathetechVenmo)),
+              child: const Text("Venmo"),
+            ),
+            EzSwapSpacer(_buttonSpacer),
+
+            // CashApp
+            ElevatedButton.icon(
+              onPressed: () => launchUrl(Uri.parse(EmpathetechCashApp)),
+              icon: Icon(LineIcons.dollarSign),
+              label: const Text("CashApp"),
+            ),
+          ];
+  }
+
+  /// At the time of writing, there is a visual bug with [ElevatedButton.icon] on iOS
+  List<Widget> _indirectDonations(BuildContext context) {
+    return (kIsWeb && defaultTargetPlatform == TargetPlatform.iOS)
+        ? [
+            // Patreon
+            ElevatedButton(
+              onPressed: () => launchUrl(Uri.parse(EmpathetechPatreon)),
+              child: const Text("Patreon"),
+            ),
+            EzSwapSpacer(_buttonSpacer),
+
+            // Buy Me a Coffee
+            ElevatedButton(
+              onPressed: () => launchUrl(Uri.parse(EmpathetechCoffee)),
+              child: const Text("Buy Me a Coffee"),
+            ),
+            EzSwapSpacer(_buttonSpacer),
+
+            // Ko-fi
+            ElevatedButton(
+              onPressed: () => launchUrl(Uri.parse(EmpathetechKofi)),
+              child: const Text("Ko-fi"),
+            ),
+          ]
+        : [
+            // Patreon
+            ElevatedButton.icon(
+              onPressed: () => launchUrl(Uri.parse(EmpathetechPatreon)),
+              icon: Icon(LineIcons.patreon),
+              label: const Text("Patreon"),
+            ),
+            EzSwapSpacer(_buttonSpacer),
+
+            // Buy Me a Coffee
+            ElevatedButton.icon(
+              onPressed: () => launchUrl(Uri.parse(EmpathetechCoffee)),
+              icon: Icon(LineIcons.coffee),
+              label: const Text("Buy Me a Coffee"),
+            ),
+            EzSwapSpacer(_buttonSpacer),
+
+            // Ko-fi
+            ElevatedButton.icon(
+              onPressed: () => launchUrl(Uri.parse(EmpathetechKofi)),
+              icon: Icon(LineIcons.coffee),
+              label: const Text("Ko-fi"),
+            ),
+          ];
+  }
 
   // Return the build //
 
@@ -102,29 +204,7 @@ class _SupportScreenState extends State<SupportScreen> {
             EzRowCol(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                // PayPal
-                ElevatedButton.icon(
-                  onPressed: () => launchUrl(Uri.parse(EmpathetechPayPal)),
-                  icon: Icon(LineIcons.paypal),
-                  label: const Text("PayPal"),
-                ),
-                EzSwapSpacer(_buttonSpacer),
-
-                // Venmo
-                ElevatedButton(
-                  onPressed: () => launchUrl(Uri.parse(EmpathetechVenmo)),
-                  child: const Text("Venmo"),
-                ),
-                EzSwapSpacer(_buttonSpacer),
-
-                // CashApp
-                ElevatedButton.icon(
-                  onPressed: () => launchUrl(Uri.parse(EmpathetechCashApp)),
-                  icon: Icon(LineIcons.dollarSign),
-                  label: const Text("CashApp"),
-                ),
-              ],
+              children: _directDonations(context),
             ),
             EzSpacer(_buttonSpacer),
 
@@ -132,30 +212,7 @@ class _SupportScreenState extends State<SupportScreen> {
             EzRowCol(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                // Patreon
-                ElevatedButton.icon(
-                  onPressed: () => launchUrl(Uri.parse(EmpathetechPatreon)),
-                  icon: Icon(LineIcons.patreon),
-                  label: const Text("Patreon"),
-                ),
-                EzSwapSpacer(_buttonSpacer),
-
-                // Buy Me a Coffee
-                ElevatedButton.icon(
-                  onPressed: () => launchUrl(Uri.parse(EmpathetechCoffee)),
-                  icon: Icon(LineIcons.coffee),
-                  label: const Text("Buy Me a Coffee"),
-                ),
-                EzSwapSpacer(_buttonSpacer),
-
-                // Ko-fi
-                ElevatedButton.icon(
-                  onPressed: () => launchUrl(Uri.parse(EmpathetechKofi)),
-                  icon: Icon(LineIcons.coffee),
-                  label: const Text("Ko-fi"),
-                ),
-              ],
+              children: _indirectDonations(context),
             ),
             EzSpacer(_textSpacer),
 

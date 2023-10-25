@@ -3,6 +3,7 @@ import '../utils/utils.dart';
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 import 'package:video_player/video_player.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 
@@ -52,29 +53,37 @@ class _HomeScreenState extends State<HomeScreen> {
     return DotNetScaffold(
       body: EzScreen(
         margin: EdgeInsets.zero,
-        child: Stack(
-          alignment: AlignmentDirectional.topCenter,
-          children: [
-            // Video background
-            Positioned.fill(
-              child: _videoController.value.isInitialized
-                  ? EzVideoPlayer(
-                      controller: _videoController,
-                      sliderVis: ButtonVis.alwaysOff,
-                      variableVolume: false,
-                      iconColor: _isLight ? Colors.black : Colors.white,
-                      semantics: Lang.of(context)!.hsVideoSemantics,
-                    )
-                  : SizedBox.shrink(),
-            ),
+        child:
+            // At the time of writing, VideoPlayerController does not work on iOS browsers
+            (kIsWeb && defaultTargetPlatform == TargetPlatform.iOS)
+                ? EzWarning(message: Lang.of(context)!.hsiOSWebVideo)
+                : Stack(
+                    alignment: AlignmentDirectional.topCenter,
+                    children: [
+                      // Video background
+                      Positioned.fill(
+                        child: _videoController.value.isInitialized
+                            ? EzVideoPlayer(
+                                controller: _videoController,
+                                sliderVis: ButtonVis.alwaysOff,
+                                variableVolume: false,
+                                iconColor:
+                                    _isLight ? Colors.black : Colors.white,
+                                semantics: Lang.of(context)!.hsVideoSemantics,
+                              )
+                            : SizedBox.shrink(),
+                      ),
 
-            // Slogan
-            Positioned(
-              top: EzConfig.instance.prefs[marginKey],
-              child: EzText(Lang.of(context)!.hsSlogan, style: headerStyle),
-            ),
-          ],
-        ),
+                      // Slogan
+                      Positioned(
+                        top: EzConfig.instance.prefs[marginKey],
+                        child: EzText(
+                          Lang.of(context)!.hsSlogan,
+                          style: headerStyle,
+                        ),
+                      ),
+                    ],
+                  ),
       ),
       fab: const SettingsFAB(),
     );

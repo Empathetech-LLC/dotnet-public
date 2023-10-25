@@ -55,6 +55,10 @@ class LangEs extends Lang {
   String get hsVideoSemantics => 'Animación del logo de Empathetic LLC.';
 
   @override
+  String get hsiOSWebVideo =>
+      'Traducido por IA:\nActualmente, el reproductor de video de Flutter no funciona en iOS.\nPedimos disculpas por la página de inicio aburrida.';
+
+  @override
   String get ssDontCha => '¿No desearías?';
 
   @override

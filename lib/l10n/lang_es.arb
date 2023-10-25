@@ -18,6 +18,7 @@
   "hsSlogan": "Trayendo OSS\nHacia nosotros",
   "hsLogoHint": "Logo de Empathetic LLC. Actívalo para ir a la página principal.",
   "hsVideoSemantics": "Animación del logo de Empathetic LLC.",
+  "hsiOSWebVideo": "Traducido por IA:\nActualmente, el reproductor de video de Flutter no funciona en iOS.\nPedimos disculpas por la página de inicio aburrida.",
 
   "ssDontCha": "¿No desearías?",
   "ssDontChaHint": "Enlace de GitHub al código fuente de esta pantalla",

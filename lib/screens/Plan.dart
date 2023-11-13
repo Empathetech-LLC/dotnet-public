@@ -181,6 +181,17 @@ class _PlanScreenState extends State<PlanScreen> {
               style: _contentStyle,
               semantics: Lang.of(context)!.plsDoItRightContent4Fix,
             ),
+            EzPlainText(
+              Lang.of(context)!.plsDoItRightContent5,
+              context: context,
+              style: _contentStyle,
+            ),
+            EzInlineLink(
+              Lang.of(context)!.fpsPageTitle.toLowerCase(),
+              style: _contentLinkStyle,
+              semanticsLabel: Lang.of(context)!.fpsPageHint,
+              onTap: () => context.goNamed(finPlanRoute),
+            ),
           ],
           textAlign: TextAlign.left,
         )),

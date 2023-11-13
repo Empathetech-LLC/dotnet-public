@@ -21,7 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    setPageTitle(context, empathetech);
+    setPageTitle(context, "Empathetech");
     _initializeVideoController();
   }
 

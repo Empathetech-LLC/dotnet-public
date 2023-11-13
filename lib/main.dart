@@ -51,6 +51,13 @@ final GoRouter _router = GoRouter(
           },
         ),
         GoRoute(
+          name: finPlanRoute,
+          path: finPlanRoute,
+          builder: (BuildContext context, GoRouterState state) {
+            return const FinPlanScreen();
+          },
+        ),
+        GoRoute(
           name: teamRoute,
           path: teamRoute,
           builder: (BuildContext context, GoRouterState state) {
@@ -105,7 +112,7 @@ class ETechDotNet extends StatelessWidget {
         supportedLocales: Lang.supportedLocales + EFUILang.supportedLocales,
         localizationsDelegates:
             Lang.localizationsDelegates + EFUILang.localizationsDelegates,
-        title: empathetech,
+        title: "Empathetech",
         routerConfig: _router,
       ),
     );

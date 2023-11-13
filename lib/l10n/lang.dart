@@ -94,6 +94,54 @@ abstract class Lang {
     Locale('es')
   ];
 
+  /// No description provided for @gGitHint.
+  ///
+  /// In en, this message translates to:
+  /// **'GitHub icon, activate to open the page for Empathetic LLC'**
+  String get gGitHint;
+
+  /// No description provided for @gLinkedHint.
+  ///
+  /// In en, this message translates to:
+  /// **'LinkedIn icon, activate to open the page for Empathetic LLC'**
+  String get gLinkedHint;
+
+  /// No description provided for @gMastodonHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Mastodon icon, activate to open the page for Empathetic LLC'**
+  String get gMastodonHint;
+
+  /// No description provided for @gEmailHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Email icon, activate to draft an email to Empathetic LLC'**
+  String get gEmailHint;
+
+  /// No description provided for @gFahIconHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Folding at home icon, activate to open their site'**
+  String get gFahIconHint;
+
+  /// No description provided for @gAnitaBorgIconHint.
+  ///
+  /// In en, this message translates to:
+  /// **'AnitaB.org icon, activate to open their site'**
+  String get gAnitaBorgIconHint;
+
+  /// No description provided for @gCodeDotOrgIconHint.
+  ///
+  /// In en, this message translates to:
+  /// **'code.org icon, activate to open their site'**
+  String get gCodeDotOrgIconHint;
+
+  /// No description provided for @gWorldSavvyIconHint.
+  ///
+  /// In en, this message translates to:
+  /// **'World Savvy icon, activate to open their site'**
+  String get gWorldSavvyIconHint;
+
   /// No description provided for @gBack.
   ///
   /// In en, this message translates to:
@@ -111,30 +159,6 @@ abstract class Lang {
   /// In en, this message translates to:
   /// **'Reach out'**
   String get gReachOut;
-
-  /// No description provided for @gGitHint.
-  ///
-  /// In en, this message translates to:
-  /// **'Open the Empathetic LLC GitHub page'**
-  String get gGitHint;
-
-  /// No description provided for @gLinkedHint.
-  ///
-  /// In en, this message translates to:
-  /// **'Open the Empathetic LLC LinkedIn page'**
-  String get gLinkedHint;
-
-  /// No description provided for @gMastodonHint.
-  ///
-  /// In en, this message translates to:
-  /// **'Open the Empathetic LLC Mastodon page'**
-  String get gMastodonHint;
-
-  /// No description provided for @gEmailHint.
-  ///
-  /// In en, this message translates to:
-  /// **'Open an email to Empathetic LLC'**
-  String get gEmailHint;
 
   /// No description provided for @gEFUIHint.
   ///
@@ -451,14 +475,104 @@ abstract class Lang {
   /// No description provided for @plsDoItRightContent4.
   ///
   /// In en, this message translates to:
-  /// **' the world alone.\n\nFor the closed source version(s), we are fully ready to commit that...\n\n\t1. All Empathetech made SaaS products will have a lifetime option.\n\t2. We find selling personal information to be immoral; we will never auction your digital identity. That\'s why we charge for our services.\n\nAlso, let\'s briefly return to the bridges metaphor. A bridge without a place to go, or anyone that wants to use it, isn\'t a bridge; it\'s a waste of resources. That\'s why we\'re ready to make another commitment:\n\nRegardless of official structure (currently LLC) Empathetech will operate as a not-for-profit, mission based entity. Meaning...\n\t100% of net profit derived from our open source ecosystem app(s) will be commited back to the projects they are built upon\n\t100% of net profit derived from all other sources (consulting, donations, merch, etc.) will be committed to promoting global equity in tech education'**
+  /// **' the world alone.\n\nFor the closed source version(s), we are fully ready to commit that...\n\n\t\t1. All Empathetech made SaaS products will have a lifetime option.\n\t\t2. We find selling personal information to be immoral; we will never auction your digital identity. That\'s why we charge for our services.\n\nAlso, let\'s briefly return to the bridges metaphor. A bridge without a place to go, or anyone that wants to use it, isn\'t a bridge; it\'s a waste of resources. That\'s why we\'re ready to make another commitment:\n\nRegardless of official structure (currently LLC) Empathetech will operate as a not-for-profit, mission based entity. Meaning...\n\n\t\t100% of net profit derived from our open source ecosystem app(s) will be commited back to the projects they are built upon\n\t\t100% of net profit derived from all other sources (consulting, donations, merch, etc.) will be committed to promoting global equity in tech education'**
   String get plsDoItRightContent4;
 
   /// No description provided for @plsDoItRightContent4Fix.
   ///
   /// In en, this message translates to:
-  /// **' the world alone.\n\nFor the closed source version(s), we are fully ready to commit that...\n\n\t1. All Empathetic made SaaS products will have be a lifetime option.\n\t2. We find selling personal information to be immoral; we will never auction your digital identity. That\'s why we charge for our services.\n\nAlso, let\'s briefly return to the bridges metaphor. A bridge without a place to go, or anyone that wants to use it, isn\'t a bridge; it\'s a waste of resources. That\'s why we\'re ready to make another commitment:\n\nRegardless of official structure (currently LLC) Empathetic will operate as a not-for-profit, mission based entity. Meaning...\n\t100% of net profit derived from our open source ecosystem app(s) will be commited back to the projects they are built upon\n\t100% of net profit derived from all other sources (consulting, dontations, merch, etc.) will be committed to promoting global equity in tech education'**
+  /// **' the world alone.\n\nFor the closed source version(s), we are fully ready to commit that...\n\n\t\t1. All Empathetic made SaaS products will have be a lifetime option.\n\t\t2. We find selling personal information to be immoral; we will never auction your digital identity. That\'s why we charge for our services.\n\nAlso, let\'s briefly return to the bridges metaphor. A bridge without a place to go, or anyone that wants to use it, isn\'t a bridge; it\'s a waste of resources. That\'s why we\'re ready to make another commitment:\n\nRegardless of official structure (currently LLC) Empathetic will operate as a not-for-profit, mission based entity. Meaning...\n\n\t\t100% of net profit derived from our open source ecosystem app(s) will be commited back to the projects they are built upon\n\t\t100% of net profit derived from all other sources (consulting, dontations, merch, etc.) will be committed to promoting global equity in tech education'**
   String get plsDoItRightContent4Fix;
+
+  /// No description provided for @plsDoItRightContent5.
+  ///
+  /// In en, this message translates to:
+  /// **'\n\nCheckout the '**
+  String get plsDoItRightContent5;
+
+  /// No description provided for @fpsPageTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Financial plan'**
+  String get fpsPageTitle;
+
+  /// No description provided for @fpsPageHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Open the financial plan page'**
+  String get fpsPageHint;
+
+  /// No description provided for @fpsEventual.
+  ///
+  /// In en, this message translates to:
+  /// **'eventual'**
+  String get fpsEventual;
+
+  /// No description provided for @fpsRaised.
+  ///
+  /// In en, this message translates to:
+  /// **'{income} of {goal} raised'**
+  String fpsRaised(Object goal, Object income);
+
+  /// No description provided for @fpsYear.
+  ///
+  /// In en, this message translates to:
+  /// **'for 2023'**
+  String get fpsYear;
+
+  /// No description provided for @fpsSplit.
+  ///
+  /// In en, this message translates to:
+  /// **'The {profit} profit will be evenly split amongst...'**
+  String fpsSplit(Object profit);
+
+  /// No description provided for @fpsAnitaMission.
+  ///
+  /// In en, this message translates to:
+  /// **'AnitaB.org envisions a future where the people who imagine and build technology mirror the people and societies for whom they build it. They connect, inspire, and guide women in computing, and organizations that view technology innovation as a strategic imperative.'**
+  String get fpsAnitaMission;
+
+  /// No description provided for @fpsCodeMission.
+  ///
+  /// In en, this message translates to:
+  /// **'Code.org is an education innovation nonprofit dedicated to the vision that every student in every school has the opportunity to learn computer science as part of their core K-12 education.'**
+  String get fpsCodeMission;
+
+  /// No description provided for @fpsSavvyMission.
+  ///
+  /// In en, this message translates to:
+  /// **'World Savvy collaborates with educators and school and district leaders to build future-ready learning environments that are inclusive, adaptive, and prepare students to thrive today and in the future.'**
+  String get fpsSavvyMission;
+
+  /// No description provided for @fpsAnitaCNavHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Open a link to AnitaB.org on Charity Navigator'**
+  String get fpsAnitaCNavHint;
+
+  /// No description provided for @fpsCodeCNavHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Open a link to code.org on Charity Navigator'**
+  String get fpsCodeCNavHint;
+
+  /// No description provided for @fpsSavvyCNavHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Open a link to World Savvy on Charity Navigator'**
+  String get fpsSavvyCNavHint;
+
+  /// No description provided for @fpsCheck.
+  ///
+  /// In en, this message translates to:
+  /// **'Check our math'**
+  String get fpsCheck;
+
+  /// No description provided for @fpsCheckHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Check our math; open a GitHub link to the source code for this screen'**
+  String get fpsCheckHint;
 
   /// No description provided for @tsPageTitle.
   ///
@@ -483,12 +597,6 @@ abstract class Lang {
   /// In en, this message translates to:
   /// **'The Founder'**
   String get tsTheFounder;
-
-  /// No description provided for @tsResumeHint.
-  ///
-  /// In en, this message translates to:
-  /// **'Open a link to his resume'**
-  String get tsResumeHint;
 
   /// No description provided for @tsCommunity.
   ///
@@ -567,12 +675,6 @@ abstract class Lang {
   /// In en, this message translates to:
   /// **'Power?'**
   String get spsPowerQ;
-
-  /// No description provided for @fahIconHint.
-  ///
-  /// In en, this message translates to:
-  /// **'Folding at home icon'**
-  String get fahIconHint;
 
   /// No description provided for @fahJoin.
   ///

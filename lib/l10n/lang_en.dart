@@ -5,6 +5,38 @@ class LangEn extends Lang {
   LangEn([String locale = 'en']) : super(locale);
 
   @override
+  String get gGitHint =>
+      'GitHub icon, activate to open the page for Empathetic LLC';
+
+  @override
+  String get gLinkedHint =>
+      'LinkedIn icon, activate to open the page for Empathetic LLC';
+
+  @override
+  String get gMastodonHint =>
+      'Mastodon icon, activate to open the page for Empathetic LLC';
+
+  @override
+  String get gEmailHint =>
+      'Email icon, activate to draft an email to Empathetic LLC';
+
+  @override
+  String get gFahIconHint =>
+      'Folding at home icon, activate to open their site';
+
+  @override
+  String get gAnitaBorgIconHint =>
+      'AnitaB.org icon, activate to open their site';
+
+  @override
+  String get gCodeDotOrgIconHint =>
+      'code.org icon, activate to open their site';
+
+  @override
+  String get gWorldSavvyIconHint =>
+      'World Savvy icon, activate to open their site';
+
+  @override
   String get gBack => 'Go back';
 
   @override
@@ -12,18 +44,6 @@ class LangEn extends Lang {
 
   @override
   String get gReachOut => 'Reach out';
-
-  @override
-  String get gGitHint => 'Open the Empathetic LLC GitHub page';
-
-  @override
-  String get gLinkedHint => 'Open the Empathetic LLC LinkedIn page';
-
-  @override
-  String get gMastodonHint => 'Open the Empathetic LLC Mastodon page';
-
-  @override
-  String get gEmailHint => 'Open an email to Empathetic LLC';
 
   @override
   String get gEFUIHint => 'Empathetic Flutter UI';
@@ -203,11 +223,66 @@ class LangEn extends Lang {
 
   @override
   String get plsDoItRightContent4 =>
-      ' the world alone.\n\nFor the closed source version(s), we are fully ready to commit that...\n\n\t1. All Empathetech made SaaS products will have a lifetime option.\n\t2. We find selling personal information to be immoral; we will never auction your digital identity. That\'s why we charge for our services.\n\nAlso, let\'s briefly return to the bridges metaphor. A bridge without a place to go, or anyone that wants to use it, isn\'t a bridge; it\'s a waste of resources. That\'s why we\'re ready to make another commitment:\n\nRegardless of official structure (currently LLC) Empathetech will operate as a not-for-profit, mission based entity. Meaning...\n\t100% of net profit derived from our open source ecosystem app(s) will be commited back to the projects they are built upon\n\t100% of net profit derived from all other sources (consulting, donations, merch, etc.) will be committed to promoting global equity in tech education';
+      ' the world alone.\n\nFor the closed source version(s), we are fully ready to commit that...\n\n\t\t1. All Empathetech made SaaS products will have a lifetime option.\n\t\t2. We find selling personal information to be immoral; we will never auction your digital identity. That\'s why we charge for our services.\n\nAlso, let\'s briefly return to the bridges metaphor. A bridge without a place to go, or anyone that wants to use it, isn\'t a bridge; it\'s a waste of resources. That\'s why we\'re ready to make another commitment:\n\nRegardless of official structure (currently LLC) Empathetech will operate as a not-for-profit, mission based entity. Meaning...\n\n\t\t100% of net profit derived from our open source ecosystem app(s) will be commited back to the projects they are built upon\n\t\t100% of net profit derived from all other sources (consulting, donations, merch, etc.) will be committed to promoting global equity in tech education';
 
   @override
   String get plsDoItRightContent4Fix =>
-      ' the world alone.\n\nFor the closed source version(s), we are fully ready to commit that...\n\n\t1. All Empathetic made SaaS products will have be a lifetime option.\n\t2. We find selling personal information to be immoral; we will never auction your digital identity. That\'s why we charge for our services.\n\nAlso, let\'s briefly return to the bridges metaphor. A bridge without a place to go, or anyone that wants to use it, isn\'t a bridge; it\'s a waste of resources. That\'s why we\'re ready to make another commitment:\n\nRegardless of official structure (currently LLC) Empathetic will operate as a not-for-profit, mission based entity. Meaning...\n\t100% of net profit derived from our open source ecosystem app(s) will be commited back to the projects they are built upon\n\t100% of net profit derived from all other sources (consulting, dontations, merch, etc.) will be committed to promoting global equity in tech education';
+      ' the world alone.\n\nFor the closed source version(s), we are fully ready to commit that...\n\n\t\t1. All Empathetic made SaaS products will have be a lifetime option.\n\t\t2. We find selling personal information to be immoral; we will never auction your digital identity. That\'s why we charge for our services.\n\nAlso, let\'s briefly return to the bridges metaphor. A bridge without a place to go, or anyone that wants to use it, isn\'t a bridge; it\'s a waste of resources. That\'s why we\'re ready to make another commitment:\n\nRegardless of official structure (currently LLC) Empathetic will operate as a not-for-profit, mission based entity. Meaning...\n\n\t\t100% of net profit derived from our open source ecosystem app(s) will be commited back to the projects they are built upon\n\t\t100% of net profit derived from all other sources (consulting, dontations, merch, etc.) will be committed to promoting global equity in tech education';
+
+  @override
+  String get plsDoItRightContent5 => '\n\nCheckout the ';
+
+  @override
+  String get fpsPageTitle => 'Financial plan';
+
+  @override
+  String get fpsPageHint => 'Open the financial plan page';
+
+  @override
+  String get fpsEventual => 'eventual';
+
+  @override
+  String fpsRaised(Object goal, Object income) {
+    return '$income of $goal raised';
+  }
+
+  @override
+  String get fpsYear => 'for 2023';
+
+  @override
+  String fpsSplit(Object profit) {
+    return 'The $profit profit will be evenly split amongst...';
+  }
+
+  @override
+  String get fpsAnitaMission =>
+      'AnitaB.org envisions a future where the people who imagine and build technology mirror the people and societies for whom they build it. They connect, inspire, and guide women in computing, and organizations that view technology innovation as a strategic imperative.';
+
+  @override
+  String get fpsCodeMission =>
+      'Code.org is an education innovation nonprofit dedicated to the vision that every student in every school has the opportunity to learn computer science as part of their core K-12 education.';
+
+  @override
+  String get fpsSavvyMission =>
+      'World Savvy collaborates with educators and school and district leaders to build future-ready learning environments that are inclusive, adaptive, and prepare students to thrive today and in the future.';
+
+  @override
+  String get fpsAnitaCNavHint =>
+      'Open a link to AnitaB.org on Charity Navigator';
+
+  @override
+  String get fpsCodeCNavHint => 'Open a link to code.org on Charity Navigator';
+
+  @override
+  String get fpsSavvyCNavHint =>
+      'Open a link to World Savvy on Charity Navigator';
+
+  @override
+  String get fpsCheck => 'Check our math';
+
+  @override
+  String get fpsCheckHint =>
+      'Check our math; open a GitHub link to the source code for this screen';
 
   @override
   String get tsPageTitle => 'Team';
@@ -221,9 +296,6 @@ class LangEn extends Lang {
 
   @override
   String get tsTheFounder => 'The Founder';
-
-  @override
-  String get tsResumeHint => 'Open a link to his resume';
 
   @override
   String get tsCommunity => 'Community';
@@ -265,9 +337,6 @@ class LangEn extends Lang {
 
   @override
   String get spsPowerQ => 'Power?';
-
-  @override
-  String get fahIconHint => 'Folding at home icon';
 
   @override
   String get fahJoin => 'Join the Fold!';

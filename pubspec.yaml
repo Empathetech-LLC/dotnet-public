@@ -2,7 +2,7 @@ name: dotnet
 description: "Empathetech's mission is to re-balance the power in tech by making open source software more accessible."
 publish_to: 'none'
 
-version: 2.1.0
+version: 2.2.0
 
 environment:
   sdk: '>=3.1.0 <4.0.0'
@@ -21,14 +21,16 @@ dependencies:
   url_launcher: ^6.1.14
 
   # Community
-  flutter_platform_widgets: ^3.3.5
+  flutter_platform_widgets: ^5.0.0
   line_icons: ^2.0.3
   
-  empathetech_flutter_ui: ^4.3.0
+  empathetech_flutter_ui: ^4.3.2
   # empathetech_flutter_ui:
   #   path: ../empathetech_flutter_ui
    
-  efui_video_player: ^1.0.2
+  efui_video_player: ^1.0.3
+  # efui_video_player:
+  #   path: ../efui_video_player
   
 dev_dependencies:
   dependency_validator: ^3.2.3
@@ -41,6 +43,8 @@ flutter:
 
   assets:
     - assets/
+    - assets/AnitaB.webp
+    - assets/code-dot-org.png
     - assets/dark-animation.mp4
     - assets/light-animation.mp4
     - assets/dark-logo.png
@@ -48,6 +52,7 @@ flutter:
     - assets/founder.png
     - assets/fah.png
     - assets/smoke-signal-icon.png
+    - assets/world-savvy.webp
 
 flutter_launcher_icons:
   image_path: assets/dark-logo.png

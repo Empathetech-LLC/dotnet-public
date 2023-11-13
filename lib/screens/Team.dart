@@ -80,14 +80,9 @@ class _TeamScreenState extends State<TeamScreen> {
                       Lang.of(context)!.tsTheFounder,
                       style: _titleStyle,
                     ),
-                    EzLink(
+                    EzText(
                       'Michael Waldron',
-                      style: _contentLinkStyle,
-                      semanticsLabel:
-                          "Michael Waldron ${Lang.of(context)!.tsResumeHint}",
-                      url: Uri.parse(
-                        "https://github.com/empathictech/resume/blob/main/public-resume.pdf",
-                      ),
+                      style: _contentStyle,
                     ),
                   ],
                 ),
@@ -125,7 +120,7 @@ class _TeamScreenState extends State<TeamScreen> {
                   'Graphic Alert',
                   style: _titleLinkStyle,
                   semanticsLabel: Lang.of(context)!.tsGALinkHint,
-                  url: Uri.parse("https://www.fiverr.com/graphic_alert"),
+                  url: Uri.parse(graphicAlertLink),
                 ),
                 EzText(
                   Lang.of(context)!.tsGADescription,

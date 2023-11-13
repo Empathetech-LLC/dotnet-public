@@ -3,6 +3,7 @@
 export 'Home.dart';
 export 'Products.dart';
 export 'Plan.dart';
+export 'FinPlan.dart';
 export 'Team.dart';
 export 'Support.dart';
 export 'Settings.dart';
@@ -13,6 +14,7 @@ export 'StyleSettings.dart';
 
 const String productsRoute = 'products';
 const String planRoute = 'plan';
+const String finPlanRoute = 'fin-plan';
 const String teamRoute = 'team';
 const String supportRoute = 'support';
 const String settingsRoute = 'settings';

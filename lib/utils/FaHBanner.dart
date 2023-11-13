@@ -31,10 +31,10 @@ class FaHBanner extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             // Icon
-            // Scales with text
-            EzImage(
+            EzLinkImage(
+              url: faHLink,
               image: const AssetImage(fahIconPath),
-              semanticLabel: Lang.of(context)!.fahIconHint,
+              semanticLabel: Lang.of(context)!.gFahIconHint,
               width: 2.0 *
                   CircleAvatarRadius *
                   sqrt(MediaQuery.of(context).textScaleFactor),
@@ -42,6 +42,7 @@ class FaHBanner extends StatelessWidget {
                   CircleAvatarRadius *
                   sqrt(MediaQuery.of(context).textScaleFactor),
             ),
+
             EzSwapSpacer(spacer),
 
             // External links && info

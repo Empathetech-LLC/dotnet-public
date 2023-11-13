@@ -5,6 +5,38 @@ class LangEs extends Lang {
   LangEs([String locale = 'es']) : super(locale);
 
   @override
+  String get gGitHint =>
+      'Icono de GitHub, activar para abrir la página de Empathetic LLC';
+
+  @override
+  String get gLinkedHint =>
+      'Icono de LinkedIn, activar para abrir la página de Empathetic LLC';
+
+  @override
+  String get gMastodonHint =>
+      'Icono de Mastodon, activar para abrir la página de Empathetic LLC';
+
+  @override
+  String get gEmailHint =>
+      'Icono de correo electrónico, activar para redactar un correo a Empathetic LLC';
+
+  @override
+  String get gFahIconHint =>
+      'Icono de Folding at home, activar para abrir su sitio web';
+
+  @override
+  String get gAnitaBorgIconHint =>
+      'Icono de AnitaB.org, activar para abrir su sitio web';
+
+  @override
+  String get gCodeDotOrgIconHint =>
+      'Icono de code.org, activar para abrir su sitio web';
+
+  @override
+  String get gWorldSavvyIconHint =>
+      'Icono de World Savvy, activar para abrir su sitio web';
+
+  @override
   String get gBack => 'Regresar';
 
   @override
@@ -12,18 +44,6 @@ class LangEs extends Lang {
 
   @override
   String get gReachOut => 'Comunícate';
-
-  @override
-  String get gGitHint => 'Abrir la página de GitHub de Empathetic LLC';
-
-  @override
-  String get gLinkedHint => 'Abrir la página de LinkedIn de Empathetic LLC';
-
-  @override
-  String get gMastodonHint => 'Abrir la página de Mastodon de Empathetic LLC';
-
-  @override
-  String get gEmailHint => 'Abrir un correo electrónico a Empathetic LLC';
 
   @override
   String get gEFUIHint => 'Empathetic Flutter UI';
@@ -177,7 +197,7 @@ class LangEs extends Lang {
 
   @override
   String get plsDoItRightContent1 =>
-      'Traducido por IA:\n Si los proveedores de servicios recuerdan mantenerse Empathetech, ';
+      'Traducido por IA:\nSi los proveedores de servicios recuerdan mantenerse Empathetech, ';
 
   @override
   String get plsDoItRightContent1Fix =>
@@ -208,11 +228,67 @@ class LangEs extends Lang {
 
   @override
   String get plsDoItRightContent4 =>
-      ' cambiar el mundo solo.\n\nPara la(s) versión(es) de código cerrado, estamos completamente listos para comprometernos a que...\n\n\t1. Todos los productos SaaS creados por Empathetech tendrán una opción de por vida.\n\t2. Consideramos que vender información personal es inmoral; nunca subastaremos tu identidad digital. Por eso cobramos por nuestros servicios.\n\nAdemás, volvamos brevemente a la metáfora de los puentes. Un puente sin un lugar a donde ir, o sin nadie que quiera usarlo, no es un puente; es un desperdicio de recursos. Por eso estamos listos para hacer otro compromiso:\n\nIndependientemente de la estructura oficial (actualmente LLC) Empathetech operará como una entidad sin fines de lucro, basada en una misión. Lo que significa...\n\t100% del beneficio neto obtenido de nuestra(s) aplicación(es) de ecosistema de código abierto será destinado nuevamente a los proyectos en los que se basan\n\t100% del beneficio neto obtenido de todas las demás fuentes (consultoría, donaciones, mercancía, etc.) será destinado a promover la equidad global en la educación tecnológica';
+      ' cambiar el mundo solo.\n\nPara la(s) versión(es) de código cerrado, estamos completamente listos para comprometernos a que...\n\n\t\t1. Todos los productos SaaS creados por Empathetech tendrán una opción de por vida.\n\t\t2. Consideramos que vender información personal es inmoral; nunca subastaremos tu identidad digital. Por eso cobramos por nuestros servicios.\n\nAdemás, volvamos brevemente a la metáfora de los puentes. Un puente sin un lugar a donde ir, o sin nadie que quiera usarlo, no es un puente; es un desperdicio de recursos. Por eso estamos listos para hacer otro compromiso:\n\nIndependientemente de la estructura oficial (actualmente LLC) Empathetech operará como una entidad sin fines de lucro, basada en una misión. Lo que significa...\n\n\t\t100% del beneficio neto obtenido de nuestra(s) aplicación(es) de ecosistema de código abierto será destinado nuevamente a los proyectos en los que se basan\n\t\t100% del beneficio neto obtenido de todas las demás fuentes (consultoría, donaciones, mercancía, etc.) será destinado a promover la equidad global en la educación tecnológica';
 
   @override
   String get plsDoItRightContent4Fix =>
-      ' cambiar el mundo solo.\n\nPara la(s) versión(es) de código cerrado, estamos completamente listos para comprometernos a que...\n\n\t1. Todos los productos SaaS creados por Empathetic tendrán una opción de por vida.\n\t2. Consideramos que vender información personal es inmoral; nunca subastaremos tu identidad digital. Por eso cobramos por nuestros servicios.\n\nAdemás, volvamos brevemente a la metáfora de los puentes. Un puente sin un lugar a donde ir, o sin nadie que quiera usarlo, no es un puente; es un desperdicio de recursos. Por eso estamos listos para hacer otro compromiso:\n\nIndependientemente de la estructura oficial (actualmente LLC) Empathetic operará como una entidad sin fines de lucro, basada en una misión. Lo que significa...\n\t100% del beneficio neto obtenido de nuestra(s) aplicación(es) de ecosistema de código abierto será destinado nuevamente a los proyectos en los que se basan\n\t100% del beneficio neto obtenido de todas las demás fuentes (consultoría, donaciones, mercancía, etc.) será destinado a promover la equidad global en la educación tecnológica';
+      ' cambiar el mundo solo.\n\nPara la(s) versión(es) de código cerrado, estamos completamente listos para comprometernos a que...\n\n\t\t1. Todos los productos SaaS creados por Empathetic tendrán una opción de por vida.\n\t\t2. Consideramos que vender información personal es inmoral; nunca subastaremos tu identidad digital. Por eso cobramos por nuestros servicios.\n\nAdemás, volvamos brevemente a la metáfora de los puentes. Un puente sin un lugar a donde ir, o sin nadie que quiera usarlo, no es un puente; es un desperdicio de recursos. Por eso estamos listos para hacer otro compromiso:\n\nIndependientemente de la estructura oficial (actualmente LLC) Empathetic operará como una entidad sin fines de lucro, basada en una misión. Lo que significa...\n\n\t\t100% del beneficio neto obtenido de nuestra(s) aplicación(es) de ecosistema de código abierto será destinado nuevamente a los proyectos en los que se basan\n\t\t100% del beneficio neto obtenido de todas las demás fuentes (consultoría, donaciones, mercancía, etc.) será destinado a promover la equidad global en la educación tecnológica';
+
+  @override
+  String get plsDoItRightContent5 => '\n\nRevisa el ';
+
+  @override
+  String get fpsPageTitle => 'Plan financiero';
+
+  @override
+  String get fpsPageHint => 'Abrir la página del plan financiero';
+
+  @override
+  String get fpsEventual => 'eventual';
+
+  @override
+  String fpsRaised(Object goal, Object income) {
+    return '$income de $goal recaudados';
+  }
+
+  @override
+  String get fpsYear => 'para el año 2023';
+
+  @override
+  String fpsSplit(Object profit) {
+    return 'Las ganancias de $profit se repartirán equitativamente entre...';
+  }
+
+  @override
+  String get fpsAnitaMission =>
+      'Traducido por IA:\nAnitaB.org visualiza un futuro en el que las personas que imaginan y construyen tecnología reflejen a las personas y sociedades para las cuales la construyen. Conectan, inspiran y guían a las mujeres en la informática y a las organizaciones que ven la innovación tecnológica como un imperativo estratégico.';
+
+  @override
+  String get fpsCodeMission =>
+      'Traducido por IA:\nCode.org es una organización sin fines de lucro dedicada a la innovación educativa, con la visión de que cada estudiante en cada escuela tenga la oportunidad de aprender ciencias de la computación como parte de su educación básica desde el jardín de infantes hasta el último grado.';
+
+  @override
+  String get fpsSavvyMission =>
+      'Traducido por IA:\nWorld Savvy colabora con educadores, líderes escolares y de distrito para crear entornos de aprendizaje preparados para el futuro que sean inclusivos, adaptativos y preparen a los estudiantes para prosperar hoy y en el futuro.';
+
+  @override
+  String get fpsAnitaCNavHint =>
+      'Abrir un enlace a AnitaB.org en Charity Navigator';
+
+  @override
+  String get fpsCodeCNavHint =>
+      'Abrir un enlace a code.org en Charity Navigator';
+
+  @override
+  String get fpsSavvyCNavHint =>
+      'Abrir un enlace a World Savvy en Charity Navigator';
+
+  @override
+  String get fpsCheck => 'Verifica nuestros cálculos';
+
+  @override
+  String get fpsCheckHint =>
+      'Verifica nuestro cálculo; abre un enlace de GitHub al código fuente de esta pantalla.';
 
   @override
   String get tsPageTitle => 'Equipo';
@@ -225,9 +301,6 @@ class LangEs extends Lang {
 
   @override
   String get tsTheFounder => 'El Fundador';
-
-  @override
-  String get tsResumeHint => 'Abrir un enlace a su currículum';
 
   @override
   String get tsCommunity => 'Comunidad';
@@ -269,9 +342,6 @@ class LangEs extends Lang {
 
   @override
   String get spsPowerQ => '¿Poder?';
-
-  @override
-  String get fahIconHint => 'Icono de folding at home';
 
   @override
   String get fahJoin => '¡Únete a la causa!';

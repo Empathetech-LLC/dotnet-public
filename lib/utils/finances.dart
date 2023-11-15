@@ -41,28 +41,27 @@ const Map<String, double> annualHours = {"Michael Waldron": 2080};
 /// Last validated: Q4 2023
 ///
 /// Our goal:
-///   For Empathetech employees to be able to live a comfortable life anywhere in the Country of Domicile.
+///   To enable Empathetech employees to live a comfortable life anywhere in the Country of Domicile.
 ///
 /// Our methodology:
-///   1.  Take the most expensive county (thus satisfying: "anywhere"):
-///         Santa Clara Country, California; https://livingwage.mit.edu/counties/06085
-///   2.  Use the 1 (Single) Adult table.
-///   3.  Use the Living Wage row.
-///   4.  The Living Wage data encompasses families with up to 3 children.
+///   1.  Take the highest cost region, thus satisfying: "anywhere"
+///         Currently: San Francisco County, California; https://livingwage.mit.edu/counties/06075
+///   2.  Use the 1 (Single) Adult table
+///   3.  Use the Living Wage row
+///   4.  The Living Wage data encompasses families with up to 3 children
 ///       Use this column to emulate a comfortable wage, accounting for comfort concepts un-included in basic needs...
 ///         - Caring for dependents other than children
 ///         - Having hobbies
 ///         - Going on vacations
-///         - Accruing  wealth so that you can retire earlier than the average of only 12 years before you die (in the US)
+///         - Accruing wealth so you can retire earlier than the average of only 12 years before you die (in the US)
 ///         - Providing all of the above to your children as well
-///   5.  The current value: $92.12/hour
-///   5b. P.S. If the Living Wage team at MIT adds larger families, Empathetech will remain at 3 until more internal research is completed (&& shared).
+///       Currently: $99.90/hour
 double _comfortableWage() {
-  return 92.12;
+  return 99.90;
 }
 
 /// Sum the totals from the latest YTD expense report
-/// See them here: https://github.com/Empathetech-LLC/expense-report
+/// See it here: https://github.com/Empathetech-LLC/expense-report
 Future<double> _gatherExpenses() async {
   final String csvData = await rootBundle.loadString(ytdReportPath);
   final List<String> lines = csvData.split('\n');
@@ -88,8 +87,8 @@ double calculateIncome() {
 }
 
 /// For prospective contractees: our rates follow a similar methodology to [_comfortableWage]
-/// However, we adjust for whatever county you live in.
-/// If you're international: we'll work it out. There's probably a cost of living converter for that.
+/// However, we adjust for whatever county you live in
+/// If you're international: we'll work it out (there's probably a converter we can use)
 double _gatherContracts() {
   return 0;
 }

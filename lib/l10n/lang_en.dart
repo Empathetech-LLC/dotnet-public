@@ -101,7 +101,7 @@ class LangEn extends Lang {
 
   @override
   String get psEFUIDescription =>
-      'EFUI is an open source Flutter package that creates a holistic foundation for digial accessibility.\nEFUI provides a starter kit for every pillar of digital accessibility:';
+      'EFUI is an open source Flutter package that creates a holistic foundation for digital accessibility.\nEFUI provides a starter kit for every pillar of digital accessibility:';
 
   @override
   String get psPlatform => '\nPlatform availability';
@@ -152,7 +152,7 @@ class LangEn extends Lang {
       'When built with EFUI, your apps can truly reach any audience.\nLet\'s make the internet a more accessible place together!';
 
   @override
-  String get psConsult => ' about consultation and contracting';
+  String get psConsult => ' for consultation and contracting';
 
   @override
   String get plsPageTitle => 'Plan';
@@ -223,11 +223,11 @@ class LangEn extends Lang {
 
   @override
   String get plsDoItRightContent4 =>
-      ' the world alone.\n\nFor the closed source version(s), we are fully ready to commit that...\n\n\t\t1. All Empathetech made SaaS products will have a lifetime option.\n\t\t2. We find selling personal information to be immoral; we will never auction your digital identity. That\'s why we charge for our services.\n\nAlso, let\'s briefly return to the bridges metaphor. A bridge without a place to go, or anyone that wants to use it, isn\'t a bridge; it\'s a waste of resources. That\'s why we\'re ready to make another commitment:\n\nRegardless of official structure (currently LLC) Empathetech will operate as a not-for-profit, mission based entity. Meaning...\n\n\t\t100% of net profit derived from our open source ecosystem app(s) will be commited back to the projects they are built upon\n\t\t100% of net profit derived from all other sources (consulting, donations, merch, etc.) will be committed to promoting global equity in tech education';
+      ' the world alone.\n\nFor the closed source version(s), we are fully ready to commit that...\n\n\t\t1. All Empathetech made SaaS products will have a lifetime option.\n\t\t2. We find selling personal information to be immoral; we will never auction your digital identity. That\'s why we charge for our services.\n\nAlso, let\'s briefly return to the bridges metaphor. A bridge without a place to go, or anyone that wants to use it, isn\'t a bridge; it\'s a waste of resources. That\'s why we\'re ready to make another commitment:\n\nRegardless of official structure (currently LLC) Empathetech will operate as a not-for-profit, mission based entity. Meaning...\n\n\t\t100% of net profit derived from our open source ecosystem app(s) will be committed back to the projects they are built upon\n\t\t100% of net profit derived from all other sources (consulting, donations, merch, etc.) will be committed to promoting global equity in tech education';
 
   @override
   String get plsDoItRightContent4Fix =>
-      ' the world alone.\n\nFor the closed source version(s), we are fully ready to commit that...\n\n\t\t1. All Empathetic made SaaS products will have be a lifetime option.\n\t\t2. We find selling personal information to be immoral; we will never auction your digital identity. That\'s why we charge for our services.\n\nAlso, let\'s briefly return to the bridges metaphor. A bridge without a place to go, or anyone that wants to use it, isn\'t a bridge; it\'s a waste of resources. That\'s why we\'re ready to make another commitment:\n\nRegardless of official structure (currently LLC) Empathetic will operate as a not-for-profit, mission based entity. Meaning...\n\n\t\t100% of net profit derived from our open source ecosystem app(s) will be commited back to the projects they are built upon\n\t\t100% of net profit derived from all other sources (consulting, dontations, merch, etc.) will be committed to promoting global equity in tech education';
+      ' the world alone.\n\nFor the closed source version(s), we are fully ready to commit that...\n\n\t\t1. All Empathetic made SaaS products will have be a lifetime option.\n\t\t2. We find selling personal information to be immoral; we will never auction your digital identity. That\'s why we charge for our services.\n\nAlso, let\'s briefly return to the bridges metaphor. A bridge without a place to go, or anyone that wants to use it, isn\'t a bridge; it\'s a waste of resources. That\'s why we\'re ready to make another commitment:\n\nRegardless of official structure (currently LLC) Empathetic will operate as a not-for-profit, mission based entity. Meaning...\n\n\t\t100% of net profit derived from our open source ecosystem app(s) will be committed back to the projects they are built upon\n\t\t100% of net profit derived from all other sources (consulting, donations, merch, etc.) will be committed to promoting global equity in tech education';
 
   @override
   String get plsDoItRightContent5 => '\n\nCheckout the ';
@@ -358,9 +358,9 @@ class LangEn extends Lang {
 
   @override
   String get fahStats =>
-      'Together, we\'ve earned over 100 million points!\nThat puts Empathetech in the top 2% of all teams worldwide!';
+      'Together, we\'ve earned over 150 million points!\nThat puts Empathetech in the top 2% of all teams worldwide!';
 
   @override
   String get fahStatsFix =>
-      'Together, we\'ve earned over 100 million points!\nThat puts Empathetic in the top 2% of all teams worldwide!';
+      'Together, we\'ve earned over 150 million points!\nThat puts Empathetic in the top 2% of all teams worldwide!';
 }

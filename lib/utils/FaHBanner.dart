@@ -32,7 +32,7 @@ class FaHBanner extends StatelessWidget {
           children: [
             // Icon
             EzLinkImage(
-              url: faHLink,
+              url: Uri.parse(faHLink),
               image: const AssetImage(fahIconPath),
               semanticLabel: Lang.of(context)!.gFahIconHint,
               width: 2.0 *

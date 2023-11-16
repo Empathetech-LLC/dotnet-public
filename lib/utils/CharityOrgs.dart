@@ -26,7 +26,7 @@ class CharityOrgs extends StatelessWidget {
       child: Container(
         color: color,
         child: EzLinkImage(
-          url: url,
+          url: Uri.parse(url),
           image: AssetImage(assetPath),
           semanticLabel: semanticLabel,
         ),

@@ -3,6 +3,7 @@ import 'utils.dart';
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 
 class DotNetScaffold extends StatelessWidget {
@@ -63,8 +64,10 @@ class DotNetScaffold extends StatelessWidget {
 
     // Define shared widgets //
 
-    final EmpathetechLogo logo = EmpathetechLogo(
-      isLight: isLight,
+    final EzLinkImage logo = EzLinkImage(
+      image: AssetImage(isLight ? darkLogoPath : lightLogoPath),
+      onTap: () => context.goNamed(homeRoute),
+      semanticLabel: Lang.of(context)!.hsLogoHint,
       width: toolbarHeight,
       height: toolbarHeight,
     );
@@ -99,7 +102,7 @@ class DotNetScaffold extends StatelessWidget {
       spacer: buttonSpacer,
     );
 
-    final double threshold = logo.width +
+    final double threshold = toolbarHeight +
         buttonSpacer +
         pageLinks.width +
         buttonSpacer +
@@ -145,7 +148,7 @@ class DotNetScaffold extends StatelessWidget {
 class _SmallBuild extends StatelessWidget {
   final AppBarTheme appBarTheme;
   final DotNetDrawer drawer;
-  final EmpathetechLogo logo;
+  final EzLinkImage logo;
   final TabBar? tabBar;
   final double width = double.infinity;
   final double toolbarHeight;
@@ -228,7 +231,7 @@ class _LargeBuild extends StatelessWidget {
   final AppBarTheme appBarTheme;
   final IconLinks pageIcons;
   final PageLinks pageLinks;
-  final EmpathetechLogo logo;
+  final EzLinkImage logo;
   final TabBar? tabBar;
   final double width = double.infinity;
   final double toolbarHeight;

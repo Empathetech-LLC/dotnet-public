@@ -141,13 +141,14 @@ class _ProductsScreenState extends State<ProductsScreen>
               Lang.of(context)!.psResponsiveContent,
               style: _contentStyle,
             ),
-
             EzSpacer(_textSpacer),
 
             EzText(
               Lang.of(context)!.psEFUITagLine,
               style: _contentStyle,
             ),
+            EzSpacer(_textSpacer),
+
             EzRichText(
               [
                 EzInlineLink(

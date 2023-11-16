@@ -156,7 +156,7 @@ class LangEs extends Lang {
       'Cuando se construye con EFUI, tus aplicaciones pueden realmente llegar a cualquier público.\n¡Trabajemos juntos para hacer de internet un lugar más accesible!';
 
   @override
-  String get psConsult => ' sobre consulta y contratación';
+  String get psConsult => ' para consulta y contratación';
 
   @override
   String get plsPageTitle => 'Plan';
@@ -364,9 +364,9 @@ class LangEs extends Lang {
 
   @override
   String get fahStats =>
-      'Traducido por IA\n¡Juntos, hemos acumulado más de 100 millones de puntos!\nEso coloca a Empathetech en el top 2% de todos los equipos a nivel mundial!';
+      'Traducido por IA\n¡Juntos, hemos acumulado más de 150 millones de puntos!\nEso coloca a Empathetech en el top 2% de todos los equipos a nivel mundial!';
 
   @override
   String get fahStatsFix =>
-      'Traducido por IA: ¡Juntos, hemos acumulado más de 100 millones de puntos!\nEso coloca a Empathetic en el top 2% de todos los equipos a nivel mundial!';
+      'Traducido por IA: ¡Juntos, hemos acumulado más de 150 millones de puntos!\nEso coloca a Empathetic en el top 2% de todos los equipos a nivel mundial!';
 }

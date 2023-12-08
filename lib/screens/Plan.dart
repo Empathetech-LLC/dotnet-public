@@ -14,28 +14,14 @@ class PlanScreen extends StatefulWidget {
 }
 
 class _PlanScreenState extends State<PlanScreen> {
-  // Set page/tab title //
+  // Gather the theme data //
 
-  @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    setPageTitle(context, Lang.of(context)!.plsPageTitle);
-  }
-
-  // Gather theme data //
-
-  final double _buttonSpacer = EzConfig.instance.prefs[buttonSpacingKey];
-
-  late final Color? _buttonColor = Theme.of(context).highlightColor;
+  final double _buttonSpacer = EzConfig.get(buttonSpacingKey);
 
   late final TextStyle? _titleStyle = headlineSmall(context);
   late final TextStyle? _contentStyle = titleMedium(context);
-  late final TextStyle? _contentLinkStyle = titleMedium(context)?.copyWith(
-    color: _buttonColor,
-    decoration: TextDecoration.underline,
-  );
 
-  // Define local Text Widgets //
+  // Define the local Text Widgets //
 
   Widget _title(String title) {
     return Text(
@@ -55,11 +41,7 @@ class _PlanScreenState extends State<PlanScreen> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           content.runtimeType == String
-              ? EzText(
-                  content,
-                  style: _contentStyle,
-                  textAlign: TextAlign.left,
-                )
+              ? Text(content, style: _contentStyle)
               : content,
           EzSpacer(_buttonSpacer),
         ],
@@ -67,7 +49,7 @@ class _PlanScreenState extends State<PlanScreen> {
     );
   }
 
-  // Define Step functions //
+  // Define the Step functions //
 
   int _index = 0; // Identify the problem
 
@@ -94,9 +76,17 @@ class _PlanScreenState extends State<PlanScreen> {
     });
   }
 
+  // Set the page title //
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    setPageTitle(context, Lang.of(context)!.plsPageTitle);
+  }
+
   @override
   Widget build(BuildContext context) {
-    // Define steps //
+    // Define the steps //
 
     final steps = <Step>[
       Step(
@@ -121,8 +111,8 @@ class _PlanScreenState extends State<PlanScreen> {
             ),
             EzInlineLink(
               "EFUI",
-              style: _contentLinkStyle,
-              semanticsLabel: Lang.of(context)!.hsProductsHint,
+              style: _contentStyle,
+              semanticsLabel: Lang.of(context)!.gProductsHint,
               onTap: () => context.goNamed(productsRoute),
             ),
             EzPlainText(
@@ -147,11 +137,11 @@ class _PlanScreenState extends State<PlanScreen> {
             ),
             EzInlineLink(
               "SaaS",
-              style: _contentLinkStyle,
-              semanticsLabel: Lang.of(context)!.plsSaaSHint,
+              style: _contentStyle,
               url: Uri.parse(
                 "https://en.wikipedia.org/wiki/Software_as_a_service",
               ),
+              semanticsLabel: Lang.of(context)!.plsSaaSHint,
             ),
             EzPlainText(
               Lang.of(context)!.plsDoItRightContent2,
@@ -160,9 +150,9 @@ class _PlanScreenState extends State<PlanScreen> {
             ),
             EzInlineLink(
               Lang.of(context)!.plsDualLicense,
-              style: _contentLinkStyle,
-              semanticsLabel: Lang.of(context)!.plsDualLicenseHint,
+              style: _contentStyle,
               url: Uri.parse("https://en.wikipedia.org/wiki/Multi-licensing"),
+              semanticsLabel: Lang.of(context)!.plsDualLicenseHint,
             ),
             EzPlainText(
               Lang.of(context)!.plsDoItRightContent3,
@@ -171,9 +161,9 @@ class _PlanScreenState extends State<PlanScreen> {
             ),
             EzInlineLink(
               "de-FAANG",
-              style: _contentLinkStyle,
-              semanticsLabel: Lang.of(context)!.plsBigTechHint,
+              style: _contentStyle,
               url: Uri.parse("https://en.wikipedia.org/wiki/Big_Tech"),
+              semanticsLabel: Lang.of(context)!.plsBigTechHint,
             ),
             EzPlainText(
               Lang.of(context)!.plsDoItRightContent4,
@@ -188,9 +178,9 @@ class _PlanScreenState extends State<PlanScreen> {
             ),
             EzInlineLink(
               Lang.of(context)!.fpsPageTitle.toLowerCase(),
-              style: _contentLinkStyle,
-              semanticsLabel: Lang.of(context)!.fpsPageHint,
+              style: _contentStyle,
               onTap: () => context.goNamed(finPlanRoute),
+              semanticsLabel: Lang.of(context)!.fpsPageHint,
             ),
           ],
           textAlign: TextAlign.left,

@@ -5,6 +5,28 @@ class LangEn extends Lang {
   LangEn([String locale = 'en']) : super(locale);
 
   @override
+  String get gLogoHint =>
+      'Empathetic LLC logo. Activate to go to the home page.';
+
+  @override
+  String get gProductsHint => 'Open the products page';
+
+  @override
+  String get gPlanHint => 'Open the plan page';
+
+  @override
+  String get gTeamHint => 'Open the team page';
+
+  @override
+  String get gSupportHint => 'Open the support page';
+
+  @override
+  String get gSettingsHint => 'Go to the settings page';
+
+  @override
+  String get gBack => 'Go back';
+
+  @override
   String get gGitHint =>
       'GitHub icon, activate to open the page for Empathetic LLC';
 
@@ -19,6 +41,27 @@ class LangEn extends Lang {
   @override
   String get gEmailHint =>
       'Email icon, activate to draft an email to Empathetic LLC';
+
+  @override
+  String get gReachOut => 'Reach out';
+
+  @override
+  String get gEFUIHint => 'Empathetic Flutter UI';
+
+  @override
+  String get gEFUILinkHint => 'GitHub link to the UI package powering this app';
+
+  @override
+  String get gDontCha => 'Don\'t cha?';
+
+  @override
+  String get gDontChaHint => 'GitHub link to the source code for this screen';
+
+  @override
+  String get gDontChaWish => 'Don\'t cha wish your frontend was fun like ';
+
+  @override
+  String get gMeQ => 'me?';
 
   @override
   String get gFahIconHint =>
@@ -37,57 +80,10 @@ class LangEn extends Lang {
       'World Savvy icon, activate to open their site';
 
   @override
-  String get gBack => 'Go back';
-
-  @override
-  String get gSettings => 'Go to the settings page';
-
-  @override
-  String get gReachOut => 'Reach out';
-
-  @override
-  String get gEFUIHint => 'Empathetic Flutter UI';
-
-  @override
-  String get gEFUILinkHint => 'GitHub link to the UI package powering this app';
-
-  @override
-  String get hsProductsHint => 'Open the products page';
-
-  @override
-  String get hsPlanHint => 'Open the plan page';
-
-  @override
-  String get hsTeamHint => 'Open the team page';
-
-  @override
-  String get hsSupportHint => 'Open the support page';
-
-  @override
   String get hsSlogan => 'Bringing OSS\nTo us';
 
   @override
-  String get hsLogoHint =>
-      'Empathetic LLC logo. Activate to go to the home page.';
-
-  @override
-  String get hsVideoSemantics => 'Empathetic LLC logo animation.';
-
-  @override
-  String get hsiOSWebVideo =>
-      'Currently, Flutter\'s video player does not work on iOS.\nWe apologize for the boring home page.';
-
-  @override
-  String get ssDontCha => 'Don\'t cha?';
-
-  @override
-  String get ssDontChaHint => 'GitHub link to the source code for this screen';
-
-  @override
-  String get ssDontChaWish => 'Don\'t cha wish your frontend was fun like ';
-
-  @override
-  String get ssMeQ => 'me?';
+  String get hsVideoSemantics => 'Empathetic LLC logo animation';
 
   @override
   String get csReversedNote =>
@@ -239,9 +235,6 @@ class LangEn extends Lang {
   String get fpsPageHint => 'Open the financial plan page';
 
   @override
-  String get fpsEventual => 'eventual';
-
-  @override
   String fpsRaised(Object goal, Object income) {
     return '$income of $goal raised';
   }
@@ -253,6 +246,20 @@ class LangEn extends Lang {
   String fpsSplit(Object profit) {
     return 'The $profit profit will be evenly split amongst...';
   }
+
+  @override
+  String get fpsEventual => 'eventual';
+
+  @override
+  String get fpsAnitaCNavHint =>
+      'Open a link to AnitaB.org on Charity Navigator';
+
+  @override
+  String get fpsCodeCNavHint => 'Open a link to code.org on Charity Navigator';
+
+  @override
+  String get fpsSavvyCNavHint =>
+      'Open a link to World Savvy on Charity Navigator';
 
   @override
   String get fpsAnitaMission =>
@@ -267,22 +274,11 @@ class LangEn extends Lang {
       'World Savvy collaborates with educators and school and district leaders to build future-ready learning environments that are inclusive, adaptive, and prepare students to thrive today and in the future.';
 
   @override
-  String get fpsAnitaCNavHint =>
-      'Open a link to AnitaB.org on Charity Navigator';
-
-  @override
-  String get fpsCodeCNavHint => 'Open a link to code.org on Charity Navigator';
-
-  @override
-  String get fpsSavvyCNavHint =>
-      'Open a link to World Savvy on Charity Navigator';
-
-  @override
   String get fpsCheck => 'Check our math';
 
   @override
   String get fpsCheckHint =>
-      'Check our math; open a GitHub link to the source code for this screen';
+      'Check our math: open a GitHub link to the source code for this screen';
 
   @override
   String get tsPageTitle => 'Team';

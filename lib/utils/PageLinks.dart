@@ -11,9 +11,6 @@ class PageLinks extends StatelessWidget {
   final BuildContext context;
   final TextStyle? style;
 
-  /// Pass in the value from MediaQuery.of(context).textScaleFactor
-  final double scalar;
-
   /// How much distance should be between the links
   final double spacer;
 
@@ -22,7 +19,6 @@ class PageLinks extends StatelessWidget {
     this.key,
     required this.context,
     required this.style,
-    required this.scalar,
     required this.spacer,
   });
 
@@ -33,7 +29,7 @@ class PageLinks extends StatelessWidget {
           Lang.of(context)!.plsPageTitle +
           Lang.of(context)!.tsPageTitle +
           Lang.of(context)!.spsPageTitle,
-      scalar: scalar,
+      scaler: MediaQuery.textScalerOf(context),
       style: style,
     ).width;
 
@@ -45,29 +41,37 @@ class PageLinks extends StatelessWidget {
     final EzLink products = EzLink(
       Lang.of(context)!.psPageTitle,
       style: style,
-      semanticsLabel: Lang.of(context)!.hsProductsHint,
+      textAlign: TextAlign.center,
       onTap: () => context.goNamed(productsRoute),
+      semanticsLabel: Lang.of(context)!.gProductsHint,
+      color: Theme.of(context).colorScheme.surface,
     );
 
     final EzLink plan = EzLink(
       Lang.of(context)!.plsPageTitle,
       style: style,
-      semanticsLabel: Lang.of(context)!.hsPlanHint,
+      textAlign: TextAlign.center,
       onTap: () => context.goNamed(planRoute),
+      semanticsLabel: Lang.of(context)!.gPlanHint,
+      color: Theme.of(context).colorScheme.surface,
     );
 
     final EzLink team = EzLink(
       Lang.of(context)!.tsPageTitle,
       style: style,
-      semanticsLabel: Lang.of(context)!.hsTeamHint,
+      textAlign: TextAlign.center,
       onTap: () => context.goNamed(teamRoute),
+      semanticsLabel: Lang.of(context)!.gTeamHint,
+      color: Theme.of(context).colorScheme.surface,
     );
 
     final EzLink support = EzLink(
       Lang.of(context)!.spsPageTitle,
       style: style,
-      semanticsLabel: Lang.of(context)!.hsSupportHint,
+      textAlign: TextAlign.center,
       onTap: () => context.goNamed(supportRoute),
+      semanticsLabel: Lang.of(context)!.gSupportHint,
+      color: Theme.of(context).colorScheme.surface,
     );
 
     // Return build //

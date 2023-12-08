@@ -2,15 +2,14 @@ import './utils.dart';
 
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 
-import 'dart:math';
 import 'package:flutter/material.dart';
 
 class CharityOrgs extends StatelessWidget {
-  final TextStyle? titleLinkStyle;
+  final TextStyle? titleStyle;
   final TextStyle? contentStyle;
 
   const CharityOrgs({
-    required this.titleLinkStyle,
+    required this.titleStyle,
     required this.contentStyle,
   });
 
@@ -38,13 +37,13 @@ class CharityOrgs extends StatelessWidget {
   Widget build(BuildContext context) {
     bool limitedSpace = ScreenSpace.of(context)?.isLimited ?? false;
 
-    final double buttonSpacer = EzConfig.instance.prefs[buttonSpacingKey];
-    final double textSpacer = EzConfig.instance.prefs[textSpacingKey];
+    final double buttonSpacer = EzConfig.get(buttonSpacingKey);
+    final double textSpacer = EzConfig.get(textSpacingKey);
 
     double twoThirdsWidth = widthOf(context) * (2 / 3);
     double sharedColWidth = (widthOf(context) - 2 * buttonSpacer) * 0.3;
     double circleDiameter =
-        2.0 * CircleAvatarRadius * sqrt(MediaQuery.of(context).textScaleFactor);
+        2.0 * MediaQuery.textScalerOf(context).scale(CircleAvatarRadius);
 
     final List<Widget> anitaB = [
       logoImage(
@@ -56,14 +55,16 @@ class CharityOrgs extends StatelessWidget {
       EzSpacer(buttonSpacer),
       EzLink(
         'AnitaB.org',
-        style: titleLinkStyle,
+        style: titleStyle,
+        textAlign: TextAlign.center,
         url: Uri.parse(anitaBorgCNavLink),
         semanticsLabel: Lang.of(context)!.fpsAnitaCNavHint,
       ),
       EzSpacer(buttonSpacer),
-      EzText(
+      Text(
         Lang.of(context)!.fpsAnitaMission,
         style: contentStyle,
+        textAlign: TextAlign.center,
       ),
     ];
 
@@ -77,14 +78,16 @@ class CharityOrgs extends StatelessWidget {
       EzSpacer(buttonSpacer),
       EzLink(
         'code.org',
-        style: titleLinkStyle,
+        style: titleStyle,
+        textAlign: TextAlign.center,
         url: Uri.parse(codeDotOrgCNavLink),
         semanticsLabel: Lang.of(context)!.fpsCodeCNavHint,
       ),
       EzSpacer(buttonSpacer),
-      EzText(
+      Text(
         Lang.of(context)!.fpsCodeMission,
         style: contentStyle,
+        textAlign: TextAlign.center,
       ),
     ];
 
@@ -99,14 +102,16 @@ class CharityOrgs extends StatelessWidget {
       EzSpacer(buttonSpacer),
       EzLink(
         'World Savvy',
-        style: titleLinkStyle,
+        style: titleStyle,
+        textAlign: TextAlign.center,
         url: Uri.parse(worldSavvyCNavLink),
         semanticsLabel: Lang.of(context)!.fpsSavvyCNavHint,
       ),
       EzSpacer(buttonSpacer),
-      EzText(
+      Text(
         Lang.of(context)!.fpsSavvyMission,
         style: contentStyle,
+        textAlign: TextAlign.center,
       ),
     ];
 

@@ -13,41 +13,17 @@ class FinPlanScreen extends StatefulWidget {
 }
 
 class _FinPlanScreenState extends State<FinPlanScreen> {
-  // Set page/tab title //
+  // Gather the theme data //
 
-  @override
-  void initState() {
-    super.initState();
-    _initFinancialData();
-  }
-
-  @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    setPageTitle(context, Lang.of(context)!.fpsPageTitle);
-  }
-
-  // Gather theme data //
-
-  final double _buttonSpacer = EzConfig.instance.prefs[buttonSpacingKey];
-  final double _textSpacer = EzConfig.instance.prefs[textSpacingKey];
-
-  late final Color? _buttonColor = Theme.of(context).highlightColor;
+  final double _buttonSpacer = EzConfig.get(buttonSpacingKey);
+  final double _textSpacer = EzConfig.get(textSpacingKey);
 
   late final TextStyle? _headingStyle = headlineSmall(context);
   late final TextStyle? _titleStyle = titleLarge(context);
-  late final TextStyle? _titleLinkStyle = _titleStyle?.copyWith(
-    color: _buttonColor,
-    decoration: TextDecoration.underline,
-  );
   late final TextStyle? _contentStyle = titleMedium(context);
   late final TextStyle? _labelStyle = labelLarge(context);
-  late final TextStyle? _labelLinkStyle = _labelStyle?.copyWith(
-    color: _buttonColor,
-    decoration: TextDecoration.underline,
-  );
 
-  // Gather financial data //
+  // Gather the financial data //
 
   late final double _totalIncome = calculateIncome();
   late double _totalGoal = 1000000; // Silly placeholder
@@ -71,6 +47,20 @@ class _FinPlanScreenState extends State<FinPlanScreen> {
     });
   }
 
+  @override
+  void initState() {
+    super.initState();
+    _initFinancialData();
+  }
+
+  // Set the page title //
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    setPageTitle(context, Lang.of(context)!.fpsPageTitle);
+  }
+
   // Return the build //
 
   @override
@@ -87,9 +77,10 @@ class _FinPlanScreenState extends State<FinPlanScreen> {
                   Lang.of(context)!.fpsYear,
               child: ExcludeSemantics(
                 child: Column(children: [
-                  EzText(
+                  Text(
                     Lang.of(context)!.fpsRaised(_goal, _income),
                     style: _headingStyle,
+                    textAlign: TextAlign.center,
                   ),
                   EzSpacer(_buttonSpacer),
                   Container(
@@ -104,28 +95,31 @@ class _FinPlanScreenState extends State<FinPlanScreen> {
                     ),
                   ),
                   EzSpacer(_buttonSpacer),
-                  EzText(
+                  Text(
                     Lang.of(context)!.fpsYear,
                     style: _headingStyle,
+                    textAlign: TextAlign.center,
                   ),
                 ]),
               ),
             ),
             EzSpacer(_textSpacer),
-            EzText(
+            Text(
               Lang.of(context)!.fpsSplit(_profit),
               style: _contentStyle,
+              textAlign: TextAlign.center,
             ),
             EzSpacer(_buttonSpacer),
             CharityOrgs(
-              titleLinkStyle: _titleLinkStyle,
+              titleStyle: _titleStyle,
               contentStyle: _contentStyle,
             ),
-            EzSpacer(_textSpacer * 2),
+            EzSpacer(_textSpacer),
             EzLink(
               Lang.of(context)!.fpsCheck,
-              style: _labelLinkStyle,
-              url: Uri.parse(financesSourceLink),
+              style: _labelStyle,
+              textAlign: TextAlign.center,
+              url: Uri.parse(financesLink),
               semanticsLabel: Lang.of(context)!.fpsCheckHint,
             ),
           ],

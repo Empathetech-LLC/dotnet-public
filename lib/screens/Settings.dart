@@ -6,7 +6,6 @@ import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 import 'package:go_router/go_router.dart';
-import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({Key? key}) : super(key: key);
@@ -16,7 +15,14 @@ class SettingsScreen extends StatefulWidget {
 }
 
 class _SettingsScreenState extends State<SettingsScreen> {
-  // Set page/tab title //
+  // Gather the theme data //
+
+  final double _buttonSpacer = EzConfig.get(buttonSpacingKey);
+  final double _textSpacer = EzConfig.get(textSpacingKey);
+
+  late final TextStyle? _labelStyle = labelLarge(context);
+
+  // Set the page title //
 
   @override
   void didChangeDependencies() {
@@ -24,26 +30,12 @@ class _SettingsScreenState extends State<SettingsScreen> {
     setPageTitle(context, EFUILang.of(context)!.ssPageTitle);
   }
 
-  // Gather theme data //
-
-  late bool _isLight = !PlatformTheme.of(context)!.isDark;
-
-  final double _buttonSpacer = EzConfig.instance.prefs[buttonSpacingKey];
-  final double _textSpacer = EzConfig.instance.prefs[textSpacingKey];
-
-  late final TextStyle? _labelStyle = labelLarge(context);
-  late final TextStyle? _labelLinkStyle = _labelStyle?.copyWith(
-    color: Theme.of(context).highlightColor,
-    decoration: TextDecoration.underline,
-  );
-
-  // Return the Build //
+  // Return the build //
 
   @override
   Widget build(BuildContext context) {
     return DotNetScaffold(
       body: EzScreen(
-        decorationImageKey: _isLight ? lightPageImageKey : darkPageImageKey,
         child: EzScrollView(
           children: [
             // Functionality disclaimer
@@ -55,12 +47,21 @@ class _SettingsScreenState extends State<SettingsScreen> {
             ),
             EzSpacer(_buttonSpacer),
 
-            // Theme mode switch
+            // Global settings
+            const EzDominantHandSwitch(),
+            EzSpacer(_buttonSpacer),
+
             const EzThemeModeSwitch(),
             EzSpacer(_buttonSpacer),
 
-            // Dominant hand switch
-            const EzDominantHandSwitch(),
+            const EzLocaleSetting(),
+            EzSpacer(_buttonSpacer),
+
+            // Color settings
+            ElevatedButton(
+              onPressed: () => context.goNamed(colorSettingsRoute),
+              child: Text(EFUILang.of(context)!.csPageTitle),
+            ),
             EzSpacer(_buttonSpacer),
 
             // Style settings
@@ -70,44 +71,17 @@ class _SettingsScreenState extends State<SettingsScreen> {
             ),
             EzSpacer(_buttonSpacer),
 
-            // Color settings
-            ElevatedButton(
-              onPressed: () => context.goNamed(colorSettingsRoute),
-              child: Text(EFUILang.of(context)!.csPageTitle),
-            ),
-            EzSpacer(2 * _buttonSpacer),
-
-            // Reset button
-            EzResetButton(context: context),
-            EzSpacer(_textSpacer),
-
-            // EFUI shoutout
-            Column(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                EzRichText([
-                  EzPlainText(
-                    Lang.of(context)!.ssDontChaWish,
-                    context: context,
-                    style: _labelStyle,
-                  ),
-                  EzInlineLink(
-                    Lang.of(context)!.ssMeQ,
-                    style: _labelLinkStyle,
-                    semanticsLabel: Lang.of(context)!.gEFUILinkHint,
-                    url: Uri.parse(settingsSourceLink),
-                  ),
-                ]),
-                EzLink(
-                  Lang.of(context)!.ssDontCha,
-                  style: _labelLinkStyle,
-                  semanticsLabel: Lang.of(context)!.ssDontChaHint,
-                  url: Uri.parse(EFUILink),
-                ),
-              ],
+            EzResetButton(
+              context: context,
+              dialogTitle: EFUILang.of(context)!.ssResetAll,
             ),
             EzSpacer(_textSpacer),
+
+            EFUIShoutOut(
+              style: _labelStyle,
+              fileLink: settingsLink,
+            ),
+            EzSpacer(_buttonSpacer),
           ],
         ),
       ),

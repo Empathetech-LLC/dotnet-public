@@ -8,13 +8,14 @@ import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
+import 'package:flutter_localized_locales/flutter_localized_locales.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   // Initialize EzConfig
   final SharedPreferences prefs = await SharedPreferences.getInstance();
-  EzConfig(assetPaths: assets, preferences: prefs);
+  EzConfig(preferences: prefs, assetPaths: assetPaths);
 
   // Set device orientations
   SystemChrome.setPreferredOrientations([
@@ -106,13 +107,27 @@ class ETechDotNet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final List<String>? localeData = EzConfig.get(localeKey);
+
     return EzAppProvider(
       app: PlatformApp.router(
         debugShowCheckedModeBanner: false,
-        supportedLocales: Lang.supportedLocales + EFUILang.supportedLocales,
-        localizationsDelegates:
-            Lang.localizationsDelegates + EFUILang.localizationsDelegates,
-        title: "Empathetech",
+        localizationsDelegates: [
+          LocaleNamesLocalizationsDelegate(),
+          ...EFUILang.localizationsDelegates,
+          ...Lang.localizationsDelegates,
+        ],
+        supportedLocales: [
+          ...Lang.supportedLocales,
+          ...EFUILang.supportedLocales,
+        ],
+        locale: (localeData == null)
+            ? null
+            : Locale(
+                localeData[0],
+                localeData.length > 1 ? localeData[1] : null,
+              ),
+        title: empathetech,
         routerConfig: _router,
       ),
     );

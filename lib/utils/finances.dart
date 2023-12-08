@@ -28,7 +28,7 @@ double _gatherSalaries() {
 
 /// Annual hours for each Empathetech member
 /// Full time == 40 * 52 == 2080
-const Map<String, double> annualHours = {"Michael Waldron": 2080};
+const Map<String, double> annualHours = {mike: 2080};
 
 /// Eventually, Empathetech will create its own comfortable wage calculator.
 /// Currently, we rely on adapting MIT's living wage calculator.
@@ -86,9 +86,8 @@ double calculateIncome() {
   return _gatherContracts() + _gatherDonations();
 }
 
-/// For prospective contractees: our rates follow a similar methodology to [_comfortableWage]
-/// However, we adjust for whatever county you live in
-/// If you're international: we'll work it out (there's probably a converter we can use)
+/// For prospective contractees: our rates the methodology to [_comfortableWage]
+/// Discounts are available to affiliate donors; see site(s) for details
 double _gatherContracts() {
   return 0;
 }

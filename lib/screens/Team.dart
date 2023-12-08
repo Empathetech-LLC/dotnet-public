@@ -2,7 +2,6 @@ import '../utils/utils.dart';
 
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 
-import 'dart:math';
 import 'package:flutter/material.dart';
 
 class TeamScreen extends StatefulWidget {
@@ -13,32 +12,21 @@ class TeamScreen extends StatefulWidget {
 }
 
 class _TeamScreenState extends State<TeamScreen> {
-  // Set page/tab title //
+  // Gather the theme data //
+  late final TextStyle? _headerStyle = headlineSmall(context);
+  late final TextStyle? _titleStyle = titleLarge(context);
+  late final TextStyle? _contentStyle = bodyLarge(context);
+
+  final double _padding = EzConfig.get(paddingKey);
+  final double _textSpacer = EzConfig.get(textSpacingKey);
+
+  // Set the page title //
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
     setPageTitle(context, Lang.of(context)!.tsPageTitle);
   }
-
-  // Gather theme data //
-
-  late final Color? _buttonColor = Theme.of(context).highlightColor;
-
-  late final TextStyle? _headerStyle = headlineSmall(context);
-  late final TextStyle? _titleStyle = titleLarge(context);
-  late final TextStyle? _titleLinkStyle = _titleStyle?.copyWith(
-    color: _buttonColor,
-    decoration: TextDecoration.underline,
-  );
-  late final TextStyle? _contentStyle = bodyLarge(context);
-  late final TextStyle? _contentLinkStyle = _contentStyle?.copyWith(
-    color: _buttonColor,
-    decoration: TextDecoration.underline,
-  );
-
-  final double _padding = EzConfig.instance.prefs[paddingKey];
-  final double _textSpacer = EzConfig.instance.prefs[textSpacingKey];
 
   // Return the build //
 
@@ -50,39 +38,45 @@ class _TeamScreenState extends State<TeamScreen> {
           children: [
             // Core //
 
-            EzText(Lang.of(context)!.tsCore, style: _headerStyle),
+            Text(
+              Lang.of(context)!.tsCore,
+              style: _headerStyle,
+              textAlign: TextAlign.center,
+            ),
             EzSpacer(_padding),
 
             // Founder
-            EzRowCol(
+            EzRowCol.sym(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                // Avatar of Michael Waldron
+                // Avatar of Mike
                 Semantics(
                   image: true,
                   label: Lang.of(context)!.tsTheFounderImageHint,
                   child: CircleAvatar(
                     backgroundColor: Colors.transparent,
                     foregroundImage: const AssetImage(founderIconPath),
-                    radius: CircleAvatarRadius *
-                        sqrt(MediaQuery.of(context).textScaleFactor),
+                    radius: MediaQuery.textScalerOf(context)
+                        .scale(CircleAvatarRadius),
                   ),
                 ),
-                EzSwapSpacer(_textSpacer),
+                EzSwapSpacer(_padding),
 
                 // Information
                 Column(
                   mainAxisSize: MainAxisSize.min,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    EzText(
+                    Text(
                       Lang.of(context)!.tsTheFounder,
                       style: _titleStyle,
+                      textAlign: TextAlign.center,
                     ),
-                    EzText(
-                      'Michael Waldron',
+                    Text(
+                      mike,
                       style: _contentStyle,
+                      textAlign: TextAlign.center,
                     ),
                   ],
                 ),
@@ -92,22 +86,26 @@ class _TeamScreenState extends State<TeamScreen> {
 
             // Community //
 
-            EzText(Lang.of(context)!.tsCommunity, style: _headerStyle),
+            Text(
+              Lang.of(context)!.tsCommunity,
+              style: _headerStyle,
+              textAlign: TextAlign.center,
+            ),
             EzSpacer(_padding),
 
             // Folding@home
             FaHBanner(
               titleStyle: _titleStyle,
               contentStyle: _contentStyle,
-              contentLinkStyle: _contentLinkStyle,
             ),
             EzSpacer(_textSpacer),
 
             // Freelance //
 
-            EzText(
+            Text(
               Lang.of(context)!.tsFreelance,
               style: _headerStyle,
+              textAlign: TextAlign.center,
             ),
             EzSpacer(_padding),
 
@@ -118,13 +116,15 @@ class _TeamScreenState extends State<TeamScreen> {
               children: [
                 EzLink(
                   'Graphic Alert',
-                  style: _titleLinkStyle,
-                  semanticsLabel: Lang.of(context)!.tsGALinkHint,
+                  style: _titleStyle,
+                  textAlign: TextAlign.center,
                   url: Uri.parse(graphicAlertLink),
+                  semanticsLabel: Lang.of(context)!.tsGALinkHint,
                 ),
-                EzText(
+                Text(
                   Lang.of(context)!.tsGADescription,
                   style: _contentStyle,
+                  textAlign: TextAlign.center,
                   semanticsLabel: Lang.of(context)!.tsGADescriptionFix,
                 ),
               ],

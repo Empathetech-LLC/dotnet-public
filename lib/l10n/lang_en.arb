@@ -1,65 +1,86 @@
 {
   "@@locale" : "en",
 
+
+  "gLogoHint": "Empathetic LLC logo. Activate to go to the home page.",
+
+  "gProductsHint": "Open the products page",
+  "gPlanHint": "Open the plan page",
+  "gTeamHint": "Open the team page",
+  "gSupportHint": "Open the support page",
+  "gSettingsHint": "Go to the settings page",
+
+  "gBack": "Go back",
+
   "gGitHint": "GitHub icon, activate to open the page for Empathetic LLC",
   "gLinkedHint": "LinkedIn icon, activate to open the page for Empathetic LLC",
   "gMastodonHint": "Mastodon icon, activate to open the page for Empathetic LLC",
   "gEmailHint": "Email icon, activate to draft an email to Empathetic LLC",
-  "gFahIconHint": "Folding at home icon, activate to open their site",
-  "gAnitaBorgIconHint": "AnitaB.org icon, activate to open their site",
-  "gCodeDotOrgIconHint": "code.org icon, activate to open their site",
-  "gWorldSavvyIconHint": "World Savvy icon, activate to open their site",
-  "gBack": "Go back",
-  "gSettings": "Go to the settings page",
+
   "gReachOut": "Reach out",
   "gEFUIHint": "Empathetic Flutter UI",
   "gEFUILinkHint": "GitHub link to the UI package powering this app",
-  
-  "hsProductsHint": "Open the products page",
-  "hsPlanHint": "Open the plan page",
-  "hsTeamHint": "Open the team page",
-  "hsSupportHint": "Open the support page",
-  "hsSlogan": "Bringing OSS\nTo us",
-  "hsLogoHint": "Empathetic LLC logo. Activate to go to the home page.",
-  "hsVideoSemantics": "Empathetic LLC logo animation.",
-  "hsiOSWebVideo": "Currently, Flutter's video player does not work on iOS.\nWe apologize for the boring home page.",
+  "gDontCha": "Don't cha?",
+  "gDontChaHint": "GitHub link to the source code for this screen",
+  "gDontChaWish": "Don't cha wish your frontend was fun like ", 
+  "gMeQ": "me?",
 
-  "ssDontCha": "Don't cha?",
-  "ssDontChaHint": "GitHub link to the source code for this screen",
-  "ssDontChaWish": "Don't cha wish your frontend was fun like ", 
-  "ssMeQ": "me?",
+  "gFahIconHint": "Folding at home icon, activate to open their site",
+
+  "gAnitaBorgIconHint": "AnitaB.org icon, activate to open their site",
+  "gCodeDotOrgIconHint": "code.org icon, activate to open their site",
+  "gWorldSavvyIconHint": "World Savvy icon, activate to open their site",
+
+  
+  "hsSlogan": "Bringing OSS\nTo us",
+  "hsVideoSemantics": "Empathetic LLC logo animation",
+
 
   "csReversedNote": "NOTE: The top bar's theme colors are (intentionally) reversed!",
 
+
   "psPageTitle": "Products",
+
   "psEFUISlogan": "Build apps for anyone",
   "psEFUIDescription": "EFUI is an open source Flutter package that creates a holistic foundation for digital accessibility.\nEFUI provides a starter kit for every pillar of digital accessibility:",
+  
   "psPlatform": "\nPlatform availability",
   "psPlatformContent": "EFUI builds fully cross platform apps; Android, iOS, Linux, MacOS, Windows and Web!",
+  
   "psScreen": "\nScreen reader compliance",
   "psScreenContent": "Everything within EFUI has been manually verified with ",
   "psTalkBackHint": "Open a link to TalkBack documentation",
   "psAnd": " and ",
   "psVoiceOverHint": "Open a link to VoiceOver documentation",
+  
   "psCustom": "\nUser customization",
   "psCustomContent": "The only way to be truly accessible for ALL customers is to empower them with the freedom of choice.\nAnd that's exactly what EFUI does; it enables every aspect of an app's theme to be controlled by the user.",
+  
   "psInternational": "\nInternationalization",
   "psInternationalContent": "All of EFUI's external text has been translated to Spanish. With this, EFUI provides well organized infrastructure for unlimited future translations.",
+  
   "psResponsive": "\nResponsive design",
   "psResponsiveContent": "EFUI is full of tools to aid in building apps that elegantly respond to screen space. To see it in action, just mess around with the app window you're using right now!",
+  
   "psEFUITagLine": "When built with EFUI, your apps can truly reach any audience.\nLet's make the internet a more accessible place together!",
   "psConsult": " for consultation and contracting",
 
+
   "plsPageTitle": "Plan",
+  
   "plsThen": "Then",
   "plsBefore": "Before this",
+  
   "plsIDProblem": "Identify the problem",
   "plsIDProblemContent": "Through their actions, big tech have shown they not only prioritize profits over our wellbeing, they're willing to sacrifice it for maximal profits.",
+  
   "plsBeSolution": "Be a part of the solution",
   "plsBeSolutionContent": "Fortunately, there are amazing people all over the world working together towards a better narrative. One where the service providers and the customers have an active, healthy, and mutually beneficial relationship.\n\nThe open source community.\n\nSoftware is considered open source when the code is freely available for anyone to view (always), modify (often), and/or distribute (sometimes). It's software built by folx who recognize shared problems require shared solutions. Collaborative development creates better human experiences and allows for unlimited innovation.\n\nSo, how do we make the switch from closed to open source? It takes a lot of time, energy, and prior knowledge.\n\nThat's where we come in.",
+  
   "plsProvideValue": "Provide value",
   "plsProvideValueContent1": "Our mission is to re-balance the power in tech by making open source software more accessible.\n\nWe will build bridges between the open source community and those without enough time, energy, or prior knowledge.\nWe will build accessible, cross-platform applications for easily managing an ecosystem of open source tools.\n\nBut, you can't build bridges (or apps) without a strong foundation! That's why ",
   "plsProvideValueContent2": " exists. We take pride in meeting words with actions, and have pro-actively made our UI open source.",
+  
   "plsDoItRight": "Do it right",
   "plsDoItRightContent1": "If the service providers remember to stay Empathetech, ",
   "plsDoItRightContent1Fix": "If the service providers remember to stay Empathetic, ",
@@ -73,46 +94,64 @@
   "plsDoItRightContent4Fix": " the world alone.\n\nFor the closed source version(s), we are fully ready to commit that...\n\n\t\t1. All Empathetic made SaaS products will have be a lifetime option.\n\t\t2. We find selling personal information to be immoral; we will never auction your digital identity. That's why we charge for our services.\n\nAlso, let's briefly return to the bridges metaphor. A bridge without a place to go, or anyone that wants to use it, isn't a bridge; it's a waste of resources. That's why we're ready to make another commitment:\n\nRegardless of official structure (currently LLC) Empathetic will operate as a not-for-profit, mission based entity. Meaning...\n\n\t\t100% of net profit derived from our open source ecosystem app(s) will be committed back to the projects they are built upon\n\t\t100% of net profit derived from all other sources (consulting, donations, merch, etc.) will be committed to promoting global equity in tech education",
   "plsDoItRightContent5": "\n\nCheckout the ",
 
+
   "fpsPageTitle": "Financial plan",
   "fpsPageHint": "Open the financial plan page",
-  "fpsEventual": "eventual",
+  
   "fpsRaised": "{income} of {goal} raised",
   "fpsYear": "for 2023",
+  
   "fpsSplit": "The {profit} profit will be evenly split amongst...",
-  "fpsAnitaMission": "AnitaB.org envisions a future where the people who imagine and build technology mirror the people and societies for whom they build it. They connect, inspire, and guide women in computing, and organizations that view technology innovation as a strategic imperative.",
-  "fpsCodeMission": "Code.org is an education innovation nonprofit dedicated to the vision that every student in every school has the opportunity to learn computer science as part of their core K-12 education.",
-  "fpsSavvyMission": "World Savvy collaborates with educators and school and district leaders to build future-ready learning environments that are inclusive, adaptive, and prepare students to thrive today and in the future.",
+  "fpsEventual": "eventual",
+
   "fpsAnitaCNavHint": "Open a link to AnitaB.org on Charity Navigator",
   "fpsCodeCNavHint": "Open a link to code.org on Charity Navigator",
   "fpsSavvyCNavHint": "Open a link to World Savvy on Charity Navigator",
+  
+  "fpsAnitaMission": "AnitaB.org envisions a future where the people who imagine and build technology mirror the people and societies for whom they build it. They connect, inspire, and guide women in computing, and organizations that view technology innovation as a strategic imperative.",
+  "fpsCodeMission": "Code.org is an education innovation nonprofit dedicated to the vision that every student in every school has the opportunity to learn computer science as part of their core K-12 education.",
+  "fpsSavvyMission": "World Savvy collaborates with educators and school and district leaders to build future-ready learning environments that are inclusive, adaptive, and prepare students to thrive today and in the future.",
+  
   "fpsCheck": "Check our math",
-  "fpsCheckHint": "Check our math; open a GitHub link to the source code for this screen",
+  "fpsCheckHint": "Check our math: open a GitHub link to the source code for this screen",
+
 
   "tsPageTitle": "Team",
+  
   "tsCore": "Core",
   "tsTheFounderImageHint": "A picture of the founder of Empathetic LLC",
   "tsTheFounder": "The Founder",
   "tsCommunity": "Community",
+  
   "tsFreelance": "Freelance",
   "tsGALinkHint": "Graphic Alert's Fiverr page",
   "tsGADescription": "Did the After Effects work for Empathetech LLC's logo animation",
   "tsGADescriptionFix": "Did the After Effects work for the Empathetic LLC logo animation",
 
+
   "spsPageTitle": "Support",
+  
   "spsThanks": "Many thanks for any and all support!",
   "spsGive": "Would you like to give...",
+  
   "spsTimeQ": "Time?",
   "spsBecome": " about becoming a ",
   "spsGit": "GitHub contributor",
+  
   "spsMoneyQ": "Money?",
+  
   "spsPowerQ": "Power?",
   
+
   "fahJoin": "Join the Fold!",
+  
   "fahIntro": "Empathetech has a Folding@home ",
   "fahIntroFix": "Empathetic has a Folding@home ",
   "fahTeamHint": "Open the Empathetic LLC folding at home team page",
+  
   "fahWhatQ": "What's Folding@home?",
   "fahWhatQHint": "Open Folding at Home's about page",
+  
   "fahStats": "Together, we've earned over 150 million points!\nThat puts Empathetech in the top 2% of all teams worldwide!",
   "fahStatsFix": "Together, we've earned over 150 million points!\nThat puts Empathetic in the top 2% of all teams worldwide!"
 }

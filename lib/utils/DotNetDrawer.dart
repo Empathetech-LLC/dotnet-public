@@ -13,9 +13,6 @@ class DotNetDrawer extends StatelessWidget {
   /// [TextStyle] to use on the links' text
   final TextStyle? style;
 
-  /// Pass in the value from MediaQuery.of(context).textScaleFactor
-  final double scalar;
-
   /// How much distance should be between the links
   final double spacer;
 
@@ -26,7 +23,6 @@ class DotNetDrawer extends StatelessWidget {
     this.key,
     required this.context,
     required this.style,
-    required this.scalar,
     required this.spacer,
     required this.header,
   });
@@ -43,29 +39,33 @@ class DotNetDrawer extends StatelessWidget {
     final EzLink products = EzLink(
       Lang.of(context)!.psPageTitle,
       style: style,
-      semanticsLabel: Lang.of(context)!.hsProductsHint,
+      textAlign: TextAlign.center,
       onTap: () => _navigateTo(context, productsRoute),
+      semanticsLabel: Lang.of(context)!.gProductsHint,
     );
 
     final EzLink plan = EzLink(
       Lang.of(context)!.plsPageTitle,
       style: style,
-      semanticsLabel: Lang.of(context)!.hsPlanHint,
+      textAlign: TextAlign.center,
       onTap: () => _navigateTo(context, planRoute),
+      semanticsLabel: Lang.of(context)!.gPlanHint,
     );
 
     final EzLink team = EzLink(
       Lang.of(context)!.tsPageTitle,
       style: style,
-      semanticsLabel: Lang.of(context)!.hsTeamHint,
+      textAlign: TextAlign.center,
       onTap: () => _navigateTo(context, teamRoute),
+      semanticsLabel: Lang.of(context)!.gTeamHint,
     );
 
     final EzLink support = EzLink(
       Lang.of(context)!.spsPageTitle,
       style: style,
-      semanticsLabel: Lang.of(context)!.hsSupportHint,
+      textAlign: TextAlign.center,
       onTap: () => _navigateTo(context, supportRoute),
+      semanticsLabel: Lang.of(context)!.gSupportHint,
     );
 
     // Return the build //

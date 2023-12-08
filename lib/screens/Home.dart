@@ -1,10 +1,9 @@
 import '../utils/utils.dart';
 
-import 'package:efui_video_player/efui_video_player.dart';
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 
+import 'package:chewie/chewie.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/foundation.dart';
 import 'package:video_player/video_player.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 
@@ -16,75 +15,74 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  // Set page/tab title and background video //
+  // Gather the theme data //
+
+  late bool _isLight = !PlatformTheme.of(context)!.isDark;
+
+  late final TextStyle? _headerStyle = headlineSmall(context);
+
+  // Define the video components //
+
+  late final VideoPlayerController _videoController =
+      VideoPlayerController.asset(
+    _isLight ? lightLogoVideoPath : darkLogoVideoPath,
+    videoPlayerOptions: VideoPlayerOptions(
+      allowBackgroundPlayback: false,
+      mixWithOthers: false,
+    ),
+  );
+
+  late final ChewieController _chewieController = ChewieController(
+    videoPlayerController: _videoController,
+    autoPlay: true,
+    looping: false,
+    showControlsOnInitialize: false,
+    allowPlaybackSpeedChanging: false,
+  );
+
+  late final Widget _player = Semantics(
+    image: true,
+    link: false,
+    label: Lang.of(context)!.hsVideoSemantics,
+    child: Chewie(controller: _chewieController),
+  );
+
+  // Set the page title and initialize the video //
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    setPageTitle(context, "Empathetech");
-    _initializeVideoController();
+    setPageTitle(context, empathetech);
+
+    setState(() {
+      _chewieController.setVolume(0.0);
+    });
   }
 
-  late bool _isLight = !PlatformTheme.of(context)!.isDark;
-  late final VideoPlayerController _videoController;
-
-  void _initializeVideoController() {
-    _videoController = VideoPlayerController.asset(
-      _isLight ? lightLogoVideoPath : darkLogoVideoPath,
-      videoPlayerOptions: VideoPlayerOptions(
-        allowBackgroundPlayback: false,
-        mixWithOthers: false,
-      ),
-    )..initialize().then((_) {
-        setState(() {
-          // Required or Chrome will get mad
-          _videoController.setVolume(0.0);
-        });
-      });
-  }
+  // Return the build //
 
   @override
   Widget build(BuildContext context) {
-    // Gather theme data //
-
-    final TextStyle? headerStyle = headlineSmall(context);
-
-    // Return the build //
-
     return DotNetScaffold(
       body: EzScreen(
         margin: EdgeInsets.zero,
-        child:
-            // At the time of writing, VideoPlayerController does not work on iOS browsers
-            (kIsWeb && defaultTargetPlatform == TargetPlatform.iOS)
-                ? EzWarning(message: Lang.of(context)!.hsiOSWebVideo)
-                : Stack(
-                    alignment: AlignmentDirectional.topCenter,
-                    children: [
-                      // Video background
-                      Positioned.fill(
-                        child: _videoController.value.isInitialized
-                            ? EzVideoPlayer(
-                                controller: _videoController,
-                                sliderVis: ButtonVis.alwaysOff,
-                                variableVolume: false,
-                                iconColor:
-                                    _isLight ? Colors.black : Colors.white,
-                                semantics: Lang.of(context)!.hsVideoSemantics,
-                              )
-                            : SizedBox.shrink(),
-                      ),
+        child: Stack(
+          alignment: AlignmentDirectional.topCenter,
+          children: [
+            // Video
+            Positioned.fill(child: _player),
 
-                      // Slogan
-                      Positioned(
-                        top: EzConfig.instance.prefs[marginKey],
-                        child: EzText(
-                          Lang.of(context)!.hsSlogan,
-                          style: headerStyle,
-                        ),
-                      ),
-                    ],
-                  ),
+            // Slogan overlay
+            Positioned(
+              top: EzConfig.get(marginKey),
+              child: Text(
+                Lang.of(context)!.hsSlogan,
+                style: _headerStyle,
+                textAlign: TextAlign.center,
+              ),
+            ),
+          ],
+        ),
       ),
       fab: const SettingsFAB(),
     );
@@ -93,6 +91,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void dispose() {
     _videoController.dispose();
+    _chewieController.dispose();
     super.dispose();
   }
 }

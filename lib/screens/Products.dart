@@ -13,33 +13,21 @@ class ProductsScreen extends StatefulWidget {
 
 class _ProductsScreenState extends State<ProductsScreen>
     with SingleTickerProviderStateMixin {
-  // Set page/tab title //
+  // Gather the theme data //
+
+  final double _textSpacer = EzConfig.get(textSpacingKey);
+
+  late final TextStyle? _headingStyle = headlineSmall(context);
+  late final TextStyle? _subHeadingStyle = titleLarge(context);
+  late final TextStyle? _contentStyle = bodyLarge(context);
+
+  // Set the page title //
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
     setPageTitle(context, Lang.of(context)!.psPageTitle);
   }
-
-  // Gather theme data //
-
-  final double _textSpacer = EzConfig.instance.prefs[textSpacingKey];
-
-  late final Color? _buttonColor = Theme.of(context).highlightColor;
-
-  late final TextStyle? _headingStyle = headlineSmall(context);
-
-  late final TextStyle? _subHeadingStyle = titleLarge(context);
-  late final TextStyle? _subHeadingLinkStyle = _subHeadingStyle?.copyWith(
-    color: _buttonColor,
-    decoration: TextDecoration.underline,
-  );
-
-  late final TextStyle? _contentStyle = bodyLarge(context);
-  late final TextStyle? _contentLinkStyle = bodyLarge(context)?.copyWith(
-    color: _buttonColor,
-    decoration: TextDecoration.underline,
-  );
 
   // Return the build //
 
@@ -52,39 +40,45 @@ class _ProductsScreenState extends State<ProductsScreen>
             // EFUI //
 
             // Heading
-            EzText(
-              "Empathetech Flutter UI",
+            Text(
+              efui,
               style: _headingStyle,
+              textAlign: TextAlign.center,
               semanticsLabel: Lang.of(context)!.gEFUIHint,
             ),
 
             // Sub-heading
             EzLink(
               Lang.of(context)!.psEFUISlogan,
-              style: _subHeadingLinkStyle,
-              semanticsLabel: Lang.of(context)!.gEFUILinkHint,
+              style: _subHeadingStyle,
+              textAlign: TextAlign.center,
               url: Uri.parse(EFUILink),
+              semanticsLabel: Lang.of(context)!.gEFUILinkHint,
             ),
             EzSpacer(_textSpacer),
 
             // Description
-            EzText(
+            Text(
               Lang.of(context)!.psEFUIDescription,
               style: _contentStyle,
+              textAlign: TextAlign.center,
             ),
 
-            EzText(
+            Text(
               Lang.of(context)!.psPlatform,
               style: _contentStyle?.copyWith(fontWeight: FontWeight.bold),
+              textAlign: TextAlign.center,
             ),
-            EzText(
+            Text(
               Lang.of(context)!.psPlatformContent,
               style: _contentStyle,
+              textAlign: TextAlign.center,
             ),
 
-            EzText(
+            Text(
               Lang.of(context)!.psScreen,
               style: _contentStyle?.copyWith(fontWeight: FontWeight.bold),
+              textAlign: TextAlign.center,
             ),
             EzRichText(
               [
@@ -95,10 +89,10 @@ class _ProductsScreenState extends State<ProductsScreen>
                 ),
                 EzInlineLink(
                   "TalkBack",
-                  style: _contentLinkStyle,
-                  semanticsLabel: Lang.of(context)!.psTalkBackHint,
+                  style: _contentStyle,
                   url: Uri.parse(
                       "https://support.google.com/accessibility/android/answer/6006598?hl=en"),
+                  semanticsLabel: Lang.of(context)!.psTalkBackHint,
                 ),
                 EzPlainText(
                   Lang.of(context)!.psAnd,
@@ -107,45 +101,53 @@ class _ProductsScreenState extends State<ProductsScreen>
                 ),
                 EzInlineLink(
                   "VoiceOver",
-                  style: _contentLinkStyle,
-                  semanticsLabel: Lang.of(context)!.psVoiceOverHint,
+                  style: _contentStyle,
                   url: Uri.parse(
                       "https://support.apple.com/guide/iphone/turn-on-and-practice-voiceover-iph3e2e415f/ios"),
+                  semanticsLabel: Lang.of(context)!.psVoiceOverHint,
                 ),
               ],
+              textAlign: TextAlign.center,
             ),
 
-            EzText(
+            Text(
               Lang.of(context)!.psCustom,
               style: _contentStyle?.copyWith(fontWeight: FontWeight.bold),
+              textAlign: TextAlign.center,
             ),
-            EzText(
+            Text(
               Lang.of(context)!.psCustomContent,
               style: _contentStyle,
+              textAlign: TextAlign.center,
             ),
 
-            EzText(
+            Text(
               Lang.of(context)!.psInternational,
               style: _contentStyle?.copyWith(fontWeight: FontWeight.bold),
+              textAlign: TextAlign.center,
             ),
-            EzText(
+            Text(
               Lang.of(context)!.psInternationalContent,
               style: _contentStyle,
+              textAlign: TextAlign.center,
             ),
 
-            EzText(
+            Text(
               Lang.of(context)!.psResponsive,
               style: _contentStyle?.copyWith(fontWeight: FontWeight.bold),
+              textAlign: TextAlign.center,
             ),
-            EzText(
+            Text(
               Lang.of(context)!.psResponsiveContent,
               style: _contentStyle,
+              textAlign: TextAlign.center,
             ),
             EzSpacer(_textSpacer),
 
-            EzText(
+            Text(
               Lang.of(context)!.psEFUITagLine,
               style: _contentStyle,
+              textAlign: TextAlign.center,
             ),
             EzSpacer(_textSpacer),
 
@@ -153,9 +155,9 @@ class _ProductsScreenState extends State<ProductsScreen>
               [
                 EzInlineLink(
                   Lang.of(context)!.gReachOut,
-                  style: _contentLinkStyle,
-                  semanticsLabel: Lang.of(context)!.gEmailHint,
+                  style: _contentStyle,
                   url: Uri.parse("mailto:$EmpathetechAdmin"),
+                  semanticsLabel: Lang.of(context)!.gEmailHint,
                 ),
                 EzPlainText(
                   Lang.of(context)!.psConsult,
@@ -163,6 +165,7 @@ class _ProductsScreenState extends State<ProductsScreen>
                   style: _contentStyle,
                 ),
               ],
+              textAlign: TextAlign.center,
             ),
           ],
         ),

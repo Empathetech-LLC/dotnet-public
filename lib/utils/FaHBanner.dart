@@ -2,23 +2,20 @@ import './utils.dart';
 
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 
-import 'dart:math';
 import 'package:flutter/material.dart';
 
 class FaHBanner extends StatelessWidget {
   final TextStyle? titleStyle;
   final TextStyle? contentStyle;
-  final TextStyle? contentLinkStyle;
 
   const FaHBanner({
     required this.titleStyle,
     required this.contentStyle,
-    required this.contentLinkStyle,
   });
 
   @override
   Widget build(BuildContext context) {
-    final double spacer = EzConfig.instance.prefs[textSpacingKey];
+    final double padding = EzConfig.get(paddingKey);
 
     return Column(
       mainAxisSize: MainAxisSize.min,
@@ -26,7 +23,7 @@ class FaHBanner extends StatelessWidget {
       children: [
         // Description && links //
 
-        EzRowCol(
+        EzRowCol.sym(
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -36,50 +33,57 @@ class FaHBanner extends StatelessWidget {
               image: const AssetImage(fahIconPath),
               semanticLabel: Lang.of(context)!.gFahIconHint,
               width: 2.0 *
-                  CircleAvatarRadius *
-                  sqrt(MediaQuery.of(context).textScaleFactor),
+                  MediaQuery.textScalerOf(context).scale(CircleAvatarRadius),
               height: 2.0 *
-                  CircleAvatarRadius *
-                  sqrt(MediaQuery.of(context).textScaleFactor),
+                  MediaQuery.textScalerOf(context).scale(CircleAvatarRadius),
             ),
-
-            EzSwapSpacer(spacer),
+            EzSwapSpacer(padding),
 
             // External links && info
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                EzText(Lang.of(context)!.fahJoin, style: titleStyle),
-                EzRichText([
-                  EzPlainText(
-                    Lang.of(context)!.fahIntro,
-                    context: context,
-                    style: contentStyle,
-                    semantics: Lang.of(context)!.fahIntroFix,
-                  ),
-                  EzInlineLink(
-                    Lang.of(context)!.tsPageTitle.toLowerCase(),
-                    style: contentLinkStyle,
-                    semanticsLabel: Lang.of(context)!.fahTeamHint,
-                    url: Uri.parse(EmpathetechFoldingTeam),
-                  ),
-                ]),
+                Text(
+                  Lang.of(context)!.fahJoin,
+                  style: titleStyle,
+                  textAlign: TextAlign.center,
+                ),
+                EzRichText(
+                  [
+                    EzPlainText(
+                      Lang.of(context)!.fahIntro,
+                      context: context,
+                      style: contentStyle,
+                      semantics: Lang.of(context)!.fahIntroFix,
+                    ),
+                    EzInlineLink(
+                      Lang.of(context)!.tsPageTitle.toLowerCase(),
+                      style: contentStyle,
+                      url: Uri.parse(EmpathetechFoldingTeam),
+                      semanticsLabel: Lang.of(context)!.fahTeamHint,
+                    ),
+                  ],
+                  textAlign: TextAlign.center,
+                ),
+                Text("", style: contentStyle, textAlign: TextAlign.center),
                 EzLink(
-                  "\n${Lang.of(context)!.fahWhatQ}",
+                  Lang.of(context)!.fahWhatQ,
+                  style: contentStyle,
+                  textAlign: TextAlign.center,
                   url: Uri.parse(aboutFaHLink),
-                  style: contentLinkStyle,
                   semanticsLabel: Lang.of(context)!.fahWhatQHint,
                 ),
               ],
             ),
           ],
         ),
-        EzSpacer(0.5 * spacer),
+        EzSpacer(padding),
 
         // "Live" stats //
-        EzText(
+        Text(
           Lang.of(context)!.fahStats,
           style: contentStyle,
+          textAlign: TextAlign.center,
           semanticsLabel: Lang.of(context)!.fahStatsFix,
         ),
       ],

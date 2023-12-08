@@ -86,7 +86,7 @@ class IconLinks extends StatelessWidget {
       ];
 
   double get width {
-    return 2 * margin + 3 * spacer + 4 * iconSize;
+    return 2 * margin + 4 * spacer + 4 * iconSize;
   }
 
   @override

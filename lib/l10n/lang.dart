@@ -94,6 +94,48 @@ abstract class Lang {
     Locale('es')
   ];
 
+  /// No description provided for @gLogoHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Empathetic LLC logo. Activate to go to the home page.'**
+  String get gLogoHint;
+
+  /// No description provided for @gProductsHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Open the products page'**
+  String get gProductsHint;
+
+  /// No description provided for @gPlanHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Open the plan page'**
+  String get gPlanHint;
+
+  /// No description provided for @gTeamHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Open the team page'**
+  String get gTeamHint;
+
+  /// No description provided for @gSupportHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Open the support page'**
+  String get gSupportHint;
+
+  /// No description provided for @gSettingsHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Go to the settings page'**
+  String get gSettingsHint;
+
+  /// No description provided for @gBack.
+  ///
+  /// In en, this message translates to:
+  /// **'Go back'**
+  String get gBack;
+
   /// No description provided for @gGitHint.
   ///
   /// In en, this message translates to:
@@ -117,6 +159,48 @@ abstract class Lang {
   /// In en, this message translates to:
   /// **'Email icon, activate to draft an email to Empathetic LLC'**
   String get gEmailHint;
+
+  /// No description provided for @gReachOut.
+  ///
+  /// In en, this message translates to:
+  /// **'Reach out'**
+  String get gReachOut;
+
+  /// No description provided for @gEFUIHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Empathetic Flutter UI'**
+  String get gEFUIHint;
+
+  /// No description provided for @gEFUILinkHint.
+  ///
+  /// In en, this message translates to:
+  /// **'GitHub link to the UI package powering this app'**
+  String get gEFUILinkHint;
+
+  /// No description provided for @gDontCha.
+  ///
+  /// In en, this message translates to:
+  /// **'Don\'t cha?'**
+  String get gDontCha;
+
+  /// No description provided for @gDontChaHint.
+  ///
+  /// In en, this message translates to:
+  /// **'GitHub link to the source code for this screen'**
+  String get gDontChaHint;
+
+  /// No description provided for @gDontChaWish.
+  ///
+  /// In en, this message translates to:
+  /// **'Don\'t cha wish your frontend was fun like '**
+  String get gDontChaWish;
+
+  /// No description provided for @gMeQ.
+  ///
+  /// In en, this message translates to:
+  /// **'me?'**
+  String get gMeQ;
 
   /// No description provided for @gFahIconHint.
   ///
@@ -142,107 +226,17 @@ abstract class Lang {
   /// **'World Savvy icon, activate to open their site'**
   String get gWorldSavvyIconHint;
 
-  /// No description provided for @gBack.
-  ///
-  /// In en, this message translates to:
-  /// **'Go back'**
-  String get gBack;
-
-  /// No description provided for @gSettings.
-  ///
-  /// In en, this message translates to:
-  /// **'Go to the settings page'**
-  String get gSettings;
-
-  /// No description provided for @gReachOut.
-  ///
-  /// In en, this message translates to:
-  /// **'Reach out'**
-  String get gReachOut;
-
-  /// No description provided for @gEFUIHint.
-  ///
-  /// In en, this message translates to:
-  /// **'Empathetic Flutter UI'**
-  String get gEFUIHint;
-
-  /// No description provided for @gEFUILinkHint.
-  ///
-  /// In en, this message translates to:
-  /// **'GitHub link to the UI package powering this app'**
-  String get gEFUILinkHint;
-
-  /// No description provided for @hsProductsHint.
-  ///
-  /// In en, this message translates to:
-  /// **'Open the products page'**
-  String get hsProductsHint;
-
-  /// No description provided for @hsPlanHint.
-  ///
-  /// In en, this message translates to:
-  /// **'Open the plan page'**
-  String get hsPlanHint;
-
-  /// No description provided for @hsTeamHint.
-  ///
-  /// In en, this message translates to:
-  /// **'Open the team page'**
-  String get hsTeamHint;
-
-  /// No description provided for @hsSupportHint.
-  ///
-  /// In en, this message translates to:
-  /// **'Open the support page'**
-  String get hsSupportHint;
-
   /// No description provided for @hsSlogan.
   ///
   /// In en, this message translates to:
   /// **'Bringing OSS\nTo us'**
   String get hsSlogan;
 
-  /// No description provided for @hsLogoHint.
-  ///
-  /// In en, this message translates to:
-  /// **'Empathetic LLC logo. Activate to go to the home page.'**
-  String get hsLogoHint;
-
   /// No description provided for @hsVideoSemantics.
   ///
   /// In en, this message translates to:
-  /// **'Empathetic LLC logo animation.'**
+  /// **'Empathetic LLC logo animation'**
   String get hsVideoSemantics;
-
-  /// No description provided for @hsiOSWebVideo.
-  ///
-  /// In en, this message translates to:
-  /// **'Currently, Flutter\'s video player does not work on iOS.\nWe apologize for the boring home page.'**
-  String get hsiOSWebVideo;
-
-  /// No description provided for @ssDontCha.
-  ///
-  /// In en, this message translates to:
-  /// **'Don\'t cha?'**
-  String get ssDontCha;
-
-  /// No description provided for @ssDontChaHint.
-  ///
-  /// In en, this message translates to:
-  /// **'GitHub link to the source code for this screen'**
-  String get ssDontChaHint;
-
-  /// No description provided for @ssDontChaWish.
-  ///
-  /// In en, this message translates to:
-  /// **'Don\'t cha wish your frontend was fun like '**
-  String get ssDontChaWish;
-
-  /// No description provided for @ssMeQ.
-  ///
-  /// In en, this message translates to:
-  /// **'me?'**
-  String get ssMeQ;
 
   /// No description provided for @csReversedNote.
   ///
@@ -502,12 +496,6 @@ abstract class Lang {
   /// **'Open the financial plan page'**
   String get fpsPageHint;
 
-  /// No description provided for @fpsEventual.
-  ///
-  /// In en, this message translates to:
-  /// **'eventual'**
-  String get fpsEventual;
-
   /// No description provided for @fpsRaised.
   ///
   /// In en, this message translates to:
@@ -526,23 +514,11 @@ abstract class Lang {
   /// **'The {profit} profit will be evenly split amongst...'**
   String fpsSplit(Object profit);
 
-  /// No description provided for @fpsAnitaMission.
+  /// No description provided for @fpsEventual.
   ///
   /// In en, this message translates to:
-  /// **'AnitaB.org envisions a future where the people who imagine and build technology mirror the people and societies for whom they build it. They connect, inspire, and guide women in computing, and organizations that view technology innovation as a strategic imperative.'**
-  String get fpsAnitaMission;
-
-  /// No description provided for @fpsCodeMission.
-  ///
-  /// In en, this message translates to:
-  /// **'Code.org is an education innovation nonprofit dedicated to the vision that every student in every school has the opportunity to learn computer science as part of their core K-12 education.'**
-  String get fpsCodeMission;
-
-  /// No description provided for @fpsSavvyMission.
-  ///
-  /// In en, this message translates to:
-  /// **'World Savvy collaborates with educators and school and district leaders to build future-ready learning environments that are inclusive, adaptive, and prepare students to thrive today and in the future.'**
-  String get fpsSavvyMission;
+  /// **'eventual'**
+  String get fpsEventual;
 
   /// No description provided for @fpsAnitaCNavHint.
   ///
@@ -562,6 +538,24 @@ abstract class Lang {
   /// **'Open a link to World Savvy on Charity Navigator'**
   String get fpsSavvyCNavHint;
 
+  /// No description provided for @fpsAnitaMission.
+  ///
+  /// In en, this message translates to:
+  /// **'AnitaB.org envisions a future where the people who imagine and build technology mirror the people and societies for whom they build it. They connect, inspire, and guide women in computing, and organizations that view technology innovation as a strategic imperative.'**
+  String get fpsAnitaMission;
+
+  /// No description provided for @fpsCodeMission.
+  ///
+  /// In en, this message translates to:
+  /// **'Code.org is an education innovation nonprofit dedicated to the vision that every student in every school has the opportunity to learn computer science as part of their core K-12 education.'**
+  String get fpsCodeMission;
+
+  /// No description provided for @fpsSavvyMission.
+  ///
+  /// In en, this message translates to:
+  /// **'World Savvy collaborates with educators and school and district leaders to build future-ready learning environments that are inclusive, adaptive, and prepare students to thrive today and in the future.'**
+  String get fpsSavvyMission;
+
   /// No description provided for @fpsCheck.
   ///
   /// In en, this message translates to:
@@ -571,7 +565,7 @@ abstract class Lang {
   /// No description provided for @fpsCheckHint.
   ///
   /// In en, this message translates to:
-  /// **'Check our math; open a GitHub link to the source code for this screen'**
+  /// **'Check our math: open a GitHub link to the source code for this screen'**
   String get fpsCheckHint;
 
   /// No description provided for @tsPageTitle.

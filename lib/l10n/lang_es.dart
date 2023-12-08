@@ -5,6 +5,28 @@ class LangEs extends Lang {
   LangEs([String locale = 'es']) : super(locale);
 
   @override
+  String get gLogoHint =>
+      'Logo de Empathetic LLC. Actívalo para ir a la página principal.';
+
+  @override
+  String get gProductsHint => 'Abrir la página de productos';
+
+  @override
+  String get gPlanHint => 'Abrir la página de plan';
+
+  @override
+  String get gTeamHint => 'Abrir la página de equipo';
+
+  @override
+  String get gSupportHint => 'Abrir la página de apoyo';
+
+  @override
+  String get gSettingsHint => 'Abrir la página de configuración';
+
+  @override
+  String get gBack => 'Regresar';
+
+  @override
   String get gGitHint =>
       'Icono de GitHub, activar para abrir la página de Empathetic LLC';
 
@@ -19,6 +41,30 @@ class LangEs extends Lang {
   @override
   String get gEmailHint =>
       'Icono de correo electrónico, activar para redactar un correo a Empathetic LLC';
+
+  @override
+  String get gReachOut => 'Comunícate';
+
+  @override
+  String get gEFUIHint => 'Empathetic Flutter UI';
+
+  @override
+  String get gEFUILinkHint =>
+      'Enlace de GitHub al paquete de UI que potencia esta app';
+
+  @override
+  String get gDontCha => '¿No desearías?';
+
+  @override
+  String get gDontChaHint =>
+      'Enlace de GitHub al código fuente de esta pantalla';
+
+  @override
+  String get gDontChaWish =>
+      '¿No desearías que tu interfaz fuera divertida como ';
+
+  @override
+  String get gMeQ => 'yo?';
 
   @override
   String get gFahIconHint =>
@@ -37,60 +83,10 @@ class LangEs extends Lang {
       'Icono de World Savvy, activar para abrir su sitio web';
 
   @override
-  String get gBack => 'Regresar';
-
-  @override
-  String get gSettings => 'Ir a la página de configuración';
-
-  @override
-  String get gReachOut => 'Comunícate';
-
-  @override
-  String get gEFUIHint => 'Empathetic Flutter UI';
-
-  @override
-  String get gEFUILinkHint =>
-      'Enlace de GitHub al paquete de UI que potencia esta app';
-
-  @override
-  String get hsProductsHint => 'Abrir la página de productos';
-
-  @override
-  String get hsPlanHint => 'Abrir la página de plan';
-
-  @override
-  String get hsTeamHint => 'Abrir la página de equipo';
-
-  @override
-  String get hsSupportHint => 'Abrir la página de apoyo';
-
-  @override
   String get hsSlogan => 'Trayendo OSS\nHacia nosotros';
 
   @override
-  String get hsLogoHint =>
-      'Logo de Empathetic LLC. Actívalo para ir a la página principal.';
-
-  @override
-  String get hsVideoSemantics => 'Animación del logo de Empathetic LLC.';
-
-  @override
-  String get hsiOSWebVideo =>
-      'Traducido por IA:\nActualmente, el reproductor de video de Flutter no funciona en iOS.\nPedimos disculpas por la página de inicio aburrida.';
-
-  @override
-  String get ssDontCha => '¿No desearías?';
-
-  @override
-  String get ssDontChaHint =>
-      'Enlace de GitHub al código fuente de esta pantalla';
-
-  @override
-  String get ssDontChaWish =>
-      '¿No desearías que tu interfaz fuera divertida como ';
-
-  @override
-  String get ssMeQ => 'yo?';
+  String get hsVideoSemantics => 'Animación del logo de Empathetic LLC';
 
   @override
   String get csReversedNote =>
@@ -244,9 +240,6 @@ class LangEs extends Lang {
   String get fpsPageHint => 'Abrir la página del plan financiero';
 
   @override
-  String get fpsEventual => 'eventual';
-
-  @override
   String fpsRaised(Object goal, Object income) {
     return '$income de $goal recaudados';
   }
@@ -260,16 +253,7 @@ class LangEs extends Lang {
   }
 
   @override
-  String get fpsAnitaMission =>
-      'Traducido por IA:\nAnitaB.org visualiza un futuro en el que las personas que imaginan y construyen tecnología reflejen a las personas y sociedades para las cuales la construyen. Conectan, inspiran y guían a las mujeres en la informática y a las organizaciones que ven la innovación tecnológica como un imperativo estratégico.';
-
-  @override
-  String get fpsCodeMission =>
-      'Traducido por IA:\nCode.org es una organización sin fines de lucro dedicada a la innovación educativa, con la visión de que cada estudiante en cada escuela tenga la oportunidad de aprender ciencias de la computación como parte de su educación básica desde el jardín de infantes hasta el último grado.';
-
-  @override
-  String get fpsSavvyMission =>
-      'Traducido por IA:\nWorld Savvy colabora con educadores, líderes escolares y de distrito para crear entornos de aprendizaje preparados para el futuro que sean inclusivos, adaptativos y preparen a los estudiantes para prosperar hoy y en el futuro.';
+  String get fpsEventual => 'eventual';
 
   @override
   String get fpsAnitaCNavHint =>
@@ -282,6 +266,18 @@ class LangEs extends Lang {
   @override
   String get fpsSavvyCNavHint =>
       'Abrir un enlace a World Savvy en Charity Navigator';
+
+  @override
+  String get fpsAnitaMission =>
+      'Traducido por IA:\nAnitaB.org visualiza un futuro en el que las personas que imaginan y construyen tecnología reflejen a las personas y sociedades para las cuales la construyen. Conectan, inspiran y guían a las mujeres en la informática y a las organizaciones que ven la innovación tecnológica como un imperativo estratégico.';
+
+  @override
+  String get fpsCodeMission =>
+      'Traducido por IA:\nCode.org es una organización sin fines de lucro dedicada a la innovación educativa, con la visión de que cada estudiante en cada escuela tenga la oportunidad de aprender ciencias de la computación como parte de su educación básica desde el jardín de infantes hasta el último grado.';
+
+  @override
+  String get fpsSavvyMission =>
+      'Traducido por IA:\nWorld Savvy colabora con educadores, líderes escolares y de distrito para crear entornos de aprendizaje preparados para el futuro que sean inclusivos, adaptativos y preparen a los estudiantes para prosperar hoy y en el futuro.';
 
   @override
   String get fpsCheck => 'Verifica nuestros cálculos';

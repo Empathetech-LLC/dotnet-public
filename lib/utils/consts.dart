@@ -1,3 +1,8 @@
+// App config //
+
+const String empathetech = "Empathetech";
+const String empathetech_llc = "Empathetech LLC";
+
 // Assets //
 
 const String lightLogoPath = 'assets/light-logo.png';
@@ -5,9 +10,10 @@ const String darkLogoPath = 'assets/dark-logo.png';
 const String lightLogoVideoPath = 'assets/light-animation.mp4';
 const String darkLogoVideoPath = 'assets/dark-animation.mp4';
 
-const String smokeSignalPath = 'assets/smoke-signal-icon.png';
+const String smokeSignalIconPath = 'assets/smoke-signal-icon.png';
 
 const String founderIconPath = 'assets/founder.png';
+const String mike = "Michael Waldron";
 
 const String anitaBorgIconPath = 'assets/AnitaB.webp';
 const String codeDotOrgIconPath = 'assets/code-dot-org.png';
@@ -16,27 +22,32 @@ const String fahIconPath = 'assets/fah.png';
 
 const String ytdReportPath = 'assets/ytd-expenses.csv';
 
-const List<String> assets = [
+const Set<String> assetPaths = {
   lightLogoPath,
   darkLogoPath,
   lightLogoVideoPath,
   darkLogoVideoPath,
-  smokeSignalPath,
+  smokeSignalIconPath,
   founderIconPath,
   anitaBorgIconPath,
   codeDotOrgIconPath,
   worldSavvyIconPath,
   fahIconPath,
   ytdReportPath,
-];
+};
 
 // Links //
 
 const EFUILink = 'https://github.com/Empathetech-LLC/empathetech_flutter_ui';
-const financesSourceLink =
-    "https://github.com/Empathetech-LLC/dotnet-public/blob/main/lib/utils/finances.dart";
-const settingsSourceLink =
+
+const settingsLink =
     'https://github.com/Empathetech-LLC/dotnet-public/blob/main/lib/screens/Settings.dart';
+const colorSettingsLink =
+    'https://github.com/Empathetech-LLC/dotnet-public/blob/main/lib/screens/ColorSettings.dart';
+const styleSettingsLink =
+    'https://github.com/Empathetech-LLC/dotnet-public/blob/main/lib/screens/StyleSettings.dart';
+const financesLink =
+    "https://github.com/Empathetech-LLC/dotnet-public/blob/main/lib/utils/finances.dart";
 
 const graphicAlertLink = 'https://www.fiverr.com/graphic_alert';
 const pimenLink = 'https://pimen.itch.io/';
@@ -57,12 +68,12 @@ const aboutFaHLink = 'https://foldingathome.org/about-2/';
 // Asset sources //
 
 const Map<String, String> credits = {
-  lightLogoPath: 'Empathetech LLC',
-  darkLogoPath: 'Empathetech LLC',
-  lightLogoVideoPath: "Empathetech LLC and $graphicAlertLink",
-  darkLogoVideoPath: "Empathetech LLC and $graphicAlertLink",
-  smokeSignalPath: "Empathetech LLC and $pimenLink",
-  founderIconPath: "Michael Waldron and $dunvekLink",
+  lightLogoPath: empathetech_llc,
+  darkLogoPath: empathetech_llc,
+  lightLogoVideoPath: "$empathetech_llc & $graphicAlertLink",
+  darkLogoVideoPath: "$empathetech_llc & $graphicAlertLink",
+  smokeSignalIconPath: "$empathetech_llc & $pimenLink",
+  founderIconPath: "$mike & $dunvekLink",
   anitaBorgIconPath: anitaBorgLink,
   codeDotOrgIconPath: codeDotOrgLink,
   worldSavvyIconPath: worldSavvyLink,

@@ -9,29 +9,19 @@ import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 
 class SettingsFAB extends StatelessWidget {
   /// [FloatingActionButton] (but actually an [ElevatedButton]) that goes to the [SettingsScreen]
-  /// Control its size with the [EzConfig.instance] pref [circleDiameterKey]
   const SettingsFAB();
 
   @override
   Widget build(BuildContext context) {
-    final double fabSize = EzConfig.instance.prefs[circleDiameterKey];
-
     return Semantics(
       button: true,
-      hint: Lang.of(context)!.gSettings,
+      hint: Lang.of(context)!.gSettingsHint,
       child: ExcludeSemantics(
         child: ElevatedButton(
           onPressed: () => context.goNamed(settingsRoute),
-          child: Center(
-            child: Icon(
-              PlatformIcons(context).settings,
-              size: fabSize / 2,
-            ),
-          ),
+          child: Icon(PlatformIcons(context).settings),
           style: Theme.of(context).elevatedButtonTheme.style?.copyWith(
                 shape: MaterialStatePropertyAll(const CircleBorder()),
-                padding: MaterialStatePropertyAll(EdgeInsets.zero),
-                fixedSize: MaterialStatePropertyAll(Size(fabSize, fabSize)),
               ),
         ),
       ),
@@ -41,29 +31,19 @@ class SettingsFAB extends StatelessWidget {
 
 class BackFAB extends StatelessWidget {
   /// [FloatingActionButton] (but actually an [ElevatedButton]) that goes back via [popScreen]
-  /// Control its size with the [EzConfig.instance] pref [circleDiameterKey]
   const BackFAB();
 
   @override
   Widget build(BuildContext context) {
-    final double fabSize = EzConfig.instance.prefs[circleDiameterKey];
-
     return Semantics(
       button: true,
       hint: Lang.of(context)!.gBack,
       child: ExcludeSemantics(
         child: ElevatedButton(
           onPressed: () => popScreen(context: context),
-          child: Center(
-            child: Icon(
-              PlatformIcons(context).back,
-              size: fabSize / 2,
-            ),
-          ),
+          child: Icon(PlatformIcons(context).back),
           style: Theme.of(context).elevatedButtonTheme.style?.copyWith(
                 shape: MaterialStatePropertyAll(const CircleBorder()),
-                padding: MaterialStatePropertyAll(EdgeInsets.zero),
-                fixedSize: MaterialStatePropertyAll(Size(fabSize, fabSize)),
               ),
         ),
       ),

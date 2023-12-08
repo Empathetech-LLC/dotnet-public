@@ -26,19 +26,19 @@ class DotNetScaffold extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Gather theme data //
+    // Gather the theme data //
 
-    final bool leftHandedUser = EzConfig.instance.dominantHand == Hand.left;
+    final bool leftHandedUser = (EzConfig.get(isRightHandKey) == false);
     final bool isLight = !PlatformTheme.of(context)!.isDark;
 
     // Reverse the colors of the app bar to highlight it
     final Color appBarColor = Theme.of(context).colorScheme.onBackground;
     final Color appBarTextColor = Theme.of(context).colorScheme.background;
 
-    final TextStyle appBarTextStyle = buildHeadlineSmall(appBarTextColor);
-    final TextStyle drawerTextStyle = buildHeadlineSmall(appBarColor);
+    final TextStyle appBarTextStyle =
+        buildHeadlineSmall(color: appBarTextColor);
+    final TextStyle drawerTextStyle = buildHeadlineSmall(color: appBarColor);
 
-    final double textScalar = MediaQuery.of(context).textScaleFactor;
     final double iconSize = appBarTextStyle.fontSize!;
 
     final IconThemeData appBarIconData = IconThemeData(
@@ -53,12 +53,12 @@ class DotNetScaffold extends StatelessWidget {
       titleTextStyle: appBarTextStyle,
     );
 
-    final double margin = EzConfig.instance.prefs[marginKey];
-    final double buttonSpacer = EzConfig.instance.prefs[buttonSpacingKey];
+    final double margin = EzConfig.get(marginKey);
+    final double buttonSpacer = EzConfig.get(buttonSpacingKey);
 
     // Set toolbar height to equal space above and below text links
     final double toolbarHeight =
-        appBarTextStyle.fontSize! * MediaQuery.of(context).textScaleFactor * 3;
+        MediaQuery.textScalerOf(context).scale(appBarTextStyle.fontSize!) * 3;
 
     final double tabBarHeight = (tabBar == null) ? 0 : toolbarHeight * (2 / 3);
 
@@ -67,7 +67,7 @@ class DotNetScaffold extends StatelessWidget {
     final EzLinkImage logo = EzLinkImage(
       image: AssetImage(isLight ? darkLogoPath : lightLogoPath),
       onTap: () => context.goNamed(homeRoute),
-      semanticLabel: Lang.of(context)!.hsLogoHint,
+      semanticLabel: Lang.of(context)!.gLogoHint,
       width: toolbarHeight,
       height: toolbarHeight,
     );
@@ -83,7 +83,6 @@ class DotNetScaffold extends StatelessWidget {
     final DotNetDrawer drawer = DotNetDrawer(
       context: context,
       style: drawerTextStyle,
-      scalar: textScalar,
       spacer: buttonSpacer,
       header: drawerIcons,
     );
@@ -98,7 +97,6 @@ class DotNetScaffold extends StatelessWidget {
     final PageLinks pageLinks = PageLinks(
       context: context,
       style: appBarTextStyle,
-      scalar: textScalar,
       spacer: buttonSpacer,
     );
 
@@ -137,10 +135,12 @@ class DotNetScaffold extends StatelessWidget {
 
     // Return the build //
 
-    return EzSwapScaffold(
-      small: smallBuild,
-      large: largeBuild,
-      threshold: threshold,
+    return SelectionArea(
+      child: EzSwapScaffold(
+        small: smallBuild,
+        large: largeBuild,
+        threshold: threshold,
+      ),
     );
   }
 }

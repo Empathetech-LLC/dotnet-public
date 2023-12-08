@@ -1,6 +1,7 @@
 export 'CharityOrgs.dart';
-export 'constants.dart';
+export 'consts.dart';
 export 'DotNetDrawer.dart';
+export 'EFUIShoutOut.dart';
 export 'DotNetScaffold.dart';
 export 'FABulous.dart';
 export 'FaHBanner.dart';

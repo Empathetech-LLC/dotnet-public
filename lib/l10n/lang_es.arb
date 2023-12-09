@@ -22,7 +22,7 @@
   "gEFUILinkHint": "Enlace de GitHub al paquete de UI que potencia esta app",
   "gDontCha": "¿No desearías?",
   "gDontChaHint": "Enlace de GitHub al código fuente de esta pantalla",
-  "gDontChaWish": "¿No desearías que tu interfaz fuera divertida como ",
+  "gDontChaWish": "¿No desearías que tu interfaz fuera divertida como",
   "gMeQ": "yo?",
 
   "gFahIconHint": "Icono de Folding at home, activar para abrir su sitio web",
@@ -78,14 +78,14 @@
   "plsBeSolutionContent": "Traducido por IA:\nAfortunadamente, hay personas increíbles en todo el mundo trabajando juntas hacia una narrativa mejor. Una donde los proveedores de servicios y los clientes tienen una relación activa, saludable y mutuamente beneficiosa.\n\nLa comunidad de código abierto.\n\nEl software se considera de código abierto cuando el código está disponible gratuitamente para que cualquiera lo vea (siempre), modifique (a menudo) y/o distribuya (a veces). Es software construido por personas que reconocen que los problemas compartidos requieren soluciones compartidas. El desarrollo colaborativo crea mejores experiencias humanas y permite una innovación ilimitada.\n\nEntonces, ¿cómo hacemos el cambio de código cerrado a código abierto? Requiere mucho tiempo, energía y conocimiento previo.\n\nAhí es donde entramos nosotros.",
   
   "plsProvideValue": "Proporciona valor",
-  "plsProvideValueContent1": "Traducido por IA:\nNuestra misión es reequilibrar el poder en la tecnología haciendo el software de código abierto más accesible.\n\nConstruiremos puentes entre la comunidad de código abierto y aquellos sin suficiente tiempo, energía o conocimiento previo.\nConstruiremos aplicaciones accesibles y multiplataforma para gestionar fácilmente un ecosistema de herramientas de código abierto.\n\nPero, ¡no se pueden construir puentes (o aplicaciones) sin una base sólida! Por eso, ",
-  "plsProvideValueContent2": " existe. Nos enorgullece cumplir las palabras con hechos, y hemos hecho proactivamente nuestro UI de código abierto.",
+  "plsProvideValueContent1": "Traducido por IA:\nNuestra misión es reequilibrar el poder en la tecnología haciendo el software de código abierto más accesible.\n\nConstruiremos puentes entre la comunidad de código abierto y aquellos sin suficiente tiempo, energía o conocimiento previo.\nConstruiremos aplicaciones accesibles y multiplataforma para gestionar fácilmente un ecosistema de herramientas de código abierto.\n\nPero, ¡no se pueden construir puentes (o aplicaciones) sin una base sólida! Por eso,",
+  "plsProvideValueContent2": "existe. Nos enorgullece cumplir las palabras con hechos, y hemos hecho proactivamente nuestro UI de código abierto.",
   
   "plsDoItRight": "Hazlo bien",
-  "plsDoItRightContent1": "Traducido por IA:\nSi los proveedores de servicios recuerdan mantenerse Empathetech, ",
-  "plsDoItRightContent1Fix": "Traducido por IA: Si los proveedores de servicios recuerdan mantenerse Empathetic, ",
+  "plsDoItRightContent1": "Traducido por IA:\nSi los proveedores de servicios recuerdan mantenerse Empathetech,",
+  "plsDoItRightContent1Fix": "Traducido por IA: Si los proveedores de servicios recuerdan mantenerse Empathetic,",
   "plsSaaSHint": "Abre el artículo de Wikipedia para software como servicio",
-  "plsDoItRightContent2": " puede beneficiar a todos.\n\nPara empezar: un ecosistema de código cerrado de software de código abierto sería paradójico. Así que, aunque los compromisos oficiales de licencia vendrán con el lanzamiento oficial, nuestro objetivo es lanzar bajo una ",
+  "plsDoItRightContent2": "puede beneficiar a todos.\n\nPara empezar: un ecosistema de código cerrado de software de código abierto sería paradójico. Así que, aunque los compromisos oficiales de licencia vendrán con el lanzamiento oficial, nuestro objetivo es lanzar bajo una ",
   "plsDualLicense": "licencia dual",
   "plsDualLicenseHint": "Abre el artículo de Wikipedia para Multi-licencia",
   "plsDoItRightContent3": ". Como dijimos: un problema compartido requiere una solución compartida. Un equipo pequeño no puede ",

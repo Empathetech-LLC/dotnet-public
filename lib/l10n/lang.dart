@@ -403,13 +403,13 @@ abstract class Lang {
   /// No description provided for @plsProvideValueContent1.
   ///
   /// In en, this message translates to:
-  /// **'Our mission is to re-balance the power in tech by making open source software more accessible.\n\nWe will build bridges between the open source community and those without enough time, energy, or prior knowledge.\nWe will build accessible, cross-platform applications for easily managing an ecosystem of open source tools.\n\nBut, you can\'t build bridges (or apps) without a strong foundation! That\'s why '**
+  /// **'Our mission is to re-balance the power in tech by making open source software more accessible.\n\nWe will build bridges between the open source community and those without enough time, energy, or prior knowledge.\nWe will build accessible, cross-platform applications for easily managing an ecosystem of open source tools.\n\nBut, you can\'t build bridges (or apps) without a strong foundation! That\'s why'**
   String get plsProvideValueContent1;
 
   /// No description provided for @plsProvideValueContent2.
   ///
   /// In en, this message translates to:
-  /// **' exists. We take pride in meeting words with actions, and have pro-actively made our UI open source.'**
+  /// **'exists. We take pride in meeting words with actions, and have pro-actively made our UI open source.'**
   String get plsProvideValueContent2;
 
   /// No description provided for @plsDoItRight.
@@ -421,13 +421,13 @@ abstract class Lang {
   /// No description provided for @plsDoItRightContent1.
   ///
   /// In en, this message translates to:
-  /// **'If the service providers remember to stay Empathetech, '**
+  /// **'If the service providers remember to stay Empathetech,'**
   String get plsDoItRightContent1;
 
   /// No description provided for @plsDoItRightContent1Fix.
   ///
   /// In en, this message translates to:
-  /// **'If the service providers remember to stay Empathetic, '**
+  /// **'If the service providers remember to stay Empathetic,'**
   String get plsDoItRightContent1Fix;
 
   /// No description provided for @plsSaaSHint.
@@ -439,7 +439,7 @@ abstract class Lang {
   /// No description provided for @plsDoItRightContent2.
   ///
   /// In en, this message translates to:
-  /// **' can benefit everyone.\n\nFor starters: a closed source ecosystem of open source software would be paradoxical. So, while official licensing commitments will come with the official launch, we aim to release under a '**
+  /// **'can benefit everyone.\n\nFor starters: a closed source ecosystem of open source software would be paradoxical. So, while official licensing commitments will come with the official launch, we aim to release under a '**
   String get plsDoItRightContent2;
 
   /// No description provided for @plsDualLicense.

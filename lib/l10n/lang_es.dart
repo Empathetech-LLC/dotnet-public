@@ -182,22 +182,22 @@ class LangEs extends Lang {
 
   @override
   String get plsProvideValueContent1 =>
-      'Traducido por IA:\nNuestra misión es reequilibrar el poder en la tecnología haciendo el software de código abierto más accesible.\n\nConstruiremos puentes entre la comunidad de código abierto y aquellos sin suficiente tiempo, energía o conocimiento previo.\nConstruiremos aplicaciones accesibles y multiplataforma para gestionar fácilmente un ecosistema de herramientas de código abierto.\n\nPero, ¡no se pueden construir puentes (o aplicaciones) sin una base sólida! Por eso, ';
+      'Traducido por IA:\nNuestra misión es reequilibrar el poder en la tecnología haciendo el software de código abierto más accesible.\n\nConstruiremos puentes entre la comunidad de código abierto y aquellos sin suficiente tiempo, energía o conocimiento previo.\nConstruiremos aplicaciones accesibles y multiplataforma para gestionar fácilmente un ecosistema de herramientas de código abierto.\n\nPero, ¡no se pueden construir puentes (o aplicaciones) sin una base sólida! Por eso,';
 
   @override
   String get plsProvideValueContent2 =>
-      ' existe. Nos enorgullece cumplir las palabras con hechos, y hemos hecho proactivamente nuestro UI de código abierto.';
+      'existe. Nos enorgullece cumplir las palabras con hechos, y hemos hecho proactivamente nuestro UI de código abierto.';
 
   @override
   String get plsDoItRight => 'Hazlo bien';
 
   @override
   String get plsDoItRightContent1 =>
-      'Traducido por IA:\nSi los proveedores de servicios recuerdan mantenerse Empathetech, ';
+      'Traducido por IA:\nSi los proveedores de servicios recuerdan mantenerse Empathetech,';
 
   @override
   String get plsDoItRightContent1Fix =>
-      'Traducido por IA: Si los proveedores de servicios recuerdan mantenerse Empathetic, ';
+      'Traducido por IA: Si los proveedores de servicios recuerdan mantenerse Empathetic,';
 
   @override
   String get plsSaaSHint =>
@@ -205,7 +205,7 @@ class LangEs extends Lang {
 
   @override
   String get plsDoItRightContent2 =>
-      ' puede beneficiar a todos.\n\nPara empezar: un ecosistema de código cerrado de software de código abierto sería paradójico. Así que, aunque los compromisos oficiales de licencia vendrán con el lanzamiento oficial, nuestro objetivo es lanzar bajo una ';
+      'puede beneficiar a todos.\n\nPara empezar: un ecosistema de código cerrado de software de código abierto sería paradójico. Así que, aunque los compromisos oficiales de licencia vendrán con el lanzamiento oficial, nuestro objetivo es lanzar bajo una ';
 
   @override
   String get plsDualLicense => 'licencia dual';

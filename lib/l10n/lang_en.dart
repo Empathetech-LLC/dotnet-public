@@ -178,22 +178,22 @@ class LangEn extends Lang {
 
   @override
   String get plsProvideValueContent1 =>
-      'Our mission is to re-balance the power in tech by making open source software more accessible.\n\nWe will build bridges between the open source community and those without enough time, energy, or prior knowledge.\nWe will build accessible, cross-platform applications for easily managing an ecosystem of open source tools.\n\nBut, you can\'t build bridges (or apps) without a strong foundation! That\'s why ';
+      'Our mission is to re-balance the power in tech by making open source software more accessible.\n\nWe will build bridges between the open source community and those without enough time, energy, or prior knowledge.\nWe will build accessible, cross-platform applications for easily managing an ecosystem of open source tools.\n\nBut, you can\'t build bridges (or apps) without a strong foundation! That\'s why';
 
   @override
   String get plsProvideValueContent2 =>
-      ' exists. We take pride in meeting words with actions, and have pro-actively made our UI open source.';
+      'exists. We take pride in meeting words with actions, and have pro-actively made our UI open source.';
 
   @override
   String get plsDoItRight => 'Do it right';
 
   @override
   String get plsDoItRightContent1 =>
-      'If the service providers remember to stay Empathetech, ';
+      'If the service providers remember to stay Empathetech,';
 
   @override
   String get plsDoItRightContent1Fix =>
-      'If the service providers remember to stay Empathetic, ';
+      'If the service providers remember to stay Empathetic,';
 
   @override
   String get plsSaaSHint =>
@@ -201,7 +201,7 @@ class LangEn extends Lang {
 
   @override
   String get plsDoItRightContent2 =>
-      ' can benefit everyone.\n\nFor starters: a closed source ecosystem of open source software would be paradoxical. So, while official licensing commitments will come with the official launch, we aim to release under a ';
+      'can benefit everyone.\n\nFor starters: a closed source ecosystem of open source software would be paradoxical. So, while official licensing commitments will come with the official launch, we aim to release under a ';
 
   @override
   String get plsDualLicense => 'dual license';

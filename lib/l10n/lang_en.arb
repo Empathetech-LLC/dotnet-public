@@ -22,7 +22,7 @@
   "gEFUILinkHint": "GitHub link to the UI package powering this app",
   "gDontCha": "Don't cha?",
   "gDontChaHint": "GitHub link to the source code for this screen",
-  "gDontChaWish": "Don't cha wish your frontend was fun like ", 
+  "gDontChaWish": "Don't cha wish your frontend was fun like", 
   "gMeQ": "me?",
 
   "gFahIconHint": "Folding at home icon, activate to open their site",
@@ -78,14 +78,14 @@
   "plsBeSolutionContent": "Fortunately, there are amazing people all over the world working together towards a better narrative. One where the service providers and the customers have an active, healthy, and mutually beneficial relationship.\n\nThe open source community.\n\nSoftware is considered open source when the code is freely available for anyone to view (always), modify (often), and/or distribute (sometimes). It's software built by folx who recognize shared problems require shared solutions. Collaborative development creates better human experiences and allows for unlimited innovation.\n\nSo, how do we make the switch from closed to open source? It takes a lot of time, energy, and prior knowledge.\n\nThat's where we come in.",
   
   "plsProvideValue": "Provide value",
-  "plsProvideValueContent1": "Our mission is to re-balance the power in tech by making open source software more accessible.\n\nWe will build bridges between the open source community and those without enough time, energy, or prior knowledge.\nWe will build accessible, cross-platform applications for easily managing an ecosystem of open source tools.\n\nBut, you can't build bridges (or apps) without a strong foundation! That's why ",
-  "plsProvideValueContent2": " exists. We take pride in meeting words with actions, and have pro-actively made our UI open source.",
+  "plsProvideValueContent1": "Our mission is to re-balance the power in tech by making open source software more accessible.\n\nWe will build bridges between the open source community and those without enough time, energy, or prior knowledge.\nWe will build accessible, cross-platform applications for easily managing an ecosystem of open source tools.\n\nBut, you can't build bridges (or apps) without a strong foundation! That's why",
+  "plsProvideValueContent2": "exists. We take pride in meeting words with actions, and have pro-actively made our UI open source.",
   
   "plsDoItRight": "Do it right",
-  "plsDoItRightContent1": "If the service providers remember to stay Empathetech, ",
-  "plsDoItRightContent1Fix": "If the service providers remember to stay Empathetic, ",
+  "plsDoItRightContent1": "If the service providers remember to stay Empathetech,",
+  "plsDoItRightContent1Fix": "If the service providers remember to stay Empathetic,",
   "plsSaaSHint": "Open the Wikipedia article for software as a service",
-  "plsDoItRightContent2": " can benefit everyone.\n\nFor starters: a closed source ecosystem of open source software would be paradoxical. So, while official licensing commitments will come with the official launch, we aim to release under a ",
+  "plsDoItRightContent2": "can benefit everyone.\n\nFor starters: a closed source ecosystem of open source software would be paradoxical. So, while official licensing commitments will come with the official launch, we aim to release under a ",
   "plsDualLicense": "dual license",
   "plsDualLicenseHint": "Open the Wikipedia article for Multi-licensing",
   "plsDoItRightContent3": ". Like we said: a shared problem requires a shared solution. One small team can't ",
@@ -145,8 +145,8 @@
 
   "fahJoin": "Join the Fold!",
   
-  "fahIntro": "Empathetech has a Folding@home ",
-  "fahIntroFix": "Empathetic has a Folding@home ",
+  "fahIntro": "Empathetech has a Folding@home",
+  "fahIntroFix": "Empathetic has a Folding@home",
   "fahTeamHint": "Open the Empathetic LLC folding at home team page",
   
   "fahWhatQ": "What's Folding@home?",

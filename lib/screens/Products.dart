@@ -15,162 +15,172 @@ class _ProductsScreenState extends State<ProductsScreen>
     with SingleTickerProviderStateMixin {
   // Gather the theme data //
 
-  final double _textSpacer = EzConfig.get(textSpacingKey);
+  final EzSpacer _textSpacer = EzSpacer(EzConfig.get(textSpacingKey));
 
-  late final TextStyle? _headingStyle = headlineSmall(context);
-  late final TextStyle? _subHeadingStyle = titleLarge(context);
-  late final TextStyle? _contentStyle = bodyLarge(context);
+  late final TextStyle? titleStyle = getTitle(context);
+  late final TextStyle? bodyStyle = getBody(context);
 
   // Set the page title //
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    setPageTitle(context, Lang.of(context)!.psPageTitle);
+    setPageTitle(Lang.of(context)!.psPageTitle);
   }
-
-  // Return the build //
 
   @override
   Widget build(BuildContext context) {
+    // Define the page content //
+
+    final EzNewLine newLine = EzNewLine(titleStyle);
+
+    // Return the build //
+
     return DotNetScaffold(
       body: EzScreen(
         child: EzScrollView(
           children: [
             // EFUI //
 
-            // Heading
+            // Intro
             Text(
-              efui,
-              style: _headingStyle,
+              efuiL,
+              style: getHeadline(context),
               textAlign: TextAlign.center,
-              semanticsLabel: Lang.of(context)!.gEFUIHint,
+              semanticsLabel: efuiLFix,
             ),
-
-            // Sub-heading
             EzLink(
               Lang.of(context)!.psEFUISlogan,
-              style: _subHeadingStyle,
+              style: titleStyle,
               textAlign: TextAlign.center,
-              url: Uri.parse(EFUILink),
-              semanticsLabel: Lang.of(context)!.gEFUILinkHint,
+              url: Uri.parse(EFUISource),
+              semanticsLabel: Lang.of(context)!.gEFUISourceHint,
+              tooltip: EFUISource,
             ),
-            EzSpacer(_textSpacer),
+            _textSpacer,
 
             // Description
             Text(
               Lang.of(context)!.psEFUIDescription,
-              style: _contentStyle,
+              style: bodyStyle,
               textAlign: TextAlign.center,
             ),
+            _textSpacer,
 
+            // Platform availability
             Text(
               Lang.of(context)!.psPlatform,
-              style: _contentStyle?.copyWith(fontWeight: FontWeight.bold),
+              style: titleStyle,
               textAlign: TextAlign.center,
             ),
             Text(
               Lang.of(context)!.psPlatformContent,
-              style: _contentStyle,
+              style: bodyStyle,
               textAlign: TextAlign.center,
             ),
+            newLine,
 
-            Text(
-              Lang.of(context)!.psScreen,
-              style: _contentStyle?.copyWith(fontWeight: FontWeight.bold),
-              textAlign: TextAlign.center,
-            ),
-            EzRichText(
-              [
-                EzPlainText(
-                  Lang.of(context)!.psScreenContent,
-                  context: context,
-                  style: _contentStyle,
-                ),
-                EzInlineLink(
-                  "TalkBack",
-                  style: _contentStyle,
-                  url: Uri.parse(
-                      "https://support.google.com/accessibility/android/answer/6006598?hl=en"),
-                  semanticsLabel: Lang.of(context)!.psTalkBackHint,
-                ),
-                EzPlainText(
-                  Lang.of(context)!.psAnd,
-                  context: context,
-                  style: _contentStyle,
-                ),
-                EzInlineLink(
-                  "VoiceOver",
-                  style: _contentStyle,
-                  url: Uri.parse(
-                      "https://support.apple.com/guide/iphone/turn-on-and-practice-voiceover-iph3e2e415f/ios"),
-                  semanticsLabel: Lang.of(context)!.psVoiceOverHint,
-                ),
-              ],
-              textAlign: TextAlign.center,
-            ),
-
-            Text(
-              Lang.of(context)!.psCustom,
-              style: _contentStyle?.copyWith(fontWeight: FontWeight.bold),
-              textAlign: TextAlign.center,
-            ),
-            Text(
-              Lang.of(context)!.psCustomContent,
-              style: _contentStyle,
-              textAlign: TextAlign.center,
-            ),
-
-            Text(
-              Lang.of(context)!.psInternational,
-              style: _contentStyle?.copyWith(fontWeight: FontWeight.bold),
-              textAlign: TextAlign.center,
-            ),
-            Text(
-              Lang.of(context)!.psInternationalContent,
-              style: _contentStyle,
-              textAlign: TextAlign.center,
-            ),
-
+            // Responsive design
             Text(
               Lang.of(context)!.psResponsive,
-              style: _contentStyle?.copyWith(fontWeight: FontWeight.bold),
+              style: titleStyle,
               textAlign: TextAlign.center,
             ),
             Text(
               Lang.of(context)!.psResponsiveContent,
-              style: _contentStyle,
+              style: bodyStyle,
               textAlign: TextAlign.center,
             ),
-            EzSpacer(_textSpacer),
+            newLine,
+
+            // Screen reader support
+            Text(
+              Lang.of(context)!.psScreen,
+              style: titleStyle,
+              textAlign: TextAlign.center,
+            ),
+            EzRichText([
+              EzPlainText(
+                Lang.of(context)!.psScreenContent,
+                style: bodyStyle,
+              ),
+              EzInlineLink(
+                "TalkBack",
+                style: bodyStyle,
+                textAlign: TextAlign.center,
+                url: Uri.parse(
+                    "https://support.google.com/accessibility/android/answer/6006598?hl=en"),
+                semanticsLabel: Lang.of(context)!.psTalkBackHint,
+              ),
+              EzPlainText(
+                Lang.of(context)!.psAnd,
+                style: bodyStyle,
+              ),
+              EzInlineLink(
+                "VoiceOver",
+                style: bodyStyle,
+                textAlign: TextAlign.center,
+                url: Uri.parse(
+                    "https://support.apple.com/guide/iphone/turn-on-and-practice-voiceover-iph3e2e415f/ios"),
+                semanticsLabel: Lang.of(context)!.psVoiceOverHint,
+              ),
+            ], textAlign: TextAlign.center),
+            newLine,
+
+            // User customization
+            Text(
+              Lang.of(context)!.psCustom,
+              style: titleStyle,
+              textAlign: TextAlign.center,
+            ),
 
             Text(
-              Lang.of(context)!.psEFUITagLine,
-              style: _contentStyle,
+              Lang.of(context)!.psCustomContent,
+              style: bodyStyle,
               textAlign: TextAlign.center,
             ),
-            EzSpacer(_textSpacer),
+            newLine,
 
-            EzRichText(
-              [
-                EzInlineLink(
-                  Lang.of(context)!.gReachOut,
-                  style: _contentStyle,
-                  url: Uri.parse("mailto:$EmpathetechAdmin"),
-                  semanticsLabel: Lang.of(context)!.gEmailHint,
-                ),
-                EzPlainText(
-                  Lang.of(context)!.psConsult,
-                  context: context,
-                  style: _contentStyle,
-                ),
-              ],
+            // Internationalization
+            Text(
+              Lang.of(context)!.psInternational,
+              style: titleStyle,
               textAlign: TextAlign.center,
             ),
+            Text(
+              Lang.of(context)!.psInternationalContent,
+              style: bodyStyle,
+              textAlign: TextAlign.center,
+            ),
+            _textSpacer,
+
+            // Tag line
+            Text(
+              Lang.of(context)!.psEFUITagLine,
+              style: bodyStyle,
+              textAlign: TextAlign.center,
+            ),
+            _textSpacer,
+
+            // Consultation call-out
+            EzRichText([
+              EzInlineLink(
+                Lang.of(context)!.gReachOut,
+                style: bodyStyle,
+                textAlign: TextAlign.center,
+                url: Uri.parse("mailto:$EmpathetechAdmin"),
+                semanticsLabel: Lang.of(context)!.gEmailTo(empathetech_llc),
+              ),
+              EzPlainText(
+                Lang.of(context)!.psConsult,
+                style: bodyStyle,
+              ),
+            ], textAlign: TextAlign.center),
+            _textSpacer,
           ],
         ),
       ),
-      fab: const SettingsFAB(),
+      fab: SettingsFAB(context: context),
     );
   }
 }

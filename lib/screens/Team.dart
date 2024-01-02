@@ -13,19 +13,22 @@ class TeamScreen extends StatefulWidget {
 
 class _TeamScreenState extends State<TeamScreen> {
   // Gather the theme data //
-  late final TextStyle? _headerStyle = headlineSmall(context);
-  late final TextStyle? _titleStyle = titleLarge(context);
-  late final TextStyle? _contentStyle = bodyLarge(context);
 
-  final double _padding = EzConfig.get(paddingKey);
-  final double _textSpacer = EzConfig.get(textSpacingKey);
+  final double padding = EzConfig.get(paddingKey);
+
+  late final EzSpacer _padder = EzSpacer(padding);
+  late final EzSpacer _textSpacer = EzSpacer(EzConfig.get(textSpacingKey));
+
+  late final TextStyle? headlineStyle = getHeadline(context);
+  late final TextStyle? titleStyle = getTitle(context);
+  late final TextStyle? bodyStyle = getBody(context);
 
   // Set the page title //
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    setPageTitle(context, Lang.of(context)!.tsPageTitle);
+    setPageTitle(Lang.of(context)!.tsPageTitle);
   }
 
   // Return the build //
@@ -40,10 +43,10 @@ class _TeamScreenState extends State<TeamScreen> {
 
             Text(
               Lang.of(context)!.tsCore,
-              style: _headerStyle,
+              style: headlineStyle,
               textAlign: TextAlign.center,
             ),
-            EzSpacer(_padding),
+            _padder,
 
             // Founder
             EzRowCol.sym(
@@ -51,63 +54,65 @@ class _TeamScreenState extends State<TeamScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 // Avatar of Mike
-                Semantics(
-                  image: true,
-                  label: Lang.of(context)!.tsTheFounderImageHint,
-                  child: CircleAvatar(
-                    backgroundColor: Colors.transparent,
-                    foregroundImage: const AssetImage(founderIconPath),
-                    radius: MediaQuery.textScalerOf(context)
-                        .scale(CircleAvatarRadius),
+                Container(
+                  constraints: BoxConstraints(
+                    maxHeight:
+                        MediaQuery.textScalerOf(context).scale(imageSize),
+                  ),
+                  child: EzImage(
+                    image: const AssetImage(founderIconPath),
+                    semanticLabel: Lang.of(context)!.tsTheFounderImageHint,
                   ),
                 ),
-                EzSwapSpacer(_padding),
+                EzSwapSpacer(padding),
 
                 // Information
-                Column(
-                  mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      Lang.of(context)!.tsTheFounder,
-                      style: _titleStyle,
-                      textAlign: TextAlign.center,
-                    ),
-                    Text(
-                      mike,
-                      style: _contentStyle,
-                      textAlign: TextAlign.center,
-                    ),
-                  ],
+                MergeSemantics(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        Lang.of(context)!.tsTheFounder,
+                        style: titleStyle,
+                        textAlign: TextAlign.center,
+                      ),
+                      Text(
+                        mike,
+                        style: bodyStyle,
+                        textAlign: TextAlign.center,
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),
-            EzSpacer(_textSpacer),
+            _textSpacer,
 
             // Community //
 
             Text(
               Lang.of(context)!.tsCommunity,
-              style: _headerStyle,
+              style: headlineStyle,
               textAlign: TextAlign.center,
             ),
-            EzSpacer(_padding),
+            _padder,
 
             // Folding@home
             FaHBanner(
-              titleStyle: _titleStyle,
-              contentStyle: _contentStyle,
+              titleStyle: titleStyle,
+              bodyStyle: bodyStyle,
             ),
-            EzSpacer(_textSpacer),
+            _textSpacer,
 
             // Freelance //
 
             Text(
               Lang.of(context)!.tsFreelance,
-              style: _headerStyle,
+              style: headlineStyle,
               textAlign: TextAlign.center,
             ),
-            EzSpacer(_padding),
+            _padder,
 
             // Logo animation
             Column(
@@ -116,24 +121,24 @@ class _TeamScreenState extends State<TeamScreen> {
               children: [
                 EzLink(
                   'Graphic Alert',
-                  style: _titleStyle,
+                  style: titleStyle,
                   textAlign: TextAlign.center,
                   url: Uri.parse(graphicAlertLink),
                   semanticsLabel: Lang.of(context)!.tsGALinkHint,
+                  tooltip: graphicAlertLink,
                 ),
                 Text(
                   Lang.of(context)!.tsGADescription,
-                  style: _contentStyle,
+                  style: bodyStyle,
                   textAlign: TextAlign.center,
-                  semanticsLabel: Lang.of(context)!.tsGADescriptionFix,
                 ),
               ],
             ),
-            EzSpacer(_textSpacer),
+            _textSpacer,
           ],
         ),
       ),
-      fab: const SettingsFAB(),
+      fab: SettingsFAB(context: context),
     );
   }
 }

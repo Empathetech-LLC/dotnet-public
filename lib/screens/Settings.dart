@@ -17,17 +17,17 @@ class SettingsScreen extends StatefulWidget {
 class _SettingsScreenState extends State<SettingsScreen> {
   // Gather the theme data //
 
-  final double _buttonSpacer = EzConfig.get(buttonSpacingKey);
-  final double _textSpacer = EzConfig.get(textSpacingKey);
+  final double buttonSpace = EzConfig.get(buttonSpacingKey);
 
-  late final TextStyle? _labelStyle = labelLarge(context);
+  late final EzSpacer _buttonSpacer = EzSpacer(buttonSpace);
+  late final EzSpacer _buttonSeparator = EzSpacer(2 * buttonSpace);
 
   // Set the page title //
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    setPageTitle(context, EFUILang.of(context)!.ssPageTitle);
+    setPageTitle(EFUILang.of(context)!.ssPageTitle);
   }
 
   // Return the build //
@@ -40,52 +40,51 @@ class _SettingsScreenState extends State<SettingsScreen> {
           children: [
             // Functionality disclaimer
             EzWarning(
-              message: kIsWeb
-                  ? EFUILang.of(context)!.ssSettingsGuide
-                  : EFUILang.of(context)!.ssSettingsGuideWeb,
-              style: headlineSmall(context),
+              titleStyle: getTitle(context),
+              bodyStyle: getBody(context),
+              body: kIsWeb
+                  ? EFUILang.of(context)!.ssSettingsGuideWeb
+                  : EFUILang.of(context)!.ssSettingsGuide,
             ),
-            EzSpacer(_buttonSpacer),
+            _buttonSeparator,
 
             // Global settings
             const EzDominantHandSwitch(),
-            EzSpacer(_buttonSpacer),
+            _buttonSpacer,
 
             const EzThemeModeSwitch(),
-            EzSpacer(_buttonSpacer),
+            _buttonSeparator,
 
             const EzLocaleSetting(),
-            EzSpacer(_buttonSpacer),
+            _buttonSpacer,
 
             // Color settings
             ElevatedButton(
               onPressed: () => context.goNamed(colorSettingsRoute),
               child: Text(EFUILang.of(context)!.csPageTitle),
             ),
-            EzSpacer(_buttonSpacer),
+            _buttonSpacer,
 
             // Style settings
             ElevatedButton(
               onPressed: () => context.goNamed(styleSettingsRoute),
               child: Text(EFUILang.of(context)!.stsPageTitle),
             ),
-            EzSpacer(_buttonSpacer),
+            _buttonSeparator,
 
-            EzResetButton(
-              context: context,
-              dialogTitle: EFUILang.of(context)!.ssResetAll,
-            ),
-            EzSpacer(_textSpacer),
+            // Reset button
+            const EzResetButton(),
+            _buttonSeparator,
 
             EFUIShoutOut(
-              style: _labelStyle,
-              fileLink: settingsLink,
+              style: getLabel(context),
+              sourceLink: settingsSource,
             ),
-            EzSpacer(_buttonSpacer),
+            _buttonSpacer
           ],
         ),
       ),
-      fab: const BackFAB(),
+      fab: BackFAB(context: context),
     );
   }
 }

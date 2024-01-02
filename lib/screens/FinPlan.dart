@@ -15,13 +15,11 @@ class FinPlanScreen extends StatefulWidget {
 class _FinPlanScreenState extends State<FinPlanScreen> {
   // Gather the theme data //
 
-  final double _buttonSpacer = EzConfig.get(buttonSpacingKey);
-  final double _textSpacer = EzConfig.get(textSpacingKey);
+  final EzSpacer _buttonSpacer = EzSpacer(EzConfig.get(buttonSpacingKey));
+  final EzSpacer _textSpacer = EzSpacer(EzConfig.get(textSpacingKey));
 
-  late final TextStyle? _headingStyle = headlineSmall(context);
-  late final TextStyle? _titleStyle = titleLarge(context);
-  late final TextStyle? _contentStyle = titleMedium(context);
-  late final TextStyle? _labelStyle = labelLarge(context);
+  late final TextStyle? headlineStyle = getHeadline(context);
+  late final TextStyle? bodyStyle = getBody(context);
 
   // Gather the financial data //
 
@@ -58,7 +56,7 @@ class _FinPlanScreenState extends State<FinPlanScreen> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    setPageTitle(context, Lang.of(context)!.fpsPageTitle);
+    setPageTitle(Lang.of(context)!.fpsPageTitle);
   }
 
   // Return the build //
@@ -69,6 +67,7 @@ class _FinPlanScreenState extends State<FinPlanScreen> {
       body: EzScreen(
         child: EzScrollView(
           children: [
+            // X of Y goal raised
             Semantics(
               button: false,
               readOnly: true,
@@ -77,55 +76,65 @@ class _FinPlanScreenState extends State<FinPlanScreen> {
                   Lang.of(context)!.fpsYear,
               child: ExcludeSemantics(
                 child: Column(children: [
+                  // Headline
                   Text(
                     Lang.of(context)!.fpsRaised(_goal, _income),
-                    style: _headingStyle,
+                    style: headlineStyle,
                     textAlign: TextAlign.center,
                   ),
-                  EzSpacer(_buttonSpacer),
+                  _buttonSpacer,
+
+                  // Progress indicator
                   Container(
                     width: widthOf(context) * (2 / 3),
-                    height: _headingStyle?.fontSize,
+                    height: headlineStyle!.fontSize,
                     child: LinearProgressIndicator(
                       value: _totalIncome / _totalGoal,
                       color: Theme.of(context).colorScheme.secondary,
-                      backgroundColor: _headingStyle?.color,
+                      backgroundColor: headlineStyle!.color,
                       minHeight: double.infinity,
                       borderRadius: BorderRadius.circular(5),
                     ),
                   ),
-                  EzSpacer(_buttonSpacer),
+                  _buttonSpacer,
+
+                  // Sub-header
                   Text(
                     Lang.of(context)!.fpsYear,
-                    style: _headingStyle,
+                    style: headlineStyle,
                     textAlign: TextAlign.center,
                   ),
                 ]),
               ),
             ),
-            EzSpacer(_textSpacer),
+            _textSpacer,
+
+            // Profit distribution
             Text(
               Lang.of(context)!.fpsSplit(_profit),
-              style: _contentStyle,
+              style: bodyStyle,
               textAlign: TextAlign.center,
             ),
-            EzSpacer(_buttonSpacer),
+            _buttonSpacer,
+
             CharityOrgs(
-              titleStyle: _titleStyle,
-              contentStyle: _contentStyle,
+              titleStyle: getTitle(context),
+              bodyStyle: bodyStyle,
             ),
-            EzSpacer(_textSpacer),
+            _textSpacer,
+
+            // Finances source
             EzLink(
               Lang.of(context)!.fpsCheck,
-              style: _labelStyle,
+              style: getLabel(context),
               textAlign: TextAlign.center,
-              url: Uri.parse(financesLink),
+              url: Uri.parse(financesSource),
               semanticsLabel: Lang.of(context)!.fpsCheckHint,
             ),
           ],
         ),
       ),
-      fab: const SettingsFAB(),
+      fab: SettingsFAB(context: context),
     );
   }
 }

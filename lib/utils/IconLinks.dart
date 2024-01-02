@@ -10,91 +10,84 @@ class IconLinks extends StatelessWidget {
   final GlobalKey? key;
   final BuildContext context;
   final double iconSize;
-  final Color? color;
   final double margin;
   final double spacer;
+  final Color? color;
 
-  /// [Row] of [Icon]s wrapped in clickable [MouseRegion]s for Empathetech's public pages
-  const IconLinks({
+  /// [Row] of [IconButton]s leading to Empathetech's public pages
+  IconLinks({
     this.key,
     required this.context,
     required this.iconSize,
-    this.color,
     required this.margin,
     required this.spacer,
+    this.color,
   }) : super(key: key);
 
-  List<Widget> get rowChildren => [
-        EzSpacer.row(margin),
+  // Define the buttons //
 
-        // Github
-        Semantics(
-          link: true,
-          hint: Lang.of(context)!.gGitHint,
-          child: ExcludeSemantics(
-            child: IconButton(
-              onPressed: () => launchUrl(Uri.parse(EmpathetechGitHub)),
-              icon: Icon(LineIcons.github, size: iconSize, color: color),
-            ),
-          ),
-        ),
+  late final IconButton _gitHub = IconButton(
+    onPressed: () => launchUrl(Uri.parse(EmpathetechGitHub)),
+    icon: Icon(LineIcons.github, size: iconSize, color: color),
+    tooltip: "GitHub",
+  );
 
-        EzSpacer.row(spacer),
+  late final IconButton _linkedIn = IconButton(
+    onPressed: () => launchUrl(Uri.parse(EmpathetechLinkedIn)),
+    icon: Icon(LineIcons.linkedin, size: iconSize, color: color),
+    tooltip: "LinkedIn",
+  );
 
-        // LinkedIn
-        Semantics(
-          link: true,
-          hint: Lang.of(context)!.gLinkedHint,
-          child: ExcludeSemantics(
-            child: IconButton(
-              onPressed: () => launchUrl(Uri.parse(EmpathetechLinkedIn)),
-              icon: Icon(LineIcons.linkedin, size: iconSize, color: color),
-            ),
-          ),
-        ),
+  late final IconButton _mastodon = IconButton(
+    onPressed: () => launchUrl(Uri.parse(EmpathetechMastodon)),
+    icon: Icon(LineIcons.mastodon, size: iconSize, color: color),
+    tooltip: "Mastodon",
+  );
 
-        EzSpacer.row(spacer),
+  late final IconButton _email = IconButton(
+    onPressed: () => launchUrl(Uri.parse("mailto:$EmpathetechCommunity")),
+    icon: Icon(Icons.mail_outline, size: iconSize, color: color),
+    tooltip: Lang.of(context)!.gEmail,
+  );
 
-        // Mastodon
-        Semantics(
-          link: true,
-          hint: Lang.of(context)!.gMastodonHint,
-          child: ExcludeSemantics(
-            child: IconButton(
-              onPressed: () => launchUrl(Uri.parse(EmpathetechMastodon)),
-              icon: Icon(LineIcons.mastodon, size: iconSize, color: color),
-            ),
-          ),
-        ),
+  // Define the getters //
 
-        EzSpacer.row(spacer),
-
-        // Email
-        Semantics(
-          link: true,
-          hint: Lang.of(context)!.gEmailHint,
-          child: ExcludeSemantics(
-            child: IconButton(
-              onPressed: () =>
-                  launchUrl(Uri.parse("mailto:$EmpathetechCommunity")),
-              icon: Icon(Icons.mail_outline, size: iconSize, color: color),
-            ),
-          ),
-        ),
-
-        EzSpacer.row(margin),
+  List<IconButton> get buttons => [
+        _gitHub,
+        _linkedIn,
+        _mastodon,
+        _email,
       ];
 
-  double get width {
-    return 2 * margin + 4 * spacer + 4 * iconSize;
+  List<Widget> get children {
+    final EzSpacer _margin = EzSpacer.row(margin);
+    final EzSpacer _spacer = EzSpacer.row(spacer);
+
+    return [
+      _margin,
+      _gitHub,
+      _spacer,
+      _linkedIn,
+      _spacer,
+      _mastodon,
+      _spacer,
+      _email,
+      _margin,
+    ];
   }
+
+  double get width {
+    return 2 * margin + 3 * spacer + 4 * iconSize;
+  }
+
+  // Return the build //
 
   @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.center,
-      children: rowChildren,
+      children: children,
     );
   }
 }

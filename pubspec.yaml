@@ -15,19 +15,21 @@ dependencies:
   intl: ^0.18.1
 
   # Flutter/Google
-  video_player: ^2.7.2
-  go_router: ^12.0.0
   shared_preferences: ^2.2.1
+  go_router: ^13.0.0
+  video_player: ^2.7.2
   url_launcher: ^6.1.14
 
   # Community
   flutter_platform_widgets: ^6.0.2
+  flutter_localized_locales: ^2.0.5
   line_icons: ^2.0.3
   chewie: ^1.7.4
   
   # Empathetech made
-  empathetech_flutter_ui:
-    path: ../empathetech_flutter_ui
+  empathetech_flutter_ui: ^5.0.0
+  # empathetech_flutter_ui:
+  #   path: ../empathetech_flutter_ui
   
   
 dev_dependencies:

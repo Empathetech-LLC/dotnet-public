@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class DotNetDrawer extends StatelessWidget {
-  final GlobalKey? key;
+  final Key? key;
   final BuildContext context;
 
   /// [TextStyle] to use on the links' text
@@ -27,21 +27,26 @@ class DotNetDrawer extends StatelessWidget {
     required this.header,
   });
 
-  // Define functions && buttons //
+  // Define the helper functions //
 
   void _navigateTo(BuildContext context, String routeName) {
-    popScreen(context: context, pass: routeName);
+    popScreen(context: context, result: routeName);
     context.goNamed(routeName);
   }
 
+  // Define the buttons //
+
   @override
   Widget build(BuildContext context) {
+    final EzSpacer _spacer = EzSpacer(spacer);
+
     final EzLink products = EzLink(
       Lang.of(context)!.psPageTitle,
       style: style,
       textAlign: TextAlign.center,
       onTap: () => _navigateTo(context, productsRoute),
       semanticsLabel: Lang.of(context)!.gProductsHint,
+      color: Theme.of(context).colorScheme.onSurface,
     );
 
     final EzLink plan = EzLink(
@@ -50,6 +55,7 @@ class DotNetDrawer extends StatelessWidget {
       textAlign: TextAlign.center,
       onTap: () => _navigateTo(context, planRoute),
       semanticsLabel: Lang.of(context)!.gPlanHint,
+      color: Theme.of(context).colorScheme.onSurface,
     );
 
     final EzLink team = EzLink(
@@ -58,6 +64,7 @@ class DotNetDrawer extends StatelessWidget {
       textAlign: TextAlign.center,
       onTap: () => _navigateTo(context, teamRoute),
       semanticsLabel: Lang.of(context)!.gTeamHint,
+      color: Theme.of(context).colorScheme.onSurface,
     );
 
     final EzLink support = EzLink(
@@ -66,6 +73,7 @@ class DotNetDrawer extends StatelessWidget {
       textAlign: TextAlign.center,
       onTap: () => _navigateTo(context, supportRoute),
       semanticsLabel: Lang.of(context)!.gSupportHint,
+      color: Theme.of(context).colorScheme.onSurface,
     );
 
     // Return the build //
@@ -76,18 +84,21 @@ class DotNetDrawer extends StatelessWidget {
         children: [
           DrawerHeader(
             child: EzScrollView(
+              children: header.children,
               scrollDirection: Axis.horizontal,
-              child: header,
             ),
+            margin: EdgeInsets.zero,
+            padding: EdgeInsets.zero,
           ),
+          _spacer,
           products,
-          EzSpacer(spacer),
+          _spacer,
           plan,
-          EzSpacer(spacer),
+          _spacer,
           team,
-          EzSpacer(spacer),
+          _spacer,
           support,
-          EzSpacer(spacer),
+          _spacer,
         ],
       ),
     );

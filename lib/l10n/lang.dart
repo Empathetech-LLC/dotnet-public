@@ -97,8 +97,14 @@ abstract class Lang {
   /// No description provided for @gLogoHint.
   ///
   /// In en, this message translates to:
-  /// **'Empathetic LLC logo. Activate to go to the home page.'**
+  /// **'Empathetic LLC logo: a 2D hourglass. Activate to go to the home page'**
   String get gLogoHint;
+
+  /// No description provided for @gHomeHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Open the home page'**
+  String get gHomeHint;
 
   /// No description provided for @gProductsHint.
   ///
@@ -124,41 +130,29 @@ abstract class Lang {
   /// **'Open the support page'**
   String get gSupportHint;
 
+  /// No description provided for @gSocials.
+  ///
+  /// In en, this message translates to:
+  /// **'Socials'**
+  String get gSocials;
+
+  /// No description provided for @gEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'Email'**
+  String get gEmail;
+
+  /// No description provided for @gEmailTo.
+  ///
+  /// In en, this message translates to:
+  /// **'Email {recipient}'**
+  String gEmailTo(Object recipient);
+
   /// No description provided for @gSettingsHint.
   ///
   /// In en, this message translates to:
-  /// **'Go to the settings page'**
+  /// **'Open the settings page'**
   String get gSettingsHint;
-
-  /// No description provided for @gBack.
-  ///
-  /// In en, this message translates to:
-  /// **'Go back'**
-  String get gBack;
-
-  /// No description provided for @gGitHint.
-  ///
-  /// In en, this message translates to:
-  /// **'GitHub icon, activate to open the page for Empathetic LLC'**
-  String get gGitHint;
-
-  /// No description provided for @gLinkedHint.
-  ///
-  /// In en, this message translates to:
-  /// **'LinkedIn icon, activate to open the page for Empathetic LLC'**
-  String get gLinkedHint;
-
-  /// No description provided for @gMastodonHint.
-  ///
-  /// In en, this message translates to:
-  /// **'Mastodon icon, activate to open the page for Empathetic LLC'**
-  String get gMastodonHint;
-
-  /// No description provided for @gEmailHint.
-  ///
-  /// In en, this message translates to:
-  /// **'Email icon, activate to draft an email to Empathetic LLC'**
-  String get gEmailHint;
 
   /// No description provided for @gReachOut.
   ///
@@ -166,17 +160,29 @@ abstract class Lang {
   /// **'Reach out'**
   String get gReachOut;
 
-  /// No description provided for @gEFUIHint.
+  /// No description provided for @gEFUISourceHint.
   ///
   /// In en, this message translates to:
-  /// **'Empathetic Flutter UI'**
-  String get gEFUIHint;
+  /// **'Activate to open the GitHub page for EFUI'**
+  String get gEFUISourceHint;
 
-  /// No description provided for @gEFUILinkHint.
+  /// No description provided for @gEmpathetechGitHint.
   ///
   /// In en, this message translates to:
-  /// **'GitHub link to the UI package powering this app'**
-  String get gEFUILinkHint;
+  /// **'Activate to open the GitHub page for Empathetic LLC'**
+  String get gEmpathetechGitHint;
+
+  /// No description provided for @gDontChaWish.
+  ///
+  /// In en, this message translates to:
+  /// **'Don\'t cha wish your frontend was fun '**
+  String get gDontChaWish;
+
+  /// No description provided for @gMeQ.
+  ///
+  /// In en, this message translates to:
+  /// **'like me?'**
+  String get gMeQ;
 
   /// No description provided for @gDontCha.
   ///
@@ -187,43 +193,31 @@ abstract class Lang {
   /// No description provided for @gDontChaHint.
   ///
   /// In en, this message translates to:
-  /// **'GitHub link to the source code for this screen'**
+  /// **'Activate to open the GitHub page for this screen\'s source code'**
   String get gDontChaHint;
-
-  /// No description provided for @gDontChaWish.
-  ///
-  /// In en, this message translates to:
-  /// **'Don\'t cha wish your frontend was fun like '**
-  String get gDontChaWish;
-
-  /// No description provided for @gMeQ.
-  ///
-  /// In en, this message translates to:
-  /// **'me?'**
-  String get gMeQ;
 
   /// No description provided for @gFahIconHint.
   ///
   /// In en, this message translates to:
-  /// **'Folding at home icon, activate to open their site'**
+  /// **'Folding at home logo, activate to open their site'**
   String get gFahIconHint;
 
   /// No description provided for @gAnitaBorgIconHint.
   ///
   /// In en, this message translates to:
-  /// **'AnitaB.org icon, activate to open their site'**
+  /// **'AnitaB.org logo, activate to open their site'**
   String get gAnitaBorgIconHint;
 
   /// No description provided for @gCodeDotOrgIconHint.
   ///
   /// In en, this message translates to:
-  /// **'code.org icon, activate to open their site'**
+  /// **'code.org logo, activate to open their site'**
   String get gCodeDotOrgIconHint;
 
   /// No description provided for @gWorldSavvyIconHint.
   ///
   /// In en, this message translates to:
-  /// **'World Savvy icon, activate to open their site'**
+  /// **'World Savvy logo, activate to open their site'**
   String get gWorldSavvyIconHint;
 
   /// No description provided for @hsSlogan.
@@ -232,11 +226,17 @@ abstract class Lang {
   /// **'Bringing OSS\nTo us'**
   String get hsSlogan;
 
-  /// No description provided for @hsVideoSemantics.
+  /// No description provided for @hsSloganFix.
   ///
   /// In en, this message translates to:
-  /// **'Empathetic LLC logo animation'**
-  String get hsVideoSemantics;
+  /// **'Bringing O-S-S\nto us'**
+  String get hsSloganFix;
+
+  /// No description provided for @hsVideoHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Empathetic LLC logo animation: Empathetic\'s name transforms into its logo'**
+  String get hsVideoHint;
 
   /// No description provided for @csReversedNote.
   ///
@@ -259,13 +259,13 @@ abstract class Lang {
   /// No description provided for @psEFUIDescription.
   ///
   /// In en, this message translates to:
-  /// **'EFUI is an open source Flutter package that creates a holistic foundation for digital accessibility.\nEFUI provides a starter kit for every pillar of digital accessibility:'**
+  /// **'EFUI is an open source package that creates a holistic foundation for digital accessibility,\nby providing a starter kit in every pillar of digital accessibility:'**
   String get psEFUIDescription;
 
   /// No description provided for @psPlatform.
   ///
   /// In en, this message translates to:
-  /// **'\nPlatform availability'**
+  /// **'Platform availability'**
   String get psPlatform;
 
   /// No description provided for @psPlatformContent.
@@ -277,7 +277,7 @@ abstract class Lang {
   /// No description provided for @psScreen.
   ///
   /// In en, this message translates to:
-  /// **'\nScreen reader compliance'**
+  /// **'Screen reader support'**
   String get psScreen;
 
   /// No description provided for @psScreenContent.
@@ -307,7 +307,7 @@ abstract class Lang {
   /// No description provided for @psCustom.
   ///
   /// In en, this message translates to:
-  /// **'\nUser customization'**
+  /// **'User customization'**
   String get psCustom;
 
   /// No description provided for @psCustomContent.
@@ -319,7 +319,7 @@ abstract class Lang {
   /// No description provided for @psInternational.
   ///
   /// In en, this message translates to:
-  /// **'\nInternationalization'**
+  /// **'Internationalization'**
   String get psInternational;
 
   /// No description provided for @psInternationalContent.
@@ -331,7 +331,7 @@ abstract class Lang {
   /// No description provided for @psResponsive.
   ///
   /// In en, this message translates to:
-  /// **'\nResponsive design'**
+  /// **'Responsive design'**
   String get psResponsive;
 
   /// No description provided for @psResponsiveContent.
@@ -379,7 +379,7 @@ abstract class Lang {
   /// No description provided for @plsIDProblemContent.
   ///
   /// In en, this message translates to:
-  /// **'Through their actions, big tech have shown they not only prioritize profits over our wellbeing, they\'re willing to sacrifice it for maximal profits.'**
+  /// **'It\'s clear that profit first business models aren\'t sustainable.\n\nBy definition, if profit comes first, things like customer wellbeing and global responsibility are afterthoughts.\n\nEspecially in technology, where the service providers are often disconnected from their customers.'**
   String get plsIDProblemContent;
 
   /// No description provided for @plsBeSolution.
@@ -391,7 +391,7 @@ abstract class Lang {
   /// No description provided for @plsBeSolutionContent.
   ///
   /// In en, this message translates to:
-  /// **'Fortunately, there are amazing people all over the world working together towards a better narrative. One where the service providers and the customers have an active, healthy, and mutually beneficial relationship.\n\nThe open source community.\n\nSoftware is considered open source when the code is freely available for anyone to view (always), modify (often), and/or distribute (sometimes). It\'s software built by folx who recognize shared problems require shared solutions. Collaborative development creates better human experiences and allows for unlimited innovation.\n\nSo, how do we make the switch from closed to open source? It takes a lot of time, energy, and prior knowledge.\n\nThat\'s where we come in.'**
+  /// **'Fortunately, there are amazing technologists all over the world working together towards a better narrative. One where the service providers and the customers have an active, healthy, and mutually beneficial relationship.\n\nThe open source community.\n\nSoftware is considered open source when the code is freely available for anyone to view (always), modify (often), and/or distribute (sometimes). It\'s software built by folx who recognize shared problems require shared solutions.\n\nSo, how does one make the switch from profit first (closed source) to open source? It takes a lot of time, energy, and prior knowledge.\n\nThat\'s where we come in.'**
   String get plsBeSolutionContent;
 
   /// No description provided for @plsProvideValue.
@@ -403,14 +403,20 @@ abstract class Lang {
   /// No description provided for @plsProvideValueContent1.
   ///
   /// In en, this message translates to:
-  /// **'Our mission is to re-balance the power in tech by making open source software more accessible.\n\nWe will build bridges between the open source community and those without enough time, energy, or prior knowledge.\nWe will build accessible, cross-platform applications for easily managing an ecosystem of open source tools.\n\nBut, you can\'t build bridges (or apps) without a strong foundation! That\'s why'**
+  /// **'Our mission is to re-balance the power in tech by making open source software more accessible.\n\nWe will build bridges between the open source community and those without enough time, energy, or prior knowledge.\n\nWe will build accessible, cross-platform applications for easily managing an ecosystem of open source tools.'**
   String get plsProvideValueContent1;
 
   /// No description provided for @plsProvideValueContent2.
   ///
   /// In en, this message translates to:
-  /// **'exists. We take pride in meeting words with actions, and have pro-actively made our UI open source.'**
+  /// **'But, you can\'t build bridges (or apps) without a strong foundation! That\'s why '**
   String get plsProvideValueContent2;
+
+  /// No description provided for @plsProvideValueContent3.
+  ///
+  /// In en, this message translates to:
+  /// **' exists. We take pride in meeting words with actions, and have pro-actively made our UI open source.'**
+  String get plsProvideValueContent3;
 
   /// No description provided for @plsDoItRight.
   ///
@@ -421,7 +427,7 @@ abstract class Lang {
   /// No description provided for @plsDoItRightContent1.
   ///
   /// In en, this message translates to:
-  /// **'If the service providers remember to stay Empathetech,'**
+  /// **'If the service providers remember to stay Empathetech, '**
   String get plsDoItRightContent1;
 
   /// No description provided for @plsDoItRightContent1Fix.
@@ -429,6 +435,12 @@ abstract class Lang {
   /// In en, this message translates to:
   /// **'If the service providers remember to stay Empathetic,'**
   String get plsDoItRightContent1Fix;
+
+  /// No description provided for @plsSaaS.
+  ///
+  /// In en, this message translates to:
+  /// **'Software as a Service'**
+  String get plsSaaS;
 
   /// No description provided for @plsSaaSHint.
   ///
@@ -439,8 +451,20 @@ abstract class Lang {
   /// No description provided for @plsDoItRightContent2.
   ///
   /// In en, this message translates to:
-  /// **'can benefit everyone.\n\nFor starters: a closed source ecosystem of open source software would be paradoxical. So, while official licensing commitments will come with the official launch, we aim to release under a '**
+  /// **' (SaaS) can benefit everyone.'**
   String get plsDoItRightContent2;
+
+  /// No description provided for @plsDoItRightContent3.
+  ///
+  /// In en, this message translates to:
+  /// **'For starters: a closed source ecosystem of open source software would be paradoxical. So, while official licensing commitments will come with official launches, Empathetech apps will release under a '**
+  String get plsDoItRightContent3;
+
+  /// No description provided for @plsDoItRightContent3Fix.
+  ///
+  /// In en, this message translates to:
+  /// **'For starters: a closed source ecosystem of open source software would be paradoxical. So, while official licensing commitments will come with official launches, Empathetic apps will release under a '**
+  String get plsDoItRightContent3Fix;
 
   /// No description provided for @plsDualLicense.
   ///
@@ -454,34 +478,22 @@ abstract class Lang {
   /// **'Open the Wikipedia article for Multi-licensing'**
   String get plsDualLicenseHint;
 
-  /// No description provided for @plsDoItRightContent3.
-  ///
-  /// In en, this message translates to:
-  /// **'. Like we said: a shared problem requires a shared solution. One small team can\'t '**
-  String get plsDoItRightContent3;
-
-  /// No description provided for @plsBigTechHint.
-  ///
-  /// In en, this message translates to:
-  /// **'Open the Wikipedia article for Big Tech'**
-  String get plsBigTechHint;
-
   /// No description provided for @plsDoItRightContent4.
   ///
   /// In en, this message translates to:
-  /// **' the world alone.\n\nFor the closed source version(s), we are fully ready to commit that...\n\n\t\t1. All Empathetech made SaaS products will have a lifetime option.\n\t\t2. We find selling personal information to be immoral; we will never auction your digital identity. That\'s why we charge for our services.\n\nAlso, let\'s briefly return to the bridges metaphor. A bridge without a place to go, or anyone that wants to use it, isn\'t a bridge; it\'s a waste of resources. That\'s why we\'re ready to make another commitment:\n\nRegardless of official structure (currently LLC) Empathetech will operate as a not-for-profit, mission based entity. Meaning...\n\n\t\t100% of net profit derived from our open source ecosystem app(s) will be committed back to the projects they are built upon\n\t\t100% of net profit derived from all other sources (consulting, donations, merch, etc.) will be committed to promoting global equity in tech education'**
+  /// **'Also, for the closed source version(s)...\n\n\t\t1. All Empathetech SaaS products will have a lifetime option.\n\t\t2. Selling someone else\'s personal information is immoral; Empathetech software will never auction your digital identity.\n\nOne last note on bridges. A bridge without a place to go, or anyone that wants to use it, isn\'t a bridge; it\'s a waste of resources.\n\nSo, another commitment: regardless of official structure (currently LLC) Empathetech will operate as a not-for-profit, mission based entity. Meaning...\n\n\t\t- 100% of net profit derived from all open source ecosystem app(s) will be committed back to the projects they are built upon\n\t\t- 100% of net profit derived from all other sources (consulting, donations, merch, etc.) will be committed to promoting global equity in tech education.'**
   String get plsDoItRightContent4;
 
   /// No description provided for @plsDoItRightContent4Fix.
   ///
   /// In en, this message translates to:
-  /// **' the world alone.\n\nFor the closed source version(s), we are fully ready to commit that...\n\n\t\t1. All Empathetic made SaaS products will have be a lifetime option.\n\t\t2. We find selling personal information to be immoral; we will never auction your digital identity. That\'s why we charge for our services.\n\nAlso, let\'s briefly return to the bridges metaphor. A bridge without a place to go, or anyone that wants to use it, isn\'t a bridge; it\'s a waste of resources. That\'s why we\'re ready to make another commitment:\n\nRegardless of official structure (currently LLC) Empathetic will operate as a not-for-profit, mission based entity. Meaning...\n\n\t\t100% of net profit derived from our open source ecosystem app(s) will be committed back to the projects they are built upon\n\t\t100% of net profit derived from all other sources (consulting, donations, merch, etc.) will be committed to promoting global equity in tech education'**
+  /// **'Also, for the closed source version(s)...\n\n\t\t1. All Empathetic SaaS products will have be a lifetime option.\n\t\t2. Selling someone else\'s personal information is immoral; Empathetic software will never auction your digital identity.\n\nOne last note on bridges. A bridge without a place to go, or anyone that wants to use it, isn\'t a bridge; it\'s a waste of resources.\n\nSo, another commitment: regardless of official structure (currently LLC) Empathetic will operate as a not-for-profit, mission based entity. Meaning...\n\n\t\t- 100% of net profit derived from all open source ecosystem app(s) will be committed back to the projects they are built upon\n\t\t- 100% of net profit derived from all other sources (consulting, donations, merch, etc.) will be committed to promoting global equity in tech education.'**
   String get plsDoItRightContent4Fix;
 
   /// No description provided for @plsDoItRightContent5.
   ///
   /// In en, this message translates to:
-  /// **'\n\nCheckout the '**
+  /// **'Checkout the '**
   String get plsDoItRightContent5;
 
   /// No description provided for @fpsPageTitle.
@@ -565,7 +577,7 @@ abstract class Lang {
   /// No description provided for @fpsCheckHint.
   ///
   /// In en, this message translates to:
-  /// **'Check our math: open a GitHub link to the source code for this screen'**
+  /// **'Open a GitHub link to the source code for this screen'**
   String get fpsCheckHint;
 
   /// No description provided for @tsPageTitle.
@@ -583,7 +595,7 @@ abstract class Lang {
   /// No description provided for @tsTheFounderImageHint.
   ///
   /// In en, this message translates to:
-  /// **'A picture of the founder of Empathetic LLC'**
+  /// **'A 2D profile photo of Michael Waldron'**
   String get tsTheFounderImageHint;
 
   /// No description provided for @tsTheFounder.
@@ -613,14 +625,8 @@ abstract class Lang {
   /// No description provided for @tsGADescription.
   ///
   /// In en, this message translates to:
-  /// **'Did the After Effects work for Empathetech LLC\'s logo animation'**
+  /// **'Implemented the logo animation in After Effects'**
   String get tsGADescription;
-
-  /// No description provided for @tsGADescriptionFix.
-  ///
-  /// In en, this message translates to:
-  /// **'Did the After Effects work for the Empathetic LLC logo animation'**
-  String get tsGADescriptionFix;
 
   /// No description provided for @spsPageTitle.
   ///
@@ -679,13 +685,13 @@ abstract class Lang {
   /// No description provided for @fahIntro.
   ///
   /// In en, this message translates to:
-  /// **'Empathetech has a Folding@home '**
+  /// **'Empathetech has a Folding@home'**
   String get fahIntro;
 
   /// No description provided for @fahIntroFix.
   ///
   /// In en, this message translates to:
-  /// **'Empathetic has a Folding@home '**
+  /// **'Empathetic has a Folding@home'**
   String get fahIntroFix;
 
   /// No description provided for @fahTeamHint.
@@ -709,13 +715,13 @@ abstract class Lang {
   /// No description provided for @fahStats.
   ///
   /// In en, this message translates to:
-  /// **'Together, we\'ve earned over 150 million points!\nThat puts Empathetech in the top 2% of all teams worldwide!'**
+  /// **'Together, we\'ve earned over 200 million points!\nThat puts Empathetech in the top 2% of all teams worldwide!'**
   String get fahStats;
 
   /// No description provided for @fahStatsFix.
   ///
   /// In en, this message translates to:
-  /// **'Together, we\'ve earned over 150 million points!\nThat puts Empathetic in the top 2% of all teams worldwide!'**
+  /// **'Together, we\'ve earned over 200 million points!\nThat puts Empathetic in the top 2% of all teams worldwide!'**
   String get fahStatsFix;
 }
 

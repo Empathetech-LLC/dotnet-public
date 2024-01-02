@@ -2,38 +2,39 @@
   "@@locale" : "es",
 
 
-  "gLogoHint": "Logo de Empathetic LLC. Actívalo para ir a la página principal.",
+  "gLogoHint": "Logotipo de Empathetic LLC, un reloj de arena en 2D. Actívalo para ir a la página principal",
 
+  "gHomeHint": "Abrir la página principal",
   "gProductsHint": "Abrir la página de productos",
   "gPlanHint": "Abrir la página de plan",
   "gTeamHint": "Abrir la página de equipo",
   "gSupportHint": "Abrir la página de apoyo",
+
+  "gSocials": "Sociales",
+  "gEmail": "Correo electrónico",
+  "gEmailTo": "Envía un correo electrónico a {recipient}",
+
   "gSettingsHint": "Abrir la página de configuración",
 
-  "gBack": "Regresar",
-
-  "gGitHint": "Icono de GitHub, activar para abrir la página de Empathetic LLC",
-  "gLinkedHint": "Icono de LinkedIn, activar para abrir la página de Empathetic LLC",
-  "gMastodonHint": "Icono de Mastodon, activar para abrir la página de Empathetic LLC",
-  "gEmailHint": "Icono de correo electrónico, activar para redactar un correo a Empathetic LLC",
-
   "gReachOut": "Comunícate",
-  "gEFUIHint": "Empathetic Flutter UI",
-  "gEFUILinkHint": "Enlace de GitHub al paquete de UI que potencia esta app",
+  "gEFUISourceHint": "Activa para abrir la página de GitHub para EFUI",
+  "gEmpathetechGitHint": "Activa para abrir la página de GitHub para Empathetic LLC",
+
+  "gDontChaWish": "¿No desearías que tu interfaz fuera divertida ",
+  "gMeQ": "como yo?",
   "gDontCha": "¿No desearías?",
-  "gDontChaHint": "Enlace de GitHub al código fuente de esta pantalla",
-  "gDontChaWish": "¿No desearías que tu interfaz fuera divertida como",
-  "gMeQ": "yo?",
+  "gDontChaHint": "Activa para abrir la página de GitHub del código fuente de esta pantalla",
 
-  "gFahIconHint": "Icono de Folding at home, activar para abrir su sitio web",
+  "gFahIconHint": "Logotipo de Folding at home, activar para abrir su sitio web",
 
-  "gAnitaBorgIconHint": "Icono de AnitaB.org, activar para abrir su sitio web",
-  "gCodeDotOrgIconHint": "Icono de code.org, activar para abrir su sitio web",
-  "gWorldSavvyIconHint": "Icono de World Savvy, activar para abrir su sitio web",
+  "gAnitaBorgIconHint": "Logotipo de AnitaB.org, activar para abrir su sitio web",
+  "gCodeDotOrgIconHint": "Logotipo de code.org, activar para abrir su sitio web",
+  "gWorldSavvyIconHint": "Logotipo de World Savvy, activar para abrir su sitio web",
 
 
   "hsSlogan": "Trayendo OSS\nHacia nosotros",
-  "hsVideoSemantics": "Animación del logo de Empathetic LLC",
+  "hsSloganFix": "Trayendo O-S-S\nhacia nosotros",
+  "hsVideoHint": "Animación del logotipo de Empathetic LLC: El nombre de Empathetic se transforma en su logotipo",
 
 
   "csReversedNote": "NOTA: ¡Los colores del tema de la barra superior están (intencionalmente) invertidos!",
@@ -41,26 +42,26 @@
 
   "psPageTitle": "Productos",
 
-  "psEFUISlogan": "Crea aplicaciones para cualquiera",
-  "psEFUIDescription": "NOTA: Esto fue traducido por IA\n\nEFUI es un paquete Flutter de código abierto que establece una base integral para la accesibilidad digital.\nEFUI ofrece un kit de inicio para cada pilar de la accesibilidad digital:",
+  "psEFUISlogan": "Crea aplicaciones para cualquier persona",
+  "psEFUIDescription": "NOTA: Esto fue traducido por IA\n\nEFUI es un paquete de código abierto que crea una base integral para la accesibilidad digital,\nproporcionando un kit de inicio en cada pilar de la accesibilidad digital:",
   
-  "psPlatform": "\nDisponibilidad de plataforma",
+  "psPlatform": "Disponibilidad de plataforma",
   "psPlatformContent": "EFUI construye aplicaciones completamente multiplataforma; ¡Android, iOS, Linux, MacOS, Windows y Web!",
   
-  "psScreen": "\nCumplimiento del lector de pantalla",
-  "psScreenContent": "Todo dentro de EFUI ha sido verificado manualmente con",
+  "psScreen": "Soporte de lector de pantalla",
+  "psScreenContent": "Todo dentro de EFUI ha sido verificado manualmente con ",
   "psTalkBackHint": "Abrir un enlace a la documentación de TalkBack",
   "psAnd": " y ",
   "psVoiceOverHint": "Abrir un enlace a la documentación de VoiceOver",
   
-  "psCustom": "\nPersonalización del usuario",
-  "psCustomContent": "La única forma de ser verdaderamente accesible para TODOS los clientes es empoderarlos con la libertad de elección.\nY eso es exactamente lo que hace EFUI; permite que cada aspecto del tema de una aplicación sea controlado por el usuario.",
+  "psCustom": "Personalización del usuario",
+  "psCustomContent": "La única manera de ser verdaderamente accesible para TODOS los clientes es capacitarlos con la libertad de elección.\nY eso es exactamente lo que hace EFUI; permite que cada aspecto del tema de una aplicación sea controlado por el usuario.",
   
-  "psInternational": "\nInternacionalización",
-  "psInternationalContent": "Todo el texto externo de EFUI ha sido traducido al español. Con esto, EFUI ofrece una infraestructura bien organizada para futuras traducciones ilimitadas.",
+  "psInternational": "Internacionalización",
+  "psInternationalContent": "Todo el texto externo de EFUI ha sido traducido al español. Con esto, EFUI proporciona una infraestructura bien organizada para futuras traducciones ilimitadas.",
   
-  "psResponsive": "\nDiseño adaptable",
-  "psResponsiveContent": "EFUI está lleno de herramientas para ayudar en la construcción de aplicaciones que responden elegantemente al espacio de la pantalla. ¡Para verlo en acción, solo juega con la ventana de la aplicación que estás usando ahora!",
+  "psResponsive": "Diseño responsive",
+  "psResponsiveContent": "EFUI está lleno de herramientas para ayudar en la construcción de aplicaciones que respondan elegantemente al espacio de la pantalla. ¡Para verlo en acción, simplemente juega con la ventana de la aplicación que estás usando ahora!",
   
   "psEFUITagLine": "Cuando se construye con EFUI, tus aplicaciones pueden realmente llegar a cualquier público.\n¡Trabajemos juntos para hacer de internet un lugar más accesible!",
   "psConsult": " para consulta y contratación",
@@ -72,27 +73,29 @@
   "plsBefore": "Antes de esto",
   
   "plsIDProblem": "Identifica el problema",
-  "plsIDProblemContent": "Traducido por IA:\nA través de sus acciones, las grandes tecnológicas han demostrado que no solo priorizan las ganancias sobre nuestro bienestar, sino que están dispuestas a sacrificarlo para obtener las ganancias máximas.",
+  "plsIDProblemContent": "Traducido por IA\n\nEstá claro que los modelos de negocio centrados en la ganancia no son sostenibles.\n\nPor definición, si la ganancia es lo primero, aspectos como el bienestar del cliente y la responsabilidad global son consideraciones secundarias.\n\nEspecialmente en tecnología, donde los proveedores de servicios a menudo están desconectados de sus clientes.",
   
   "plsBeSolution": "Sé parte de la solución",
-  "plsBeSolutionContent": "Traducido por IA:\nAfortunadamente, hay personas increíbles en todo el mundo trabajando juntas hacia una narrativa mejor. Una donde los proveedores de servicios y los clientes tienen una relación activa, saludable y mutuamente beneficiosa.\n\nLa comunidad de código abierto.\n\nEl software se considera de código abierto cuando el código está disponible gratuitamente para que cualquiera lo vea (siempre), modifique (a menudo) y/o distribuya (a veces). Es software construido por personas que reconocen que los problemas compartidos requieren soluciones compartidas. El desarrollo colaborativo crea mejores experiencias humanas y permite una innovación ilimitada.\n\nEntonces, ¿cómo hacemos el cambio de código cerrado a código abierto? Requiere mucho tiempo, energía y conocimiento previo.\n\nAhí es donde entramos nosotros.",
+  "plsBeSolutionContent": "Traducido por IA\n\nAfortunadamente, hay technologists increíbles en todo el mundo trabajando juntas hacia una narrativa mejor. Una donde los proveedores de servicios y los clientes tienen una relación activa, saludable y mutuamente beneficiosa.\n\nLa comunidad de código abierto.\n\nEl software se considera de código abierto cuando el código está disponible gratuitamente para que cualquiera lo vea (siempre), modifique (a menudo) y/o distribuya (a veces). Es software construido por personas que reconocen que los problemas compartidos requieren soluciones compartidas.\n\nEntonces, ¿cómo hace uno la transición de poner la ganancia primero (código cerrado) a código abierto? Requiere mucho tiempo, energía y conocimientos previos.\n\nAhí es donde entramos nosotros.",
   
   "plsProvideValue": "Proporciona valor",
-  "plsProvideValueContent1": "Traducido por IA:\nNuestra misión es reequilibrar el poder en la tecnología haciendo el software de código abierto más accesible.\n\nConstruiremos puentes entre la comunidad de código abierto y aquellos sin suficiente tiempo, energía o conocimiento previo.\nConstruiremos aplicaciones accesibles y multiplataforma para gestionar fácilmente un ecosistema de herramientas de código abierto.\n\nPero, ¡no se pueden construir puentes (o aplicaciones) sin una base sólida! Por eso,",
-  "plsProvideValueContent2": "existe. Nos enorgullece cumplir las palabras con hechos, y hemos hecho proactivamente nuestro UI de código abierto.",
+  "plsProvideValueContent1": "Traducido por IA\n\nNuestra misión es reequilibrar el poder en la tecnología haciendo el software de código abierto más accesible.\n\nConstruiremos puentes entre la comunidad de código abierto y aquellos sin suficiente tiempo, energía o conocimiento previo.\n\nConstruiremos aplicaciones accesibles y multiplataforma para gestionar fácilmente un ecosistema de herramientas de código abierto.",
+  "plsProvideValueContent2": "Pero, ¡no se pueden construir puentes (o aplicaciones) sin una base sólida! Por eso, ",
+  "plsProvideValueContent3": " existe. Nos enorgullece cumplir las palabras con hechos, y hemos hecho proactivamente nuestro UI de código abierto.",
   
   "plsDoItRight": "Hazlo bien",
-  "plsDoItRightContent1": "Traducido por IA:\nSi los proveedores de servicios recuerdan mantenerse Empathetech,",
-  "plsDoItRightContent1Fix": "Traducido por IA: Si los proveedores de servicios recuerdan mantenerse Empathetic,",
-  "plsSaaSHint": "Abre el artículo de Wikipedia para software como servicio",
-  "plsDoItRightContent2": "puede beneficiar a todos.\n\nPara empezar: un ecosistema de código cerrado de software de código abierto sería paradójico. Así que, aunque los compromisos oficiales de licencia vendrán con el lanzamiento oficial, nuestro objetivo es lanzar bajo una ",
+  "plsDoItRightContent1": "Traducido por IA\n\nSi los proveedores de servicios recuerdan mantenerse Empathetech, ",
+  "plsDoItRightContent1Fix": "Traducido por IA\n\nSi los proveedores de servicios recuerdan mantenerse Empathetic,",
+  "plsSaaS": "Software as a Service",
+  "plsSaaSHint": "Abre el artículo de Wikipedia para Software as a Service",
+  "plsDoItRightContent2": " (SaaS) puede beneficiar a todos.",
+  "plsDoItRightContent3": "Para empezar: un ecosistema de código cerrado de software de código abierto sería paradójico. Entonces, aunque los compromisos de licencia oficiales vendrán con los lanzamientos oficiales, las aplicaciones de Empathetech se lanzarán bajo una ",
+  "plsDoItRightContent3Fix": "Para empezar: un ecosistema de código cerrado de software de código abierto sería paradójico. Entonces, aunque los compromisos de licencia oficiales vendrán con los lanzamientos oficiales, las aplicaciones de Empathetic se lanzarán bajo una ",
   "plsDualLicense": "licencia dual",
   "plsDualLicenseHint": "Abre el artículo de Wikipedia para Multi-licencia",
-  "plsDoItRightContent3": ". Como dijimos: un problema compartido requiere una solución compartida. Un equipo pequeño no puede ",
-  "plsBigTechHint": "Abre el artículo de Wikipedia para las grandes tecnológicas",
-  "plsDoItRightContent4": " cambiar el mundo solo.\n\nPara la(s) versión(es) de código cerrado, estamos completamente listos para comprometernos a que...\n\n\t\t1. Todos los productos SaaS creados por Empathetech tendrán una opción de por vida.\n\t\t2. Consideramos que vender información personal es inmoral; nunca subastaremos tu identidad digital. Por eso cobramos por nuestros servicios.\n\nAdemás, volvamos brevemente a la metáfora de los puentes. Un puente sin un lugar a donde ir, o sin nadie que quiera usarlo, no es un puente; es un desperdicio de recursos. Por eso estamos listos para hacer otro compromiso:\n\nIndependientemente de la estructura oficial (actualmente LLC) Empathetech operará como una entidad sin fines de lucro, basada en una misión. Lo que significa...\n\n\t\t100% del beneficio neto obtenido de nuestra(s) aplicación(es) de ecosistema de código abierto será destinado nuevamente a los proyectos en los que se basan\n\t\t100% del beneficio neto obtenido de todas las demás fuentes (consultoría, donaciones, mercancía, etc.) será destinado a promover la equidad global en la educación tecnológica",
-  "plsDoItRightContent4Fix": " cambiar el mundo solo.\n\nPara la(s) versión(es) de código cerrado, estamos completamente listos para comprometernos a que...\n\n\t\t1. Todos los productos SaaS creados por Empathetic tendrán una opción de por vida.\n\t\t2. Consideramos que vender información personal es inmoral; nunca subastaremos tu identidad digital. Por eso cobramos por nuestros servicios.\n\nAdemás, volvamos brevemente a la metáfora de los puentes. Un puente sin un lugar a donde ir, o sin nadie que quiera usarlo, no es un puente; es un desperdicio de recursos. Por eso estamos listos para hacer otro compromiso:\n\nIndependientemente de la estructura oficial (actualmente LLC) Empathetic operará como una entidad sin fines de lucro, basada en una misión. Lo que significa...\n\n\t\t100% del beneficio neto obtenido de nuestra(s) aplicación(es) de ecosistema de código abierto será destinado nuevamente a los proyectos en los que se basan\n\t\t100% del beneficio neto obtenido de todas las demás fuentes (consultoría, donaciones, mercancía, etc.) será destinado a promover la equidad global en la educación tecnológica",
-  "plsDoItRightContent5": "\n\nRevisa el ",
+  "plsDoItRightContent4": "Además, para la(s) versión(es) de código cerrado...\n\n\t\t1. Todos los productos SaaS de Empathetech tendrán una opción de duración ilimitada.\n\t\t2. Vender la información personal de otra persona es inmoral; el software de Empathetech nunca subastará su identidad digital.\n\nUna última nota sobre puentes. Un puente sin un lugar a donde ir, o sin nadie que quiera usarlo, no es un puente; es un desperdicio de recursos.\n\nAsí que, otro compromiso: independientemente de la estructura oficial (actualmente LLC), Empathetech operará como una entidad sin fines de lucro y basada en la misión. Lo que significa...\n\n\t\t- El 100% de las ganancias netas derivadas de todas las aplicaciones del ecosistema de código abierto se destinará a los proyectos en los que se basan.\n\t\t- El 100% de las ganancias netas derivadas de todas las demás fuentes (consultoría, donaciones, mercancía, etc.) se destinará a promover la equidad global en la educación tecnológica.",
+  "plsDoItRightContent4Fix": "Además, para la(s) versión(es) de código cerrado...\n\n\t\t1. Todos los productos SaaS de Empathetic tendrán una opción de duración ilimitada.\n\t\t2. Vender la información personal de otra persona es inmoral; el software de Empathetic nunca subastará su identidad digital.\n\nUna última nota sobre puentes. Un puente sin un lugar a donde ir, o sin nadie que quiera usarlo, no es un puente; es un desperdicio de recursos.\n\nAsí que, otro compromiso: independientemente de la estructura oficial (actualmente LLC), Empathetic operará como una entidad sin fines de lucro y basada en la misión. Lo que significa...\n\n\t\t- El 100% de las ganancias netas derivadas de todas las aplicaciones del ecosistema de código abierto se destinará a los proyectos en los que se basan.\n\t\t- El 100% de las ganancias netas derivadas de todas las demás fuentes (consultoría, donaciones, mercancía, etc.) se destinará a promover la equidad global en la educación tecnológica.",
+  "plsDoItRightContent5": "Revisa el ",
 
 
   "fpsPageTitle": "Plan financiero",
@@ -108,25 +111,24 @@
   "fpsCodeCNavHint": "Abrir un enlace a code.org en Charity Navigator",
   "fpsSavvyCNavHint": "Abrir un enlace a World Savvy en Charity Navigator",
   
-  "fpsAnitaMission": "Traducido por IA:\nAnitaB.org visualiza un futuro en el que las personas que imaginan y construyen tecnología reflejen a las personas y sociedades para las cuales la construyen. Conectan, inspiran y guían a las mujeres en la informática y a las organizaciones que ven la innovación tecnológica como un imperativo estratégico.",
-  "fpsCodeMission": "Traducido por IA:\nCode.org es una organización sin fines de lucro dedicada a la innovación educativa, con la visión de que cada estudiante en cada escuela tenga la oportunidad de aprender ciencias de la computación como parte de su educación básica desde el jardín de infantes hasta el último grado.",
-  "fpsSavvyMission": "Traducido por IA:\nWorld Savvy colabora con educadores, líderes escolares y de distrito para crear entornos de aprendizaje preparados para el futuro que sean inclusivos, adaptativos y preparen a los estudiantes para prosperar hoy y en el futuro.",
+  "fpsAnitaMission": "Traducido por IA\n\nAnitaB.org visualiza un futuro en el que las personas que imaginan y construyen tecnología reflejen a las personas y sociedades para las cuales la construyen. Conectan, inspiran y guían a las mujeres en la informática y a las organizaciones que ven la innovación tecnológica como un imperativo estratégico.",
+  "fpsCodeMission": "Traducido por IA\n\nCode.org es una organización sin fines de lucro dedicada a la innovación educativa, con la visión de que cada estudiante en cada escuela tenga la oportunidad de aprender ciencias de la computación como parte de su educación básica desde el jardín de infantes hasta el último grado.",
+  "fpsSavvyMission": "Traducido por IA\n\nWorld Savvy colabora con educadores, líderes escolares y de distrito para crear entornos de aprendizaje preparados para el futuro que sean inclusivos, adaptativos y preparen a los estudiantes para prosperar hoy y en el futuro.",
   
   "fpsCheck": "Verifica nuestros cálculos",
-  "fpsCheckHint": "Verifica nuestro cálculo; abre un enlace de GitHub al código fuente de esta pantalla.",
+  "fpsCheckHint": "Verifica nuestro cálculo; abre un enlace de GitHub al código fuente de esta pantalla",
   
 
   "tsPageTitle": "Equipo",
   
   "tsCore": "Núcleo",
-  "tsTheFounderImageHint": "Una foto del fundador de Empathetic LLC",
+  "tsTheFounderImageHint": "Una foto de perfil en 2D de Michael Waldron",
   "tsTheFounder": "El Fundador",
   "tsCommunity": "Comunidad",
   
   "tsFreelance": "Freelance",
   "tsGALinkHint": "Página de Graphic Alert en Fiverr",
-  "tsGADescription": "Realizó el trabajo de After Effects para la animación del logo de Empathetech LLC",
-  "tsGADescriptionFix": "Realizó el trabajo de After Effects para la animación del logo de Empathetic LLC",
+  "tsGADescription": "Implementé la animación del logotipo en After Effects",
 
 
   "spsPageTitle": "Apoyo",
@@ -152,6 +154,6 @@
   "fahWhatQ": "¿Qué es Folding@home?",
   "fahWhatQHint": "Abrir la página de información de folding  at home",
   
-  "fahStats": "Traducido por IA\n¡Juntos, hemos acumulado más de 150 millones de puntos!\nEso coloca a Empathetech en el top 2% de todos los equipos a nivel mundial!",
-  "fahStatsFix": "Traducido por IA: ¡Juntos, hemos acumulado más de 150 millones de puntos!\nEso coloca a Empathetic en el top 2% de todos los equipos a nivel mundial!"
+  "fahStats": "Traducido por IA\n¡Juntos, hemos acumulado más de 200 millones de puntos!\nEso coloca a Empathetech en el top 2% de todos los equipos a nivel mundial!",
+  "fahStatsFix": "Traducido por IA\n¡Juntos, hemos acumulado más de 200 millones de puntos!\nEso coloca a Empathetic en el top 2% de todos los equipos a nivel mundial!"
 }

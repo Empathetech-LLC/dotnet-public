@@ -16,75 +16,74 @@ class SupportScreen extends StatefulWidget {
 class _SupportScreenState extends State<SupportScreen> {
   // Gather the theme data //
 
-  late final TextStyle? _headerStyle = headlineMedium(context);
-  late final TextStyle? _titleStyle = titleLarge(context);
-  late final TextStyle? _contentStyle = bodyLarge(context);
+  final double _buttonSpace = EzConfig.get(buttonSpacingKey);
 
-  final double _padding = EzConfig.get(paddingKey);
-  final double _textSpacer = EzConfig.get(textSpacingKey);
-  final double _buttonSpacer = EzConfig.get(buttonSpacingKey);
+  final EzSpacer _padder = EzSpacer(EzConfig.get(paddingKey));
+  late final EzSpacer _buttonSpacer = EzSpacer(_buttonSpace);
+  late final EzSwapSpacer _swapButtonSpacer = EzSwapSpacer(_buttonSpace);
+  final EzSpacer _textSpacer = EzSpacer(EzConfig.get(textSpacingKey));
+
+  late final TextStyle? headlineStyle = getHeadline(context);
+  late final TextStyle? titleStyle = getTitle(context);
+  late final TextStyle? bodyStyle = getBody(context);
 
   // Define the buttons //
 
-  List<Widget> _directDonations(BuildContext context) {
-    return [
-      // PayPal
-      ElevatedButton.icon(
-        onPressed: () => launchUrl(Uri.parse(EmpathetechPayPal)),
-        icon: const Icon(LineIcons.paypal),
-        label: const Text("PayPal"),
-      ),
-      EzSwapSpacer(_buttonSpacer),
+  late final List<Widget> _directDonations = [
+    // PayPal
+    ElevatedButton.icon(
+      onPressed: () => launchUrl(Uri.parse(EmpathetechPayPal)),
+      icon: const Icon(LineIcons.paypal),
+      label: const Text("PayPal"),
+    ),
+    _swapButtonSpacer,
 
-      // Venmo
-      ElevatedButton(
-        onPressed: () => launchUrl(Uri.parse(EmpathetechVenmo)),
-        child: const Text("Venmo"),
-      ),
-      EzSwapSpacer(_buttonSpacer),
+    // Venmo
+    ElevatedButton(
+      onPressed: () => launchUrl(Uri.parse(EmpathetechVenmo)),
+      child: const Text("Venmo"),
+    ),
+    _swapButtonSpacer,
 
-      // CashApp
-      ElevatedButton.icon(
-        onPressed: () => launchUrl(Uri.parse(EmpathetechCashApp)),
-        icon: const Icon(LineIcons.dollarSign),
-        label: const Text("CashApp"),
-      ),
-    ];
-  }
+    // CashApp
+    ElevatedButton.icon(
+      onPressed: () => launchUrl(Uri.parse(EmpathetechCashApp)),
+      icon: const Icon(LineIcons.dollarSign),
+      label: const Text("CashApp"),
+    ),
+  ];
 
-  List<Widget> _affiliateDonations(BuildContext context) {
-    return [
-      // Patreon
-      ElevatedButton.icon(
-        onPressed: () => launchUrl(Uri.parse(EmpathetechPatreon)),
-        icon: const Icon(LineIcons.patreon),
-        label: const Text("Patreon"),
-      ),
-      EzSwapSpacer(_buttonSpacer),
+  late final List<Widget> _affiliateDonations = [
+    // Patreon
+    ElevatedButton.icon(
+      onPressed: () => launchUrl(Uri.parse(EmpathetechPatreon)),
+      icon: const Icon(LineIcons.patreon),
+      label: const Text("Patreon"),
+    ),
+    _swapButtonSpacer,
 
-      // Buy Me a Coffee
-      ElevatedButton.icon(
-        onPressed: () => launchUrl(Uri.parse(EmpathetechCoffee)),
-        icon: const Icon(LineIcons.coffee),
-        label: const Text("Buy Me a Coffee"),
-      ),
-      EzSwapSpacer(_buttonSpacer),
+    // Buy Me a Coffee
+    ElevatedButton.icon(
+      onPressed: () => launchUrl(Uri.parse(EmpathetechCoffee)),
+      icon: const Icon(LineIcons.coffee),
+      label: const Text("Buy Me a Coffee"),
+    ),
+    _swapButtonSpacer,
 
-      // Ko-fi
-      ElevatedButton.icon(
-        onPressed: () => launchUrl(Uri.parse(EmpathetechKofi)),
-        icon: const Icon(LineIcons.coffee),
-        label: const Text("Ko-fi"),
-      ),
-    ];
-  }
+    // Ko-fi
+    ElevatedButton.icon(
+      onPressed: () => launchUrl(Uri.parse(EmpathetechKofi)),
+      icon: const Icon(LineIcons.coffee),
+      label: const Text("Ko-fi"),
+    ),
+  ];
 
   // Set the page title //
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    setPageTitle(context, Lang.of(context)!.spsPageTitle);
+    setPageTitle(Lang.of(context)!.spsPageTitle);
   }
 
   // Return the build //
@@ -97,98 +96,105 @@ class _SupportScreenState extends State<SupportScreen> {
           children: [
             // Intro //
 
-            Text(
-              Lang.of(context)!.spsThanks,
-              style: _titleStyle,
-              textAlign: TextAlign.center,
+            MergeSemantics(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    Lang.of(context)!.spsThanks,
+                    style: titleStyle,
+                    textAlign: TextAlign.center,
+                  ),
+                  Text(
+                    Lang.of(context)!.spsGive,
+                    style: bodyStyle,
+                    textAlign: TextAlign.center,
+                  ),
+                ],
+              ),
             ),
-            Text(
-              Lang.of(context)!.spsGive,
-              style: _contentStyle,
-              textAlign: TextAlign.center,
-            ),
-            EzSpacer(_textSpacer),
+            _textSpacer,
 
             // Donate ... //
             // Time
 
             Text(
               Lang.of(context)!.spsTimeQ,
-              style: _headerStyle,
+              style: headlineStyle,
               textAlign: TextAlign.center,
             ),
-            EzSpacer(_padding),
+            _padder,
 
             // GitHub contributor
-            EzRichText(
-              [
-                EzInlineLink(
-                  Lang.of(context)!.gReachOut,
-                  style: _contentStyle,
-                  url: Uri.parse(
-                      "mailto:$EmpathetechCommunity?subject=Becoming%20a%20contributor"),
-                  semanticsLabel: Lang.of(context)!.gEmailHint,
-                ),
-                EzPlainText(
-                  Lang.of(context)!.spsBecome,
-                  context: context,
-                  style: _contentStyle,
-                ),
-                EzInlineLink(
-                  Lang.of(context)!.spsGit,
-                  style: _contentStyle,
-                  url: Uri.parse(EmpathetechGitHub),
-                  semanticsLabel: Lang.of(context)!.gGitHint,
-                ),
-              ],
-              textAlign: TextAlign.center,
-            ),
-            EzSpacer(_textSpacer),
+            EzRichText([
+              EzInlineLink(
+                Lang.of(context)!.gReachOut,
+                style: bodyStyle,
+                textAlign: TextAlign.center,
+                url: Uri.parse(
+                    "mailto:$EmpathetechCommunity?subject=Becoming%20a%20contributor"),
+                semanticsLabel: Lang.of(context)!.gEmailTo(empathetech_llc),
+              ),
+              EzPlainText(
+                Lang.of(context)!.spsBecome,
+                style: bodyStyle,
+              ),
+              EzInlineLink(
+                Lang.of(context)!.spsGit,
+                style: bodyStyle,
+                textAlign: TextAlign.center,
+                url: Uri.parse(EmpathetechGitHub),
+                semanticsLabel: Lang.of(context)!.gEmpathetechGitHint,
+                tooltip: EmpathetechGitHub,
+              ),
+            ], textAlign: TextAlign.center),
+            _textSpacer,
 
             // Money //
 
             Text(
               Lang.of(context)!.spsMoneyQ,
-              style: _headerStyle,
+              style: headlineStyle,
               textAlign: TextAlign.center,
             ),
-            EzSpacer(_buttonSpacer),
+            _buttonSpacer,
 
             // Direct donations
             EzRowCol.sym(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,
-              children: _directDonations(context),
+              children: _directDonations,
             ),
-            EzSpacer(_buttonSpacer),
+            _buttonSpacer,
 
             // Affiliate donations
             EzRowCol.sym(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,
-              children: _affiliateDonations(context),
+              children: _affiliateDonations,
             ),
-            EzSpacer(_textSpacer),
+            _textSpacer,
 
             // Power //
 
             Text(
               Lang.of(context)!.spsPowerQ,
-              style: _headerStyle,
+              style: headlineStyle,
               textAlign: TextAlign.center,
             ),
-            EzSpacer(_padding),
+            _padder,
 
             // F@H team
             FaHBanner(
-              titleStyle: _titleStyle,
-              contentStyle: _contentStyle,
+              titleStyle: titleStyle,
+              bodyStyle: bodyStyle,
             ),
-            EzSpacer(_textSpacer),
+            _textSpacer,
           ],
         ),
       ),
-      fab: const SettingsFAB(),
+      fab: SettingsFAB(context: context),
     );
   }
 }

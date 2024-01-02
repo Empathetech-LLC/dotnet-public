@@ -17,15 +17,13 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   // Gather the theme data //
 
-  late bool _isLight = !PlatformTheme.of(context)!.isDark;
-
-  late final TextStyle? _headerStyle = headlineSmall(context);
+  late bool isLight = !PlatformTheme.of(context)!.isDark;
 
   // Define the video components //
 
   late final VideoPlayerController _videoController =
       VideoPlayerController.asset(
-    _isLight ? lightLogoVideoPath : darkLogoVideoPath,
+    isLight ? lightLogoVideoPath : darkLogoVideoPath,
     videoPlayerOptions: VideoPlayerOptions(
       allowBackgroundPlayback: false,
       mixWithOthers: false,
@@ -43,7 +41,7 @@ class _HomeScreenState extends State<HomeScreen> {
   late final Widget _player = Semantics(
     image: true,
     link: false,
-    label: Lang.of(context)!.hsVideoSemantics,
+    label: Lang.of(context)!.hsVideoHint,
     child: Chewie(controller: _chewieController),
   );
 
@@ -52,7 +50,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    setPageTitle(context, empathetech);
+    setPageTitle(empathetech);
 
     setState(() {
       _chewieController.setVolume(0.0);
@@ -77,14 +75,15 @@ class _HomeScreenState extends State<HomeScreen> {
               top: EzConfig.get(marginKey),
               child: Text(
                 Lang.of(context)!.hsSlogan,
-                style: _headerStyle,
+                style: getHeadline(context),
                 textAlign: TextAlign.center,
+                semanticsLabel: Lang.of(context)!.hsSloganFix,
               ),
             ),
           ],
         ),
       ),
-      fab: const SettingsFAB(),
+      fab: SettingsFAB(context: context),
     );
   }
 

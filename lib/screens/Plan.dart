@@ -16,63 +16,60 @@ class PlanScreen extends StatefulWidget {
 class _PlanScreenState extends State<PlanScreen> {
   // Gather the theme data //
 
-  final double _buttonSpacer = EzConfig.get(buttonSpacingKey);
+  final double buttonSpace = EzConfig.get(buttonSpacingKey);
 
-  late final TextStyle? _titleStyle = headlineSmall(context);
-  late final TextStyle? _contentStyle = titleMedium(context);
+  late final EzSpacer _buttonSpacer = EzSpacer(buttonSpace);
+  late final EzSpacer _rowButtonSpacer = EzSpacer.row(buttonSpace);
 
-  // Define the local Text Widgets //
+  late final TextStyle? titleStyle = getTitle(context);
+  late final TextStyle? bodyStyle = getBody(context);
+
+  // Define the Step functions //
+
+  int index = 0;
 
   Widget _title(String title) {
     return Text(
       title,
-      style: _titleStyle,
+      style: titleStyle,
       textAlign: TextAlign.left,
     );
   }
 
-  Widget _content(dynamic content) {
+  Widget _content(List<Widget> contents) {
     return Container(
       width: double.infinity,
       alignment: Alignment.centerLeft,
       child: EzScrollView(
-        mainAxisSize: MainAxisSize.max,
-        mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          content.runtimeType == String
-              ? Text(content, style: _contentStyle)
-              : content,
-          EzSpacer(_buttonSpacer),
+          ...contents,
+          _buttonSpacer,
         ],
       ),
     );
   }
 
-  // Define the Step functions //
-
-  int _index = 0; // Identify the problem
-
+  /// Decrement, min 0
   void _onStepCancel() {
-    // Decrement, min 0
-    if (_index > 0) {
+    if (index > 0) {
       setState(() {
-        _index -= 1;
+        index -= 1;
       });
     }
   }
 
+  /// Increment
   void _onStepContinue() {
-    // Increment
     setState(() {
-      _index += 1;
+      index += 1;
     });
   }
 
-  void _onStepTapped(int index) {
-    // GoTo
+  /// GoTo
+  void _onStepTapped(int step) {
     setState(() {
-      _index = index;
+      index = step;
     });
   }
 
@@ -81,110 +78,143 @@ class _PlanScreenState extends State<PlanScreen> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    setPageTitle(context, Lang.of(context)!.plsPageTitle);
+    setPageTitle(Lang.of(context)!.plsPageTitle);
   }
 
   @override
   Widget build(BuildContext context) {
-    // Define the steps //
+    // Define the page content //
+
+    final EzNewLine newLine = EzNewLine(
+      bodyStyle,
+      textAlign: TextAlign.left,
+    );
+
+    final EzPlainText period = EzPlainText(".", style: bodyStyle);
 
     final steps = <Step>[
+      // Step 1: Identify the problem
       Step(
-        isActive: _index >= 0,
+        isActive: index >= 0,
         title: _title(Lang.of(context)!.plsIDProblem),
-        content: _content(Lang.of(context)!.plsIDProblemContent),
+        content: _content([
+          Text(
+            Lang.of(context)!.plsIDProblemContent,
+            style: bodyStyle,
+            textAlign: TextAlign.left,
+          ),
+        ]),
       ),
+
+      // Step 2: Be a part of the solution
       Step(
-        isActive: _index >= 1,
+        isActive: index >= 1,
         title: _title(Lang.of(context)!.plsBeSolution),
-        content: _content(Lang.of(context)!.plsBeSolutionContent),
+        content: _content([
+          Text(
+            Lang.of(context)!.plsBeSolutionContent,
+            style: bodyStyle,
+            textAlign: TextAlign.left,
+          ),
+        ]),
       ),
+
+      // Step 3: Provide value
       Step(
-        isActive: _index >= 2,
+        isActive: index >= 2,
         title: _title(Lang.of(context)!.plsProvideValue),
-        content: _content(EzRichText(
-          [
-            EzPlainText(
-              Lang.of(context)!.plsProvideValueContent1,
-              context: context,
-              style: _contentStyle,
-            ),
-            EzInlineLink(
-              "EFUI",
-              style: _contentStyle,
-              semanticsLabel: Lang.of(context)!.gProductsHint,
-              onTap: () => context.goNamed(productsRoute),
-            ),
+        content: _content([
+          Text(
+            Lang.of(context)!.plsProvideValueContent1,
+            style: bodyStyle,
+            textAlign: TextAlign.left,
+          ),
+          newLine,
+          EzRichText([
             EzPlainText(
               Lang.of(context)!.plsProvideValueContent2,
-              context: context,
-              style: _contentStyle,
-            ),
-          ],
-          textAlign: TextAlign.left,
-        )),
-      ),
-      Step(
-        isActive: _index >= 3,
-        title: _title(Lang.of(context)!.plsDoItRight),
-        content: _content(EzRichText(
-          [
-            EzPlainText(
-              Lang.of(context)!.plsDoItRightContent1,
-              context: context,
-              style: _contentStyle,
-              semantics: Lang.of(context)!.plsDoItRightContent1Fix,
+              style: bodyStyle,
             ),
             EzInlineLink(
-              "SaaS",
-              style: _contentStyle,
-              url: Uri.parse(
-                "https://en.wikipedia.org/wiki/Software_as_a_service",
-              ),
+              efuiL,
+              textFix: efuiLFix,
+              style: bodyStyle,
+              textAlign: TextAlign.left,
+              onTap: () => context.goNamed(productsRoute),
+              semanticsLabel: Lang.of(context)!.gProductsHint,
+            ),
+            EzPlainText(
+              Lang.of(context)!.plsProvideValueContent3,
+              style: bodyStyle,
+            ),
+          ], textAlign: TextAlign.left),
+        ]),
+      ),
+
+      // Step 4: Do it right
+      Step(
+        isActive: index >= 3,
+        title: _title(Lang.of(context)!.plsDoItRight),
+        content: _content([
+          EzRichText([
+            EzPlainText(
+              Lang.of(context)!.plsDoItRightContent1,
+              style: bodyStyle,
+              semanticsLabel: Lang.of(context)!.plsDoItRightContent1Fix,
+            ),
+            EzInlineLink(
+              Lang.of(context)!.plsSaaS,
+              style: bodyStyle,
+              textAlign: TextAlign.left,
+              url: Uri.parse(saaSDocs),
               semanticsLabel: Lang.of(context)!.plsSaaSHint,
+              tooltip: saaSDocs,
             ),
             EzPlainText(
               Lang.of(context)!.plsDoItRightContent2,
-              context: context,
-              style: _contentStyle,
+              style: bodyStyle,
+            ),
+          ], textAlign: TextAlign.left),
+          newLine,
+          EzRichText([
+            EzPlainText(
+              Lang.of(context)!.plsDoItRightContent3,
+              style: bodyStyle,
+              semanticsLabel: Lang.of(context)!.plsDoItRightContent3Fix,
             ),
             EzInlineLink(
               Lang.of(context)!.plsDualLicense,
-              style: _contentStyle,
-              url: Uri.parse("https://en.wikipedia.org/wiki/Multi-licensing"),
+              style: bodyStyle,
+              textAlign: TextAlign.left,
+              url: Uri.parse(dualLicenseDocs),
               semanticsLabel: Lang.of(context)!.plsDualLicenseHint,
+              tooltip: dualLicenseDocs,
             ),
-            EzPlainText(
-              Lang.of(context)!.plsDoItRightContent3,
-              context: context,
-              style: _contentStyle,
-            ),
-            EzInlineLink(
-              "de-FAANG",
-              style: _contentStyle,
-              url: Uri.parse("https://en.wikipedia.org/wiki/Big_Tech"),
-              semanticsLabel: Lang.of(context)!.plsBigTechHint,
-            ),
-            EzPlainText(
-              Lang.of(context)!.plsDoItRightContent4,
-              context: context,
-              style: _contentStyle,
-              semantics: Lang.of(context)!.plsDoItRightContent4Fix,
-            ),
+            period,
+          ], textAlign: TextAlign.left),
+          newLine,
+          Text(
+            Lang.of(context)!.plsDoItRightContent4,
+            style: bodyStyle,
+            textAlign: TextAlign.left,
+            semanticsLabel: Lang.of(context)!.plsDoItRightContent4Fix,
+          ),
+          newLine,
+          EzRichText([
             EzPlainText(
               Lang.of(context)!.plsDoItRightContent5,
-              context: context,
-              style: _contentStyle,
+              style: bodyStyle,
             ),
             EzInlineLink(
               Lang.of(context)!.fpsPageTitle.toLowerCase(),
-              style: _contentStyle,
+              style: bodyStyle,
+              textAlign: TextAlign.left,
               onTap: () => context.goNamed(finPlanRoute),
               semanticsLabel: Lang.of(context)!.fpsPageHint,
             ),
-          ],
-          textAlign: TextAlign.left,
-        )),
+            period,
+          ], textAlign: TextAlign.left),
+        ]),
       ),
     ];
 
@@ -193,16 +223,14 @@ class _PlanScreenState extends State<PlanScreen> {
     return DotNetScaffold(
       body: EzScreen(
         child: Stepper(
-          currentStep: _index,
+          currentStep: index,
           steps: steps,
           onStepCancel: _onStepCancel,
           onStepContinue: _onStepContinue,
           onStepTapped: _onStepTapped,
-
-          // Custom control buttons
           controlsBuilder: (context, details) {
-            bool isFirst = _index == 0;
-            bool isLast = _index == steps.length - 1;
+            bool isFirst = index == 0;
+            bool isLast = index == steps.length - 1;
 
             List<Widget> _buttons() {
               if (isFirst) {
@@ -225,7 +253,7 @@ class _PlanScreenState extends State<PlanScreen> {
                     onPressed: details.onStepCancel,
                     child: Text(Lang.of(context)!.plsBefore),
                   ),
-                  EzSpacer.row(_buttonSpacer),
+                  _rowButtonSpacer,
                   ElevatedButton(
                     onPressed: details.onStepContinue,
                     child: Text(Lang.of(context)!.plsThen),
@@ -239,7 +267,7 @@ class _PlanScreenState extends State<PlanScreen> {
           physics: const BouncingScrollPhysics(),
         ),
       ),
-      fab: const SettingsFAB(),
+      fab: SettingsFAB(context: context),
     );
   }
 }

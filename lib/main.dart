@@ -15,7 +15,7 @@ void main() async {
 
   // Initialize EzConfig
   final SharedPreferences prefs = await SharedPreferences.getInstance();
-  EzConfig(preferences: prefs, assetPaths: assetPaths);
+  EzConfig.init(preferences: prefs, assetPaths: assetPaths);
 
   // Set device orientations
   SystemChrome.setPreferredOrientations([
@@ -107,26 +107,19 @@ class ETechDotNet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<String>? localeData = EzConfig.get(localeKey);
-
     return EzAppProvider(
       app: PlatformApp.router(
         debugShowCheckedModeBanner: false,
-        localizationsDelegates: [
+        localizationsDelegates: {
           LocaleNamesLocalizationsDelegate(),
           ...EFUILang.localizationsDelegates,
           ...Lang.localizationsDelegates,
-        ],
-        supportedLocales: [
+        },
+        supportedLocales: {
           ...Lang.supportedLocales,
           ...EFUILang.supportedLocales,
-        ],
-        locale: (localeData == null)
-            ? null
-            : Locale(
-                localeData[0],
-                localeData.length > 1 ? localeData[1] : null,
-              ),
+        },
+        locale: EzConfig.getLocale(),
         title: empathetech,
         routerConfig: _router,
       ),

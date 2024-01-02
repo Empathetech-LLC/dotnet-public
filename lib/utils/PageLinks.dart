@@ -22,6 +22,8 @@ class PageLinks extends StatelessWidget {
     required this.spacer,
   });
 
+  // Define the helper functions //
+
   /// Helpful for [EzSwapScaffold] calculations
   double get width {
     double wordWidth = measureText(
@@ -29,15 +31,19 @@ class PageLinks extends StatelessWidget {
           Lang.of(context)!.plsPageTitle +
           Lang.of(context)!.tsPageTitle +
           Lang.of(context)!.spsPageTitle,
-      scaler: MediaQuery.textScalerOf(context),
       style: style,
+      context: context,
     ).width;
 
-    return wordWidth + spacer * 4;
+    return wordWidth + spacer * 5;
   }
+
+  // Define the buttons //
 
   @override
   Widget build(BuildContext context) {
+    final EzSpacer _spacer = EzSpacer.row(spacer);
+
     final EzLink products = EzLink(
       Lang.of(context)!.psPageTitle,
       style: style,
@@ -74,7 +80,7 @@ class PageLinks extends StatelessWidget {
       color: Theme.of(context).colorScheme.surface,
     );
 
-    // Return build //
+    // Return the build //
 
     return Row(
       key: key,
@@ -82,11 +88,11 @@ class PageLinks extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         products,
-        EzSpacer.row(spacer),
+        _spacer,
         plan,
-        EzSpacer.row(spacer),
+        _spacer,
         team,
-        EzSpacer.row(spacer),
+        _spacer,
         support,
       ],
     );

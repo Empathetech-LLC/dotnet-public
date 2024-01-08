@@ -102,7 +102,7 @@ class DotNetScaffold extends StatelessWidget {
                 child: TextButton.icon(
                   icon: button.icon,
                   label: Text(button.tooltip!),
-                  onPressed: doNothing,
+                  onPressed: button.onPressed,
                   style: Theme.of(context).textButtonTheme.style!.copyWith(
                         foregroundColor: MaterialStatePropertyAll(
                           Theme.of(context).colorScheme.onSurface,

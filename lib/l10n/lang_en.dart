@@ -35,6 +35,9 @@ class LangEn extends Lang {
   }
 
   @override
+  String get gNewsletter => 'Newsletter';
+
+  @override
   String get gSettingsHint => 'Open the settings page';
 
   @override
@@ -77,10 +80,10 @@ class LangEn extends Lang {
       'World Savvy logo, activate to open their site';
 
   @override
-  String get hsSlogan => 'Bringing OSS\nTo us';
+  String get hsSlogan => 'Build a better world\nbit x bit';
 
   @override
-  String get hsSloganFix => 'Bringing O-S-S\nto us';
+  String get hsSloganFix => 'Build a better world\nbit by bit';
 
   @override
   String get hsVideoHint =>
@@ -248,7 +251,7 @@ class LangEn extends Lang {
   }
 
   @override
-  String get fpsYear => 'for 2023';
+  String get fpsYear => 'for 2024';
 
   @override
   String fpsSplit(Object profit) {
@@ -341,13 +344,13 @@ class LangEn extends Lang {
   String get fahJoin => 'Join the Fold!';
 
   @override
-  String get fahIntro => 'Empathetech has a Folding@home';
+  String get fahIntro => 'Join the Empathetech Folding@home ';
 
   @override
-  String get fahIntroFix => 'Empathetic has a Folding@home';
+  String get fahIntroFix => 'Join the Empathetic Folding@home ';
 
   @override
-  String get fahTeamHint => 'Open the Empathetic LLC folding at home team page';
+  String get fahTeamHint => 'Open the Empathetic folding at home team page';
 
   @override
   String get fahWhatQ => 'What\'s Folding@home?';
@@ -357,9 +360,5 @@ class LangEn extends Lang {
 
   @override
   String get fahStats =>
-      'Together, we\'ve earned over 200 million points!\nThat puts Empathetech in the top 2% of all teams worldwide!';
-
-  @override
-  String get fahStatsFix =>
-      'Together, we\'ve earned over 200 million points!\nThat puts Empathetic in the top 2% of all teams worldwide!';
+      'Together, we\'ve earned over 250 million points!\nPutting us in the top 2% of all teams worldwide!';
 }

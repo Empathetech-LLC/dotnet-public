@@ -2,7 +2,7 @@ name: dotnet
 description: "Empathetech's mission is to re-balance the power in tech by making open source software more accessible."
 publish_to: 'none'
 
-version: 3.0.0
+version: 3.0.1
 
 environment:
   sdk: '>=3.1.0 <4.0.0'
@@ -27,7 +27,7 @@ dependencies:
   chewie: ^1.7.4
   
   # Empathetech made
-  empathetech_flutter_ui: ^5.0.0
+  empathetech_flutter_ui: ^5.0.1
   # empathetech_flutter_ui:
   #   path: ../empathetech_flutter_ui
   

@@ -13,6 +13,7 @@
   "gSocials": "Sociales",
   "gEmail": "Correo electrónico",
   "gEmailTo": "Envía un correo electrónico a {recipient}",
+  "gNewsletter": "Boletin informativo",
 
   "gSettingsHint": "Abrir la página de configuración",
 
@@ -32,8 +33,8 @@
   "gWorldSavvyIconHint": "Logotipo de World Savvy, activar para abrir su sitio web",
 
 
-  "hsSlogan": "Trayendo OSS\nHacia nosotros",
-  "hsSloganFix": "Trayendo O-S-S\nhacia nosotros",
+  "hsSlogan": "Construir un mundo mejor\nbit x bit",
+  "hsSloganFix": "Construir un mundo mejor\nbit by bit",
   "hsVideoHint": "Animación del logotipo de Empathetic LLC: El nombre de Empathetic se transforma en su logotipo",
 
 
@@ -102,7 +103,7 @@
   "fpsPageHint": "Abrir la página del plan financiero",
   
   "fpsRaised": "{income} de {goal} recaudados",
-  "fpsYear": "para el año 2023",
+  "fpsYear": "para el año 2024",
   
   "fpsSplit": "Las ganancias de {profit} se repartirán equitativamente entre...",
   "fpsEventual": "eventual",
@@ -147,13 +148,12 @@
 
   "fahJoin": "¡Únete a la causa!",
   
-  "fahIntro": "Empathetech tiene un equipo en Folding@home: ",
-  "fahIntroFix": "Empathetic tiene un equipo en folding at home: ",
-  "fahTeamHint": "Abrir la página del equipo de folding at home",
+  "fahIntro": "Únete al Empathetech Folding@home: ",
+  "fahIntroFix": "Únete al Empathetic folding at home: ",
+  "fahTeamHint": "Abre la página del equipo Empathetic Folding@home.",
   
   "fahWhatQ": "¿Qué es Folding@home?",
   "fahWhatQHint": "Abrir la página de información de folding  at home",
   
-  "fahStats": "Traducido por IA\n¡Juntos, hemos acumulado más de 200 millones de puntos!\nEso coloca a Empathetech en el top 2% de todos los equipos a nivel mundial!",
-  "fahStatsFix": "Traducido por IA\n¡Juntos, hemos acumulado más de 200 millones de puntos!\nEso coloca a Empathetic en el top 2% de todos los equipos a nivel mundial!"
+  "fahStats": "Traducido por IA\n¡Juntos, hemos acumulado más de 250 millones de puntos!\n¡Poniéndonos en el 2% superior de todos los equipos del mundo!"
 }

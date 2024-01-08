@@ -148,6 +148,12 @@ abstract class Lang {
   /// **'Email {recipient}'**
   String gEmailTo(Object recipient);
 
+  /// No description provided for @gNewsletter.
+  ///
+  /// In en, this message translates to:
+  /// **'Newsletter'**
+  String get gNewsletter;
+
   /// No description provided for @gSettingsHint.
   ///
   /// In en, this message translates to:
@@ -223,13 +229,13 @@ abstract class Lang {
   /// No description provided for @hsSlogan.
   ///
   /// In en, this message translates to:
-  /// **'Bringing OSS\nTo us'**
+  /// **'Build a better world\nbit x bit'**
   String get hsSlogan;
 
   /// No description provided for @hsSloganFix.
   ///
   /// In en, this message translates to:
-  /// **'Bringing O-S-S\nto us'**
+  /// **'Build a better world\nbit by bit'**
   String get hsSloganFix;
 
   /// No description provided for @hsVideoHint.
@@ -517,7 +523,7 @@ abstract class Lang {
   /// No description provided for @fpsYear.
   ///
   /// In en, this message translates to:
-  /// **'for 2023'**
+  /// **'for 2024'**
   String get fpsYear;
 
   /// No description provided for @fpsSplit.
@@ -685,19 +691,19 @@ abstract class Lang {
   /// No description provided for @fahIntro.
   ///
   /// In en, this message translates to:
-  /// **'Empathetech has a Folding@home'**
+  /// **'Join the Empathetech Folding@home '**
   String get fahIntro;
 
   /// No description provided for @fahIntroFix.
   ///
   /// In en, this message translates to:
-  /// **'Empathetic has a Folding@home'**
+  /// **'Join the Empathetic Folding@home '**
   String get fahIntroFix;
 
   /// No description provided for @fahTeamHint.
   ///
   /// In en, this message translates to:
-  /// **'Open the Empathetic LLC folding at home team page'**
+  /// **'Open the Empathetic folding at home team page'**
   String get fahTeamHint;
 
   /// No description provided for @fahWhatQ.
@@ -715,14 +721,8 @@ abstract class Lang {
   /// No description provided for @fahStats.
   ///
   /// In en, this message translates to:
-  /// **'Together, we\'ve earned over 200 million points!\nThat puts Empathetech in the top 2% of all teams worldwide!'**
+  /// **'Together, we\'ve earned over 250 million points!\nPutting us in the top 2% of all teams worldwide!'**
   String get fahStats;
-
-  /// No description provided for @fahStatsFix.
-  ///
-  /// In en, this message translates to:
-  /// **'Together, we\'ve earned over 200 million points!\nThat puts Empathetic in the top 2% of all teams worldwide!'**
-  String get fahStatsFix;
 }
 
 class _LangDelegate extends LocalizationsDelegate<Lang> {

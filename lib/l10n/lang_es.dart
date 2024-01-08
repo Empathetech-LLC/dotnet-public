@@ -35,6 +35,9 @@ class LangEs extends Lang {
   }
 
   @override
+  String get gNewsletter => 'Boletin informativo';
+
+  @override
   String get gSettingsHint => 'Abrir la página de configuración';
 
   @override
@@ -78,10 +81,10 @@ class LangEs extends Lang {
       'Logotipo de World Savvy, activar para abrir su sitio web';
 
   @override
-  String get hsSlogan => 'Trayendo OSS\nHacia nosotros';
+  String get hsSlogan => 'Construir un mundo mejor\nbit x bit';
 
   @override
-  String get hsSloganFix => 'Trayendo O-S-S\nhacia nosotros';
+  String get hsSloganFix => 'Construir un mundo mejor\nbit by bit';
 
   @override
   String get hsVideoHint =>
@@ -250,7 +253,7 @@ class LangEs extends Lang {
   }
 
   @override
-  String get fpsYear => 'para el año 2023';
+  String get fpsYear => 'para el año 2024';
 
   @override
   String fpsSplit(Object profit) {
@@ -345,13 +348,14 @@ class LangEs extends Lang {
   String get fahJoin => '¡Únete a la causa!';
 
   @override
-  String get fahIntro => 'Empathetech tiene un equipo en Folding@home: ';
+  String get fahIntro => 'Únete al Empathetech Folding@home: ';
 
   @override
-  String get fahIntroFix => 'Empathetic tiene un equipo en folding at home: ';
+  String get fahIntroFix => 'Únete al Empathetic folding at home: ';
 
   @override
-  String get fahTeamHint => 'Abrir la página del equipo de folding at home';
+  String get fahTeamHint =>
+      'Abre la página del equipo Empathetic Folding@home.';
 
   @override
   String get fahWhatQ => '¿Qué es Folding@home?';
@@ -362,9 +366,5 @@ class LangEs extends Lang {
 
   @override
   String get fahStats =>
-      'Traducido por IA\n¡Juntos, hemos acumulado más de 200 millones de puntos!\nEso coloca a Empathetech en el top 2% de todos los equipos a nivel mundial!';
-
-  @override
-  String get fahStatsFix =>
-      'Traducido por IA\n¡Juntos, hemos acumulado más de 200 millones de puntos!\nEso coloca a Empathetic en el top 2% de todos los equipos a nivel mundial!';
+      'Traducido por IA\n¡Juntos, hemos acumulado más de 250 millones de puntos!\n¡Poniéndonos en el 2% superior de todos los equipos del mundo!';
 }

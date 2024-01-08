@@ -87,7 +87,6 @@ class FaHBanner extends StatelessWidget {
           Lang.of(context)!.fahStats,
           style: bodyStyle,
           textAlign: TextAlign.center,
-          semanticsLabel: Lang.of(context)!.fahStatsFix,
         ),
       ],
     );

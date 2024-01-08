@@ -13,6 +13,7 @@
   "gSocials": "Socials",
   "gEmail": "Email",
   "gEmailTo": "Email {recipient}",
+  "gNewsletter": "Newsletter",
 
   "gSettingsHint": "Open the settings page",
 
@@ -32,8 +33,8 @@
   "gWorldSavvyIconHint": "World Savvy logo, activate to open their site",
 
   
-  "hsSlogan": "Bringing OSS\nTo us",
-  "hsSloganFix": "Bringing O-S-S\nto us",
+  "hsSlogan": "Build a better world\nbit x bit",
+  "hsSloganFix": "Build a better world\nbit by bit",
   "hsVideoHint": "Empathetic LLC logo animation: Empathetic's name transforms into its logo",
 
 
@@ -102,7 +103,7 @@
   "fpsPageHint": "Open the financial plan page",
   
   "fpsRaised": "{income} of {goal} raised",
-  "fpsYear": "for 2023",
+  "fpsYear": "for 2024",
   
   "fpsSplit": "The {profit} profit will be evenly split amongst...",
   "fpsEventual": "eventual",
@@ -147,13 +148,12 @@
 
   "fahJoin": "Join the Fold!",
   
-  "fahIntro": "Empathetech has a Folding@home",
-  "fahIntroFix": "Empathetic has a Folding@home",
-  "fahTeamHint": "Open the Empathetic LLC folding at home team page",
+  "fahIntro": "Join the Empathetech Folding@home ",
+  "fahIntroFix": "Join the Empathetic Folding@home ",
+  "fahTeamHint": "Open the Empathetic folding at home team page",
   
   "fahWhatQ": "What's Folding@home?",
   "fahWhatQHint": "Open Folding at Home's about page",
   
-  "fahStats": "Together, we've earned over 200 million points!\nThat puts Empathetech in the top 2% of all teams worldwide!",
-  "fahStatsFix": "Together, we've earned over 200 million points!\nThat puts Empathetic in the top 2% of all teams worldwide!"
+  "fahStats": "Together, we've earned over 250 million points!\nPutting us in the top 2% of all teams worldwide!"
 }

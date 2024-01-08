@@ -44,10 +44,10 @@ class IconLinks extends StatelessWidget {
     tooltip: "Mastodon",
   );
 
-  late final IconButton _email = IconButton(
-    onPressed: () => launchUrl(Uri.parse("mailto:$EmpathetechCommunity")),
+  late final IconButton _newsletter = IconButton(
+    onPressed: () => launchUrl(Uri.parse(EmpathetechNewsletter)),
     icon: Icon(Icons.mail_outline, size: iconSize, color: color),
-    tooltip: Lang.of(context)!.gEmail,
+    tooltip: Lang.of(context)!.gNewsletter,
   );
 
   // Define the getters //
@@ -56,7 +56,7 @@ class IconLinks extends StatelessWidget {
         _gitHub,
         _linkedIn,
         _mastodon,
-        _email,
+        _newsletter,
       ];
 
   List<Widget> get children {
@@ -71,7 +71,7 @@ class IconLinks extends StatelessWidget {
       _spacer,
       _mastodon,
       _spacer,
-      _email,
+      _newsletter,
       _margin,
     ];
   }

@@ -38,7 +38,7 @@ const Map<String, double> annualHours = {mike: 2080};
 ///
 /// The Living Wage team asks "that users do not scrape the data".
 /// So, all [_comfortableWage] values are hard-coded and updated manually.
-/// Last validated: Q4 2023
+/// Last validated: Q1 2024
 ///
 /// Our goal:
 ///   To enable Empathetech employees to live a comfortable life anywhere in the Country of Domicile.

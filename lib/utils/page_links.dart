@@ -1,54 +1,54 @@
 import './utils.dart';
 import '../screens/screens.dart';
 
-import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
-
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 
 class PageLinks extends StatelessWidget {
-  final GlobalKey? key;
   final BuildContext context;
   final TextStyle? style;
 
   /// How much distance should be between the links
-  final double spacer;
+  final double spacing;
 
   /// Internal page links to put in the [AppBar]
   const PageLinks({
-    this.key,
+    super.key,
     required this.context,
     required this.style,
-    required this.spacer,
+    required this.spacing,
   });
 
   // Define the helper functions //
 
   /// Helpful for [EzSwapScaffold] calculations
   double get width {
-    double wordWidth = measureText(
-      Lang.of(context)!.psPageTitle +
-          Lang.of(context)!.plsPageTitle +
-          Lang.of(context)!.tsPageTitle +
-          Lang.of(context)!.spsPageTitle,
+    final Lang l10n = Lang.of(context)!;
+
+    final double wordWidth = measureText(
+      l10n.psPageTitle +
+          l10n.plsPageTitle +
+          l10n.tsPageTitle +
+          l10n.spsPageTitle,
       style: style,
       context: context,
     ).width;
 
-    return wordWidth + spacer * 5;
+    return wordWidth + spacing * 5;
   }
 
   // Define the buttons //
 
   @override
   Widget build(BuildContext context) {
-    final EzSpacer _spacer = EzSpacer.row(spacer);
+    final EzSpacer spacer = EzSpacer.row(spacing);
 
     final EzLink products = EzLink(
       Lang.of(context)!.psPageTitle,
       style: style,
       textAlign: TextAlign.center,
-      onTap: () => context.goNamed(productsRoute),
+      onTap: () => context.go(productsRoute),
       semanticsLabel: Lang.of(context)!.gProductsHint,
       color: Theme.of(context).colorScheme.surface,
     );
@@ -57,7 +57,7 @@ class PageLinks extends StatelessWidget {
       Lang.of(context)!.plsPageTitle,
       style: style,
       textAlign: TextAlign.center,
-      onTap: () => context.goNamed(planRoute),
+      onTap: () => context.go(planRoute),
       semanticsLabel: Lang.of(context)!.gPlanHint,
       color: Theme.of(context).colorScheme.surface,
     );
@@ -66,7 +66,7 @@ class PageLinks extends StatelessWidget {
       Lang.of(context)!.tsPageTitle,
       style: style,
       textAlign: TextAlign.center,
-      onTap: () => context.goNamed(teamRoute),
+      onTap: () => context.go(teamRoute),
       semanticsLabel: Lang.of(context)!.gTeamHint,
       color: Theme.of(context).colorScheme.surface,
     );
@@ -75,7 +75,7 @@ class PageLinks extends StatelessWidget {
       Lang.of(context)!.spsPageTitle,
       style: style,
       textAlign: TextAlign.center,
-      onTap: () => context.goNamed(supportRoute),
+      onTap: () => context.go(supportRoute),
       semanticsLabel: Lang.of(context)!.gSupportHint,
       color: Theme.of(context).colorScheme.surface,
     );
@@ -86,13 +86,13 @@ class PageLinks extends StatelessWidget {
       key: key,
       mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.center,
-      children: [
+      children: <Widget>[
         products,
-        _spacer,
+        spacer,
         plan,
-        _spacer,
+        spacer,
         team,
-        _spacer,
+        spacer,
         support,
       ],
     );

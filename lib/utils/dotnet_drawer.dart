@@ -1,29 +1,27 @@
 import './utils.dart';
 import '../screens/screens.dart';
 
-import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
-
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 
 class DotNetDrawer extends StatelessWidget {
-  final Key? key;
   final BuildContext context;
 
   /// [TextStyle] to use on the links' text
   final TextStyle? style;
 
   /// How much distance should be between the links
-  final double spacer;
+  final double spacing;
 
   final IconLinks header;
 
   /// Universal [Drawer] for dotnet
   const DotNetDrawer({
-    this.key,
+    super.key,
     required this.context,
     required this.style,
-    required this.spacer,
+    required this.spacing,
     required this.header,
   });
 
@@ -31,20 +29,20 @@ class DotNetDrawer extends StatelessWidget {
 
   void _navigateTo(BuildContext context, String routeName) {
     popScreen(context: context, result: routeName);
-    context.goNamed(routeName);
+    context.go(routeName);
   }
 
   // Define the buttons //
 
   @override
   Widget build(BuildContext context) {
-    final EzSpacer _spacer = EzSpacer(spacer);
+    final EzSpacer spacer = EzSpacer(spacing);
 
     final EzLink products = EzLink(
       Lang.of(context)!.psPageTitle,
       style: style,
       textAlign: TextAlign.center,
-      onTap: () => _navigateTo(context, productsRoute),
+      onTap: () => _navigateTo(context, productsPath),
       semanticsLabel: Lang.of(context)!.gProductsHint,
       color: Theme.of(context).colorScheme.onSurface,
     );
@@ -53,7 +51,7 @@ class DotNetDrawer extends StatelessWidget {
       Lang.of(context)!.plsPageTitle,
       style: style,
       textAlign: TextAlign.center,
-      onTap: () => _navigateTo(context, planRoute),
+      onTap: () => _navigateTo(context, planPath),
       semanticsLabel: Lang.of(context)!.gPlanHint,
       color: Theme.of(context).colorScheme.onSurface,
     );
@@ -62,7 +60,7 @@ class DotNetDrawer extends StatelessWidget {
       Lang.of(context)!.tsPageTitle,
       style: style,
       textAlign: TextAlign.center,
-      onTap: () => _navigateTo(context, teamRoute),
+      onTap: () => _navigateTo(context, teamPath),
       semanticsLabel: Lang.of(context)!.gTeamHint,
       color: Theme.of(context).colorScheme.onSurface,
     );
@@ -71,7 +69,7 @@ class DotNetDrawer extends StatelessWidget {
       Lang.of(context)!.spsPageTitle,
       style: style,
       textAlign: TextAlign.center,
-      onTap: () => _navigateTo(context, supportRoute),
+      onTap: () => _navigateTo(context, supportPath),
       semanticsLabel: Lang.of(context)!.gSupportHint,
       color: Theme.of(context).colorScheme.onSurface,
     );
@@ -81,24 +79,24 @@ class DotNetDrawer extends StatelessWidget {
     return Drawer(
       key: key,
       child: EzScrollView(
-        children: [
+        children: <Widget>[
           DrawerHeader(
-            child: EzScrollView(
-              children: header.children,
-              scrollDirection: Axis.horizontal,
-            ),
             margin: EdgeInsets.zero,
             padding: EdgeInsets.zero,
+            child: EzScrollView(
+              scrollDirection: Axis.horizontal,
+              children: header.children,
+            ),
           ),
-          _spacer,
+          spacer,
           products,
-          _spacer,
+          spacer,
           plan,
-          _spacer,
+          spacer,
           team,
-          _spacer,
+          spacer,
           support,
-          _spacer,
+          spacer,
         ],
       ),
     );

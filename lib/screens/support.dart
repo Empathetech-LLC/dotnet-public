@@ -1,80 +1,82 @@
 import '../utils/utils.dart';
 
-import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
-
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 
 class SupportScreen extends StatefulWidget {
-  const SupportScreen({Key? key}) : super(key: key);
+  const SupportScreen({super.key});
 
   @override
-  _SupportScreenState createState() => _SupportScreenState();
+  State<SupportScreen> createState() => _SupportScreenState();
 }
 
 class _SupportScreenState extends State<SupportScreen> {
   // Gather the theme data //
 
-  final double _buttonSpace = EzConfig.get(buttonSpacingKey);
+  final double space = EzConfig.get(spacingKey);
 
-  final EzSpacer _padder = EzSpacer(EzConfig.get(paddingKey));
-  late final EzSpacer _buttonSpacer = EzSpacer(_buttonSpace);
-  late final EzSwapSpacer _swapButtonSpacer = EzSwapSpacer(_buttonSpace);
-  final EzSpacer _textSpacer = EzSpacer(EzConfig.get(textSpacingKey));
+  final EzSpacer padder = EzSpacer(EzConfig.get(paddingKey));
+  late final EzSpacer spacer = EzSpacer(space);
+  late final EzSwapSpacer swapSpacer = EzSwapSpacer(space);
+  late final EzSpacer separator = EzSpacer(space * 2);
 
-  late final TextStyle? headlineStyle = getHeadline(context);
-  late final TextStyle? titleStyle = getTitle(context);
-  late final TextStyle? bodyStyle = getBody(context);
+  late final TextTheme textTheme = Theme.of(context).textTheme;
+  late final TextStyle? headlineStyle = textTheme.headlineLarge;
+  late final TextStyle? titleStyle = textTheme.titleLarge;
+  late final TextStyle? bodyStyle = textTheme.bodyLarge;
+
+  late final Lang l10n = Lang.of(context)!;
 
   // Define the buttons //
 
-  late final List<Widget> _directDonations = [
+  late final List<Widget> _directDonations = <Widget>[
     // PayPal
     ElevatedButton.icon(
-      onPressed: () => launchUrl(Uri.parse(EmpathetechPayPal)),
+      onPressed: () => launchUrl(Uri.parse(empathPayPal)),
       icon: const Icon(LineIcons.paypal),
-      label: const Text("PayPal"),
+      label: const Text('PayPal'),
     ),
-    _swapButtonSpacer,
+    swapSpacer,
 
     // Venmo
     ElevatedButton(
-      onPressed: () => launchUrl(Uri.parse(EmpathetechVenmo)),
-      child: const Text("Venmo"),
+      onPressed: () => launchUrl(Uri.parse(empathVenmo)),
+      child: const Text('Venmo'),
     ),
-    _swapButtonSpacer,
+    swapSpacer,
 
     // CashApp
     ElevatedButton.icon(
-      onPressed: () => launchUrl(Uri.parse(EmpathetechCashApp)),
+      onPressed: () => launchUrl(Uri.parse(empathCashApp)),
       icon: const Icon(LineIcons.dollarSign),
-      label: const Text("CashApp"),
+      label: const Text('CashApp'),
     ),
   ];
 
-  late final List<Widget> _affiliateDonations = [
+  late final List<Widget> _affiliateDonations = <Widget>[
     // Patreon
     ElevatedButton.icon(
-      onPressed: () => launchUrl(Uri.parse(EmpathetechPatreon)),
+      onPressed: () => launchUrl(Uri.parse(empathPatreon)),
       icon: const Icon(LineIcons.patreon),
-      label: const Text("Patreon"),
+      label: const Text('Patreon'),
     ),
-    _swapButtonSpacer,
+    swapSpacer,
 
     // Buy Me a Coffee
     ElevatedButton.icon(
-      onPressed: () => launchUrl(Uri.parse(EmpathetechCoffee)),
+      onPressed: () => launchUrl(Uri.parse(empathCoffee)),
       icon: const Icon(LineIcons.coffee),
-      label: const Text("Buy Me a Coffee"),
+      label: const Text('Buy Me a Coffee'),
     ),
-    _swapButtonSpacer,
+    swapSpacer,
 
     // Ko-fi
     ElevatedButton.icon(
-      onPressed: () => launchUrl(Uri.parse(EmpathetechKofi)),
+      onPressed: () => launchUrl(Uri.parse(empathKofi)),
       icon: const Icon(LineIcons.coffee),
-      label: const Text("Ko-fi"),
+      label: const Text('Ko-fi'),
     ),
   ];
 
@@ -83,82 +85,83 @@ class _SupportScreenState extends State<SupportScreen> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    setPageTitle(Lang.of(context)!.spsPageTitle);
+    setPageTitle(l10n.spsPageTitle);
   }
 
   // Return the build //
 
   @override
   Widget build(BuildContext context) {
-    return DotNetScaffold(
+    return DotnetScaffold(
       body: EzScreen(
         child: EzScrollView(
-          children: [
+          children: <Widget>[
             // Intro //
 
             MergeSemantics(
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: [
+                children: <Widget>[
                   Text(
-                    Lang.of(context)!.spsThanks,
+                    l10n.spsThanks,
                     style: titleStyle,
                     textAlign: TextAlign.center,
                   ),
                   Text(
-                    Lang.of(context)!.spsGive,
+                    l10n.spsGive,
                     style: bodyStyle,
                     textAlign: TextAlign.center,
                   ),
                 ],
               ),
             ),
-            _textSpacer,
+            separator,
 
             // Donate ... //
             // Time
 
             Text(
-              Lang.of(context)!.spsTimeQ,
+              l10n.spsTimeQ,
               style: headlineStyle,
               textAlign: TextAlign.center,
             ),
-            _padder,
+            padder,
 
             // GitHub contributor
-            EzRichText([
+            EzRichText(<InlineSpan>[
               EzInlineLink(
-                Lang.of(context)!.gReachOut,
+                l10n.gReachOut,
                 style: bodyStyle,
                 textAlign: TextAlign.center,
                 url: Uri.parse(
-                    "mailto:$EmpathetechCommunity?subject=Becoming%20a%20contributor"),
-                semanticsLabel: Lang.of(context)!.gEmailTo(empathetech_llc),
+                  'mailto:$empathCommunity?subject=Becoming%20a%20contributor',
+                ),
+                semanticsLabel: l10n.gEmailTo(empathetechLLC),
               ),
               EzPlainText(
-                Lang.of(context)!.spsBecome,
+                text: l10n.spsBecome,
                 style: bodyStyle,
               ),
               EzInlineLink(
-                Lang.of(context)!.spsGit,
+                l10n.spsGit,
                 style: bodyStyle,
                 textAlign: TextAlign.center,
-                url: Uri.parse(EmpathetechGitHub),
-                semanticsLabel: Lang.of(context)!.gEmpathetechGitHint,
-                tooltip: EmpathetechGitHub,
+                url: Uri.parse(empathGitHub),
+                semanticsLabel: l10n.gEmpathetechGitHint,
+                tooltip: empathGitHub,
               ),
             ], textAlign: TextAlign.center),
-            _textSpacer,
+            separator,
 
             // Money //
 
             Text(
-              Lang.of(context)!.spsMoneyQ,
+              l10n.spsMoneyQ,
               style: headlineStyle,
               textAlign: TextAlign.center,
             ),
-            _buttonSpacer,
+            spacer,
 
             // Direct donations
             EzRowCol.sym(
@@ -166,7 +169,7 @@ class _SupportScreenState extends State<SupportScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: _directDonations,
             ),
-            _buttonSpacer,
+            spacer,
 
             // Affiliate donations
             EzRowCol.sym(
@@ -174,23 +177,23 @@ class _SupportScreenState extends State<SupportScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: _affiliateDonations,
             ),
-            _textSpacer,
+            separator,
 
             // Power //
 
             Text(
-              Lang.of(context)!.spsPowerQ,
+              l10n.spsPowerQ,
               style: headlineStyle,
               textAlign: TextAlign.center,
             ),
-            _padder,
+            padder,
 
             // F@H team
             FaHBanner(
               titleStyle: titleStyle,
               bodyStyle: bodyStyle,
             ),
-            _textSpacer,
+            separator,
           ],
         ),
       ),

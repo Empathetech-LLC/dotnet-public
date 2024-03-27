@@ -1,10 +1,10 @@
 // App config //
 
 /// Empathetech
-const String empathetech = "Empathetech";
+const String empathetech = 'Empathetech';
 
 /// Empathetech LLC
-const String empathetech_llc = "Empathetech LLC";
+const String empathetechLLC = 'Empathetech LLC';
 
 // Assets //
 
@@ -14,7 +14,7 @@ const String lightLogoVideoPath = 'assets/light-animation.mp4';
 const String darkLogoVideoPath = 'assets/dark-animation.mp4';
 
 const String founderIconPath = 'assets/founder.png';
-const String mike = "Michael Waldron";
+const String mike = 'Michael Waldron';
 
 const String anitaBorgIconPath = 'assets/AnitaB.webp';
 const String codeDotOrgIconPath = 'assets/code-dot-org.png';
@@ -24,7 +24,7 @@ const String fahIconPath = 'assets/fah.png';
 
 const String ytdReportPath = 'assets/ytd-expenses.csv';
 
-const Set<String> assetPaths = {
+const Set<String> assetPaths = <String>{
   lightLogoPath,
   darkLogoPath,
   lightLogoVideoPath,
@@ -42,15 +42,15 @@ const double imageSize = 171.0;
 
 // Links //
 
-const String EFUISource =
+const String efuiSource =
     'https://github.com/Empathetech-LLC/empathetech_flutter_ui';
 
 const String settingsSource =
     'https://github.com/Empathetech-LLC/dotnet-public/blob/main/lib/screens/Settings.dart';
 
-const String saaSDocs = "https://en.wikipedia.org/wiki/Software_as_a_service";
-const String dualLicenseDocs = "https://en.wikipedia.org/wiki/Multi-licensing";
-const String bigTechDocs = "https://en.wikipedia.org/wiki/Big_Tech";
+const String saaSDocs = 'https://en.wikipedia.org/wiki/Software_as_a_service';
+const String dualLicenseDocs = 'https://en.wikipedia.org/wiki/Multi-licensing';
+const String bigTechDocs = 'https://en.wikipedia.org/wiki/Big_Tech';
 
 const String anitaBorgLink = 'https://anitab.org/';
 const String anitaBorgCNavLink =
@@ -65,7 +65,7 @@ const String worldSavvyCNavLink =
     'https://www.charitynavigator.org/ein/450473508';
 
 const String financesSource =
-    "https://github.com/Empathetech-LLC/dotnet-public/blob/main/lib/utils/finances.dart";
+    'https://github.com/Empathetech-LLC/dotnet-public/blob/main/lib/utils/finances.dart';
 
 const String dunvekLink = 'https://www.fiverr.com/dunvek';
 
@@ -76,12 +76,12 @@ const String graphicAlertLink = 'https://www.fiverr.com/graphic_alert';
 
 // Asset sources //
 
-const Map<String, String> credits = {
-  lightLogoPath: empathetech_llc,
-  darkLogoPath: empathetech_llc,
-  lightLogoVideoPath: "$empathetech_llc & $graphicAlertLink",
-  darkLogoVideoPath: "$empathetech_llc & $graphicAlertLink",
-  founderIconPath: "$mike & $dunvekLink",
+const Map<String, String> credits = <String, String>{
+  lightLogoPath: empathetechLLC,
+  darkLogoPath: empathetechLLC,
+  lightLogoVideoPath: '$empathetechLLC & $graphicAlertLink',
+  darkLogoVideoPath: '$empathetechLLC & $graphicAlertLink',
+  founderIconPath: '$mike & $dunvekLink',
   anitaBorgIconPath: anitaBorgLink,
   codeDotOrgIconPath: codeDotOrgLink,
   worldSavvyIconPath: worldSavvyLink,

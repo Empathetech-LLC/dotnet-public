@@ -1,14 +1,14 @@
 import './utils.dart';
 
-import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
-
 import 'package:flutter/material.dart';
+import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 
 class CharityOrgs extends StatelessWidget {
   final TextStyle? titleStyle;
   final TextStyle? bodyStyle;
 
   const CharityOrgs({
+    super.key,
     required this.titleStyle,
     required this.bodyStyle,
   });
@@ -35,86 +35,88 @@ class CharityOrgs extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    bool limitedSpace = ScreenSpace.of(context)?.isLimited ?? false;
+    final bool limitedSpace = ScreenSpace.of(context)?.isLimited ?? false;
 
-    final double buttonSpace = EzConfig.get(buttonSpacingKey);
+    final double space = EzConfig.get(spacingKey);
 
-    final EzSpacer buttonSpacer = EzSpacer(buttonSpace);
-    final EzSpacer rowButtonSpacer = EzSpacer.row(buttonSpace);
-    final EzSpacer textSpacer = EzSpacer(EzConfig.get(textSpacingKey));
+    final EzSpacer spacer = EzSpacer(space);
+    final EzSpacer rowSpacer = EzSpacer.row(space);
+    final EzSpacer separator = EzSpacer(space * 2);
 
-    double twoThirdsWidth = widthOf(context) * (2 / 3);
-    double sharedColWidth = (widthOf(context) - 2 * buttonSpace) * 0.3;
-    double imageWidth = MediaQuery.textScalerOf(context).scale(imageSize);
+    final double twoThirdsWidth = widthOf(context) * (2 / 3);
+    final double sharedColWidth = (widthOf(context) - 2 * space) * 0.3;
+    final double imageWidth = MediaQuery.textScalerOf(context).scale(imageSize);
 
-    final List<Widget> anitaB = [
+    final Lang l10n = Lang.of(context)!;
+
+    final List<Widget> anitaB = <Widget>[
       logoImage(
         width: imageWidth,
         url: anitaBorgLink,
         imagePath: anitaBorgIconPath,
-        semanticLabel: Lang.of(context)!.gAnitaBorgIconHint,
+        semanticLabel: l10n.gAnitaBorgIconHint,
       ),
-      buttonSpacer,
+      spacer,
       EzLink(
         'AnitaB.org',
         style: titleStyle,
         textAlign: TextAlign.center,
         url: Uri.parse(anitaBorgCNavLink),
-        semanticsLabel: Lang.of(context)!.fpsAnitaCNavHint,
+        semanticsLabel: l10n.fpsAnitaCNavHint,
         tooltip: anitaBorgCNavLink,
       ),
-      buttonSpacer,
+      spacer,
       Text(
-        Lang.of(context)!.fpsAnitaMission,
+        l10n.fpsAnitaMission,
         style: bodyStyle,
         textAlign: TextAlign.center,
       ),
     ];
 
-    final List<Widget> codeDotOrg = [
+    final List<Widget> codeDotOrg = <Widget>[
       logoImage(
         width: imageWidth,
         url: codeDotOrgLink,
         imagePath: codeDotOrgIconPath,
-        semanticLabel: Lang.of(context)!.gCodeDotOrgIconHint,
+        semanticLabel: l10n.gCodeDotOrgIconHint,
       ),
-      buttonSpacer,
+      spacer,
       EzLink(
         'code.org',
         style: titleStyle,
         textAlign: TextAlign.center,
         url: Uri.parse(codeDotOrgCNavLink),
-        semanticsLabel: Lang.of(context)!.fpsCodeCNavHint,
+        semanticsLabel: l10n.fpsCodeCNavHint,
         tooltip: codeDotOrgCNavLink,
       ),
-      buttonSpacer,
+      spacer,
       Text(
-        Lang.of(context)!.fpsCodeMission,
+        l10n.fpsCodeMission,
         style: bodyStyle,
         textAlign: TextAlign.center,
       ),
     ];
 
-    final List<Widget> worldSavvy = [
+    final List<Widget> worldSavvy = <Widget>[
       logoImage(
         width: imageWidth,
         url: worldSavvyLink,
         imagePath: worldSavvyIconPath,
-        semanticLabel: Lang.of(context)!.gWorldSavvyIconHint,
+        semanticLabel: l10n.gWorldSavvyIconHint,
         color: Colors.transparent,
       ),
-      buttonSpacer,
+      spacer,
       EzLink(
         'World Savvy',
         style: titleStyle,
         textAlign: TextAlign.center,
         url: Uri.parse(worldSavvyCNavLink),
-        semanticsLabel: Lang.of(context)!.fpsSavvyCNavHint,
+        semanticsLabel: l10n.fpsSavvyCNavHint,
         tooltip: worldSavvyCNavLink,
       ),
-      buttonSpacer,
+      spacer,
       Text(
-        Lang.of(context)!.fpsSavvyMission,
+        l10n.fpsSavvyMission,
         style: bodyStyle,
         textAlign: TextAlign.center,
       ),
@@ -125,11 +127,11 @@ class CharityOrgs extends StatelessWidget {
             constraints: BoxConstraints(maxWidth: twoThirdsWidth),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [
+              children: <Widget>[
                 ...anitaB,
-                textSpacer,
+                separator,
                 ...codeDotOrg,
-                textSpacer,
+                separator,
                 ...worldSavvy,
               ],
             ),
@@ -137,7 +139,7 @@ class CharityOrgs extends StatelessWidget {
         : Row(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
+            children: <Widget>[
               // AnitaB.org
               ConstrainedBox(
                 constraints: BoxConstraints(maxWidth: sharedColWidth),
@@ -146,7 +148,7 @@ class CharityOrgs extends StatelessWidget {
                   children: anitaB,
                 ),
               ),
-              rowButtonSpacer,
+              rowSpacer,
 
               // Code.org
               ConstrainedBox(
@@ -156,7 +158,7 @@ class CharityOrgs extends StatelessWidget {
                   children: codeDotOrg,
                 ),
               ),
-              rowButtonSpacer,
+              rowSpacer,
 
               // World Savvy
               ConstrainedBox(

@@ -1,58 +1,62 @@
 import '../utils/utils.dart';
 
+import 'package:flutter/material.dart';
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 
-import 'package:flutter/material.dart';
-
 class TeamScreen extends StatefulWidget {
-  const TeamScreen({Key? key}) : super(key: key);
+  const TeamScreen({super.key});
 
   @override
-  _TeamScreenState createState() => _TeamScreenState();
+  State<TeamScreen> createState() => _TeamScreenState();
 }
 
 class _TeamScreenState extends State<TeamScreen> {
   // Gather the theme data //
 
   final double padding = EzConfig.get(paddingKey);
+  final double spacing = EzConfig.get(paddingKey);
 
-  late final EzSpacer _padder = EzSpacer(padding);
-  late final EzSpacer _textSpacer = EzSpacer(EzConfig.get(textSpacingKey));
+  late final EzSpacer padder = EzSpacer(padding);
+  late final EzSpacer spacer = EzSpacer(spacing);
+  late final EzSpacer separator = EzSpacer(spacing * 2);
 
-  late final TextStyle? headlineStyle = getHeadline(context);
-  late final TextStyle? titleStyle = getTitle(context);
-  late final TextStyle? bodyStyle = getBody(context);
+  late final TextTheme textTheme = Theme.of(context).textTheme;
+  late final TextStyle? headlineStyle = textTheme.headlineLarge;
+  late final TextStyle? titleStyle = textTheme.titleLarge;
+  late final TextStyle? bodyStyle = textTheme.bodyLarge;
+
+  late final Lang l10n = Lang.of(context)!;
 
   // Set the page title //
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    setPageTitle(Lang.of(context)!.tsPageTitle);
+    setPageTitle(l10n.tsPageTitle);
   }
 
   // Return the build //
 
   @override
   Widget build(BuildContext context) {
-    return DotNetScaffold(
+    return DotnetScaffold(
       body: EzScreen(
         child: EzScrollView(
-          children: [
+          children: <Widget>[
             // Core //
 
             Text(
-              Lang.of(context)!.tsCore,
+              l10n.tsCore,
               style: headlineStyle,
               textAlign: TextAlign.center,
             ),
-            _padder,
+            padder,
 
             // Founder
             EzRowCol.sym(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [
+              children: <Widget>[
                 // Avatar of Mike
                 Container(
                   constraints: BoxConstraints(
@@ -61,7 +65,7 @@ class _TeamScreenState extends State<TeamScreen> {
                   ),
                   child: EzImage(
                     image: const AssetImage(founderIconPath),
-                    semanticLabel: Lang.of(context)!.tsTheFounderImageHint,
+                    semanticLabel: l10n.tsTheFounderImageHint,
                   ),
                 ),
                 EzSwapSpacer(padding),
@@ -71,9 +75,9 @@ class _TeamScreenState extends State<TeamScreen> {
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
+                    children: <Widget>[
                       Text(
-                        Lang.of(context)!.tsTheFounder,
+                        l10n.tsTheFounder,
                         style: titleStyle,
                         textAlign: TextAlign.center,
                       ),
@@ -87,54 +91,54 @@ class _TeamScreenState extends State<TeamScreen> {
                 ),
               ],
             ),
-            _textSpacer,
+            separator,
 
             // Community //
 
             Text(
-              Lang.of(context)!.tsCommunity,
+              l10n.tsCommunity,
               style: headlineStyle,
               textAlign: TextAlign.center,
             ),
-            _padder,
+            padder,
 
             // Folding@home
             FaHBanner(
               titleStyle: titleStyle,
               bodyStyle: bodyStyle,
             ),
-            _textSpacer,
+            separator,
 
             // Freelance //
 
             Text(
-              Lang.of(context)!.tsFreelance,
+              l10n.tsFreelance,
               style: headlineStyle,
               textAlign: TextAlign.center,
             ),
-            _padder,
+            padder,
 
             // Logo animation
             Column(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [
+              children: <Widget>[
                 EzLink(
                   'Graphic Alert',
                   style: titleStyle,
                   textAlign: TextAlign.center,
                   url: Uri.parse(graphicAlertLink),
-                  semanticsLabel: Lang.of(context)!.tsGALinkHint,
+                  semanticsLabel: l10n.tsGALinkHint,
                   tooltip: graphicAlertLink,
                 ),
                 Text(
-                  Lang.of(context)!.tsGADescription,
+                  l10n.tsGADescription,
                   style: bodyStyle,
                   textAlign: TextAlign.center,
                 ),
               ],
             ),
-            _textSpacer,
+            separator,
           ],
         ),
       ),

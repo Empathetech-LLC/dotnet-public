@@ -22,13 +22,13 @@ double _gatherSalaries() {
 
   return annualHours.values.fold(
     0.0,
-    (sum, hours) => sum + (hours * wage),
+    (double sum, double hours) => sum + (hours * wage),
   );
 }
 
 /// Annual hours for each Empathetech member
 /// Full time == 40 * 52 == 2080
-const Map<String, double> annualHours = {mike: 2080};
+const Map<String, double> annualHours = <String, double>{mike: 2080};
 
 /// Eventually, Empathetech will create its own comfortable wage calculator.
 /// Currently, we rely on adapting MIT's living wage calculator.

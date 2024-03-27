@@ -1,28 +1,29 @@
 import './screens.dart';
 import '../utils/utils.dart';
 
-import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
-
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 
 class PlanScreen extends StatefulWidget {
-  const PlanScreen({Key? key}) : super(key: key);
+  const PlanScreen({super.key});
 
   @override
-  _PlanScreenState createState() => _PlanScreenState();
+  State<PlanScreen> createState() => _PlanScreenState();
 }
 
 class _PlanScreenState extends State<PlanScreen> {
   // Gather the theme data //
 
-  final double buttonSpace = EzConfig.get(buttonSpacingKey);
+  final double spacing = EzConfig.get(spacingKey);
 
-  late final EzSpacer _buttonSpacer = EzSpacer(buttonSpace);
-  late final EzSpacer _rowButtonSpacer = EzSpacer.row(buttonSpace);
+  late final EzSpacer spacer = EzSpacer(spacing);
+  late final EzSpacer rowSpacer = EzSpacer.row(spacing);
 
-  late final TextStyle? titleStyle = getTitle(context);
-  late final TextStyle? bodyStyle = getBody(context);
+  late final TextStyle? titleStyle = Theme.of(context).textTheme.titleLarge;
+  late final TextStyle? bodyStyle = Theme.of(context).textTheme.bodyLarge;
+
+  late final Lang l10n = Lang.of(context)!;
 
   // Define the Step functions //
 
@@ -42,9 +43,9 @@ class _PlanScreenState extends State<PlanScreen> {
       alignment: Alignment.centerLeft,
       child: EzScrollView(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
+        children: <Widget>[
           ...contents,
-          _buttonSpacer,
+          spacer,
         ],
       ),
     );
@@ -78,7 +79,7 @@ class _PlanScreenState extends State<PlanScreen> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    setPageTitle(Lang.of(context)!.plsPageTitle);
+    setPageTitle(l10n.plsPageTitle);
   }
 
   @override
@@ -90,16 +91,16 @@ class _PlanScreenState extends State<PlanScreen> {
       textAlign: TextAlign.left,
     );
 
-    final EzPlainText period = EzPlainText(".", style: bodyStyle);
+    final EzPlainText period = EzPlainText(text: '.', style: bodyStyle);
 
-    final steps = <Step>[
+    final List<Step> steps = <Step>[
       // Step 1: Identify the problem
       Step(
         isActive: index >= 0,
-        title: _title(Lang.of(context)!.plsIDProblem),
-        content: _content([
+        title: _title(l10n.plsIDProblem),
+        content: _content(<Widget>[
           Text(
-            Lang.of(context)!.plsIDProblemContent,
+            l10n.plsIDProblemContent,
             style: bodyStyle,
             textAlign: TextAlign.left,
           ),
@@ -109,10 +110,10 @@ class _PlanScreenState extends State<PlanScreen> {
       // Step 2: Be a part of the solution
       Step(
         isActive: index >= 1,
-        title: _title(Lang.of(context)!.plsBeSolution),
-        content: _content([
+        title: _title(l10n.plsBeSolution),
+        content: _content(<Widget>[
           Text(
-            Lang.of(context)!.plsBeSolutionContent,
+            l10n.plsBeSolutionContent,
             style: bodyStyle,
             textAlign: TextAlign.left,
           ),
@@ -122,17 +123,17 @@ class _PlanScreenState extends State<PlanScreen> {
       // Step 3: Provide value
       Step(
         isActive: index >= 2,
-        title: _title(Lang.of(context)!.plsProvideValue),
-        content: _content([
+        title: _title(l10n.plsProvideValue),
+        content: _content(<Widget>[
           Text(
-            Lang.of(context)!.plsProvideValueContent1,
+            l10n.plsProvideValueContent1,
             style: bodyStyle,
             textAlign: TextAlign.left,
           ),
           newLine,
-          EzRichText([
+          EzRichText(<InlineSpan>[
             EzPlainText(
-              Lang.of(context)!.plsProvideValueContent2,
+              text: l10n.plsProvideValueContent2,
               style: bodyStyle,
             ),
             EzInlineLink(
@@ -140,11 +141,11 @@ class _PlanScreenState extends State<PlanScreen> {
               textFix: efuiLFix,
               style: bodyStyle,
               textAlign: TextAlign.left,
-              onTap: () => context.goNamed(productsRoute),
-              semanticsLabel: Lang.of(context)!.gProductsHint,
+              onTap: () => context.go(productsRoute),
+              semanticsLabel: l10n.gProductsHint,
             ),
             EzPlainText(
-              Lang.of(context)!.plsProvideValueContent3,
+              text: l10n.plsProvideValueContent3,
               style: bodyStyle,
             ),
           ], textAlign: TextAlign.left),
@@ -154,63 +155,63 @@ class _PlanScreenState extends State<PlanScreen> {
       // Step 4: Do it right
       Step(
         isActive: index >= 3,
-        title: _title(Lang.of(context)!.plsDoItRight),
-        content: _content([
-          EzRichText([
+        title: _title(l10n.plsDoItRight),
+        content: _content(<Widget>[
+          EzRichText(<InlineSpan>[
             EzPlainText(
-              Lang.of(context)!.plsDoItRightContent1,
+              text: l10n.plsDoItRightContent1,
               style: bodyStyle,
-              semanticsLabel: Lang.of(context)!.plsDoItRightContent1Fix,
+              semanticsLabel: l10n.plsDoItRightContent1Fix,
             ),
             EzInlineLink(
-              Lang.of(context)!.plsSaaS,
+              l10n.plsSaaS,
               style: bodyStyle,
               textAlign: TextAlign.left,
               url: Uri.parse(saaSDocs),
-              semanticsLabel: Lang.of(context)!.plsSaaSHint,
+              semanticsLabel: l10n.plsSaaSHint,
               tooltip: saaSDocs,
             ),
             EzPlainText(
-              Lang.of(context)!.plsDoItRightContent2,
+              text: l10n.plsDoItRightContent2,
               style: bodyStyle,
             ),
           ], textAlign: TextAlign.left),
           newLine,
-          EzRichText([
+          EzRichText(<InlineSpan>[
             EzPlainText(
-              Lang.of(context)!.plsDoItRightContent3,
+              text: l10n.plsDoItRightContent3,
               style: bodyStyle,
-              semanticsLabel: Lang.of(context)!.plsDoItRightContent3Fix,
+              semanticsLabel: l10n.plsDoItRightContent3Fix,
             ),
             EzInlineLink(
-              Lang.of(context)!.plsDualLicense,
+              l10n.plsDualLicense,
               style: bodyStyle,
               textAlign: TextAlign.left,
               url: Uri.parse(dualLicenseDocs),
-              semanticsLabel: Lang.of(context)!.plsDualLicenseHint,
+              semanticsLabel: l10n.plsDualLicenseHint,
               tooltip: dualLicenseDocs,
             ),
             period,
           ], textAlign: TextAlign.left),
           newLine,
           Text(
-            Lang.of(context)!.plsDoItRightContent4,
+            l10n.plsDoItRightContent4,
             style: bodyStyle,
             textAlign: TextAlign.left,
-            semanticsLabel: Lang.of(context)!.plsDoItRightContent4Fix,
+            semanticsLabel: l10n.plsDoItRightContent4Fix,
           ),
           newLine,
-          EzRichText([
+          EzRichText(<InlineSpan>[
             EzPlainText(
-              Lang.of(context)!.plsDoItRightContent5,
+              text: l10n.plsDoItRightContent5,
               style: bodyStyle,
             ),
             EzInlineLink(
-              Lang.of(context)!.fpsPageTitle.toLowerCase(),
+              l10n.fpsPageTitle.toLowerCase(),
               style: bodyStyle,
               textAlign: TextAlign.left,
-              onTap: () => context.goNamed(finPlanRoute),
-              semanticsLabel: Lang.of(context)!.fpsPageHint,
+              onTap: () => context.go(finPlanRoute),
+              semanticsLabel: l10n.fpsPageHint,
             ),
             period,
           ], textAlign: TextAlign.left),
@@ -220,7 +221,7 @@ class _PlanScreenState extends State<PlanScreen> {
 
     // Return the build //
 
-    return DotNetScaffold(
+    return DotnetScaffold(
       body: EzScreen(
         child: Stepper(
           currentStep: index,
@@ -228,41 +229,41 @@ class _PlanScreenState extends State<PlanScreen> {
           onStepCancel: _onStepCancel,
           onStepContinue: _onStepContinue,
           onStepTapped: _onStepTapped,
-          controlsBuilder: (context, details) {
-            bool isFirst = index == 0;
-            bool isLast = index == steps.length - 1;
+          controlsBuilder: (BuildContext context, ControlsDetails details) {
+            final bool isFirst = index == 0;
+            final bool isLast = index == steps.length - 1;
 
-            List<Widget> _buttons() {
+            List<Widget> buttons() {
               if (isFirst) {
-                return [
+                return <Widget>[
                   ElevatedButton(
                     onPressed: details.onStepContinue,
-                    child: Text(Lang.of(context)!.plsThen),
+                    child: Text(l10n.plsThen),
                   )
                 ];
               } else if (isLast) {
-                return [
+                return <Widget>[
                   ElevatedButton(
                     onPressed: details.onStepCancel,
-                    child: Text(Lang.of(context)!.plsBefore),
+                    child: Text(l10n.plsBefore),
                   )
                 ];
               } else {
-                return [
+                return <Widget>[
                   ElevatedButton(
                     onPressed: details.onStepCancel,
-                    child: Text(Lang.of(context)!.plsBefore),
+                    child: Text(l10n.plsBefore),
                   ),
-                  _rowButtonSpacer,
+                  rowSpacer,
                   ElevatedButton(
                     onPressed: details.onStepContinue,
-                    child: Text(Lang.of(context)!.plsThen),
+                    child: Text(l10n.plsThen),
                   ),
                 ];
               }
             }
 
-            return Row(children: _buttons());
+            return Row(children: buttons());
           },
           physics: const BouncingScrollPhysics(),
         ),

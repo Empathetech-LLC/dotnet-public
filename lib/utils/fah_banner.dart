@@ -1,14 +1,14 @@
 import './utils.dart';
 
-import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
-
 import 'package:flutter/material.dart';
+import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 
 class FaHBanner extends StatelessWidget {
   final TextStyle? titleStyle;
   final TextStyle? bodyStyle;
 
   const FaHBanner({
+    super.key,
     required this.titleStyle,
     required this.bodyStyle,
   });
@@ -19,16 +19,18 @@ class FaHBanner extends StatelessWidget {
 
     final EzSpacer padder = EzSpacer(padding);
 
+    final Lang l10n = Lang.of(context)!;
+
     return Column(
       mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.center,
-      children: [
+      children: <Widget>[
         // Description && links //
 
         EzRowCol.sym(
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [
+          children: <Widget>[
             // Icon
             Container(
               constraints: BoxConstraints(
@@ -37,7 +39,7 @@ class FaHBanner extends StatelessWidget {
               child: EzLinkImage(
                 image: const AssetImage(fahIconPath),
                 url: Uri.parse(faHLink),
-                semanticLabel: Lang.of(context)!.gFahIconHint,
+                semanticLabel: l10n.gFahIconHint,
                 tooltip: faHLink,
               ),
             ),
@@ -46,34 +48,34 @@ class FaHBanner extends StatelessWidget {
             // External links && info
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [
+              children: <Widget>[
                 Text(
-                  Lang.of(context)!.fahJoin,
+                  l10n.fahJoin,
                   style: titleStyle,
                   textAlign: TextAlign.center,
                 ),
-                EzRichText([
+                EzRichText(<InlineSpan>[
                   EzPlainText(
-                    Lang.of(context)!.fahIntro,
+                    text: l10n.fahIntro,
                     style: bodyStyle,
-                    semanticsLabel: Lang.of(context)!.fahIntroFix,
+                    semanticsLabel: l10n.fahIntroFix,
                   ),
                   EzInlineLink(
-                    Lang.of(context)!.tsPageTitle.toLowerCase(),
+                    l10n.tsPageTitle.toLowerCase(),
                     style: bodyStyle,
                     textAlign: TextAlign.center,
-                    url: Uri.parse(EmpathetechFoldingTeam),
-                    semanticsLabel: Lang.of(context)!.fahTeamHint,
-                    tooltip: EmpathetechFoldingTeam,
+                    url: Uri.parse(empathFoldingTeam),
+                    semanticsLabel: l10n.fahTeamHint,
+                    tooltip: empathFoldingTeam,
                   ),
                 ], textAlign: TextAlign.center),
                 padder,
                 EzLink(
-                  Lang.of(context)!.fahWhatQ,
+                  l10n.fahWhatQ,
                   style: bodyStyle,
                   textAlign: TextAlign.center,
                   url: Uri.parse(aboutFaHLink),
-                  semanticsLabel: Lang.of(context)!.fahWhatQHint,
+                  semanticsLabel: l10n.fahWhatQHint,
                   tooltip: aboutFaHLink,
                 ),
               ],
@@ -84,7 +86,7 @@ class FaHBanner extends StatelessWidget {
 
         // "Live" stats //
         Text(
-          Lang.of(context)!.fahStats,
+          l10n.fahStats,
           style: bodyStyle,
           textAlign: TextAlign.center,
         ),

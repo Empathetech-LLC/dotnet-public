@@ -1,25 +1,29 @@
 import '../utils/utils.dart';
 
-import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
-
 import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 
 class FinPlanScreen extends StatefulWidget {
-  const FinPlanScreen({Key? key}) : super(key: key);
+  const FinPlanScreen({super.key});
 
   @override
-  _FinPlanScreenState createState() => _FinPlanScreenState();
+  State<FinPlanScreen> createState() => _FinPlanScreenState();
 }
 
 class _FinPlanScreenState extends State<FinPlanScreen> {
   // Gather the theme data //
 
-  final EzSpacer _buttonSpacer = EzSpacer(EzConfig.get(buttonSpacingKey));
-  final EzSpacer _textSpacer = EzSpacer(EzConfig.get(textSpacingKey));
+  final double space = EzConfig.get(spacingKey);
 
-  late final TextStyle? headlineStyle = getHeadline(context);
-  late final TextStyle? bodyStyle = getBody(context);
+  late final EzSpacer spacer = EzSpacer(space);
+  late final EzSpacer separator = EzSpacer(space * 2);
+
+  late final TextTheme textTheme = Theme.of(context).textTheme;
+  late final TextStyle? headlineStyle = textTheme.headlineLarge;
+  late final TextStyle? bodyStyle = textTheme.bodyLarge;
+
+  late final Lang l10n = Lang.of(context)!;
 
   // Gather the financial data //
 
@@ -30,16 +34,14 @@ class _FinPlanScreenState extends State<FinPlanScreen> {
   late final String _income = asUSD(_totalIncome);
   late String _goal = asUSD(_totalGoal);
   late String _profit =
-      (_totalProfit == 0) ? Lang.of(context)!.fpsEventual : asUSD(_totalProfit);
+      (_totalProfit == 0) ? l10n.fpsEventual : asUSD(_totalProfit);
 
   void _initFinancialData() async {
-    double goal = await calculateGoal();
+    final double goal = await calculateGoal();
     setState(() {
       _totalGoal = goal;
       _totalProfit = max(_totalIncome - _totalGoal, 0);
-      _profit = (_totalProfit == 0)
-          ? Lang.of(context)!.fpsEventual
-          : asUSD(_totalProfit);
+      _profit = (_totalProfit == 0) ? l10n.fpsEventual : asUSD(_totalProfit);
 
       _goal = asUSD(goal);
     });
@@ -56,36 +58,34 @@ class _FinPlanScreenState extends State<FinPlanScreen> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    setPageTitle(Lang.of(context)!.fpsPageTitle);
+    setPageTitle(l10n.fpsPageTitle);
   }
 
   // Return the build //
 
   @override
   Widget build(BuildContext context) {
-    return DotNetScaffold(
+    return DotnetScaffold(
       body: EzScreen(
         child: EzScrollView(
-          children: [
+          children: <Widget>[
             // X of Y goal raised
             Semantics(
               button: false,
               readOnly: true,
-              label: Lang.of(context)!.fpsRaised(_goal, _income) +
-                  " " +
-                  Lang.of(context)!.fpsYear,
+              label: '${l10n.fpsRaised(_goal, _income)} ${l10n.fpsYear}',
               child: ExcludeSemantics(
-                child: Column(children: [
+                child: Column(children: <Widget>[
                   // Headline
                   Text(
-                    Lang.of(context)!.fpsRaised(_goal, _income),
+                    l10n.fpsRaised(_goal, _income),
                     style: headlineStyle,
                     textAlign: TextAlign.center,
                   ),
-                  _buttonSpacer,
+                  spacer,
 
                   // Progress indicator
-                  Container(
+                  SizedBox(
                     width: widthOf(context) * (2 / 3),
                     height: headlineStyle!.fontSize,
                     child: LinearProgressIndicator(
@@ -96,40 +96,40 @@ class _FinPlanScreenState extends State<FinPlanScreen> {
                       borderRadius: BorderRadius.circular(5),
                     ),
                   ),
-                  _buttonSpacer,
+                  spacer,
 
                   // Sub-header
                   Text(
-                    Lang.of(context)!.fpsYear,
+                    l10n.fpsYear,
                     style: headlineStyle,
                     textAlign: TextAlign.center,
                   ),
                 ]),
               ),
             ),
-            _textSpacer,
+            separator,
 
             // Profit distribution
             Text(
-              Lang.of(context)!.fpsSplit(_profit),
+              l10n.fpsSplit(_profit),
               style: bodyStyle,
               textAlign: TextAlign.center,
             ),
-            _buttonSpacer,
+            spacer,
 
             CharityOrgs(
-              titleStyle: getTitle(context),
+              titleStyle: textTheme.titleLarge,
               bodyStyle: bodyStyle,
             ),
-            _textSpacer,
+            separator,
 
             // Finances source
             EzLink(
-              Lang.of(context)!.fpsCheck,
-              style: getLabel(context),
+              l10n.fpsCheck,
+              style: textTheme.labelLarge,
               textAlign: TextAlign.center,
               url: Uri.parse(financesSource),
-              semanticsLabel: Lang.of(context)!.fpsCheckHint,
+              semanticsLabel: l10n.fpsCheckHint,
             ),
           ],
         ),

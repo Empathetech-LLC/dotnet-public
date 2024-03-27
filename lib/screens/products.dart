@@ -1,31 +1,34 @@
 import '../utils/utils.dart';
 
+import 'package:flutter/material.dart';
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 
-import 'package:flutter/material.dart';
-
 class ProductsScreen extends StatefulWidget {
-  const ProductsScreen({Key? key}) : super(key: key);
+  const ProductsScreen({super.key});
 
   @override
-  _ProductsScreenState createState() => _ProductsScreenState();
+  State<ProductsScreen> createState() => _ProductsScreenState();
 }
 
 class _ProductsScreenState extends State<ProductsScreen>
     with SingleTickerProviderStateMixin {
   // Gather the theme data //
 
-  final EzSpacer _textSpacer = EzSpacer(EzConfig.get(textSpacingKey));
+  final EzSpacer separator = EzSpacer(EzConfig.get(spacingKey) * 2);
 
-  late final TextStyle? titleStyle = getTitle(context);
-  late final TextStyle? bodyStyle = getBody(context);
+  late final TextTheme textTheme = Theme.of(context).textTheme;
+  late final TextStyle? headlineStyle = textTheme.headlineLarge;
+  late final TextStyle? titleStyle = textTheme.titleLarge;
+  late final TextStyle? bodyStyle = textTheme.bodyLarge;
+
+  late final Lang l10n = Lang.of(context)!;
 
   // Set the page title //
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    setPageTitle(Lang.of(context)!.psPageTitle);
+    setPageTitle(l10n.psPageTitle);
   }
 
   @override
@@ -36,45 +39,45 @@ class _ProductsScreenState extends State<ProductsScreen>
 
     // Return the build //
 
-    return DotNetScaffold(
+    return DotnetScaffold(
       body: EzScreen(
         child: EzScrollView(
-          children: [
+          children: <Widget>[
             // EFUI //
 
             // Intro
             Text(
               efuiL,
-              style: getHeadline(context),
+              style: headlineStyle,
               textAlign: TextAlign.center,
               semanticsLabel: efuiLFix,
             ),
             EzLink(
-              Lang.of(context)!.psEFUISlogan,
+              l10n.psEFUISlogan,
               style: titleStyle,
               textAlign: TextAlign.center,
-              url: Uri.parse(EFUISource),
-              semanticsLabel: Lang.of(context)!.gEFUISourceHint,
-              tooltip: EFUISource,
+              url: Uri.parse(efuiSource),
+              semanticsLabel: l10n.gEFUISourceHint,
+              tooltip: efuiSource,
             ),
-            _textSpacer,
+            separator,
 
             // Description
             Text(
-              Lang.of(context)!.psEFUIDescription,
+              l10n.psEFUIDescription,
               style: bodyStyle,
               textAlign: TextAlign.center,
             ),
-            _textSpacer,
+            separator,
 
             // Platform availability
             Text(
-              Lang.of(context)!.psPlatform,
+              l10n.psPlatform,
               style: titleStyle,
               textAlign: TextAlign.center,
             ),
             Text(
-              Lang.of(context)!.psPlatformContent,
+              l10n.psPlatformContent,
               style: bodyStyle,
               textAlign: TextAlign.center,
             ),
@@ -82,12 +85,12 @@ class _ProductsScreenState extends State<ProductsScreen>
 
             // Responsive design
             Text(
-              Lang.of(context)!.psResponsive,
+              l10n.psResponsive,
               style: titleStyle,
               textAlign: TextAlign.center,
             ),
             Text(
-              Lang.of(context)!.psResponsiveContent,
+              l10n.psResponsiveContent,
               style: bodyStyle,
               textAlign: TextAlign.center,
             ),
@@ -95,47 +98,48 @@ class _ProductsScreenState extends State<ProductsScreen>
 
             // Screen reader support
             Text(
-              Lang.of(context)!.psScreen,
+              l10n.psScreen,
               style: titleStyle,
               textAlign: TextAlign.center,
             ),
-            EzRichText([
+            EzRichText(<InlineSpan>[
               EzPlainText(
-                Lang.of(context)!.psScreenContent,
+                text: l10n.psScreenContent,
                 style: bodyStyle,
               ),
               EzInlineLink(
-                "TalkBack",
+                'TalkBack',
                 style: bodyStyle,
                 textAlign: TextAlign.center,
                 url: Uri.parse(
-                    "https://support.google.com/accessibility/android/answer/6006598?hl=en"),
-                semanticsLabel: Lang.of(context)!.psTalkBackHint,
+                    'https://support.google.com/accessibility/android/answer/6006598?hl=en'),
+                semanticsLabel: l10n.psTalkBackHint,
               ),
               EzPlainText(
-                Lang.of(context)!.psAnd,
+                text: l10n.psAnd,
                 style: bodyStyle,
               ),
               EzInlineLink(
-                "VoiceOver",
+                'VoiceOver',
                 style: bodyStyle,
                 textAlign: TextAlign.center,
                 url: Uri.parse(
-                    "https://support.apple.com/guide/iphone/turn-on-and-practice-voiceover-iph3e2e415f/ios"),
-                semanticsLabel: Lang.of(context)!.psVoiceOverHint,
+                  'https://support.apple.com/guide/iphone/turn-on-and-practice-voiceover-iph3e2e415f/ios',
+                ),
+                semanticsLabel: l10n.psVoiceOverHint,
               ),
             ], textAlign: TextAlign.center),
             newLine,
 
             // User customization
             Text(
-              Lang.of(context)!.psCustom,
+              l10n.psCustom,
               style: titleStyle,
               textAlign: TextAlign.center,
             ),
 
             Text(
-              Lang.of(context)!.psCustomContent,
+              l10n.psCustomContent,
               style: bodyStyle,
               textAlign: TextAlign.center,
             ),
@@ -143,40 +147,40 @@ class _ProductsScreenState extends State<ProductsScreen>
 
             // Internationalization
             Text(
-              Lang.of(context)!.psInternational,
+              l10n.psInternational,
               style: titleStyle,
               textAlign: TextAlign.center,
             ),
             Text(
-              Lang.of(context)!.psInternationalContent,
+              l10n.psInternationalContent,
               style: bodyStyle,
               textAlign: TextAlign.center,
             ),
-            _textSpacer,
+            separator,
 
             // Tag line
             Text(
-              Lang.of(context)!.psEFUITagLine,
+              l10n.psEFUITagLine,
               style: bodyStyle,
               textAlign: TextAlign.center,
             ),
-            _textSpacer,
+            separator,
 
             // Consultation call-out
-            EzRichText([
+            EzRichText(<InlineSpan>[
               EzInlineLink(
-                Lang.of(context)!.gReachOut,
+                l10n.gReachOut,
                 style: bodyStyle,
                 textAlign: TextAlign.center,
-                url: Uri.parse("mailto:$EmpathetechAdmin"),
-                semanticsLabel: Lang.of(context)!.gEmailTo(empathetech_llc),
+                url: Uri.parse('mailto:$empathAdmin'),
+                semanticsLabel: l10n.gEmailTo(empathetechLLC),
               ),
               EzPlainText(
-                Lang.of(context)!.psConsult,
+                text: l10n.psConsult,
                 style: bodyStyle,
               ),
             ], textAlign: TextAlign.center),
-            _textSpacer,
+            separator,
           ],
         ),
       ),

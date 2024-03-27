@@ -15,10 +15,14 @@ void main() async {
 
   // Initialize EzConfig
   final SharedPreferences prefs = await SharedPreferences.getInstance();
-  EzConfig.init(preferences: prefs, assetPaths: assetPaths);
+  EzConfig.init(
+    preferences: prefs,
+    assetPaths: assetPaths,
+    defaults: empathetechConfig,
+  );
 
   // Set device orientations
-  SystemChrome.setPreferredOrientations([
+  SystemChrome.setPreferredOrientations(<DeviceOrientation>[
     DeviceOrientation.portraitUp,
     DeviceOrientation.landscapeLeft,
     DeviceOrientation.landscapeRight,
@@ -27,70 +31,67 @@ void main() async {
   runApp(const ETechDotNet());
 }
 
-final GoRouter _router = GoRouter(
-  initialLocation: homeRoute,
+final GoRouter router = GoRouter(
+  initialLocation: homePath,
   routes: <RouteBase>[
     GoRoute(
-      name: homeRoute,
-      path: homeRoute,
+      path: homePath,
       builder: (BuildContext context, GoRouterState state) {
         return const HomeScreen();
       },
       routes: <RouteBase>[
         GoRoute(
-          name: productsRoute,
-          path: productsRoute,
+          path: productsPath,
           builder: (BuildContext context, GoRouterState state) {
             return const ProductsScreen();
           },
         ),
         GoRoute(
-          name: planRoute,
-          path: planRoute,
+          path: planPath,
           builder: (BuildContext context, GoRouterState state) {
             return const PlanScreen();
           },
         ),
         GoRoute(
-          name: finPlanRoute,
-          path: finPlanRoute,
+          path: finPlanPath,
           builder: (BuildContext context, GoRouterState state) {
             return const FinPlanScreen();
           },
         ),
         GoRoute(
-          name: teamRoute,
-          path: teamRoute,
+          path: teamPath,
           builder: (BuildContext context, GoRouterState state) {
             return const TeamScreen();
           },
         ),
         GoRoute(
-          name: supportRoute,
-          path: supportRoute,
+          path: supportPath,
           builder: (BuildContext context, GoRouterState state) {
             return const SupportScreen();
           },
         ),
         GoRoute(
-          name: settingsRoute,
-          path: settingsRoute,
+          path: settingsPath,
           builder: (BuildContext context, GoRouterState state) {
             return const SettingsScreen();
           },
           routes: <RouteBase>[
             GoRoute(
-              name: colorSettingsRoute,
-              path: colorSettingsRoute,
+              path: textSettingsPath,
+              builder: (BuildContext context, GoRouterState state) {
+                return const TextSettingsScreen();
+              },
+            ),
+            GoRoute(
+              path: colorSettingsPath,
               builder: (BuildContext context, GoRouterState state) {
                 return const ColorSettingsScreen();
               },
             ),
             GoRoute(
-              name: styleSettingsRoute,
-              path: styleSettingsRoute,
+              path: layoutSettingsPath,
               builder: (BuildContext context, GoRouterState state) {
-                return const StyleSettingsScreen();
+                return const LayoutSettingsScreen();
               },
             ),
           ],
@@ -101,27 +102,25 @@ final GoRouter _router = GoRouter(
 );
 
 class ETechDotNet extends StatelessWidget {
-  final Key? key;
-
-  const ETechDotNet({this.key}) : super(key: key);
+  const ETechDotNet({super.key});
 
   @override
   Widget build(BuildContext context) {
     return EzAppProvider(
       app: PlatformApp.router(
         debugShowCheckedModeBanner: false,
-        localizationsDelegates: {
+        localizationsDelegates: const <LocalizationsDelegate<dynamic>>[
           LocaleNamesLocalizationsDelegate(),
           ...EFUILang.localizationsDelegates,
           ...Lang.localizationsDelegates,
-        },
-        supportedLocales: {
-          ...Lang.supportedLocales,
+        ],
+        supportedLocales: const <Locale>[
           ...EFUILang.supportedLocales,
-        },
+          ...Lang.supportedLocales,
+        ],
         locale: EzConfig.getLocale(),
         title: empathetech,
-        routerConfig: _router,
+        routerConfig: router,
       ),
     );
   }

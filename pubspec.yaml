@@ -2,10 +2,10 @@ name: dotnet
 description: "Empathetech's mission is to re-balance the power in tech by making open source software more accessible."
 publish_to: 'none'
 
-version: 3.0.1
+version: 3.1.0
 
 environment:
-  sdk: '>=3.1.0 <4.0.0'
+  sdk: '>=3.2.0 <4.0.0'
 
 dependencies:
   flutter:
@@ -15,27 +15,26 @@ dependencies:
   intl: ^0.18.1
 
   # Flutter/Google
-  shared_preferences: ^2.2.1
   go_router: ^13.0.0
-  video_player: ^2.7.2
+  shared_preferences: ^2.2.1
   url_launcher: ^6.1.14
+  video_player: ^2.7.2
 
   # Community
-  flutter_platform_widgets: ^6.0.2
-  flutter_localized_locales: ^2.0.5
-  line_icons: ^2.0.3
   chewie: ^1.7.4
+  flutter_localized_locales: ^2.0.5
+  flutter_platform_widgets: ^6.0.2
+  line_icons: ^2.0.3
+  provider: ^6.1.2
   
-  # Empathetech made
-  empathetech_flutter_ui: ^5.0.1
-  # empathetech_flutter_ui:
-  #   path: ../empathetech_flutter_ui
-  
-  
+  # Empathetech
+  empathetech_flutter_ui: ^6.0.0
+
 dev_dependencies:
   dependency_validator: ^3.2.3
   flutter_native_splash: ^2.3.2
   flutter_launcher_icons: ^0.13.1
+  flutter_lints: ^3.0.1
   
 flutter:
   generate: true

@@ -1,45 +1,47 @@
 import './utils.dart';
 
-import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
-
 import 'package:flutter/material.dart';
+import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 
 class EFUIShoutOut extends StatelessWidget {
   final TextStyle? style;
   final String sourceLink;
 
   const EFUIShoutOut({
+    super.key,
     required this.style,
     required this.sourceLink,
   });
 
   @override
   Widget build(BuildContext context) {
+    final Lang l10n = Lang.of(context)!;
+
     return Column(
       mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        EzRichText([
+      children: <Widget>[
+        EzRichText(<InlineSpan>[
           EzPlainText(
-            Lang.of(context)!.gDontChaWish,
+            text: l10n.gDontChaWish,
             style: style,
           ),
           EzInlineLink(
-            Lang.of(context)!.gMeQ,
+            l10n.gMeQ,
             style: style,
             textAlign: TextAlign.center,
             url: Uri.parse(sourceLink),
-            semanticsLabel: Lang.of(context)!.gEFUISourceHint,
+            semanticsLabel: l10n.gEFUISourceHint,
             tooltip: sourceLink,
           ),
         ], textAlign: TextAlign.center),
         EzLink(
-          Lang.of(context)!.gDontCha,
+          l10n.gDontCha,
           style: style,
           textAlign: TextAlign.center,
-          url: Uri.parse(EFUISource),
-          semanticsLabel: Lang.of(context)!.gDontChaHint,
-          tooltip: EFUISource,
+          url: Uri.parse(efuiSource),
+          semanticsLabel: l10n.gDontChaHint,
+          tooltip: efuiSource,
         ),
       ],
     );

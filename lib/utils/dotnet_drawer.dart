@@ -42,7 +42,7 @@ class DotNetDrawer extends StatelessWidget {
       Lang.of(context)!.psPageTitle,
       style: style,
       textAlign: TextAlign.center,
-      onTap: () => _navigateTo(context, productsPath),
+      onTap: () => _navigateTo(context, productsRoute),
       semanticsLabel: Lang.of(context)!.gProductsHint,
       color: Theme.of(context).colorScheme.onSurface,
     );
@@ -51,7 +51,7 @@ class DotNetDrawer extends StatelessWidget {
       Lang.of(context)!.plsPageTitle,
       style: style,
       textAlign: TextAlign.center,
-      onTap: () => _navigateTo(context, planPath),
+      onTap: () => _navigateTo(context, planRoute),
       semanticsLabel: Lang.of(context)!.gPlanHint,
       color: Theme.of(context).colorScheme.onSurface,
     );
@@ -60,7 +60,7 @@ class DotNetDrawer extends StatelessWidget {
       Lang.of(context)!.tsPageTitle,
       style: style,
       textAlign: TextAlign.center,
-      onTap: () => _navigateTo(context, teamPath),
+      onTap: () => _navigateTo(context, teamRoute),
       semanticsLabel: Lang.of(context)!.gTeamHint,
       color: Theme.of(context).colorScheme.onSurface,
     );
@@ -69,7 +69,7 @@ class DotNetDrawer extends StatelessWidget {
       Lang.of(context)!.spsPageTitle,
       style: style,
       textAlign: TextAlign.center,
-      onTap: () => _navigateTo(context, supportPath),
+      onTap: () => _navigateTo(context, supportRoute),
       semanticsLabel: Lang.of(context)!.gSupportHint,
       color: Theme.of(context).colorScheme.onSurface,
     );

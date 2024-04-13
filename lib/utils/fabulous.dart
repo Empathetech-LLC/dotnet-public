@@ -21,7 +21,7 @@ class BackFAB extends FloatingActionButton {
   BackFAB({required BuildContext context, super.key})
       : super(
           child: Icon(PlatformIcons(context).back),
-          onPressed: () => popScreen(context: context),
+          onPressed: () => Navigator.of(context).pop(),
           tooltip: EFUILang.of(context)!.gBack,
         );
 }

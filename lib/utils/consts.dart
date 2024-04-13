@@ -46,7 +46,7 @@ const String efuiSource =
     'https://github.com/Empathetech-LLC/empathetech_flutter_ui';
 
 const String settingsSource =
-    'https://github.com/Empathetech-LLC/dotnet-public/blob/main/lib/screens/Settings.dart';
+    'https://github.com/Empathetech-LLC/dotnet-public/blob/main/lib/screens/settings.dart';
 
 const String saaSDocs = 'https://en.wikipedia.org/wiki/Software_as_a_service';
 const String dualLicenseDocs = 'https://en.wikipedia.org/wiki/Multi-licensing';

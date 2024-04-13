@@ -43,7 +43,10 @@ class _HomeScreenState extends State<HomeScreen> {
     image: true,
     link: false,
     label: l10n.hsVideoHint,
-    child: Chewie(controller: _chewieController),
+    child: Chewie(
+      key: const ValueKey<String>(logoVideoKey),
+      controller: _chewieController,
+    ),
   );
 
   // Set the page title and initialize the video //

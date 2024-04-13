@@ -24,7 +24,7 @@ class CharityOrgs extends StatelessWidget {
     return Container(
       constraints: BoxConstraints(maxWidth: width),
       color: color,
-      child: EzLinkImage(
+      child: EzLinkImageProvider(
         image: AssetImage(imagePath),
         url: Uri.parse(url),
         semanticLabel: semanticLabel,

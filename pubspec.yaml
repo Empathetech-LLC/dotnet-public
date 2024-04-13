@@ -28,13 +28,14 @@ dependencies:
   provider: ^6.1.2
   
   # Empathetech
-  empathetech_flutter_ui: ^6.0.0
+  empathetech_flutter_ui:
+    path: ../empathetech_flutter_ui
 
 dev_dependencies:
   dependency_validator: ^3.2.3
-  flutter_native_splash: ^2.3.2
   flutter_launcher_icons: ^0.13.1
   flutter_lints: ^3.0.1
+  flutter_native_splash: ^2.3.2
   
 flutter:
   generate: true

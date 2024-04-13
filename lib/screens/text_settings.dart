@@ -622,7 +622,7 @@ class _TextSettingsState extends State<TextSettings> {
               dialogTitle: l10n.tsResetAll,
               onConfirm: () {
                 EzConfig.removeKeys(textStyleKeys.keys.toSet());
-                popScreen(context: context, result: true);
+                Navigator.of(context).pop(true);
               },
             ),
             spacer,

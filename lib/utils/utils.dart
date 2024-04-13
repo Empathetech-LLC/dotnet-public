@@ -7,6 +7,7 @@ export 'fabulous.dart';
 export 'fah_banner.dart';
 export 'finances.dart';
 export 'icon_links.dart';
+export 'keys.dart';
 export 'page_links.dart';
 
 export '../l10n/lang.dart';

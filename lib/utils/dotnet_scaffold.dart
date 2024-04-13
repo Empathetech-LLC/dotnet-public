@@ -69,7 +69,7 @@ class DotnetScaffold extends StatelessWidget {
 
     final Widget logo = Container(
       padding: EdgeInsets.symmetric(horizontal: margin),
-      child: EzLinkImage(
+      child: EzLinkImageProvider(
         // reverse, reverse!
         image: AssetImage(isDark ? lightLogoPath : darkLogoPath),
         height: toolbarHeight,
@@ -212,15 +212,12 @@ class _SmallBuild extends StatelessWidget {
             excludeHeaderSemantics: true,
             toolbarHeight: toolbarHeight,
 
-            // Leading
-            automaticallyImplyLeading: !isLefty,
-
             // Title
             title: logo,
             titleSpacing: 0,
             centerTitle: true,
 
-            // Actions (aka trailing)
+            // Actions (aka trailing aka right)
             actions: isLefty ? <Widget>[const EzBackAction()] : null,
 
             // Bottom (aka tab bar)
@@ -234,10 +231,10 @@ class _SmallBuild extends StatelessWidget {
         ),
       ),
 
-      // Drawer replaces leading
+      // Drawer replaces leading (aka left)
       drawer: isLefty ? drawer : null,
 
-      // End drawer replaces actions
+      // End drawer replaces actions (aka trailing aka right)
       endDrawer: isLefty ? null : drawer,
 
       // Body
@@ -298,8 +295,7 @@ class _LargeBuild extends StatelessWidget {
             excludeHeaderSemantics: true,
             toolbarHeight: toolbarHeight,
 
-            // Leading
-            automaticallyImplyLeading: false,
+            // Leading (aka left)
             leading: isLefty ? iconLinksMenu : logo,
             leadingWidth: toolbarHeight + margin * 2,
 
@@ -308,7 +304,7 @@ class _LargeBuild extends StatelessWidget {
             titleSpacing: 0,
             centerTitle: true,
 
-            // Action (aka trailing)
+            // Action (aka trailing aka right)
             actions: isLefty ? <Widget>[logo] : <Widget>[iconLinksMenu],
 
             // Bottom (aka tab bar)

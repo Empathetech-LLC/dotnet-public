@@ -28,7 +28,7 @@ class DotNetDrawer extends StatelessWidget {
   // Define the helper functions //
 
   void _navigateTo(BuildContext context, String routeName) {
-    popScreen(context: context, result: routeName);
+    Navigator.of(context).pop(routeName);
     context.go(routeName);
   }
 

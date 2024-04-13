@@ -36,7 +36,7 @@ class FaHBanner extends StatelessWidget {
               constraints: BoxConstraints(
                 maxHeight: MediaQuery.textScalerOf(context).scale(imageSize),
               ),
-              child: EzLinkImage(
+              child: EzLinkImageProvider(
                 image: const AssetImage(fahIconPath),
                 url: Uri.parse(faHLink),
                 semanticLabel: l10n.gFahIconHint,

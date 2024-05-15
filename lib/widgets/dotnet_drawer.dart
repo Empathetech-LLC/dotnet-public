@@ -1,5 +1,6 @@
-import './utils.dart';
-import '../screens/screens.dart';
+import '../screens/export.dart';
+import '../utils/export.dart';
+import './export.dart';
 
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -16,7 +17,7 @@ class DotNetDrawer extends StatelessWidget {
 
   final IconLinks header;
 
-  /// Universal [Drawer] for dotnet
+  /// Universal [NavigationDrawer] for dotnet
   const DotNetDrawer({
     super.key,
     required this.context,
@@ -76,29 +77,27 @@ class DotNetDrawer extends StatelessWidget {
 
     // Return the build //
 
-    return Drawer(
+    return NavigationDrawer(
       key: key,
-      child: EzScrollView(
-        children: <Widget>[
-          DrawerHeader(
-            margin: EdgeInsets.zero,
-            padding: EdgeInsets.zero,
-            child: EzScrollView(
-              scrollDirection: Axis.horizontal,
-              children: header.children,
-            ),
+      children: <Widget>[
+        DrawerHeader(
+          margin: EdgeInsets.zero,
+          padding: EdgeInsets.zero,
+          child: EzScrollView(
+            scrollDirection: Axis.horizontal,
+            children: header.children,
           ),
-          spacer,
-          products,
-          spacer,
-          plan,
-          spacer,
-          team,
-          spacer,
-          support,
-          spacer,
-        ],
-      ),
+        ),
+        spacer,
+        products,
+        spacer,
+        plan,
+        spacer,
+        team,
+        spacer,
+        support,
+        spacer,
+      ],
     );
   }
 }

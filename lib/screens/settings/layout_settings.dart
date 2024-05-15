@@ -1,4 +1,5 @@
-import '../utils/utils.dart';
+import '../../utils/export.dart';
+import '../../widgets/export.dart';
 
 import 'package:flutter/material.dart';
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
@@ -38,7 +39,6 @@ class _LayoutSettingsScreenState extends State<LayoutSettingsScreen> {
   Widget build(BuildContext context) {
     return DotnetScaffold(
       body: EzScreen(
-        decorationImageKey: isDark ? darkPageImageKey : lightPageImageKey,
         child: EzScrollView(
           children: <Widget>[
             if (spacing > margin) EzSpacer(spacing - margin),
@@ -78,10 +78,7 @@ class _LayoutSettingsScreenState extends State<LayoutSettingsScreen> {
             // Local reset all
             EzResetButton(
               dialogTitle: l10n.lsResetAll,
-              onConfirm: () {
-                EzConfig.removeKeys(layoutKeys.keys.toSet());
-                Navigator.of(context).pop(true);
-              },
+              onConfirm: () => EzConfig.removeKeys(layoutKeys.keys.toSet()),
             ),
             separator,
 
@@ -98,7 +95,7 @@ class _LayoutSettingsScreenState extends State<LayoutSettingsScreen> {
           ],
         ),
       ),
-      fab: BackFAB(context: context),
+      fab: BackFAB(key: backButtonKey, context: context),
     );
   }
 }

@@ -1,4 +1,5 @@
-import '../utils/utils.dart';
+import '../../utils/export.dart';
+import '../../widgets/export.dart';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -144,6 +145,8 @@ class _TextSettingsState extends State<TextSettings> {
       min: minFontSize,
       max: maxFontSize,
       notifierCallback: displayProvider.resize,
+      icon: Icons.text_fields_sharp,
+      plusMinus: true,
       tooltip: l10n.tsFontSize,
       sizingString: fontSizeSampleString,
     ),
@@ -153,6 +156,8 @@ class _TextSettingsState extends State<TextSettings> {
       min: minFontSize,
       max: maxFontSize,
       notifierCallback: headlineProvider.resize,
+      icon: Icons.text_fields_sharp,
+      plusMinus: true,
       tooltip: l10n.tsFontSize,
       sizingString: fontSizeSampleString,
     ),
@@ -162,6 +167,8 @@ class _TextSettingsState extends State<TextSettings> {
       min: minFontSize,
       max: maxFontSize,
       notifierCallback: titleProvider.resize,
+      icon: Icons.text_fields_sharp,
+      plusMinus: true,
       tooltip: l10n.tsFontSize,
       sizingString: fontSizeSampleString,
     ),
@@ -171,6 +178,8 @@ class _TextSettingsState extends State<TextSettings> {
       min: minFontSize,
       max: maxFontSize,
       notifierCallback: bodyProvider.resize,
+      icon: Icons.text_fields_sharp,
+      plusMinus: true,
       tooltip: l10n.tsFontSize,
       sizingString: fontSizeSampleString,
     ),
@@ -180,6 +189,8 @@ class _TextSettingsState extends State<TextSettings> {
       min: minFontSize,
       max: maxFontSize,
       notifierCallback: labelProvider.resize,
+      icon: Icons.text_fields_sharp,
+      plusMinus: true,
       tooltip: l10n.tsFontSize,
       sizingString: fontSizeSampleString,
     ),
@@ -284,6 +295,7 @@ class _TextSettingsState extends State<TextSettings> {
       min: minFontLetterSpacing,
       max: maxFontLetterSpacing,
       notifierCallback: displayProvider.setLetterSpacing,
+      icon: Icons.horizontal_distribute_sharp,
       tooltip: l10n.tsLetterSpacing,
       sizingString: fontSpacingSampleString,
     ),
@@ -293,6 +305,7 @@ class _TextSettingsState extends State<TextSettings> {
       min: minFontLetterSpacing,
       max: maxFontLetterSpacing,
       notifierCallback: headlineProvider.setLetterSpacing,
+      icon: Icons.horizontal_distribute_sharp,
       tooltip: l10n.tsLetterSpacing,
       sizingString: fontSpacingSampleString,
     ),
@@ -302,6 +315,7 @@ class _TextSettingsState extends State<TextSettings> {
       min: minFontLetterSpacing,
       max: maxFontLetterSpacing,
       notifierCallback: titleProvider.setLetterSpacing,
+      icon: Icons.horizontal_distribute_sharp,
       tooltip: l10n.tsLetterSpacing,
       sizingString: fontSpacingSampleString,
     ),
@@ -311,6 +325,7 @@ class _TextSettingsState extends State<TextSettings> {
       min: minFontLetterSpacing,
       max: maxFontLetterSpacing,
       notifierCallback: bodyProvider.setLetterSpacing,
+      icon: Icons.horizontal_distribute_sharp,
       tooltip: l10n.tsLetterSpacing,
       sizingString: fontSpacingSampleString,
     ),
@@ -320,6 +335,7 @@ class _TextSettingsState extends State<TextSettings> {
       min: minFontLetterSpacing,
       max: maxFontLetterSpacing,
       notifierCallback: labelProvider.setLetterSpacing,
+      icon: Icons.horizontal_distribute_sharp,
       tooltip: l10n.tsLetterSpacing,
       sizingString: fontSpacingSampleString,
     ),
@@ -334,6 +350,7 @@ class _TextSettingsState extends State<TextSettings> {
       min: minFontWordSpacing,
       max: maxFontWordSpacing,
       notifierCallback: displayProvider.setWordSpacing,
+      icon: Icons.space_bar_sharp,
       tooltip: l10n.tsWordSpacing,
       sizingString: fontSpacingSampleString,
     ),
@@ -343,6 +360,7 @@ class _TextSettingsState extends State<TextSettings> {
       min: minFontWordSpacing,
       max: maxFontWordSpacing,
       notifierCallback: headlineProvider.setWordSpacing,
+      icon: Icons.space_bar_sharp,
       tooltip: l10n.tsWordSpacing,
       sizingString: fontSpacingSampleString,
     ),
@@ -352,6 +370,7 @@ class _TextSettingsState extends State<TextSettings> {
       min: minFontWordSpacing,
       max: maxFontWordSpacing,
       notifierCallback: titleProvider.setWordSpacing,
+      icon: Icons.space_bar_sharp,
       tooltip: l10n.tsWordSpacing,
       sizingString: fontSpacingSampleString,
     ),
@@ -361,6 +380,7 @@ class _TextSettingsState extends State<TextSettings> {
       min: minFontWordSpacing,
       max: maxFontWordSpacing,
       notifierCallback: bodyProvider.setWordSpacing,
+      icon: Icons.space_bar_sharp,
       tooltip: l10n.tsWordSpacing,
       sizingString: fontSpacingSampleString,
     ),
@@ -370,6 +390,7 @@ class _TextSettingsState extends State<TextSettings> {
       min: minFontWordSpacing,
       max: maxFontWordSpacing,
       notifierCallback: labelProvider.setWordSpacing,
+      icon: Icons.space_bar_sharp,
       tooltip: l10n.tsWordSpacing,
       sizingString: fontSpacingSampleString,
     ),
@@ -384,6 +405,7 @@ class _TextSettingsState extends State<TextSettings> {
       min: minFontHeight,
       max: maxFontHeight,
       notifierCallback: displayProvider.setHeight,
+      icon: Icons.format_line_spacing_sharp,
       tooltip: l10n.tsLineHeight,
       sizingString: fontSpacingSampleString,
     ),
@@ -393,6 +415,7 @@ class _TextSettingsState extends State<TextSettings> {
       min: minFontHeight,
       max: maxFontHeight,
       notifierCallback: headlineProvider.setHeight,
+      icon: Icons.format_line_spacing_sharp,
       tooltip: l10n.tsLineHeight,
       sizingString: fontSpacingSampleString,
     ),
@@ -402,6 +425,7 @@ class _TextSettingsState extends State<TextSettings> {
       min: minFontHeight,
       max: maxFontHeight,
       notifierCallback: titleProvider.setHeight,
+      icon: Icons.format_line_spacing_sharp,
       tooltip: l10n.tsLineHeight,
       sizingString: fontSpacingSampleString,
     ),
@@ -411,6 +435,7 @@ class _TextSettingsState extends State<TextSettings> {
       min: minFontHeight,
       max: maxFontHeight,
       notifierCallback: bodyProvider.setHeight,
+      icon: Icons.format_line_spacing_sharp,
       tooltip: l10n.tsLineHeight,
       sizingString: fontSpacingSampleString,
     ),
@@ -420,6 +445,7 @@ class _TextSettingsState extends State<TextSettings> {
       min: minFontHeight,
       max: maxFontHeight,
       notifierCallback: labelProvider.setHeight,
+      icon: Icons.format_line_spacing_sharp,
       tooltip: l10n.tsLineHeight,
       sizingString: fontSpacingSampleString,
     ),
@@ -439,7 +465,6 @@ class _TextSettingsState extends State<TextSettings> {
   Widget build(BuildContext context) {
     return DotnetScaffold(
       body: EzScreen(
-        decorationImageKey: isDark ? darkPageImageKey : lightPageImageKey,
         child: EzScrollView(
           children: <Widget>[
             if (spacing > margin) EzSpacer(spacing - margin),
@@ -622,14 +647,21 @@ class _TextSettingsState extends State<TextSettings> {
               dialogTitle: l10n.tsResetAll,
               onConfirm: () {
                 EzConfig.removeKeys(textStyleKeys.keys.toSet());
-                Navigator.of(context).pop(true);
+                displayProvider.reset();
+                headlineProvider.reset();
+                titleProvider.reset();
+                bodyProvider.reset();
+                labelProvider.reset();
+                setState(() {
+                  editing = TextSettingType.display;
+                });
               },
             ),
             spacer,
           ],
         ),
       ),
-      fab: BackFAB(context: context),
+      fab: BackFAB(key: backButtonKey, context: context),
     );
   }
 }

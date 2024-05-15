@@ -1,5 +1,6 @@
-import './screens.dart';
-import '../utils/utils.dart';
+import '../export.dart';
+import '../../utils/export.dart';
+import '../../widgets/export.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
@@ -49,17 +50,18 @@ class _SettingsScreenState extends State<SettingsScreen> {
             separator,
 
             // Global settings
-            const EzDominantHandSwitch(),
+            const EzDominantHandSwitch(key: dhSwitchKey),
             spacer,
 
-            const EzThemeModeSwitch(),
-            separator,
+            const EzThemeModeSwitch(key: tmSwitchKey),
+            spacer,
 
-            const EzLocaleSetting(),
+            const EzLocaleSetting(key: localeSettingKey),
             spacer,
 
             // Text settings
             ElevatedButton(
+              key: toTextSettingsKey,
               onPressed: () => context.go(textSettingsRoute),
               child: Text(l10n.tsPageTitle),
             ),
@@ -67,6 +69,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
             // Layout settings
             ElevatedButton(
+              key: toLayoutSettingsKey,
               onPressed: () => context.go(layoutSettingsRoute),
               child: Text(l10n.lsPageTitle),
             ),
@@ -74,16 +77,18 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
             // Color settings
             ElevatedButton(
+              key: toColorSettingsKey,
               onPressed: () => context.go(colorSettingsRoute),
               child: Text(l10n.csPageTitle),
             ),
             separator,
 
             // Reset button
-            const EzResetButton(),
+            const EzResetButton(key: resetAllKey),
             separator,
 
             EFUIShoutOut(
+              key: efuiShoutOutKey,
               style: Theme.of(context).textTheme.labelLarge,
               sourceLink: settingsSource,
             ),
@@ -91,7 +96,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
           ],
         ),
       ),
-      fab: BackFAB(context: context),
+      fab: BackFAB(key: backButtonKey, context: context),
     );
   }
 }

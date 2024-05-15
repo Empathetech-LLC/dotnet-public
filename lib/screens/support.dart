@@ -1,4 +1,5 @@
-import '../utils/utils.dart';
+import '../utils/export.dart';
+import '../widgets/export.dart';
 
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
@@ -17,7 +18,6 @@ class _SupportScreenState extends State<SupportScreen> {
 
   final double space = EzConfig.get(spacingKey);
 
-  final EzSpacer padder = EzSpacer(EzConfig.get(paddingKey));
   late final EzSpacer spacer = EzSpacer(space);
   late final EzSwapSpacer swapSpacer = EzSwapSpacer(space);
   late final EzSpacer separator = EzSpacer(space * 2);
@@ -105,12 +105,12 @@ class _SupportScreenState extends State<SupportScreen> {
                 children: <Widget>[
                   Text(
                     l10n.spsThanks,
-                    style: titleStyle,
+                    style: headlineStyle,
                     textAlign: TextAlign.center,
                   ),
                   Text(
                     l10n.spsGive,
-                    style: bodyStyle,
+                    style: bodyStyle?.copyWith(fontSize: titleStyle?.fontSize),
                     textAlign: TextAlign.center,
                   ),
                 ],
@@ -118,15 +118,15 @@ class _SupportScreenState extends State<SupportScreen> {
             ),
             separator,
 
-            // Donate ... //
-            // Time
+            /* Donate ... //
+
+            // Time */
 
             Text(
               l10n.spsTimeQ,
-              style: headlineStyle,
+              style: titleStyle,
               textAlign: TextAlign.center,
             ),
-            padder,
 
             // GitHub contributor
             EzRichText(<InlineSpan>[
@@ -137,7 +137,7 @@ class _SupportScreenState extends State<SupportScreen> {
                 url: Uri.parse(
                   'mailto:$empathCommunity?subject=Becoming%20a%20contributor',
                 ),
-                semanticsLabel: l10n.gEmailTo(empathetechLLC),
+                semanticsLabel: l10n.gEmailTo(empatheticLLC),
               ),
               EzPlainText(
                 text: l10n.spsBecome,
@@ -158,7 +158,7 @@ class _SupportScreenState extends State<SupportScreen> {
 
             Text(
               l10n.spsMoneyQ,
-              style: headlineStyle,
+              style: titleStyle,
               textAlign: TextAlign.center,
             ),
             spacer,
@@ -183,10 +183,9 @@ class _SupportScreenState extends State<SupportScreen> {
 
             Text(
               l10n.spsPowerQ,
-              style: headlineStyle,
+              style: titleStyle,
               textAlign: TextAlign.center,
             ),
-            padder,
 
             // F@H team
             FaHBanner(

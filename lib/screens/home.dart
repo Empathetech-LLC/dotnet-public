@@ -1,4 +1,5 @@
-import '../utils/utils.dart';
+import '../utils/export.dart';
+import '../widgets/export.dart';
 
 import 'package:chewie/chewie.dart';
 import 'package:flutter/material.dart';

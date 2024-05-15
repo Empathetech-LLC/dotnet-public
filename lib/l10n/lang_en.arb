@@ -14,6 +14,7 @@
   "gEmail": "Email",
   "gEmailTo": "Email {recipient}",
   "gNewsletter": "Newsletter",
+  "gFeedback": "Feedback",
 
   "gSettingsHint": "Open the settings page",
 
@@ -44,11 +45,15 @@
   "psPageTitle": "Products",
 
   "psEFUISlogan": "Build apps for anyone",
-  "psEFUIDescription": "EFUI is an open source package that creates a holistic foundation for digital accessibility,\nby providing a starter kit in every pillar of digital accessibility:",
+  "psEFUIDescription1": "EFUI is an open source ",
+  "psEFUIDescription2": " library that provides the tools for building truly accessible apps.",
   
   "psPlatform": "Platform availability",
-  "psPlatformContent": "EFUI builds fully cross platform apps; Android, iOS, Linux, MacOS, Windows and Web!",
+  "psPlatformContent": "EFUI supports all platforms. You can deploy to Android, iOS, Linux, MacOS, Windows and Web!",
   
+  "psResponsive": "Responsive design",
+  "psResponsiveContent": "EFUI's toolkit aids in building apps that elegantly respond to screen space. To see it in action, play with the app window you're using right now!",
+
   "psScreen": "Screen reader support",
   "psScreenContent": "Everything within EFUI has been manually verified with ",
   "psTalkBackHint": "Open a link to TalkBack documentation",
@@ -56,14 +61,11 @@
   "psVoiceOverHint": "Open a link to VoiceOver documentation",
   
   "psCustom": "User customization",
-  "psCustomContent": "The only way to be truly accessible for ALL customers is to empower them with the freedom of choice.\nAnd that's exactly what EFUI does; it enables every aspect of an app's theme to be controlled by the user.",
+  "psCustomContent": "The only way to be truly accessible for ALL customers is to empower them with the freedom of choice.\nAnd that's exactly what EFUI does; it enables every aspect of an app's theme to be controlled by the user.\nTo see it in action, click the settings cog on the bottom of your screen!",
   
   "psInternational": "Internationalization",
   "psInternationalContent": "All of EFUI's external text has been translated to Spanish. With this, EFUI provides well organized infrastructure for unlimited future translations.",
-  
-  "psResponsive": "Responsive design",
-  "psResponsiveContent": "EFUI is full of tools to aid in building apps that elegantly respond to screen space. To see it in action, just mess around with the app window you're using right now!",
-  
+    
   "psEFUITagLine": "When built with EFUI, your apps can truly reach any audience.\nLet's make the internet a more accessible place together!",
   "psConsult": " for consultation and contracting",
 
@@ -102,8 +104,12 @@
   "fpsPageTitle": "Financial plan",
   "fpsPageHint": "Open the financial plan page",
   
+  "fpsGoal0": "Cover expenses",
+  "fpsGoal1": "Pay minimum wage",
+  "fpsGoal2": "Pay a survivable wage",
+  "fpsGoal3": "Pay a livable wage",
+  "fpsGoal4": "Pay a comfortable wage",
   "fpsRaised": "{income} of {goal} raised",
-  "fpsYear": "for 2024",
   
   "fpsSplit": "The {profit} profit will be evenly split amongst...",
   "fpsEventual": "eventual",
@@ -146,14 +152,14 @@
   "spsPowerQ": "Power?",
   
 
-  "fahJoin": "Join the Fold!",
+  "fahJoin": "Join the Fold",
   
-  "fahIntro": "Join the Empathetech Folding@home ",
-  "fahIntroFix": "Join the Empathetic Folding@home ",
+  "fahIntro1": "Join the ",
+  "fahIntro2": " Folding@home team!",
   "fahTeamHint": "Open the Empathetic folding at home team page",
   
   "fahWhatQ": "What's Folding@home?",
   "fahWhatQHint": "Open Folding at Home's about page",
   
-  "fahStats": "Together, we've earned over 250 million points!\nPutting us in the top 2% of all teams worldwide!"
+  "fahStats": "Together, we've earned over 350 million points!\nPutting us in the top 2% of all teams worldwide!"
 }

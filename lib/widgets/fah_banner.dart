@@ -1,4 +1,4 @@
-import './utils.dart';
+import '../utils/export.dart';
 
 import 'package:flutter/material.dart';
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
@@ -56,17 +56,20 @@ class FaHBanner extends StatelessWidget {
                 ),
                 EzRichText(<InlineSpan>[
                   EzPlainText(
-                    text: l10n.fahIntro,
+                    text: l10n.fahIntro1,
                     style: bodyStyle,
-                    semanticsLabel: l10n.fahIntroFix,
                   ),
                   EzInlineLink(
-                    l10n.tsPageTitle.toLowerCase(),
+                    empathetech,
                     style: bodyStyle,
                     textAlign: TextAlign.center,
                     url: Uri.parse(empathFoldingTeam),
-                    semanticsLabel: l10n.fahTeamHint,
+                    semanticsLabel: empathetic,
                     tooltip: empathFoldingTeam,
+                  ),
+                  EzPlainText(
+                    text: l10n.fahIntro2,
+                    style: bodyStyle,
                   ),
                 ], textAlign: TextAlign.center),
                 padder,

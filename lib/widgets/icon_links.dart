@@ -1,7 +1,10 @@
-import './utils.dart';
+import '../utils/export.dart';
 
 import 'package:flutter/material.dart';
+// import 'package:flutter/services.dart';
+// import 'package:feedback/feedback.dart';
 import 'package:line_icons/line_icons.dart';
+// import 'package:share_plus/share_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 
@@ -48,6 +51,27 @@ class IconLinks extends StatelessWidget {
     tooltip: Lang.of(context)!.gNewsletter,
   );
 
+  // late final IconButton _feedback = IconButton(
+  //   onPressed: () {
+  //     BetterFeedback.of(context).show((UserFeedback feedback) async {
+  //       await Clipboard.setData(const ClipboardData(text: empathSupport));
+
+  //       await Share.shareXFiles(
+  //         <XFile>[
+  //           XFile.fromData(
+  //             feedback.screenshot,
+  //             name: 'screenshot.png',
+  //             mimeType: 'image/png',
+  //           )
+  //         ],
+  //         text: feedback.text,
+  //       );
+  //     });
+  //   },
+  //   icon: Icon(Icons.feedback, size: iconSize, color: color),
+  //   tooltip: Lang.of(context)!.gFeedback,
+  // );
+
   // Define the getters //
 
   List<IconButton> get buttons => <IconButton>[
@@ -55,6 +79,7 @@ class IconLinks extends StatelessWidget {
         _linkedIn,
         _mastodon,
         _newsletter,
+        //_feedback,
       ];
 
   List<Widget> get children {
@@ -70,6 +95,8 @@ class IconLinks extends StatelessWidget {
       _mastodon,
       spaceR,
       _newsletter,
+      // spaceR,
+      // _feedback,
       marginR,
     ];
   }

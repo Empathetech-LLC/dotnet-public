@@ -38,6 +38,9 @@ class LangEn extends Lang {
   String get gNewsletter => 'Newsletter';
 
   @override
+  String get gFeedback => 'Feedback';
+
+  @override
   String get gSettingsHint => 'Open the settings page';
 
   @override
@@ -100,15 +103,25 @@ class LangEn extends Lang {
   String get psEFUISlogan => 'Build apps for anyone';
 
   @override
-  String get psEFUIDescription =>
-      'EFUI is an open source package that creates a holistic foundation for digital accessibility,\nby providing a starter kit in every pillar of digital accessibility:';
+  String get psEFUIDescription1 => 'EFUI is an open source ';
+
+  @override
+  String get psEFUIDescription2 =>
+      ' library that provides the tools for building truly accessible apps.';
 
   @override
   String get psPlatform => 'Platform availability';
 
   @override
   String get psPlatformContent =>
-      'EFUI builds fully cross platform apps; Android, iOS, Linux, MacOS, Windows and Web!';
+      'EFUI supports all platforms. You can deploy to Android, iOS, Linux, MacOS, Windows and Web!';
+
+  @override
+  String get psResponsive => 'Responsive design';
+
+  @override
+  String get psResponsiveContent =>
+      'EFUI\'s toolkit aids in building apps that elegantly respond to screen space. To see it in action, play with the app window you\'re using right now!';
 
   @override
   String get psScreen => 'Screen reader support';
@@ -131,7 +144,7 @@ class LangEn extends Lang {
 
   @override
   String get psCustomContent =>
-      'The only way to be truly accessible for ALL customers is to empower them with the freedom of choice.\nAnd that\'s exactly what EFUI does; it enables every aspect of an app\'s theme to be controlled by the user.';
+      'The only way to be truly accessible for ALL customers is to empower them with the freedom of choice.\nAnd that\'s exactly what EFUI does; it enables every aspect of an app\'s theme to be controlled by the user.\nTo see it in action, click the settings cog on the bottom of your screen!';
 
   @override
   String get psInternational => 'Internationalization';
@@ -139,13 +152,6 @@ class LangEn extends Lang {
   @override
   String get psInternationalContent =>
       'All of EFUI\'s external text has been translated to Spanish. With this, EFUI provides well organized infrastructure for unlimited future translations.';
-
-  @override
-  String get psResponsive => 'Responsive design';
-
-  @override
-  String get psResponsiveContent =>
-      'EFUI is full of tools to aid in building apps that elegantly respond to screen space. To see it in action, just mess around with the app window you\'re using right now!';
 
   @override
   String get psEFUITagLine =>
@@ -246,12 +252,24 @@ class LangEn extends Lang {
   String get fpsPageHint => 'Open the financial plan page';
 
   @override
+  String get fpsGoal0 => 'Cover expenses';
+
+  @override
+  String get fpsGoal1 => 'Pay minimum wage';
+
+  @override
+  String get fpsGoal2 => 'Pay a survivable wage';
+
+  @override
+  String get fpsGoal3 => 'Pay a livable wage';
+
+  @override
+  String get fpsGoal4 => 'Pay a comfortable wage';
+
+  @override
   String fpsRaised(Object goal, Object income) {
     return '$income of $goal raised';
   }
-
-  @override
-  String get fpsYear => 'for 2024';
 
   @override
   String fpsSplit(Object profit) {
@@ -341,13 +359,13 @@ class LangEn extends Lang {
   String get spsPowerQ => 'Power?';
 
   @override
-  String get fahJoin => 'Join the Fold!';
+  String get fahJoin => 'Join the Fold';
 
   @override
-  String get fahIntro => 'Join the Empathetech Folding@home ';
+  String get fahIntro1 => 'Join the ';
 
   @override
-  String get fahIntroFix => 'Join the Empathetic Folding@home ';
+  String get fahIntro2 => ' Folding@home team!';
 
   @override
   String get fahTeamHint => 'Open the Empathetic folding at home team page';
@@ -360,5 +378,5 @@ class LangEn extends Lang {
 
   @override
   String get fahStats =>
-      'Together, we\'ve earned over 250 million points!\nPutting us in the top 2% of all teams worldwide!';
+      'Together, we\'ve earned over 350 million points!\nPutting us in the top 2% of all teams worldwide!';
 }

@@ -1,7 +1,9 @@
-import '../utils/utils.dart';
+import './export.dart';
 
 import 'package:intl/intl.dart';
 import 'package:flutter/services.dart';
+
+enum SalaryLevel { minimum, survivable, livable, comfortable }
 
 /// Display double [value] as a United States Dollar amount
 /// Auto formats decimals, comma separators, and $ symbol
@@ -9,27 +11,28 @@ String asUSD(double value) {
   return NumberFormat.currency(locale: 'en_US', symbol: '\$').format(value);
 }
 
-/// Goal == total operation cost
-/// Currently, Empathetech's operation costs are comprised of...
-/// Salaries and general operating expenses
-Future<double> calculateGoal() async {
-  return _gatherSalaries() + await _gatherExpenses();
+/// Lvl 0: Cover expenses
+/// Lvl 1: Pay minimum wage
+/// Lvl 2: Pay a survivable wage
+/// Lvl 3: Pay a livable wage
+/// Lvl 4: Pay a comfortable wage
+Future<List<double>> calculateGoals() async {
+  // Full time == 40 * 52 == 2080
+  const double hours = 2080;
+
+  final double expenses = await gatherExpenses();
+
+  return <double>[
+    expenses,
+    expenses + hours * getWage(SalaryLevel.minimum),
+    expenses + hours * getWage(SalaryLevel.survivable),
+    expenses + hours * getWage(SalaryLevel.livable),
+    expenses + hours * getWage(SalaryLevel.comfortable),
+  ];
 }
 
-/// The sum of each member's annual hours * [_comfortableWage]
-double _gatherSalaries() {
-  final double wage = _comfortableWage();
-
-  return annualHours.values.fold(
-    0.0,
-    (double sum, double hours) => sum + (hours * wage),
-  );
-}
-
-/// Annual hours for each Empathetech member
-/// Full time == 40 * 52 == 2080
-const Map<String, double> annualHours = <String, double>{mike: 2080};
-
+/// ** Comfortable wage **
+///
 /// Eventually, Empathetech will create its own comfortable wage calculator.
 /// Currently, we rely on adapting MIT's living wage calculator.
 ///
@@ -37,8 +40,8 @@ const Map<String, double> annualHours = <String, double>{mike: 2080};
 /// https://livingwage.mit.edu/pages/methodology
 ///
 /// The Living Wage team asks "that users do not scrape the data".
-/// So, all [_comfortableWage] values are hard-coded and updated manually.
-/// Last validated: Q1 2024
+/// So, all [getWage] values are hard-coded and updated manually.
+/// Updates are made annually, at the start of Q2 (April).
 ///
 /// Our goal:
 ///   To enable Empathetech employees to live a comfortable life anywhere in the Country of Domicile.
@@ -55,14 +58,32 @@ const Map<String, double> annualHours = <String, double>{mike: 2080};
 ///         - Going on vacations
 ///         - Accruing wealth so you can retire earlier than the average of only 12 years before you die (in the US)
 ///         - Providing all of the above to your children as well
-///       Currently: $99.90/hour
-double _comfortableWage() {
-  return 99.90;
+///       Currently (Q2 2024): $97.94/hour
+///
+/// ** Everything else **
+///
+/// From the same region, https://livingwage.mit.edu/counties/06075
+///
+/// Minimum wage: $16.00/hour
+/// Survivable wage == living wage w/ 0 children: $28.74/hour
+/// Livable wage == living wage w/ 1 child: $57.88/hour
+double getWage(SalaryLevel salaryLevel) {
+  switch (salaryLevel) {
+    case SalaryLevel.minimum:
+      return 16.00;
+    case SalaryLevel.survivable:
+      return 28.74;
+    case SalaryLevel.livable:
+      return 57.88;
+    case SalaryLevel.comfortable:
+    default:
+      return 97.94;
+  }
 }
 
 /// Sum the totals from the latest YTD expense report
 /// See it here: https://github.com/Empathetech-LLC/expense-report
-Future<double> _gatherExpenses() async {
+Future<double> gatherExpenses() async {
   final String csvData = await rootBundle.loadString(ytdReportPath);
   final List<String> lines = csvData.split('\n');
 
@@ -83,19 +104,19 @@ Future<double> _gatherExpenses() async {
 /// Empathetech's current revenue streams are...
 /// Contracts and donations
 double calculateIncome() {
-  return _gatherContracts() + _gatherDonations();
+  return gatherContracts() + gatherDonations();
 }
 
-/// For prospective contractees: our rates the methodology to [_comfortableWage]
+/// For prospective contractees: our rates the methodology to [getWage]
 /// Discounts are available to affiliate donors; see site(s) for details
-double _gatherContracts() {
+double gatherContracts() {
   return 0;
 }
 
 /// Combine the income from...
 /// Direct donation platforms: PayPal, Venmo, CashApp
 /// Affiliate donation platforms: Patreon, Buy Me a Coffee, Ko-fi
-double _gatherDonations() {
+double gatherDonations() {
   final double directDonations = paypal() + venmo() + cashapp();
   final double affiliateDonations = patreon() + coffee() + kofi();
   return directDonations + affiliateDonations;

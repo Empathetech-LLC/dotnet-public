@@ -1,4 +1,5 @@
-import '../utils/utils.dart';
+import '../../utils/export.dart';
+import '../../widgets/export.dart';
 
 import 'dart:math';
 import 'package:flutter/material.dart';
@@ -48,14 +49,12 @@ class _ColorSettingsScreenState extends State<ColorSettingsScreen> {
           darkPrimaryKey,
           darkSecondaryKey,
           darkTertiaryKey,
-          darkBackgroundKey,
           darkSurfaceKey,
         ]
       : <String>[
           lightPrimaryKey,
           lightSecondaryKey,
           lightTertiaryKey,
-          lightBackgroundKey,
           lightSurfaceKey,
         ];
   late final Set<String> defaultSet = defaultList.toSet();
@@ -103,7 +102,6 @@ class _ColorSettingsScreenState extends State<ColorSettingsScreen> {
         setState(() {
           currList = List<String>.from(defaultList);
         });
-        Navigator.of(context).pop(true);
       },
     ),
   ];
@@ -135,7 +133,6 @@ class _ColorSettingsScreenState extends State<ColorSettingsScreen> {
                   currList.remove(key);
                 });
                 EzConfig.setStringList(userColorsKey, currList);
-                Navigator.of(context).pop();
               }),
           spacer,
         ]);
@@ -178,10 +175,10 @@ class _ColorSettingsScreenState extends State<ColorSettingsScreen> {
           ),
           label: Text(getColorName(context, configKeyKey)),
           style: theme.elevatedButtonTheme.style!.copyWith(
-            padding: MaterialStateProperty.all(
+            padding: WidgetStateProperty.all(
               EdgeInsets.all(padding * 0.75),
             ),
-            foregroundColor: MaterialStatePropertyAll<Color?>(
+            foregroundColor: WidgetStatePropertyAll<Color?>(
               theme.colorScheme.onSurface,
             ),
           ),
@@ -227,7 +224,6 @@ class _ColorSettingsScreenState extends State<ColorSettingsScreen> {
   Widget build(BuildContext context) {
     return DotnetScaffold(
       body: EzScreen(
-        decorationImageKey: isDark ? darkPageImageKey : lightPageImageKey,
         child: EzScrollView(
           children: <Widget>[
             // Current theme reminder
@@ -236,6 +232,10 @@ class _ColorSettingsScreenState extends State<ColorSettingsScreen> {
               style: labelStyle,
               textAlign: TextAlign.center,
             ),
+            separator,
+
+            // High contrast quick setting
+            const EzHighContrastColorsSetting(),
             separator,
 
             // Dynamic configKeys
@@ -277,7 +277,7 @@ class _ColorSettingsScreenState extends State<ColorSettingsScreen> {
           ],
         ),
       ),
-      fab: BackFAB(context: context),
+      fab: BackFAB(key: backButtonKey, context: context),
     );
   }
 }

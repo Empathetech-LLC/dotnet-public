@@ -38,6 +38,9 @@ class LangEs extends Lang {
   String get gNewsletter => 'Boletin informativo';
 
   @override
+  String get gFeedback => 'Comentarios';
+
+  @override
   String get gSettingsHint => 'Abrir la página de configuración';
 
   @override
@@ -101,15 +104,26 @@ class LangEs extends Lang {
   String get psEFUISlogan => 'Crea aplicaciones para cualquier persona';
 
   @override
-  String get psEFUIDescription =>
-      'NOTA: Esto fue traducido por IA\n\nEFUI es un paquete de código abierto que crea una base integral para la accesibilidad digital,\nproporcionando un kit de inicio en cada pilar de la accesibilidad digital:';
+  String get psEFUIDescription1 =>
+      'NOTA: Esto fue traducido por IA\n\nEFUI es una ';
+
+  @override
+  String get psEFUIDescription2 =>
+      ' library de código abierto que proporciona las herramientas para construir aplicaciones verdaderamente accesibles.';
 
   @override
   String get psPlatform => 'Disponibilidad de plataforma';
 
   @override
   String get psPlatformContent =>
-      'EFUI construye aplicaciones completamente multiplataforma; ¡Android, iOS, Linux, MacOS, Windows y Web!';
+      'EFUI soporta todas las plataformas. ¡Puedes implementar en Android, iOS, Linux, MacOS, Windows y Web!';
+
+  @override
+  String get psResponsive => 'Diseño responsive';
+
+  @override
+  String get psResponsiveContent =>
+      'El conjunto de herramientas de EFUI ayuda a construir aplicaciones que responden de manera elegante al espacio de la pantalla. ¡Para verlo en acción, juega con la ventana de la aplicación que estás usando ahora!';
 
   @override
   String get psScreen => 'Soporte de lector de pantalla';
@@ -133,7 +147,7 @@ class LangEs extends Lang {
 
   @override
   String get psCustomContent =>
-      'La única manera de ser verdaderamente accesible para TODOS los clientes es capacitarlos con la libertad de elección.\nY eso es exactamente lo que hace EFUI; permite que cada aspecto del tema de una aplicación sea controlado por el usuario.';
+      'La única manera de ser verdaderamente accesible para TODOS los clientes es capacitarlos con la libertad de elección.\nY eso es exactamente lo que hace EFUI; permite que cada aspecto del tema de una aplicación sea controlado por el usuario.\n¡Para verlo en acción, haz clic en el engranaje de configuración en la parte inferior de tu pantalla!';
 
   @override
   String get psInternational => 'Internacionalización';
@@ -141,13 +155,6 @@ class LangEs extends Lang {
   @override
   String get psInternationalContent =>
       'Todo el texto externo de EFUI ha sido traducido al español. Con esto, EFUI proporciona una infraestructura bien organizada para futuras traducciones ilimitadas.';
-
-  @override
-  String get psResponsive => 'Diseño responsive';
-
-  @override
-  String get psResponsiveContent =>
-      'EFUI está lleno de herramientas para ayudar en la construcción de aplicaciones que respondan elegantemente al espacio de la pantalla. ¡Para verlo en acción, simplemente juega con la ventana de la aplicación que estás usando ahora!';
 
   @override
   String get psEFUITagLine =>
@@ -248,12 +255,24 @@ class LangEs extends Lang {
   String get fpsPageHint => 'Abrir la página del plan financiero';
 
   @override
+  String get fpsGoal0 => 'Cubrir gastos';
+
+  @override
+  String get fpsGoal1 => 'Pagar salario mínimo';
+
+  @override
+  String get fpsGoal2 => 'Pagar un salario que le permita sobrevivir';
+
+  @override
+  String get fpsGoal3 => 'Pagar un salario digno';
+
+  @override
+  String get fpsGoal4 => 'Pagar un salario cómodo';
+
+  @override
   String fpsRaised(Object goal, Object income) {
     return '$income de $goal recaudados';
   }
-
-  @override
-  String get fpsYear => 'para el año 2024';
 
   @override
   String fpsSplit(Object profit) {
@@ -345,17 +364,17 @@ class LangEs extends Lang {
   String get spsPowerQ => '¿Poder?';
 
   @override
-  String get fahJoin => '¡Únete a la causa!';
+  String get fahJoin => 'Únete a la causa';
 
   @override
-  String get fahIntro => 'Únete al Empathetech Folding@home: ';
+  String get fahIntro1 => '¡Únete al equipo de ';
 
   @override
-  String get fahIntroFix => 'Únete al Empathetic folding at home: ';
+  String get fahIntro2 => ' en Folding@home!';
 
   @override
   String get fahTeamHint =>
-      'Abre la página del equipo Empathetic Folding@home.';
+      'Abre la página del equipo de Empathetic en folding at home';
 
   @override
   String get fahWhatQ => '¿Qué es Folding@home?';
@@ -366,5 +385,5 @@ class LangEs extends Lang {
 
   @override
   String get fahStats =>
-      'Traducido por IA\n¡Juntos, hemos acumulado más de 250 millones de puntos!\n¡Poniéndonos en el 2% superior de todos los equipos del mundo!';
+      'Traducido por IA\n¡Juntos, hemos acumulado más de 350 millones de puntos!\n¡Poniéndonos en el 2% superior de todos los equipos del mundo!';
 }

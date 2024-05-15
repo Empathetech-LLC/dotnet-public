@@ -1,4 +1,5 @@
-import '../utils/utils.dart';
+import '../utils/export.dart';
+import '../widgets/export.dart';
 
 import 'package:flutter/material.dart';
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
@@ -37,6 +38,10 @@ class _ProductsScreenState extends State<ProductsScreen>
 
     final EzNewLine newLine = EzNewLine(titleStyle);
 
+    final TextStyle? pitchStyle = bodyStyle?.copyWith(
+      fontSize: titleStyle?.fontSize,
+    );
+
     // Return the build //
 
     return DotnetScaffold(
@@ -48,13 +53,14 @@ class _ProductsScreenState extends State<ProductsScreen>
             // Intro
             Text(
               efuiL,
-              style: headlineStyle,
+              style: textTheme.displayLarge,
               textAlign: TextAlign.center,
               semanticsLabel: efuiLFix,
             ),
+            // Tagline
             EzLink(
               l10n.psEFUISlogan,
-              style: titleStyle,
+              style: headlineStyle,
               textAlign: TextAlign.center,
               url: Uri.parse(efuiSource),
               semanticsLabel: l10n.gEFUISourceHint,
@@ -62,12 +68,19 @@ class _ProductsScreenState extends State<ProductsScreen>
             ),
             separator,
 
-            // Description
-            Text(
-              l10n.psEFUIDescription,
-              style: bodyStyle,
-              textAlign: TextAlign.center,
-            ),
+            // Elevator pitch
+            EzRichText(<InlineSpan>[
+              EzPlainText(text: l10n.psEFUIDescription1, style: pitchStyle),
+              EzInlineLink(
+                'Flutter',
+                style: pitchStyle,
+                textAlign: TextAlign.center,
+                url: Uri.parse('https://flutter.dev/'),
+                tooltip: 'https://flutter.dev/',
+                semanticsLabel: 'Flutter',
+              ),
+              EzPlainText(text: l10n.psEFUIDescription2, style: pitchStyle),
+            ], textAlign: TextAlign.center),
             separator,
 
             // Platform availability
@@ -103,10 +116,7 @@ class _ProductsScreenState extends State<ProductsScreen>
               textAlign: TextAlign.center,
             ),
             EzRichText(<InlineSpan>[
-              EzPlainText(
-                text: l10n.psScreenContent,
-                style: bodyStyle,
-              ),
+              EzPlainText(text: l10n.psScreenContent, style: bodyStyle),
               EzInlineLink(
                 'TalkBack',
                 style: bodyStyle,
@@ -115,10 +125,7 @@ class _ProductsScreenState extends State<ProductsScreen>
                     'https://support.google.com/accessibility/android/answer/6006598?hl=en'),
                 semanticsLabel: l10n.psTalkBackHint,
               ),
-              EzPlainText(
-                text: l10n.psAnd,
-                style: bodyStyle,
-              ),
+              EzPlainText(text: l10n.psAnd, style: bodyStyle),
               EzInlineLink(
                 'VoiceOver',
                 style: bodyStyle,
@@ -128,6 +135,7 @@ class _ProductsScreenState extends State<ProductsScreen>
                 ),
                 semanticsLabel: l10n.psVoiceOverHint,
               ),
+              EzPlainText(text: '.', style: bodyStyle),
             ], textAlign: TextAlign.center),
             newLine,
 
@@ -173,7 +181,7 @@ class _ProductsScreenState extends State<ProductsScreen>
                 style: bodyStyle,
                 textAlign: TextAlign.center,
                 url: Uri.parse('mailto:$empathAdmin'),
-                semanticsLabel: l10n.gEmailTo(empathetechLLC),
+                semanticsLabel: l10n.gEmailTo(empatheticLLC),
               ),
               EzPlainText(
                 text: l10n.psConsult,

@@ -2,9 +2,11 @@
 
 /// Empathetech
 const String empathetech = 'Empathetech';
+const String empathetic = 'Empathetic';
 
 /// Empathetech LLC
 const String empathetechLLC = 'Empathetech LLC';
+const String empatheticLLC = 'Empathetic LLC';
 
 // Assets //
 

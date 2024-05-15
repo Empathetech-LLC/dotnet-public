@@ -154,6 +154,12 @@ abstract class Lang {
   /// **'Newsletter'**
   String get gNewsletter;
 
+  /// No description provided for @gFeedback.
+  ///
+  /// In en, this message translates to:
+  /// **'Feedback'**
+  String get gFeedback;
+
   /// No description provided for @gSettingsHint.
   ///
   /// In en, this message translates to:
@@ -262,11 +268,17 @@ abstract class Lang {
   /// **'Build apps for anyone'**
   String get psEFUISlogan;
 
-  /// No description provided for @psEFUIDescription.
+  /// No description provided for @psEFUIDescription1.
   ///
   /// In en, this message translates to:
-  /// **'EFUI is an open source package that creates a holistic foundation for digital accessibility,\nby providing a starter kit in every pillar of digital accessibility:'**
-  String get psEFUIDescription;
+  /// **'EFUI is an open source '**
+  String get psEFUIDescription1;
+
+  /// No description provided for @psEFUIDescription2.
+  ///
+  /// In en, this message translates to:
+  /// **' library that provides the tools for building truly accessible apps.'**
+  String get psEFUIDescription2;
 
   /// No description provided for @psPlatform.
   ///
@@ -277,8 +289,20 @@ abstract class Lang {
   /// No description provided for @psPlatformContent.
   ///
   /// In en, this message translates to:
-  /// **'EFUI builds fully cross platform apps; Android, iOS, Linux, MacOS, Windows and Web!'**
+  /// **'EFUI supports all platforms. You can deploy to Android, iOS, Linux, MacOS, Windows and Web!'**
   String get psPlatformContent;
+
+  /// No description provided for @psResponsive.
+  ///
+  /// In en, this message translates to:
+  /// **'Responsive design'**
+  String get psResponsive;
+
+  /// No description provided for @psResponsiveContent.
+  ///
+  /// In en, this message translates to:
+  /// **'EFUI\'s toolkit aids in building apps that elegantly respond to screen space. To see it in action, play with the app window you\'re using right now!'**
+  String get psResponsiveContent;
 
   /// No description provided for @psScreen.
   ///
@@ -319,7 +343,7 @@ abstract class Lang {
   /// No description provided for @psCustomContent.
   ///
   /// In en, this message translates to:
-  /// **'The only way to be truly accessible for ALL customers is to empower them with the freedom of choice.\nAnd that\'s exactly what EFUI does; it enables every aspect of an app\'s theme to be controlled by the user.'**
+  /// **'The only way to be truly accessible for ALL customers is to empower them with the freedom of choice.\nAnd that\'s exactly what EFUI does; it enables every aspect of an app\'s theme to be controlled by the user.\nTo see it in action, click the settings cog on the bottom of your screen!'**
   String get psCustomContent;
 
   /// No description provided for @psInternational.
@@ -333,18 +357,6 @@ abstract class Lang {
   /// In en, this message translates to:
   /// **'All of EFUI\'s external text has been translated to Spanish. With this, EFUI provides well organized infrastructure for unlimited future translations.'**
   String get psInternationalContent;
-
-  /// No description provided for @psResponsive.
-  ///
-  /// In en, this message translates to:
-  /// **'Responsive design'**
-  String get psResponsive;
-
-  /// No description provided for @psResponsiveContent.
-  ///
-  /// In en, this message translates to:
-  /// **'EFUI is full of tools to aid in building apps that elegantly respond to screen space. To see it in action, just mess around with the app window you\'re using right now!'**
-  String get psResponsiveContent;
 
   /// No description provided for @psEFUITagLine.
   ///
@@ -514,17 +526,41 @@ abstract class Lang {
   /// **'Open the financial plan page'**
   String get fpsPageHint;
 
+  /// No description provided for @fpsGoal0.
+  ///
+  /// In en, this message translates to:
+  /// **'Cover expenses'**
+  String get fpsGoal0;
+
+  /// No description provided for @fpsGoal1.
+  ///
+  /// In en, this message translates to:
+  /// **'Pay minimum wage'**
+  String get fpsGoal1;
+
+  /// No description provided for @fpsGoal2.
+  ///
+  /// In en, this message translates to:
+  /// **'Pay a survivable wage'**
+  String get fpsGoal2;
+
+  /// No description provided for @fpsGoal3.
+  ///
+  /// In en, this message translates to:
+  /// **'Pay a livable wage'**
+  String get fpsGoal3;
+
+  /// No description provided for @fpsGoal4.
+  ///
+  /// In en, this message translates to:
+  /// **'Pay a comfortable wage'**
+  String get fpsGoal4;
+
   /// No description provided for @fpsRaised.
   ///
   /// In en, this message translates to:
   /// **'{income} of {goal} raised'**
   String fpsRaised(Object goal, Object income);
-
-  /// No description provided for @fpsYear.
-  ///
-  /// In en, this message translates to:
-  /// **'for 2024'**
-  String get fpsYear;
 
   /// No description provided for @fpsSplit.
   ///
@@ -685,20 +721,20 @@ abstract class Lang {
   /// No description provided for @fahJoin.
   ///
   /// In en, this message translates to:
-  /// **'Join the Fold!'**
+  /// **'Join the Fold'**
   String get fahJoin;
 
-  /// No description provided for @fahIntro.
+  /// No description provided for @fahIntro1.
   ///
   /// In en, this message translates to:
-  /// **'Join the Empathetech Folding@home '**
-  String get fahIntro;
+  /// **'Join the '**
+  String get fahIntro1;
 
-  /// No description provided for @fahIntroFix.
+  /// No description provided for @fahIntro2.
   ///
   /// In en, this message translates to:
-  /// **'Join the Empathetic Folding@home '**
-  String get fahIntroFix;
+  /// **' Folding@home team!'**
+  String get fahIntro2;
 
   /// No description provided for @fahTeamHint.
   ///
@@ -721,7 +757,7 @@ abstract class Lang {
   /// No description provided for @fahStats.
   ///
   /// In en, this message translates to:
-  /// **'Together, we\'ve earned over 250 million points!\nPutting us in the top 2% of all teams worldwide!'**
+  /// **'Together, we\'ve earned over 350 million points!\nPutting us in the top 2% of all teams worldwide!'**
   String get fahStats;
 }
 

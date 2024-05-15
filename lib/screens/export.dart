@@ -1,15 +1,20 @@
 // Exports //
 
 export 'home.dart';
+
 export 'products.dart';
-export 'plan.dart';
-export 'fin_plan.dart';
+
+export 'plan/plan.dart';
+export 'plan/fin_plan.dart';
+
 export 'team.dart';
+
 export 'support.dart';
-export 'settings.dart';
-export 'text_settings.dart';
-export 'layout_settings.dart';
-export 'color_settings.dart';
+
+export 'settings/settings_home.dart';
+export 'settings/text_settings.dart';
+export 'settings/layout_settings.dart';
+export 'settings/color_settings.dart';
 
 // Path names //
 

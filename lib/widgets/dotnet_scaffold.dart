@@ -1,4 +1,5 @@
-import 'utils.dart';
+import '../utils/export.dart';
+import './export.dart';
 
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -30,8 +31,8 @@ class DotnetScaffold extends StatelessWidget {
 
     // Reverse the colors of the app bar to highlight it
     final ColorScheme colorScheme = Theme.of(context).colorScheme;
-    final Color appBarColor = colorScheme.onBackground;
-    final Color appBarTextColor = colorScheme.background;
+    final Color appBarColor = colorScheme.onSurface;
+    final Color appBarTextColor = colorScheme.surface;
 
     final TextStyle appBarTextStyle = Theme.of(context)
         .appBarTheme
@@ -94,29 +95,41 @@ class DotnetScaffold extends StatelessWidget {
       color: colorScheme.onSurface,
     );
 
-    final Widget iconLinksMenu = PopupMenuButton<dynamic>(
-      icon: Icon(PlatformIcons(context).share),
-      itemBuilder: (BuildContext context) => iconLinks.buttons
-          .map((IconButton button) => PopupMenuItem<TextButton>(
-                padding: EdgeInsets.symmetric(
-                  vertical: space / 2,
-                  horizontal: space,
-                ),
-                onTap: button.onPressed,
+    final Widget iconLinksMenu = MenuAnchor(
+      builder: (_, MenuController controller, ___) {
+        final Color partialPrimary = colorScheme.primary.withOpacity(0.1);
+
+        return IconButton(
+          onPressed: () {
+            if (controller.isOpen) {
+              controller.close();
+            } else {
+              controller.open();
+            }
+          },
+          icon: Icon(PlatformIcons(context).share),
+          tooltip: Lang.of(context)!.gSocials,
+          padding: EdgeInsets.symmetric(horizontal: margin),
+          focusColor: partialPrimary,
+          highlightColor: partialPrimary,
+          hoverColor: partialPrimary,
+        );
+      },
+      menuChildren: iconLinks.buttons
+          .map((IconButton button) => MenuItemButton(
+                onPressed: button.onPressed,
                 child: TextButton.icon(
                   icon: button.icon,
                   label: Text(button.tooltip!),
                   onPressed: button.onPressed,
                   style: Theme.of(context).textButtonTheme.style!.copyWith(
-                        foregroundColor: MaterialStatePropertyAll<Color>(
+                        foregroundColor: WidgetStatePropertyAll<Color>(
                           colorScheme.onSurface,
                         ),
                       ),
                 ),
               ))
           .toList(),
-      tooltip: Lang.of(context)!.gSocials,
-      padding: EdgeInsets.symmetric(horizontal: margin),
     );
 
     final DotNetDrawer drawer = DotNetDrawer(

@@ -14,6 +14,7 @@
   "gEmail": "Correo electrónico",
   "gEmailTo": "Envía un correo electrónico a {recipient}",
   "gNewsletter": "Boletin informativo",
+  "gFeedback": "Comentarios",
 
   "gSettingsHint": "Abrir la página de configuración",
 
@@ -44,11 +45,15 @@
   "psPageTitle": "Productos",
 
   "psEFUISlogan": "Crea aplicaciones para cualquier persona",
-  "psEFUIDescription": "NOTA: Esto fue traducido por IA\n\nEFUI es un paquete de código abierto que crea una base integral para la accesibilidad digital,\nproporcionando un kit de inicio en cada pilar de la accesibilidad digital:",
+  "psEFUIDescription1": "NOTA: Esto fue traducido por IA\n\nEFUI es una ",
+  "psEFUIDescription2": " library de código abierto que proporciona las herramientas para construir aplicaciones verdaderamente accesibles.",
   
   "psPlatform": "Disponibilidad de plataforma",
-  "psPlatformContent": "EFUI construye aplicaciones completamente multiplataforma; ¡Android, iOS, Linux, MacOS, Windows y Web!",
+  "psPlatformContent": "EFUI soporta todas las plataformas. ¡Puedes implementar en Android, iOS, Linux, MacOS, Windows y Web!",
   
+  "psResponsive": "Diseño responsive",
+  "psResponsiveContent": "El conjunto de herramientas de EFUI ayuda a construir aplicaciones que responden de manera elegante al espacio de la pantalla. ¡Para verlo en acción, juega con la ventana de la aplicación que estás usando ahora!",
+
   "psScreen": "Soporte de lector de pantalla",
   "psScreenContent": "Todo dentro de EFUI ha sido verificado manualmente con ",
   "psTalkBackHint": "Abrir un enlace a la documentación de TalkBack",
@@ -56,14 +61,11 @@
   "psVoiceOverHint": "Abrir un enlace a la documentación de VoiceOver",
   
   "psCustom": "Personalización del usuario",
-  "psCustomContent": "La única manera de ser verdaderamente accesible para TODOS los clientes es capacitarlos con la libertad de elección.\nY eso es exactamente lo que hace EFUI; permite que cada aspecto del tema de una aplicación sea controlado por el usuario.",
+  "psCustomContent": "La única manera de ser verdaderamente accesible para TODOS los clientes es capacitarlos con la libertad de elección.\nY eso es exactamente lo que hace EFUI; permite que cada aspecto del tema de una aplicación sea controlado por el usuario.\n¡Para verlo en acción, haz clic en el engranaje de configuración en la parte inferior de tu pantalla!",
   
   "psInternational": "Internacionalización",
   "psInternationalContent": "Todo el texto externo de EFUI ha sido traducido al español. Con esto, EFUI proporciona una infraestructura bien organizada para futuras traducciones ilimitadas.",
-  
-  "psResponsive": "Diseño responsive",
-  "psResponsiveContent": "EFUI está lleno de herramientas para ayudar en la construcción de aplicaciones que respondan elegantemente al espacio de la pantalla. ¡Para verlo en acción, simplemente juega con la ventana de la aplicación que estás usando ahora!",
-  
+    
   "psEFUITagLine": "Cuando se construye con EFUI, tus aplicaciones pueden realmente llegar a cualquier público.\n¡Trabajemos juntos para hacer de internet un lugar más accesible!",
   "psConsult": " para consulta y contratación",
   
@@ -102,8 +104,12 @@
   "fpsPageTitle": "Plan financiero",
   "fpsPageHint": "Abrir la página del plan financiero",
   
+  "fpsGoal0": "Cubrir gastos",
+  "fpsGoal1": "Pagar salario mínimo",
+  "fpsGoal2": "Pagar un salario que le permita sobrevivir",
+  "fpsGoal3": "Pagar un salario digno",
+  "fpsGoal4": "Pagar un salario cómodo",
   "fpsRaised": "{income} de {goal} recaudados",
-  "fpsYear": "para el año 2024",
   
   "fpsSplit": "Las ganancias de {profit} se repartirán equitativamente entre...",
   "fpsEventual": "eventual",
@@ -146,14 +152,14 @@
   "spsPowerQ": "¿Poder?",
 
 
-  "fahJoin": "¡Únete a la causa!",
+  "fahJoin": "Únete a la causa",
   
-  "fahIntro": "Únete al Empathetech Folding@home: ",
-  "fahIntroFix": "Únete al Empathetic folding at home: ",
-  "fahTeamHint": "Abre la página del equipo Empathetic Folding@home.",
+  "fahIntro1": "¡Únete al equipo de ",
+  "fahIntro2": " en Folding@home!",
+  "fahTeamHint": "Abre la página del equipo de Empathetic en folding at home",
   
   "fahWhatQ": "¿Qué es Folding@home?",
   "fahWhatQHint": "Abrir la página de información de folding  at home",
   
-  "fahStats": "Traducido por IA\n¡Juntos, hemos acumulado más de 250 millones de puntos!\n¡Poniéndonos en el 2% superior de todos los equipos del mundo!"
+  "fahStats": "Traducido por IA\n¡Juntos, hemos acumulado más de 350 millones de puntos!\n¡Poniéndonos en el 2% superior de todos los equipos del mundo!"
 }

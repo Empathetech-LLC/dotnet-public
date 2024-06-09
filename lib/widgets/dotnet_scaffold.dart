@@ -7,9 +7,6 @@ import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 
 class DotnetScaffold extends StatelessWidget {
-  /// Optional [TabBar] widget for pages with sub-pages
-  final TabBar? tabBar;
-
   final Widget body;
 
   /// [FloatingActionButton]
@@ -17,7 +14,6 @@ class DotnetScaffold extends StatelessWidget {
 
   const DotnetScaffold({
     super.key,
-    this.tabBar,
     required this.body,
     required this.fab,
   });
@@ -27,7 +23,6 @@ class DotnetScaffold extends StatelessWidget {
     // Gather the theme data //
 
     final bool isLefty = EzConfig.get(isLeftyKey) ?? false;
-    final bool isDark = PlatformTheme.of(context)!.isDark;
 
     // Reverse the colors of the app bar to highlight it
     final ColorScheme colorScheme = Theme.of(context).colorScheme;
@@ -50,12 +45,6 @@ class DotnetScaffold extends StatelessWidget {
       actionsIconTheme: appBarIconData,
       titleTextStyle: appBarTextStyle,
     );
-    final TabBarTheme tabBarTheme = TabBarTheme(
-      labelStyle: Theme.of(context)
-          .tabBarTheme
-          .labelStyle!
-          .copyWith(color: appBarTextColor),
-    );
 
     final double margin = EzConfig.get(marginKey);
     final double padding = EzConfig.get(paddingKey);
@@ -64,20 +53,18 @@ class DotnetScaffold extends StatelessWidget {
     // Set appBar height to equal space above and below text links
     final double toolbarHeight = appBarTextStyle.fontSize! + padding * 2;
 
-    final double tabBarHeight = (tabBar == null) ? 0 : toolbarHeight * (2 / 3);
+    final Lang l10n = Lang.of(context)!;
 
     // Define shared widgets //
 
     final Widget logo = Container(
       padding: EdgeInsets.symmetric(horizontal: margin),
-      child: EzLinkImageProvider(
-        // reverse, reverse!
-        image: AssetImage(isDark ? lightLogoPath : darkLogoPath),
-        height: toolbarHeight,
-        width: toolbarHeight,
+      child: EzLinkWidget(
+        isImage: true,
         onTap: () => context.go(homePath),
-        semanticLabel: Lang.of(context)!.gLogoHint,
-        tooltip: Lang.of(context)!.gHomeHint,
+        semanticLabel: l10n.gLogoHint,
+        tooltip: l10n.gHomeHint,
+        child: EmpathetechLogo(size: Size(toolbarHeight, toolbarHeight)),
       ),
     );
 
@@ -108,7 +95,7 @@ class DotnetScaffold extends StatelessWidget {
             }
           },
           icon: Icon(PlatformIcons(context).share),
-          tooltip: Lang.of(context)!.gSocials,
+          tooltip: l10n.gSocials,
           padding: EdgeInsets.symmetric(horizontal: margin),
           focusColor: partialPrimary,
           highlightColor: partialPrimary,
@@ -145,28 +132,22 @@ class DotnetScaffold extends StatelessWidget {
 
     final _SmallBuild smallBuild = _SmallBuild(
       appBarTheme: appBarTheme,
-      tabBarTheme: tabBarTheme,
       toolbarHeight: toolbarHeight,
-      tabBarHeight: tabBarHeight,
-      tabBar: tabBar,
+      isLefty: isLefty,
       logo: logo,
       drawer: drawer,
-      isLefty: isLefty,
       body: body,
       fab: fab,
     );
 
     final _LargeBuild largeBuild = _LargeBuild(
       appBarTheme: appBarTheme,
-      tabBarTheme: tabBarTheme,
       toolbarHeight: toolbarHeight,
-      tabBarHeight: tabBarHeight,
       margin: margin,
-      tabBar: tabBar,
+      isLefty: isLefty,
       logo: logo,
       pageLinks: pageLinks,
       iconLinksMenu: iconLinksMenu,
-      isLefty: isLefty,
       body: body,
       fab: fab,
     );
@@ -186,13 +167,10 @@ class DotnetScaffold extends StatelessWidget {
 class _SmallBuild extends StatelessWidget {
   final double width = double.infinity;
   final AppBarTheme appBarTheme;
-  final TabBarTheme tabBarTheme;
   final double toolbarHeight;
-  final double tabBarHeight;
-  final TabBar? tabBar;
+  final bool isLefty;
   final Widget logo;
   final DotNetDrawer drawer;
-  final bool isLefty;
   final Widget body;
   final Widget fab;
 
@@ -200,13 +178,10 @@ class _SmallBuild extends StatelessWidget {
   /// Has a mobile-like layout
   const _SmallBuild({
     required this.appBarTheme,
-    required this.tabBarTheme,
     required this.toolbarHeight,
-    required this.tabBarHeight,
-    required this.tabBar,
+    required this.isLefty,
     required this.logo,
     required this.drawer,
-    required this.isLefty,
     required this.body,
     required this.fab,
   });
@@ -215,12 +190,9 @@ class _SmallBuild extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size(width, toolbarHeight + tabBarHeight),
+        preferredSize: Size(width, toolbarHeight),
         child: Theme(
-          data: Theme.of(context).copyWith(
-            appBarTheme: appBarTheme,
-            tabBarTheme: tabBarTheme,
-          ),
+          data: Theme.of(context).copyWith(appBarTheme: appBarTheme),
           child: AppBar(
             excludeHeaderSemantics: true,
             toolbarHeight: toolbarHeight,
@@ -232,14 +204,6 @@ class _SmallBuild extends StatelessWidget {
 
             // Actions (aka trailing aka right)
             actions: isLefty ? <Widget>[const EzBackAction()] : null,
-
-            // Bottom (aka tab bar)
-            bottom: (tabBar != null)
-                ? PreferredSize(
-                    preferredSize: Size(width, tabBarHeight),
-                    child: tabBar!,
-                  )
-                : null,
           ),
         ),
       ),
@@ -265,15 +229,12 @@ class _SmallBuild extends StatelessWidget {
 class _LargeBuild extends StatelessWidget {
   final double width = double.infinity;
   final AppBarTheme appBarTheme;
-  final TabBarTheme tabBarTheme;
   final double toolbarHeight;
-  final double tabBarHeight;
   final double margin;
-  final TabBar? tabBar;
+  final bool isLefty;
   final Widget logo;
   final PageLinks pageLinks;
   final Widget iconLinksMenu;
-  final bool isLefty;
   final Widget body;
   final Widget fab;
 
@@ -281,15 +242,12 @@ class _LargeBuild extends StatelessWidget {
   /// Has a traditional footer-less web page layout
   const _LargeBuild({
     required this.appBarTheme,
-    required this.tabBarTheme,
     required this.toolbarHeight,
-    required this.tabBarHeight,
     required this.margin,
-    required this.tabBar,
+    required this.isLefty,
     required this.logo,
     required this.pageLinks,
     required this.iconLinksMenu,
-    required this.isLefty,
     required this.body,
     required this.fab,
   });
@@ -298,12 +256,9 @@ class _LargeBuild extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size(width, toolbarHeight + tabBarHeight),
+        preferredSize: Size(width, toolbarHeight),
         child: Theme(
-          data: Theme.of(context).copyWith(
-            appBarTheme: appBarTheme,
-            tabBarTheme: tabBarTheme,
-          ),
+          data: Theme.of(context).copyWith(appBarTheme: appBarTheme),
           child: AppBar(
             excludeHeaderSemantics: true,
             toolbarHeight: toolbarHeight,
@@ -319,19 +274,9 @@ class _LargeBuild extends StatelessWidget {
 
             // Action (aka trailing aka right)
             actions: isLefty ? <Widget>[logo] : <Widget>[iconLinksMenu],
-
-            // Bottom (aka tab bar)
-            bottom: (tabBar != null)
-                ? PreferredSize(
-                    preferredSize: Size(width, tabBarHeight),
-                    child: tabBar!,
-                  )
-                : null,
           ),
         ),
       ),
-      drawer: null,
-      endDrawer: null,
 
       // Body
       body: body,

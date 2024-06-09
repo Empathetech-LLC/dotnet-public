@@ -57,16 +57,18 @@ flutter:
 
 flutter_launcher_icons:
   image_path: assets/dark-logo.png
-  adaptive_icon_foreground: assets/dark-logo.png
-  adaptive_icon_background: "#000000"
-  android: true
-  ios: true
-  remove_alpha_ios: true
+  android: false
+  ios: false
+  web:
+    generate: true
   windows:
-    generate: true
+    generate: false
   macos:
-    generate: true
+    generate: false
 
 flutter_native_splash:
   color: "#000000"
   image: assets/dark-logo.png
+  android: false
+  ios: false
+  web: true

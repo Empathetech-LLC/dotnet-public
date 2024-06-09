@@ -17,7 +17,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   // Gather the theme data //
 
-  late bool isLight = !PlatformTheme.of(context)!.isDark;
+  late bool isDark = PlatformTheme.of(context)!.isDark;
 
   late final Lang l10n = Lang.of(context)!;
 
@@ -25,7 +25,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   late final VideoPlayerController _videoController =
       VideoPlayerController.asset(
-    isLight ? lightLogoVideoPath : darkLogoVideoPath,
+    isDark ? darkLogoVideoPath : lightLogoVideoPath,
     videoPlayerOptions: VideoPlayerOptions(
       allowBackgroundPlayback: false,
       mixWithOthers: false,

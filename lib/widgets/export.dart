@@ -2,6 +2,7 @@ export 'charity_orgs.dart';
 export 'dotnet_drawer.dart';
 export 'efui_shout_out.dart';
 export 'empathetech_logo.dart';
+export 'empathetech_logo_animation.dart';
 export 'dotnet_scaffold.dart';
 export 'fabulous.dart';
 export 'fah_banner.dart';

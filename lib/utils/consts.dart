@@ -16,6 +16,8 @@ const String lightLogoVideoPath = 'assets/light-animation.mp4';
 const String darkLogoVideoPath = 'assets/dark-animation.mp4';
 
 const String founderIconPath = 'assets/founder.png';
+
+/// Michael Waldron
 const String mike = 'Michael Waldron';
 
 const String anitaBorgIconPath = 'assets/AnitaB.webp';
@@ -74,15 +76,13 @@ const String dunvekLink = 'https://www.fiverr.com/dunvek';
 const String faHLink = 'https://foldingathome.org/';
 const String aboutFaHLink = 'https://foldingathome.org/about-2/';
 
-const String graphicAlertLink = 'https://www.fiverr.com/graphic_alert';
-
 // Asset sources //
 
 const Map<String, String> credits = <String, String>{
-  lightLogoPath: empathetechLLC,
-  darkLogoPath: empathetechLLC,
-  lightLogoVideoPath: '$empathetechLLC & $graphicAlertLink',
-  darkLogoVideoPath: '$empathetechLLC & $graphicAlertLink',
+  lightLogoPath: mike,
+  darkLogoPath: mike,
+  lightLogoVideoPath: mike,
+  darkLogoVideoPath: mike,
   founderIconPath: '$mike & $dunvekLink',
   anitaBorgIconPath: anitaBorgLink,
   codeDotOrgIconPath: codeDotOrgLink,

@@ -325,16 +325,6 @@ class LangEn extends Lang {
   String get tsCommunity => 'Community';
 
   @override
-  String get tsFreelance => 'Freelance';
-
-  @override
-  String get tsGALinkHint => 'Graphic Alert\'s Fiverr page';
-
-  @override
-  String get tsGADescription =>
-      'Implemented the logo animation in After Effects';
-
-  @override
   String get spsPageTitle => 'Support';
 
   @override

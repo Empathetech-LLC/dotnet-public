@@ -27,7 +27,7 @@ class LogoPainter extends CustomPainter {
   Paint getPaint(Color color) => Paint()
     ..color = color
     ..isAntiAlias = true
-    ..strokeWidth = 3.0
+    ..strokeWidth = 2.0
     ..strokeCap = StrokeCap.round
     ..strokeJoin = StrokeJoin.round;
 
@@ -36,14 +36,14 @@ class LogoPainter extends CustomPainter {
     final double xMid = size.width / 2;
     final double yMid = size.height / 2;
 
-    final double vMargin = EzConfig.get(marginKey) / 4;
+    final double subMargin = EzConfig.get(marginKey) / 4;
 
     /// Time, a required parameter for change
     final Paint centerLine = getPaint(colorScheme.secondary);
 
     canvas.drawLine(
-      Offset(xMid, vMargin),
-      Offset(xMid, size.height - vMargin),
+      Offset(xMid, subMargin),
+      Offset(xMid, size.height - subMargin),
       centerLine,
     );
 
@@ -51,18 +51,16 @@ class LogoPainter extends CustomPainter {
     final Paint supports =
         getPaint(isDark ? colorScheme.primary : colorScheme.tertiary);
 
-    /// The supports make four 7ths of the amount of time
-    /// Because 4 days/week == full time && 3 days/week == part time just makes so much more sense, doesn't it?
-    final double supportMidDiff = (size.height - vMargin * 2) / 7;
+    final double qLet = (size.width - 2 * subMargin) / 4;
 
     canvas.drawLine(
-      Offset(xMid - 11.75, yMid - supportMidDiff),
-      Offset(xMid - 11.75, yMid + supportMidDiff),
+      Offset(xMid - qLet, yMid - qLet),
+      Offset(xMid - qLet, yMid + qLet),
       supports,
     );
     canvas.drawLine(
-      Offset(xMid + 11.75, yMid - supportMidDiff),
-      Offset(xMid + 11.75, yMid + supportMidDiff),
+      Offset(xMid + qLet, yMid - qLet),
+      Offset(xMid + qLet, yMid + qLet),
       supports,
     );
 
@@ -71,13 +69,13 @@ class LogoPainter extends CustomPainter {
         getPaint(isDark ? colorScheme.tertiary : colorScheme.primary);
 
     canvas.drawLine(
-      Offset(0, vMargin),
-      Offset(size.width, size.height - vMargin),
+      Offset(subMargin, subMargin),
+      Offset(size.width - subMargin, size.height - subMargin),
       connections,
     );
     canvas.drawLine(
-      Offset(0, size.height - vMargin),
-      Offset(size.width, vMargin),
+      Offset(subMargin, size.height - subMargin),
+      Offset(size.width - subMargin, subMargin),
       connections,
     );
 
@@ -85,14 +83,14 @@ class LogoPainter extends CustomPainter {
     final Paint foundation = getPaint(colorScheme.surface);
 
     canvas.drawLine(
-      Offset(0, size.height - vMargin),
-      Offset(size.width, size.height - vMargin),
+      Offset(subMargin, size.height - subMargin),
+      Offset(size.width - subMargin, size.height - subMargin),
       foundation,
     );
 
     canvas.drawLine(
-      Offset(0, vMargin),
-      Offset(size.width, vMargin),
+      Offset(subMargin, subMargin),
+      Offset(size.width - subMargin, subMargin),
       foundation,
     );
   }

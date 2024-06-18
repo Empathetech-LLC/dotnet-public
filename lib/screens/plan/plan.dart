@@ -21,8 +21,15 @@ class _PlanScreenState extends State<PlanScreen> {
   late final EzSpacer spacer = EzSpacer(spacing);
   late final EzSpacer rowSpacer = EzSpacer.row(spacing);
 
-  late final TextStyle? titleStyle = Theme.of(context).textTheme.titleLarge;
-  late final TextStyle? bodyStyle = Theme.of(context).textTheme.bodyLarge;
+  late final TextTheme textTheme = Theme.of(context).textTheme;
+  late final Color textColor = Theme.of(context).colorScheme.onSurface;
+
+  late final TextStyle? titleStyle = textTheme.titleLarge?.copyWith(
+    color: textColor,
+  );
+  late final TextStyle? bodyStyle = textTheme.bodyLarge?.copyWith(
+    color: textColor,
+  );
 
   late final Lang l10n = Lang.of(context)!;
 

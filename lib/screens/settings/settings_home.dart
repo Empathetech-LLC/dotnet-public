@@ -25,6 +25,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
   late final EzSpacer spacer = EzSpacer(spacing);
   late final EzSpacer separator = EzSpacer(2 * spacing);
 
+  late final ThemeData theme = Theme.of(context);
   late final EFUILang l10n = EFUILang.of(context)!;
 
   // Set the page title //
@@ -89,7 +90,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
             EFUIShoutOut(
               key: efuiShoutOutKey,
-              style: Theme.of(context).textTheme.labelLarge,
+              style: theme.textTheme.labelLarge?.copyWith(
+                color: theme.colorScheme.onSurface,
+              ),
               sourceLink: settingsSource,
             ),
             spacer,

@@ -22,9 +22,17 @@ class _TeamScreenState extends State<TeamScreen> {
   late final EzSpacer separator = EzSpacer(spacing * 2);
 
   late final TextTheme textTheme = Theme.of(context).textTheme;
-  late final TextStyle? headlineStyle = textTheme.headlineLarge;
-  late final TextStyle? titleStyle = textTheme.titleLarge;
-  late final TextStyle? bodyStyle = textTheme.bodyLarge;
+  late final Color textColor = Theme.of(context).colorScheme.onSurface;
+
+  late final TextStyle? headlineStyle = textTheme.headlineLarge?.copyWith(
+    color: textColor,
+  );
+  late final TextStyle? titleStyle = textTheme.titleLarge?.copyWith(
+    color: textColor,
+  );
+  late final TextStyle? bodyStyle = textTheme.bodyLarge?.copyWith(
+    color: textColor,
+  );
 
   late final Lang l10n = Lang.of(context)!;
 
@@ -108,38 +116,7 @@ class _TeamScreenState extends State<TeamScreen> {
               titleStyle: titleStyle,
               bodyStyle: bodyStyle,
             ),
-            separator,
-
-            // Freelance //
-
-            Text(
-              l10n.tsFreelance,
-              style: headlineStyle,
-              textAlign: TextAlign.center,
-            ),
-            padder,
-
-            // Logo animation
-            Column(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                EzLink(
-                  'Graphic Alert',
-                  style: titleStyle,
-                  textAlign: TextAlign.center,
-                  url: Uri.parse(graphicAlertLink),
-                  semanticsLabel: l10n.tsGALinkHint,
-                  tooltip: graphicAlertLink,
-                ),
-                Text(
-                  l10n.tsGADescription,
-                  style: bodyStyle,
-                  textAlign: TextAlign.center,
-                ),
-              ],
-            ),
-            separator,
+            spacer,
           ],
         ),
       ),

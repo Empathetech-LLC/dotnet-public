@@ -652,24 +652,6 @@ abstract class Lang {
   /// **'Community'**
   String get tsCommunity;
 
-  /// No description provided for @tsFreelance.
-  ///
-  /// In en, this message translates to:
-  /// **'Freelance'**
-  String get tsFreelance;
-
-  /// No description provided for @tsGALinkHint.
-  ///
-  /// In en, this message translates to:
-  /// **'Graphic Alert\'s Fiverr page'**
-  String get tsGALinkHint;
-
-  /// No description provided for @tsGADescription.
-  ///
-  /// In en, this message translates to:
-  /// **'Implemented the logo animation in After Effects'**
-  String get tsGADescription;
-
   /// No description provided for @spsPageTitle.
   ///
   /// In en, this message translates to:

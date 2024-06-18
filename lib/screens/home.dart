@@ -1,9 +1,7 @@
 import '../utils/export.dart';
 import '../widgets/export.dart';
 
-import 'package:chewie/chewie.dart';
 import 'package:flutter/material.dart';
-import 'package:video_player/video_player.dart';
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 
@@ -19,47 +17,24 @@ class _HomeScreenState extends State<HomeScreen> {
 
   late bool isDark = PlatformTheme.of(context)!.isDark;
 
+  late final ThemeData theme = Theme.of(context);
   late final Lang l10n = Lang.of(context)!;
 
-  // Define the video components //
+  // Define custom Widgets //
 
-  late final VideoPlayerController _videoController =
-      VideoPlayerController.asset(
-    isDark ? darkLogoVideoPath : lightLogoVideoPath,
-    videoPlayerOptions: VideoPlayerOptions(
-      allowBackgroundPlayback: false,
-      mixWithOthers: false,
-    ),
-  );
-
-  late final ChewieController _chewieController = ChewieController(
-    videoPlayerController: _videoController,
-    autoPlay: true,
-    looping: false,
-    showControlsOnInitialize: false,
-    allowPlaybackSpeedChanging: false,
-  );
-
-  late final Widget _player = Semantics(
+  late final Widget animation = Semantics(
     image: true,
     link: false,
     label: l10n.hsVideoHint,
-    child: Chewie(
-      key: const ValueKey<String>(logoVideoKey),
-      controller: _chewieController,
-    ),
+    child: const EmpathetechLogoAnimation(),
   );
 
-  // Set the page title and initialize the video //
+  // Set the page title //
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
     setPageTitle(empathetech);
-
-    setState(() {
-      _chewieController.setVolume(0.0);
-    });
   }
 
   // Return the build //
@@ -73,14 +48,16 @@ class _HomeScreenState extends State<HomeScreen> {
           alignment: AlignmentDirectional.topCenter,
           children: <Widget>[
             // Video
-            Positioned.fill(child: _player),
+            Positioned.fill(child: animation),
 
             // Slogan overlay
             Positioned(
               top: EzConfig.get(marginKey),
               child: Text(
                 l10n.hsSlogan,
-                style: Theme.of(context).textTheme.headlineLarge,
+                style: theme.textTheme.headlineLarge?.copyWith(
+                  color: theme.colorScheme.onSurface,
+                ),
                 textAlign: TextAlign.center,
                 semanticsLabel: l10n.hsSloganFix,
               ),
@@ -90,12 +67,5 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       fab: SettingsFAB(context: context),
     );
-  }
-
-  @override
-  void dispose() {
-    _videoController.dispose();
-    _chewieController.dispose();
-    super.dispose();
   }
 }

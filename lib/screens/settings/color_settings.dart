@@ -26,7 +26,9 @@ class _ColorSettingsScreenState extends State<ColorSettingsScreen> {
 
   late final ThemeData theme = Theme.of(context);
 
-  late final TextStyle? labelStyle = theme.textTheme.labelLarge;
+  late final TextStyle? labelStyle = theme.textTheme.labelLarge?.copyWith(
+    color: theme.colorScheme.onSurface,
+  );
 
   late final EFUILang l10n = EFUILang.of(context)!;
 
@@ -71,7 +73,7 @@ class _ColorSettingsScreenState extends State<ColorSettingsScreen> {
               dialogTitle: fromImageTitle,
               allowClear: true,
               updateTheme: Brightness.dark,
-              hideThemeMessage: true,
+              updateThemeOption: false,
             ),
           ),
         )
@@ -85,7 +87,7 @@ class _ColorSettingsScreenState extends State<ColorSettingsScreen> {
               dialogTitle: fromImageTitle,
               allowClear: true,
               updateTheme: Brightness.light,
-              hideThemeMessage: true,
+              updateThemeOption: false,
             ),
           ),
         );

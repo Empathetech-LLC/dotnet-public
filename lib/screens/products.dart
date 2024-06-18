@@ -18,9 +18,17 @@ class _ProductsScreenState extends State<ProductsScreen>
   final EzSpacer separator = EzSpacer(EzConfig.get(spacingKey) * 2);
 
   late final TextTheme textTheme = Theme.of(context).textTheme;
-  late final TextStyle? headlineStyle = textTheme.headlineLarge;
-  late final TextStyle? titleStyle = textTheme.titleLarge;
-  late final TextStyle? bodyStyle = textTheme.bodyLarge;
+  late final Color textColor = Theme.of(context).colorScheme.onSurface;
+
+  late final TextStyle? headlineStyle = textTheme.headlineLarge?.copyWith(
+    color: textColor,
+  );
+  late final TextStyle? titleStyle = textTheme.titleLarge?.copyWith(
+    color: textColor,
+  );
+  late final TextStyle? bodyStyle = textTheme.bodyLarge?.copyWith(
+    color: textColor,
+  );
 
   late final Lang l10n = Lang.of(context)!;
 
@@ -53,7 +61,7 @@ class _ProductsScreenState extends State<ProductsScreen>
             // Intro
             Text(
               efuiL,
-              style: textTheme.displayLarge,
+              style: textTheme.displayLarge?.copyWith(color: textColor),
               textAlign: TextAlign.center,
               semanticsLabel: efuiLFix,
             ),

@@ -330,16 +330,6 @@ class LangEs extends Lang {
   String get tsCommunity => 'Comunidad';
 
   @override
-  String get tsFreelance => 'Freelance';
-
-  @override
-  String get tsGALinkHint => 'Página de Graphic Alert en Fiverr';
-
-  @override
-  String get tsGADescription =>
-      'Implementé la animación del logotipo en After Effects';
-
-  @override
   String get spsPageTitle => 'Apoyo';
 
   @override

@@ -339,6 +339,9 @@ class LinePainter extends CustomPainter {
       return (hLet * progress) / 2;
     }
 
+    final bool hReady = hLinesProgress > 0;
+    final bool dReady = dLinesProgress > 0;
+
     // Animate E & M at the bottom because they should be on top //
 
     // Animate P //
@@ -374,33 +377,35 @@ class LinePainter extends CustomPainter {
     );
 
     // Top horizontal
-    canvas.drawLine(
-      Offset(
-        pLX * hLinesProgress + (leftLet - pLX) * fold3Progress,
-        topLet,
-      ),
-      Offset(
-        pRX * hLinesProgress + (rightLet - pRX) * fold3Progress,
-        topLet,
-      ),
-      paint(colorScheme.onSurface),
-    );
+    if (hReady) {
+      canvas.drawLine(
+        Offset(
+          pLX * hLinesProgress + (leftLet - pLX) * fold3Progress,
+          topLet,
+        ),
+        Offset(
+          pRX * hLinesProgress + (rightLet - pRX) * fold3Progress,
+          topLet,
+        ),
+        paint(colorScheme.onSurface),
+      );
 
-    // Center horizontal
-    final double pCXStart = size.width - (size.width - pLX) * hLinesProgress;
-    final double pCXEnd = size.width - (size.width - pRX) * hLinesProgress;
+      // Center horizontal
+      final double pCXStart = size.width - (size.width - pLX) * hLinesProgress;
+      final double pCXEnd = size.width - (size.width - pRX) * hLinesProgress;
 
-    canvas.drawLine(
-      Offset(
-        pCXStart + (centerX - pCXStart) * fold3Progress,
-        centerY,
-      ),
-      Offset(
-        pCXEnd + (centerX - pCXEnd) * fold3Progress,
-        centerY,
-      ),
-      paint(colorScheme.onSurface),
-    );
+      canvas.drawLine(
+        Offset(
+          pCXStart + (centerX - pCXStart) * fold3Progress,
+          centerY,
+        ),
+        Offset(
+          pCXEnd + (centerX - pCXEnd) * fold3Progress,
+          centerY,
+        ),
+        paint(colorScheme.onSurface),
+      );
+    }
 
     // Animate A //
 
@@ -438,33 +443,35 @@ class LinePainter extends CustomPainter {
     );
 
     // Top horizontal
-    canvas.drawLine(
-      Offset(
-        aLX * hLinesProgress + (leftLet - aLX) * fold4Progress,
-        topLet,
-      ),
-      Offset(
-        aRX * hLinesProgress + (rightLet - aRX) * fold4Progress,
-        topLet,
-      ),
-      paint(colorScheme.onSurface),
-    );
+    if (hReady) {
+      canvas.drawLine(
+        Offset(
+          aLX * hLinesProgress + (leftLet - aLX) * fold4Progress,
+          topLet,
+        ),
+        Offset(
+          aRX * hLinesProgress + (rightLet - aRX) * fold4Progress,
+          topLet,
+        ),
+        paint(colorScheme.onSurface),
+      );
 
-    // Center horizontal
-    final double aCXStart = size.width - (size.width - aLX) * hLinesProgress;
-    final double aCXEnd = size.width - (size.width - aRX) * hLinesProgress;
+      // Center horizontal
+      final double aCXStart = size.width - (size.width - aLX) * hLinesProgress;
+      final double aCXEnd = size.width - (size.width - aRX) * hLinesProgress;
 
-    canvas.drawLine(
-      Offset(
-        aCXStart + (centerX - aCXStart) * fold4Progress,
-        centerY,
-      ),
-      Offset(
-        aCXEnd + (centerX - aCXEnd) * fold4Progress,
-        centerY,
-      ),
-      paint(colorScheme.onSurface),
-    );
+      canvas.drawLine(
+        Offset(
+          aCXStart + (centerX - aCXStart) * fold4Progress,
+          centerY,
+        ),
+        Offset(
+          aCXEnd + (centerX - aCXEnd) * fold4Progress,
+          centerY,
+        ),
+        paint(colorScheme.onSurface),
+      );
+    }
 
     // Animate T //
 
@@ -482,36 +489,39 @@ class LinePainter extends CustomPainter {
     );
 
     // Top horizontal
-    canvas.drawLine(
-      Offset(
-        tLX * hLinesProgress + (leftLet - tLX) * fold5Progress,
-        topLet,
-      ),
-      Offset(
-        tRX * hLinesProgress + (rightLet - tRX) * fold5Progress,
-        topLet,
-      ),
-      paint(colorScheme.onSurface),
-    );
+    if (hReady) {
+      canvas.drawLine(
+        Offset(
+          tLX * hLinesProgress + (leftLet - tLX) * fold5Progress,
+          topLet,
+        ),
+        Offset(
+          tRX * hLinesProgress + (rightLet - tRX) * fold5Progress,
+          topLet,
+        ),
+        paint(colorScheme.onSurface),
+      );
 
-    // Animate H //
+      // Animate H //
 
-    // Center horizontal
-    final double hCXStart =
-        size.width - (size.width - leftLet) * hLinesProgress;
-    final double hCXEnd = size.width - (size.width - rightLet) * hLinesProgress;
+      // Center horizontal
+      final double hCXStart =
+          size.width - (size.width - leftLet) * hLinesProgress;
+      final double hCXEnd =
+          size.width - (size.width - rightLet) * hLinesProgress;
 
-    canvas.drawLine(
-      Offset(
-        hCXStart + (centerX - hCXStart) * fold1Progress,
-        centerY,
-      ),
-      Offset(
-        hCXEnd + (centerX - hCXEnd) * fold1Progress,
-        centerY,
-      ),
-      paint(colorScheme.onSurface),
-    );
+      canvas.drawLine(
+        Offset(
+          hCXStart + (centerX - hCXStart) * fold1Progress,
+          centerY,
+        ),
+        Offset(
+          hCXEnd + (centerX - hCXEnd) * fold1Progress,
+          centerY,
+        ),
+        paint(colorScheme.onSurface),
+      );
+    }
 
     // Left vertical
     canvas.drawLine(
@@ -546,20 +556,23 @@ class LinePainter extends CustomPainter {
     final double e2RX = rightLet + nextLetter;
 
     // Center horizontal
-    final double e2CXStart = size.width - (size.width - e2LX) * hLinesProgress;
-    final double e2CXEnd = size.width - (size.width - e2MX) * hLinesProgress;
+    if (hReady) {
+      final double e2CXStart =
+          size.width - (size.width - e2LX) * hLinesProgress;
+      final double e2CXEnd = size.width - (size.width - e2MX) * hLinesProgress;
 
-    canvas.drawLine(
-      Offset(
-        e2CXStart + (centerX - e2CXStart) * fold5Progress,
-        centerY,
-      ),
-      Offset(
-        e2CXEnd + (centerX - e2CXEnd) * fold5Progress,
-        centerY,
-      ),
-      paint(colorScheme.onSurface),
-    );
+      canvas.drawLine(
+        Offset(
+          e2CXStart + (centerX - e2CXStart) * fold5Progress,
+          centerY,
+        ),
+        Offset(
+          e2CXEnd + (centerX - e2CXEnd) * fold5Progress,
+          centerY,
+        ),
+        paint(colorScheme.onSurface),
+      );
+    }
 
     // Vertical
     final double e2VAnim = e2LX + (centerX - e2LX) * fold5Progress;
@@ -570,31 +583,33 @@ class LinePainter extends CustomPainter {
       paint(colorScheme.secondary),
     );
 
-    // Top horizontal
-    canvas.drawLine(
-      Offset(
-        e2LX * hLinesProgress + (leftLet - e2LX) * fold5Progress,
-        topLet,
-      ),
-      Offset(
-        e2RX * hLinesProgress + (rightLet - e2RX) * fold5Progress,
-        topLet,
-      ),
-      paint(colorScheme.onSurface),
-    );
+    if (hReady) {
+      // Top horizontal
+      canvas.drawLine(
+        Offset(
+          e2LX * hLinesProgress + (leftLet - e2LX) * fold5Progress,
+          topLet,
+        ),
+        Offset(
+          e2RX * hLinesProgress + (rightLet - e2RX) * fold5Progress,
+          topLet,
+        ),
+        paint(colorScheme.onSurface),
+      );
 
-    // Bottom horizontal
-    canvas.drawLine(
-      Offset(
-        e2LX * hLinesProgress + (leftLet - e2LX) * fold5Progress,
-        bottomLet,
-      ),
-      Offset(
-        e2RX * hLinesProgress + (rightLet - e2RX) * fold5Progress,
-        bottomLet,
-      ),
-      paint(colorScheme.onSurface),
-    );
+      // Bottom horizontal
+      canvas.drawLine(
+        Offset(
+          e2LX * hLinesProgress + (leftLet - e2LX) * fold5Progress,
+          bottomLet,
+        ),
+        Offset(
+          e2RX * hLinesProgress + (rightLet - e2RX) * fold5Progress,
+          bottomLet,
+        ),
+        paint(colorScheme.onSurface),
+      );
+    }
 
     // Animate T2 //
 
@@ -612,17 +627,19 @@ class LinePainter extends CustomPainter {
     );
 
     // Top horizontal
-    canvas.drawLine(
-      Offset(
-        t2LX * hLinesProgress + (leftLet - t2LX) * fold4Progress,
-        topLet,
-      ),
-      Offset(
-        t2RX * hLinesProgress + (rightLet - t2RX) * fold4Progress,
-        topLet,
-      ),
-      paint(colorScheme.onSurface),
-    );
+    if (hReady) {
+      canvas.drawLine(
+        Offset(
+          t2LX * hLinesProgress + (leftLet - t2LX) * fold4Progress,
+          topLet,
+        ),
+        Offset(
+          t2RX * hLinesProgress + (rightLet - t2RX) * fold4Progress,
+          topLet,
+        ),
+        paint(colorScheme.onSurface),
+      );
+    }
 
     // Animate E3 //
 
@@ -631,20 +648,23 @@ class LinePainter extends CustomPainter {
     final double e3RX = rightLet + 3 * nextLetter;
 
     // Center horizontal
-    final double e3CXStart = size.width - (size.width - e3LX) * hLinesProgress;
-    final double e3CXEnd = size.width - (size.width - e3MX) * hLinesProgress;
+    if (hReady) {
+      final double e3CXStart =
+          size.width - (size.width - e3LX) * hLinesProgress;
+      final double e3CXEnd = size.width - (size.width - e3MX) * hLinesProgress;
 
-    canvas.drawLine(
-      Offset(
-        e3CXStart + (centerX - e3CXStart) * fold3Progress,
-        centerY,
-      ),
-      Offset(
-        e3CXEnd + (centerX - e3CXEnd) * fold3Progress,
-        centerY,
-      ),
-      paint(colorScheme.onSurface),
-    );
+      canvas.drawLine(
+        Offset(
+          e3CXStart + (centerX - e3CXStart) * fold3Progress,
+          centerY,
+        ),
+        Offset(
+          e3CXEnd + (centerX - e3CXEnd) * fold3Progress,
+          centerY,
+        ),
+        paint(colorScheme.onSurface),
+      );
+    }
 
     // Vertical
     final double e3VAnim = e3LX + (centerX - e3LX) * fold3Progress;
@@ -655,31 +675,33 @@ class LinePainter extends CustomPainter {
       paint(colorScheme.secondary),
     );
 
-    // Top horizontal
-    canvas.drawLine(
-      Offset(
-        e3LX * hLinesProgress + (leftLet - e3LX) * fold3Progress,
-        topLet,
-      ),
-      Offset(
-        e3RX * hLinesProgress + (rightLet - e3RX) * fold3Progress,
-        topLet,
-      ),
-      paint(colorScheme.onSurface),
-    );
+    if (hReady) {
+      // Top horizontal
+      canvas.drawLine(
+        Offset(
+          e3LX * hLinesProgress + (leftLet - e3LX) * fold3Progress,
+          topLet,
+        ),
+        Offset(
+          e3RX * hLinesProgress + (rightLet - e3RX) * fold3Progress,
+          topLet,
+        ),
+        paint(colorScheme.onSurface),
+      );
 
-    // Bottom horizontal
-    canvas.drawLine(
-      Offset(
-        e3LX * hLinesProgress + (leftLet - e3LX) * fold3Progress,
-        bottomLet,
-      ),
-      Offset(
-        e3RX * hLinesProgress + (rightLet - e3RX) * fold3Progress,
-        bottomLet,
-      ),
-      paint(colorScheme.onSurface),
-    );
+      // Bottom horizontal
+      canvas.drawLine(
+        Offset(
+          e3LX * hLinesProgress + (leftLet - e3LX) * fold3Progress,
+          bottomLet,
+        ),
+        Offset(
+          e3RX * hLinesProgress + (rightLet - e3RX) * fold3Progress,
+          bottomLet,
+        ),
+        paint(colorScheme.onSurface),
+      );
+    }
 
     // Animate C //
 
@@ -695,31 +717,33 @@ class LinePainter extends CustomPainter {
       paint(colorScheme.secondary),
     );
 
-    // Top horizontal
-    canvas.drawLine(
-      Offset(
-        cLX * hLinesProgress + (leftLet - cLX) * fold2Progress,
-        topLet,
-      ),
-      Offset(
-        cRX * hLinesProgress + (rightLet - cRX) * fold2Progress,
-        topLet,
-      ),
-      paint(colorScheme.onSurface),
-    );
+    if (hReady) {
+      // Top horizontal
+      canvas.drawLine(
+        Offset(
+          cLX * hLinesProgress + (leftLet - cLX) * fold2Progress,
+          topLet,
+        ),
+        Offset(
+          cRX * hLinesProgress + (rightLet - cRX) * fold2Progress,
+          topLet,
+        ),
+        paint(colorScheme.onSurface),
+      );
 
-    // Bottom horizontal
-    canvas.drawLine(
-      Offset(
-        cLX * hLinesProgress + (leftLet - cLX) * fold2Progress,
-        bottomLet,
-      ),
-      Offset(
-        cRX * hLinesProgress + (rightLet - cRX) * fold2Progress,
-        bottomLet,
-      ),
-      paint(colorScheme.onSurface),
-    );
+      // Bottom horizontal
+      canvas.drawLine(
+        Offset(
+          cLX * hLinesProgress + (leftLet - cLX) * fold2Progress,
+          bottomLet,
+        ),
+        Offset(
+          cRX * hLinesProgress + (rightLet - cRX) * fold2Progress,
+          bottomLet,
+        ),
+        paint(colorScheme.onSurface),
+      );
+    }
 
     // Animate H2 //
 
@@ -727,20 +751,23 @@ class LinePainter extends CustomPainter {
     final double h2RX = rightLet + 5 * nextLetter;
 
     // Center horizontal
-    final double h2CXStart = size.width - (size.width - h2LX) * hLinesProgress;
-    final double h2CXEnd = size.width - (size.width - h2RX) * hLinesProgress;
+    if (hReady) {
+      final double h2CXStart =
+          size.width - (size.width - h2LX) * hLinesProgress;
+      final double h2CXEnd = size.width - (size.width - h2RX) * hLinesProgress;
 
-    canvas.drawLine(
-      Offset(
-        h2CXStart + (centerX - h2CXStart) * fold1Progress,
-        centerY,
-      ),
-      Offset(
-        h2CXEnd + (centerX - h2CXEnd) * fold1Progress,
-        centerY,
-      ),
-      paint(colorScheme.onSurface),
-    );
+      canvas.drawLine(
+        Offset(
+          h2CXStart + (centerX - h2CXStart) * fold1Progress,
+          centerY,
+        ),
+        Offset(
+          h2CXEnd + (centerX - h2CXEnd) * fold1Progress,
+          centerY,
+        ),
+        paint(colorScheme.onSurface),
+      );
+    }
 
     // Left vertical
     final double h2LVAnim = h2LX + (leftLet - h2LX) * fold1Progress;
@@ -779,20 +806,22 @@ class LinePainter extends CustomPainter {
     final double eRX = rightLet - 5 * nextLetter;
 
     // E center horizontal
-    final double eCXStart = size.width - (size.width - eLX) * hLinesProgress;
-    final double eCXEnd = size.width - (size.width - eMX) * hLinesProgress;
+    if (hReady) {
+      final double eCXStart = size.width - (size.width - eLX) * hLinesProgress;
+      final double eCXEnd = size.width - (size.width - eMX) * hLinesProgress;
 
-    canvas.drawLine(
-      Offset(
-        eCXStart + (centerX - eCXStart) * fold1Progress,
-        centerY,
-      ),
-      Offset(
-        eCXEnd + (centerX - eCXEnd) * fold1Progress,
-        centerY,
-      ),
-      paint(colorScheme.onSurface),
-    );
+      canvas.drawLine(
+        Offset(
+          eCXStart + (centerX - eCXStart) * fold1Progress,
+          centerY,
+        ),
+        Offset(
+          eCXEnd + (centerX - eCXEnd) * fold1Progress,
+          centerY,
+        ),
+        paint(colorScheme.onSurface),
+      );
+    }
 
     // E vertical
     final double eVAnim = eLX + (centerX - eLX) * fold1Progress;
@@ -836,87 +865,91 @@ class LinePainter extends CustomPainter {
       paint(v2Color),
     );
 
-    // M left to center diagonal
-    canvas.drawLine(
-      Offset(
-        size.width -
-            (size.width - mLX) * dLinesProgress +
-            (leftLet - mLX) * fold2Progress,
-        (expandProgress > 0)
-            ? centerY + hLet * fold2Progress
-            : size.height - bottomLet * dLinesProgress + letS * fold2Progress,
-      ),
-      Offset(
-        size.width -
-            (size.width - mMX) * dLinesProgress +
-            (centerX - mMX) * fold2Progress,
-        size.height - centerY * dLinesProgress,
-      ),
-      paint(dColor),
-    );
-
-    // M left to center diagonal mirror
-    if (fold2Progress >= 0.5) {
+    if (dReady) {
+      // M left to center diagonal
       canvas.drawLine(
-        Offset(mLVAnim, centerY - hLet * fold2Progress),
-        Offset(mMX + (centerX - mMX) * fold2Progress, centerY),
+        Offset(
+          size.width -
+              (size.width - mLX) * dLinesProgress +
+              (leftLet - mLX) * fold2Progress,
+          (expandProgress > 0)
+              ? centerY + hLet * fold2Progress
+              : size.height - bottomLet * dLinesProgress + letS * fold2Progress,
+        ),
+        Offset(
+          size.width -
+              (size.width - mMX) * dLinesProgress +
+              (centerX - mMX) * fold2Progress,
+          size.height - centerY * dLinesProgress,
+        ),
         paint(dColor),
       );
-    }
 
-    // M center to right diagonal
-    canvas.drawLine(
-      Offset(
-        size.width -
-            (size.width - mMX) * dLinesProgress +
-            (centerX - mMX) * fold2Progress,
-        centerY * dLinesProgress,
-      ),
-      Offset(
-        size.width -
-            (size.width - mRX) * dLinesProgress +
-            (rightLet - mRX) * fold2Progress,
-        (expandProgress > 0)
-            ? centerY + hLet * fold2Progress
-            : topLet * dLinesProgress + letS * fold2Progress,
-      ),
-      paint(dColor),
-    );
+      // M left to center diagonal mirror
+      if (fold2Progress >= 0.5) {
+        canvas.drawLine(
+          Offset(mLVAnim, centerY - hLet * fold2Progress),
+          Offset(mMX + (centerX - mMX) * fold2Progress, centerY),
+          paint(dColor),
+        );
+      }
 
-    // M center to right diagonal mirror
-    if (fold2Progress >= 0.5) {
+      // M center to right diagonal
       canvas.drawLine(
-        Offset(mMX + (centerX - mMX) * fold2Progress, centerY),
-        Offset(mRVAnim, centerY - hLet * fold2Progress),
+        Offset(
+          size.width -
+              (size.width - mMX) * dLinesProgress +
+              (centerX - mMX) * fold2Progress,
+          centerY * dLinesProgress,
+        ),
+        Offset(
+          size.width -
+              (size.width - mRX) * dLinesProgress +
+              (rightLet - mRX) * fold2Progress,
+          (expandProgress > 0)
+              ? centerY + hLet * fold2Progress
+              : topLet * dLinesProgress + letS * fold2Progress,
+        ),
         paint(dColor),
       );
+
+      // M center to right diagonal mirror
+      if (fold2Progress >= 0.5) {
+        canvas.drawLine(
+          Offset(mMX + (centerX - mMX) * fold2Progress, centerY),
+          Offset(mRVAnim, centerY - hLet * fold2Progress),
+          paint(dColor),
+        );
+      }
     }
 
-    // E top horizontal
-    canvas.drawLine(
-      Offset(
-        eLX * hLinesProgress + (leftLet - eLX) * fold1Progress,
-        topLet,
-      ),
-      Offset(
-        eRX * hLinesProgress + (rightLet - eRX) * fold1Progress,
-        topLet,
-      ),
-      paint(colorScheme.onSurface),
-    );
+    if (hReady) {
+      // E top horizontal
+      canvas.drawLine(
+        Offset(
+          eLX * hLinesProgress + (leftLet - eLX) * fold1Progress,
+          topLet,
+        ),
+        Offset(
+          eRX * hLinesProgress + (rightLet - eRX) * fold1Progress,
+          topLet,
+        ),
+        paint(colorScheme.onSurface),
+      );
 
-    // E bottom horizontal
-    canvas.drawLine(
-      Offset(
-        eLX * hLinesProgress + (leftLet - eLX) * fold1Progress,
-        bottomLet,
-      ),
-      Offset(
-        eRX * hLinesProgress + (rightLet - eRX) * fold1Progress,
-        bottomLet,
-      ),
-      paint(colorScheme.onSurface),
-    );
+      // E bottom horizontal
+      canvas.drawLine(
+        Offset(
+          eLX * hLinesProgress + (leftLet - eLX) * fold1Progress,
+          bottomLet,
+        ),
+        Offset(
+          eRX * hLinesProgress + (rightLet - eRX) * fold1Progress,
+          bottomLet,
+        ),
+        paint(colorScheme.onSurface),
+      );
+    }
   }
 
   @override

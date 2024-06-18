@@ -51,18 +51,17 @@ class _SettingsScreenState extends State<SettingsScreen> {
             separator,
 
             // Global settings
-            const EzDominantHandSwitch(key: dhSwitchKey),
+            const EzDominantHandSwitch(),
             spacer,
 
-            const EzThemeModeSwitch(key: tmSwitchKey),
+            const EzThemeModeSwitch(),
             spacer,
 
-            const EzLocaleSetting(key: localeSettingKey),
+            const EzLocaleSetting(),
             spacer,
 
             // Text settings
             ElevatedButton(
-              key: toTextSettingsKey,
               onPressed: () => context.go(textSettingsRoute),
               child: Text(l10n.tsPageTitle),
             ),
@@ -70,7 +69,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
             // Layout settings
             ElevatedButton(
-              key: toLayoutSettingsKey,
               onPressed: () => context.go(layoutSettingsRoute),
               child: Text(l10n.lsPageTitle),
             ),
@@ -78,14 +76,13 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
             // Color settings
             ElevatedButton(
-              key: toColorSettingsKey,
               onPressed: () => context.go(colorSettingsRoute),
               child: Text(l10n.csPageTitle),
             ),
             separator,
 
             // Reset button
-            const EzResetButton(key: resetAllKey),
+            const EzResetButton(),
             separator,
 
             EFUIShoutOut(

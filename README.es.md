@@ -38,4 +38,4 @@ Many thanks for any and all donations!
 
 ## Translations
 
-Thank you to...
+Note to translator: please credit yourself :)

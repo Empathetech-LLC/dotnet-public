@@ -33,9 +33,3 @@ Many thanks for any and all donations!
 # License
 
 [GNU GPLv3](LICENSE)
-
-# Credits
-
-## Translations
-
-Thank you to...

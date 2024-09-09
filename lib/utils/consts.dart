@@ -59,7 +59,7 @@ const String efuiSource =
 
 /// https://github.com/Empathetech-LLC/dotnet-public/blob/main/lib/screens/settings_home.dart
 const String settingsSource =
-    'https://github.com/Empathetech-LLC/dotnet-public/blob/main/lib/screens/settings_home.dart';
+    'https://github.com/Empathetech-LLC/dotnet-public/blob/main/lib/screens/settings/settings_home.dart';
 
 /// https://en.wikipedia.org/wiki/Software_as_a_service
 const String saaSDocs = 'https://en.wikipedia.org/wiki/Software_as_a_service';

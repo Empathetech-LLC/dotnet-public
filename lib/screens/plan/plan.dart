@@ -187,10 +187,13 @@ class _PlanScreenState extends State<PlanScreen> {
               }
             }
 
-            return EzScrollView(
-              scrollDirection: Axis.horizontal,
-              mainAxisSize: MainAxisSize.min,
-              children: buttons(),
+            return Align(
+              alignment: Alignment.centerLeft,
+              child: EzScrollView(
+                scrollDirection: Axis.horizontal,
+                mainAxisSize: MainAxisSize.min,
+                children: buttons(),
+              ),
             );
           },
           physics: const BouncingScrollPhysics(),

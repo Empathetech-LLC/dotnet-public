@@ -1,3 +1,8 @@
+/* dotnet
+ * Copyright (c) 2022-2024 Empathetech LLC. All rights reserved.
+ * See LICENSE for distribution and usage details.
+ */
+
 import '../export.dart';
 import '../../utils/export.dart';
 import '../../widgets/export.dart';
@@ -6,7 +11,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 import 'package:go_router/go_router.dart';
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
-import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
@@ -18,12 +22,8 @@ class SettingsScreen extends StatefulWidget {
 class _SettingsScreenState extends State<SettingsScreen> {
   // Gather the theme data //
 
-  late bool isDark = PlatformTheme.of(context)!.isDark;
-
-  final double spacing = EzConfig.get(spacingKey);
-
-  late final EzSpacer spacer = EzSpacer(spacing);
-  late final EzSpacer separator = EzSpacer(2 * spacing);
+  static const EzSpacer spacer = EzSpacer();
+  static const EzSeparator separator = EzSeparator();
 
   late final ThemeData theme = Theme.of(context);
   late final EFUILang l10n = EFUILang.of(context)!;
@@ -86,17 +86,13 @@ class _SettingsScreenState extends State<SettingsScreen> {
             separator,
 
             EFUIShoutOut(
-              key: efuiShoutOutKey,
-              style: theme.textTheme.labelLarge?.copyWith(
-                color: theme.colorScheme.onSurface,
-              ),
+              style: theme.textTheme.labelLarge,
               sourceLink: settingsSource,
             ),
             spacer,
           ],
         ),
       ),
-      fab: BackFAB(key: backButtonKey, context: context),
     );
   }
 }

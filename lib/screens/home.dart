@@ -1,7 +1,13 @@
+/* dotnet
+ * Copyright (c) 2022-2024 Empathetech LLC. All rights reserved.
+ * See LICENSE for distribution and usage details.
+ */
+
 import '../utils/export.dart';
 import '../widgets/export.dart';
 
 import 'package:flutter/material.dart';
+import 'package:efui_bios/efui_bios.dart';
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 
@@ -53,13 +59,17 @@ class _HomeScreenState extends State<HomeScreen> {
             // Slogan overlay
             Positioned(
               top: EzConfig.get(marginKey),
-              child: Text(
-                l10n.hsSlogan,
-                style: theme.textTheme.headlineLarge?.copyWith(
-                  color: theme.colorScheme.onSurface,
+              child: ConstrainedBox(
+                constraints: BoxConstraints(
+                  maxWidth: widthOf(context),
+                  maxHeight: heightOf(context),
                 ),
-                textAlign: TextAlign.center,
-                semanticsLabel: l10n.hsSloganFix,
+                child: Text(
+                  l10n.hsSlogan,
+                  style: theme.textTheme.headlineLarge,
+                  textAlign: TextAlign.center,
+                  semanticsLabel: l10n.hsSloganFix,
+                ),
               ),
             ),
           ],

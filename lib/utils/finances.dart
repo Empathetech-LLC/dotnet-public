@@ -1,3 +1,8 @@
+/* dotnet
+ * Copyright (c) 2022-2024 Empathetech LLC. All rights reserved.
+ * See LICENSE for distribution and usage details.
+ */
+
 import './export.dart';
 
 import 'package:intl/intl.dart';
@@ -41,7 +46,7 @@ Future<List<double>> calculateGoals() async {
 ///
 /// The Living Wage team asks "that users do not scrape the data".
 /// So, all [getWage] values are hard-coded and updated manually.
-/// Updates are made annually, at the start of Q2 (April).
+/// Last review: August 2024.
 ///
 /// Our goal:
 ///   To enable Empathetech employees to live a comfortable life anywhere in the Country of Domicile.
@@ -58,7 +63,7 @@ Future<List<double>> calculateGoals() async {
 ///         - Going on vacations
 ///         - Accruing wealth so you can retire earlier than the average of only 12 years before you die (in the US)
 ///         - Providing all of the above to your children as well
-///       Currently (Q2 2024): $97.94/hour
+///       Currently: $97.94/hour
 ///
 /// ** Everything else **
 ///
@@ -107,8 +112,8 @@ double calculateIncome() {
   return gatherContracts() + gatherDonations();
 }
 
-/// For prospective contractees: our rates the methodology to [getWage]
-/// Discounts are available to affiliate donors; see site(s) for details
+/// For prospective contractees: our rates follow the methodology in [getWage]
+/// Discounts are available to affiliates/donors; see site(s) for details
 double gatherContracts() {
   return 0;
 }
@@ -117,37 +122,54 @@ double gatherContracts() {
 /// Direct donation platforms: PayPal, Venmo, CashApp
 /// Affiliate donation platforms: Patreon, Buy Me a Coffee, Ko-fi
 double gatherDonations() {
-  final double directDonations = paypal() + venmo() + cashapp();
+  final double crowdFunding = goFundMe();
   final double affiliateDonations = patreon() + coffee() + kofi();
-  return directDonations + affiliateDonations;
+  final double directDonations = paypal() + venmo() + cashapp();
+  return crowdFunding + affiliateDonations + directDonations;
 }
 
-/// Empathetech has yet to recieve income from PayPal
-double paypal() {
+/// Working on links, will revive the fin-plan page when ready
+double goFundMe() {
   return 0;
 }
 
-/// Empathetech has yet to recieve income from Venmo
-double venmo() {
-  return 0;
-}
-
-/// Empathetech has yet to recieve income from CashApp
-double cashapp() {
-  return 0;
-}
-
-/// Empathetech has yet to recieve income from Patreon
+/// Working on links, will revive the fin-plan page when ready
 double patreon() {
   return 0;
 }
 
-/// Empathetech has yet to recieve income from Buy Me a Coffee
+/// Working on links, will revive the fin-plan page when ready
 double coffee() {
   return 0;
 }
 
-/// Empathetech has yet to recieve income from Ko-fi
+/// Working on links, will revive the fin-plan page when ready
 double kofi() {
   return 0;
+}
+
+/// Working on links, will revive the fin-plan page when ready
+double paypal() {
+  return 0;
+}
+
+/// Working on links, will revive the fin-plan page when ready
+double venmo() {
+  return 0;
+}
+
+/// Working on links, will revive the fin-plan page when ready
+double cashapp() {
+  return 0;
+}
+
+/// While Empathetech is not a profit first company, we do need to keep some money.
+/// Primarily for:
+///   - Sustainable growth
+///   - Armor against angry tech giants
+///
+/// The current plan is to pay it forward.
+/// For every (excess) dollar we make, the next three will be given to non-profits that share our mission.
+String getSplit(double netProfit) {
+  return asUSD(netProfit / 4);
 }

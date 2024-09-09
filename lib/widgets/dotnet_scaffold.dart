@@ -1,8 +1,14 @@
+/* dotnet
+ * Copyright (c) 2022-2024 Empathetech LLC. All rights reserved.
+ * See LICENSE for distribution and usage details.
+ */
+
 import '../utils/export.dart';
 import './export.dart';
 
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:efui_bios/efui_bios.dart';
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 
@@ -10,12 +16,12 @@ class DotnetScaffold extends StatelessWidget {
   final Widget body;
 
   /// [FloatingActionButton]
-  final Widget fab;
+  final Widget? fab;
 
   const DotnetScaffold({
     super.key,
     required this.body,
-    required this.fab,
+    this.fab,
   });
 
   @override
@@ -64,7 +70,10 @@ class DotnetScaffold extends StatelessWidget {
         onTap: () => context.go(homePath),
         semanticLabel: l10n.gLogoHint,
         tooltip: l10n.gHomeHint,
-        child: EmpathetechLogo(size: Size(toolbarHeight, toolbarHeight)),
+        child: EmpathetechLogo(
+          size: Size(toolbarHeight, toolbarHeight),
+          margin: margin,
+        ),
       ),
     );
 
@@ -109,10 +118,9 @@ class DotnetScaffold extends StatelessWidget {
                   icon: button.icon,
                   label: Text(button.tooltip!),
                   onPressed: button.onPressed,
-                  style: Theme.of(context).textButtonTheme.style!.copyWith(
+                  style: Theme.of(context).textButtonTheme.style?.copyWith(
                         foregroundColor: WidgetStatePropertyAll<Color>(
-                          colorScheme.onSurface,
-                        ),
+                            colorScheme.onSurface),
                       ),
                 ),
               ))
@@ -154,12 +162,10 @@ class DotnetScaffold extends StatelessWidget {
 
     // Return the build //
 
-    return SelectionArea(
-      child: EzSwapScaffold(
-        small: smallBuild,
-        large: largeBuild,
-        threshold: threshold,
-      ),
+    return EzSwapScaffold(
+      small: smallBuild,
+      large: largeBuild,
+      threshold: threshold,
     );
   }
 }
@@ -172,7 +178,7 @@ class _SmallBuild extends StatelessWidget {
   final Widget logo;
   final DotNetDrawer drawer;
   final Widget body;
-  final Widget fab;
+  final Widget? fab;
 
   /// [DotnetScaffold] for when there is limited screen space
   /// Has a mobile-like layout
@@ -188,40 +194,42 @@ class _SmallBuild extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: Size(width, toolbarHeight),
-        child: Theme(
-          data: Theme.of(context).copyWith(appBarTheme: appBarTheme),
-          child: AppBar(
-            excludeHeaderSemantics: true,
-            toolbarHeight: toolbarHeight,
+    return SelectionArea(
+      child: Scaffold(
+        appBar: PreferredSize(
+          preferredSize: Size(width, toolbarHeight),
+          child: Theme(
+            data: Theme.of(context).copyWith(appBarTheme: appBarTheme),
+            child: AppBar(
+              excludeHeaderSemantics: true,
+              toolbarHeight: toolbarHeight,
 
-            // Title
-            title: logo,
-            titleSpacing: 0,
-            centerTitle: true,
+              // Title
+              title: logo,
+              titleSpacing: 0,
+              centerTitle: true,
 
-            // Actions (aka trailing aka right)
-            actions: isLefty ? <Widget>[const EzBackAction()] : null,
+              // Actions (aka trailing aka right)
+              actions: isLefty ? <Widget>[const EzBackAction()] : null,
+            ),
           ),
         ),
+
+        // Drawer replaces leading (aka left)
+        drawer: isLefty ? drawer : null,
+
+        // End drawer replaces actions (aka trailing aka right)
+        endDrawer: isLefty ? null : drawer,
+
+        // Body
+        body: body,
+
+        // FAB
+        floatingActionButton: fab,
+        floatingActionButtonLocation: isLefty
+            ? FloatingActionButtonLocation.startFloat
+            : FloatingActionButtonLocation.endFloat,
       ),
-
-      // Drawer replaces leading (aka left)
-      drawer: isLefty ? drawer : null,
-
-      // End drawer replaces actions (aka trailing aka right)
-      endDrawer: isLefty ? null : drawer,
-
-      // Body
-      body: body,
-
-      // FAB
-      floatingActionButton: fab,
-      floatingActionButtonLocation: isLefty
-          ? FloatingActionButtonLocation.startFloat
-          : FloatingActionButtonLocation.endFloat,
     );
   }
 }
@@ -236,7 +244,7 @@ class _LargeBuild extends StatelessWidget {
   final PageLinks pageLinks;
   final Widget iconLinksMenu;
   final Widget body;
-  final Widget fab;
+  final Widget? fab;
 
   /// [DotnetScaffold] for when there is ample screen space
   /// Has a traditional footer-less web page layout
@@ -254,38 +262,40 @@ class _LargeBuild extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: Size(width, toolbarHeight),
-        child: Theme(
-          data: Theme.of(context).copyWith(appBarTheme: appBarTheme),
-          child: AppBar(
-            excludeHeaderSemantics: true,
-            toolbarHeight: toolbarHeight,
+    return SelectionArea(
+      child: Scaffold(
+        appBar: PreferredSize(
+          preferredSize: Size(width, toolbarHeight),
+          child: Theme(
+            data: Theme.of(context).copyWith(appBarTheme: appBarTheme),
+            child: AppBar(
+              excludeHeaderSemantics: true,
+              toolbarHeight: toolbarHeight,
 
-            // Leading (aka left)
-            leading: isLefty ? iconLinksMenu : logo,
-            leadingWidth: toolbarHeight + margin * 2,
+              // Leading (aka left)
+              leading: isLefty ? iconLinksMenu : logo,
+              leadingWidth: toolbarHeight + margin * 2,
 
-            // Title
-            title: pageLinks,
-            titleSpacing: 0,
-            centerTitle: true,
+              // Title
+              title: pageLinks,
+              titleSpacing: 0,
+              centerTitle: true,
 
-            // Action (aka trailing aka right)
-            actions: isLefty ? <Widget>[logo] : <Widget>[iconLinksMenu],
+              // Action (aka trailing aka right)
+              actions: isLefty ? <Widget>[logo] : <Widget>[iconLinksMenu],
+            ),
           ),
         ),
+
+        // Body
+        body: body,
+
+        // FAB
+        floatingActionButton: fab,
+        floatingActionButtonLocation: isLefty
+            ? FloatingActionButtonLocation.startFloat
+            : FloatingActionButtonLocation.endFloat,
       ),
-
-      // Body
-      body: body,
-
-      // FAB
-      floatingActionButton: fab,
-      floatingActionButtonLocation: isLefty
-          ? FloatingActionButtonLocation.startFloat
-          : FloatingActionButtonLocation.endFloat,
     );
   }
 }

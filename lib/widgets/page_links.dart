@@ -1,3 +1,8 @@
+/* dotnet
+ * Copyright (c) 2022-2024 Empathetech LLC. All rights reserved.
+ * See LICENSE for distribution and usage details.
+ */
+
 import '../screens/export.dart';
 import '../utils/export.dart';
 
@@ -42,7 +47,7 @@ class PageLinks extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final EzSpacer spacer = EzSpacer.row(spacing);
+    final EzSpacer spacer = EzSpacer(space: spacing, vertical: false);
 
     final EzLink products = EzLink(
       Lang.of(context)!.psPageTitle,

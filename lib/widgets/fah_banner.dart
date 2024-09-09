@@ -1,4 +1,10 @@
+/* dotnet
+ * Copyright (c) 2022-2024 Empathetech LLC. All rights reserved.
+ * See LICENSE for distribution and usage details.
+ */
+
 import '../utils/export.dart';
+import '../widgets/export.dart';
 
 import 'package:flutter/material.dart';
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
@@ -17,7 +23,7 @@ class FaHBanner extends StatelessWidget {
   Widget build(BuildContext context) {
     final double padding = EzConfig.get(paddingKey);
 
-    final EzSpacer padder = EzSpacer(padding);
+    final EzSpacer padder = EzSpacer(space: padding);
 
     final Lang l10n = Lang.of(context)!;
 
@@ -37,13 +43,13 @@ class FaHBanner extends StatelessWidget {
                 maxHeight: MediaQuery.textScalerOf(context).scale(imageSize),
               ),
               child: EzLinkImageProvider(
-                image: const AssetImage(fahIconPath),
+                image: fahImage,
                 url: Uri.parse(faHLink),
                 semanticLabel: l10n.gFahIconHint,
                 tooltip: faHLink,
               ),
             ),
-            EzSwapSpacer(padding),
+            EzSwapSpacer(space: padding),
 
             // External links && info
             Column(
@@ -64,7 +70,8 @@ class FaHBanner extends StatelessWidget {
                     style: bodyStyle,
                     textAlign: TextAlign.center,
                     url: Uri.parse(empathFoldingTeam),
-                    semanticsLabel: empathetic,
+                    semanticsLabel: l10n.fahTeamHint,
+                    richSemanticsLabel: empathetic,
                     tooltip: empathFoldingTeam,
                   ),
                   EzPlainText(

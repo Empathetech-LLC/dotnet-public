@@ -1,3 +1,8 @@
+/* dotnet
+ * Copyright (c) 2022-2024 Empathetech LLC. All rights reserved.
+ * See LICENSE for distribution and usage details.
+ */
+
 import '../../utils/export.dart';
 import '../../widgets/export.dart';
 
@@ -18,22 +23,11 @@ class _FinPlanScreenState extends State<FinPlanScreen> {
   final double space = EzConfig.get(spacingKey);
   final double margin = EzConfig.get(marginKey);
 
-  late final EzSpacer spacer = EzSpacer(space);
-  late final EzSpacer rowSpacer = EzSpacer.row(space);
-  late final EzSpacer separator = EzSpacer(space * 2);
+  static const EzSpacer spacer = EzSpacer();
+  static const EzSpacer rowSpacer = EzSpacer(vertical: false);
+  static const EzSeparator separator = EzSeparator();
 
   late final TextTheme textTheme = Theme.of(context).textTheme;
-  late final Color textColor = Theme.of(context).colorScheme.onSurface;
-
-  late final TextStyle? headlineStyle = textTheme.headlineLarge?.copyWith(
-    color: textColor,
-  );
-  late final TextStyle? titleStyle = textTheme.titleLarge?.copyWith(
-    color: textColor,
-  );
-  late final TextStyle? bodyStyle = textTheme.bodyLarge?.copyWith(
-    color: textColor,
-  );
 
   late final Lang l10n = Lang.of(context)!;
 
@@ -45,11 +39,10 @@ class _FinPlanScreenState extends State<FinPlanScreen> {
   final List<double> goals = <double>[];
   int goalIndex = 0;
 
-  double currGoal = 1000000; // Silly placeholder
+  double currGoal = 1000000000; // Silly placeholder
   late String currGoalStr = asUSD(currGoal);
 
-  late double profit = max(income - currGoal, 0);
-  late String profitStr = (profit == 0) ? l10n.fpsEventual : asUSD(profit);
+  late double netProfit = max(income - currGoal, 0);
 
   void initFinancialData() async {
     goals.addAll(await calculateGoals());
@@ -70,8 +63,7 @@ class _FinPlanScreenState extends State<FinPlanScreen> {
       goalIndex = min(i, goals.length - 1);
       currGoal = realGoal;
       currGoalStr = asUSD(currGoal);
-      profit = max(income - currGoal, 0);
-      profitStr = (profit == 0) ? l10n.fpsEventual : asUSD(profit);
+      netProfit = max(income - currGoal, 0);
     });
   }
 
@@ -108,17 +100,17 @@ class _FinPlanScreenState extends State<FinPlanScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final TextStyle? subTitleStyle = bodyStyle?.copyWith(
-      fontSize: titleStyle?.fontSize,
+    final TextStyle? subTitleStyle = textTheme.bodyLarge?.copyWith(
+      fontSize: textTheme.titleLarge?.fontSize,
     );
 
     final Widget progressBar = SizedBox(
       width: widthOf(context) * 0.5,
-      height: headlineStyle!.fontSize,
+      height: textTheme.headlineLarge!.fontSize,
       child: LinearProgressIndicator(
         value: income / currGoal,
         color: Theme.of(context).colorScheme.secondary,
-        backgroundColor: headlineStyle!.color,
+        backgroundColor: textTheme.headlineLarge!.color,
         minHeight: double.infinity,
         borderRadius: BorderRadius.circular(5),
       ),
@@ -128,7 +120,7 @@ class _FinPlanScreenState extends State<FinPlanScreen> {
       body: EzScreen(
         child: EzScrollView(
           children: <Widget>[
-            if (space > margin) EzSpacer(space - margin),
+            if (space > margin) EzSpacer(space: space - margin),
 
             // X of Y goal raised
             Semantics(
@@ -197,7 +189,7 @@ class _FinPlanScreenState extends State<FinPlanScreen> {
                   // Headline
                   Text(
                     l10n.fpsRaised(currGoalStr, incomeStr),
-                    style: headlineStyle,
+                    style: textTheme.headlineLarge,
                     textAlign: TextAlign.center,
                   ),
                 ]),
@@ -206,17 +198,20 @@ class _FinPlanScreenState extends State<FinPlanScreen> {
             separator,
 
             // Profit distribution
-            Text(
-              l10n.fpsSplit(profitStr),
-              style: subTitleStyle,
-              textAlign: TextAlign.center,
-            ),
+            (netProfit > 0)
+                ? Text(
+                    l10n.fpsSplit(getSplit(netProfit)),
+                    style: subTitleStyle,
+                    textAlign: TextAlign.center,
+                  )
+                : Text(
+                    l10n.fpsEventual,
+                    style: subTitleStyle,
+                    textAlign: TextAlign.center,
+                  ),
             separator,
 
-            CharityOrgs(
-              titleStyle: titleStyle,
-              bodyStyle: bodyStyle,
-            ),
+            CharityOrgs(titleStyle: textTheme.titleLarge),
             separator,
 
             // Finances source

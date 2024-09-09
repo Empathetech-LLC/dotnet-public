@@ -1,3 +1,8 @@
+/* dotnet
+ * Copyright (c) 2022-2024 Empathetech LLC. All rights reserved.
+ * See LICENSE for distribution and usage details.
+ */
+
 import '../utils/export.dart';
 
 import 'package:flutter/material.dart';
@@ -22,16 +27,13 @@ class EFUIShoutOut extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         EzRichText(<InlineSpan>[
-          EzPlainText(
-            text: l10n.gDontChaWish,
-            style: style,
-          ),
+          EzPlainText(text: l10n.gDontChaWish, style: style),
           EzInlineLink(
             l10n.gMeQ,
             style: style,
             textAlign: TextAlign.center,
             url: Uri.parse(sourceLink),
-            semanticsLabel: l10n.gEFUISourceHint,
+            semanticsLabel: EFUILang.of(context)!.gEFUISourceHint,
             tooltip: sourceLink,
           ),
         ], textAlign: TextAlign.center),

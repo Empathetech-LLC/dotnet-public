@@ -1,3 +1,8 @@
+/* dotnet
+ * Copyright (c) 2022-2024 Empathetech LLC. All rights reserved.
+ * See LICENSE for distribution and usage details.
+ */
+
 import '../utils/export.dart';
 
 import 'package:flutter/material.dart';
@@ -5,13 +10,10 @@ import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 
 class CharityOrgs extends StatelessWidget {
   final TextStyle? titleStyle;
-  final TextStyle? bodyStyle;
 
-  const CharityOrgs({
-    super.key,
-    required this.titleStyle,
-    required this.bodyStyle,
-  });
+  const CharityOrgs({super.key, required this.titleStyle});
+
+  // Define custom Widgets //
 
   /// Return the Charity's logo [Image] with a [Colors.white] background
   Widget logoImage({
@@ -35,140 +37,47 @@ class CharityOrgs extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bool limitedSpace = ScreenSpace.of(context)?.isLimited ?? false;
+    // Gather theme data //
 
-    final double space = EzConfig.get(spacingKey);
-
-    final EzSpacer spacer = EzSpacer(space);
-    final EzSpacer rowSpacer = EzSpacer.row(space);
-    final EzSpacer separator = EzSpacer(space * 2);
-
-    final double twoThirdsWidth = widthOf(context) * (2 / 3);
-    final double sharedColWidth = (widthOf(context) - 2 * space) * 0.3;
-    final double imageWidth = MediaQuery.textScalerOf(context).scale(imageSize);
+    const EzSwapSeparator separator = EzSwapSeparator();
 
     final Lang l10n = Lang.of(context)!;
 
-    final List<Widget> anitaB = <Widget>[
-      logoImage(
-        width: imageWidth,
-        url: anitaBorgLink,
-        imagePath: anitaBorgIconPath,
-        semanticLabel: l10n.gAnitaBorgIconHint,
-      ),
-      spacer,
-      EzLink(
-        'AnitaB.org',
-        style: titleStyle,
-        textAlign: TextAlign.center,
-        url: Uri.parse(anitaBorgCNavLink),
-        semanticsLabel: l10n.fpsAnitaCNavHint,
-        tooltip: anitaBorgCNavLink,
-      ),
-      spacer,
-      Text(
-        l10n.fpsAnitaMission,
-        style: bodyStyle,
-        textAlign: TextAlign.center,
-      ),
-    ];
+    // Return the build //
 
-    final List<Widget> codeDotOrg = <Widget>[
-      logoImage(
-        width: imageWidth,
-        url: codeDotOrgLink,
-        imagePath: codeDotOrgIconPath,
-        semanticLabel: l10n.gCodeDotOrgIconHint,
-      ),
-      spacer,
-      EzLink(
-        'code.org',
-        style: titleStyle,
-        textAlign: TextAlign.center,
-        url: Uri.parse(codeDotOrgCNavLink),
-        semanticsLabel: l10n.fpsCodeCNavHint,
-        tooltip: codeDotOrgCNavLink,
-      ),
-      spacer,
-      Text(
-        l10n.fpsCodeMission,
-        style: bodyStyle,
-        textAlign: TextAlign.center,
-      ),
-    ];
+    final double imageWidth = MediaQuery.textScalerOf(context).scale(imageSize);
 
-    final List<Widget> worldSavvy = <Widget>[
-      logoImage(
-        width: imageWidth,
-        url: worldSavvyLink,
-        imagePath: worldSavvyIconPath,
-        semanticLabel: l10n.gWorldSavvyIconHint,
-        color: Colors.transparent,
-      ),
-      spacer,
-      EzLink(
-        'World Savvy',
-        style: titleStyle,
-        textAlign: TextAlign.center,
-        url: Uri.parse(worldSavvyCNavLink),
-        semanticsLabel: l10n.fpsSavvyCNavHint,
-        tooltip: worldSavvyCNavLink,
-      ),
-      spacer,
-      Text(
-        l10n.fpsSavvyMission,
-        style: bodyStyle,
-        textAlign: TextAlign.center,
-      ),
-    ];
+    return EzRowCol.sym(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: <Widget>[
+        // AnitaB.org
+        logoImage(
+          width: imageWidth,
+          url: anitaBorgLink,
+          imagePath: anitaBorgIconPath,
+          semanticLabel: l10n.gAnitaBorgIconHint,
+        ),
+        separator,
 
-    return limitedSpace
-        ? ConstrainedBox(
-            constraints: BoxConstraints(maxWidth: twoThirdsWidth),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                ...anitaB,
-                separator,
-                ...codeDotOrg,
-                separator,
-                ...worldSavvy,
-              ],
-            ),
-          )
-        : Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              // AnitaB.org
-              ConstrainedBox(
-                constraints: BoxConstraints(maxWidth: sharedColWidth),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: anitaB,
-                ),
-              ),
-              rowSpacer,
+        // Code.org
+        logoImage(
+          width: imageWidth,
+          url: codeDotOrgLink,
+          imagePath: codeDotOrgIconPath,
+          semanticLabel: l10n.gCodeDotOrgIconHint,
+        ),
+        separator,
 
-              // Code.org
-              ConstrainedBox(
-                constraints: BoxConstraints(maxWidth: sharedColWidth),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: codeDotOrg,
-                ),
-              ),
-              rowSpacer,
-
-              // World Savvy
-              ConstrainedBox(
-                constraints: BoxConstraints(maxWidth: sharedColWidth),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: worldSavvy,
-                ),
-              ),
-            ],
-          );
+        // World Savvy
+        logoImage(
+          width: imageWidth,
+          url: worldSavvyLink,
+          imagePath: worldSavvyIconPath,
+          semanticLabel: l10n.gWorldSavvyIconHint,
+          color: Colors.transparent,
+        ),
+      ],
+    );
   }
 }

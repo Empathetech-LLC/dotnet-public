@@ -1,3 +1,8 @@
+/* dotnet
+ * Copyright (c) 2022-2024 Empathetech LLC. All rights reserved.
+ * See LICENSE for distribution and usage details.
+ */
+
 import '../utils/export.dart';
 import '../widgets/export.dart';
 
@@ -15,24 +20,12 @@ class _TeamScreenState extends State<TeamScreen> {
   // Gather the theme data //
 
   final double padding = EzConfig.get(paddingKey);
-  final double spacing = EzConfig.get(paddingKey);
 
-  late final EzSpacer padder = EzSpacer(padding);
-  late final EzSpacer spacer = EzSpacer(spacing);
-  late final EzSpacer separator = EzSpacer(spacing * 2);
+  late final EzSpacer padder = EzSpacer(space: padding);
+  static const EzSpacer spacer = EzSpacer();
+  static const EzSeparator separator = EzSeparator();
 
   late final TextTheme textTheme = Theme.of(context).textTheme;
-  late final Color textColor = Theme.of(context).colorScheme.onSurface;
-
-  late final TextStyle? headlineStyle = textTheme.headlineLarge?.copyWith(
-    color: textColor,
-  );
-  late final TextStyle? titleStyle = textTheme.titleLarge?.copyWith(
-    color: textColor,
-  );
-  late final TextStyle? bodyStyle = textTheme.bodyLarge?.copyWith(
-    color: textColor,
-  );
 
   late final Lang l10n = Lang.of(context)!;
 
@@ -43,6 +36,94 @@ class _TeamScreenState extends State<TeamScreen> {
     super.didChangeDependencies();
     setPageTitle(l10n.tsPageTitle);
   }
+
+  // Define custom widgets //
+
+  late final Widget spanishCredits = Column(
+    mainAxisSize: MainAxisSize.min,
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: <Widget>[
+      // Avatar
+      Container(
+        constraints: BoxConstraints(
+          maxHeight: MediaQuery.textScalerOf(context).scale(imageSize),
+        ),
+        child: EzLinkWidget(
+          url: Uri.parse(saraHLink),
+          semanticLabel: l10n.gFiverrPage(saraH),
+          tooltip: saraHLink,
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(imageSize),
+            child: const Image(image: saraHProfile),
+          ),
+        ),
+      ),
+      padder,
+
+      // Information
+      MergeSemantics(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text(
+              l10n.tsSpanish,
+              style: textTheme.titleLarge,
+              textAlign: TextAlign.center,
+            ),
+            Text(
+              saraH,
+              style: textTheme.bodyLarge,
+              textAlign: TextAlign.center,
+            ),
+          ],
+        ),
+      ),
+    ],
+  );
+
+  late final Widget frenchCredits = Column(
+    mainAxisSize: MainAxisSize.min,
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: <Widget>[
+      // Avatar
+      Container(
+        constraints: BoxConstraints(
+          maxHeight: MediaQuery.textScalerOf(context).scale(imageSize),
+        ),
+        child: EzLinkWidget(
+          url: Uri.parse(alexisNLink),
+          semanticLabel: l10n.gFiverrPage(alexisN),
+          tooltip: alexisNLink,
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(imageSize),
+            child: const Image(image: alexisNProfile),
+          ),
+        ),
+      ),
+      padder,
+
+      // Information
+      MergeSemantics(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text(
+              l10n.tsFrench,
+              style: textTheme.titleLarge,
+              textAlign: TextAlign.center,
+            ),
+            Text(
+              alexisN,
+              style: textTheme.bodyLarge,
+              textAlign: TextAlign.center,
+            ),
+          ],
+        ),
+      ),
+    ],
+  );
 
   // Return the build //
 
@@ -56,7 +137,7 @@ class _TeamScreenState extends State<TeamScreen> {
 
             Text(
               l10n.tsCore,
-              style: headlineStyle,
+              style: textTheme.headlineLarge,
               textAlign: TextAlign.center,
             ),
             padder,
@@ -73,11 +154,11 @@ class _TeamScreenState extends State<TeamScreen> {
                         MediaQuery.textScalerOf(context).scale(imageSize),
                   ),
                   child: EzImage(
-                    image: const AssetImage(founderIconPath),
+                    image: founderImage,
                     semanticLabel: l10n.tsTheFounderImageHint,
                   ),
                 ),
-                EzSwapSpacer(padding),
+                EzSwapSpacer(space: padding),
 
                 // Information
                 MergeSemantics(
@@ -87,12 +168,12 @@ class _TeamScreenState extends State<TeamScreen> {
                     children: <Widget>[
                       Text(
                         l10n.tsTheFounder,
-                        style: titleStyle,
+                        style: textTheme.titleLarge,
                         textAlign: TextAlign.center,
                       ),
                       Text(
                         mike,
-                        style: bodyStyle,
+                        style: textTheme.bodyLarge,
                         textAlign: TextAlign.center,
                       ),
                     ],
@@ -106,15 +187,38 @@ class _TeamScreenState extends State<TeamScreen> {
 
             Text(
               l10n.tsCommunity,
-              style: headlineStyle,
+              style: textTheme.headlineLarge,
               textAlign: TextAlign.center,
             ),
             padder,
 
             // Folding@home
             FaHBanner(
-              titleStyle: titleStyle,
-              bodyStyle: bodyStyle,
+              titleStyle: textTheme.titleLarge,
+              bodyStyle: textTheme.bodyLarge,
+            ),
+            separator,
+
+            // Freelance //
+
+            Text(
+              l10n.tsFreelance,
+              style: textTheme.headlineLarge,
+              textAlign: TextAlign.center,
+            ),
+            padder,
+
+            EzRowCol(
+              row: Row(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[spanishCredits, separator, frenchCredits],
+              ),
+              col: Column(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[spanishCredits, spacer, frenchCredits],
+              ),
             ),
             spacer,
           ],

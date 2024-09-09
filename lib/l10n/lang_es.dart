@@ -1,136 +1,147 @@
 import 'lang.dart';
 
+// ignore_for_file: type=lint
+
 /// The translations for Spanish Castilian (`es`).
 class LangEs extends Lang {
   LangEs([String locale = 'es']) : super(locale);
 
   @override
   String get gLogoHint =>
-      'Logotipo de Empathetic LLC, un reloj de arena en 2D. Actívalo para ir a la página principal';
+      'Logotipo de Empathetic LLC: un reloj de arena bidimensional. Activar para ir a la página de inicio';
 
   @override
-  String get gHomeHint => 'Abrir la página principal';
+  String get gHomeHint => 'Abrir la página de inicio';
 
   @override
   String get gProductsHint => 'Abrir la página de productos';
 
   @override
-  String get gPlanHint => 'Abrir la página de plan';
+  String get gPlanHint => 'Abrir la página del plan';
 
   @override
-  String get gTeamHint => 'Abrir la página de equipo';
+  String get gTeamHint => 'Abrir la página del equipo';
 
   @override
-  String get gSupportHint => 'Abrir la página de apoyo';
+  String get gSupportHint => 'Abrir la página de soporte';
 
   @override
   String get gSocials => 'Sociales';
 
   @override
-  String get gEmail => 'Correo electrónico';
+  String get gEmail => 'Email';
 
   @override
   String gEmailTo(Object recipient) {
-    return 'Envía un correo electrónico a $recipient';
+    return 'Email $recipient';
   }
 
   @override
-  String get gNewsletter => 'Boletin informativo';
+  String get gNewsletter => 'Boletín de noticias';
 
   @override
-  String get gFeedback => 'Comentarios';
+  String get gFeedback => 'Feedback';
 
   @override
-  String get gSettingsHint => 'Abrir la página de configuración';
+  String get gSettingsHint => 'Abrir la página de configuraciones';
 
   @override
-  String get gReachOut => 'Comunícate';
-
-  @override
-  String get gEFUISourceHint =>
-      'Activa para abrir la página de GitHub para EFUI';
+  String get gReachOut => 'Contacto';
 
   @override
   String get gEmpathetechGitHint =>
-      'Activa para abrir la página de GitHub para Empathetic LLC';
+      'Abrir la página de GitHub de Empathetic LLC';
 
   @override
-  String get gDontChaWish => '¿No desearías que tu interfaz fuera divertida ';
+  String get gDontChaWish => '¿No te gustaría que tu frontend fuera divertido ';
 
   @override
   String get gMeQ => 'como yo?';
 
   @override
-  String get gDontCha => '¿No desearías?';
+  String get gDontCha => '¿No?';
 
   @override
   String get gDontChaHint =>
-      'Activa para abrir la página de GitHub del código fuente de esta pantalla';
+      'Abre la página de GitHub del código fuente de esta pantalla';
 
   @override
   String get gFahIconHint =>
-      'Logotipo de Folding at home, activar para abrir su sitio web';
+      'Logotipo de Folding at home: una molécula de proteína. Activar para abrir su página';
 
   @override
   String get gAnitaBorgIconHint =>
-      'Logotipo de AnitaB.org, activar para abrir su sitio web';
+      'Logotipo de AnitaB.org: un prisma de arco iris. Activar para abrir su sitio';
 
   @override
   String get gCodeDotOrgIconHint =>
-      'Logotipo de code.org, activar para abrir su sitio web';
+      'Logotipo de code.org: teclas de un teclado deletreando la palabra code. Activar para abrir su sitio';
 
   @override
   String get gWorldSavvyIconHint =>
-      'Logotipo de World Savvy, activar para abrir su sitio web';
+      'Logotipo de World Savvy: un dibujo del globo terráqueo a lápiz. Activar para abrir su sitio';
 
   @override
-  String get hsSlogan => 'Construir un mundo mejor\nbit x bit';
+  String gFiverrPage(Object user) {
+    return 'Abre la página de $user en Fiverr';
+  }
 
   @override
-  String get hsSloganFix => 'Construir un mundo mejor\nbit by bit';
+  String get hsSlogan => 'Construye un mundo mejor\nbit x bit';
+
+  @override
+  String get hsSloganFix => 'Construye un mundo mejor\npoco a poco';
 
   @override
   String get hsVideoHint =>
-      'Animación del logotipo de Empathetic LLC: El nombre de Empathetic se transforma en su logotipo';
-
-  @override
-  String get csReversedNote =>
-      'NOTA: ¡Los colores del tema de la barra superior están (intencionalmente) invertidos!';
+      'Logotipo animado de Empathetic LLC: las letras de Empathetic se transforman en el logotipo bidimensional del reloj de arena';
 
   @override
   String get psPageTitle => 'Productos';
 
   @override
-  String get psEFUISlogan => 'Crea aplicaciones para cualquier persona';
+  String get psEFUISlogan => 'Crea apps para todos';
 
   @override
   String get psEFUIDescription1 =>
-      'NOTA: Esto fue traducido por IA\n\nEFUI es una ';
+      'EFUI es un kit de inicio para creaciones accesibles de verdad ';
 
   @override
   String get psEFUIDescription2 =>
-      ' library de código abierto que proporciona las herramientas para construir aplicaciones verdaderamente accesibles.';
+      ' apps.\nEFUI se encarga de todos los aspectos de la accesibilidad digital...';
 
   @override
   String get psPlatform => 'Disponibilidad de plataforma';
 
   @override
   String get psPlatformContent =>
-      'EFUI soporta todas las plataformas. ¡Puedes implementar en Android, iOS, Linux, MacOS, Windows y Web!';
+      'Las apps de Empathetech soportan usuarios en todas las plataformas.\n¡Puedes usar EFUI para crear apps de Android, iOS, Linux, MacOS, Windows y Web!';
 
   @override
-  String get psResponsive => 'Diseño responsive';
+  String get psPlatformContentFix =>
+      'Las apps de Empathetic soportan usuarios en todas las plataformas.\n¡Puedes usar EFUI para crear apps de Android, iOS, Linux, MacOS, Windows y Web!';
+
+  @override
+  String get psResponsive => 'Diseño adaptativo';
 
   @override
   String get psResponsiveContent =>
-      'El conjunto de herramientas de EFUI ayuda a construir aplicaciones que responden de manera elegante al espacio de la pantalla. ¡Para verlo en acción, juega con la ventana de la aplicación que estás usando ahora!';
+      'Las apps de Empathetech soportan usuarios en cualquier pantalla.\nPara verlo en acción, ¡interactúa con la ventana que estás usando ahora mismo!';
 
   @override
-  String get psScreen => 'Soporte de lector de pantalla';
+  String get psResponsiveContentFix =>
+      'Las apps de Empathetic soportan usuarios en cualquier pantalla.\nPara verlo en acción, ¡interactúa con la ventana que estás usando ahora mismo!';
+
+  @override
+  String get psScreen => 'Soporte para lectores de pantalla';
 
   @override
   String get psScreenContent =>
-      'Todo dentro de EFUI ha sido verificado manualmente con ';
+      'Las apps de Empathetech ayudan a los usuarios que lo necesitan ';
+
+  @override
+  String get psScreenContentFix =>
+      'Las apps de Empathetic ayudan a los usuarios que lo necesitan ';
 
   @override
   String get psTalkBackHint => 'Abrir un enlace a la documentación de TalkBack';
@@ -147,21 +158,37 @@ class LangEs extends Lang {
 
   @override
   String get psCustomContent =>
-      'La única manera de ser verdaderamente accesible para TODOS los clientes es capacitarlos con la libertad de elección.\nY eso es exactamente lo que hace EFUI; permite que cada aspecto del tema de una aplicación sea controlado por el usuario.\n¡Para verlo en acción, haz clic en el engranaje de configuración en la parte inferior de tu pantalla!';
+      'Las apps de Empathetech apoyan a todos los usuarios dándoles la libertad de elegir.\nEFUI expone cada aspecto del tema de una aplicación para que sea controlado por el usuario.\nPara verlo en acción, ¡haz clic en el engranaje de configuración en la parte inferior de tu pantalla!';
+
+  @override
+  String get psCustomContentFix =>
+      'Las apps de Empathetic apoyan a todos los usuarios dándoles la libertad de elegir.\nEFUI expone cada aspecto del tema de una aplicación para que sea controlado por el usuario.\nPara verlo en acción, ¡haz clic en el engranaje de configuración en la parte inferior de tu pantalla!';
 
   @override
   String get psInternational => 'Internacionalización';
 
   @override
   String get psInternationalContent =>
-      'Todo el texto externo de EFUI ha sido traducido al español. Con esto, EFUI proporciona una infraestructura bien organizada para futuras traducciones ilimitadas.';
+      'Las apps de Empathetech apoyan a los usuarios estén donde estén.\nAhora mismo, EFUI está disponible en inglés, español y francés.\nAdemás, tiene la infraestructura para ilimitadas futuras traducciones.';
+
+  @override
+  String get psInternationalContentFix =>
+      'Las apps de Empathetic apoyan a los usuarios estén donde estén.\nAhora mismo, EFUI está disponible en inglés, español y francés.\nAdemás, tiene la infraestructura para ilimitadas futuras traducciones.';
+
+  @override
+  String get psLive => 'Velo en directo';
+
+  @override
+  String psLiveHint(Object platform) {
+    return 'El icono de Open UI: un configuración sandbox. Abrir un enlace a Open UI en $platform';
+  }
 
   @override
   String get psEFUITagLine =>
-      'Cuando se construye con EFUI, tus aplicaciones pueden realmente llegar a cualquier público.\n¡Trabajemos juntos para hacer de internet un lugar más accesible!';
+      'Cuando se construye con EFUI, tus apps pueden llegar a cualquier audiencia.\n¡Mejoremos Internet juntos!';
 
   @override
-  String get psConsult => ' para consulta y contratación';
+  String get psConsult => ' para consultas y contrataciones.';
 
   @override
   String get plsPageTitle => 'Plan';
@@ -177,76 +204,25 @@ class LangEs extends Lang {
 
   @override
   String get plsIDProblemContent =>
-      'Traducido por IA\n\nEstá claro que los modelos de negocio centrados en la ganancia no son sostenibles.\n\nPor definición, si la ganancia es lo primero, aspectos como el bienestar del cliente y la responsabilidad global son consideraciones secundarias.\n\nEspecialmente en tecnología, donde los proveedores de servicios a menudo están desconectados de sus clientes.';
+      'Los modelos de negocio que dan prioridad al beneficio no son sostenibles.\n\nPor definición, cosas como trabajar por una misión, tratar bien a las personas y consumir recursos de forma responsable pasan a un segundo plano.\n\nLos gigantes tecnológicos no se conforman con llevarse nuestro dinero. Ahora construyen productos para captar nuestras identidades y monopolizar nuestras mentes. Y nadie les dice nada.';
 
   @override
   String get plsBeSolution => 'Sé parte de la solución';
 
   @override
   String get plsBeSolutionContent =>
-      'Traducido por IA\n\nAfortunadamente, hay technologists increíbles en todo el mundo trabajando juntas hacia una narrativa mejor. Una donde los proveedores de servicios y los clientes tienen una relación activa, saludable y mutuamente beneficiosa.\n\nLa comunidad de código abierto.\n\nEl software se considera de código abierto cuando el código está disponible gratuitamente para que cualquiera lo vea (siempre), modifique (a menudo) y/o distribuya (a veces). Es software construido por personas que reconocen que los problemas compartidos requieren soluciones compartidas.\n\nEntonces, ¿cómo hace uno la transición de poner la ganancia primero (código cerrado) a código abierto? Requiere mucho tiempo, energía y conocimientos previos.\n\nAhí es donde entramos nosotros.';
+      'Afortunadamente, hay tecnólogos increíbles por todo el mundo que luchan conjuntamente por una mejor narrativa. Una en la que los proveedores de servicios y los clientes mantengan una relación activa, saludable y mutuamente beneficiosa.\n\nLa comunidad del código abierto.\n\nEn su esencia, el software de código abierto está disponible abiertamente a todos. Muchos proyectos también pueden modificarse y redistribuirse libremente. Se trata de software sin nada que ocultar, creado por personas que reconocen que los problemas colectivos requieren soluciones colectivas.\n\nEntonces, ¿cómo se pasa del código cerrado al código abierto? Requiere mucho tiempo, energía y conocimiento.\n\nAhí es donde entramos nosotros.';
 
   @override
-  String get plsProvideValue => 'Proporciona valor';
+  String get plsProvideValue => 'Aportar valor';
 
   @override
   String get plsProvideValueContent1 =>
-      'Traducido por IA\n\nNuestra misión es reequilibrar el poder en la tecnología haciendo el software de código abierto más accesible.\n\nConstruiremos puentes entre la comunidad de código abierto y aquellos sin suficiente tiempo, energía o conocimiento previo.\n\nConstruiremos aplicaciones accesibles y multiplataforma para gestionar fácilmente un ecosistema de herramientas de código abierto.';
+      'Nuestra misión es reequilibrar el poder en la tecnología, haciendo que el software de código abierto sea más accesible.\n\nConstruiremos aplicaciones accesibles y multiplataforma para gestionar fácilmente un ecosistema de herramientas de código abierto.\n\nConstruiremos puentes entre la comunidad de código abierto y aquellos que no tienen suficiente tiempo, energía o conocimiento.\n\nY no se pueden construir puentes (o aplicaciones) sin una base sólida. Es por eso que ';
 
   @override
   String get plsProvideValueContent2 =>
-      'Pero, ¡no se pueden construir puentes (o aplicaciones) sin una base sólida! Por eso, ';
-
-  @override
-  String get plsProvideValueContent3 =>
-      ' existe. Nos enorgullece cumplir las palabras con hechos, y hemos hecho proactivamente nuestro UI de código abierto.';
-
-  @override
-  String get plsDoItRight => 'Hazlo bien';
-
-  @override
-  String get plsDoItRightContent1 =>
-      'Traducido por IA\n\nSi los proveedores de servicios recuerdan mantenerse Empathetech, ';
-
-  @override
-  String get plsDoItRightContent1Fix =>
-      'Traducido por IA\n\nSi los proveedores de servicios recuerdan mantenerse Empathetic,';
-
-  @override
-  String get plsSaaS => 'Software as a Service';
-
-  @override
-  String get plsSaaSHint =>
-      'Abre el artículo de Wikipedia para Software as a Service';
-
-  @override
-  String get plsDoItRightContent2 => ' (SaaS) puede beneficiar a todos.';
-
-  @override
-  String get plsDoItRightContent3 =>
-      'Para empezar: un ecosistema de código cerrado de software de código abierto sería paradójico. Entonces, aunque los compromisos de licencia oficiales vendrán con los lanzamientos oficiales, las aplicaciones de Empathetech se lanzarán bajo una ';
-
-  @override
-  String get plsDoItRightContent3Fix =>
-      'Para empezar: un ecosistema de código cerrado de software de código abierto sería paradójico. Entonces, aunque los compromisos de licencia oficiales vendrán con los lanzamientos oficiales, las aplicaciones de Empathetic se lanzarán bajo una ';
-
-  @override
-  String get plsDualLicense => 'licencia dual';
-
-  @override
-  String get plsDualLicenseHint =>
-      'Abre el artículo de Wikipedia para Multi-licencia';
-
-  @override
-  String get plsDoItRightContent4 =>
-      'Además, para la(s) versión(es) de código cerrado...\n\n\t\t1. Todos los productos SaaS de Empathetech tendrán una opción de duración ilimitada.\n\t\t2. Vender la información personal de otra persona es inmoral; el software de Empathetech nunca subastará su identidad digital.\n\nUna última nota sobre puentes. Un puente sin un lugar a donde ir, o sin nadie que quiera usarlo, no es un puente; es un desperdicio de recursos.\n\nAsí que, otro compromiso: independientemente de la estructura oficial (actualmente LLC), Empathetech operará como una entidad sin fines de lucro y basada en la misión. Lo que significa...\n\n\t\t- El 100% de las ganancias netas derivadas de todas las aplicaciones del ecosistema de código abierto se destinará a los proyectos en los que se basan.\n\t\t- El 100% de las ganancias netas derivadas de todas las demás fuentes (consultoría, donaciones, mercancía, etc.) se destinará a promover la equidad global en la educación tecnológica.';
-
-  @override
-  String get plsDoItRightContent4Fix =>
-      'Además, para la(s) versión(es) de código cerrado...\n\n\t\t1. Todos los productos SaaS de Empathetic tendrán una opción de duración ilimitada.\n\t\t2. Vender la información personal de otra persona es inmoral; el software de Empathetic nunca subastará su identidad digital.\n\nUna última nota sobre puentes. Un puente sin un lugar a donde ir, o sin nadie que quiera usarlo, no es un puente; es un desperdicio de recursos.\n\nAsí que, otro compromiso: independientemente de la estructura oficial (actualmente LLC), Empathetic operará como una entidad sin fines de lucro y basada en la misión. Lo que significa...\n\n\t\t- El 100% de las ganancias netas derivadas de todas las aplicaciones del ecosistema de código abierto se destinará a los proyectos en los que se basan.\n\t\t- El 100% de las ganancias netas derivadas de todas las demás fuentes (consultoría, donaciones, mercancía, etc.) se destinará a promover la equidad global en la educación tecnológica.';
-
-  @override
-  String get plsDoItRightContent5 => 'Revisa el ';
+      ' existe. Nos enorgullecemos de convertir las palabras en acciones, y hemos hecho que nuestra interfaz de usuario accesible sea de código abierto.\n\nConstruyamos juntos un mundo mejor, poco a poco.';
 
   @override
   String get fpsPageTitle => 'Plan financiero';
@@ -258,60 +234,36 @@ class LangEs extends Lang {
   String get fpsGoal0 => 'Cubrir gastos';
 
   @override
-  String get fpsGoal1 => 'Pagar salario mínimo';
+  String get fpsGoal1 => 'Pagar un salario mínimo';
 
   @override
-  String get fpsGoal2 => 'Pagar un salario que le permita sobrevivir';
+  String get fpsGoal2 => 'Pagar un salario básico';
 
   @override
-  String get fpsGoal3 => 'Pagar un salario digno';
+  String get fpsGoal3 => 'Pagar un salario decente';
 
   @override
-  String get fpsGoal4 => 'Pagar un salario cómodo';
+  String get fpsGoal4 => 'Pagar un salario digno';
 
   @override
   String fpsRaised(Object goal, Object income) {
-    return '$income de $goal recaudados';
+    return '$income de $goal aumentado';
   }
 
   @override
-  String fpsSplit(Object profit) {
-    return 'Las ganancias de $profit se repartirán equitativamente entre...';
+  String fpsSplit(Object split) {
+    return '$split será donado a...';
   }
 
   @override
-  String get fpsEventual => 'eventual';
+  String get fpsEventual => 'Cualquier beneficio futuro se repartirá con...';
 
   @override
-  String get fpsAnitaCNavHint =>
-      'Abrir un enlace a AnitaB.org en Charity Navigator';
-
-  @override
-  String get fpsCodeCNavHint =>
-      'Abrir un enlace a code.org en Charity Navigator';
-
-  @override
-  String get fpsSavvyCNavHint =>
-      'Abrir un enlace a World Savvy en Charity Navigator';
-
-  @override
-  String get fpsAnitaMission =>
-      'Traducido por IA\n\nAnitaB.org visualiza un futuro en el que las personas que imaginan y construyen tecnología reflejen a las personas y sociedades para las cuales la construyen. Conectan, inspiran y guían a las mujeres en la informática y a las organizaciones que ven la innovación tecnológica como un imperativo estratégico.';
-
-  @override
-  String get fpsCodeMission =>
-      'Traducido por IA\n\nCode.org es una organización sin fines de lucro dedicada a la innovación educativa, con la visión de que cada estudiante en cada escuela tenga la oportunidad de aprender ciencias de la computación como parte de su educación básica desde el jardín de infantes hasta el último grado.';
-
-  @override
-  String get fpsSavvyMission =>
-      'Traducido por IA\n\nWorld Savvy colabora con educadores, líderes escolares y de distrito para crear entornos de aprendizaje preparados para el futuro que sean inclusivos, adaptativos y preparen a los estudiantes para prosperar hoy y en el futuro.';
-
-  @override
-  String get fpsCheck => 'Verifica nuestros cálculos';
+  String get fpsCheck => 'Comprueba nuestros cálculos';
 
   @override
   String get fpsCheckHint =>
-      'Verifica nuestro cálculo; abre un enlace de GitHub al código fuente de esta pantalla';
+      'Abre un enlace de Gitjab al código fuente de esta pantalla';
 
   @override
   String get tsPageTitle => 'Equipo';
@@ -320,60 +272,67 @@ class LangEs extends Lang {
   String get tsCore => 'Núcleo';
 
   @override
-  String get tsTheFounderImageHint =>
-      'Una foto de perfil en 2D de Michael Waldron';
+  String get tsTheFounderImageHint => 'Perfil bidimensional de Michael Waldron';
 
   @override
-  String get tsTheFounder => 'El Fundador';
+  String get tsTheFounder => 'Fundador';
 
   @override
   String get tsCommunity => 'Comunidad';
 
   @override
-  String get spsPageTitle => 'Apoyo';
+  String get tsFreelance => 'Independiente';
+
+  @override
+  String get tsSpanish => 'Traductora de español';
+
+  @override
+  String get tsFrench => 'Traductor de francés';
+
+  @override
+  String get spsPageTitle => 'Soporte';
 
   @override
   String get spsThanks => '¡Muchas gracias por todo el apoyo!';
 
   @override
-  String get spsGive => '¿Te gustaría dar...';
+  String get spsGive => '¿Te gustaría contribuir...';
 
   @override
-  String get spsTimeQ => '¿Tiempo?';
+  String get spsTimeQ => 'Tiempo?';
 
   @override
-  String get spsBecome => ' para ser un ';
+  String get spsBecome => ' acerca de convertirse en un ';
 
   @override
   String get spsGit => 'colaborador de GitHub';
 
   @override
-  String get spsMoneyQ => '¿Dinero?';
+  String get spsMoneyQ => 'Dinero?';
 
   @override
-  String get spsPowerQ => '¿Poder?';
+  String get spsPowerQ => 'Poder?';
 
   @override
-  String get fahJoin => 'Únete a la causa';
+  String get fahJoin => 'Únete a Fold';
 
   @override
-  String get fahIntro1 => '¡Únete al equipo de ';
+  String get fahIntro1 => '¡Únete al ';
 
   @override
-  String get fahIntro2 => ' en Folding@home!';
+  String get fahIntro2 => ' equipo de Folding@home!';
 
   @override
   String get fahTeamHint =>
-      'Abre la página del equipo de Empathetic en folding at home';
+      'Abre la página del equipo Empathetic folding at home';
 
   @override
   String get fahWhatQ => '¿Qué es Folding@home?';
 
   @override
-  String get fahWhatQHint =>
-      'Abrir la página de información de folding  at home';
+  String get fahWhatQHint => 'Abrir la página de folding at home';
 
   @override
   String get fahStats =>
-      'Traducido por IA\n¡Juntos, hemos acumulado más de 350 millones de puntos!\n¡Poniéndonos en el 2% superior de todos los equipos del mundo!';
+      'Juntos, hemos ganado más de 350 millones de puntos.\n¡Lo que nos sitúa en el 2% de los mejores equipos del mundo!';
 }

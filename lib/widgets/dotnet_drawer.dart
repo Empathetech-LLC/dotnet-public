@@ -1,3 +1,8 @@
+/* dotnet
+ * Copyright (c) 2022-2024 Empathetech LLC. All rights reserved.
+ * See LICENSE for distribution and usage details.
+ */
+
 import '../screens/export.dart';
 import '../utils/export.dart';
 import './export.dart';
@@ -37,7 +42,7 @@ class DotNetDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final EzSpacer spacer = EzSpacer(spacing);
+    final EzSpacer spacer = EzSpacer(space: spacing);
 
     final EzLink products = EzLink(
       Lang.of(context)!.psPageTitle,
@@ -78,6 +83,7 @@ class DotNetDrawer extends StatelessWidget {
     // Return the build //
 
     return NavigationDrawer(
+      tilePadding: EdgeInsets.zero,
       key: key,
       children: <Widget>[
         DrawerHeader(
@@ -85,6 +91,7 @@ class DotNetDrawer extends StatelessWidget {
           padding: EdgeInsets.zero,
           child: EzScrollView(
             scrollDirection: Axis.horizontal,
+            mainAxisSize: MainAxisSize.min,
             children: header.children,
           ),
         ),

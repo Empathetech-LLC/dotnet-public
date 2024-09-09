@@ -1,3 +1,8 @@
+/* dotnet
+ * Copyright (c) 2022-2024 Empathetech LLC. All rights reserved.
+ * See LICENSE for distribution and usage details.
+ */
+
 import '../utils/export.dart';
 import '../widgets/export.dart';
 
@@ -16,54 +21,26 @@ class SupportScreen extends StatefulWidget {
 class _SupportScreenState extends State<SupportScreen> {
   // Gather the theme data //
 
-  final double space = EzConfig.get(spacingKey);
-
-  late final EzSpacer spacer = EzSpacer(space);
-  late final EzSwapSpacer swapSpacer = EzSwapSpacer(space);
-  late final EzSpacer separator = EzSpacer(space * 2);
+  static const EzSpacer spacer = EzSpacer();
+  static const EzSwapSpacer swapSpacer = EzSwapSpacer();
+  static const EzSeparator separator = EzSeparator();
 
   late final TextTheme textTheme = Theme.of(context).textTheme;
-  late final Color textColor = Theme.of(context).colorScheme.onSurface;
-
-  late final TextStyle? headlineStyle = textTheme.headlineLarge?.copyWith(
-    color: textColor,
-  );
-  late final TextStyle? titleStyle = textTheme.titleLarge?.copyWith(
-    color: textColor,
-  );
-  late final TextStyle? bodyStyle = textTheme.bodyLarge?.copyWith(
-    color: textColor,
-  );
 
   late final Lang l10n = Lang.of(context)!;
 
   // Define the buttons //
 
-  late final List<Widget> _directDonations = <Widget>[
-    // PayPal
+  late final List<Widget> crowdFundOrgs = <Widget>[
+    // GoFundMe
     ElevatedButton.icon(
-      onPressed: () => launchUrl(Uri.parse(empathPayPal)),
-      icon: const Icon(LineIcons.paypal),
-      label: const Text('PayPal'),
-    ),
-    swapSpacer,
-
-    // Venmo
-    ElevatedButton(
-      onPressed: () => launchUrl(Uri.parse(empathVenmo)),
-      child: const Text('Venmo'),
-    ),
-    swapSpacer,
-
-    // CashApp
-    ElevatedButton.icon(
-      onPressed: () => launchUrl(Uri.parse(empathCashApp)),
-      icon: const Icon(LineIcons.dollarSign),
-      label: const Text('CashApp'),
+      onPressed: () => launchUrl(Uri.parse(empathGoFundMe)),
+      icon: const Icon(Icons.wb_sunny_outlined),
+      label: const Text('GoFundMe'),
     ),
   ];
 
-  late final List<Widget> _affiliateDonations = <Widget>[
+  late final List<Widget> affiliateDonations = <Widget>[
     // Patreon
     ElevatedButton.icon(
       onPressed: () => launchUrl(Uri.parse(empathPatreon)),
@@ -85,6 +62,30 @@ class _SupportScreenState extends State<SupportScreen> {
       onPressed: () => launchUrl(Uri.parse(empathKofi)),
       icon: const Icon(LineIcons.coffee),
       label: const Text('Ko-fi'),
+    ),
+  ];
+
+  late final List<Widget> directDonations = <Widget>[
+    // PayPal
+    ElevatedButton.icon(
+      onPressed: () => launchUrl(Uri.parse(empathPayPal)),
+      icon: const Icon(LineIcons.paypal),
+      label: const Text('PayPal'),
+    ),
+    swapSpacer,
+
+    // Venmo
+    ElevatedButton(
+      onPressed: () => launchUrl(Uri.parse(empathVenmo)),
+      child: const Text('Venmo'),
+    ),
+    swapSpacer,
+
+    // CashApp
+    ElevatedButton.icon(
+      onPressed: () => launchUrl(Uri.parse(empathCashApp)),
+      icon: const Icon(LineIcons.dollarSign),
+      label: const Text('CashApp'),
     ),
   ];
 
@@ -113,12 +114,13 @@ class _SupportScreenState extends State<SupportScreen> {
                 children: <Widget>[
                   Text(
                     l10n.spsThanks,
-                    style: headlineStyle,
+                    style: textTheme.headlineLarge,
                     textAlign: TextAlign.center,
                   ),
                   Text(
                     l10n.spsGive,
-                    style: bodyStyle?.copyWith(fontSize: titleStyle?.fontSize),
+                    style: textTheme.bodyLarge
+                        ?.copyWith(fontSize: textTheme.titleLarge?.fontSize),
                     textAlign: TextAlign.center,
                   ),
                 ],
@@ -126,13 +128,13 @@ class _SupportScreenState extends State<SupportScreen> {
             ),
             separator,
 
-            /* Donate ... //
+            //// Donate ////
 
-            // Time */
+            // Time //
 
             Text(
               l10n.spsTimeQ,
-              style: titleStyle,
+              style: textTheme.titleLarge,
               textAlign: TextAlign.center,
             ),
 
@@ -140,7 +142,7 @@ class _SupportScreenState extends State<SupportScreen> {
             EzRichText(<InlineSpan>[
               EzInlineLink(
                 l10n.gReachOut,
-                style: bodyStyle,
+                style: textTheme.bodyLarge,
                 textAlign: TextAlign.center,
                 url: Uri.parse(
                   'mailto:$empathCommunity?subject=Becoming%20a%20contributor',
@@ -149,11 +151,11 @@ class _SupportScreenState extends State<SupportScreen> {
               ),
               EzPlainText(
                 text: l10n.spsBecome,
-                style: bodyStyle,
+                style: textTheme.bodyLarge,
               ),
               EzInlineLink(
                 l10n.spsGit,
-                style: bodyStyle,
+                style: textTheme.bodyLarge,
                 textAlign: TextAlign.center,
                 url: Uri.parse(empathGitHub),
                 semanticsLabel: l10n.gEmpathetechGitHint,
@@ -166,16 +168,16 @@ class _SupportScreenState extends State<SupportScreen> {
 
             Text(
               l10n.spsMoneyQ,
-              style: titleStyle,
+              style: textTheme.titleLarge,
               textAlign: TextAlign.center,
             ),
             spacer,
 
-            // Direct donations
+            // Crowdfunding organizations
             EzRowCol.sym(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,
-              children: _directDonations,
+              children: crowdFundOrgs,
             ),
             spacer,
 
@@ -183,7 +185,15 @@ class _SupportScreenState extends State<SupportScreen> {
             EzRowCol.sym(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,
-              children: _affiliateDonations,
+              children: affiliateDonations,
+            ),
+            spacer,
+
+            // Direct donations
+            EzRowCol.sym(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: directDonations,
             ),
             separator,
 
@@ -191,14 +201,14 @@ class _SupportScreenState extends State<SupportScreen> {
 
             Text(
               l10n.spsPowerQ,
-              style: titleStyle,
+              style: textTheme.titleLarge,
               textAlign: TextAlign.center,
             ),
 
             // F@H team
             FaHBanner(
-              titleStyle: titleStyle,
-              bodyStyle: bodyStyle,
+              titleStyle: textTheme.titleLarge,
+              bodyStyle: textTheme.bodyLarge,
             ),
             separator,
           ],

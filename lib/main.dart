@@ -1,5 +1,11 @@
-import 'utils/export.dart';
+/* dotnet
+ * Copyright (c) 2022-2024 Empathetech LLC. All rights reserved.
+ * See LICENSE for distribution and usage details.
+ */
+
 import 'screens/export.dart';
+import 'utils/export.dart';
+import 'widgets/export.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -29,8 +35,8 @@ void main() async {
     DeviceOrientation.landscapeRight,
   ]);
 
-  late final TextStyle lightFeedbackText = buildBody(color: Colors.black);
-  late final TextStyle darkFeedbackText = buildBody(color: Colors.white);
+  late final TextStyle lightFeedbackText = buildBody(Colors.black);
+  late final TextStyle darkFeedbackText = buildBody(Colors.white);
 
   runApp(BetterFeedback(
     theme: FeedbackThemeData(
@@ -58,10 +64,10 @@ void main() async {
       const LocaleNamesLocalizationsDelegate(),
       ...EFUILang.localizationsDelegates,
       ...Lang.localizationsDelegates,
-      DotnetFeedbackLocalizationsDelegate(),
+      EmpathetechFeedbackLocalizationsDelegate(),
     ],
     localeOverride: EzConfig.getLocale(),
-    child: const ETechDotNet(),
+    child: const DotNet(),
   ));
 }
 
@@ -86,12 +92,12 @@ final GoRouter router = GoRouter(
             return const PlanScreen();
           },
         ),
-        GoRoute(
-          path: finPlanPath,
-          builder: (BuildContext context, GoRouterState state) {
-            return const FinPlanScreen();
-          },
-        ),
+        // GoRoute(
+        //   path: finPlanPath,
+        //   builder: (BuildContext context, GoRouterState state) {
+        //     return const FinPlanScreen();
+        //   },
+        // ),
         GoRoute(
           path: teamPath,
           builder: (BuildContext context, GoRouterState state) {
@@ -135,11 +141,25 @@ final GoRouter router = GoRouter(
   ],
 );
 
-class ETechDotNet extends StatelessWidget {
-  const ETechDotNet({super.key});
+class DotNet extends StatelessWidget {
+  const DotNet({super.key});
+
+  // Define setup functions //
+
+  void precacheImages(BuildContext context) async {
+    precacheImage(openUIImage, context);
+
+    precacheImage(founderImage, context);
+    precacheImage(saraHProfile, context);
+    precacheImage(alexisNProfile, context);
+
+    precacheImage(fahImage, context);
+  }
 
   @override
   Widget build(BuildContext context) {
+    precacheImages(context);
+
     return EzAppProvider(
       app: PlatformApp.router(
         debugShowCheckedModeBanner: false,
@@ -147,7 +167,7 @@ class ETechDotNet extends StatelessWidget {
           const LocaleNamesLocalizationsDelegate(),
           ...EFUILang.localizationsDelegates,
           ...Lang.localizationsDelegates,
-          DotnetFeedbackLocalizationsDelegate(),
+          EmpathetechFeedbackLocalizationsDelegate(),
         ],
         supportedLocales: const <Locale>[
           ...EFUILang.supportedLocales,

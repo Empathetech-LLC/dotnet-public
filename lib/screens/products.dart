@@ -1,3 +1,8 @@
+/* dotnet
+ * Copyright (c) 2022-2024 Empathetech LLC. All rights reserved.
+ * See LICENSE for distribution and usage details.
+ */
+
 import '../utils/export.dart';
 import '../widgets/export.dart';
 
@@ -15,22 +20,18 @@ class _ProductsScreenState extends State<ProductsScreen>
     with SingleTickerProviderStateMixin {
   // Gather the theme data //
 
-  final EzSpacer separator = EzSpacer(EzConfig.get(spacingKey) * 2);
+  static const EzSpacer spacer = EzSpacer();
+  static const EzSeparator separator = EzSeparator();
 
   late final TextTheme textTheme = Theme.of(context).textTheme;
-  late final Color textColor = Theme.of(context).colorScheme.onSurface;
-
-  late final TextStyle? headlineStyle = textTheme.headlineLarge?.copyWith(
-    color: textColor,
-  );
-  late final TextStyle? titleStyle = textTheme.titleLarge?.copyWith(
-    color: textColor,
-  );
-  late final TextStyle? bodyStyle = textTheme.bodyLarge?.copyWith(
-    color: textColor,
-  );
 
   late final Lang l10n = Lang.of(context)!;
+
+  // Define the build data //
+
+  late final TextStyle? pitchStyle = textTheme.bodyLarge?.copyWith(
+    fontSize: textTheme.titleLarge?.fontSize,
+  );
 
   // Set the page title //
 
@@ -40,18 +41,10 @@ class _ProductsScreenState extends State<ProductsScreen>
     setPageTitle(l10n.psPageTitle);
   }
 
+  // Return the build //
+
   @override
   Widget build(BuildContext context) {
-    // Define the page content //
-
-    final EzNewLine newLine = EzNewLine(titleStyle);
-
-    final TextStyle? pitchStyle = bodyStyle?.copyWith(
-      fontSize: titleStyle?.fontSize,
-    );
-
-    // Return the build //
-
     return DotnetScaffold(
       body: EzScreen(
         child: EzScrollView(
@@ -61,17 +54,17 @@ class _ProductsScreenState extends State<ProductsScreen>
             // Intro
             Text(
               efuiL,
-              style: textTheme.displayLarge?.copyWith(color: textColor),
+              style: textTheme.displayLarge,
               textAlign: TextAlign.center,
               semanticsLabel: efuiLFix,
             ),
             // Tagline
             EzLink(
               l10n.psEFUISlogan,
-              style: headlineStyle,
+              style: textTheme.headlineLarge,
               textAlign: TextAlign.center,
               url: Uri.parse(efuiSource),
-              semanticsLabel: l10n.gEFUISourceHint,
+              semanticsLabel: EFUILang.of(context)!.gEFUISourceHint,
               tooltip: efuiSource,
             ),
             separator,
@@ -84,8 +77,8 @@ class _ProductsScreenState extends State<ProductsScreen>
                 style: pitchStyle,
                 textAlign: TextAlign.center,
                 url: Uri.parse('https://flutter.dev/'),
-                tooltip: 'https://flutter.dev/',
                 semanticsLabel: 'Flutter',
+                tooltip: 'https://flutter.dev/',
               ),
               EzPlainText(text: l10n.psEFUIDescription2, style: pitchStyle),
             ], textAlign: TextAlign.center),
@@ -94,82 +87,91 @@ class _ProductsScreenState extends State<ProductsScreen>
             // Platform availability
             Text(
               l10n.psPlatform,
-              style: titleStyle,
+              style: textTheme.titleLarge,
               textAlign: TextAlign.center,
             ),
             Text(
               l10n.psPlatformContent,
-              style: bodyStyle,
+              semanticsLabel: l10n.psPlatformContentFix,
+              style: textTheme.bodyLarge,
               textAlign: TextAlign.center,
             ),
-            newLine,
+            spacer,
 
             // Responsive design
             Text(
               l10n.psResponsive,
-              style: titleStyle,
+              style: textTheme.titleLarge,
               textAlign: TextAlign.center,
             ),
             Text(
               l10n.psResponsiveContent,
-              style: bodyStyle,
+              semanticsLabel: l10n.psResponsiveContentFix,
+              style: textTheme.bodyLarge,
               textAlign: TextAlign.center,
             ),
-            newLine,
+            spacer,
 
             // Screen reader support
             Text(
               l10n.psScreen,
-              style: titleStyle,
+              style: textTheme.titleLarge,
               textAlign: TextAlign.center,
             ),
             EzRichText(<InlineSpan>[
-              EzPlainText(text: l10n.psScreenContent, style: bodyStyle),
+              EzPlainText(
+                text: l10n.psScreenContent,
+                semanticsLabel: l10n.psScreenContentFix,
+                style: textTheme.bodyLarge,
+              ),
               EzInlineLink(
                 'TalkBack',
-                style: bodyStyle,
+                style: textTheme.bodyLarge,
                 textAlign: TextAlign.center,
                 url: Uri.parse(
-                    'https://support.google.com/accessibility/android/answer/6006598?hl=en'),
+                  'https://support.google.com/accessibility/android/answer/6006598?hl=en',
+                ),
                 semanticsLabel: l10n.psTalkBackHint,
               ),
-              EzPlainText(text: l10n.psAnd, style: bodyStyle),
+              EzPlainText(text: l10n.psAnd, style: textTheme.bodyLarge),
               EzInlineLink(
                 'VoiceOver',
-                style: bodyStyle,
+                style: textTheme.bodyLarge,
                 textAlign: TextAlign.center,
                 url: Uri.parse(
                   'https://support.apple.com/guide/iphone/turn-on-and-practice-voiceover-iph3e2e415f/ios',
                 ),
                 semanticsLabel: l10n.psVoiceOverHint,
               ),
-              EzPlainText(text: '.', style: bodyStyle),
+              EzPlainText(text: '.', style: textTheme.bodyLarge),
             ], textAlign: TextAlign.center),
-            newLine,
+            spacer,
 
             // User customization
             Text(
               l10n.psCustom,
-              style: titleStyle,
+              style: textTheme.titleLarge,
               textAlign: TextAlign.center,
             ),
 
             Text(
               l10n.psCustomContent,
-              style: bodyStyle,
+              semanticsLabel: l10n.psCustomContentFix,
+              style: textTheme.bodyLarge,
               textAlign: TextAlign.center,
             ),
-            newLine,
+            spacer,
 
             // Internationalization
             Text(
               l10n.psInternational,
-              style: titleStyle,
+              style: textTheme.titleLarge,
               textAlign: TextAlign.center,
             ),
             Text(
               l10n.psInternationalContent,
-              style: bodyStyle,
+              semanticsLabel: l10n.psInternationalContentFix,
+              style: textTheme.bodyLarge,
               textAlign: TextAlign.center,
             ),
             separator,
@@ -177,7 +179,7 @@ class _ProductsScreenState extends State<ProductsScreen>
             // Tag line
             Text(
               l10n.psEFUITagLine,
-              style: bodyStyle,
+              style: textTheme.bodyLarge,
               textAlign: TextAlign.center,
             ),
             separator,
@@ -186,17 +188,29 @@ class _ProductsScreenState extends State<ProductsScreen>
             EzRichText(<InlineSpan>[
               EzInlineLink(
                 l10n.gReachOut,
-                style: bodyStyle,
+                style: textTheme.bodyLarge,
                 textAlign: TextAlign.center,
                 url: Uri.parse('mailto:$empathAdmin'),
                 semanticsLabel: l10n.gEmailTo(empatheticLLC),
               ),
               EzPlainText(
                 text: l10n.psConsult,
-                style: bodyStyle,
+                style: textTheme.bodyLarge,
               ),
             ], textAlign: TextAlign.center),
-            separator,
+            ConstrainedBox(
+              constraints: BoxConstraints(maxWidth: widthOf(context) * (2 / 3)),
+              child: const Divider(),
+            ),
+
+            // Live demos
+            Text(
+              l10n.psLive,
+              style: textTheme.titleLarge,
+              textAlign: TextAlign.center,
+            ),
+            OpenUILinks(bodyStyle: textTheme.bodyLarge),
+            spacer,
           ],
         ),
       ),

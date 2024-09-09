@@ -1,3 +1,8 @@
+/* dotnet
+ * Copyright (c) 2022-2024 Empathetech LLC. All rights reserved.
+ * See LICENSE for distribution and usage details.
+ */
+
 import '../export.dart';
 import '../../utils/export.dart';
 import '../../widgets/export.dart';
@@ -16,20 +21,10 @@ class PlanScreen extends StatefulWidget {
 class _PlanScreenState extends State<PlanScreen> {
   // Gather the theme data //
 
-  final double spacing = EzConfig.get(spacingKey);
-
-  late final EzSpacer spacer = EzSpacer(spacing);
-  late final EzSpacer rowSpacer = EzSpacer.row(spacing);
+  static const EzSpacer spacer = EzSpacer();
+  static const EzSpacer rowSpacer = EzSpacer(vertical: false);
 
   late final TextTheme textTheme = Theme.of(context).textTheme;
-  late final Color textColor = Theme.of(context).colorScheme.onSurface;
-
-  late final TextStyle? titleStyle = textTheme.titleLarge?.copyWith(
-    color: textColor,
-  );
-  late final TextStyle? bodyStyle = textTheme.bodyLarge?.copyWith(
-    color: textColor,
-  );
 
   late final Lang l10n = Lang.of(context)!;
 
@@ -40,7 +35,7 @@ class _PlanScreenState extends State<PlanScreen> {
   Widget _title(String title) {
     return Text(
       title,
-      style: titleStyle,
+      style: textTheme.titleLarge,
       textAlign: TextAlign.left,
     );
   }
@@ -94,13 +89,6 @@ class _PlanScreenState extends State<PlanScreen> {
   Widget build(BuildContext context) {
     // Define the page content //
 
-    final EzNewLine newLine = EzNewLine(
-      bodyStyle,
-      textAlign: TextAlign.left,
-    );
-
-    final EzPlainText period = EzPlainText(text: '.', style: bodyStyle);
-
     final List<Step> steps = <Step>[
       // Step 1: Identify the problem
       Step(
@@ -109,7 +97,7 @@ class _PlanScreenState extends State<PlanScreen> {
         content: _content(<Widget>[
           Text(
             l10n.plsIDProblemContent,
-            style: bodyStyle,
+            style: textTheme.bodyLarge,
             textAlign: TextAlign.left,
           ),
         ]),
@@ -122,7 +110,7 @@ class _PlanScreenState extends State<PlanScreen> {
         content: _content(<Widget>[
           Text(
             l10n.plsBeSolutionContent,
-            style: bodyStyle,
+            style: textTheme.bodyLarge,
             textAlign: TextAlign.left,
           ),
         ]),
@@ -133,95 +121,23 @@ class _PlanScreenState extends State<PlanScreen> {
         isActive: index >= 2,
         title: _title(l10n.plsProvideValue),
         content: _content(<Widget>[
-          Text(
-            l10n.plsProvideValueContent1,
-            style: bodyStyle,
-            textAlign: TextAlign.left,
-          ),
-          newLine,
           EzRichText(<InlineSpan>[
             EzPlainText(
-              text: l10n.plsProvideValueContent2,
-              style: bodyStyle,
+              text: l10n.plsProvideValueContent1,
+              style: textTheme.bodyLarge,
             ),
             EzInlineLink(
               efuiL,
-              textFix: efuiLFix,
-              style: bodyStyle,
+              style: textTheme.bodyLarge,
               textAlign: TextAlign.left,
               onTap: () => context.go(productsRoute),
               semanticsLabel: l10n.gProductsHint,
+              richSemanticsLabel: efuiLFix,
             ),
             EzPlainText(
-              text: l10n.plsProvideValueContent3,
-              style: bodyStyle,
+              text: l10n.plsProvideValueContent2,
+              style: textTheme.bodyLarge,
             ),
-          ], textAlign: TextAlign.left),
-        ]),
-      ),
-
-      // Step 4: Do it right
-      Step(
-        isActive: index >= 3,
-        title: _title(l10n.plsDoItRight),
-        content: _content(<Widget>[
-          EzRichText(<InlineSpan>[
-            EzPlainText(
-              text: l10n.plsDoItRightContent1,
-              style: bodyStyle,
-              semanticsLabel: l10n.plsDoItRightContent1Fix,
-            ),
-            EzInlineLink(
-              l10n.plsSaaS,
-              style: bodyStyle,
-              textAlign: TextAlign.left,
-              url: Uri.parse(saaSDocs),
-              semanticsLabel: l10n.plsSaaSHint,
-              tooltip: saaSDocs,
-            ),
-            EzPlainText(
-              text: l10n.plsDoItRightContent2,
-              style: bodyStyle,
-            ),
-          ], textAlign: TextAlign.left),
-          newLine,
-          EzRichText(<InlineSpan>[
-            EzPlainText(
-              text: l10n.plsDoItRightContent3,
-              style: bodyStyle,
-              semanticsLabel: l10n.plsDoItRightContent3Fix,
-            ),
-            EzInlineLink(
-              l10n.plsDualLicense,
-              style: bodyStyle,
-              textAlign: TextAlign.left,
-              url: Uri.parse(dualLicenseDocs),
-              semanticsLabel: l10n.plsDualLicenseHint,
-              tooltip: dualLicenseDocs,
-            ),
-            period,
-          ], textAlign: TextAlign.left),
-          newLine,
-          Text(
-            l10n.plsDoItRightContent4,
-            style: bodyStyle,
-            textAlign: TextAlign.left,
-            semanticsLabel: l10n.plsDoItRightContent4Fix,
-          ),
-          newLine,
-          EzRichText(<InlineSpan>[
-            EzPlainText(
-              text: l10n.plsDoItRightContent5,
-              style: bodyStyle,
-            ),
-            EzInlineLink(
-              l10n.fpsPageTitle.toLowerCase(),
-              style: bodyStyle,
-              textAlign: TextAlign.left,
-              onTap: () => context.go(finPlanRoute),
-              semanticsLabel: l10n.fpsPageHint,
-            ),
-            period,
           ], textAlign: TextAlign.left),
         ]),
       ),
@@ -271,7 +187,11 @@ class _PlanScreenState extends State<PlanScreen> {
               }
             }
 
-            return Row(children: buttons());
+            return EzScrollView(
+              scrollDirection: Axis.horizontal,
+              mainAxisSize: MainAxisSize.min,
+              children: buttons(),
+            );
           },
           physics: const BouncingScrollPhysics(),
         ),

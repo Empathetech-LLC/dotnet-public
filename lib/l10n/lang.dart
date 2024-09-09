@@ -6,6 +6,9 @@ import 'package:intl/intl.dart' as intl;
 
 import 'lang_en.dart' deferred as lang_en;
 import 'lang_es.dart' deferred as lang_es;
+import 'lang_fr.dart' deferred as lang_fr;
+
+// ignore_for_file: type=lint
 
 /// Callers can lookup localized strings with an instance of Lang
 /// returned by `Lang.of(context)`.
@@ -91,13 +94,14 @@ abstract class Lang {
   /// A list of this localizations delegate's supported locales.
   static const List<Locale> supportedLocales = <Locale>[
     Locale('en'),
-    Locale('es')
+    Locale('es'),
+    Locale('fr')
   ];
 
   /// No description provided for @gLogoHint.
   ///
   /// In en, this message translates to:
-  /// **'Empathetic LLC logo: a 2D hourglass. Activate to go to the home page'**
+  /// **'Empathetic LLC logo: a two dimensional hourglass. Activate to go to the home page'**
   String get gLogoHint;
 
   /// No description provided for @gHomeHint.
@@ -172,16 +176,10 @@ abstract class Lang {
   /// **'Reach out'**
   String get gReachOut;
 
-  /// No description provided for @gEFUISourceHint.
-  ///
-  /// In en, this message translates to:
-  /// **'Activate to open the GitHub page for EFUI'**
-  String get gEFUISourceHint;
-
   /// No description provided for @gEmpathetechGitHint.
   ///
   /// In en, this message translates to:
-  /// **'Activate to open the GitHub page for Empathetic LLC'**
+  /// **'Open the GitHub page for Empathetic LLC'**
   String get gEmpathetechGitHint;
 
   /// No description provided for @gDontChaWish.
@@ -205,32 +203,38 @@ abstract class Lang {
   /// No description provided for @gDontChaHint.
   ///
   /// In en, this message translates to:
-  /// **'Activate to open the GitHub page for this screen\'s source code'**
+  /// **'Open the GitHub page for this screen\'s source code'**
   String get gDontChaHint;
 
   /// No description provided for @gFahIconHint.
   ///
   /// In en, this message translates to:
-  /// **'Folding at home logo, activate to open their site'**
+  /// **'Folding at home logo: a protein molecule. Activate to open their site'**
   String get gFahIconHint;
 
   /// No description provided for @gAnitaBorgIconHint.
   ///
   /// In en, this message translates to:
-  /// **'AnitaB.org logo, activate to open their site'**
+  /// **'AnitaB.org logo: a rainbow prism. Activate to open their site'**
   String get gAnitaBorgIconHint;
 
   /// No description provided for @gCodeDotOrgIconHint.
   ///
   /// In en, this message translates to:
-  /// **'code.org logo, activate to open their site'**
+  /// **'code.org logo: keyboard keys spelling the word code. Activate to open their site'**
   String get gCodeDotOrgIconHint;
 
   /// No description provided for @gWorldSavvyIconHint.
   ///
   /// In en, this message translates to:
-  /// **'World Savvy logo, activate to open their site'**
+  /// **'World Savvy logo: a drawing of the globe in pencil style. Activate to open their site'**
   String get gWorldSavvyIconHint;
+
+  /// No description provided for @gFiverrPage.
+  ///
+  /// In en, this message translates to:
+  /// **'Open {user}\'s Fiverr page'**
+  String gFiverrPage(Object user);
 
   /// No description provided for @hsSlogan.
   ///
@@ -247,14 +251,8 @@ abstract class Lang {
   /// No description provided for @hsVideoHint.
   ///
   /// In en, this message translates to:
-  /// **'Empathetic LLC logo animation: Empathetic\'s name transforms into its logo'**
+  /// **'Empathetic LLC animated logo: the letters in Empathetic transform into the two dimensional hourglass logo'**
   String get hsVideoHint;
-
-  /// No description provided for @csReversedNote.
-  ///
-  /// In en, this message translates to:
-  /// **'NOTE: The top bar\'s theme colors are (intentionally) reversed!'**
-  String get csReversedNote;
 
   /// No description provided for @psPageTitle.
   ///
@@ -271,13 +269,13 @@ abstract class Lang {
   /// No description provided for @psEFUIDescription1.
   ///
   /// In en, this message translates to:
-  /// **'EFUI is an open source '**
+  /// **'EFUI is a starter kit for building truly accessible '**
   String get psEFUIDescription1;
 
   /// No description provided for @psEFUIDescription2.
   ///
   /// In en, this message translates to:
-  /// **' library that provides the tools for building truly accessible apps.'**
+  /// **' apps.\nEFUI handles every aspect of digital accessibility...'**
   String get psEFUIDescription2;
 
   /// No description provided for @psPlatform.
@@ -289,8 +287,14 @@ abstract class Lang {
   /// No description provided for @psPlatformContent.
   ///
   /// In en, this message translates to:
-  /// **'EFUI supports all platforms. You can deploy to Android, iOS, Linux, MacOS, Windows and Web!'**
+  /// **'Empathetech apps support users on all platforms.\nYou can use EFUI to create on Android, iOS, Linux, MacOS, Windows and Web!'**
   String get psPlatformContent;
+
+  /// No description provided for @psPlatformContentFix.
+  ///
+  /// In en, this message translates to:
+  /// **'Empathetic apps support users on all platforms.\nYou can use EFUI to create on Android, iOS, Linux, MacOS, Windows and Web!'**
+  String get psPlatformContentFix;
 
   /// No description provided for @psResponsive.
   ///
@@ -301,8 +305,14 @@ abstract class Lang {
   /// No description provided for @psResponsiveContent.
   ///
   /// In en, this message translates to:
-  /// **'EFUI\'s toolkit aids in building apps that elegantly respond to screen space. To see it in action, play with the app window you\'re using right now!'**
+  /// **'Empathetech apps support users on any screen.\nTo see it in action, play with the window you\'re using right now!'**
   String get psResponsiveContent;
+
+  /// No description provided for @psResponsiveContentFix.
+  ///
+  /// In en, this message translates to:
+  /// **'Empathetic apps support users on any screen.\nTo see it in action, play with the window you\'re using right now!'**
+  String get psResponsiveContentFix;
 
   /// No description provided for @psScreen.
   ///
@@ -313,8 +323,14 @@ abstract class Lang {
   /// No description provided for @psScreenContent.
   ///
   /// In en, this message translates to:
-  /// **'Everything within EFUI has been manually verified with '**
+  /// **'Empathetech apps support users who need '**
   String get psScreenContent;
+
+  /// No description provided for @psScreenContentFix.
+  ///
+  /// In en, this message translates to:
+  /// **'Empathetic apps support users who need '**
+  String get psScreenContentFix;
 
   /// No description provided for @psTalkBackHint.
   ///
@@ -343,8 +359,14 @@ abstract class Lang {
   /// No description provided for @psCustomContent.
   ///
   /// In en, this message translates to:
-  /// **'The only way to be truly accessible for ALL customers is to empower them with the freedom of choice.\nAnd that\'s exactly what EFUI does; it enables every aspect of an app\'s theme to be controlled by the user.\nTo see it in action, click the settings cog on the bottom of your screen!'**
+  /// **'Empathetech apps support all users by empowering them with the freedom of choice.\nEFUI exposes every aspect of an app\'s theme to be controlled by the user.\nTo see it in action, click the settings cog on the bottom of your screen!'**
   String get psCustomContent;
+
+  /// No description provided for @psCustomContentFix.
+  ///
+  /// In en, this message translates to:
+  /// **'Empathetic apps support all users by empowering them with the freedom of choice.\nEFUI exposes every aspect of an app\'s theme to be controlled by the user.\nTo see it in action, click the settings cog on the bottom of your screen!'**
+  String get psCustomContentFix;
 
   /// No description provided for @psInternational.
   ///
@@ -355,19 +377,37 @@ abstract class Lang {
   /// No description provided for @psInternationalContent.
   ///
   /// In en, this message translates to:
-  /// **'All of EFUI\'s external text has been translated to Spanish. With this, EFUI provides well organized infrastructure for unlimited future translations.'**
+  /// **'Empathetech apps support users where they are.\nCurrently, EFUI supports English, Spanish, French.\nAnd, infrastructure for unlimited future translations.'**
   String get psInternationalContent;
+
+  /// No description provided for @psInternationalContentFix.
+  ///
+  /// In en, this message translates to:
+  /// **'Empathetic apps support users where they are.\nCurrently, EFUI supports English, Spanish, French.\nAnd, infrastructure for unlimited future translations.'**
+  String get psInternationalContentFix;
+
+  /// No description provided for @psLive.
+  ///
+  /// In en, this message translates to:
+  /// **'See it live'**
+  String get psLive;
+
+  /// No description provided for @psLiveHint.
+  ///
+  /// In en, this message translates to:
+  /// **'The icon for Open UI: a settings sandbox. Open a link to Open UI on {platform}'**
+  String psLiveHint(Object platform);
 
   /// No description provided for @psEFUITagLine.
   ///
   /// In en, this message translates to:
-  /// **'When built with EFUI, your apps can truly reach any audience.\nLet\'s make the internet a more accessible place together!'**
+  /// **'When built with EFUI, your apps can reach any audience.\nLet\'s build a better internet together!'**
   String get psEFUITagLine;
 
   /// No description provided for @psConsult.
   ///
   /// In en, this message translates to:
-  /// **' for consultation and contracting'**
+  /// **' for consultation and contracting.'**
   String get psConsult;
 
   /// No description provided for @plsPageTitle.
@@ -397,7 +437,7 @@ abstract class Lang {
   /// No description provided for @plsIDProblemContent.
   ///
   /// In en, this message translates to:
-  /// **'It\'s clear that profit first business models aren\'t sustainable.\n\nBy definition, if profit comes first, things like customer wellbeing and global responsibility are afterthoughts.\n\nEspecially in technology, where the service providers are often disconnected from their customers.'**
+  /// **'Profit first business models aren\'t sustainable.\n\nBy definition: if profit comes first, then things like working towards a mission, treating people right, and responsible consumption of resources all become afterthoughts.\n\nAnd this greed has gone unchecked in big tech. The tech giants have grown dissatisfied with our money, and are building products to target our identities and monopolize our minds.'**
   String get plsIDProblemContent;
 
   /// No description provided for @plsBeSolution.
@@ -409,7 +449,7 @@ abstract class Lang {
   /// No description provided for @plsBeSolutionContent.
   ///
   /// In en, this message translates to:
-  /// **'Fortunately, there are amazing technologists all over the world working together towards a better narrative. One where the service providers and the customers have an active, healthy, and mutually beneficial relationship.\n\nThe open source community.\n\nSoftware is considered open source when the code is freely available for anyone to view (always), modify (often), and/or distribute (sometimes). It\'s software built by folx who recognize shared problems require shared solutions.\n\nSo, how does one make the switch from profit first (closed source) to open source? It takes a lot of time, energy, and prior knowledge.\n\nThat\'s where we come in.'**
+  /// **'Fortunately, there are amazing technologists all over the world working together towards a better narrative. One where the service providers and the customers have an active, healthy, and mutually beneficial relationship.\n\nThe open source community.\n\nAt its core, open source software is freely available for anyone to view. Many projects can also be freely modified and redistributed. It\'s software with nothing to hide, built by folx who recognize shared problems require shared solutions.\n\nSo, how does one make the switch from profit first (closed source) to open source? It takes a lot of time, energy, and prior knowledge.\n\nThat\'s where we come in.'**
   String get plsBeSolutionContent;
 
   /// No description provided for @plsProvideValue.
@@ -421,98 +461,14 @@ abstract class Lang {
   /// No description provided for @plsProvideValueContent1.
   ///
   /// In en, this message translates to:
-  /// **'Our mission is to re-balance the power in tech by making open source software more accessible.\n\nWe will build bridges between the open source community and those without enough time, energy, or prior knowledge.\n\nWe will build accessible, cross-platform applications for easily managing an ecosystem of open source tools.'**
+  /// **'Our mission is to re-balance the power in tech by making open source software more accessible.\n\nWe will build accessible, cross-platform applications for easily managing an ecosystem of open source tools.\n\nWe will build bridges between the open source community and those without enough time, energy, or prior knowledge.\n\nAnd you can\'t build bridges (or apps) without a strong foundation! That\'s why '**
   String get plsProvideValueContent1;
 
   /// No description provided for @plsProvideValueContent2.
   ///
   /// In en, this message translates to:
-  /// **'But, you can\'t build bridges (or apps) without a strong foundation! That\'s why '**
+  /// **' exists. We take pride in meeting words with actions, and have made our accessible UI open source.\n\nLet\'s build a better world together, bit by bit.'**
   String get plsProvideValueContent2;
-
-  /// No description provided for @plsProvideValueContent3.
-  ///
-  /// In en, this message translates to:
-  /// **' exists. We take pride in meeting words with actions, and have pro-actively made our UI open source.'**
-  String get plsProvideValueContent3;
-
-  /// No description provided for @plsDoItRight.
-  ///
-  /// In en, this message translates to:
-  /// **'Do it right'**
-  String get plsDoItRight;
-
-  /// No description provided for @plsDoItRightContent1.
-  ///
-  /// In en, this message translates to:
-  /// **'If the service providers remember to stay Empathetech, '**
-  String get plsDoItRightContent1;
-
-  /// No description provided for @plsDoItRightContent1Fix.
-  ///
-  /// In en, this message translates to:
-  /// **'If the service providers remember to stay Empathetic,'**
-  String get plsDoItRightContent1Fix;
-
-  /// No description provided for @plsSaaS.
-  ///
-  /// In en, this message translates to:
-  /// **'Software as a Service'**
-  String get plsSaaS;
-
-  /// No description provided for @plsSaaSHint.
-  ///
-  /// In en, this message translates to:
-  /// **'Open the Wikipedia article for software as a service'**
-  String get plsSaaSHint;
-
-  /// No description provided for @plsDoItRightContent2.
-  ///
-  /// In en, this message translates to:
-  /// **' (SaaS) can benefit everyone.'**
-  String get plsDoItRightContent2;
-
-  /// No description provided for @plsDoItRightContent3.
-  ///
-  /// In en, this message translates to:
-  /// **'For starters: a closed source ecosystem of open source software would be paradoxical. So, while official licensing commitments will come with official launches, Empathetech apps will release under a '**
-  String get plsDoItRightContent3;
-
-  /// No description provided for @plsDoItRightContent3Fix.
-  ///
-  /// In en, this message translates to:
-  /// **'For starters: a closed source ecosystem of open source software would be paradoxical. So, while official licensing commitments will come with official launches, Empathetic apps will release under a '**
-  String get plsDoItRightContent3Fix;
-
-  /// No description provided for @plsDualLicense.
-  ///
-  /// In en, this message translates to:
-  /// **'dual license'**
-  String get plsDualLicense;
-
-  /// No description provided for @plsDualLicenseHint.
-  ///
-  /// In en, this message translates to:
-  /// **'Open the Wikipedia article for Multi-licensing'**
-  String get plsDualLicenseHint;
-
-  /// No description provided for @plsDoItRightContent4.
-  ///
-  /// In en, this message translates to:
-  /// **'Also, for the closed source version(s)...\n\n\t\t1. All Empathetech SaaS products will have a lifetime option.\n\t\t2. Selling someone else\'s personal information is immoral; Empathetech software will never auction your digital identity.\n\nOne last note on bridges. A bridge without a place to go, or anyone that wants to use it, isn\'t a bridge; it\'s a waste of resources.\n\nSo, another commitment: regardless of official structure (currently LLC) Empathetech will operate as a not-for-profit, mission based entity. Meaning...\n\n\t\t- 100% of net profit derived from all open source ecosystem app(s) will be committed back to the projects they are built upon\n\t\t- 100% of net profit derived from all other sources (consulting, donations, merch, etc.) will be committed to promoting global equity in tech education.'**
-  String get plsDoItRightContent4;
-
-  /// No description provided for @plsDoItRightContent4Fix.
-  ///
-  /// In en, this message translates to:
-  /// **'Also, for the closed source version(s)...\n\n\t\t1. All Empathetic SaaS products will have be a lifetime option.\n\t\t2. Selling someone else\'s personal information is immoral; Empathetic software will never auction your digital identity.\n\nOne last note on bridges. A bridge without a place to go, or anyone that wants to use it, isn\'t a bridge; it\'s a waste of resources.\n\nSo, another commitment: regardless of official structure (currently LLC) Empathetic will operate as a not-for-profit, mission based entity. Meaning...\n\n\t\t- 100% of net profit derived from all open source ecosystem app(s) will be committed back to the projects they are built upon\n\t\t- 100% of net profit derived from all other sources (consulting, donations, merch, etc.) will be committed to promoting global equity in tech education.'**
-  String get plsDoItRightContent4Fix;
-
-  /// No description provided for @plsDoItRightContent5.
-  ///
-  /// In en, this message translates to:
-  /// **'Checkout the '**
-  String get plsDoItRightContent5;
 
   /// No description provided for @fpsPageTitle.
   ///
@@ -565,50 +521,14 @@ abstract class Lang {
   /// No description provided for @fpsSplit.
   ///
   /// In en, this message translates to:
-  /// **'The {profit} profit will be evenly split amongst...'**
-  String fpsSplit(Object profit);
+  /// **'{split} will be donated to...'**
+  String fpsSplit(Object split);
 
   /// No description provided for @fpsEventual.
   ///
   /// In en, this message translates to:
-  /// **'eventual'**
+  /// **'Any future profits will be shared with...'**
   String get fpsEventual;
-
-  /// No description provided for @fpsAnitaCNavHint.
-  ///
-  /// In en, this message translates to:
-  /// **'Open a link to AnitaB.org on Charity Navigator'**
-  String get fpsAnitaCNavHint;
-
-  /// No description provided for @fpsCodeCNavHint.
-  ///
-  /// In en, this message translates to:
-  /// **'Open a link to code.org on Charity Navigator'**
-  String get fpsCodeCNavHint;
-
-  /// No description provided for @fpsSavvyCNavHint.
-  ///
-  /// In en, this message translates to:
-  /// **'Open a link to World Savvy on Charity Navigator'**
-  String get fpsSavvyCNavHint;
-
-  /// No description provided for @fpsAnitaMission.
-  ///
-  /// In en, this message translates to:
-  /// **'AnitaB.org envisions a future where the people who imagine and build technology mirror the people and societies for whom they build it. They connect, inspire, and guide women in computing, and organizations that view technology innovation as a strategic imperative.'**
-  String get fpsAnitaMission;
-
-  /// No description provided for @fpsCodeMission.
-  ///
-  /// In en, this message translates to:
-  /// **'Code.org is an education innovation nonprofit dedicated to the vision that every student in every school has the opportunity to learn computer science as part of their core K-12 education.'**
-  String get fpsCodeMission;
-
-  /// No description provided for @fpsSavvyMission.
-  ///
-  /// In en, this message translates to:
-  /// **'World Savvy collaborates with educators and school and district leaders to build future-ready learning environments that are inclusive, adaptive, and prepare students to thrive today and in the future.'**
-  String get fpsSavvyMission;
 
   /// No description provided for @fpsCheck.
   ///
@@ -637,7 +557,7 @@ abstract class Lang {
   /// No description provided for @tsTheFounderImageHint.
   ///
   /// In en, this message translates to:
-  /// **'A 2D profile photo of Michael Waldron'**
+  /// **'A two dimensional profile of Michael Waldron'**
   String get tsTheFounderImageHint;
 
   /// No description provided for @tsTheFounder.
@@ -651,6 +571,24 @@ abstract class Lang {
   /// In en, this message translates to:
   /// **'Community'**
   String get tsCommunity;
+
+  /// No description provided for @tsFreelance.
+  ///
+  /// In en, this message translates to:
+  /// **'Freelance'**
+  String get tsFreelance;
+
+  /// No description provided for @tsSpanish.
+  ///
+  /// In en, this message translates to:
+  /// **'Spanish translator'**
+  String get tsSpanish;
+
+  /// No description provided for @tsFrench.
+  ///
+  /// In en, this message translates to:
+  /// **'French translator'**
+  String get tsFrench;
 
   /// No description provided for @spsPageTitle.
   ///
@@ -739,7 +677,7 @@ abstract class Lang {
   /// No description provided for @fahStats.
   ///
   /// In en, this message translates to:
-  /// **'Together, we\'ve earned over 350 million points!\nPutting us in the top 2% of all teams worldwide!'**
+  /// **'Together, we\'ve earned over 350 million points.\nThat puts us in the top 2% of all teams worldwide!'**
   String get fahStats;
 }
 
@@ -753,7 +691,7 @@ class _LangDelegate extends LocalizationsDelegate<Lang> {
 
   @override
   bool isSupported(Locale locale) =>
-      <String>['en', 'es'].contains(locale.languageCode);
+      <String>['en', 'es', 'fr'].contains(locale.languageCode);
 
   @override
   bool shouldReload(_LangDelegate old) => false;
@@ -766,6 +704,8 @@ Future<Lang> lookupLang(Locale locale) {
       return lang_en.loadLibrary().then((dynamic _) => lang_en.LangEn());
     case 'es':
       return lang_es.loadLibrary().then((dynamic _) => lang_es.LangEs());
+    case 'fr':
+      return lang_fr.loadLibrary().then((dynamic _) => lang_fr.LangFr());
   }
 
   throw FlutterError(

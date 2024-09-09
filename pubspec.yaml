@@ -1,6 +1,6 @@
 name: dotnet
 description: "Empathetech's mission is to re-balance the power in tech by making open source software more accessible."
-version: 4.0.0
+version: 4.0.1
 publish_to: 'none'
 
 environment:

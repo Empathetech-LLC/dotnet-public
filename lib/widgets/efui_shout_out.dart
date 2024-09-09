@@ -10,13 +10,8 @@ import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 
 class EFUIShoutOut extends StatelessWidget {
   final TextStyle? style;
-  final String sourceLink;
 
-  const EFUIShoutOut({
-    super.key,
-    required this.style,
-    required this.sourceLink,
-  });
+  const EFUIShoutOut({super.key, required this.style});
 
   @override
   Widget build(BuildContext context) {
@@ -32,9 +27,9 @@ class EFUIShoutOut extends StatelessWidget {
             l10n.gMeQ,
             style: style,
             textAlign: TextAlign.center,
-            url: Uri.parse(sourceLink),
+            url: Uri.parse(settingsSource),
             semanticsLabel: EFUILang.of(context)!.gEFUISourceHint,
-            tooltip: sourceLink,
+            tooltip: settingsSource,
           ),
         ], textAlign: TextAlign.center),
         EzLink(

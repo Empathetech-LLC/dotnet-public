@@ -4,7 +4,6 @@
  */
 
 import '../export.dart';
-import '../../utils/export.dart';
 import '../../widgets/export.dart';
 
 import 'package:flutter/material.dart';
@@ -85,10 +84,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
             const EzResetButton(),
             separator,
 
-            EFUIShoutOut(
-              style: theme.textTheme.labelLarge,
-              sourceLink: settingsSource,
-            ),
+            EFUIShoutOut(style: theme.textTheme.labelLarge),
             spacer,
           ],
         ),

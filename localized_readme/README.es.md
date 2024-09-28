@@ -1,7 +1,7 @@
 # dotnet-público
 [![en](https://img.shields.io/badge/lang-en-blue.svg)](https://github.com/Empathetech-LLC/dotnet-public/blob/main/README.md)
-[![es](https://img.shields.io/badge/lang-es-red.svg)](https://github.com/Empathetech-LLC/dotnet-public/blob/main/README.es.md)
-[![fr](https://img.shields.io/badge/lang-fr-white.svg)](https://github.com/Empathetech-LLC/dotnet-public/blob/main/README.fr.md)
+[![es](https://img.shields.io/badge/lang-es-red.svg)](https://github.com/Empathetech-LLC/dotnet-public/blob/main/localized_readme/README.es.md)
+[![fr](https://img.shields.io/badge/lang-fr-white.svg)](https://github.com/Empathetech-LLC/dotnet-public/blob/main/localized_readme/README.fr.md)
 
 El código de Flutter de [empathetech.net](https://www.empathetech.net/)<br>Un gran ejemplo de cómo construir una aplicación web con [EFUI](https://github.com/Empathetech-LLC/empathetech_flutter_ui)
 

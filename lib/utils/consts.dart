@@ -19,8 +19,6 @@ const String empatheticLLC = 'Empathetic LLC';
 
 // Assets //
 
-const String darkLogoPath = 'assets/images/dark-logo.png';
-
 const String fahIconPath = 'assets/images/fah.png';
 
 const String founderIconPath = 'assets/images/founder.png';
@@ -35,7 +33,6 @@ const String codeDotOrgIconPath = 'assets/images/code-dot-org.png';
 const String worldSavvyIconPath = 'assets/images/world-savvy.webp';
 
 const Set<String> assetPaths = <String>{
-  darkLogoPath,
   fahIconPath,
   founderIconPath,
   openUIIconPath,
@@ -49,7 +46,7 @@ const Set<String> assetPaths = <String>{
 /// Chosen by visual inspection
 const double imageSize = 171.0;
 
-//// Links ////
+//* Links *//
 
 // Code //
 
@@ -128,7 +125,6 @@ const String aboutFaHLink = 'https://foldingathome.org/about-2/';
 // Asset sources //
 
 const Map<String, String> credits = <String, String>{
-  darkLogoPath: mike,
   fahIconPath: faHLink,
   founderIconPath: '$mike & $dunvekLink',
   openUIIconPath: '$mike & Gemini',

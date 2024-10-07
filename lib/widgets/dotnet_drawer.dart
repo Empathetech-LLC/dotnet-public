@@ -12,87 +12,90 @@ import 'package:go_router/go_router.dart';
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 
 class DotNetDrawer extends StatelessWidget {
-  final BuildContext context;
-
   /// [TextStyle] to use on the links' text
-  final TextStyle? style;
+  final TextStyle style;
 
-  /// How much distance should be between the links
-  final double spacing;
-
+  /// [IconLinks] to be displayed in the [DrawerHeader]
   final IconLinks header;
 
   /// Universal [NavigationDrawer] for dotnet
   const DotNetDrawer({
     super.key,
-    required this.context,
     required this.style,
-    required this.spacing,
     required this.header,
   });
 
-  // Define the helper functions //
-
-  void _navigateTo(BuildContext context, String routeName) {
-    Navigator.of(context).pop(routeName);
-    context.go(routeName);
-  }
-
-  // Define the buttons //
-
   @override
   Widget build(BuildContext context) {
-    final EzSpacer spacer = EzSpacer(space: spacing);
+    // Gather theme data //
+
+    const EzSpacer spacer = EzSpacer();
+
+    final ColorScheme colorScheme = Theme.of(context).colorScheme;
+
+    // Define custom functions //
+
+    void navigateTo(BuildContext context, String routeName) {
+      Navigator.of(context).pop();
+      context.goNamed(routeName);
+    }
+
+    // Define the buttons //
 
     final EzLink products = EzLink(
       Lang.of(context)!.psPageTitle,
       style: style,
       textAlign: TextAlign.center,
-      onTap: () => _navigateTo(context, productsRoute),
+      onTap: () => navigateTo(context, productsPath),
       semanticsLabel: Lang.of(context)!.gProductsHint,
-      color: Theme.of(context).colorScheme.onSurface,
+      textColor: colorScheme.onSurface,
+      decorationColor: colorScheme.primary,
     );
 
     final EzLink plan = EzLink(
       Lang.of(context)!.plsPageTitle,
       style: style,
       textAlign: TextAlign.center,
-      onTap: () => _navigateTo(context, planRoute),
+      onTap: () => navigateTo(context, planPath),
       semanticsLabel: Lang.of(context)!.gPlanHint,
-      color: Theme.of(context).colorScheme.onSurface,
+      textColor: colorScheme.onSurface,
+      decorationColor: colorScheme.primary,
     );
 
     final EzLink team = EzLink(
       Lang.of(context)!.tsPageTitle,
       style: style,
       textAlign: TextAlign.center,
-      onTap: () => _navigateTo(context, teamRoute),
+      onTap: () => navigateTo(context, teamPath),
       semanticsLabel: Lang.of(context)!.gTeamHint,
-      color: Theme.of(context).colorScheme.onSurface,
+      textColor: colorScheme.onSurface,
+      decorationColor: colorScheme.primary,
     );
 
     final EzLink support = EzLink(
       Lang.of(context)!.spsPageTitle,
       style: style,
       textAlign: TextAlign.center,
-      onTap: () => _navigateTo(context, supportRoute),
+      onTap: () => navigateTo(context, supportPath),
       semanticsLabel: Lang.of(context)!.gSupportHint,
-      color: Theme.of(context).colorScheme.onSurface,
+      textColor: colorScheme.onSurface,
+      decorationColor: colorScheme.primary,
     );
 
     // Return the build //
 
     return NavigationDrawer(
       tilePadding: EdgeInsets.zero,
-      key: key,
       children: <Widget>[
         DrawerHeader(
           margin: EdgeInsets.zero,
           padding: EdgeInsets.zero,
-          child: EzScrollView(
-            scrollDirection: Axis.horizontal,
-            mainAxisSize: MainAxisSize.min,
-            children: header.children,
+          child: Center(
+            child: EzScrollView(
+              scrollDirection: Axis.horizontal,
+              mainAxisSize: MainAxisSize.min,
+              children: header.children,
+            ),
           ),
         ),
         spacer,

@@ -158,12 +158,6 @@ abstract class Lang {
   /// **'Newsletter'**
   String get gNewsletter;
 
-  /// No description provided for @gFeedback.
-  ///
-  /// In en, this message translates to:
-  /// **'Feedback'**
-  String get gFeedback;
-
   /// No description provided for @gSettingsHint.
   ///
   /// In en, this message translates to:

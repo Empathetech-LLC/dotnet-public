@@ -9,13 +9,12 @@ import 'package:flutter/material.dart';
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 
 class EFUIShoutOut extends StatelessWidget {
-  final TextStyle? style;
-
-  const EFUIShoutOut({super.key, required this.style});
+  const EFUIShoutOut({super.key});
 
   @override
   Widget build(BuildContext context) {
     final Lang l10n = Lang.of(context)!;
+    final TextStyle style = Theme.of(context).textTheme.labelLarge!;
 
     return Column(
       mainAxisSize: MainAxisSize.min,

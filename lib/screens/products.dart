@@ -38,7 +38,7 @@ class _ProductsScreenState extends State<ProductsScreen>
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    setPageTitle(l10n.psPageTitle);
+    setPageTitle(l10n.psPageTitle, Theme.of(context).colorScheme.primary);
   }
 
   // Return the build //
@@ -47,6 +47,7 @@ class _ProductsScreenState extends State<ProductsScreen>
   Widget build(BuildContext context) {
     return DotnetScaffold(
       body: EzScreen(
+        useImageDecoration: false,
         child: EzScrollView(
           children: <Widget>[
             // EFUI //
@@ -61,7 +62,7 @@ class _ProductsScreenState extends State<ProductsScreen>
             // Tagline
             EzLink(
               l10n.psEFUISlogan,
-              style: textTheme.headlineLarge,
+              style: textTheme.headlineLarge!,
               textAlign: TextAlign.center,
               url: Uri.parse(efuiSource),
               semanticsLabel: EFUILang.of(context)!.gEFUISourceHint,
@@ -209,12 +210,12 @@ class _ProductsScreenState extends State<ProductsScreen>
               style: textTheme.titleLarge,
               textAlign: TextAlign.center,
             ),
-            OpenUILinks(bodyStyle: textTheme.bodyLarge),
+            const OpenUILinks(),
             spacer,
           ],
         ),
       ),
-      fab: SettingsFAB(context: context),
+      fab: SettingsFAB(context),
     );
   }
 }

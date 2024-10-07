@@ -40,9 +40,6 @@ class LangEn extends Lang {
   String get gNewsletter => 'Newsletter';
 
   @override
-  String get gFeedback => 'Feedback';
-
-  @override
   String get gSettingsHint => 'Open the settings page';
 
   @override

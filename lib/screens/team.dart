@@ -19,11 +19,11 @@ class TeamScreen extends StatefulWidget {
 class _TeamScreenState extends State<TeamScreen> {
   // Gather the theme data //
 
-  final double padding = EzConfig.get(paddingKey);
-
-  late final EzSpacer padder = EzSpacer(space: padding);
   static const EzSpacer spacer = EzSpacer();
   static const EzSeparator separator = EzSeparator();
+
+  final double margin = EzConfig.get(marginKey);
+  late final EzSpacer titleMargin = EzSpacer(space: margin);
 
   late final TextTheme textTheme = Theme.of(context).textTheme;
 
@@ -34,7 +34,7 @@ class _TeamScreenState extends State<TeamScreen> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    setPageTitle(l10n.tsPageTitle);
+    setPageTitle(l10n.tsPageTitle, Theme.of(context).colorScheme.primary);
   }
 
   // Define custom widgets //
@@ -50,15 +50,15 @@ class _TeamScreenState extends State<TeamScreen> {
         ),
         child: EzLinkWidget(
           url: Uri.parse(saraHLink),
-          semanticLabel: l10n.gFiverrPage(saraH),
           tooltip: saraHLink,
+          semanticLabel: l10n.gFiverrPage(saraH),
           child: ClipRRect(
             borderRadius: BorderRadius.circular(imageSize),
             child: const Image(image: saraHProfile),
           ),
         ),
       ),
-      padder,
+      titleMargin,
 
       // Information
       MergeSemantics(
@@ -101,7 +101,7 @@ class _TeamScreenState extends State<TeamScreen> {
           ),
         ),
       ),
-      padder,
+      titleMargin,
 
       // Information
       MergeSemantics(
@@ -131,6 +131,7 @@ class _TeamScreenState extends State<TeamScreen> {
   Widget build(BuildContext context) {
     return DotnetScaffold(
       body: EzScreen(
+        useImageDecoration: false,
         child: EzScrollView(
           children: <Widget>[
             // Core //
@@ -140,7 +141,7 @@ class _TeamScreenState extends State<TeamScreen> {
               style: textTheme.headlineLarge,
               textAlign: TextAlign.center,
             ),
-            padder,
+            titleMargin,
 
             // Founder
             EzRowCol.sym(
@@ -158,7 +159,7 @@ class _TeamScreenState extends State<TeamScreen> {
                     semanticLabel: l10n.tsTheFounderImageHint,
                   ),
                 ),
-                EzSwapSpacer(space: padding),
+                EzSwapSpacer(space: margin),
 
                 // Information
                 MergeSemantics(
@@ -190,13 +191,10 @@ class _TeamScreenState extends State<TeamScreen> {
               style: textTheme.headlineLarge,
               textAlign: TextAlign.center,
             ),
-            padder,
+            titleMargin,
 
             // Folding@home
-            FaHBanner(
-              titleStyle: textTheme.titleLarge,
-              bodyStyle: textTheme.bodyLarge,
-            ),
+            const FaHBanner(),
             separator,
 
             // Freelance //
@@ -206,7 +204,7 @@ class _TeamScreenState extends State<TeamScreen> {
               style: textTheme.headlineLarge,
               textAlign: TextAlign.center,
             ),
-            padder,
+            titleMargin,
 
             EzRowCol(
               row: Row(
@@ -224,7 +222,7 @@ class _TeamScreenState extends State<TeamScreen> {
           ],
         ),
       ),
-      fab: SettingsFAB(context: context),
+      fab: SettingsFAB(context),
     );
   }
 }

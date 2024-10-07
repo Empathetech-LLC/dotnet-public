@@ -90,7 +90,7 @@ class _FinPlanScreenState extends State<FinPlanScreen> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    setPageTitle(l10n.fpsPageTitle);
+    setPageTitle(l10n.fpsPageTitle, Theme.of(context).colorScheme.primary);
 
     // And financial data
     initFinancialData();
@@ -112,12 +112,13 @@ class _FinPlanScreenState extends State<FinPlanScreen> {
         color: Theme.of(context).colorScheme.secondary,
         backgroundColor: textTheme.headlineLarge!.color,
         minHeight: double.infinity,
-        borderRadius: BorderRadius.circular(5),
+        borderRadius: ezRoundEdge,
       ),
     );
 
     return DotnetScaffold(
       body: EzScreen(
+        useImageDecoration: false,
         child: EzScrollView(
           children: <Widget>[
             if (space > margin) EzSpacer(space: space - margin),
@@ -211,13 +212,13 @@ class _FinPlanScreenState extends State<FinPlanScreen> {
                   ),
             separator,
 
-            CharityOrgs(titleStyle: textTheme.titleLarge),
+            const CharityOrgs(),
             separator,
 
             // Finances source
             EzLink(
               l10n.fpsCheck,
-              style: textTheme.labelLarge,
+              style: textTheme.labelLarge!,
               textAlign: TextAlign.center,
               url: Uri.parse(financesSource),
               semanticsLabel: l10n.fpsCheckHint,
@@ -226,7 +227,7 @@ class _FinPlanScreenState extends State<FinPlanScreen> {
           ],
         ),
       ),
-      fab: SettingsFAB(context: context),
+      fab: SettingsFAB(context),
     );
   }
 }

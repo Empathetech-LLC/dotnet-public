@@ -9,7 +9,6 @@ import '../widgets/export.dart';
 import 'package:flutter/material.dart';
 import 'package:efui_bios/efui_bios.dart';
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
-import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -21,9 +20,8 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   // Gather the theme data //
 
-  late bool isDark = PlatformTheme.of(context)!.isDark;
-
   late final ThemeData theme = Theme.of(context);
+  late bool isDark = isDarkTheme(context);
   late final Lang l10n = Lang.of(context)!;
 
   // Define custom Widgets //
@@ -40,7 +38,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    setPageTitle(empathetech);
+    setPageTitle(empathetech, theme.colorScheme.primary);
   }
 
   // Return the build //
@@ -49,6 +47,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return DotnetScaffold(
       body: EzScreen(
+        useImageDecoration: false,
         margin: EdgeInsets.zero,
         child: Stack(
           alignment: AlignmentDirectional.topCenter,
@@ -75,7 +74,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
       ),
-      fab: SettingsFAB(context: context),
+      fab: SettingsFAB(context),
     );
   }
 }

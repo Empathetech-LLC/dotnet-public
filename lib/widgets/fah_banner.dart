@@ -10,22 +10,15 @@ import 'package:flutter/material.dart';
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 
 class FaHBanner extends StatelessWidget {
-  final TextStyle? titleStyle;
-  final TextStyle? bodyStyle;
-
-  const FaHBanner({
-    super.key,
-    required this.titleStyle,
-    required this.bodyStyle,
-  });
+  const FaHBanner({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final double padding = EzConfig.get(paddingKey);
-
-    final EzSpacer padder = EzSpacer(space: padding);
+    final double margin = EzConfig.get(marginKey);
+    final EzSpacer titleMargin = EzSpacer(space: margin);
 
     final Lang l10n = Lang.of(context)!;
+    final TextTheme textTheme = Theme.of(context).textTheme;
 
     return Column(
       mainAxisSize: MainAxisSize.min,
@@ -49,7 +42,7 @@ class FaHBanner extends StatelessWidget {
                 tooltip: faHLink,
               ),
             ),
-            EzSwapSpacer(space: padding),
+            EzSwapSpacer(space: margin),
 
             // External links && info
             Column(
@@ -57,17 +50,17 @@ class FaHBanner extends StatelessWidget {
               children: <Widget>[
                 Text(
                   l10n.fahJoin,
-                  style: titleStyle,
+                  style: textTheme.titleLarge,
                   textAlign: TextAlign.center,
                 ),
                 EzRichText(<InlineSpan>[
                   EzPlainText(
                     text: l10n.fahIntro1,
-                    style: bodyStyle,
+                    style: textTheme.bodyLarge,
                   ),
                   EzInlineLink(
                     empathetech,
-                    style: bodyStyle,
+                    style: textTheme.bodyLarge,
                     textAlign: TextAlign.center,
                     url: Uri.parse(empathFoldingTeam),
                     semanticsLabel: l10n.fahTeamHint,
@@ -76,13 +69,13 @@ class FaHBanner extends StatelessWidget {
                   ),
                   EzPlainText(
                     text: l10n.fahIntro2,
-                    style: bodyStyle,
+                    style: textTheme.bodyLarge,
                   ),
                 ], textAlign: TextAlign.center),
-                padder,
+                titleMargin,
                 EzLink(
                   l10n.fahWhatQ,
-                  style: bodyStyle,
+                  style: textTheme.bodyLarge!,
                   textAlign: TextAlign.center,
                   url: Uri.parse(aboutFaHLink),
                   semanticsLabel: l10n.fahWhatQHint,
@@ -92,12 +85,12 @@ class FaHBanner extends StatelessWidget {
             ),
           ],
         ),
-        padder,
+        titleMargin,
 
         // "Live" stats //
         Text(
           l10n.fahStats,
-          style: bodyStyle,
+          style: textTheme.bodyLarge,
           textAlign: TextAlign.center,
         ),
       ],

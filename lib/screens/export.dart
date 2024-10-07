@@ -23,29 +23,29 @@ export 'settings/color_settings.dart';
 
 // Path names //
 
+/// 'products'
 const String productsPath = 'products';
-const String productsRoute = '/products';
 
+/// 'plan'
 const String planPath = 'plan';
-const String planRoute = '/plan';
 
+/// 'fin-plan'
 const String finPlanPath = 'fin-plan';
-const String finPlanRoute = '/fin-plan';
 
+/// 'team'
 const String teamPath = 'team';
-const String teamRoute = '/team';
 
+/// 'support'
 const String supportPath = 'support';
-const String supportRoute = '/support';
 
+/// 'settings'
 const String settingsPath = 'settings';
-const String settingsRoute = '/settings';
 
+/// 'text-settings'
 const String textSettingsPath = 'text-settings';
-const String textSettingsRoute = '/settings/text-settings';
 
+/// 'layout-settings'
 const String layoutSettingsPath = 'layout-settings';
-const String layoutSettingsRoute = '/settings/layout-settings';
 
+/// 'color-settings'
 const String colorSettingsPath = 'color-settings';
-const String colorSettingsRoute = '/settings/color-settings';

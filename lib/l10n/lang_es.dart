@@ -40,9 +40,6 @@ class LangEs extends Lang {
   String get gNewsletter => 'Boletín de noticias';
 
   @override
-  String get gFeedback => 'Feedback';
-
-  @override
   String get gSettingsHint => 'Abrir la página de configuraciones';
 
   @override

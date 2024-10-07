@@ -33,44 +33,44 @@ class _SupportScreenState extends State<SupportScreen> {
 
   late final List<Widget> crowdFundOrgs = <Widget>[
     // GoFundMe
-    ElevatedButton.icon(
+    EzElevatedIconButton(
       onPressed: () => launchUrl(Uri.parse(empathGoFundMe)),
       icon: const Icon(Icons.wb_sunny_outlined),
-      label: const Text('GoFundMe'),
+      label: 'GoFundMe',
     ),
   ];
 
   late final List<Widget> affiliateDonations = <Widget>[
     // Patreon
-    ElevatedButton.icon(
+    EzElevatedIconButton(
       onPressed: () => launchUrl(Uri.parse(empathPatreon)),
       icon: const Icon(LineIcons.patreon),
-      label: const Text('Patreon'),
+      label: 'Patreon',
     ),
     swapSpacer,
 
     // Buy Me a Coffee
-    ElevatedButton.icon(
+    EzElevatedIconButton(
       onPressed: () => launchUrl(Uri.parse(empathCoffee)),
       icon: const Icon(LineIcons.coffee),
-      label: const Text('Buy Me a Coffee'),
+      label: 'Buy Me a Coffee',
     ),
     swapSpacer,
 
     // Ko-fi
-    ElevatedButton.icon(
+    EzElevatedIconButton(
       onPressed: () => launchUrl(Uri.parse(empathKofi)),
       icon: const Icon(LineIcons.coffee),
-      label: const Text('Ko-fi'),
+      label: 'Ko-fi',
     ),
   ];
 
   late final List<Widget> directDonations = <Widget>[
     // PayPal
-    ElevatedButton.icon(
+    EzElevatedIconButton(
       onPressed: () => launchUrl(Uri.parse(empathPayPal)),
       icon: const Icon(LineIcons.paypal),
-      label: const Text('PayPal'),
+      label: 'PayPal',
     ),
     swapSpacer,
 
@@ -82,10 +82,10 @@ class _SupportScreenState extends State<SupportScreen> {
     swapSpacer,
 
     // CashApp
-    ElevatedButton.icon(
+    EzElevatedIconButton(
       onPressed: () => launchUrl(Uri.parse(empathCashApp)),
       icon: const Icon(LineIcons.dollarSign),
-      label: const Text('CashApp'),
+      label: 'CashApp',
     ),
   ];
 
@@ -94,7 +94,7 @@ class _SupportScreenState extends State<SupportScreen> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    setPageTitle(l10n.spsPageTitle);
+    setPageTitle(l10n.spsPageTitle, Theme.of(context).colorScheme.primary);
   }
 
   // Return the build //
@@ -103,6 +103,7 @@ class _SupportScreenState extends State<SupportScreen> {
   Widget build(BuildContext context) {
     return DotnetScaffold(
       body: EzScreen(
+        useImageDecoration: false,
         child: EzScrollView(
           children: <Widget>[
             // Intro //
@@ -119,8 +120,9 @@ class _SupportScreenState extends State<SupportScreen> {
                   ),
                   Text(
                     l10n.spsGive,
-                    style: textTheme.bodyLarge
-                        ?.copyWith(fontSize: textTheme.titleLarge?.fontSize),
+                    style: textTheme.bodyLarge?.copyWith(
+                      fontSize: textTheme.titleLarge?.fontSize,
+                    ),
                     textAlign: TextAlign.center,
                   ),
                 ],
@@ -128,7 +130,7 @@ class _SupportScreenState extends State<SupportScreen> {
             ),
             separator,
 
-            //// Donate ////
+            //* Donate *//
 
             // Time //
 
@@ -206,15 +208,12 @@ class _SupportScreenState extends State<SupportScreen> {
             ),
 
             // F@H team
-            FaHBanner(
-              titleStyle: textTheme.titleLarge,
-              bodyStyle: textTheme.bodyLarge,
-            ),
+            const FaHBanner(),
             separator,
           ],
         ),
       ),
-      fab: SettingsFAB(context: context),
+      fab: SettingsFAB(context),
     );
   }
 }

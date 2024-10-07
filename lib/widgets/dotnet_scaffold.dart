@@ -18,6 +18,7 @@ class DotnetScaffold extends StatelessWidget {
   /// [FloatingActionButton]
   final Widget? fab;
 
+  /// Standardized [Scaffold] for all of empathetech dotnet's screens
   const DotnetScaffold({
     super.key,
     required this.body,
@@ -30,71 +31,51 @@ class DotnetScaffold extends StatelessWidget {
 
     final bool isLefty = EzConfig.get(isLeftyKey) ?? false;
 
-    // Reverse the colors of the app bar to highlight it
-    final ColorScheme colorScheme = Theme.of(context).colorScheme;
-    final Color appBarColor = colorScheme.onSurface;
-    final Color appBarTextColor = colorScheme.surface;
-
-    final TextStyle appBarTextStyle = Theme.of(context)
-        .appBarTheme
-        .titleTextStyle!
-        .copyWith(color: appBarTextColor);
-
-    final IconThemeData appBarIconData =
-        Theme.of(context).appBarTheme.iconTheme!.copyWith(
-              color: appBarTextColor,
-            );
-
-    final AppBarTheme appBarTheme = AppBarTheme(
-      color: appBarColor,
-      iconTheme: appBarIconData,
-      actionsIconTheme: appBarIconData,
-      titleTextStyle: appBarTextStyle,
-    );
-
     final double margin = EzConfig.get(marginKey);
-    final double padding = EzConfig.get(paddingKey);
-    final double space = EzConfig.get(spacingKey);
-
-    // Set appBar height to equal space above and below text links
-    final double toolbarHeight = appBarTextStyle.fontSize! + padding * 2;
 
     final Lang l10n = Lang.of(context)!;
 
-    // Define shared widgets //
+    final TextStyle appBarTextStyle =
+        Theme.of(context).appBarTheme.titleTextStyle!;
+    final IconThemeData appBarIconData =
+        Theme.of(context).appBarTheme.iconTheme!;
 
-    final Widget logo = Container(
-      padding: EdgeInsets.symmetric(horizontal: margin),
-      child: EzLinkWidget(
-        isImage: true,
-        onTap: () => context.go(homePath),
-        semanticLabel: l10n.gLogoHint,
-        tooltip: l10n.gHomeHint,
-        child: EmpathetechLogo(
-          size: Size(toolbarHeight, toolbarHeight),
-          margin: margin,
-        ),
+    // Set appBar height to equal space above and below text links
+    final double toolbarHeight = measureText(
+          l10n.spsPageTitle,
+          context: context,
+          style: appBarTextStyle,
+        ).height +
+        margin * 2;
+
+    // Define custom widgets //
+
+    final Widget logo = EzLinkWidget(
+      isImage: true,
+      onTap: () => context.goNamed(homePath),
+      semanticLabel: l10n.gLogoHint,
+      tooltip: l10n.gHomeHint,
+      child: SizedBox(
+        width: toolbarHeight,
+        height: toolbarHeight,
+        child: EmpathetechLogo(margin: margin),
       ),
     );
 
     final PageLinks pageLinks = PageLinks(
       context: context,
       style: appBarTextStyle,
-      spacing: space,
     );
 
     final IconLinks iconLinks = IconLinks(
-      context: context,
+      colorScheme: Theme.of(context).colorScheme,
       iconSize: appBarIconData.size!,
-      spacer: space,
       margin: margin,
-      color: colorScheme.onSurface,
+      l10n: l10n,
     );
 
     final Widget iconLinksMenu = MenuAnchor(
       builder: (_, MenuController controller, ___) {
-        final Color partialPrimary = colorScheme.primary.withOpacity(0.1);
-
         return IconButton(
           onPressed: () {
             if (controller.isOpen) {
@@ -103,34 +84,21 @@ class DotnetScaffold extends StatelessWidget {
               controller.open();
             }
           },
-          icon: Icon(PlatformIcons(context).share),
           tooltip: l10n.gSocials,
-          padding: EdgeInsets.symmetric(horizontal: margin),
-          focusColor: partialPrimary,
-          highlightColor: partialPrimary,
-          hoverColor: partialPrimary,
+          icon: Icon(PlatformIcons(context).share),
         );
       },
       menuChildren: iconLinks.buttons
-          .map((IconButton button) => MenuItemButton(
+          .map((IconButton button) => EzMenuButton(
                 onPressed: button.onPressed,
-                child: TextButton.icon(
-                  icon: button.icon,
-                  label: Text(button.tooltip!),
-                  onPressed: button.onPressed,
-                  style: Theme.of(context).textButtonTheme.style?.copyWith(
-                        foregroundColor: WidgetStatePropertyAll<Color>(
-                            colorScheme.onSurface),
-                      ),
-                ),
+                icon: button.icon,
+                label: button.tooltip!,
               ))
           .toList(),
     );
 
     final DotNetDrawer drawer = DotNetDrawer(
-      context: context,
       style: appBarTextStyle,
-      spacing: space,
       header: iconLinks,
     );
 
@@ -139,7 +107,6 @@ class DotnetScaffold extends StatelessWidget {
     // Define the build(s) //
 
     final _SmallBuild smallBuild = _SmallBuild(
-      appBarTheme: appBarTheme,
       toolbarHeight: toolbarHeight,
       isLefty: isLefty,
       logo: logo,
@@ -149,7 +116,6 @@ class DotnetScaffold extends StatelessWidget {
     );
 
     final _LargeBuild largeBuild = _LargeBuild(
-      appBarTheme: appBarTheme,
       toolbarHeight: toolbarHeight,
       margin: margin,
       isLefty: isLefty,
@@ -172,7 +138,6 @@ class DotnetScaffold extends StatelessWidget {
 
 class _SmallBuild extends StatelessWidget {
   final double width = double.infinity;
-  final AppBarTheme appBarTheme;
   final double toolbarHeight;
   final bool isLefty;
   final Widget logo;
@@ -183,7 +148,6 @@ class _SmallBuild extends StatelessWidget {
   /// [DotnetScaffold] for when there is limited screen space
   /// Has a mobile-like layout
   const _SmallBuild({
-    required this.appBarTheme,
     required this.toolbarHeight,
     required this.isLefty,
     required this.logo,
@@ -198,20 +162,15 @@ class _SmallBuild extends StatelessWidget {
       child: Scaffold(
         appBar: PreferredSize(
           preferredSize: Size(width, toolbarHeight),
-          child: Theme(
-            data: Theme.of(context).copyWith(appBarTheme: appBarTheme),
-            child: AppBar(
-              excludeHeaderSemantics: true,
-              toolbarHeight: toolbarHeight,
+          child: AppBar(
+            excludeHeaderSemantics: true,
+            toolbarHeight: toolbarHeight,
 
-              // Title
-              title: logo,
-              titleSpacing: 0,
-              centerTitle: true,
+            // Title
+            title: logo,
 
-              // Actions (aka trailing aka right)
-              actions: isLefty ? <Widget>[const EzBackAction()] : null,
-            ),
+            // Actions (aka trailing aka right)
+            actions: isLefty ? const <Widget>[EzBackAction()] : null,
           ),
         ),
 
@@ -229,6 +188,9 @@ class _SmallBuild extends StatelessWidget {
         floatingActionButtonLocation: isLefty
             ? FloatingActionButtonLocation.startFloat
             : FloatingActionButtonLocation.endFloat,
+
+        // Prevents the keyboard from pushing the body up
+        resizeToAvoidBottomInset: false,
       ),
     );
   }
@@ -236,7 +198,6 @@ class _SmallBuild extends StatelessWidget {
 
 class _LargeBuild extends StatelessWidget {
   final double width = double.infinity;
-  final AppBarTheme appBarTheme;
   final double toolbarHeight;
   final double margin;
   final bool isLefty;
@@ -249,7 +210,6 @@ class _LargeBuild extends StatelessWidget {
   /// [DotnetScaffold] for when there is ample screen space
   /// Has a traditional footer-less web page layout
   const _LargeBuild({
-    required this.appBarTheme,
     required this.toolbarHeight,
     required this.margin,
     required this.isLefty,
@@ -266,24 +226,21 @@ class _LargeBuild extends StatelessWidget {
       child: Scaffold(
         appBar: PreferredSize(
           preferredSize: Size(width, toolbarHeight),
-          child: Theme(
-            data: Theme.of(context).copyWith(appBarTheme: appBarTheme),
-            child: AppBar(
-              excludeHeaderSemantics: true,
-              toolbarHeight: toolbarHeight,
+          child: AppBar(
+            excludeHeaderSemantics: true,
+            toolbarHeight: toolbarHeight,
 
-              // Leading (aka left)
-              leading: isLefty ? iconLinksMenu : logo,
-              leadingWidth: toolbarHeight + margin * 2,
+            // Leading (aka left)
+            leading: isLefty ? iconLinksMenu : logo,
+            leadingWidth: toolbarHeight,
 
-              // Title
-              title: pageLinks,
-              titleSpacing: 0,
-              centerTitle: true,
+            // Title
+            title: pageLinks,
+            centerTitle: true,
+            titleSpacing: 0,
 
-              // Action (aka trailing aka right)
-              actions: isLefty ? <Widget>[logo] : <Widget>[iconLinksMenu],
-            ),
+            // Action (aka trailing aka right)
+            actions: isLefty ? <Widget>[logo] : <Widget>[iconLinksMenu],
           ),
         ),
 
@@ -295,6 +252,9 @@ class _LargeBuild extends StatelessWidget {
         floatingActionButtonLocation: isLefty
             ? FloatingActionButtonLocation.startFloat
             : FloatingActionButtonLocation.endFloat,
+
+        // Prevents the keyboard from pushing the body up
+        resizeToAvoidBottomInset: false,
       ),
     );
   }

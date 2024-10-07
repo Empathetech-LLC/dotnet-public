@@ -40,9 +40,6 @@ class LangFr extends Lang {
   String get gNewsletter => 'Lettre d\'information';
 
   @override
-  String get gFeedback => 'Commentaires';
-
-  @override
   String get gSettingsHint => 'Ouvre la page des paramètres';
 
   @override

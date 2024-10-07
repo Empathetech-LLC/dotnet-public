@@ -12,17 +12,13 @@ import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 
 class PageLinks extends StatelessWidget {
   final BuildContext context;
-  final TextStyle? style;
-
-  /// How much distance should be between the links
-  final double spacing;
+  final TextStyle style;
 
   /// Internal page links to put in the [AppBar]
   const PageLinks({
     super.key,
     required this.context,
     required this.style,
-    required this.spacing,
   });
 
   // Define the helper functions //
@@ -40,49 +36,54 @@ class PageLinks extends StatelessWidget {
       context: context,
     ).width;
 
-    return wordWidth + spacing * 5;
+    return wordWidth + EzConfig.get(spacingKey) * 5;
   }
 
   // Define the buttons //
 
   @override
   Widget build(BuildContext context) {
-    final EzSpacer spacer = EzSpacer(space: spacing, vertical: false);
+    const EzSpacer spacer = EzSpacer(vertical: false);
+    final ColorScheme colorScheme = Theme.of(context).colorScheme;
 
     final EzLink products = EzLink(
       Lang.of(context)!.psPageTitle,
       style: style,
       textAlign: TextAlign.center,
-      onTap: () => context.go(productsRoute),
+      onTap: () => context.goNamed(productsPath),
       semanticsLabel: Lang.of(context)!.gProductsHint,
-      color: Theme.of(context).colorScheme.surface,
+      textColor: colorScheme.onSurface,
+      decorationColor: colorScheme.primary,
     );
 
     final EzLink plan = EzLink(
       Lang.of(context)!.plsPageTitle,
       style: style,
       textAlign: TextAlign.center,
-      onTap: () => context.go(planRoute),
+      onTap: () => context.goNamed(planPath),
       semanticsLabel: Lang.of(context)!.gPlanHint,
-      color: Theme.of(context).colorScheme.surface,
+      textColor: colorScheme.onSurface,
+      decorationColor: colorScheme.primary,
     );
 
     final EzLink team = EzLink(
       Lang.of(context)!.tsPageTitle,
       style: style,
       textAlign: TextAlign.center,
-      onTap: () => context.go(teamRoute),
+      onTap: () => context.goNamed(teamPath),
       semanticsLabel: Lang.of(context)!.gTeamHint,
-      color: Theme.of(context).colorScheme.surface,
+      textColor: colorScheme.onSurface,
+      decorationColor: colorScheme.primary,
     );
 
     final EzLink support = EzLink(
       Lang.of(context)!.spsPageTitle,
       style: style,
       textAlign: TextAlign.center,
-      onTap: () => context.go(supportRoute),
+      onTap: () => context.goNamed(supportPath),
       semanticsLabel: Lang.of(context)!.gSupportHint,
-      color: Theme.of(context).colorScheme.surface,
+      textColor: colorScheme.onSurface,
+      decorationColor: colorScheme.primary,
     );
 
     // Return the build //

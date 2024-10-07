@@ -26,9 +26,7 @@ const List<String> platforms = <String>[
 // Define the class //
 
 class OpenUILinks extends StatefulWidget {
-  final TextStyle? bodyStyle;
-
-  const OpenUILinks({super.key, required this.bodyStyle});
+  const OpenUILinks({super.key});
 
   @override
   State<OpenUILinks> createState() => _OpenUILinksState();
@@ -36,6 +34,8 @@ class OpenUILinks extends StatefulWidget {
 
 class _OpenUILinksState extends State<OpenUILinks> {
   // Gather the theme data //
+
+  final double padding = EzConfig.get(paddingKey);
 
   late final Lang l10n = Lang.of(context)!;
 
@@ -99,6 +99,15 @@ class _OpenUILinksState extends State<OpenUILinks> {
         DropdownMenu<String>(
           enableSearch: false,
           initialSelection: currPlatform,
+          dropdownMenuEntries: platforms
+              .map(
+                (String platform) => DropdownMenuEntry<String>(
+                  value: platform,
+                  label: platform,
+                  style: TextButton.styleFrom(padding: EzInsets.wrap(padding)),
+                ),
+              )
+              .toList(),
           onSelected: (String? platform) {
             if (platform == null) return;
 
@@ -106,12 +115,6 @@ class _OpenUILinksState extends State<OpenUILinks> {
             currLink = getURL(currPlatform);
             setState(() {});
           },
-          dropdownMenuEntries: platforms
-              .map((String platform) => DropdownMenuEntry<String>(
-                    value: platform,
-                    label: platform,
-                  ))
-              .toList(),
         ),
       ],
     );

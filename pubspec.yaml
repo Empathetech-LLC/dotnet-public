@@ -1,6 +1,6 @@
 name: dotnet
 description: "Empathetech's mission is to re-balance the power in tech by making open source software more accessible."
-version: 4.0.1
+version: 4.1.0
 publish_to: 'none'
 
 environment:
@@ -13,26 +13,25 @@ dependencies:
     sdk: flutter
   intl: ^0.19.0
 
-  # Flutter/Google
-  go_router: ^14.2.7
+  # Flutter (Google)
+  go_router: ^14.3.0
   shared_preferences: ^2.3.2
   url_launcher: ^6.3.0
 
   # Community
-  feedback: ^3.1.0
   flutter_localized_locales: ^2.0.5
   flutter_platform_widgets: ^7.0.1
   line_icons: ^2.0.3
   
-  # Empathetech
-  empathetech_flutter_ui: ^7.1.0
   efui_bios:
     path: ../efui_bios
+  empathetech_flutter_ui:
+    path: ../empathetech_flutter_ui
 
 dev_dependencies:
-  dependency_validator: ^4.1.0
-  flutter_launcher_icons: ^0.13.1
-  flutter_lints: ^4.0.0
+  dependency_validator: ^4.1.1
+  flutter_launcher_icons: ^0.14.1
+  flutter_lints: ^5.0.0
   flutter_native_splash: ^2.4.1
   flutter_test:
     sdk: flutter
@@ -63,7 +62,6 @@ flutter:
     - assets/images/
     - assets/images/AnitaB.webp
     - assets/images/code-dot-org.png
-    - assets/images/dark-logo-round.png
     - assets/images/dark-logo.png
     - assets/images/fah.png
     - assets/images/founder.png
@@ -72,7 +70,9 @@ flutter:
 
 flutter_launcher_icons:
   image_path: assets/images/dark-logo.png
-  android: false
+  adaptive_icon_foreground: assets/images/dark-logo.png
+  adaptive_icon_background: "#000000"
+  android: true
   ios: true
   web:
     generate: true

@@ -1,6 +1,6 @@
 name: dotnet
 description: "Empathetech's mission is to re-balance the power in tech by making open source software more accessible."
-version: 4.1.1
+version: 4.1.2
 publish_to: 'none'
 
 environment:
@@ -16,7 +16,7 @@ dependencies:
   # Flutter (Google)
   go_router: ^14.3.0
   shared_preferences: ^2.3.2
-  url_launcher: ^6.3.0
+  url_launcher: ^6.3.1
 
   # Community
   flutter_localized_locales: ^2.0.5

@@ -13,14 +13,14 @@ import 'package:go_router/go_router.dart';
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 
-class PlanScreen extends StatefulWidget {
-  const PlanScreen({super.key});
+class MissionScreen extends StatefulWidget {
+  const MissionScreen({super.key});
 
   @override
-  State<PlanScreen> createState() => _PlanScreenState();
+  State<MissionScreen> createState() => _MissionScreenState();
 }
 
-class _PlanScreenState extends State<PlanScreen> {
+class _MissionScreenState extends State<MissionScreen> {
   // Gather the theme data //
 
   final double padding = EzConfig.get(paddingKey);
@@ -33,7 +33,7 @@ class _PlanScreenState extends State<PlanScreen> {
 
   // Define the build data //
 
-  int index = 0;
+  int index = 2;
 
   /// Styles the index buttons based on [index]
   StepStyle? _style(int indexTarget) {
@@ -74,37 +74,37 @@ class _PlanScreenState extends State<PlanScreen> {
   List<Widget> stepButtons(ControlsDetails details) {
     switch (details.stepIndex) {
       case 0:
-        // Forward
+        // Start -> So we
         return <Widget>[
-          EzElevatedIconButton(
+          EzTextIconButton(
             onPressed: details.onStepContinue,
+            style: TextButton.styleFrom(padding: EdgeInsets.zero),
             icon: Icon(PlatformIcons(context).downArrow),
-            label: l10n.plsThen,
-          )
+            label: l10n.msSoWe,
+          ),
         ];
+
+      case 1:
+        // Middle -> By
+        return <Widget>[
+          EzTextIconButton(
+            onPressed: details.onStepContinue,
+            style: TextButton.styleFrom(padding: EdgeInsets.zero),
+            icon: Icon(PlatformIcons(context).downArrow),
+            label: l10n.msBy,
+          ),
+        ];
+
       case 2:
-        // Back
-        return <Widget>[
-          EzElevatedIconButton(
-            onPressed: details.onStepCancel,
-            icon: Icon(PlatformIcons(context).upArrow),
-            label: l10n.plsBefore,
-          )
-        ];
       default:
-        // Both
+        // End -> By first
         return <Widget>[
-          EzElevatedIconButton(
-            onPressed: details.onStepCancel,
+          EzTextIconButton(
+            onPressed: () => setState(() => index = 0),
+            style: TextButton.styleFrom(padding: EdgeInsets.zero),
             icon: Icon(PlatformIcons(context).upArrow),
-            label: l10n.plsBefore,
-          ),
-          const EzSpacer(vertical: false),
-          EzElevatedIconButton(
-            onPressed: details.onStepContinue,
-            icon: Icon(PlatformIcons(context).downArrow),
-            label: l10n.plsThen,
-          ),
+            label: l10n.msFirst,
+          )
         ];
     }
   }
@@ -136,7 +136,7 @@ class _PlanScreenState extends State<PlanScreen> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    setPageTitle(l10n.plsPageTitle, colorScheme.primary);
+    setPageTitle(l10n.msPageTitle, colorScheme.primary);
   }
 
   // Return the build //
@@ -160,9 +160,9 @@ class _PlanScreenState extends State<PlanScreen> {
             Step(
               stepStyle: _style(0),
               isActive: index >= 0,
-              title: _title(l10n.plsIDProblem),
+              title: _title(l10n.msIDProblem),
               content: _content(Text(
-                l10n.plsIDProblemContent,
+                l10n.msIDProblemContent,
                 style: textTheme.bodyLarge,
                 textAlign: TextAlign.left,
               )),
@@ -172,9 +172,9 @@ class _PlanScreenState extends State<PlanScreen> {
             Step(
               stepStyle: _style(1),
               isActive: index >= 1,
-              title: _title(l10n.plsBeSolution),
+              title: _title(l10n.msFindSolution),
               content: _content(Text(
-                l10n.plsBeSolutionContent,
+                l10n.msFindSolutionContent,
                 style: textTheme.bodyLarge,
                 textAlign: TextAlign.left,
               )),
@@ -184,10 +184,10 @@ class _PlanScreenState extends State<PlanScreen> {
             Step(
               stepStyle: _style(2),
               isActive: index >= 2,
-              title: _title(l10n.plsProvideValue),
+              title: _title(l10n.msProvideValue),
               content: _content(EzRichText(<InlineSpan>[
                 EzPlainText(
-                  text: l10n.plsProvideValueContent1,
+                  text: l10n.msProvideValueContent1,
                   style: textTheme.bodyLarge,
                 ),
                 EzInlineLink(
@@ -199,7 +199,7 @@ class _PlanScreenState extends State<PlanScreen> {
                   richSemanticsLabel: efuiLFix,
                 ),
                 EzPlainText(
-                  text: l10n.plsProvideValueContent2,
+                  text: l10n.msProvideValueContent2,
                   style: textTheme.bodyLarge,
                 ),
               ], textAlign: TextAlign.left)),

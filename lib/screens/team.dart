@@ -3,10 +3,12 @@
  * See LICENSE for distribution and usage details.
  */
 
+import '../screens/export.dart';
 import '../utils/export.dart';
 import '../widgets/export.dart';
 
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 
 class TeamScreen extends StatefulWidget {
@@ -27,6 +29,8 @@ class _TeamScreenState extends State<TeamScreen> {
 
   late final TextTheme textTheme = Theme.of(context).textTheme;
 
+  late final ColorScheme colorScheme = Theme.of(context).colorScheme;
+
   late final Lang l10n = Lang.of(context)!;
 
   // Set the page title //
@@ -34,7 +38,7 @@ class _TeamScreenState extends State<TeamScreen> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    setPageTitle(l10n.tsPageTitle, Theme.of(context).colorScheme.primary);
+    setPageTitle(l10n.tsPageTitle, colorScheme.primary);
   }
 
   // Define custom widgets //
@@ -141,7 +145,7 @@ class _TeamScreenState extends State<TeamScreen> {
               style: textTheme.headlineLarge,
               textAlign: TextAlign.center,
             ),
-            titleMargin,
+            spacer,
 
             // Founder
             EzRowCol.sym(
@@ -154,9 +158,13 @@ class _TeamScreenState extends State<TeamScreen> {
                     maxHeight:
                         MediaQuery.textScalerOf(context).scale(imageSize),
                   ),
-                  child: EzImage(
+                  child: EzLinkImageProvider(
                     image: founderImage,
                     semanticLabel: l10n.tsTheFounderImageHint,
+                    url: Uri.parse(
+                      'mailto:$empathFounder?subject=Becoming%20a%20contributor',
+                    ),
+                    tooltip: l10n.tsTheFounderImageHint.split('. ').last,
                   ),
                 ),
                 EzSwapSpacer(space: margin),
@@ -182,20 +190,33 @@ class _TeamScreenState extends State<TeamScreen> {
                 ),
               ],
             ),
-            separator,
+
+            // Divider
+            ConstrainedBox(
+              constraints: BoxConstraints(maxWidth: widthOf(context) * 0.667),
+              child: const Divider(),
+            ),
 
             // Community //
 
-            Text(
+            EzLink(
               l10n.tsCommunity,
               style: textTheme.headlineLarge,
               textAlign: TextAlign.center,
+              textColor: colorScheme.onSurface,
+              decorationColor: colorScheme.primary,
+              onTap: () => context.goNamed(contributePath),
+              semanticsLabel: l10n.gContributeHint,
             ),
-            titleMargin,
+            spacer,
 
             // Folding@home
             const FaHBanner(),
-            separator,
+
+            ConstrainedBox(
+              constraints: BoxConstraints(maxWidth: widthOf(context) * 0.667),
+              child: const Divider(),
+            ),
 
             // Freelance //
 
@@ -204,7 +225,7 @@ class _TeamScreenState extends State<TeamScreen> {
               style: textTheme.headlineLarge,
               textAlign: TextAlign.center,
             ),
-            titleMargin,
+            spacer,
 
             EzRowCol(
               row: Row(
@@ -218,7 +239,7 @@ class _TeamScreenState extends State<TeamScreen> {
                 children: <Widget>[spanishCredits, spacer, frenchCredits],
               ),
             ),
-            spacer,
+            separator,
           ],
         ),
       ),

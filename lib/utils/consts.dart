@@ -25,21 +25,23 @@ const String founderIconPath = 'assets/images/founder.png';
 const String mike = 'Michael Waldron';
 
 const String openUIIconPath = 'assets/images/settings-sandbox-round.png';
-
-const String ytdReportPath = 'assets/data/ytd-expenses.csv';
+const String smokeSignalIconPath = 'assets/images/smoke-signal-icon.png';
 
 const String anitaBorgIconPath = 'assets/images/AnitaB.webp';
 const String codeDotOrgIconPath = 'assets/images/code-dot-org.png';
 const String worldSavvyIconPath = 'assets/images/world-savvy.webp';
 
+const String ytdReportPath = 'assets/data/ytd-expenses.csv';
+
 const Set<String> assetPaths = <String>{
   fahIconPath,
   founderIconPath,
   openUIIconPath,
-  ytdReportPath,
+  smokeSignalIconPath,
   anitaBorgIconPath,
   codeDotOrgIconPath,
   worldSavvyIconPath,
+  ytdReportPath,
 };
 
 /// 171.0
@@ -53,6 +55,10 @@ const double imageSize = 171.0;
 /// https://github.com/Empathetech-LLC/empathetech_flutter_ui
 const String efuiSource =
     'https://github.com/Empathetech-LLC/empathetech_flutter_ui';
+
+/// https://github.com/Empathetech-LLC/smoke_signal
+const String smokeSignalSource =
+    'https://github.com/Empathetech-LLC/smoke_signal';
 
 /// https://github.com/Empathetech-LLC/dotnet-public/blob/main/lib/screens/settings_home.dart
 const String settingsSource =
@@ -93,6 +99,11 @@ const String alexisNProfileLink =
 /// Created the founder profile
 const String dunvekLink = 'https://www.fiverr.com/dunvek';
 
+/// Pimen, graphic designer
+/// https://pimen.itch.io/
+/// Created an asset used in the smoke signal icon
+const String pimenLink = 'https://pimen.itch.io/';
+
 // Non-profits //
 
 /// https://anitab.org/
@@ -128,6 +139,7 @@ const Map<String, String> credits = <String, String>{
   fahIconPath: faHLink,
   founderIconPath: '$mike & $dunvekLink',
   openUIIconPath: '$mike & Gemini',
+  smokeSignalIconPath: '$mike & $pimenLink',
   anitaBorgIconPath: anitaBorgLink,
   codeDotOrgIconPath: codeDotOrgLink,
   worldSavvyIconPath: worldSavvyLink,

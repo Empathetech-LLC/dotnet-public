@@ -7,14 +7,14 @@
 
 export 'home.dart';
 
-export 'products.dart';
-
-export 'plan/plan.dart';
 export 'plan/fin_plan.dart';
+export 'plan/mission.dart';
+
+export 'products.dart';
 
 export 'team.dart';
 
-export 'support.dart';
+export 'contribute.dart';
 
 export 'settings/settings_home.dart';
 export 'settings/text_settings.dart';
@@ -23,20 +23,20 @@ export 'settings/color_settings.dart';
 
 // Path names //
 
-/// 'products'
-const String productsPath = 'products';
-
-/// 'plan'
-const String planPath = 'plan';
+/// 'mission'
+const String missionPath = 'mission';
 
 /// 'fin-plan'
 const String finPlanPath = 'fin-plan';
 
+/// 'products'
+const String productsPath = 'products';
+
 /// 'team'
 const String teamPath = 'team';
 
-/// 'support'
-const String supportPath = 'support';
+/// 'contribute'
+const String contributePath = 'contribute';
 
 /// 'settings'
 const String settingsPath = 'settings';

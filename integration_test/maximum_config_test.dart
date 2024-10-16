@@ -6,10 +6,9 @@
 import 'screens/home.dart' as home;
 import 'screens/settings_home.dart' as settings_home;
 import 'screens/products.dart' as products;
-import 'screens/plan.dart' as plan;
-import 'screens/fin_plan.dart' as fin_plan;
+import 'screens/mission.dart' as mission;
 import 'screens/team.dart' as team;
-import 'screens/support.dart' as support;
+import 'screens/contribute.dart' as contribute;
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -79,10 +78,9 @@ void main() async {
       home.testSuite();
       settings_home.testSuite();
       products.testSuite();
-      plan.testSuite();
-      fin_plan.testSuite();
+      mission.testSuite();
       team.testSuite();
-      support.testSuite();
+      contribute.testSuite();
     },
   );
 }

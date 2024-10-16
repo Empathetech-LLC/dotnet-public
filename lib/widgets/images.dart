@@ -11,6 +11,8 @@ import 'package:flutter/material.dart';
 
 const ImageProvider openUIImage = AssetImage(openUIIconPath);
 
+const ImageProvider smokeSignalImage = AssetImage(smokeSignalIconPath);
+
 // Team //
 
 // Core

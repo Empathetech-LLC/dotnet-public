@@ -17,16 +17,16 @@ class LangEs extends Lang {
   String get gProductsHint => 'Abrir la página de productos';
 
   @override
-  String get gPlanHint => 'Abrir la página del plan';
+  String get gMissionHint => 'Abrir la página del misión';
 
   @override
   String get gTeamHint => 'Abrir la página del equipo';
 
   @override
-  String get gSupportHint => 'Abrir la página de soporte';
+  String get gContributeHint => 'Abrir la página de contribuir';
 
   @override
-  String get gSocials => 'Sociales';
+  String get gShare => 'Compartir';
 
   @override
   String get gEmail => 'Email';
@@ -84,10 +84,10 @@ class LangEs extends Lang {
   }
 
   @override
-  String get hsSlogan => 'Construye un mundo mejor\nbit x bit';
+  String get hsSlogan => 'Construyamos juntos un mundo mejor\nbit x bit';
 
   @override
-  String get hsSloganFix => 'Construye un mundo mejor\npoco a poco';
+  String get hsSloganFix => 'Construyamos juntos un mundo mejor\npoco a poco';
 
   @override
   String get hsVideoHint =>
@@ -97,15 +97,17 @@ class LangEs extends Lang {
   String get psPageTitle => 'Productos';
 
   @override
+  String get psCreate => 'Para crear';
+
+  @override
+  String get psUse => 'Para usar';
+
+  @override
   String get psEFUISlogan => 'Crea apps para todos';
 
   @override
-  String get psEFUIDescription1 =>
-      'EFUI es un kit de inicio para creaciones accesibles de verdad ';
-
-  @override
-  String get psEFUIDescription2 =>
-      ' apps.\nEFUI se encarga de todos los aspectos de la accesibilidad digital...';
+  String get psEFUIDescription =>
+      'EFUI es un kit de inicio para creaciones accesibles de verdad apps.\nEFUI se encarga de todos los aspectos de la accesibilidad digital...';
 
   @override
   String get psPlatform => 'Disponibilidad de plataforma';
@@ -182,44 +184,82 @@ class LangEs extends Lang {
 
   @override
   String get psEFUITagLine =>
-      'Cuando se construye con EFUI, tus apps pueden llegar a cualquier audiencia.\n¡Mejoremos Internet juntos!';
+      'Cuando se construye con EFUI, tus apps pueden llegar a cualquier audiencia.\n';
 
   @override
   String get psConsult => ' para consultas y contrataciones.';
 
   @override
-  String get plsPageTitle => 'Plan';
+  String get psLearnMore => ' para saber más.';
 
   @override
-  String get plsThen => 'Entonces';
+  String get psComingSoon => 'Próximamente...';
 
   @override
-  String get plsBefore => 'Antes de esto';
+  String get psSignalHint =>
+      'El icono de Smoke Signal. Abre un enlace al repositorio de desarrollo.';
 
   @override
-  String get plsIDProblem => 'Identifica el problema';
+  String get psSignalPreview1 => 'La próxima aplicación de Empathetech, ';
 
   @override
-  String get plsIDProblemContent =>
+  String get psSignalPreview1Fix => 'La próxima aplicación de Empathetic, ';
+
+  @override
+  String get psSignalPreview2 =>
+      ', está en desarrollo.\n es una aplicación de redes sociales diseñada para mantenernos alejados de las pantallas.\n';
+
+  @override
+  String get psSignalPreview3 =>
+      'Smoke Signal también estará alojada completamente por el usuario, gracias a ';
+
+  @override
+  String get psAPHint => 'Abrir un enlace a la documentación de Activity Pub';
+
+  @override
+  String get msPageTitle => 'Misión';
+
+  @override
+  String get msSoWe => 'Así que nosotros';
+
+  @override
+  String get msBy => 'Por';
+
+  @override
+  String get msFirst => 'Por primera vez';
+
+  @override
+  String get msIDProblem => 'Identificación del problema';
+
+  @override
+  String get msIDProblemContent =>
       'Los modelos de negocio que dan prioridad al beneficio no son sostenibles.\n\nPor definición, cosas como trabajar por una misión, tratar bien a las personas y consumir recursos de forma responsable pasan a un segundo plano.\n\nLos gigantes tecnológicos no se conforman con llevarse nuestro dinero. Ahora construyen productos para captar nuestras identidades y monopolizar nuestras mentes. Y nadie les dice nada.';
 
   @override
-  String get plsBeSolution => 'Sé parte de la solución';
+  String get msFindSolution => 'Encuentra una solución';
 
   @override
-  String get plsBeSolutionContent =>
-      'Afortunadamente, hay tecnólogos increíbles por todo el mundo que luchan conjuntamente por una mejor narrativa. Una en la que los proveedores de servicios y los clientes mantengan una relación activa, saludable y mutuamente beneficiosa.\n\nLa comunidad del código abierto.\n\nEn su esencia, el software de código abierto está disponible abiertamente a todos. Muchos proyectos también pueden modificarse y redistribuirse libremente. Se trata de software sin nada que ocultar, creado por personas que reconocen que los problemas colectivos requieren soluciones colectivas.\n\nEntonces, ¿cómo se pasa del código cerrado al código abierto? Requiere mucho tiempo, energía y conocimiento.\n\nAhí es donde entramos nosotros.';
+  String get msFindSolutionContent =>
+      'Afortunadamente, hay tecnólogos increíbles en todo el mundo que trabajan juntos para lograr una mejor narrativa.\nUna en la que los proveedores de servicios y los clientes tengan una relación activa, saludable y mutuamente beneficiosa.\n\nLa comunidad de código abierto.\n\nEn esencia, el software de código abierto está disponible de forma gratuita para que cualquiera lo vea. Muchos proyectos también se pueden modificar y redistribuir libremente.\nEs un software que no tiene nada que ocultar, creado por gente que reconoce que los problemas compartidos requieren soluciones compartidas.\n\nY en el maravilloso mundo del software de código abierto, existe una subcategoría: el software de alojamiento propio.\n\nEl alojamiento propio nos permite tomar cualquier computadora que no esté en uso (incluso las de bolsillo) y almacenar allí nuestros datos.\nAl alojarnos nosotros mismos, podemos controlar nuestra propia presencia digital, en lugar de ceder el control a un servidor lejano, propiedad de una corporación poco empática.\n\n¡Y existen versiones alojadas por nosotros mismos de casi todo! Desde Adobe hasta Zoom, hay hacktivistas apasionados que crean alternativas que priorizan a las personas por sobre las ganancias.\n\nEntonces, ¿cómo se hace la transición de un código cerrado que prioriza las ganancias a un código abierto? ¿Cómo empiezan a alojar sus propios archivos?\nRequiere mucho tiempo, energía y conocimientos previos.\n\nAhí es donde entramos nosotros.';
 
   @override
-  String get plsProvideValue => 'Aportar valor';
+  String get msProvideValue => 'Haciendo el trabajo';
 
   @override
-  String get plsProvideValueContent1 =>
-      'Nuestra misión es reequilibrar el poder en la tecnología, haciendo que el software de código abierto sea más accesible.\n\nConstruiremos aplicaciones accesibles y multiplataforma para gestionar fácilmente un ecosistema de herramientas de código abierto.\n\nConstruiremos puentes entre la comunidad de código abierto y aquellos que no tienen suficiente tiempo, energía o conocimiento.\n\nY no se pueden construir puentes (o aplicaciones) sin una base sólida. Es por eso que ';
+  String get msProvideValueContent1 =>
+      'La misión de Empathetech es reequilibrar el poder en la tecnología al hacer que el autohospedaje sea más accesible.\n\nCrearemos aplicaciones que permitan a cualquier persona ser dueña de su identidad digital.\n\nConstruiremos puentes entre la comunidad de código abierto y aquellos que no tienen el tiempo, la energía o el conocimiento previo necesarios.\n\n¡Y no se pueden construir puentes (o aplicaciones) sin una base sólida! Es por eso que ';
 
   @override
-  String get plsProvideValueContent2 =>
-      ' existe. Nos enorgullecemos de convertir las palabras en acciones, y hemos hecho que nuestra interfaz de usuario accesible sea de código abierto.\n\nConstruyamos juntos un mundo mejor, poco a poco.';
+  String get msProvideValueContent1Fix =>
+      'La misión de Empathetic es reequilibrar el poder en la tecnología al hacer que el autohospedaje sea más accesible.\n\nCrearemos aplicaciones que permitan a cualquier persona ser dueña de su identidad digital.\n\nConstruiremos puentes entre la comunidad de código abierto y aquellos que no tienen el tiempo, la energía o el conocimiento previo necesarios.\n\n¡Y no se pueden construir puentes (o aplicaciones) sin una base sólida! Es por eso que ';
+
+  @override
+  String get msProvideValueContent2 =>
+      ' existe.\nEmpathetech se enorgullece de cumplir las palabras con acciones y ha hecho que nuestra interfaz de usuario accesible sea de código abierto.\n\nConstruyamos un mundo mejor juntos, poco a poco.';
+
+  @override
+  String get msProvideValueContent2Fix =>
+      ' existe.\nEmpathetic se enorgullece de cumplir las palabras con acciones y ha hecho que nuestra interfaz de usuario accesible sea de código abierto.\n\nConstruyamos un mundo mejor juntos, poco a poco.';
 
   @override
   String get fpsPageTitle => 'Plan financiero';
@@ -260,7 +300,7 @@ class LangEs extends Lang {
 
   @override
   String get fpsCheckHint =>
-      'Abre un enlace de Gitjab al código fuente de esta pantalla';
+      'Abre un enlace de GitHub al código fuente de esta pantalla';
 
   @override
   String get tsPageTitle => 'Equipo';
@@ -269,7 +309,8 @@ class LangEs extends Lang {
   String get tsCore => 'Núcleo';
 
   @override
-  String get tsTheFounderImageHint => 'Perfil bidimensional de Michael Waldron';
+  String get tsTheFounderImageHint =>
+      'Perfil bidimensional de Michael Waldron. Activar para enviarle un E-mail.';
 
   @override
   String get tsTheFounder => 'Fundador';
@@ -287,28 +328,28 @@ class LangEs extends Lang {
   String get tsFrench => 'Traductor de francés';
 
   @override
-  String get spsPageTitle => 'Soporte';
+  String get csPageTitle => 'Contribuir';
 
   @override
-  String get spsThanks => '¡Muchas gracias por todo el apoyo!';
+  String get csThanks => '¡Muchas gracias por todo el apoyo!';
 
   @override
-  String get spsGive => '¿Te gustaría contribuir...';
+  String get csGive => '¿Te gustaría contribuir...';
 
   @override
-  String get spsTimeQ => 'Tiempo?';
+  String get csTimeQ => 'Tiempo?';
 
   @override
-  String get spsBecome => ' acerca de convertirse en un ';
+  String get csBecome => ' acerca de convertirse en un ';
 
   @override
-  String get spsGit => 'colaborador de GitHub';
+  String get csGit => 'colaborador de GitHub';
 
   @override
-  String get spsMoneyQ => 'Dinero?';
+  String get csMoneyQ => 'Dinero?';
 
   @override
-  String get spsPowerQ => 'Poder?';
+  String get csPowerQ => 'Poder?';
 
   @override
   String get fahJoin => 'Únete a Fold';

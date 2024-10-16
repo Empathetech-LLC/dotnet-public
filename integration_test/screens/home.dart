@@ -38,7 +38,7 @@ void testSuite({
 
       //* Test functionality *//
 
-      debugPrint('\nTesting socials menu');
+      debugPrint('\nTesting share menu');
       try {
         await _largeLayoutTests(tester, l10n: l10n);
       } catch (_) {

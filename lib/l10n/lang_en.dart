@@ -17,16 +17,16 @@ class LangEn extends Lang {
   String get gProductsHint => 'Open the products page';
 
   @override
-  String get gPlanHint => 'Open the plan page';
+  String get gMissionHint => 'Open the mission page';
 
   @override
   String get gTeamHint => 'Open the team page';
 
   @override
-  String get gSupportHint => 'Open the support page';
+  String get gContributeHint => 'Open the contribute page';
 
   @override
-  String get gSocials => 'Socials';
+  String get gShare => 'Share';
 
   @override
   String get gEmail => 'Email';
@@ -83,10 +83,10 @@ class LangEn extends Lang {
   }
 
   @override
-  String get hsSlogan => 'Build a better world\nbit x bit';
+  String get hsSlogan => 'Let\'s build a better world together\nbit x bit';
 
   @override
-  String get hsSloganFix => 'Build a better world\nbit by bit';
+  String get hsSloganFix => 'Let\'s build a better world together\nbit by bit';
 
   @override
   String get hsVideoHint =>
@@ -96,15 +96,17 @@ class LangEn extends Lang {
   String get psPageTitle => 'Products';
 
   @override
+  String get psCreate => 'For creating';
+
+  @override
+  String get psUse => 'For using';
+
+  @override
   String get psEFUISlogan => 'Build apps for anyone';
 
   @override
-  String get psEFUIDescription1 =>
-      'EFUI is a starter kit for building truly accessible ';
-
-  @override
-  String get psEFUIDescription2 =>
-      ' apps.\nEFUI handles every aspect of digital accessibility...';
+  String get psEFUIDescription =>
+      'EFUI is a starter kit for building truly accessible apps.\nEFUI handles every aspect of digital accessibility...';
 
   @override
   String get psPlatform => 'Platform availability';
@@ -178,44 +180,82 @@ class LangEn extends Lang {
 
   @override
   String get psEFUITagLine =>
-      'When built with EFUI, your apps can reach any audience.\nLet\'s build a better internet together!';
+      'When built with EFUI, your apps can reach any audience.\n';
 
   @override
   String get psConsult => ' for consultation and contracting.';
 
   @override
-  String get plsPageTitle => 'Plan';
+  String get psLearnMore => ' to learn more.';
 
   @override
-  String get plsThen => 'Then';
+  String get psComingSoon => 'Coming soon...';
 
   @override
-  String get plsBefore => 'Before this';
+  String get psSignalHint =>
+      'The icon for Smoke Signal. Open a link to the development repo.';
 
   @override
-  String get plsIDProblem => 'Identify the problem';
+  String get psSignalPreview1 => 'Empathetech\'s next app, ';
 
   @override
-  String get plsIDProblemContent =>
+  String get psSignalPreview1Fix => 'Empathetic\'s next app, ';
+
+  @override
+  String get psSignalPreview2 =>
+      ', is in development.\nSmoke Signal is a social media app designed to keep us off our screens.';
+
+  @override
+  String get psSignalPreview3 =>
+      'Smoke Signal will also be fully self hosted, thanks to ';
+
+  @override
+  String get psAPHint => 'Open a link to Activity Pub documentation';
+
+  @override
+  String get msPageTitle => 'Mission';
+
+  @override
+  String get msSoWe => 'So we';
+
+  @override
+  String get msBy => 'By';
+
+  @override
+  String get msFirst => 'By first';
+
+  @override
+  String get msIDProblem => 'Identifying the problem';
+
+  @override
+  String get msIDProblemContent =>
       'Profit first business models aren\'t sustainable.\n\nBy definition: if profit comes first, then things like working towards a mission, treating people right, and responsible consumption of resources all become afterthoughts.\n\nAnd this greed has gone unchecked in big tech. The tech giants have grown dissatisfied with our money, and are building products to target our identities and monopolize our minds.';
 
   @override
-  String get plsBeSolution => 'Be a part of the solution';
+  String get msFindSolution => 'Find a solution';
 
   @override
-  String get plsBeSolutionContent =>
-      'Fortunately, there are amazing technologists all over the world working together towards a better narrative. One where the service providers and the customers have an active, healthy, and mutually beneficial relationship.\n\nThe open source community.\n\nAt its core, open source software is freely available for anyone to view. Many projects can also be freely modified and redistributed. It\'s software with nothing to hide, built by folx who recognize shared problems require shared solutions.\n\nSo, how does one make the switch from profit first (closed source) to open source? It takes a lot of time, energy, and prior knowledge.\n\nThat\'s where we come in.';
+  String get msFindSolutionContent =>
+      'Fortunately, there are amazing technologists all over the world working together towards a better narrative.\nOne where the service providers and the customers have an active, healthy, and mutually beneficial relationship.\n\nThe open source community.\n\nAt its core, open source software is freely available for anyone to view. Many projects can also be freely modified and redistributed.\nIt\'s software with nothing to hide, built by folx who recognize shared problems require shared solutions.\n\nAnd in the wonderful world of open source software, there lies a sub category: self hosting software.\n\nSelf hosting lets us take any not-in-use computer (pocket sized ones too) and store our data there.\nBy self hosting, we can control our own digital presence, rather than sign away control to some far away server, owned by an un-empathetic corporation.\n\nAnd there are self hosted versions of just about everything! From Adobe to Zoom, there are passionate hacktivists building alternatives that put people over profits.\n\nSo, how does one make the switch from profit first/closed source to open source? How do they start self hosting?\nIt takes a lot of time, energy, and prior knowledge.\n\nThat\'s where we come in.';
 
   @override
-  String get plsProvideValue => 'Provide value';
+  String get msProvideValue => 'Doing the work';
 
   @override
-  String get plsProvideValueContent1 =>
-      'Our mission is to re-balance the power in tech by making open source software more accessible.\n\nWe will build accessible, cross-platform applications for easily managing an ecosystem of open source tools.\n\nWe will build bridges between the open source community and those without enough time, energy, or prior knowledge.\n\nAnd you can\'t build bridges (or apps) without a strong foundation! That\'s why ';
+  String get msProvideValueContent1 =>
+      'Empathetech\'s mission is to re-balance the power in tech by making self hosting more accessible.\n\nWe will builds apps that enable anyone to own their digital identity.\n\nWe will build bridges between the open source community and those without the required time, energy, or prior knowledge.\n\nAnd you can\'t build bridges (or apps) without a strong foundation! That\'s why ';
 
   @override
-  String get plsProvideValueContent2 =>
-      ' exists. We take pride in meeting words with actions, and have made our accessible UI open source.\n\nLet\'s build a better world together, bit by bit.';
+  String get msProvideValueContent1Fix =>
+      'Empathetic\'s mission is to re-balance the power in tech by making self hosting more accessible.\n\nWe will builds apps that enable anyone to own their digital identity.\n\nWe will build bridges between the open source community and those without the required time, energy, or prior knowledge.\n\nAnd you can\'t build bridges (or apps) without a strong foundation! That\'s why ';
+
+  @override
+  String get msProvideValueContent2 =>
+      ' exists.\nEmpathetech takes pride in meeting words with actions, and have made our accessible UI open source.\n\nLet\'s build a better world together, bit by bit.';
+
+  @override
+  String get msProvideValueContent2Fix =>
+      ' exists.\nEmpathetic takes pride in meeting words with actions, and have made our accessible UI open source.\n\nLet\'s build a better world together, bit by bit.';
 
   @override
   String get fpsPageTitle => 'Financial plan';
@@ -266,7 +306,7 @@ class LangEn extends Lang {
 
   @override
   String get tsTheFounderImageHint =>
-      'A two dimensional profile of Michael Waldron';
+      'A two dimensional profile of Michael Waldron. Activate to send him an email.';
 
   @override
   String get tsTheFounder => 'The Founder';
@@ -284,28 +324,28 @@ class LangEn extends Lang {
   String get tsFrench => 'French translator';
 
   @override
-  String get spsPageTitle => 'Support';
+  String get csPageTitle => 'Contribute';
 
   @override
-  String get spsThanks => 'Many thanks for any and all support!';
+  String get csThanks => 'Many thanks for any and all support!';
 
   @override
-  String get spsGive => 'Would you like to give...';
+  String get csGive => 'Would you like to give...';
 
   @override
-  String get spsTimeQ => 'Time?';
+  String get csTimeQ => 'Time?';
 
   @override
-  String get spsBecome => ' about becoming a ';
+  String get csBecome => ' about becoming a ';
 
   @override
-  String get spsGit => 'GitHub contributor';
+  String get csGit => 'GitHub contributor';
 
   @override
-  String get spsMoneyQ => 'Money?';
+  String get csMoneyQ => 'Money?';
 
   @override
-  String get spsPowerQ => 'Power?';
+  String get csPowerQ => 'Power?';
 
   @override
   String get fahJoin => 'Join the Fold';

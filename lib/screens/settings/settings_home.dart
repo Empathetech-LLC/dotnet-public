@@ -83,12 +83,17 @@ class _SettingsScreenState extends State<SettingsHomeScreen> {
             ),
             separator,
 
+            // Feeling lucky
+            const EzConfigRandomizer(),
+            separator,
+
             // Reset button
             const EzResetButton(),
             separator,
 
+            // Don't cha
             const EFUIShoutOut(),
-            spacer,
+            separator,
           ],
         ),
       ),

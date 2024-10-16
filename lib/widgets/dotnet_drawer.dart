@@ -42,22 +42,22 @@ class DotNetDrawer extends StatelessWidget {
 
     // Define the buttons //
 
+    final EzLink mission = EzLink(
+      Lang.of(context)!.msPageTitle,
+      style: style,
+      textAlign: TextAlign.center,
+      onTap: () => navigateTo(context, missionPath),
+      semanticsLabel: Lang.of(context)!.gMissionHint,
+      textColor: colorScheme.onSurface,
+      decorationColor: colorScheme.primary,
+    );
+
     final EzLink products = EzLink(
       Lang.of(context)!.psPageTitle,
       style: style,
       textAlign: TextAlign.center,
       onTap: () => navigateTo(context, productsPath),
       semanticsLabel: Lang.of(context)!.gProductsHint,
-      textColor: colorScheme.onSurface,
-      decorationColor: colorScheme.primary,
-    );
-
-    final EzLink plan = EzLink(
-      Lang.of(context)!.plsPageTitle,
-      style: style,
-      textAlign: TextAlign.center,
-      onTap: () => navigateTo(context, planPath),
-      semanticsLabel: Lang.of(context)!.gPlanHint,
       textColor: colorScheme.onSurface,
       decorationColor: colorScheme.primary,
     );
@@ -72,12 +72,12 @@ class DotNetDrawer extends StatelessWidget {
       decorationColor: colorScheme.primary,
     );
 
-    final EzLink support = EzLink(
-      Lang.of(context)!.spsPageTitle,
+    final EzLink contribute = EzLink(
+      Lang.of(context)!.csPageTitle,
       style: style,
       textAlign: TextAlign.center,
-      onTap: () => navigateTo(context, supportPath),
-      semanticsLabel: Lang.of(context)!.gSupportHint,
+      onTap: () => navigateTo(context, contributePath),
+      semanticsLabel: Lang.of(context)!.gContributeHint,
       textColor: colorScheme.onSurface,
       decorationColor: colorScheme.primary,
     );
@@ -94,18 +94,34 @@ class DotNetDrawer extends StatelessWidget {
             child: EzScrollView(
               scrollDirection: Axis.horizontal,
               mainAxisSize: MainAxisSize.min,
-              children: header.children,
+              children: header.children.map((Widget child) {
+                switch (child.runtimeType) {
+                  case const (IconButton):
+                    child as IconButton;
+                    return IconButton(
+                      style: child.style,
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                        child.onPressed!();
+                      },
+                      tooltip: child.tooltip,
+                      icon: child.icon,
+                    );
+                  default:
+                    return child;
+                }
+              }).toList(),
             ),
           ),
         ),
         spacer,
-        products,
+        mission,
         spacer,
-        plan,
+        products,
         spacer,
         team,
         spacer,
-        support,
+        contribute,
         spacer,
       ],
     );

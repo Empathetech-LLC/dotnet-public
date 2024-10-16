@@ -11,14 +11,14 @@ import 'package:line_icons/line_icons.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 
-class SupportScreen extends StatefulWidget {
-  const SupportScreen({super.key});
+class ContributeScreen extends StatefulWidget {
+  const ContributeScreen({super.key});
 
   @override
-  State<SupportScreen> createState() => _SupportScreenState();
+  State<ContributeScreen> createState() => _ContributeScreenState();
 }
 
-class _SupportScreenState extends State<SupportScreen> {
+class _ContributeScreenState extends State<ContributeScreen> {
   // Gather the theme data //
 
   static const EzSpacer spacer = EzSpacer();
@@ -26,6 +26,9 @@ class _SupportScreenState extends State<SupportScreen> {
   static const EzSeparator separator = EzSeparator();
 
   late final TextTheme textTheme = Theme.of(context).textTheme;
+  late final TextStyle? pitchStyle = textTheme.bodyLarge?.copyWith(
+    fontSize: textTheme.titleLarge?.fontSize,
+  );
 
   late final Lang l10n = Lang.of(context)!;
 
@@ -94,7 +97,7 @@ class _SupportScreenState extends State<SupportScreen> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    setPageTitle(l10n.spsPageTitle, Theme.of(context).colorScheme.primary);
+    setPageTitle(l10n.csPageTitle, Theme.of(context).colorScheme.primary);
   }
 
   // Return the build //
@@ -114,15 +117,20 @@ class _SupportScreenState extends State<SupportScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Text(
-                    l10n.spsThanks,
+                    l10n.csThanks,
+                    style: pitchStyle,
+                    textAlign: TextAlign.center,
+                  ),
+                  spacer,
+                  Text(
+                    'Every bit you give to Empathetech takes a byte out of big tech.',
                     style: textTheme.headlineLarge,
                     textAlign: TextAlign.center,
                   ),
+                  spacer,
                   Text(
-                    l10n.spsGive,
-                    style: textTheme.bodyLarge?.copyWith(
-                      fontSize: textTheme.titleLarge?.fontSize,
-                    ),
+                    l10n.csGive,
+                    style: pitchStyle,
                     textAlign: TextAlign.center,
                   ),
                 ],
@@ -135,10 +143,11 @@ class _SupportScreenState extends State<SupportScreen> {
             // Time //
 
             Text(
-              l10n.spsTimeQ,
+              l10n.csTimeQ,
               style: textTheme.titleLarge,
               textAlign: TextAlign.center,
             ),
+            EzSpacer(space: EzConfig.get(marginKey)),
 
             // GitHub contributor
             EzRichText(<InlineSpan>[
@@ -149,14 +158,15 @@ class _SupportScreenState extends State<SupportScreen> {
                 url: Uri.parse(
                   'mailto:$empathCommunity?subject=Becoming%20a%20contributor',
                 ),
+                tooltip: l10n.gEmailTo(empathetechLLC),
                 semanticsLabel: l10n.gEmailTo(empatheticLLC),
               ),
               EzPlainText(
-                text: l10n.spsBecome,
+                text: l10n.csBecome,
                 style: textTheme.bodyLarge,
               ),
               EzInlineLink(
-                l10n.spsGit,
+                l10n.csGit,
                 style: textTheme.bodyLarge,
                 textAlign: TextAlign.center,
                 url: Uri.parse(empathGitHub),
@@ -164,12 +174,17 @@ class _SupportScreenState extends State<SupportScreen> {
                 tooltip: empathGitHub,
               ),
             ], textAlign: TextAlign.center),
-            separator,
+
+            // Divider
+            ConstrainedBox(
+              constraints: BoxConstraints(maxWidth: widthOf(context) * 0.667),
+              child: const Divider(),
+            ),
 
             // Money //
 
             Text(
-              l10n.spsMoneyQ,
+              l10n.csMoneyQ,
               style: textTheme.titleLarge,
               textAlign: TextAlign.center,
             ),
@@ -197,15 +212,21 @@ class _SupportScreenState extends State<SupportScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: directDonations,
             ),
-            separator,
+
+            // Divider
+            ConstrainedBox(
+              constraints: BoxConstraints(maxWidth: widthOf(context) * 0.667),
+              child: const Divider(),
+            ),
 
             // Power //
 
             Text(
-              l10n.spsPowerQ,
+              l10n.csPowerQ,
               style: textTheme.titleLarge,
               textAlign: TextAlign.center,
             ),
+            spacer,
 
             // F@H team
             const FaHBanner(),

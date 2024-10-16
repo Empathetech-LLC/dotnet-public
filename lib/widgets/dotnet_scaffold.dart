@@ -13,6 +13,8 @@ import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 
 class DotnetScaffold extends StatelessWidget {
+  final Widget? logo;
+
   final Widget body;
 
   /// [FloatingActionButton]
@@ -21,6 +23,7 @@ class DotnetScaffold extends StatelessWidget {
   /// Standardized [Scaffold] for all of empathetech dotnet's screens
   const DotnetScaffold({
     super.key,
+    this.logo,
     required this.body,
     this.fab,
   });
@@ -42,7 +45,7 @@ class DotnetScaffold extends StatelessWidget {
 
     // Set appBar height to equal space above and below text links
     final double toolbarHeight = measureText(
-          l10n.spsPageTitle,
+          l10n.csPageTitle,
           context: context,
           style: appBarTextStyle,
         ).height +
@@ -50,17 +53,18 @@ class DotnetScaffold extends StatelessWidget {
 
     // Define custom widgets //
 
-    final Widget logo = EzLinkWidget(
-      isImage: true,
-      onTap: () => context.goNamed(homePath),
-      semanticLabel: l10n.gLogoHint,
-      tooltip: l10n.gHomeHint,
-      child: SizedBox(
-        width: toolbarHeight,
-        height: toolbarHeight,
-        child: EmpathetechLogo(margin: margin),
-      ),
-    );
+    final Widget brandLogo = logo ??
+        EzLinkWidget(
+          isImage: true,
+          onTap: () => context.goNamed(homePath),
+          semanticLabel: l10n.gLogoHint,
+          tooltip: l10n.gHomeHint,
+          child: SizedBox(
+            width: toolbarHeight,
+            height: toolbarHeight,
+            child: EmpathetechLogo(margin: margin),
+          ),
+        );
 
     final PageLinks pageLinks = PageLinks(
       context: context,
@@ -68,10 +72,10 @@ class DotnetScaffold extends StatelessWidget {
     );
 
     final IconLinks iconLinks = IconLinks(
+      context: context,
       colorScheme: Theme.of(context).colorScheme,
       iconSize: appBarIconData.size!,
       margin: margin,
-      l10n: l10n,
     );
 
     final Widget iconLinksMenu = MenuAnchor(
@@ -84,7 +88,7 @@ class DotnetScaffold extends StatelessWidget {
               controller.open();
             }
           },
-          tooltip: l10n.gSocials,
+          tooltip: l10n.gShare,
           icon: Icon(PlatformIcons(context).share),
         );
       },
@@ -109,7 +113,7 @@ class DotnetScaffold extends StatelessWidget {
     final _SmallBuild smallBuild = _SmallBuild(
       toolbarHeight: toolbarHeight,
       isLefty: isLefty,
-      logo: logo,
+      logo: brandLogo,
       drawer: drawer,
       body: body,
       fab: fab,
@@ -119,7 +123,7 @@ class DotnetScaffold extends StatelessWidget {
       toolbarHeight: toolbarHeight,
       margin: margin,
       isLefty: isLefty,
-      logo: logo,
+      logo: brandLogo,
       pageLinks: pageLinks,
       iconLinksMenu: iconLinksMenu,
       body: body,
@@ -168,6 +172,8 @@ class _SmallBuild extends StatelessWidget {
 
             // Title
             title: logo,
+            centerTitle: true,
+            titleSpacing: 0,
 
             // Actions (aka trailing aka right)
             actions: isLefty ? const <Widget>[EzBackAction()] : null,

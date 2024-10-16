@@ -223,7 +223,7 @@ class _FinPlanScreenState extends State<FinPlanScreen> {
               url: Uri.parse(financesSource),
               semanticsLabel: l10n.fpsCheckHint,
             ),
-            spacer,
+            separator,
           ],
         ),
       ),

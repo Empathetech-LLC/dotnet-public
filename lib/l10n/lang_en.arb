@@ -7,11 +7,11 @@
 
   "gHomeHint": "Open the home page",
   "gProductsHint": "Open the products page",
-  "gPlanHint": "Open the plan page",
+  "gMissionHint": "Open the mission page",
   "gTeamHint": "Open the team page",
-  "gSupportHint": "Open the support page",
+  "gContributeHint": "Open the contribute page",
 
-  "gSocials": "Socials",
+  "gShare": "Share",
   "gEmail": "Email",
   "gEmailTo": "Email {recipient}",
   "gNewsletter": "Newsletter",
@@ -36,17 +36,19 @@
 
   
 
-  "hsSlogan": "Build a better world\nbit x bit",
-  "hsSloganFix": "Build a better world\nbit by bit",
+  "hsSlogan": "Let's build a better world together\nbit x bit",
+  "hsSloganFix": "Let's build a better world together\nbit by bit",
   "hsVideoHint": "Empathetic LLC animated logo: the letters in Empathetic transform into the two dimensional hourglass logo",
 
 
 
   "psPageTitle": "Products",
 
+  "psCreate": "For creating",
+  "psUse": "For using",
+
   "psEFUISlogan": "Build apps for anyone",
-  "psEFUIDescription1": "EFUI is a starter kit for building truly accessible ",
-  "psEFUIDescription2": " apps.\nEFUI handles every aspect of digital accessibility...",
+  "psEFUIDescription": "EFUI is a starter kit for building truly accessible apps.\nEFUI handles every aspect of digital accessibility...",
   
   "psPlatform": "Platform availability",
   "psPlatformContent": "Empathetech apps support users on all platforms.\nYou can use EFUI to create on Android, iOS, Linux, MacOS, Windows and Web!",
@@ -74,26 +76,38 @@
   "psLive": "See it live",
   "psLiveHint": "The icon for Open UI: a settings sandbox. Open a link to Open UI on {platform}",
 
-  "psEFUITagLine": "When built with EFUI, your apps can reach any audience.\nLet's build a better internet together!",
+  "psEFUITagLine": "When built with EFUI, your apps can reach any audience.\n",
   
   "psConsult": " for consultation and contracting.",
+  "psLearnMore": " to learn more.",
 
+  "psComingSoon": "Coming soon...",
+  "psSignalHint": "The icon for Smoke Signal. Open a link to the development repo.",
+  "psSignalPreview1": "Empathetech's next app, ",
+  "psSignalPreview1Fix": "Empathetic's next app, ",
+  "psSignalPreview2": ", is in development.\nSmoke Signal is a social media app designed to keep us off our screens.",
+  "psSignalPreview3": "Smoke Signal will also be fully self hosted, thanks to ",
+  "psAPHint": "Open a link to Activity Pub documentation",
 
+  
 
-  "plsPageTitle": "Plan",
+  "msPageTitle": "Mission",
   
-  "plsThen": "Then",
-  "plsBefore": "Before this",
+  "msSoWe": "So we",
+  "msBy": "By",
+  "msFirst": "By first",
   
-  "plsIDProblem": "Identify the problem",
-  "plsIDProblemContent": "Profit first business models aren't sustainable.\n\nBy definition: if profit comes first, then things like working towards a mission, treating people right, and responsible consumption of resources all become afterthoughts.\n\nAnd this greed has gone unchecked in big tech. The tech giants have grown dissatisfied with our money, and are building products to target our identities and monopolize our minds.",
+  "msIDProblem": "Identifying the problem",
+  "msIDProblemContent": "Profit first business models aren't sustainable.\n\nBy definition: if profit comes first, then things like working towards a mission, treating people right, and responsible consumption of resources all become afterthoughts.\n\nAnd this greed has gone unchecked in big tech. The tech giants have grown dissatisfied with our money, and are building products to target our identities and monopolize our minds.",
   
-  "plsBeSolution": "Be a part of the solution",
-  "plsBeSolutionContent": "Fortunately, there are amazing technologists all over the world working together towards a better narrative. One where the service providers and the customers have an active, healthy, and mutually beneficial relationship.\n\nThe open source community.\n\nAt its core, open source software is freely available for anyone to view. Many projects can also be freely modified and redistributed. It's software with nothing to hide, built by folx who recognize shared problems require shared solutions.\n\nSo, how does one make the switch from profit first (closed source) to open source? It takes a lot of time, energy, and prior knowledge.\n\nThat's where we come in.",
+  "msFindSolution": "Find a solution",
+  "msFindSolutionContent": "Fortunately, there are amazing technologists all over the world working together towards a better narrative.\nOne where the service providers and the customers have an active, healthy, and mutually beneficial relationship.\n\nThe open source community.\n\nAt its core, open source software is freely available for anyone to view. Many projects can also be freely modified and redistributed.\nIt's software with nothing to hide, built by folx who recognize shared problems require shared solutions.\n\nAnd in the wonderful world of open source software, there lies a sub category: self hosting software.\n\nSelf hosting lets us take any not-in-use computer (pocket sized ones too) and store our data there.\nBy self hosting, we can control our own digital presence, rather than sign away control to some far away server, owned by an un-empathetic corporation.\n\nAnd there are self hosted versions of just about everything! From Adobe to Zoom, there are passionate hacktivists building alternatives that put people over profits.\n\nSo, how does one make the switch from profit first/closed source to open source? How do they start self hosting?\nIt takes a lot of time, energy, and prior knowledge.\n\nThat's where we come in.",
   
-  "plsProvideValue": "Provide value",
-  "plsProvideValueContent1": "Our mission is to re-balance the power in tech by making open source software more accessible.\n\nWe will build accessible, cross-platform applications for easily managing an ecosystem of open source tools.\n\nWe will build bridges between the open source community and those without enough time, energy, or prior knowledge.\n\nAnd you can't build bridges (or apps) without a strong foundation! That's why ",
-  "plsProvideValueContent2": " exists. We take pride in meeting words with actions, and have made our accessible UI open source.\n\nLet's build a better world together, bit by bit.",
+  "msProvideValue": "Doing the work",
+  "msProvideValueContent1": "Empathetech's mission is to re-balance the power in tech by making self hosting more accessible.\n\nWe will builds apps that enable anyone to own their digital identity.\n\nWe will build bridges between the open source community and those without the required time, energy, or prior knowledge.\n\nAnd you can't build bridges (or apps) without a strong foundation! That's why ",
+  "msProvideValueContent1Fix": "Empathetic's mission is to re-balance the power in tech by making self hosting more accessible.\n\nWe will builds apps that enable anyone to own their digital identity.\n\nWe will build bridges between the open source community and those without the required time, energy, or prior knowledge.\n\nAnd you can't build bridges (or apps) without a strong foundation! That's why ",
+  "msProvideValueContent2": " exists.\nEmpathetech takes pride in meeting words with actions, and have made our accessible UI open source.\n\nLet's build a better world together, bit by bit.",
+  "msProvideValueContent2Fix": " exists.\nEmpathetic takes pride in meeting words with actions, and have made our accessible UI open source.\n\nLet's build a better world together, bit by bit.",
 
 
 
@@ -118,7 +132,7 @@
   "tsPageTitle": "Team",
   
   "tsCore": "Core",
-  "tsTheFounderImageHint": "A two dimensional profile of Michael Waldron",
+  "tsTheFounderImageHint": "A two dimensional profile of Michael Waldron. Activate to send him an email.",
   "tsTheFounder": "The Founder",
 
   "tsCommunity": "Community",
@@ -129,18 +143,18 @@
 
 
 
-  "spsPageTitle": "Support",
+  "csPageTitle": "Contribute",
   
-  "spsThanks": "Many thanks for any and all support!",
-  "spsGive": "Would you like to give...",
+  "csThanks": "Many thanks for any and all support!",
+  "csGive": "Would you like to give...",
   
-  "spsTimeQ": "Time?",
-  "spsBecome": " about becoming a ",
-  "spsGit": "GitHub contributor",
+  "csTimeQ": "Time?",
+  "csBecome": " about becoming a ",
+  "csGit": "GitHub contributor",
   
-  "spsMoneyQ": "Money?",
+  "csMoneyQ": "Money?",
   
-  "spsPowerQ": "Power?",
+  "csPowerQ": "Power?",
   
 
 

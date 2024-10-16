@@ -9,6 +9,7 @@ import './widgets/export.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:feedback/feedback.dart';
 import 'package:go_router/go_router.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
@@ -22,6 +23,7 @@ void main() async {
 
   SystemChrome.setPreferredOrientations(<DeviceOrientation>[
     DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
     DeviceOrientation.landscapeLeft,
     DeviceOrientation.landscapeRight,
   ]);
@@ -37,8 +39,41 @@ void main() async {
   );
 
   // Run the app //
+  // With a feedback wrapper
 
-  runApp(const DotNet());
+  late final TextStyle lightFeedbackText = buildBody(Colors.black);
+  late final TextStyle darkFeedbackText = buildBody(Colors.white);
+
+  runApp(BetterFeedback(
+    theme: FeedbackThemeData(
+      background: Colors.grey,
+      feedbackSheetColor: Colors.white,
+      activeFeedbackModeColor: empathPurple,
+      bottomSheetDescriptionStyle: lightFeedbackText,
+      bottomSheetTextInputStyle: lightFeedbackText,
+      sheetIsDraggable: true,
+      dragHandleColor: Colors.black,
+      colorScheme: const ColorScheme.light(primary: empathPurple),
+    ),
+    darkTheme: FeedbackThemeData(
+      background: Colors.grey,
+      feedbackSheetColor: Colors.black,
+      activeFeedbackModeColor: empathEucalyptus,
+      bottomSheetDescriptionStyle: darkFeedbackText,
+      bottomSheetTextInputStyle: darkFeedbackText,
+      sheetIsDraggable: true,
+      dragHandleColor: Colors.white,
+      colorScheme: const ColorScheme.dark(primary: empathEucalyptus),
+    ),
+    themeMode: EzConfig.getThemeMode(),
+    localizationsDelegates: <LocalizationsDelegate<dynamic>>[
+      const LocaleNamesLocalizationsDelegate(),
+      ...EFUILang.localizationsDelegates,
+      EmpathetechFeedbackLocalizationsDelegate(),
+    ],
+    localeOverride: EzConfig.getLocale(),
+    child: const DotNet(),
+  ));
 }
 
 final GoRouter router = GoRouter(
@@ -50,14 +85,14 @@ final GoRouter router = GoRouter(
       builder: (_, __) => const HomeScreen(),
       routes: <RouteBase>[
         GoRoute(
+          path: missionPath,
+          name: missionPath,
+          builder: (_, __) => const MissionScreen(),
+        ),
+        GoRoute(
           path: productsPath,
           name: productsPath,
           builder: (_, __) => const ProductsScreen(),
-        ),
-        GoRoute(
-          path: planPath,
-          name: planPath,
-          builder: (_, __) => const PlanScreen(),
         ),
         GoRoute(
           path: teamPath,
@@ -65,9 +100,9 @@ final GoRouter router = GoRouter(
           builder: (_, __) => const TeamScreen(),
         ),
         GoRoute(
-          path: supportPath,
-          name: supportPath,
-          builder: (_, __) => const SupportScreen(),
+          path: contributePath,
+          name: contributePath,
+          builder: (_, __) => const ContributeScreen(),
         ),
         GoRoute(
           path: settingsPath,
@@ -80,14 +115,14 @@ final GoRouter router = GoRouter(
               builder: (_, __) => const TextSettingsScreen(),
             ),
             GoRoute(
-              path: colorSettingsPath,
-              name: colorSettingsPath,
-              builder: (_, __) => const ColorSettingsScreen(),
-            ),
-            GoRoute(
               path: layoutSettingsPath,
               name: layoutSettingsPath,
               builder: (_, __) => const LayoutSettingsScreen(),
+            ),
+            GoRoute(
+              path: colorSettingsPath,
+              name: colorSettingsPath,
+              builder: (_, __) => const ColorSettingsScreen(),
             ),
           ],
         ),
@@ -104,11 +139,14 @@ class DotNet extends StatelessWidget {
   Future<void> precacheImages(BuildContext context) async {
     precacheImage(openUIImage, context);
 
+    precacheImage(smokeSignalImage, context);
+
     precacheImage(founderImage, context);
-    precacheImage(saraHProfile, context);
-    precacheImage(alexisNProfile, context);
 
     precacheImage(fahImage, context);
+
+    precacheImage(saraHProfile, context);
+    precacheImage(alexisNProfile, context);
   }
 
   // Return the build //

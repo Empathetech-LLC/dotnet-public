@@ -7,11 +7,11 @@
 
   "gHomeHint": "Ouvre la page d'accueil",
   "gProductsHint": "Ouvre la page des produits",
-  "gPlanHint": "Ouvre la page du plan",
+  "gMissionHint": "Ouvre la page de mission",
   "gTeamHint": "Ouvre la page de l'équipe",
-  "gSupportHint": "Ouvre la page d'assistance",
+  "gContributeHint": "Ouvre la page d'contribuer",
 
-  "gSocials": "Réseaux sociaux",
+  "gShare": "Partager",
   "gEmail": "E-mail",
   "gEmailTo": "E-mail à {recipient}",
   "gNewsletter": "Lettre d'information",
@@ -36,17 +36,19 @@
 
 
 
-  "hsSlogan": "Construisons un monde meilleur\bit x bit",
-  "hsSloganFix": "Construisons un monde meilleur\npas à pas",
+  "hsSlogan": "Construisons ensemble un monde meilleur\bit x bit",
+  "hsSloganFix": "Construisons ensemble un monde meilleur\npas à pas",
   "hsVideoHint": "Logo animé d'Empathetic LLC : les lettres d'Empathetic se transforment en un logo, un sablier en deux dimensions",
 
 
 
   "psPageTitle": "Produits",
 
+  "psCreate": "Pour créer",
+  "psUse": "Pour utiliser",
+
   "psEFUISlogan": "Créer des applications pour tous",
-  "psEFUIDescription1": "EFUI est un kit de démarrage pour créer des environnements d'applications réellement ",
-  "psEFUIDescription2": " accessibles.\nEFUI gère tous les aspects de l'accessibilité numérique...",
+  "psEFUIDescription": "EFUI est un kit de démarrage pour créer des environnements d'applications réellement accessibles.\nEFUI gère tous les aspects de l'accessibilité numérique...",
 
   "psPlatform": "Multiplateforme",
   "psPlatformContent": "Les applications Empathetech prennent en charge les utilisateurs sur toutes les plateformes.\nVous pouvez utiliser EFUI pour créer sur Android, iOS, Linux, MacOS, Windows et Web !",
@@ -74,26 +76,38 @@
   "psLive": "Testez-le en direct",
   "psLiveHint": "L'icône de Open UI : un paramètres bac à sable. Ouvre un lien vers Open UI sur {platform}",
 
-  "psEFUITagLine": "En utilisant EFUI, vos applications peuvent toucher tous les publics.\nConstruisons ensemble un meilleur Internet !",
+  "psEFUITagLine": "En utilisant EFUI, vos applications peuvent toucher tous les publics.\n",
 
   "psConsult": " pour consultation et contractualisation.",
+  "psLearnMore": " pour en savoir plus.",
+
+  "psComingSoon": "Bientôt disponible...",
+  "psSignalHint": "L'icône de Smoke Signal. Ouvrir un lien vers le dépôt de développement.",
+  "psSignalPreview1": "La prochaine application d'Empathetech, ",
+  "psSignalPreview1Fix": "La prochaine application d'Empathetic, ",
+  "psSignalPreview2": ", est en cours de développement. Smoke Signal est une application de médias sociaux conçue pour nous éloigner de nos écrans.\n",
+  "psSignalPreview3": "Smoke Signal sera également entièrement auto-hébergée, grâce à ",
+  "psAPHint": "Ouvrir un lien vers la documentation d'Activity Pub",
+  
 
 
+  "msPageTitle": "Mission",
 
-  "plsPageTitle": "Plan",
+  "msSoWe": "Alors nous",
+  "msBy": "Par",
+  "msFirst": "Par premier",
 
-  "plsThen": "Ensuite",
-  "plsBefore": "Avant cela",
+  "msIDProblem": "Identifier le problème",
+  "msIDProblemContent": "Les modèles économiques axés sur le profit ne sont pas durables.\n\nPar définition : Si le profit vient en premier, alors des choses comme travailler pour une mission, bien traiter les gens et consommer de manière responsable les ressources deviennent des sujets de second plan.\n\nEt cette cupidité n'a pas été maîtrisée dans les grandes entreprises technologiques. Les géants de la technologie ne se contentent plus de prendre notre argent. Ils créent désormais des produits qui ciblent nos identités et monopolisent nos esprits.",
 
-  "plsIDProblem": "Identifier le problème",
-  "plsIDProblemContent": "Les modèles économiques axés sur le profit ne sont pas durables.\n\nPar définition : Si le profit vient en premier, alors des choses comme travailler pour une mission, bien traiter les gens et consommer de manière responsable les ressources deviennent des sujets de second plan.\n\nEt cette cupidité n'a pas été maîtrisée dans les grandes entreprises technologiques. Les géants de la technologie ne se contentent plus de prendre notre argent. Ils créent désormais des produits qui ciblent nos identités et monopolisent nos esprits.",
-
-  "plsBeSolution": "Faire partie de la solution",
-  "plsBeSolutionContent": "Heureusement, il existe partout dans le monde des technologues formidables qui travaillent ensemble pour un meilleur avenir. Un avenir dans lequel les fournisseurs de services et les clients entretiennent une relation active, saine et mutuellement bénéfique.\n\nLa communauté open source.\n\nÀ la base, les logiciels open source sont librement accessibles à tous. De nombreux projets peuvent également être librement modifiés et redistribués. Ce sont des logiciels qui n'ont rien à cacher, créés par des gens qui reconnaissent que les problèmes communs nécessitent des solutions communes.\n\nAlors, comment passer du profit avant tout (source fermée) à l'open source ? Cela prend beaucoup de temps, d'énergie et de connaissances préalables.\n\nC'est là que nous intervenons.",
-  "plsProvideValue": "Fournir de la valeur",
-
-  "plsProvideValueContent1": "Notre mission est de rééquilibrer le pouvoir dans le domaine technologique en rendant les logiciels open source plus accessibles.\n\nNous créerons des applications accessibles et multiplateformes pour gérer facilement un écosystème d'outils open source.\n\nNous construirons des ponts entre la communauté open source et ceux qui n'ont pas assez de temps, d'énergie ou de connaissances préalables.\n\nEt vous ne pouvez pas construire de ponts (ou d'applications) sans une base solide ! C'est pourquoi ",
-  "plsProvideValueContent2": " existe. Nous sommes fiers de joindre les actes à la parole et avons rendu notre interface utilisateur accessible open source.\n\nConstruisons ensemble un monde meilleur, pas à pas.",
+  "msFindSolution": "Trouver une solution",
+  "msFindSolutionContent": "Heureusement, il existe partout dans le monde des technologues extraordinaires qui travaillent ensemble pour un meilleur récit.\nUn récit dans lequel les fournisseurs de services et les clients entretiennent une relation active, saine et mutuellement bénéfique.\n\nLa communauté open source.\n\nÀ la base, les logiciels open source sont librement disponibles pour que tout le monde puisse les consulter. De nombreux projets peuvent également être librement modifiés et redistribués.\nIl s'agit de logiciels qui n'ont rien à cacher, créés par des gens qui reconnaissent que les problèmes communs nécessitent des solutions communes.\n\nEt dans le monde merveilleux des logiciels open source, il existe une sous-catégorie : les logiciels auto-hébergés.\n\nL'auto-hébergement nous permet de prendre n'importe quel ordinateur non utilisé (y compris ceux de poche) et d'y stocker nos données.\nEn auto-hébergant, nous pouvons contrôler notre propre présence numérique, plutôt que de céder le contrôle à un serveur distant, appartenant à une société peu empathique.\n\nEt il existe des versions auto-hébergées de presque tout ! D'Adobe à Zoom, des hacktivistes passionnés créent des alternatives qui privilégient les personnes au profit.\n\nAlors, comment passe-t-on du profit/fermé à l'open source ? Comment commencent-ils à s'auto-héberger ?\nCela prend beaucoup de temps, d'énergie et de connaissances préalables.\n\nC'est là que nous intervenons.",
+ 
+  "msProvideValue": "Faire le travail",
+  "msProvideValueContent1": "La mission d'Empathetech est de rééquilibrer le pouvoir dans la technologie en rendant l'auto-hébergement plus accessible.\n\nNous allons construire des applications qui permettent à chacun de posséder sa propre identité numérique.\n\nNous allons construire des ponts entre la communauté open source et ceux qui n'ont pas le temps, l'énergie ou les connaissances préalables nécessaires.\n\nEt on ne peut pas construire de ponts (ou d'applications) sans fondations solides ! C'est pourquoi ",
+  "msProvideValueContent1Fix": "La mission d'Empathetic est de rééquilibrer le pouvoir dans la technologie en rendant l'auto-hébergement plus accessible.\n\nNous allons construire des applications qui permettent à chacun de posséder sa propre identité numérique.\n\nNous allons construire des ponts entre la communauté open source et ceux qui n'ont pas le temps, l'énergie ou les connaissances préalables nécessaires.\n\nEt on ne peut pas construire de ponts (ou d'applications) sans fondations solides ! C'est pourquoi ",
+  "msProvideValueContent2": " existe.\nEmpathetech est fier de joindre le geste à la parole et a rendu son interface utilisateur accessible open source.\n\nConstruisons ensemble un monde meilleur, petit à petit.",
+  "msProvideValueContent2Fix": " existe.\nEmpathetic est fier de joindre le geste à la parole et a rendu son interface utilisateur accessible open source.\n\nConstruisons ensemble un monde meilleur, petit à petit.",
 
 
 
@@ -118,7 +132,7 @@
   "tsPageTitle": "Équipe",
 
   "tsCore": "Cœur",
-  "tsTheFounderImageHint": "Un photo en deux dimensions de Michael Waldron",
+  "tsTheFounderImageHint": "Un photo en deux dimensions de Michael Waldron. Activez pour lui envoyer un email.",
   "tsTheFounder": "Le fondateur",
 
   "tsCommunity": "Communauté",
@@ -129,18 +143,18 @@
 
 
 
-  "spsPageTitle": "Support",
+  "csPageTitle": "Contribuer",
 
-  "spsThanks": "Merci beaucoup pour tout votre soutien !",
-  "spsGive": "Souhaitez-vous donner...",
+  "csThanks": "Merci beaucoup pour tout votre soutien !",
+  "csGive": "Souhaitez-vous donner...",
 
-  "spsTimeQ": "Du temps ?",
-  "spsBecome": " pour devenir un ",
-  "spsGit": "contributeur GitHub",
+  "csTimeQ": "Du temps ?",
+  "csBecome": " pour devenir un ",
+  "csGit": "contributeur GitHub",
 
-  "spsMoneyQ": "De l'argent ?",
+  "csMoneyQ": "De l'argent ?",
 
-  "spsPowerQ": "De l'énergie ?",
+  "csPowerQ": "De l'énergie ?",
 
 
 

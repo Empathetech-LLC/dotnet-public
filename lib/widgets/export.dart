@@ -5,6 +5,7 @@
 
 export 'charity_orgs.dart';
 export 'dotnet_drawer.dart';
+export 'efui_demo_buttons.dart';
 export 'efui_shout_out.dart';
 export 'dotnet_scaffold.dart';
 export 'fabulous.dart';

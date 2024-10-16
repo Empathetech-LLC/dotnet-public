@@ -16,7 +16,7 @@ void testSuite({
   Locale locale = english,
   bool isLefty = false,
 }) =>
-    testWidgets('support-screen', (WidgetTester tester) async {
+    testWidgets('contribute-screen', (WidgetTester tester) async {
       // Load localization(s) //
 
       debugPrint('Loading localizations');
@@ -30,26 +30,26 @@ void testSuite({
 
       // Test navigation //
 
-      await dotNetNav(tester, l10n.spsPageTitle);
+      await dotNetNav(tester, l10n.csPageTitle);
 
       // Verify text loaded //
 
       debugPrint('\nValidating text');
-      await validateText(tester, l10n.spsThanks);
-      await validateText(tester, l10n.spsGive);
+      await validateText(tester, l10n.csThanks);
+      await validateText(tester, l10n.csGive);
 
       //* Test functionality *//
 
       debugPrint('\nTesting functionality');
 
       debugPrint('Time');
-      await validateText(tester, l10n.spsTimeQ);
+      await validateText(tester, l10n.csTimeQ);
 
       await validate(tester, find.widgetWithText(EzLink, l10n.gReachOut));
-      await validate(tester, find.widgetWithText(EzLink, l10n.spsGit));
+      await validate(tester, find.widgetWithText(EzLink, l10n.csGit));
 
       debugPrint('Money');
-      await validateText(tester, l10n.spsMoneyQ);
+      await validateText(tester, l10n.csMoneyQ);
 
       await validateText(tester, 'GoFundMe');
       await validateText(tester, 'Patreon');
@@ -60,7 +60,7 @@ void testSuite({
       await validateText(tester, 'CashApp');
 
       debugPrint('Power');
-      await validateText(tester, l10n.spsPowerQ);
+      await validateText(tester, l10n.csPowerQ);
 
       await testFaHBanner(tester, l10n);
 

@@ -28,10 +28,7 @@ class PageLinks extends StatelessWidget {
     final Lang l10n = Lang.of(context)!;
 
     final double wordWidth = measureText(
-      l10n.psPageTitle +
-          l10n.plsPageTitle +
-          l10n.tsPageTitle +
-          l10n.spsPageTitle,
+      l10n.msPageTitle + l10n.psPageTitle + l10n.tsPageTitle + l10n.csPageTitle,
       style: style,
       context: context,
     ).width;
@@ -46,22 +43,22 @@ class PageLinks extends StatelessWidget {
     const EzSpacer spacer = EzSpacer(vertical: false);
     final ColorScheme colorScheme = Theme.of(context).colorScheme;
 
+    final EzLink mission = EzLink(
+      Lang.of(context)!.msPageTitle,
+      style: style,
+      textAlign: TextAlign.center,
+      onTap: () => context.goNamed(missionPath),
+      semanticsLabel: Lang.of(context)!.gMissionHint,
+      textColor: colorScheme.onSurface,
+      decorationColor: colorScheme.primary,
+    );
+
     final EzLink products = EzLink(
       Lang.of(context)!.psPageTitle,
       style: style,
       textAlign: TextAlign.center,
       onTap: () => context.goNamed(productsPath),
       semanticsLabel: Lang.of(context)!.gProductsHint,
-      textColor: colorScheme.onSurface,
-      decorationColor: colorScheme.primary,
-    );
-
-    final EzLink plan = EzLink(
-      Lang.of(context)!.plsPageTitle,
-      style: style,
-      textAlign: TextAlign.center,
-      onTap: () => context.goNamed(planPath),
-      semanticsLabel: Lang.of(context)!.gPlanHint,
       textColor: colorScheme.onSurface,
       decorationColor: colorScheme.primary,
     );
@@ -76,12 +73,12 @@ class PageLinks extends StatelessWidget {
       decorationColor: colorScheme.primary,
     );
 
-    final EzLink support = EzLink(
-      Lang.of(context)!.spsPageTitle,
+    final EzLink contribute = EzLink(
+      Lang.of(context)!.csPageTitle,
       style: style,
       textAlign: TextAlign.center,
-      onTap: () => context.goNamed(supportPath),
-      semanticsLabel: Lang.of(context)!.gSupportHint,
+      onTap: () => context.goNamed(contributePath),
+      semanticsLabel: Lang.of(context)!.gContributeHint,
       textColor: colorScheme.onSurface,
       decorationColor: colorScheme.primary,
     );
@@ -93,13 +90,13 @@ class PageLinks extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        products,
+        mission,
         spacer,
-        plan,
+        products,
         spacer,
         team,
         spacer,
-        support,
+        contribute,
       ],
     );
   }

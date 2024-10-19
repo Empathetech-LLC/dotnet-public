@@ -12,10 +12,11 @@ class TextSettingsScreen extends StatelessWidget {
   const TextSettingsScreen({super.key});
 
   @override
-  Widget build(BuildContext context) => const DotnetScaffold(
-        body: TextSettings(
+  Widget build(BuildContext context) => DotnetScaffold(
+        body: const TextSettings(
           useImageDecoration: false,
           showOpacity: false,
         ),
+        fab: BackFAB(context),
       );
 }

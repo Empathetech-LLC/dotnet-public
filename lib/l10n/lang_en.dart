@@ -243,11 +243,11 @@ class LangEn extends Lang {
 
   @override
   String get msProvideValueContent1 =>
-      'Empathetech\'s mission is to re-balance the power in tech by making self hosting more accessible.\n\nWe will builds apps that enable anyone to own their digital identity.\n\nWe will build bridges between the open source community and those without the required time, energy, or prior knowledge.\n\nAnd you can\'t build bridges (or apps) without a strong foundation! That\'s why ';
+      'Empathetech\'s mission is to re-balance the power in tech by making self hosting more accessible.\n\nWe will build apps that enable anyone to own their digital identity.\n\nWe will build bridges between the open source community and those without the required time, energy, or prior knowledge.\n\nAnd you can\'t build bridges (or apps) without a strong foundation! That\'s why ';
 
   @override
   String get msProvideValueContent1Fix =>
-      'Empathetic\'s mission is to re-balance the power in tech by making self hosting more accessible.\n\nWe will builds apps that enable anyone to own their digital identity.\n\nWe will build bridges between the open source community and those without the required time, energy, or prior knowledge.\n\nAnd you can\'t build bridges (or apps) without a strong foundation! That\'s why ';
+      'Empathetic\'s mission is to re-balance the power in tech by making self hosting more accessible.\n\nWe will build apps that enable anyone to own their digital identity.\n\nWe will build bridges between the open source community and those without the required time, energy, or prior knowledge.\n\nAnd you can\'t build bridges (or apps) without a strong foundation! That\'s why ';
 
   @override
   String get msProvideValueContent2 =>

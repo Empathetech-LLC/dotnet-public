@@ -12,6 +12,8 @@ class ColorSettingsScreen extends StatelessWidget {
   const ColorSettingsScreen({super.key});
 
   @override
-  Widget build(BuildContext context) =>
-      const DotnetScaffold(body: ColorSettings(useImageDecoration: false));
+  Widget build(BuildContext context) => DotnetScaffold(
+        body: const ColorSettings(useImageDecoration: false),
+        fab: BackFAB(context),
+      );
 }

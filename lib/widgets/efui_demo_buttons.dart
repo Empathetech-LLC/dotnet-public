@@ -3,6 +3,7 @@
  * See LICENSE for distribution and usage details.
  */
 
+import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
@@ -28,9 +29,32 @@ class EFUIDemoButtons extends StatelessWidget {
 
     /// Reload the page or instruct to do so
     void reloadSnack(String message) {
+      final Duration duration = readingTime(message);
+
+      final double margin = EzConfig.get(marginKey);
+
+      final TextStyle? style = Theme.of(context).snackBarTheme.contentTextStyle;
+
+      final double iconRadius =
+          measureIcon(Icons.circle, context: context, style: style).width;
+
+      final double snackWidth =
+          measureText(message, context: context, style: style).width +
+              iconRadius * 2 +
+              3 * margin;
+
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-        content: Text(message, textAlign: TextAlign.center),
-        duration: readingTime(message),
+        padding: EdgeInsets.all(margin),
+        width: snackWidth,
+        content: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            Text(message, textAlign: TextAlign.center),
+            EzSpacer(space: margin, vertical: false),
+            _CircularCountdownTimer(duration: duration, radius: iconRadius),
+          ],
+        ),
+        duration: duration,
       ));
     }
 
@@ -91,6 +115,8 @@ class EFUIDemoButtons extends StatelessWidget {
           await EzConfig.setDouble(paddingKey, defaultPadding * 1.5);
           await EzConfig.setDouble(spacingKey, defaultSpacing * 2.0);
 
+          await EzConfig.removeKeys(colorKeys.keys.toSet());
+
           // Reload
           reloadSnack(reloadMessage);
         },
@@ -105,52 +131,108 @@ class EFUIDemoButtons extends StatelessWidget {
           // Update text
           await EzConfig.setString(displayFontFamilyKey, atkinsonHyperlegible);
           await EzConfig.setDouble(
-              displayFontSizeKey, defaultDisplaySize * 1.2);
+            displayFontSizeKey,
+            defaultDisplaySize * 1.2,
+          );
           await EzConfig.setBool(displayBoldKey, false);
           await EzConfig.setBool(displayItalicsKey, false);
           await EzConfig.setBool(displayUnderlinedKey, false);
-          await EzConfig.setDouble(displayFontHeightKey, defaultFontHeight);
           await EzConfig.setDouble(
-              displayLetterSpacingKey, defaultLetterSpacing);
-          await EzConfig.setDouble(displayWordSpacingKey, defaultWordSpacing);
+            displayFontHeightKey,
+            defaultFontHeight,
+          );
+          await EzConfig.setDouble(
+            displayLetterSpacingKey,
+            defaultLetterSpacing * 1.1,
+          );
+          await EzConfig.setDouble(
+            displayWordSpacingKey,
+            defaultWordSpacing * 1.2,
+          );
 
           await EzConfig.setString(headlineFontFamilyKey, atkinsonHyperlegible);
           await EzConfig.setDouble(
-              headlineFontSizeKey, defaultHeadlineSize * 1.2);
+            headlineFontSizeKey,
+            defaultHeadlineSize * 1.2,
+          );
           await EzConfig.setBool(headlineBoldKey, false);
           await EzConfig.setBool(headlineItalicsKey, false);
           await EzConfig.setBool(headlineUnderlinedKey, false);
-          await EzConfig.setDouble(headlineFontHeightKey, defaultFontHeight);
           await EzConfig.setDouble(
-              headlineLetterSpacingKey, defaultLetterSpacing);
-          await EzConfig.setDouble(headlineWordSpacingKey, defaultWordSpacing);
+            headlineFontHeightKey,
+            defaultFontHeight * 1.1,
+          );
+          await EzConfig.setDouble(
+            headlineLetterSpacingKey,
+            defaultLetterSpacing * 1.1,
+          );
+          await EzConfig.setDouble(
+            headlineWordSpacingKey,
+            defaultWordSpacing * 1.2,
+          );
 
           await EzConfig.setString(titleFontFamilyKey, atkinsonHyperlegible);
-          await EzConfig.setDouble(titleFontSizeKey, defaultTitleSize * 1.2);
+          await EzConfig.setDouble(
+            titleFontSizeKey,
+            defaultTitleSize * 1.2,
+          );
           await EzConfig.setBool(titleBoldKey, true);
           await EzConfig.setBool(titleItalicsKey, false);
           await EzConfig.setBool(titleUnderlinedKey, false);
-          await EzConfig.setDouble(titleFontHeightKey, defaultFontHeight);
-          await EzConfig.setDouble(titleLetterSpacingKey, defaultLetterSpacing);
-          await EzConfig.setDouble(titleWordSpacingKey, defaultWordSpacing);
+          await EzConfig.setDouble(
+            titleFontHeightKey,
+            defaultFontHeight * 1.2,
+          );
+          await EzConfig.setDouble(
+            titleLetterSpacingKey,
+            defaultLetterSpacing * 1.1,
+          );
+          await EzConfig.setDouble(
+            titleWordSpacingKey,
+            defaultWordSpacing * 1.2,
+          );
 
           await EzConfig.setString(bodyFontFamilyKey, atkinsonHyperlegible);
-          await EzConfig.setDouble(bodyFontSizeKey, defaultBodySize * 1.2);
+          await EzConfig.setDouble(
+            bodyFontSizeKey,
+            defaultBodySize * 1.2,
+          );
           await EzConfig.setBool(bodyBoldKey, false);
           await EzConfig.setBool(bodyItalicsKey, false);
           await EzConfig.setBool(bodyUnderlinedKey, false);
-          await EzConfig.setDouble(bodyFontHeightKey, defaultFontHeight);
-          await EzConfig.setDouble(bodyLetterSpacingKey, defaultLetterSpacing);
-          await EzConfig.setDouble(bodyWordSpacingKey, defaultWordSpacing);
+          await EzConfig.setDouble(
+            bodyFontHeightKey,
+            defaultFontHeight * 1.2,
+          );
+          await EzConfig.setDouble(
+            bodyLetterSpacingKey,
+            defaultLetterSpacing * 1.1,
+          );
+          await EzConfig.setDouble(
+            bodyWordSpacingKey,
+            defaultWordSpacing * 1.2,
+          );
 
           await EzConfig.setString(labelFontFamilyKey, atkinsonHyperlegible);
-          await EzConfig.setDouble(labelFontSizeKey, defaultLabelSize * 1.2);
+          await EzConfig.setDouble(
+            labelFontSizeKey,
+            defaultLabelSize * 1.2,
+          );
           await EzConfig.setBool(labelBoldKey, false);
           await EzConfig.setBool(labelItalicsKey, false);
           await EzConfig.setBool(labelUnderlinedKey, false);
-          await EzConfig.setDouble(labelFontHeightKey, defaultFontHeight);
-          await EzConfig.setDouble(labelLetterSpacingKey, defaultLetterSpacing);
-          await EzConfig.setDouble(labelWordSpacingKey, defaultWordSpacing);
+          await EzConfig.setDouble(
+            labelFontHeightKey,
+            defaultFontHeight * 1.2,
+          );
+          await EzConfig.setDouble(
+            labelLetterSpacingKey,
+            defaultLetterSpacing * 1.1,
+          );
+          await EzConfig.setDouble(
+            labelWordSpacingKey,
+            defaultWordSpacing * 1.2,
+          );
 
           // Update layout
           await EzConfig.setDouble(marginKey, defaultMargin * 1.2);
@@ -187,6 +269,7 @@ class EFUIDemoButtons extends StatelessWidget {
               fontSize: Theme.of(context).textTheme.titleLarge?.fontSize,
             ),
         textAlign: TextAlign.center,
+        semanticsLabel: l10n.gAnd,
       ),
       halfSwapSpacer,
 
@@ -226,4 +309,82 @@ class EFUIDemoButtons extends StatelessWidget {
       ],
     );
   }
+}
+
+class _CircularCountdownTimer extends StatefulWidget {
+  final Duration duration;
+  final double radius;
+
+  const _CircularCountdownTimer({required this.duration, required this.radius});
+
+  @override
+  _CircularCountdownTimerState createState() => _CircularCountdownTimerState();
+}
+
+class _CircularCountdownTimerState extends State<_CircularCountdownTimer>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _controller;
+  late Animation<double> _animation;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      vsync: this,
+      duration: widget.duration,
+    );
+    _animation = Tween<double>(begin: 1.0, end: 0.0).animate(_controller);
+    _controller.forward();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedBuilder(
+      animation: _animation,
+      builder: (_, __) => CustomPaint(
+        size: Size(widget.radius * 2, widget.radius * 2),
+        painter: _CountdownTimerPainter(
+          progress: _animation.value,
+          color: Theme.of(context).colorScheme.secondary,
+        ),
+      ),
+    );
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+}
+
+class _CountdownTimerPainter extends CustomPainter {
+  final double progress;
+  final Color color;
+
+  _CountdownTimerPainter({required this.progress, required this.color});
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    const double strokeWidth = 3.0;
+
+    final Offset center = Offset(size.width / 2, size.height / 2);
+    final double radius = size.width / 2;
+
+    final Paint foregroundPaint = Paint()
+      ..color = color
+      ..strokeWidth = strokeWidth
+      ..style = PaintingStyle.fill;
+    canvas.drawArc(
+      Rect.fromCircle(center: center, radius: radius),
+      -math.pi / 2,
+      2 * -math.pi * progress,
+      true,
+      foregroundPaint,
+    );
+  }
+
+  @override
+  bool shouldRepaint(_CountdownTimerPainter oldDelegate) =>
+      oldDelegate.progress != progress;
 }

@@ -515,13 +515,13 @@ abstract class Lang {
   /// No description provided for @msProvideValueContent1.
   ///
   /// In en, this message translates to:
-  /// **'Empathetech\'s mission is to re-balance the power in tech by making self hosting more accessible.\n\nWe will builds apps that enable anyone to own their digital identity.\n\nWe will build bridges between the open source community and those without the required time, energy, or prior knowledge.\n\nAnd you can\'t build bridges (or apps) without a strong foundation! That\'s why '**
+  /// **'Empathetech\'s mission is to re-balance the power in tech by making self hosting more accessible.\n\nWe will build apps that enable anyone to own their digital identity.\n\nWe will build bridges between the open source community and those without the required time, energy, or prior knowledge.\n\nAnd you can\'t build bridges (or apps) without a strong foundation! That\'s why '**
   String get msProvideValueContent1;
 
   /// No description provided for @msProvideValueContent1Fix.
   ///
   /// In en, this message translates to:
-  /// **'Empathetic\'s mission is to re-balance the power in tech by making self hosting more accessible.\n\nWe will builds apps that enable anyone to own their digital identity.\n\nWe will build bridges between the open source community and those without the required time, energy, or prior knowledge.\n\nAnd you can\'t build bridges (or apps) without a strong foundation! That\'s why '**
+  /// **'Empathetic\'s mission is to re-balance the power in tech by making self hosting more accessible.\n\nWe will build apps that enable anyone to own their digital identity.\n\nWe will build bridges between the open source community and those without the required time, energy, or prior knowledge.\n\nAnd you can\'t build bridges (or apps) without a strong foundation! That\'s why '**
   String get msProvideValueContent1Fix;
 
   /// No description provided for @msProvideValueContent2.

@@ -8,6 +8,7 @@ import '../utils/export.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:feedback/feedback.dart';
+import 'package:flutter/foundation.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -78,30 +79,33 @@ class IconLinks extends StatelessWidget {
     onPressed: () async {
       final EFUILang l10n = EFUILang.of(context)!;
 
-      final String snackBarText = l10n.gClipboard(l10n.gSupportEmail);
+      final String message = kIsWeb
+          ? '${l10n.gOpeningFeedback}\n${l10n.gSubmitWebFeedback(screenshotHint(context))}'
+          : '${l10n.gOpeningFeedback}\n${l10n.gClipboard(l10n.gSupportEmail)}';
 
-      await ScaffoldMessenger.of(context)
-          .showSnackBar(SnackBar(
-            content: Text(snackBarText, textAlign: TextAlign.center),
-            duration: readingTime(snackBarText),
-          ))
-          .closed;
+      await ezSnackBar(context: context, message: message).closed;
 
       if (context.mounted) {
         BetterFeedback.of(context).show(
           (UserFeedback feedback) async {
-            await Clipboard.setData(const ClipboardData(text: empathSupport));
+            if (kIsWeb) {
+              await launchUrl(Uri.parse(
+                'mailto:$empathSupport?subject=Website%20feedback&body=${feedback.text}\n\n${l10n.gAttachScreenshot}',
+              ));
+            } else {
+              await Clipboard.setData(const ClipboardData(text: empathSupport));
 
-            await Share.shareXFiles(
-              <XFile>[
-                XFile.fromData(
-                  feedback.screenshot,
-                  name: 'screenshot.png',
-                  mimeType: 'image/png',
-                )
-              ],
-              text: feedback.text,
-            );
+              await Share.shareXFiles(
+                <XFile>[
+                  XFile.fromData(
+                    feedback.screenshot,
+                    name: 'screenshot.png',
+                    mimeType: 'image/png',
+                  )
+                ],
+                text: feedback.text,
+              );
+            }
           },
         );
       }

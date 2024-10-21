@@ -19,12 +19,12 @@ void testSuite({
     testWidgets('contribute-screen', (WidgetTester tester) async {
       // Load localization(s) //
 
-      debugPrint('Loading localizations');
+      ezLog('Loading localizations');
       final Lang l10n = await Lang.delegate.load(locale);
 
       // Load the app //
 
-      debugPrint('Loading OpenUI');
+      ezLog('Loading OpenUI');
       await tester.pumpWidget(const DotNet());
       await tester.pumpAndSettle();
 
@@ -34,21 +34,21 @@ void testSuite({
 
       // Verify text loaded //
 
-      debugPrint('\nValidating text');
+      ezLog('\nValidating text');
       await validateText(tester, l10n.csThanks);
       await validateText(tester, l10n.csGive);
 
       //* Test functionality *//
 
-      debugPrint('\nTesting functionality');
+      ezLog('\nTesting functionality');
 
-      debugPrint('Time');
+      ezLog('Time');
       await validateText(tester, l10n.csTimeQ);
 
       await validate(tester, find.widgetWithText(EzLink, l10n.gReachOut));
       await validate(tester, find.widgetWithText(EzLink, l10n.csGit));
 
-      debugPrint('Money');
+      ezLog('Money');
       await validateText(tester, l10n.csMoneyQ);
 
       await validateText(tester, 'GoFundMe');
@@ -59,7 +59,7 @@ void testSuite({
       await validateText(tester, 'Venmo');
       await validateText(tester, 'CashApp');
 
-      debugPrint('Power');
+      ezLog('Power');
       await validateText(tester, l10n.csPowerQ);
 
       await testFaHBanner(tester, l10n);
@@ -67,5 +67,5 @@ void testSuite({
       // Reset for next test suite  //
 
       await goHome(tester);
-      debugPrint('\nImage settings test suite complete\n\n');
+      ezLog('\nImage settings test suite complete\n\n');
     });

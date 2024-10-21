@@ -12,5 +12,5 @@ void testSuite({
   bool isLefty = false,
 }) =>
     testWidgets('fin-plan-screen', (WidgetTester tester) async {
-      debugPrint('Skipping while still in development');
+      ezLog('Skipping while still in development');
     });

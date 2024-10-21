@@ -41,7 +41,7 @@ class _OpenUILinksState extends State<OpenUILinks> {
 
   // Define the build data //
 
-  late final TargetPlatform basePlatform = Theme.of(context).platform;
+  late final TargetPlatform basePlatform = getBasePlatform(context);
 
   late String currPlatform = targetToString(basePlatform);
   late String currLink = getURL(currPlatform);

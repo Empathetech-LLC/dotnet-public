@@ -59,6 +59,9 @@ class _HomeScreenState extends State<HomeScreen> {
         ).height +
         margin * 2;
 
+    final double sloganWidth = widthOf(context);
+    final double sloganHeight = heightOf(context) / 3;
+
     return DotnetScaffold(
       logo: Semantics(
         image: true,
@@ -85,16 +88,17 @@ class _HomeScreenState extends State<HomeScreen> {
             // Video
             ConstrainedBox(
               constraints: BoxConstraints(
-                minWidth: widthOf(context),
-                maxWidth: widthOf(context),
-                minHeight: heightOf(context) / 3,
-                maxHeight: heightOf(context) / 3,
+                minWidth: sloganWidth,
+                maxWidth: sloganWidth,
+                minHeight: sloganHeight,
+                maxHeight: sloganHeight,
               ),
               child: EmpathetechLogoAnimation(
+                margin: margin,
+                height: sloganHeight,
                 slogan: l10n.hsSlogan,
                 sloganSemantics: l10n.hsSloganFix,
                 videoSemantics: l10n.hsVideoHint,
-                margin: margin,
                 onComplete: () => setState(() => fadeIn = true),
               ),
             ),

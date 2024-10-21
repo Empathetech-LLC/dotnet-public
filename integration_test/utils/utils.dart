@@ -20,11 +20,11 @@ Future<void> goHome(WidgetTester tester) async {
 
 Future<void> dotNetNav(WidgetTester tester, String text) async {
   try {
-    debugPrint('\nTesting navigation');
-    debugPrint('Try large layout');
+    ezLog('\nTesting navigation');
+    ezLog('Try large layout');
     await touchText(tester, text);
   } catch (_) {
-    debugPrint('Catching to small layout');
+    ezLog('Catching to small layout');
     await touch(tester, find.byIcon(Icons.menu));
     await touchText(tester, text);
   }

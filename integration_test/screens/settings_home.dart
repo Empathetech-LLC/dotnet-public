@@ -20,20 +20,20 @@ void testSuite({
     testWidgets('settings-home-screen', (WidgetTester tester) async {
       // Load localization(s) //
 
-      debugPrint('Loading localizations');
+      ezLog('Loading localizations');
       final EFUILang eL10n = await EFUILang.delegate.load(locale);
       final LocaleNames l10nNames =
           await const LocaleNamesLocalizationsDelegate().load(locale);
 
       // Load the app //
 
-      debugPrint('Loading OpenUI');
+      ezLog('Loading OpenUI');
       await tester.pumpWidget(const DotNet());
       await tester.pumpAndSettle();
 
       // Test navigation //
 
-      debugPrint('\nTesting navigation');
+      ezLog('\nTesting navigation');
       // Users can navigate back with the browser's back arrow or system gestures
       // Going home and coming back is easiest for the tester
       await touch(tester, find.byType(SettingsFAB));
@@ -52,7 +52,7 @@ void testSuite({
 
       // Verify text loaded //
 
-      debugPrint('\nValidating text');
+      ezLog('\nValidating text');
       await validateWidget(tester, EzWarning);
       await validateText(tester, eL10n.ssDominantHand);
       await validateText(tester, eL10n.ssThemeMode);
@@ -84,5 +84,5 @@ void testSuite({
       // Reset for next test suite  //
 
       await goHome(tester);
-      debugPrint('\nSettings screen suite complete\n\n');
+      ezLog('\nSettings screen suite complete\n\n');
     });

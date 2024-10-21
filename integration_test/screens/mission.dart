@@ -19,12 +19,12 @@ void testSuite({
     testWidgets('mission-screen', (WidgetTester tester) async {
       // Load localization(s) //
 
-      debugPrint('Loading localizations');
+      ezLog('Loading localizations');
       final Lang l10n = await Lang.delegate.load(locale);
 
       // Load the app //
 
-      debugPrint('Loading OpenUI');
+      ezLog('Loading OpenUI');
       await tester.pumpWidget(const DotNet());
       await tester.pumpAndSettle();
 
@@ -33,22 +33,22 @@ void testSuite({
       await dotNetNav(tester, l10n.msPageTitle);
 
       // Verify text loaded and sub-navigation //
-      debugPrint('\nValidating text(s)');
+      ezLog('\nValidating text(s)');
 
-      debugPrint('Step 1: Identify the problem');
+      ezLog('Step 1: Identify the problem');
       await validateText(tester, l10n.msIDProblem);
       await validateText(tester, l10n.msIDProblemContent);
 
-      debugPrint('Step 2: Be a part of the solution');
+      ezLog('Step 2: Be a part of the solution');
       await touchText(tester, l10n.msFindSolution);
       await validateText(tester, l10n.msFindSolutionContent);
 
-      debugPrint('Step 3: Provide value');
+      ezLog('Step 3: Provide value');
       await touchText(tester, l10n.msProvideValue);
       await validate(tester, find.widgetWithText(EzLink, efuiL));
 
       // Reset for next test suite  //
 
       await goHome(tester);
-      debugPrint('\nImage settings test suite complete\n\n');
+      ezLog('\nImage settings test suite complete\n\n');
     });

@@ -19,12 +19,12 @@ void testSuite({
     testWidgets('team-screen', (WidgetTester tester) async {
       // Load localization(s) //
 
-      debugPrint('Loading localizations');
+      ezLog('Loading localizations');
       final Lang l10n = await Lang.delegate.load(locale);
 
       // Load the app //
 
-      debugPrint('Loading OpenUI');
+      ezLog('Loading OpenUI');
       await tester.pumpWidget(const DotNet());
       await tester.pumpAndSettle();
 
@@ -34,7 +34,7 @@ void testSuite({
 
       // Verify text loaded //
 
-      debugPrint('\nValidating text');
+      ezLog('\nValidating text');
       await validateText(tester, l10n.tsCore);
       await validateText(tester, l10n.tsTheFounder);
       await validateText(tester, mike);
@@ -52,5 +52,5 @@ void testSuite({
       // Reset for next test suite  //
 
       await goHome(tester);
-      debugPrint('\nImage settings test suite complete\n\n');
+      ezLog('\nImage settings test suite complete\n\n');
     });

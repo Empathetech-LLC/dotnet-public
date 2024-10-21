@@ -20,25 +20,25 @@ void testSuite({
     testWidgets('home-screen', (WidgetTester tester) async {
       // Load localization(s) //
 
-      debugPrint('Loading localizations');
+      ezLog('Loading localizations');
       final Lang l10n = await Lang.delegate.load(locale);
 
       // Load the app //
 
-      debugPrint('Loading OpenUI');
+      ezLog('Loading OpenUI');
       await tester.pumpWidget(const DotNet());
       await tester.pumpAndSettle();
 
       // Verify text and art loaded //
 
-      debugPrint('\nValidating text');
+      ezLog('\nValidating text');
       await validateText(tester, l10n.hsSlogan);
       await validateWidget(tester, EmpathetechLogo);
       await validateWidget(tester, EmpathetechLogoAnimation);
 
       //* Test functionality *//
 
-      debugPrint('\nTesting share menu');
+      ezLog('\nTesting share menu');
       try {
         await _largeLayoutTests(tester, l10n: l10n);
       } catch (_) {
@@ -47,14 +47,14 @@ void testSuite({
 
       // Reset for next test suite  //
 
-      debugPrint('\nHome screen suite complete\n\n');
+      ezLog('\nHome screen suite complete\n\n');
     });
 
 Future<void> _largeLayoutTests(
   WidgetTester tester, {
   required Lang l10n,
 }) async {
-  debugPrint('Testing large layout');
+  ezLog('Testing large layout');
 
   await touch(tester, find.byType(MenuAnchor).last);
 
@@ -70,7 +70,7 @@ Future<void> _smallLayoutTests(
   WidgetTester tester, {
   required Lang l10n,
 }) async {
-  debugPrint('Catching to small layout');
+  ezLog('Catching to small layout');
 
   await touch(tester, find.byIcon(Icons.menu));
 

@@ -3,7 +3,6 @@
  * See LICENSE for distribution and usage details.
  */
 
-import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
@@ -23,40 +22,16 @@ class EFUIDemoButtons extends StatelessWidget {
     final bool isDark = isDarkTheme(context);
 
     final EFUILang l10n = EFUILang.of(context)!;
-    final String reloadMessage = l10n.ssSettingsGuideWeb.split('\n')[0];
+
+    late final String reloadMessage = l10n.ssSettingsGuideWeb.split('\n')[0];
 
     // Define build data //
 
     /// Reload the page or instruct to do so
-    void reloadSnack(String message) {
-      final Duration duration = readingTime(message);
-
-      final double margin = EzConfig.get(marginKey);
-
-      final TextStyle? style = Theme.of(context).snackBarTheme.contentTextStyle;
-
-      final double iconRadius =
-          measureIcon(Icons.circle, context: context, style: style).width;
-
-      final double snackWidth =
-          measureText(message, context: context, style: style).width +
-              iconRadius * 2 +
-              3 * margin;
-
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-        padding: EdgeInsets.all(margin),
-        width: snackWidth,
-        content: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: <Widget>[
-            Text(message, textAlign: TextAlign.center),
-            EzSpacer(space: margin, vertical: false),
-            _CircularCountdownTimer(duration: duration, radius: iconRadius),
-          ],
-        ),
-        duration: duration,
-      ));
-    }
+    ScaffoldFeatureController<SnackBar, SnackBarClosedReason> reloadSnack(
+      String message,
+    ) =>
+        ezSnackBar(context: context, message: message);
 
     final List<Widget> demos = <Widget>[
       // Low mobility
@@ -309,82 +284,4 @@ class EFUIDemoButtons extends StatelessWidget {
       ],
     );
   }
-}
-
-class _CircularCountdownTimer extends StatefulWidget {
-  final Duration duration;
-  final double radius;
-
-  const _CircularCountdownTimer({required this.duration, required this.radius});
-
-  @override
-  _CircularCountdownTimerState createState() => _CircularCountdownTimerState();
-}
-
-class _CircularCountdownTimerState extends State<_CircularCountdownTimer>
-    with SingleTickerProviderStateMixin {
-  late AnimationController _controller;
-  late Animation<double> _animation;
-
-  @override
-  void initState() {
-    super.initState();
-    _controller = AnimationController(
-      vsync: this,
-      duration: widget.duration,
-    );
-    _animation = Tween<double>(begin: 1.0, end: 0.0).animate(_controller);
-    _controller.forward();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return AnimatedBuilder(
-      animation: _animation,
-      builder: (_, __) => CustomPaint(
-        size: Size(widget.radius * 2, widget.radius * 2),
-        painter: _CountdownTimerPainter(
-          progress: _animation.value,
-          color: Theme.of(context).colorScheme.secondary,
-        ),
-      ),
-    );
-  }
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
-}
-
-class _CountdownTimerPainter extends CustomPainter {
-  final double progress;
-  final Color color;
-
-  _CountdownTimerPainter({required this.progress, required this.color});
-
-  @override
-  void paint(Canvas canvas, Size size) {
-    const double strokeWidth = 3.0;
-
-    final Offset center = Offset(size.width / 2, size.height / 2);
-    final double radius = size.width / 2;
-
-    final Paint foregroundPaint = Paint()
-      ..color = color
-      ..strokeWidth = strokeWidth
-      ..style = PaintingStyle.fill;
-    canvas.drawArc(
-      Rect.fromCircle(center: center, radius: radius),
-      -math.pi / 2,
-      2 * -math.pi * progress,
-      true,
-      foregroundPaint,
-    );
-  }
-
-  @override
-  bool shouldRepaint(_CountdownTimerPainter oldDelegate) =>
-      oldDelegate.progress != progress;
 }

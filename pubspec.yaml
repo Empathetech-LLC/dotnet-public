@@ -1,6 +1,6 @@
 name: dotnet
 description: "Empathetech's mission is to re-balance the power in tech by making open source software more accessible."
-version: 4.2.1
+version: 4.2.2
 publish_to: 'none'
 
 environment:
@@ -34,7 +34,7 @@ dev_dependencies:
   dependency_validator: ^4.1.1
   flutter_launcher_icons: ^0.14.1
   flutter_lints: ^5.0.0
-  flutter_native_splash: ^2.4.1
+  flutter_native_splash: ^2.4.2
   flutter_test:
     sdk: flutter
   integration_test:

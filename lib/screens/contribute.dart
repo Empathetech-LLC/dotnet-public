@@ -116,18 +116,24 @@ class _ContributeScreenState extends State<ContributeScreen> {
                 mainAxisSize: MainAxisSize.min,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
+                  // Thanks
                   Text(
                     l10n.csThanks,
                     style: pitchStyle,
                     textAlign: TextAlign.center,
                   ),
                   spacer,
+
+                  // Every bit
                   Text(
-                    'Every bit you give to Empathetech takes a byte out of big tech.',
+                    l10n.csEveryBit,
+                    semanticsLabel: l10n.csEveryBitFix,
                     style: textTheme.headlineLarge,
                     textAlign: TextAlign.center,
                   ),
                   spacer,
+
+                  // Would you like to give?...
                   Text(
                     l10n.csGive,
                     style: pitchStyle,

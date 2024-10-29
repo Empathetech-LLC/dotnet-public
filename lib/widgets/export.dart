@@ -3,7 +3,6 @@
  * See LICENSE for distribution and usage details.
  */
 
-export 'charity_orgs.dart';
 export 'dotnet_drawer.dart';
 export 'efui_demo_buttons.dart';
 export 'efui_shout_out.dart';

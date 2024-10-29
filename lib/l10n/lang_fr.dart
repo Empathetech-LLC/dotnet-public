@@ -67,24 +67,12 @@ class LangFr extends Lang {
       'Logo de Folding at home : une molécule de protéine. Activer pour ouvrir leur site';
 
   @override
-  String get gAnitaBorgIconHint =>
-      'Logo d\'AnitaB.org : un prisme arc-en-ciel. Activer pour ouvrir leur site';
-
-  @override
-  String get gCodeDotOrgIconHint =>
-      'Logo code.org : touches du clavier épelant le mot code. Activer pour ouvrir leur site';
-
-  @override
-  String get gWorldSavvyIconHint =>
-      'Logo de World Savvy : un dessin au crayon de la terre. Activer pour ouvrir leur site';
-
-  @override
   String gFiverrPage(Object user) {
     return 'Ouvre la page Fiverr de $user';
   }
 
   @override
-  String get hsSlogan => 'Construisons ensemble un monde meilleur\bit x bit';
+  String get hsSlogan => 'Construisons ensemble un monde meilleur\nbit x bit';
 
   @override
   String get hsSloganFix =>
@@ -93,6 +81,33 @@ class LangFr extends Lang {
   @override
   String get hsVideoHint =>
       'Logo animé d\'Empathetic LLC : les lettres d\'Empathetic se transforment en un logo, un sablier en deux dimensions';
+
+  @override
+  String get hsPeople => 'Les gens ne sont pas des produits.';
+
+  @override
+  String get hsWell => 'Eh bien, ils ne devraient pas l\'être.';
+
+  @override
+  String get hsReality => 'La triste réalité est que nos identités, nos ';
+
+  @override
+  String get hsData => 'données';
+
+  @override
+  String get hsGold =>
+      ', sont la nouvelle ruée vers l\'or des grandes entreprises technologiques.';
+
+  @override
+  String get hsRush =>
+      'Et les grandes entreprises technologiques adorent se précipiter.\nGrâce à leur sprint sans fin, les films de science-fiction dystopiques deviennent réalité beaucoup trop rapidement.';
+
+  @override
+  String get hsSlow =>
+      'Il est temps de ralentir.\nIl est temps que nous ayons la propriété de notre moi numérique.\nIl est temps d\'un meilleur ';
+
+  @override
+  String get hsPlan => 'plan.';
 
   @override
   String get psPageTitle => 'Produits';
@@ -105,6 +120,21 @@ class LangFr extends Lang {
 
   @override
   String get psEFUISlogan => 'Créer des applications pour tous';
+
+  @override
+  String get psLike => 'Comme les utilisateurs qui ont besoin...';
+
+  @override
+  String get psAccessible => 'Commandes accessibles';
+
+  @override
+  String get psZeroStrain => 'zéro fatigue oculaire';
+
+  @override
+  String get psEverything => 'autre chose';
+
+  @override
+  String get psRandom => 'Configuration aléatoire appliquée.';
 
   @override
   String get psEFUIDescription =>
@@ -207,7 +237,7 @@ class LangFr extends Lang {
 
   @override
   String get psSignalPreview2 =>
-      ', est en cours de développement. Smoke Signal est une application de médias sociaux conçue pour nous éloigner de nos écrans.\n';
+      ', est en cours de développement.\nSmoke Signal est une application de médias sociaux conçue pour nous éloigner de nos écrans.';
 
   @override
   String get psSignalPreview3 =>
@@ -262,48 +292,6 @@ class LangFr extends Lang {
       ' existe.\nEmpathetic est fier de joindre le geste à la parole et a rendu son interface utilisateur accessible open source.\n\nConstruisons ensemble un monde meilleur, petit à petit.';
 
   @override
-  String get fpsPageTitle => 'Plan financier';
-
-  @override
-  String get fpsPageHint => 'Ouvre la page du plan financier';
-
-  @override
-  String get fpsGoal0 => 'Couvrir les dépenses';
-
-  @override
-  String get fpsGoal1 => 'Verser un salaire minimum';
-
-  @override
-  String get fpsGoal2 => 'Verser un salaire de survie';
-
-  @override
-  String get fpsGoal3 => 'Verser un salaire décent';
-
-  @override
-  String get fpsGoal4 => 'Verser un salaire confortable';
-
-  @override
-  String fpsRaised(Object goal, Object income) {
-    return '$income sur $goal collectés';
-  }
-
-  @override
-  String fpsSplit(Object split) {
-    return '$split sera reversé à...';
-  }
-
-  @override
-  String get fpsEventual =>
-      'Tous les futurs bénéfices seront partagés entre...';
-
-  @override
-  String get fpsCheck => 'Vérifiez nos calculs';
-
-  @override
-  String get fpsCheckHint =>
-      'Ouvre la page GitHub pour le code source de cette interface';
-
-  @override
   String get tsPageTitle => 'Équipe';
 
   @override
@@ -333,6 +321,14 @@ class LangFr extends Lang {
 
   @override
   String get csThanks => 'Merci beaucoup pour tout votre soutien !';
+
+  @override
+  String get csEveryBit =>
+      'Chaque petit don que vous faites à Empathetech représente une perte pour les grandes entreprises technologiques.';
+
+  @override
+  String get csEveryBitFix =>
+      'Chaque petit don que vous faites à Empathetic représente une perte pour les grandes entreprises technologiques.';
 
   @override
   String get csGive => 'Souhaitez-vous donner...';

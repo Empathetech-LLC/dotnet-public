@@ -66,18 +66,6 @@ class LangEn extends Lang {
       'Folding at home logo: a protein molecule. Activate to open their site';
 
   @override
-  String get gAnitaBorgIconHint =>
-      'AnitaB.org logo: a rainbow prism. Activate to open their site';
-
-  @override
-  String get gCodeDotOrgIconHint =>
-      'code.org logo: keyboard keys spelling the word code. Activate to open their site';
-
-  @override
-  String get gWorldSavvyIconHint =>
-      'World Savvy logo: a drawing of the globe in pencil style. Activate to open their site';
-
-  @override
   String gFiverrPage(Object user) {
     return 'Open $user\'s Fiverr page';
   }
@@ -93,6 +81,32 @@ class LangEn extends Lang {
       'Empathetic LLC animated logo: the letters in Empathetic transform into the two dimensional hourglass logo';
 
   @override
+  String get hsPeople => 'People aren\'t products.';
+
+  @override
+  String get hsWell => 'Well, they shouldn\'t be.';
+
+  @override
+  String get hsReality => 'The unfortunate reality is our identities, our ';
+
+  @override
+  String get hsData => 'data';
+
+  @override
+  String get hsGold => ', is big tech\'s latest gold rush.';
+
+  @override
+  String get hsRush =>
+      'And big tech sure does love to rush.\nThanks to their never-ending sprint, the dystopian sci-fi movies are coming true far too quickly.';
+
+  @override
+  String get hsSlow =>
+      'It\'s time to slow down.\nIt\'s time we had ownership of our digital selves.\nIt\'s time for a better ';
+
+  @override
+  String get hsPlan => 'plan.';
+
+  @override
   String get psPageTitle => 'Products';
 
   @override
@@ -103,6 +117,21 @@ class LangEn extends Lang {
 
   @override
   String get psEFUISlogan => 'Build apps for anyone';
+
+  @override
+  String get psLike => 'Like users who need...';
+
+  @override
+  String get psAccessible => 'Accessible controls';
+
+  @override
+  String get psZeroStrain => 'zero eye strain';
+
+  @override
+  String get psEverything => 'everything in-between';
+
+  @override
+  String get psRandom => 'Random config applied.';
 
   @override
   String get psEFUIDescription =>
@@ -258,47 +287,6 @@ class LangEn extends Lang {
       ' exists.\nEmpathetic takes pride in meeting words with actions, and have made our accessible UI open source.\n\nLet\'s build a better world together, bit by bit.';
 
   @override
-  String get fpsPageTitle => 'Financial plan';
-
-  @override
-  String get fpsPageHint => 'Open the financial plan page';
-
-  @override
-  String get fpsGoal0 => 'Cover expenses';
-
-  @override
-  String get fpsGoal1 => 'Pay minimum wage';
-
-  @override
-  String get fpsGoal2 => 'Pay a survivable wage';
-
-  @override
-  String get fpsGoal3 => 'Pay a livable wage';
-
-  @override
-  String get fpsGoal4 => 'Pay a comfortable wage';
-
-  @override
-  String fpsRaised(Object goal, Object income) {
-    return '$income of $goal raised';
-  }
-
-  @override
-  String fpsSplit(Object split) {
-    return '$split will be donated to...';
-  }
-
-  @override
-  String get fpsEventual => 'Any future profits will be shared with...';
-
-  @override
-  String get fpsCheck => 'Check our math';
-
-  @override
-  String get fpsCheckHint =>
-      'Open a GitHub link to the source code for this screen';
-
-  @override
   String get tsPageTitle => 'Team';
 
   @override
@@ -328,6 +316,14 @@ class LangEn extends Lang {
 
   @override
   String get csThanks => 'Many thanks for any and all support!';
+
+  @override
+  String get csEveryBit =>
+      'Every bit you give to Empathetech takes a byte out of big tech.';
+
+  @override
+  String get csEveryBitFix =>
+      'Every bit you give to Empathetic takes a byte out of big tech.';
 
   @override
   String get csGive => 'Would you like to give...';

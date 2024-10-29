@@ -7,8 +7,7 @@
 
 export 'home.dart';
 
-export 'plan/fin_plan.dart';
-export 'plan/mission.dart';
+export 'mission.dart';
 
 export 'products.dart';
 
@@ -21,13 +20,12 @@ export 'settings/text_settings.dart';
 export 'settings/layout_settings.dart';
 export 'settings/color_settings.dart';
 
+export 'error.dart';
+
 // Path names //
 
 /// 'mission'
 const String missionPath = 'mission';
-
-/// 'fin-plan'
-const String finPlanPath = 'fin-plan';
 
 /// 'products'
 const String productsPath = 'products';

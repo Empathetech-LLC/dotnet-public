@@ -4,6 +4,5 @@
  */
 
 export 'consts.dart';
-export 'finances.dart';
 
 export '../l10n/lang.dart';

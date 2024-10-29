@@ -28,17 +28,22 @@
 
   "gFahIconHint": "Logo de Folding at home : une molécule de protéine. Activer pour ouvrir leur site",
 
-  "gAnitaBorgIconHint": "Logo d'AnitaB.org : un prisme arc-en-ciel. Activer pour ouvrir leur site",
-  "gCodeDotOrgIconHint": "Logo code.org : touches du clavier épelant le mot code. Activer pour ouvrir leur site",
-  "gWorldSavvyIconHint": "Logo de World Savvy : un dessin au crayon de la terre. Activer pour ouvrir leur site",
-
   "gFiverrPage": "Ouvre la page Fiverr de {user}",
 
 
 
-  "hsSlogan": "Construisons ensemble un monde meilleur\bit x bit",
+  "hsSlogan": "Construisons ensemble un monde meilleur\nbit x bit",
   "hsSloganFix": "Construisons ensemble un monde meilleur\npas à pas",
   "hsVideoHint": "Logo animé d'Empathetic LLC : les lettres d'Empathetic se transforment en un logo, un sablier en deux dimensions",
+
+  "hsPeople": "Les gens ne sont pas des produits.",
+  "hsWell": "Eh bien, ils ne devraient pas l'être.",
+  "hsReality": "La triste réalité est que nos identités, nos ",
+  "hsData": "données",
+  "hsGold": ", sont la nouvelle ruée vers l'or des grandes entreprises technologiques.",
+  "hsRush": "Et les grandes entreprises technologiques adorent se précipiter.\nGrâce à leur sprint sans fin, les films de science-fiction dystopiques deviennent réalité beaucoup trop rapidement.",
+  "hsSlow": "Il est temps de ralentir.\nIl est temps que nous ayons la propriété de notre moi numérique.\nIl est temps d'un meilleur ",
+  "hsPlan": "plan.",
 
 
 
@@ -48,6 +53,11 @@
   "psUse": "Pour utiliser",
 
   "psEFUISlogan": "Créer des applications pour tous",
+  "psLike": "Comme les utilisateurs qui ont besoin...",
+  "psAccessible": "Commandes accessibles",
+  "psZeroStrain": "zéro fatigue oculaire",
+  "psEverything": "autre chose",
+  "psRandom": "Configuration aléatoire appliquée.",
   "psEFUIDescription": "EFUI est un kit de démarrage pour créer des environnements d'applications réellement accessibles.\nEFUI gère tous les aspects de l'accessibilité numérique...",
 
   "psPlatform": "Multiplateforme",
@@ -85,7 +95,7 @@
   "psSignalHint": "L'icône de Smoke Signal. Ouvrir un lien vers le dépôt de développement.",
   "psSignalPreview1": "La prochaine application d'Empathetech, ",
   "psSignalPreview1Fix": "La prochaine application d'Empathetic, ",
-  "psSignalPreview2": ", est en cours de développement. Smoke Signal est une application de médias sociaux conçue pour nous éloigner de nos écrans.\n",
+  "psSignalPreview2": ", est en cours de développement.\nSmoke Signal est une application de médias sociaux conçue pour nous éloigner de nos écrans.",
   "psSignalPreview3": "Smoke Signal sera également entièrement auto-hébergée, grâce à ",
   "psAPHint": "Ouvrir un lien vers la documentation d'Activity Pub",
   
@@ -111,24 +121,6 @@
 
 
 
-  "fpsPageTitle": "Plan financier",
-  "fpsPageHint": "Ouvre la page du plan financier",
-
-  "fpsGoal0": "Couvrir les dépenses",
-  "fpsGoal1": "Verser un salaire minimum",
-  "fpsGoal2": "Verser un salaire de survie",
-  "fpsGoal3": "Verser un salaire décent",
-  "fpsGoal4": "Verser un salaire confortable",
-  "fpsRaised": "{income} sur {goal} collectés",
-
-  "fpsSplit": "{split} sera reversé à...",
-  "fpsEventual": "Tous les futurs bénéfices seront partagés entre...",
-
-  "fpsCheck": "Vérifiez nos calculs",
-  "fpsCheckHint": "Ouvre la page GitHub pour le code source de cette interface",
-
-
-
   "tsPageTitle": "Équipe",
 
   "tsCore": "Cœur",
@@ -146,6 +138,8 @@
   "csPageTitle": "Contribuer",
 
   "csThanks": "Merci beaucoup pour tout votre soutien !",
+  "csEveryBit": "Chaque petit don que vous faites à Empathetech représente une perte pour les grandes entreprises technologiques.",
+  "csEveryBitFix": "Chaque petit don que vous faites à Empathetic représente une perte pour les grandes entreprises technologiques.",
   "csGive": "Souhaitez-vous donner...",
 
   "csTimeQ": "Du temps ?",

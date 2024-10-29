@@ -28,10 +28,6 @@
 
   "gFahIconHint": "Folding at home logo: a protein molecule. Activate to open their site",
 
-  "gAnitaBorgIconHint": "AnitaB.org logo: a rainbow prism. Activate to open their site",
-  "gCodeDotOrgIconHint": "code.org logo: keyboard keys spelling the word code. Activate to open their site",
-  "gWorldSavvyIconHint": "World Savvy logo: a drawing of the globe in pencil style. Activate to open their site",
-
   "gFiverrPage": "Open {user}'s Fiverr page",
 
   
@@ -39,6 +35,15 @@
   "hsSlogan": "Let's build a better world together\nbit x bit",
   "hsSloganFix": "Let's build a better world together\nbit by bit",
   "hsVideoHint": "Empathetic LLC animated logo: the letters in Empathetic transform into the two dimensional hourglass logo",
+
+  "hsPeople": "People aren't products.",
+  "hsWell": "Well, they shouldn't be.",
+  "hsReality": "The unfortunate reality is our identities, our ",
+  "hsData": "data",
+  "hsGold": ", is big tech's latest gold rush.",
+  "hsRush": "And big tech sure does love to rush.\nThanks to their never-ending sprint, the dystopian sci-fi movies are coming true far too quickly.",
+  "hsSlow": "It's time to slow down.\nIt's time we had ownership of our digital selves.\nIt's time for a better ",
+  "hsPlan": "plan.",
 
 
 
@@ -48,6 +53,11 @@
   "psUse": "For using",
 
   "psEFUISlogan": "Build apps for anyone",
+  "psLike": "Like users who need...",
+  "psAccessible": "Accessible controls",
+  "psZeroStrain": "zero eye strain",
+  "psEverything": "everything in-between",
+  "psRandom": "Random config applied.",
   "psEFUIDescription": "EFUI is a starter kit for building truly accessible apps.\nEFUI handles every aspect of digital accessibility...",
   
   "psPlatform": "Platform availability",
@@ -110,25 +120,7 @@
   "msProvideValueContent2Fix": " exists.\nEmpathetic takes pride in meeting words with actions, and have made our accessible UI open source.\n\nLet's build a better world together, bit by bit.",
 
 
-
-  "fpsPageTitle": "Financial plan",
-  "fpsPageHint": "Open the financial plan page",
   
-  "fpsGoal0": "Cover expenses",
-  "fpsGoal1": "Pay minimum wage",
-  "fpsGoal2": "Pay a survivable wage",
-  "fpsGoal3": "Pay a livable wage",
-  "fpsGoal4": "Pay a comfortable wage",
-  "fpsRaised": "{income} of {goal} raised",
-  
-  "fpsSplit": "{split} will be donated to...",
-  "fpsEventual": "Any future profits will be shared with...",
-  
-  "fpsCheck": "Check our math",
-  "fpsCheckHint": "Open a GitHub link to the source code for this screen",
-
-
-
   "tsPageTitle": "Team",
   
   "tsCore": "Core",
@@ -146,6 +138,8 @@
   "csPageTitle": "Contribute",
   
   "csThanks": "Many thanks for any and all support!",
+  "csEveryBit": "Every bit you give to Empathetech takes a byte out of big tech.",
+  "csEveryBitFix": "Every bit you give to Empathetic takes a byte out of big tech.",
   "csGive": "Would you like to give...",
   
   "csTimeQ": "Time?",

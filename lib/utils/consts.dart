@@ -27,21 +27,11 @@ const String mike = 'Michael Waldron';
 const String openUIIconPath = 'assets/images/settings-sandbox-round.png';
 const String smokeSignalIconPath = 'assets/images/smoke-signal-icon.png';
 
-const String anitaBorgIconPath = 'assets/images/AnitaB.webp';
-const String codeDotOrgIconPath = 'assets/images/code-dot-org.png';
-const String worldSavvyIconPath = 'assets/images/world-savvy.webp';
-
-const String ytdReportPath = 'assets/data/ytd-expenses.csv';
-
 const Set<String> assetPaths = <String>{
   fahIconPath,
   founderIconPath,
   openUIIconPath,
   smokeSignalIconPath,
-  anitaBorgIconPath,
-  codeDotOrgIconPath,
-  worldSavvyIconPath,
-  ytdReportPath,
 };
 
 /// 171.0
@@ -63,16 +53,6 @@ const String smokeSignalSource =
 /// https://github.com/Empathetech-LLC/dotnet-public/blob/main/lib/screens/settings_home.dart
 const String settingsSource =
     'https://github.com/Empathetech-LLC/dotnet-public/blob/main/lib/screens/settings/settings_home.dart';
-
-/// https://en.wikipedia.org/wiki/Software_as_a_service
-const String saaSDocs = 'https://en.wikipedia.org/wiki/Software_as_a_service';
-
-/// https://en.wikipedia.org/wiki/Multi-licensing
-const String dualLicenseDocs = 'https://en.wikipedia.org/wiki/Multi-licensing';
-
-/// https://github.com/Empathetech-LLC/dotnet-public/blob/main/lib/utils/finances.dart
-const String financesSource =
-    'https://github.com/Empathetech-LLC/dotnet-public/blob/main/lib/utils/finances.dart';
 
 // Freelancers //
 
@@ -106,27 +86,6 @@ const String pimenLink = 'https://pimen.itch.io/';
 
 // Non-profits //
 
-/// https://anitab.org/
-const String anitaBorgLink = 'https://anitab.org/';
-
-/// https://www.charitynavigator.org/ein/770480427
-const String anitaBorgCNavLink =
-    'https://www.charitynavigator.org/ein/770480427';
-
-/// https://code.org/
-const String codeDotOrgLink = 'https://code.org/';
-
-/// https://www.charitynavigator.org/ein/460858543
-const String codeDotOrgCNavLink =
-    'https://www.charitynavigator.org/ein/460858543';
-
-/// https://worldsavvy.org/
-const String worldSavvyLink = 'https://worldsavvy.org/';
-
-/// https://www.charitynavigator.org/ein/450473508
-const String worldSavvyCNavLink =
-    'https://www.charitynavigator.org/ein/450473508';
-
 /// https://foldingathome.org/
 const String faHLink = 'https://foldingathome.org/';
 
@@ -140,7 +99,4 @@ const Map<String, String> credits = <String, String>{
   founderIconPath: '$mike & $dunvekLink',
   openUIIconPath: '$mike & Gemini',
   smokeSignalIconPath: '$mike & $pimenLink',
-  anitaBorgIconPath: anitaBorgLink,
-  codeDotOrgIconPath: codeDotOrgLink,
-  worldSavvyIconPath: worldSavvyLink,
 };

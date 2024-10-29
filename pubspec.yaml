@@ -1,6 +1,6 @@
 name: dotnet
 description: "Empathetech's mission is to re-balance the power in tech by making open source software more accessible."
-version: 4.2.2
+version: 4.2.3
 publish_to: 'none'
 
 environment:
@@ -15,7 +15,7 @@ dependencies:
 
   # Flutter (Google)
   go_router: ^14.3.0
-  share_plus: ^10.1.0
+  share_plus: ^10.1.1
   shared_preferences: ^2.3.2
   url_launcher: ^6.3.1
 
@@ -45,9 +45,6 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/
-    - assets/data/
-    - assets/data/ytd-expenses.csv
     - assets/fonts/
     - assets/fonts/Roboto-Black.ttf
     - assets/fonts/Roboto-BlackItalic.ttf
@@ -62,14 +59,11 @@ flutter:
     - assets/fonts/Roboto-Thin.ttf
     - assets/fonts/Roboto-ThinItalic.ttf
     - assets/images/
-    - assets/images/AnitaB.webp
-    - assets/images/code-dot-org.png
     - assets/images/dark-logo.png
     - assets/images/fah.png
     - assets/images/founder.png
     - assets/images/settings-sandbox-round.png
     - assets/images/smoke-signal-icon.png
-    - assets/images/world-savvy.webp
 
 flutter_launcher_icons:
   image_path: assets/images/dark-logo.png

@@ -3,9 +3,9 @@
  * See LICENSE for distribution and usage details.
  */
 
-import '../export.dart';
-import '../../utils/export.dart';
-import '../../widgets/export.dart';
+import 'export.dart';
+import '../utils/export.dart';
+import '../widgets/export.dart';
 
 import 'dart:math';
 import 'package:flutter/material.dart';
@@ -146,85 +146,103 @@ class _MissionScreenState extends State<MissionScreen> {
     return DotnetScaffold(
       body: EzScreen(
         useImageDecoration: false,
-        child: Stepper(
-          physics: const BouncingScrollPhysics(),
-          stepIconWidth: max(24.0, padding * 1.5),
-          stepIconHeight: max(24.0, padding * 1.5),
-          connectorColor: WidgetStateProperty.resolveWith(
-            (Set<WidgetState> states) => (states.contains(WidgetState.selected)
-                ? colorScheme.secondary
-                : colorScheme.outline),
-          ),
-          steps: <Step>[
-            // Step 1: Identify the problem
-            Step(
-              stepStyle: _style(0),
-              isActive: index >= 0,
-              title: _title(l10n.msIDProblem),
-              content: _content(Text(
-                l10n.msIDProblemContent,
-                style: textTheme.bodyLarge,
-                textAlign: TextAlign.left,
-              )),
-            ),
+        child: Column(
+          children: <Widget>[
+            Expanded(
+              child: Stepper(
+                physics: const BouncingScrollPhysics(),
+                stepIconWidth: max(24.0, padding * 1.5),
+                stepIconHeight: max(24.0, padding * 1.5),
+                connectorColor: WidgetStateProperty.resolveWith(
+                  (Set<WidgetState> states) =>
+                      (states.contains(WidgetState.selected)
+                          ? colorScheme.secondary
+                          : colorScheme.outline),
+                ),
+                steps: <Step>[
+                  // Step 1: Identify the problem
+                  Step(
+                    stepStyle: _style(0),
+                    isActive: index >= 0,
+                    title: _title(l10n.msIDProblem),
+                    content: _content(Text(
+                      l10n.msIDProblemContent,
+                      style: textTheme.bodyLarge,
+                      textAlign: TextAlign.left,
+                    )),
+                  ),
 
-            // Step 2: Be a part of the solution
-            Step(
-              stepStyle: _style(1),
-              isActive: index >= 1,
-              title: _title(l10n.msFindSolution),
-              content: _content(Text(
-                l10n.msFindSolutionContent,
-                style: textTheme.bodyLarge,
-                textAlign: TextAlign.left,
-              )),
-            ),
+                  // Step 2: Be a part of the solution
+                  Step(
+                    stepStyle: _style(1),
+                    isActive: index >= 1,
+                    title: _title(l10n.msFindSolution),
+                    content: _content(Text(
+                      l10n.msFindSolutionContent,
+                      style: textTheme.bodyLarge,
+                      textAlign: TextAlign.left,
+                    )),
+                  ),
 
-            // Step 3: Provide value
-            Step(
-              stepStyle: _style(2),
-              isActive: index >= 2,
-              title: _title(l10n.msProvideValue),
-              content: _content(EzRichText(<InlineSpan>[
-                EzPlainText(
-                  text: l10n.msProvideValueContent1,
-                  style: textTheme.bodyLarge,
+                  // Step 3: Provide value
+                  Step(
+                    stepStyle: _style(2),
+                    isActive: index >= 2,
+                    title: _title(l10n.msProvideValue),
+                    content: _content(EzRichText(<InlineSpan>[
+                      EzPlainText(
+                        text: l10n.msProvideValueContent1,
+                        style: textTheme.bodyLarge,
+                      ),
+                      EzInlineLink(
+                        efuiL,
+                        style: textTheme.bodyLarge,
+                        textAlign: TextAlign.left,
+                        onTap: () => context.goNamed(productsPath),
+                        semanticsLabel: l10n.gProductsHint,
+                        richSemanticsLabel: efuiLFix,
+                      ),
+                      EzPlainText(
+                        text: l10n.msProvideValueContent2,
+                        style: textTheme.bodyLarge,
+                      ),
+                    ], textAlign: TextAlign.left)),
+                  ),
+                ],
+                currentStep: index,
+                onStepCancel: _onStepCancel,
+                onStepContinue: _onStepContinue,
+                onStepTapped: _onStepTapped,
+                controlsBuilder: (_, ControlsDetails details) => Align(
+                  alignment: Alignment.centerLeft,
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      const EzSpacer(),
+                      EzScrollView(
+                        scrollDirection: Axis.horizontal,
+                        primary: false,
+                        mainAxisSize: MainAxisSize.min,
+                        children: stepButtons(details),
+                      ),
+                    ],
+                  ),
                 ),
-                EzInlineLink(
-                  efuiL,
-                  style: textTheme.bodyLarge,
-                  textAlign: TextAlign.left,
-                  onTap: () => context.goNamed(productsPath),
-                  semanticsLabel: l10n.gProductsHint,
-                  richSemanticsLabel: efuiLFix,
-                ),
-                EzPlainText(
-                  text: l10n.msProvideValueContent2,
-                  style: textTheme.bodyLarge,
-                ),
-              ], textAlign: TextAlign.left)),
+              ),
+            ),
+            const EzSeparator(),
+            Container(
+              width: double.infinity,
+              padding: EdgeInsets.only(
+                left: (EzConfig.get(marginKey) + padding) * 2,
+              ),
+              alignment: Alignment.centerLeft,
+              child: const EzTranslationsPendingNotice(
+                textAlign: TextAlign.left,
+              ),
             ),
           ],
-          currentStep: index,
-          onStepCancel: _onStepCancel,
-          onStepContinue: _onStepContinue,
-          onStepTapped: _onStepTapped,
-          controlsBuilder: (_, ControlsDetails details) => Align(
-            alignment: Alignment.centerLeft,
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                const EzSpacer(),
-                EzScrollView(
-                  scrollDirection: Axis.horizontal,
-                  primary: false,
-                  mainAxisSize: MainAxisSize.min,
-                  children: stepButtons(details),
-                ),
-              ],
-            ),
-          ),
         ),
       ),
       fab: SettingsFAB(context),

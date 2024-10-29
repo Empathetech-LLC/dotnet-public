@@ -3,8 +3,7 @@
  * See LICENSE for distribution and usage details.
  */
 
-import 'package:dotnet/screens/export.dart';
-
+import './export.dart';
 import '../utils/export.dart';
 import '../widgets/export.dart';
 
@@ -38,6 +37,16 @@ class _HomeScreenState extends State<HomeScreen> {
     fontSize: Theme.of(context).textTheme.titleLarge?.fontSize,
   );
 
+  // Define build data //
+
+  late bool animFin;
+
+  @override
+  void initState() {
+    super.initState();
+    Navigator.canPop(context) ? animFin = true : animFin = false;
+  }
+
   // Set the page title //
 
   @override
@@ -47,8 +56,6 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   // Return the build //
-
-  bool fadeIn = false;
 
   @override
   Widget build(BuildContext context) {
@@ -68,10 +75,10 @@ class _HomeScreenState extends State<HomeScreen> {
         link: false,
         button: false,
         label: l10n.gLogoHint.split('.')[0],
-        enabled: fadeIn,
+        enabled: animFin,
         child: ExcludeSemantics(
           child: AnimatedOpacity(
-            opacity: fadeIn ? 1.0 : 0.0,
+            opacity: animFin ? 1.0 : 0.0,
             duration: const Duration(milliseconds: fadeTime),
             child: SizedBox(
               width: toolbarHeight,
@@ -99,64 +106,57 @@ class _HomeScreenState extends State<HomeScreen> {
                 slogan: l10n.hsSlogan,
                 sloganSemantics: l10n.hsSloganFix,
                 videoSemantics: l10n.hsVideoHint,
-                onComplete: () => setState(() => fadeIn = true),
+                play: !animFin,
+                onComplete: () {
+                  if (!animFin) setState(() => animFin = true);
+                },
               ),
             ),
             separator,
 
             // Mini-mission statement
             AnimatedOpacity(
-              opacity: fadeIn ? 1.0 : 0.0,
+              opacity: animFin ? 1.0 : 0.0,
               duration: const Duration(milliseconds: fadeTime),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
                   // People shouldn't be products
                   Text(
-                    "People aren't products.",
+                    l10n.hsPeople,
                     style: textTheme.headlineLarge,
                     textAlign: TextAlign.center,
                   ),
                   spacer,
                   Text(
-                    "Well, they shouldn't be.",
+                    l10n.hsWell,
                     style: pitchStyle,
                     textAlign: TextAlign.center,
                   ),
                   spacer,
 
-                  // But we low-key are
+                  // But our data is
                   EzRichText(<InlineSpan>[
+                    EzPlainText(text: l10n.hsReality, style: pitchStyle),
                     EzPlainText(
-                      text: 'The unfortunate reality is our identities, our ',
-                      style: pitchStyle,
-                    ),
-                    EzPlainText(
-                      text: 'data',
+                      text: l10n.hsData,
                       style: pitchStyle?.copyWith(fontStyle: FontStyle.italic),
                     ),
-                    EzPlainText(
-                      text: ", is big tech's latest gold rush.",
-                      style: pitchStyle,
-                    ),
+                    EzPlainText(text: l10n.hsGold, style: pitchStyle),
                   ], textAlign: TextAlign.center),
                   spacer,
 
-                  // mOvE fAsT aNd BrEaK tHiNgS
+                  // How about !(move fast && break things)
                   Text(
-                    'And big tech sure does love to rush.\nThanks to their never-ending sprint, the dystopian sci-fi movies are coming true far too quickly.',
+                    l10n.hsRush,
                     style: pitchStyle,
                     textAlign: TextAlign.center,
                   ),
                   spacer,
                   EzRichText(<InlineSpan>[
-                    EzPlainText(
-                      text:
-                          "It's time to slow down.\nIt's time we had ownership of our digital selves.\nIt's time for a better ",
-                      style: pitchStyle,
-                    ),
+                    EzPlainText(text: l10n.hsSlow, style: pitchStyle),
                     EzInlineLink(
-                      'plan.',
+                      l10n.hsPlan,
                       style: pitchStyle,
                       textAlign: TextAlign.center,
                       onTap: () => context.goNamed(missionPath),
@@ -167,6 +167,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             separator,
+            const EzTranslationsPendingNotice(),
           ],
         ),
       ),

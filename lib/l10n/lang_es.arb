@@ -28,10 +28,6 @@
 
   "gFahIconHint": "Logotipo de Folding at home: una molécula de proteína. Activar para abrir su página",
 
-  "gAnitaBorgIconHint": "Logotipo de AnitaB.org: un prisma de arco iris. Activar para abrir su sitio",
-  "gCodeDotOrgIconHint": "Logotipo de code.org: teclas de un teclado deletreando la palabra code. Activar para abrir su sitio",
-  "gWorldSavvyIconHint": "Logotipo de World Savvy: un dibujo del globo terráqueo a lápiz. Activar para abrir su sitio",
-
   "gFiverrPage": "Abre la página de {user} en Fiverr",
 
 
@@ -39,6 +35,15 @@
   "hsSlogan": "Construyamos juntos un mundo mejor\nbit x bit",
   "hsSloganFix": "Construyamos juntos un mundo mejor\npoco a poco",
   "hsVideoHint": "Logotipo animado de Empathetic LLC: las letras de Empathetic se transforman en el logotipo bidimensional del reloj de arena",
+
+  "hsPeople": "Las personas no son productos.",
+  "hsWell": "Bueno, no deberían serlo.",
+  "hsReality": "La desafortunada realidad es que nuestras identidades, nuestros ",
+  "hsData": "datos",
+  "hsGold": ", son la última fiebre del oro de las grandes tecnológicas.",
+  "hsRush": "Y a las grandes tecnológicas les encanta correr.\nGracias a su carrera sin fin, las películas distópicas de ciencia ficción se están haciendo realidad demasiado rápido.",
+  "hsSlow": "Es hora de reducir la velocidad.\nEs hora de que tengamos la propiedad de nuestro yo digital.\nEs hora de un mejor ",
+  "hsPlan": "plan.",
 
 
 
@@ -48,6 +53,11 @@
   "psUse": "Para usar",
 
   "psEFUISlogan": "Crea apps para todos",
+  "psLike": "Como usuarios que necesitan ...",
+  "psAccessible": "Controles accesibles",
+  "psZeroStrain": "cero fatiga visual",
+  "psEverything": "algo más",
+  "psRandom": "Configuración aleatoria aplicada.",
   "psEFUIDescription": "EFUI es un kit de inicio para creaciones accesibles de verdad apps.\nEFUI se encarga de todos los aspectos de la accesibilidad digital...",
   
   "psPlatform": "Disponibilidad de plataforma",
@@ -111,24 +121,6 @@
 
 
 
-  "fpsPageTitle": "Plan financiero",
-  "fpsPageHint": "Abrir la página del plan financiero",
-  
-  "fpsGoal0": "Cubrir gastos",
-  "fpsGoal1": "Pagar un salario mínimo",
-  "fpsGoal2": "Pagar un salario básico",
-  "fpsGoal3": "Pagar un salario decente",
-  "fpsGoal4": "Pagar un salario digno",
-  "fpsRaised": "{income} de {goal} aumentado",
-  
-  "fpsSplit": "{split} será donado a...",
-  "fpsEventual": "Cualquier beneficio futuro se repartirá con...",
-  
-  "fpsCheck": "Comprueba nuestros cálculos",
-  "fpsCheckHint": "Abre un enlace de GitHub al código fuente de esta pantalla",
-
-
-
   "tsPageTitle": "Equipo",
   
   "tsCore": "Núcleo",
@@ -146,6 +138,8 @@
   "csPageTitle": "Contribuir",
   
   "csThanks": "¡Muchas gracias por todo el apoyo!",
+  "csEveryBit": "Cada bit que das a Empathetech le quitas un byte a los gigantes tecnológicos.",
+  "csEveryBitFix": "Cada bit que das a Empathetic le quitas un byte a los gigantes tecnológicos.",
   "csGive": "¿Te gustaría contribuir...",
   
   "csTimeQ": "Tiempo?",

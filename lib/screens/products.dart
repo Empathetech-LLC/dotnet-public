@@ -31,13 +31,13 @@ class _ProductsScreenState extends State<ProductsScreen>
 
   // Define the build data //
 
-  /// 'creators'
-  static const String creators = 'creators';
+  /// 'creating'
+  static const String creating = 'creating';
 
-  /// 'users'
-  static const String users = 'users';
+  /// 'using'
+  static const String using = 'using';
 
-  String currentTab = creators;
+  String currentTab = creating;
 
   // Set the page title //
 
@@ -60,11 +60,11 @@ class _ProductsScreenState extends State<ProductsScreen>
             SegmentedButton<String>(
               segments: <ButtonSegment<String>>[
                 ButtonSegment<String>(
-                  value: creators,
+                  value: creating,
                   label: Text(l10n.psCreate),
                 ),
                 ButtonSegment<String>(
-                  value: users,
+                  value: using,
                   label: Text(l10n.psUse),
                 ),
               ],
@@ -76,7 +76,7 @@ class _ProductsScreenState extends State<ProductsScreen>
             const EzSpacer(),
 
             // Core view
-            if (currentTab == creators)
+            if (currentTab == creating)
               _CreatorProducts(
                 textTheme: textTheme,
                 l10n: l10n,
@@ -138,7 +138,7 @@ class _CreatorProducts extends StatelessWidget {
 
         // EFUI demo
         Text(
-          'Like users who need...',
+          l10n.psLike,
           style: pitchStyle,
           textAlign: TextAlign.center,
         ),

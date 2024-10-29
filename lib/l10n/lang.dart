@@ -206,24 +206,6 @@ abstract class Lang {
   /// **'Folding at home logo: a protein molecule. Activate to open their site'**
   String get gFahIconHint;
 
-  /// No description provided for @gAnitaBorgIconHint.
-  ///
-  /// In en, this message translates to:
-  /// **'AnitaB.org logo: a rainbow prism. Activate to open their site'**
-  String get gAnitaBorgIconHint;
-
-  /// No description provided for @gCodeDotOrgIconHint.
-  ///
-  /// In en, this message translates to:
-  /// **'code.org logo: keyboard keys spelling the word code. Activate to open their site'**
-  String get gCodeDotOrgIconHint;
-
-  /// No description provided for @gWorldSavvyIconHint.
-  ///
-  /// In en, this message translates to:
-  /// **'World Savvy logo: a drawing of the globe in pencil style. Activate to open their site'**
-  String get gWorldSavvyIconHint;
-
   /// No description provided for @gFiverrPage.
   ///
   /// In en, this message translates to:
@@ -248,6 +230,54 @@ abstract class Lang {
   /// **'Empathetic LLC animated logo: the letters in Empathetic transform into the two dimensional hourglass logo'**
   String get hsVideoHint;
 
+  /// No description provided for @hsPeople.
+  ///
+  /// In en, this message translates to:
+  /// **'People aren\'t products.'**
+  String get hsPeople;
+
+  /// No description provided for @hsWell.
+  ///
+  /// In en, this message translates to:
+  /// **'Well, they shouldn\'t be.'**
+  String get hsWell;
+
+  /// No description provided for @hsReality.
+  ///
+  /// In en, this message translates to:
+  /// **'The unfortunate reality is our identities, our '**
+  String get hsReality;
+
+  /// No description provided for @hsData.
+  ///
+  /// In en, this message translates to:
+  /// **'data'**
+  String get hsData;
+
+  /// No description provided for @hsGold.
+  ///
+  /// In en, this message translates to:
+  /// **', is big tech\'s latest gold rush.'**
+  String get hsGold;
+
+  /// No description provided for @hsRush.
+  ///
+  /// In en, this message translates to:
+  /// **'And big tech sure does love to rush.\nThanks to their never-ending sprint, the dystopian sci-fi movies are coming true far too quickly.'**
+  String get hsRush;
+
+  /// No description provided for @hsSlow.
+  ///
+  /// In en, this message translates to:
+  /// **'It\'s time to slow down.\nIt\'s time we had ownership of our digital selves.\nIt\'s time for a better '**
+  String get hsSlow;
+
+  /// No description provided for @hsPlan.
+  ///
+  /// In en, this message translates to:
+  /// **'plan.'**
+  String get hsPlan;
+
   /// No description provided for @psPageTitle.
   ///
   /// In en, this message translates to:
@@ -271,6 +301,36 @@ abstract class Lang {
   /// In en, this message translates to:
   /// **'Build apps for anyone'**
   String get psEFUISlogan;
+
+  /// No description provided for @psLike.
+  ///
+  /// In en, this message translates to:
+  /// **'Like users who need...'**
+  String get psLike;
+
+  /// No description provided for @psAccessible.
+  ///
+  /// In en, this message translates to:
+  /// **'Accessible controls'**
+  String get psAccessible;
+
+  /// No description provided for @psZeroStrain.
+  ///
+  /// In en, this message translates to:
+  /// **'zero eye strain'**
+  String get psZeroStrain;
+
+  /// No description provided for @psEverything.
+  ///
+  /// In en, this message translates to:
+  /// **'everything in-between'**
+  String get psEverything;
+
+  /// No description provided for @psRandom.
+  ///
+  /// In en, this message translates to:
+  /// **'Random config applied.'**
+  String get psRandom;
 
   /// No description provided for @psEFUIDescription.
   ///
@@ -536,78 +596,6 @@ abstract class Lang {
   /// **' exists.\nEmpathetic takes pride in meeting words with actions, and have made our accessible UI open source.\n\nLet\'s build a better world together, bit by bit.'**
   String get msProvideValueContent2Fix;
 
-  /// No description provided for @fpsPageTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Financial plan'**
-  String get fpsPageTitle;
-
-  /// No description provided for @fpsPageHint.
-  ///
-  /// In en, this message translates to:
-  /// **'Open the financial plan page'**
-  String get fpsPageHint;
-
-  /// No description provided for @fpsGoal0.
-  ///
-  /// In en, this message translates to:
-  /// **'Cover expenses'**
-  String get fpsGoal0;
-
-  /// No description provided for @fpsGoal1.
-  ///
-  /// In en, this message translates to:
-  /// **'Pay minimum wage'**
-  String get fpsGoal1;
-
-  /// No description provided for @fpsGoal2.
-  ///
-  /// In en, this message translates to:
-  /// **'Pay a survivable wage'**
-  String get fpsGoal2;
-
-  /// No description provided for @fpsGoal3.
-  ///
-  /// In en, this message translates to:
-  /// **'Pay a livable wage'**
-  String get fpsGoal3;
-
-  /// No description provided for @fpsGoal4.
-  ///
-  /// In en, this message translates to:
-  /// **'Pay a comfortable wage'**
-  String get fpsGoal4;
-
-  /// No description provided for @fpsRaised.
-  ///
-  /// In en, this message translates to:
-  /// **'{income} of {goal} raised'**
-  String fpsRaised(Object goal, Object income);
-
-  /// No description provided for @fpsSplit.
-  ///
-  /// In en, this message translates to:
-  /// **'{split} will be donated to...'**
-  String fpsSplit(Object split);
-
-  /// No description provided for @fpsEventual.
-  ///
-  /// In en, this message translates to:
-  /// **'Any future profits will be shared with...'**
-  String get fpsEventual;
-
-  /// No description provided for @fpsCheck.
-  ///
-  /// In en, this message translates to:
-  /// **'Check our math'**
-  String get fpsCheck;
-
-  /// No description provided for @fpsCheckHint.
-  ///
-  /// In en, this message translates to:
-  /// **'Open a GitHub link to the source code for this screen'**
-  String get fpsCheckHint;
-
   /// No description provided for @tsPageTitle.
   ///
   /// In en, this message translates to:
@@ -667,6 +655,18 @@ abstract class Lang {
   /// In en, this message translates to:
   /// **'Many thanks for any and all support!'**
   String get csThanks;
+
+  /// No description provided for @csEveryBit.
+  ///
+  /// In en, this message translates to:
+  /// **'Every bit you give to Empathetech takes a byte out of big tech.'**
+  String get csEveryBit;
+
+  /// No description provided for @csEveryBitFix.
+  ///
+  /// In en, this message translates to:
+  /// **'Every bit you give to Empathetic takes a byte out of big tech.'**
+  String get csEveryBitFix;
 
   /// No description provided for @csGive.
   ///

@@ -78,6 +78,7 @@ void main() async {
 
 final GoRouter router = GoRouter(
   initialLocation: homePath,
+  errorBuilder: (_, GoRouterState state) => ErrorScreen(state.error),
   routes: <RouteBase>[
     GoRoute(
       path: homePath,

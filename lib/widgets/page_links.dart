@@ -86,7 +86,6 @@ class PageLinks extends StatelessWidget {
     // Return the build //
 
     return Row(
-      key: key,
       mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[

@@ -3,6 +3,8 @@
  * See LICENSE for distribution and usage details.
  */
 
+import '../utils/export.dart';
+
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
@@ -21,9 +23,10 @@ class EFUIDemoButtons extends StatelessWidget {
 
     final bool isDark = isDarkTheme(context);
 
-    final EFUILang l10n = EFUILang.of(context)!;
+    final EFUILang el10n = EFUILang.of(context)!;
+    final Lang l10n = Lang.of(context)!;
 
-    late final String reloadMessage = l10n.ssSettingsGuideWeb.split('\n')[0];
+    late final String reloadMessage = el10n.ssSettingsGuideWeb.split('\n')[0];
 
     // Define build data //
 
@@ -96,7 +99,7 @@ class EFUIDemoButtons extends StatelessWidget {
           reloadSnack(reloadMessage);
         },
         icon: const Icon(Icons.touch_app),
-        label: 'Accessible controls',
+        label: l10n.psAccessible,
       ),
       swapSpacer,
 
@@ -233,7 +236,7 @@ class EFUIDemoButtons extends StatelessWidget {
           reloadSnack(reloadMessage);
         },
         icon: const Icon(Icons.contrast),
-        label: 'zero eye strain',
+        label: l10n.psZeroStrain,
       ),
       halfSwapSpacer,
 
@@ -244,7 +247,7 @@ class EFUIDemoButtons extends StatelessWidget {
               fontSize: Theme.of(context).textTheme.titleLarge?.fontSize,
             ),
         textAlign: TextAlign.center,
-        semanticsLabel: l10n.gAnd,
+        semanticsLabel: el10n.gAnd,
       ),
       halfSwapSpacer,
 
@@ -255,10 +258,10 @@ class EFUIDemoButtons extends StatelessWidget {
           await EzConfig.randomize(isDark);
 
           // Notify user
-          reloadSnack('Random config applied. $reloadMessage');
+          reloadSnack('${l10n.psRandom} $reloadMessage');
         },
         icon: const Icon(LineIcons.diceD6),
-        label: 'everything in-between',
+        label: l10n.psEverything,
       ),
     ];
 
@@ -279,7 +282,7 @@ class EFUIDemoButtons extends StatelessWidget {
             reloadSnack(reloadMessage);
           },
           icon: Icon(PlatformIcons(context).refresh),
-          label: l10n.gReset,
+          label: el10n.gReset,
         ),
       ],
     );

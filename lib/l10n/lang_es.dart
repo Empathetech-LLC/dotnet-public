@@ -7,8 +7,11 @@ class LangEs extends Lang {
   LangEs([String locale = 'es']) : super(locale);
 
   @override
-  String get gLogoHint =>
-      'Logotipo de Empathetic LLC: un reloj de arena bidimensional. Activar para ir a la página de inicio';
+  String get gLogoLabel =>
+      'Logotipo de Empathetic LLC: un reloj de arena bidimensional.';
+
+  @override
+  String get gLogoHint => 'Activar para ir a la página de inicio.';
 
   @override
   String get gHomeHint => 'Abrir la página de inicio';
@@ -40,9 +43,6 @@ class LangEs extends Lang {
   String get gNewsletter => 'Boletín de noticias';
 
   @override
-  String get gSettingsHint => 'Abrir la página de configuraciones';
-
-  @override
   String get gReachOut => 'Contacto';
 
   @override
@@ -63,8 +63,11 @@ class LangEs extends Lang {
       'Abre la página de GitHub del código fuente de esta pantalla';
 
   @override
-  String get gFahIconHint =>
-      'Logotipo de Folding at home: una molécula de proteína. Activar para abrir su página';
+  String get gFahIconLabel =>
+      'Logotipo de Folding at home: una molécula de proteína.';
+
+  @override
+  String get gFahIconHint => 'Activar para abrir su página.';
 
   @override
   String gFiverrPage(Object user) {
@@ -78,7 +81,7 @@ class LangEs extends Lang {
   String get hsSloganFix => 'Construyamos juntos un mundo mejor\npoco a poco';
 
   @override
-  String get hsVideoHint =>
+  String get hsVideoLabel =>
       'Logotipo animado de Empathetic LLC: las letras de Empathetic se transforman en el logotipo bidimensional del reloj de arena';
 
   @override
@@ -116,10 +119,10 @@ class LangEs extends Lang {
   String get psCreate => 'Para crear';
 
   @override
-  String get psUse => 'Para usar';
+  String get psSlogan => 'Crea apps para todos';
 
   @override
-  String get psEFUISlogan => 'Crea apps para todos';
+  String get psSloganHint => 'Descargar Open UI';
 
   @override
   String get psLike => 'Como usuarios que necesitan ...';
@@ -134,33 +137,62 @@ class LangEs extends Lang {
   String get psEverything => 'algo más';
 
   @override
+  String get psTryMe => '¡Pruebame!';
+
+  @override
   String get psRandom => 'Configuración aleatoria aplicada.';
 
   @override
-  String get psEFUIDescription =>
-      'EFUI es un kit de inicio para creaciones accesibles de verdad apps.\nEFUI se encarga de todos los aspectos de la accesibilidad digital...';
+  String get psOpenUIIs => 'Open UI es un generador de aplicaciones.';
+
+  @override
+  String get psShowDemo => 'Mostrar demo';
+
+  @override
+  String get psHideDemo => 'Ocultar demo';
+
+  @override
+  String get psOpenUIDemo =>
+      'Demostración de Open UI creando una nueva aplicación.';
+
+  @override
+  String get psFoundation =>
+      'Crea la base para aplicaciones accesibles, multiplataforma, multilingües y listas para producción en un solo clic.';
+
+  @override
+  String get psLocal =>
+      'Todo funciona en tu ordenador. No hay credenciales, tarjetas de crédito ni cookies.';
+
+  @override
+  String get psRequirements =>
+      'Los únicos requisitos son una conexión a Internet y una idea.';
+
+  @override
+  String get psFlutterToo => '...y Flutter...';
+
+  @override
+  String get psHow => '¿Cómo funciona?';
+
+  @override
+  String get psEFUIsHow => 'Open UI te ayuda a empezar a utilizar, ';
+
+  @override
+  String get psSimplifies =>
+      'EFUI es una biblioteca para crear aplicaciones verdaderamente accesibles.\nSe simplifica...';
 
   @override
   String get psPlatform => 'Disponibilidad de plataforma';
 
   @override
   String get psPlatformContent =>
-      'Las apps de Empathetech soportan usuarios en todas las plataformas.\n¡Puedes usar EFUI para crear apps de Android, iOS, Linux, MacOS, Windows y Web!';
-
-  @override
-  String get psPlatformContentFix =>
-      'Las apps de Empathetic soportan usuarios en todas las plataformas.\n¡Puedes usar EFUI para crear apps de Android, iOS, Linux, MacOS, Windows y Web!';
+      '¡Puedes usar EFUI para crear apps de Android, iOS, Linux, macOS, Windows y Web!';
 
   @override
   String get psResponsive => 'Diseño adaptativo';
 
   @override
   String get psResponsiveContent =>
-      'Las apps de Empathetech soportan usuarios en cualquier pantalla.\nPara verlo en acción, ¡interactúa con la ventana que estás usando ahora mismo!';
-
-  @override
-  String get psResponsiveContentFix =>
-      'Las apps de Empathetic soportan usuarios en cualquier pantalla.\nPara verlo en acción, ¡interactúa con la ventana que estás usando ahora mismo!';
+      'Para verlo en acción, ¡interactúa con la ventana que estás usando ahora mismo!';
 
   @override
   String get psScreen => 'Soporte para lectores de pantalla';
@@ -188,34 +220,33 @@ class LangEs extends Lang {
 
   @override
   String get psCustomContent =>
-      'Las apps de Empathetech apoyan a todos los usuarios dándoles la libertad de elegir.\nEFUI expone cada aspecto del tema de una aplicación para que sea controlado por el usuario.\nPara verlo en acción, ¡haz clic en el engranaje de configuración en la parte inferior de tu pantalla!';
-
-  @override
-  String get psCustomContentFix =>
-      'Las apps de Empathetic apoyan a todos los usuarios dándoles la libertad de elegir.\nEFUI expone cada aspecto del tema de una aplicación para que sea controlado por el usuario.\nPara verlo en acción, ¡haz clic en el engranaje de configuración en la parte inferior de tu pantalla!';
+      '¡La única forma de ser verdaderamente accesible para TODOS los clientes es brindarles la libertad de elección!\nEFUI proporciona una UX elegante para un control total sobre la apariencia de una aplicación.';
 
   @override
   String get psInternational => 'Internacionalización';
 
   @override
   String get psInternationalContent =>
-      'Las apps de Empathetech apoyan a los usuarios estén donde estén.\nAhora mismo, EFUI está disponible en inglés, español y francés.\nAdemás, tiene la infraestructura para ilimitadas futuras traducciones.';
+      'Las aplicaciones de Empathetech se han traducido al español y al francés (hasta el momento).\nEFUI también proporciona la infraestructura para futuras traducciones ilimitadas.';
 
   @override
   String get psInternationalContentFix =>
-      'Las apps de Empathetic apoyan a los usuarios estén donde estén.\nAhora mismo, EFUI está disponible en inglés, español y francés.\nAdemás, tiene la infraestructura para ilimitadas futuras traducciones.';
+      'Las aplicaciones de Empathetic se han traducido al español y al francés (hasta el momento).\nEFUI también proporciona la infraestructura para futuras traducciones ilimitadas.';
 
   @override
-  String get psLive => 'Velo en directo';
+  String get psStart => 'Velo en directo';
 
   @override
-  String psLiveHint(Object platform) {
-    return 'El icono de Open UI: un configuración sandbox. Abrir un enlace a Open UI en $platform';
+  String get psStartLabel => 'El icono de Open UI: un configuración sandbox.';
+
+  @override
+  String psStartHint(Object platform) {
+    return 'Descargar Open UI para $platform.';
   }
 
   @override
   String get psEFUITagLine =>
-      'Cuando se construye con EFUI, tus apps pueden llegar a cualquier audiencia.\n';
+      '¡Cuando se construye con EFUI, tus apps pueden llegar a cualquier audiencia!\n';
 
   @override
   String get psConsult => ' para consultas y contrataciones.';
@@ -224,11 +255,16 @@ class LangEs extends Lang {
   String get psLearnMore => ' para saber más.';
 
   @override
+  String get psUse => 'Para usar';
+
+  @override
   String get psComingSoon => 'Próximamente...';
 
   @override
-  String get psSignalHint =>
-      'El icono de Smoke Signal. Abre un enlace al repositorio de desarrollo.';
+  String get psSignalLabel => 'El icono de Smoke Signal.';
+
+  @override
+  String get psSignalHint => 'Abre un enlace al repositorio de desarrollo.';
 
   @override
   String get psSignalPreview1 => 'La próxima aplicación de Empathetech, ';
@@ -299,8 +335,10 @@ class LangEs extends Lang {
   String get tsCore => 'Núcleo';
 
   @override
-  String get tsTheFounderImageHint =>
-      'Perfil bidimensional de Michael Waldron. Activar para enviarle un E-mail.';
+  String get tsTheFounderLabel => 'Perfil bidimensional de Michael Waldron.';
+
+  @override
+  String get tsTheFounderHint => 'Activar para enviarle un E-mail.';
 
   @override
   String get tsTheFounder => 'Fundador';
@@ -310,6 +348,11 @@ class LangEs extends Lang {
 
   @override
   String get tsFreelance => 'Independiente';
+
+  @override
+  String tsProfile(Object name) {
+    return 'Perfil de $name';
+  }
 
   @override
   String get tsSpanish => 'Traductora de español';

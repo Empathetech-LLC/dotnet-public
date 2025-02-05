@@ -1,5 +1,5 @@
 /* dotnet
- * Copyright (c) 2022-2024 Empathetech LLC. All rights reserved.
+ * Copyright (c) 2022-2025 Empathetech LLC. All rights reserved.
  * See LICENSE for distribution and usage details.
  */
 
@@ -10,6 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 
 class FaHBanner extends StatelessWidget {
+  /// Fold proteins as Ez as folding clothes
   const FaHBanner({super.key});
 
   @override
@@ -36,13 +37,13 @@ class FaHBanner extends StatelessWidget {
           children: <Widget>[
             // Icon
             Container(
-              constraints: BoxConstraints(
-                maxHeight: MediaQuery.textScalerOf(context).scale(imageSize),
-              ),
+              constraints: EzBox.sym(ezImageSize(context)),
               child: EzLinkImageProvider(
                 image: fahImage,
+                fit: BoxFit.contain,
                 url: Uri.parse(faHLink),
-                semanticLabel: l10n.gFahIconHint,
+                label: l10n.gFahIconLabel,
+                hint: l10n.gFahIconHint,
                 tooltip: faHLink,
               ),
             ),
@@ -67,8 +68,8 @@ class FaHBanner extends StatelessWidget {
                     style: textTheme.bodyLarge,
                     textAlign: TextAlign.center,
                     url: Uri.parse(empathFoldingTeam),
-                    semanticsLabel: l10n.fahTeamHint,
-                    richSemanticsLabel: empathetic,
+                    hint: l10n.fahTeamHint,
+                    richLabel: empathetic,
                     tooltip: empathFoldingTeam,
                   ),
                   EzPlainText(
@@ -82,7 +83,7 @@ class FaHBanner extends StatelessWidget {
                   style: textTheme.bodyLarge!,
                   textAlign: TextAlign.center,
                   url: Uri.parse(aboutFaHLink),
-                  semanticsLabel: l10n.fahWhatQHint,
+                  hint: l10n.fahWhatQHint,
                   tooltip: aboutFaHLink,
                 ),
               ],

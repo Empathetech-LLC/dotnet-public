@@ -7,8 +7,10 @@ class LangEn extends Lang {
   LangEn([String locale = 'en']) : super(locale);
 
   @override
-  String get gLogoHint =>
-      'Empathetic LLC logo: a two dimensional hourglass. Activate to go to the home page';
+  String get gLogoLabel => 'Empathetic LLC logo: a two dimensional hourglass.';
+
+  @override
+  String get gLogoHint => 'Activate to go to the home page.';
 
   @override
   String get gHomeHint => 'Open the home page';
@@ -40,9 +42,6 @@ class LangEn extends Lang {
   String get gNewsletter => 'Newsletter';
 
   @override
-  String get gSettingsHint => 'Open the settings page';
-
-  @override
   String get gReachOut => 'Reach out';
 
   @override
@@ -62,8 +61,10 @@ class LangEn extends Lang {
       'Open the GitHub page for this screen\'s source code';
 
   @override
-  String get gFahIconHint =>
-      'Folding at home logo: a protein molecule. Activate to open their site';
+  String get gFahIconLabel => 'Folding at home logo: a protein molecule.';
+
+  @override
+  String get gFahIconHint => 'Activate to open their site.';
 
   @override
   String gFiverrPage(Object user) {
@@ -77,7 +78,7 @@ class LangEn extends Lang {
   String get hsSloganFix => 'Let\'s build a better world together\nbit by bit';
 
   @override
-  String get hsVideoHint =>
+  String get hsVideoLabel =>
       'Empathetic LLC animated logo: the letters in Empathetic transform into the two dimensional hourglass logo';
 
   @override
@@ -113,10 +114,10 @@ class LangEn extends Lang {
   String get psCreate => 'For creating';
 
   @override
-  String get psUse => 'For using';
+  String get psSlogan => 'Build apps for anyone';
 
   @override
-  String get psEFUISlogan => 'Build apps for anyone';
+  String get psSloganHint => 'Download Open UI';
 
   @override
   String get psLike => 'Like users who need...';
@@ -131,33 +132,62 @@ class LangEn extends Lang {
   String get psEverything => 'everything in-between';
 
   @override
+  String get psTryMe => 'Try me!';
+
+  @override
   String get psRandom => 'Random config applied.';
 
   @override
-  String get psEFUIDescription =>
-      'EFUI is a starter kit for building truly accessible apps.\nEFUI handles every aspect of digital accessibility...';
+  String get psOpenUIIs => 'Open UI is an app generator.';
+
+  @override
+  String get psShowDemo => 'Show demo';
+
+  @override
+  String get psHideDemo => 'Hide demo';
+
+  @override
+  String get psOpenUIDemo => 'Demonstration of Open UI creating a new app.';
+
+  @override
+  String get psFoundation =>
+      'It creates the foundation for accessible, cross-platform, multi-language, production ready apps in one click.';
+
+  @override
+  String get psLocal =>
+      'Everything runs on your computer. There are no credentials, credit cards, or cookies.';
+
+  @override
+  String get psRequirements =>
+      'The only requirements are an internet connection and an idea.';
+
+  @override
+  String get psFlutterToo => '...and Flutter...';
+
+  @override
+  String get psHow => 'How does it work?';
+
+  @override
+  String get psEFUIsHow =>
+      'Open UI is built upon, and get\'s you started with, ';
+
+  @override
+  String get psSimplifies =>
+      'EFUI is a library for building truly accessible apps.\nIt simplifies...';
 
   @override
   String get psPlatform => 'Platform availability';
 
   @override
   String get psPlatformContent =>
-      'Empathetech apps support users on all platforms.\nYou can use EFUI to create on Android, iOS, Linux, MacOS, Windows and Web!';
-
-  @override
-  String get psPlatformContentFix =>
-      'Empathetic apps support users on all platforms.\nYou can use EFUI to create on Android, iOS, Linux, MacOS, Windows and Web!';
+      'You can use EFUI to create on Android, iOS, Linux, macOS, Windows and Web!';
 
   @override
   String get psResponsive => 'Responsive design';
 
   @override
   String get psResponsiveContent =>
-      'Empathetech apps support users on any screen.\nTo see it in action, play with the window you\'re using right now!';
-
-  @override
-  String get psResponsiveContentFix =>
-      'Empathetic apps support users on any screen.\nTo see it in action, play with the window you\'re using right now!';
+      'To see it in action, play with the window you\'re using right now!';
 
   @override
   String get psScreen => 'Screen reader support';
@@ -182,34 +212,33 @@ class LangEn extends Lang {
 
   @override
   String get psCustomContent =>
-      'Empathetech apps support all users by empowering them with the freedom of choice.\nEFUI exposes every aspect of an app\'s theme to be controlled by the user.\nTo see it in action, click the settings cog on the bottom of your screen!';
-
-  @override
-  String get psCustomContentFix =>
-      'Empathetic apps support all users by empowering them with the freedom of choice.\nEFUI exposes every aspect of an app\'s theme to be controlled by the user.\nTo see it in action, click the settings cog on the bottom of your screen!';
+      'The only way to be truly accessible to ALL customers is to empower them with the freedom of choice!\nEFUI provides an elegant UX for full control over an app\'s appearance.';
 
   @override
   String get psInternational => 'Internationalization';
 
   @override
   String get psInternationalContent =>
-      'Empathetech apps support users where they are.\nCurrently, EFUI supports English, Spanish, French.\nAnd, infrastructure for unlimited future translations.';
+      'Empathetech apps have been translated to Spanish and French (so far).\nEFUI also provides the infrastructure for unlimited future translations.';
 
   @override
   String get psInternationalContentFix =>
-      'Empathetic apps support users where they are.\nCurrently, EFUI supports English, Spanish, French.\nAnd, infrastructure for unlimited future translations.';
+      'Empathetic apps have been translated to Spanish and French (so far).\nEFUI also provides the infrastructure for unlimited future translations.';
 
   @override
-  String get psLive => 'See it live';
+  String get psStart => 'Get started';
 
   @override
-  String psLiveHint(Object platform) {
-    return 'The icon for Open UI: a settings sandbox. Open a link to Open UI on $platform';
+  String get psStartLabel => 'The icon for Open UI: a settings sandbox.';
+
+  @override
+  String psStartHint(Object platform) {
+    return 'Download Open UI for $platform.';
   }
 
   @override
   String get psEFUITagLine =>
-      'When built with EFUI, your apps can reach any audience.\n';
+      'When built with EFUI, your apps can truly reach any audience!\n';
 
   @override
   String get psConsult => ' for consultation and contracting.';
@@ -218,17 +247,22 @@ class LangEn extends Lang {
   String get psLearnMore => ' to learn more.';
 
   @override
+  String get psUse => 'For using';
+
+  @override
   String get psComingSoon => 'Coming soon...';
 
   @override
-  String get psSignalHint =>
-      'The icon for Smoke Signal. Open a link to the development repo.';
+  String get psSignalLabel => 'The icon for Smoke Signal.';
 
   @override
-  String get psSignalPreview1 => 'Empathetech\'s next app, ';
+  String get psSignalHint => 'Open a link to the development repo.';
 
   @override
-  String get psSignalPreview1Fix => 'Empathetic\'s next app, ';
+  String get psSignalPreview1 => 'The next Empathetech app, ';
+
+  @override
+  String get psSignalPreview1Fix => 'The next Empathetic app, ';
 
   @override
   String get psSignalPreview2 =>
@@ -272,11 +306,11 @@ class LangEn extends Lang {
 
   @override
   String get msProvideValueContent1 =>
-      'Empathetech\'s mission is to re-balance the power in tech by making self hosting more accessible.\n\nWe will build apps that enable anyone to own their digital identity.\n\nWe will build bridges between the open source community and those without the required time, energy, or prior knowledge.\n\nAnd you can\'t build bridges (or apps) without a strong foundation! That\'s why ';
+      'The Empathetech mission is to re-balance the power in tech by making self hosting more accessible.\n\nWe will build apps that enable anyone to own their digital identity.\n\nWe will build bridges between the open source community and those without the required time, energy, or prior knowledge.\n\nAnd you can\'t build bridges (or apps) without a strong foundation! That\'s why ';
 
   @override
   String get msProvideValueContent1Fix =>
-      'Empathetic\'s mission is to re-balance the power in tech by making self hosting more accessible.\n\nWe will build apps that enable anyone to own their digital identity.\n\nWe will build bridges between the open source community and those without the required time, energy, or prior knowledge.\n\nAnd you can\'t build bridges (or apps) without a strong foundation! That\'s why ';
+      'The Empathetic mission is to re-balance the power in tech by making self hosting more accessible.\n\nWe will build apps that enable anyone to own their digital identity.\n\nWe will build bridges between the open source community and those without the required time, energy, or prior knowledge.\n\nAnd you can\'t build bridges (or apps) without a strong foundation! That\'s why ';
 
   @override
   String get msProvideValueContent2 =>
@@ -293,8 +327,11 @@ class LangEn extends Lang {
   String get tsCore => 'Core';
 
   @override
-  String get tsTheFounderImageHint =>
-      'A two dimensional profile of Michael Waldron. Activate to send him an email.';
+  String get tsTheFounderLabel =>
+      'A two dimensional profile of Michael Waldron.';
+
+  @override
+  String get tsTheFounderHint => 'Activate to send him an email.';
 
   @override
   String get tsTheFounder => 'The Founder';
@@ -304,6 +341,11 @@ class LangEn extends Lang {
 
   @override
   String get tsFreelance => 'Freelance';
+
+  @override
+  String tsProfile(Object name) {
+    return '$name\'s profile';
+  }
 
   @override
   String get tsSpanish => 'Spanish translator';

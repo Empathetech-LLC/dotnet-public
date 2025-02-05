@@ -1,5 +1,5 @@
 /* dotnet
- * Copyright (c) 2022-2024 Empathetech LLC. All rights reserved.
+ * Copyright (c) 2022-2025 Empathetech LLC. All rights reserved.
  * See LICENSE for distribution and usage details.
  */
 
@@ -21,7 +21,7 @@ void main() async {
 
   WidgetsFlutterBinding.ensureInitialized();
 
-  SystemChrome.setPreferredOrientations(<DeviceOrientation>[
+  await SystemChrome.setPreferredOrientations(<DeviceOrientation>[
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,
     DeviceOrientation.landscapeLeft,
@@ -41,8 +41,8 @@ void main() async {
   // Run the app //
   // With a feedback wrapper
 
-  late final TextStyle lightFeedbackText = buildBody(Colors.black);
-  late final TextStyle darkFeedbackText = buildBody(Colors.white);
+  late final TextStyle lightFeedbackText = ezBodyStyle(Colors.black);
+  late final TextStyle darkFeedbackText = ezBodyStyle(Colors.white);
 
   runApp(BetterFeedback(
     theme: FeedbackThemeData(
@@ -69,12 +69,15 @@ void main() async {
     localizationsDelegates: <LocalizationsDelegate<dynamic>>[
       const LocaleNamesLocalizationsDelegate(),
       ...EFUILang.localizationsDelegates,
+      ...Lang.localizationsDelegates,
       EmpathetechFeedbackLocalizationsDelegate(),
     ],
     localeOverride: EzConfig.getLocale(),
     child: const DotNet(),
   ));
 }
+
+// Define routes //
 
 final GoRouter router = GoRouter(
   initialLocation: homePath,
@@ -94,6 +97,19 @@ final GoRouter router = GoRouter(
           path: productsPath,
           name: productsPath,
           builder: (_, __) => const ProductsScreen(),
+          routes: <RouteBase>[
+            GoRoute(
+              path: Products.openUI.path,
+              name: Products.openUI.path,
+              builder: (_, __) => const ProductsScreen(target: Products.openUI),
+            ),
+            GoRoute(
+              path: Products.smokeSignal.path,
+              name: Products.smokeSignal.path,
+              builder: (_, __) =>
+                  const ProductsScreen(target: Products.smokeSignal),
+            ),
+          ],
         ),
         GoRoute(
           path: teamPath,
@@ -114,6 +130,20 @@ final GoRouter router = GoRouter(
               path: textSettingsPath,
               name: textSettingsPath,
               builder: (_, __) => const TextSettingsScreen(),
+              routes: <RouteBase>[
+                GoRoute(
+                  path: EzSettingType.quick.path,
+                  name: 'text_${EzSettingType.quick.path}',
+                  builder: (_, __) =>
+                      const TextSettingsScreen(target: EzSettingType.quick),
+                ),
+                GoRoute(
+                  path: EzSettingType.advanced.path,
+                  name: 'text_${EzSettingType.advanced.path}',
+                  builder: (_, __) =>
+                      const TextSettingsScreen(target: EzSettingType.advanced),
+                ),
+              ],
             ),
             GoRoute(
               path: layoutSettingsPath,
@@ -124,6 +154,20 @@ final GoRouter router = GoRouter(
               path: colorSettingsPath,
               name: colorSettingsPath,
               builder: (_, __) => const ColorSettingsScreen(),
+              routes: <RouteBase>[
+                GoRoute(
+                  path: EzSettingType.quick.path,
+                  name: 'color_${EzSettingType.quick.path}',
+                  builder: (_, __) =>
+                      const ColorSettingsScreen(target: EzSettingType.quick),
+                ),
+                GoRoute(
+                  path: EzSettingType.advanced.path,
+                  name: 'color_${EzSettingType.advanced.path}',
+                  builder: (_, __) =>
+                      const ColorSettingsScreen(target: EzSettingType.advanced),
+                ),
+              ],
             ),
           ],
         ),
@@ -165,10 +209,7 @@ class DotNet extends StatelessWidget {
           ...Lang.localizationsDelegates,
           EmpathetechFeedbackLocalizationsDelegate(),
         ],
-        supportedLocales: const <Locale>[
-          ...EFUILang.supportedLocales,
-          ...Lang.supportedLocales,
-        ],
+        supportedLocales: Lang.supportedLocales,
         locale: EzConfig.getLocale(),
         title: empathetech,
         routerConfig: router,

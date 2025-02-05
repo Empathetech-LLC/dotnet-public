@@ -1,5 +1,5 @@
 /* dotnet
- * Copyright (c) 2022-2024 Empathetech LLC. All rights reserved.
+ * Copyright (c) 2022-2025 Empathetech LLC. All rights reserved.
  * See LICENSE for distribution and usage details.
  */
 
@@ -36,26 +36,26 @@ void testSuite({
       ezLog('\nTesting navigation');
       // Users can navigate back with the browser's back arrow or system gestures
       // Going home and coming back is easiest for the tester
-      await touch(tester, find.byType(SettingsFAB));
+      await ezTouch(tester, find.byType(SettingsFAB));
 
-      await touchText(tester, eL10n.tsPageTitle);
+      await ezTouchText(tester, eL10n.tsPageTitle);
       await goHome(tester);
-      await touch(tester, find.byType(SettingsFAB));
+      await ezTouch(tester, find.byType(SettingsFAB));
 
-      await touchText(tester, eL10n.lsPageTitle);
+      await ezTouchText(tester, eL10n.lsPageTitle);
       await goHome(tester);
-      await touch(tester, find.byType(SettingsFAB));
+      await ezTouch(tester, find.byType(SettingsFAB));
 
-      await touchText(tester, eL10n.csPageTitle);
+      await ezTouchText(tester, eL10n.csPageTitle);
       await goHome(tester);
-      await touch(tester, find.byType(SettingsFAB));
+      await ezTouch(tester, find.byType(SettingsFAB));
 
       // Verify text loaded //
 
       ezLog('\nValidating text');
-      await validateWidget(tester, EzWarning);
-      await validateText(tester, eL10n.ssDominantHand);
-      await validateText(tester, eL10n.ssThemeMode);
+      await ezFindWidget(tester, EzWarning);
+      await ezFindText(tester, eL10n.ssDominantHand);
+      await ezFindText(tester, eL10n.ssThemeMode);
 
       //* Test functionality *//
 
@@ -79,7 +79,7 @@ void testSuite({
 
       // EFUI shout-out //
 
-      await validateWidget(tester, EFUIShoutOut);
+      await ezFindWidget(tester, EFUIShoutOut);
 
       // Reset for next test suite  //
 

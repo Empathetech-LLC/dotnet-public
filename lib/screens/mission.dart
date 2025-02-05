@@ -1,5 +1,5 @@
 /* dotnet
- * Copyright (c) 2022-2024 Empathetech LLC. All rights reserved.
+ * Copyright (c) 2022-2025 Empathetech LLC. All rights reserved.
  * See LICENSE for distribution and usage details.
  */
 
@@ -14,6 +14,7 @@ import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 
 class MissionScreen extends StatefulWidget {
+  /// This is the Empathetech way
   const MissionScreen({super.key});
 
   @override
@@ -79,7 +80,7 @@ class _MissionScreenState extends State<MissionScreen> {
           EzTextIconButton(
             onPressed: details.onStepContinue,
             style: TextButton.styleFrom(padding: EdgeInsets.zero),
-            icon: Icon(PlatformIcons(context).downArrow),
+            icon: EzIcon(PlatformIcons(context).downArrow),
             label: l10n.msSoWe,
           ),
         ];
@@ -90,7 +91,7 @@ class _MissionScreenState extends State<MissionScreen> {
           EzTextIconButton(
             onPressed: details.onStepContinue,
             style: TextButton.styleFrom(padding: EdgeInsets.zero),
-            icon: Icon(PlatformIcons(context).downArrow),
+            icon: EzIcon(PlatformIcons(context).downArrow),
             label: l10n.msBy,
           ),
         ];
@@ -102,7 +103,7 @@ class _MissionScreenState extends State<MissionScreen> {
           EzTextIconButton(
             onPressed: () => setState(() => index = 0),
             style: TextButton.styleFrom(padding: EdgeInsets.zero),
-            icon: Icon(PlatformIcons(context).upArrow),
+            icon: EzIcon(PlatformIcons(context).upArrow),
             label: l10n.msFirst,
           )
         ];
@@ -111,7 +112,7 @@ class _MissionScreenState extends State<MissionScreen> {
 
   /// [Step] title wrapper
   Text _title(String title) =>
-      Text(title, style: textTheme.titleLarge, textAlign: TextAlign.left);
+      Text(title, style: textTheme.titleLarge, textAlign: TextAlign.start);
 
   /// [Step] content wrapper
   Container _content(Widget content) => Container(
@@ -136,7 +137,7 @@ class _MissionScreenState extends State<MissionScreen> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    setPageTitle(l10n.msPageTitle, colorScheme.primary);
+    ezWindowNamer(l10n.msPageTitle, colorScheme.primary);
   }
 
   // Return the build //
@@ -168,7 +169,7 @@ class _MissionScreenState extends State<MissionScreen> {
                     content: _content(Text(
                       l10n.msIDProblemContent,
                       style: textTheme.bodyLarge,
-                      textAlign: TextAlign.left,
+                      textAlign: TextAlign.start,
                     )),
                   ),
 
@@ -180,7 +181,7 @@ class _MissionScreenState extends State<MissionScreen> {
                     content: _content(Text(
                       l10n.msFindSolutionContent,
                       style: textTheme.bodyLarge,
-                      textAlign: TextAlign.left,
+                      textAlign: TextAlign.start,
                     )),
                   ),
 
@@ -195,18 +196,18 @@ class _MissionScreenState extends State<MissionScreen> {
                         style: textTheme.bodyLarge,
                       ),
                       EzInlineLink(
-                        efuiL,
+                        'Open UI',
                         style: textTheme.bodyLarge,
-                        textAlign: TextAlign.left,
-                        onTap: () => context.goNamed(productsPath),
-                        semanticsLabel: l10n.gProductsHint,
-                        richSemanticsLabel: efuiLFix,
+                        textAlign: TextAlign.start,
+                        onTap: () => context.goNamed(Products.openUI.path),
+                        hint: l10n.gProductsHint,
+                        richLabel: efuiLFix,
                       ),
                       EzPlainText(
                         text: l10n.msProvideValueContent2,
                         style: textTheme.bodyLarge,
                       ),
-                    ], textAlign: TextAlign.left)),
+                    ], textAlign: TextAlign.start)),
                   ),
                 ],
                 currentStep: index,
@@ -234,12 +235,10 @@ class _MissionScreenState extends State<MissionScreen> {
             const EzSeparator(),
             Container(
               width: double.infinity,
-              padding: EdgeInsets.only(
-                left: (EzConfig.get(marginKey) + padding) * 2,
-              ),
+              padding: EdgeInsets.only(left: EzConfig.get(marginKey) + padding),
               alignment: Alignment.centerLeft,
               child: const EzTranslationsPendingNotice(
-                textAlign: TextAlign.left,
+                textAlign: TextAlign.start,
               ),
             ),
           ],

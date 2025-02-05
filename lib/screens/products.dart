@@ -1,5 +1,5 @@
 /* dotnet
- * Copyright (c) 2022-2024 Empathetech LLC. All rights reserved.
+ * Copyright (c) 2022-2025 Empathetech LLC. All rights reserved.
  * See LICENSE for distribution and usage details.
  */
 
@@ -9,10 +9,29 @@ import '../widgets/export.dart';
 
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:video_player/video_player.dart';
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
+import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
+
+enum Products { openUI, smokeSignal }
+
+extension Path on Products {
+  String get path {
+    switch (this) {
+      case Products.openUI:
+        return 'open-ui';
+      case Products.smokeSignal:
+        return 'smoke-signal';
+    }
+  }
+}
 
 class ProductsScreen extends StatefulWidget {
-  const ProductsScreen({super.key});
+  final Products? target;
+
+  /// Do you like stuff? We got stuff!
+  const ProductsScreen({super.key, this.target});
 
   @override
   State<ProductsScreen> createState() => _ProductsScreenState();
@@ -22,29 +41,20 @@ class _ProductsScreenState extends State<ProductsScreen>
     with SingleTickerProviderStateMixin {
   // Gather the theme data //
 
-  final double margin = EzConfig.get(marginKey);
-  final double spacing = EzConfig.get(spacingKey);
-
   late final TextTheme textTheme = Theme.of(context).textTheme;
 
   late final Lang l10n = Lang.of(context)!;
 
   // Define the build data //
 
-  /// 'creating'
-  static const String creating = 'creating';
-
-  /// 'using'
-  static const String using = 'using';
-
-  String currentTab = creating;
+  late Products currentTab = widget.target ?? Products.openUI;
 
   // Set the page title //
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    setPageTitle(l10n.psPageTitle, Theme.of(context).colorScheme.primary);
+    ezWindowNamer(l10n.psPageTitle, Theme.of(context).colorScheme.primary);
   }
 
   // Return the build //
@@ -57,26 +67,26 @@ class _ProductsScreenState extends State<ProductsScreen>
         child: EzScrollView(
           children: <Widget>[
             // Mode switch
-            SegmentedButton<String>(
-              segments: <ButtonSegment<String>>[
-                ButtonSegment<String>(
-                  value: creating,
+            SegmentedButton<Products>(
+              segments: <ButtonSegment<Products>>[
+                ButtonSegment<Products>(
+                  value: Products.openUI,
                   label: Text(l10n.psCreate),
                 ),
-                ButtonSegment<String>(
-                  value: using,
+                ButtonSegment<Products>(
+                  value: Products.smokeSignal,
                   label: Text(l10n.psUse),
                 ),
               ],
-              selected: <String>{currentTab},
+              selected: <Products>{currentTab},
               showSelectedIcon: false,
-              onSelectionChanged: (Set<String> selected) =>
+              onSelectionChanged: (Set<Products> selected) =>
                   setState(() => currentTab = selected.first),
             ),
             const EzSpacer(),
 
             // Core view
-            if (currentTab == creating)
+            if (currentTab == Products.openUI)
               _CreatorProducts(
                 textTheme: textTheme,
                 l10n: l10n,
@@ -87,6 +97,7 @@ class _ProductsScreenState extends State<ProductsScreen>
                 l10n: l10n,
               ),
             const EzSeparator(),
+            const EzTranslationsPendingNotice(),
           ],
         ),
       ),
@@ -109,52 +120,130 @@ class _CreatorProducts extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final TextStyle? pitchStyle = textTheme.bodyLarge?.copyWith(
-      fontSize: textTheme.titleLarge?.fontSize,
+    final Widget divider = ConstrainedBox(
+      constraints: BoxConstraints(maxWidth: widthOf(context) * 0.667),
+      child: const Divider(),
     );
+
+    final TextStyle? subTitle = ezSubTitleStyle(textTheme);
 
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: <Widget>[
-        // EFUI //
+        // Open UI intro/demo //
 
-        // Intro
+        // Title
         Text(
-          efuiL,
+          'Open UI',
           style: textTheme.displayLarge,
           textAlign: TextAlign.center,
-          semanticsLabel: efuiLFix,
         ),
-        // Tagline
+
+        // Slogan
         EzLink(
-          l10n.psEFUISlogan,
+          l10n.psSlogan,
           style: textTheme.headlineLarge!,
           textAlign: TextAlign.center,
-          url: Uri.parse(efuiSource),
-          semanticsLabel: EFUILang.of(context)!.gEFUISourceHint,
-          tooltip: efuiSource,
+          onTap: () async {
+            final String latest = await getLatest();
+
+            if (context.mounted) {
+              final Uri? url = await openUIDownload(
+                context,
+                getBasePlatform(context),
+                latest,
+              );
+              url == null ? doNothing : launchUrl(url);
+            }
+          },
+          hint: l10n.psSloganHint,
         ),
         separator,
 
-        // EFUI demo
+        // Demo
         Text(
           l10n.psLike,
-          style: pitchStyle,
+          style: subTitle,
           textAlign: TextAlign.center,
         ),
         spacer,
-        const EFUIDemoButtons(),
+        const DemoButtons(),
+        divider,
 
-        // Divider
-        ConstrainedBox(
-          constraints: BoxConstraints(maxWidth: widthOf(context) * 0.667),
-          child: const Divider(),
+        // Open UI video && description //
+
+        // Header
+        Text(
+          l10n.psOpenUIIs,
+          style: subTitle,
+          textAlign: TextAlign.center,
         ),
+
+        // Video
+        const _DemoVideo(),
+        separator,
+
+        // Description
+        Text(
+          l10n.psFoundation,
+          style: textTheme.bodyLarge,
+          textAlign: TextAlign.center,
+        ),
+        spacer,
+        Text(
+          l10n.psLocal,
+          style: textTheme.bodyLarge,
+          textAlign: TextAlign.center,
+        ),
+        spacer,
+        Text(
+          l10n.psRequirements,
+          style: textTheme.bodyLarge,
+          textAlign: TextAlign.center,
+        ),
+        separator,
+        Text(
+          l10n.psFlutterToo,
+          style: textTheme.labelLarge,
+          textAlign: TextAlign.center,
+        ),
+        divider,
+
+        // EFUI //
+
+        // How?
+
+        Text(
+          l10n.psHow,
+          style: textTheme.headlineLarge,
+          textAlign: TextAlign.center,
+        ),
+        spacer,
+
+        EzRichText(<InlineSpan>[
+          EzPlainText(
+            text: l10n.psEFUIsHow,
+            style: textTheme.bodyLarge,
+          ),
+          EzInlineLink(
+            efuiL,
+            richLabel: efuiLFix,
+            style: textTheme.bodyLarge,
+            textAlign: TextAlign.center,
+            onTap: () => launchUrl(Uri.parse(efuiGitHub)),
+            hint: EFUILang.of(context)!.gEFUISourceHint,
+          ),
+          EzPlainText(
+            text: '.',
+            style: textTheme.bodyLarge,
+          ),
+        ], textAlign: TextAlign.center),
+        spacer,
 
         // Elevator pitch
         Text(
-          l10n.psEFUIDescription,
-          style: pitchStyle,
+          l10n.psSimplifies,
+          style: textTheme.bodyLarge,
           textAlign: TextAlign.center,
         ),
         separator,
@@ -167,7 +256,6 @@ class _CreatorProducts extends StatelessWidget {
         ),
         Text(
           l10n.psPlatformContent,
-          semanticsLabel: l10n.psPlatformContentFix,
           style: textTheme.bodyLarge,
           textAlign: TextAlign.center,
         ),
@@ -181,7 +269,6 @@ class _CreatorProducts extends StatelessWidget {
         ),
         Text(
           l10n.psResponsiveContent,
-          semanticsLabel: l10n.psResponsiveContentFix,
           style: textTheme.bodyLarge,
           textAlign: TextAlign.center,
         ),
@@ -206,7 +293,7 @@ class _CreatorProducts extends StatelessWidget {
             url: Uri.parse(
               'https://support.google.com/accessibility/android/answer/6006598?hl=en',
             ),
-            semanticsLabel: l10n.psTalkBackHint,
+            hint: l10n.psTalkBackHint,
           ),
           EzPlainText(text: l10n.psAnd, style: textTheme.bodyLarge),
           EzInlineLink(
@@ -216,7 +303,7 @@ class _CreatorProducts extends StatelessWidget {
             url: Uri.parse(
               'https://support.apple.com/guide/iphone/turn-on-and-practice-voiceover-iph3e2e415f/ios',
             ),
-            semanticsLabel: l10n.psVoiceOverHint,
+            hint: l10n.psVoiceOverHint,
           ),
           EzPlainText(text: '.', style: textTheme.bodyLarge),
         ], textAlign: TextAlign.center),
@@ -231,7 +318,6 @@ class _CreatorProducts extends StatelessWidget {
 
         Text(
           l10n.psCustomContent,
-          semanticsLabel: l10n.psCustomContentFix,
           style: textTheme.bodyLarge,
           textAlign: TextAlign.center,
         ),
@@ -251,7 +337,7 @@ class _CreatorProducts extends StatelessWidget {
         ),
         separator,
 
-        // Consultation call-out
+        // Tag line && consultation call-out
         EzRichText(<InlineSpan>[
           EzPlainText(
             text: l10n.psEFUITagLine,
@@ -262,29 +348,111 @@ class _CreatorProducts extends StatelessWidget {
             style: textTheme.bodyLarge,
             textAlign: TextAlign.center,
             onTap: () => context.goNamed(teamPath),
-            semanticsLabel: l10n.gTeamHint,
+            hint: l10n.gTeamHint,
           ),
           EzPlainText(
             text: l10n.psConsult,
             style: textTheme.bodyLarge,
           ),
         ], textAlign: TextAlign.center),
+        divider,
 
-        // Divider
-        ConstrainedBox(
-          constraints: BoxConstraints(maxWidth: widthOf(context) * 0.667),
-          child: const Divider(),
-        ),
+        // Download Open UI (again) //
 
-        // Open UI links
         Text(
-          l10n.psLive,
-          style: textTheme.titleLarge,
+          l10n.psStart,
+          style: subTitle,
           textAlign: TextAlign.center,
         ),
-        const OpenUILinks(),
+        const OpenUILink(),
       ],
     );
+  }
+}
+
+class _DemoVideo extends StatefulWidget {
+  const _DemoVideo();
+
+  @override
+  State<_DemoVideo> createState() => _DemoVideoState();
+}
+
+class _DemoVideoState extends State<_DemoVideo> {
+  // Gather the theme data //
+
+  late final ColorScheme colorScheme = Theme.of(context).colorScheme;
+  late final Lang l10n = Lang.of(context)!;
+
+  // Define the build data //
+
+  final VideoPlayerController controller =
+      VideoPlayerController.asset(openUIDemoPath);
+
+  bool showVideo = false;
+
+  // Init //
+
+  @override
+  void initState() {
+    super.initState();
+    controller.initialize().then((_) => setState(() {}));
+  }
+
+  // Return the build //
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: <Widget>[
+        const EzSpacer(),
+
+        // Show
+        Visibility(
+          visible: !showVideo,
+          child: EzElevatedIconButton(
+            onPressed: () => setState(() => showVideo = true),
+            icon: Icon(PlatformIcons(context).eyeSolid),
+            label: l10n.psShowDemo,
+          ),
+        ),
+
+        // Video
+        Visibility(
+          visible: showVideo,
+          child: EzVideoPlayer(
+            controller: controller,
+            aspectRatio: 34 / 19,
+            maxHeight: heightOf(context) * 0.80,
+            maxWidth: widthOf(context) * 0.90,
+            backgroundColor: Colors.black,
+            semantics: l10n.psOpenUIDemo,
+            volumeVis: EzButtonVis.alwaysOff,
+            variableVolume: false,
+            autoPlay: false,
+          ),
+        ),
+
+        // Hide
+        Visibility(
+          visible: showVideo,
+          child: Padding(
+            padding: EdgeInsets.only(top: EzConfig.get(spacingKey)),
+            child: EzElevatedIconButton(
+              onPressed: () => setState(() => showVideo = false),
+              icon: Icon(PlatformIcons(context).eyeSlashSolid),
+              label: l10n.psHideDemo,
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
   }
 }
 
@@ -301,6 +469,7 @@ class _UserProducts extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final double imageSize = ezImageSize(context);
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: <Widget>[
@@ -316,16 +485,15 @@ class _UserProducts extends StatelessWidget {
 
         // Icon
         Container(
-          constraints: BoxConstraints(
-            maxHeight: MediaQuery.textScalerOf(context).scale(imageSize),
-          ),
+          constraints: EzBox.sym(imageSize),
           child: EzLinkWidget(
             url: Uri.parse(smokeSignalSource),
             tooltip: l10n.psSignalHint,
-            semanticLabel: l10n.psSignalHint,
+            label: l10n.psSignalLabel,
+            hint: l10n.psSignalHint,
             child: ClipRRect(
               borderRadius: BorderRadius.circular(imageSize),
-              child: const Image(image: smokeSignalImage),
+              child: const Image(image: smokeSignalImage, fit: BoxFit.contain),
             ),
           ),
         ),
@@ -341,8 +509,9 @@ class _UserProducts extends StatelessWidget {
           EzInlineLink(
             'Smoke Signal',
             style: textTheme.bodyLarge,
+            textAlign: TextAlign.center,
             url: Uri.parse(smokeSignalSource),
-            semanticsLabel: smokeSignalSource,
+            hint: smokeSignalSource,
           ),
           EzPlainText(
             text: l10n.psSignalPreview2,
@@ -359,8 +528,9 @@ class _UserProducts extends StatelessWidget {
           EzInlineLink(
             'Activity Pub.',
             style: textTheme.bodyLarge,
+            textAlign: TextAlign.center,
             url: Uri.parse('https://www.w3.org/TR/activitypub/'),
-            semanticsLabel: l10n.psAPHint,
+            hint: l10n.psAPHint,
           ),
         ], textAlign: TextAlign.center),
         const EzSeparator(),
@@ -372,7 +542,7 @@ class _UserProducts extends StatelessWidget {
             style: textTheme.bodyLarge,
             textAlign: TextAlign.center,
             onTap: () => context.goNamed(teamPath),
-            semanticsLabel: l10n.gTeamHint,
+            hint: l10n.gTeamHint,
           ),
           EzPlainText(
             text: l10n.psLearnMore,

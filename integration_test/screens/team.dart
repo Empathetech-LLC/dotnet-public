@@ -1,5 +1,5 @@
 /* dotnet
- * Copyright (c) 2022-2024 Empathetech LLC. All rights reserved.
+ * Copyright (c) 2022-2025 Empathetech LLC. All rights reserved.
  * See LICENSE for distribution and usage details.
  */
 
@@ -35,15 +35,15 @@ void testSuite({
       // Verify text loaded //
 
       ezLog('\nValidating text');
-      await validateText(tester, l10n.tsCore);
-      await validateText(tester, l10n.tsTheFounder);
-      await validateText(tester, mike);
-      await validateText(tester, l10n.tsCommunity);
-      await validateText(tester, l10n.tsFreelance);
-      await validateText(tester, l10n.tsSpanish);
-      await validateText(tester, saraH);
-      await validateText(tester, l10n.tsFrench);
-      await validateText(tester, alexisN);
+      await ezFindText(tester, l10n.tsCore);
+      await ezFindText(tester, l10n.tsTheFounder);
+      await ezFindText(tester, mike);
+      await ezFindText(tester, l10n.tsCommunity);
+      await ezFindText(tester, l10n.tsFreelance);
+      await ezFindText(tester, l10n.tsSpanish);
+      await ezFindText(tester, saraH);
+      await ezFindText(tester, l10n.tsFrench);
+      await ezFindText(tester, alexisN);
 
       //* Test functionality *//
 

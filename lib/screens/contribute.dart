@@ -1,5 +1,5 @@
 /* dotnet
- * Copyright (c) 2022-2024 Empathetech LLC. All rights reserved.
+ * Copyright (c) 2022-2025 Empathetech LLC. All rights reserved.
  * See LICENSE for distribution and usage details.
  */
 
@@ -12,6 +12,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 
 class ContributeScreen extends StatefulWidget {
+  /// Time > Money > (electrical) Power
   const ContributeScreen({super.key});
 
   @override
@@ -26,9 +27,7 @@ class _ContributeScreenState extends State<ContributeScreen> {
   static const EzSeparator separator = EzSeparator();
 
   late final TextTheme textTheme = Theme.of(context).textTheme;
-  late final TextStyle? pitchStyle = textTheme.bodyLarge?.copyWith(
-    fontSize: textTheme.titleLarge?.fontSize,
-  );
+  late final TextStyle? subTitle = ezSubTitleStyle(textTheme);
 
   late final Lang l10n = Lang.of(context)!;
 
@@ -38,7 +37,7 @@ class _ContributeScreenState extends State<ContributeScreen> {
     // GoFundMe
     EzElevatedIconButton(
       onPressed: () => launchUrl(Uri.parse(empathGoFundMe)),
-      icon: const Icon(Icons.wb_sunny_outlined),
+      icon: EzIcon(Icons.wb_sunny_outlined),
       label: 'GoFundMe',
     ),
   ];
@@ -47,7 +46,7 @@ class _ContributeScreenState extends State<ContributeScreen> {
     // Patreon
     EzElevatedIconButton(
       onPressed: () => launchUrl(Uri.parse(empathPatreon)),
-      icon: const Icon(LineIcons.patreon),
+      icon: EzIcon(LineIcons.patreon),
       label: 'Patreon',
     ),
     swapSpacer,
@@ -55,7 +54,7 @@ class _ContributeScreenState extends State<ContributeScreen> {
     // Buy Me a Coffee
     EzElevatedIconButton(
       onPressed: () => launchUrl(Uri.parse(empathCoffee)),
-      icon: const Icon(LineIcons.coffee),
+      icon: EzIcon(LineIcons.coffee),
       label: 'Buy Me a Coffee',
     ),
     swapSpacer,
@@ -63,7 +62,7 @@ class _ContributeScreenState extends State<ContributeScreen> {
     // Ko-fi
     EzElevatedIconButton(
       onPressed: () => launchUrl(Uri.parse(empathKofi)),
-      icon: const Icon(LineIcons.coffee),
+      icon: EzIcon(LineIcons.coffee),
       label: 'Ko-fi',
     ),
   ];
@@ -72,22 +71,22 @@ class _ContributeScreenState extends State<ContributeScreen> {
     // PayPal
     EzElevatedIconButton(
       onPressed: () => launchUrl(Uri.parse(empathPayPal)),
-      icon: const Icon(LineIcons.paypal),
+      icon: EzIcon(LineIcons.paypal),
       label: 'PayPal',
     ),
     swapSpacer,
 
     // Venmo
-    ElevatedButton(
+    EzElevatedButton(
       onPressed: () => launchUrl(Uri.parse(empathVenmo)),
-      child: const Text('Venmo'),
+      text: 'Venmo',
     ),
     swapSpacer,
 
     // CashApp
     EzElevatedIconButton(
       onPressed: () => launchUrl(Uri.parse(empathCashApp)),
-      icon: const Icon(LineIcons.dollarSign),
+      icon: EzIcon(LineIcons.dollarSign),
       label: 'CashApp',
     ),
   ];
@@ -97,7 +96,7 @@ class _ContributeScreenState extends State<ContributeScreen> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    setPageTitle(l10n.csPageTitle, Theme.of(context).colorScheme.primary);
+    ezWindowNamer(l10n.csPageTitle, Theme.of(context).colorScheme.primary);
   }
 
   // Return the build //
@@ -119,7 +118,7 @@ class _ContributeScreenState extends State<ContributeScreen> {
                   // Thanks
                   Text(
                     l10n.csThanks,
-                    style: pitchStyle,
+                    style: subTitle,
                     textAlign: TextAlign.center,
                   ),
                   spacer,
@@ -136,7 +135,7 @@ class _ContributeScreenState extends State<ContributeScreen> {
                   // Would you like to give?...
                   Text(
                     l10n.csGive,
-                    style: pitchStyle,
+                    style: subTitle,
                     textAlign: TextAlign.center,
                   ),
                 ],
@@ -153,7 +152,7 @@ class _ContributeScreenState extends State<ContributeScreen> {
               style: textTheme.titleLarge,
               textAlign: TextAlign.center,
             ),
-            EzSpacer(space: EzConfig.get(marginKey)),
+            EzMargin(),
 
             // GitHub contributor
             EzRichText(<InlineSpan>[
@@ -165,7 +164,7 @@ class _ContributeScreenState extends State<ContributeScreen> {
                   'mailto:$empathCommunity?subject=Becoming%20a%20contributor',
                 ),
                 tooltip: l10n.gEmailTo(empathetechLLC),
-                semanticsLabel: l10n.gEmailTo(empatheticLLC),
+                hint: l10n.gEmailTo(empatheticLLC),
               ),
               EzPlainText(
                 text: l10n.csBecome,
@@ -176,7 +175,7 @@ class _ContributeScreenState extends State<ContributeScreen> {
                 style: textTheme.bodyLarge,
                 textAlign: TextAlign.center,
                 url: Uri.parse(empathGitHub),
-                semanticsLabel: l10n.gEmpathetechGitHint,
+                hint: l10n.gEmpathetechGitHint,
                 tooltip: empathGitHub,
               ),
             ], textAlign: TextAlign.center),

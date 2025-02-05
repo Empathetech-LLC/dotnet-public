@@ -1,5 +1,5 @@
 /* dotnet
- * Copyright (c) 2022-2024 Empathetech LLC. All rights reserved.
+ * Copyright (c) 2022-2025 Empathetech LLC. All rights reserved.
  * See LICENSE for distribution and usage details.
  */
 
@@ -9,11 +9,13 @@ import 'package:flutter/material.dart';
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 
 class ColorSettingsScreen extends StatelessWidget {
-  const ColorSettingsScreen({super.key});
+  final EzSettingType? target;
+
+  const ColorSettingsScreen({super.key, this.target});
 
   @override
   Widget build(BuildContext context) => DotnetScaffold(
-        body: const ColorSettings(useImageDecoration: false),
-        fab: BackFAB(context),
+        body: EzColorSettings(useImageDecoration: false, target: target),
+        fab: EzBackFAB(context),
       );
 }

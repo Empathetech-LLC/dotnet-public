@@ -1,5 +1,5 @@
 /* dotnet
- * Copyright (c) 2022-2024 Empathetech LLC. All rights reserved.
+ * Copyright (c) 2022-2025 Empathetech LLC. All rights reserved.
  * See LICENSE for distribution and usage details.
  */
 
@@ -36,16 +36,16 @@ void testSuite({
       ezLog('\nValidating text(s)');
 
       ezLog('Step 1: Identify the problem');
-      await validateText(tester, l10n.msIDProblem);
-      await validateText(tester, l10n.msIDProblemContent);
+      await ezFindText(tester, l10n.msIDProblem);
+      await ezFindText(tester, l10n.msIDProblemContent);
 
       ezLog('Step 2: Be a part of the solution');
-      await touchText(tester, l10n.msFindSolution);
-      await validateText(tester, l10n.msFindSolutionContent);
+      await ezTouchText(tester, l10n.msFindSolution);
+      await ezFindText(tester, l10n.msFindSolutionContent);
 
       ezLog('Step 3: Provide value');
-      await touchText(tester, l10n.msProvideValue);
-      await validate(tester, find.widgetWithText(EzLink, efuiL));
+      await ezTouchText(tester, l10n.msProvideValue);
+      await ezFind(tester, find.widgetWithText(EzLink, efuiL));
 
       // Reset for next test suite  //
 

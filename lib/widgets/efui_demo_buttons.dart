@@ -1,5 +1,5 @@
 /* dotnet
- * Copyright (c) 2022-2024 Empathetech LLC. All rights reserved.
+ * Copyright (c) 2022-2025 Empathetech LLC. All rights reserved.
  * See LICENSE for distribution and usage details.
  */
 
@@ -10,8 +10,9 @@ import 'package:line_icons/line_icons.dart';
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 
-class EFUIDemoButtons extends StatelessWidget {
-  const EFUIDemoButtons({super.key});
+class DemoButtons extends StatelessWidget {
+  /// 2 years of work in 3 buttons
+  const DemoButtons({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -38,230 +39,203 @@ class EFUIDemoButtons extends StatelessWidget {
 
     final List<Widget> demos = <Widget>[
       // Low mobility
-      EzTextIconButton(
-        onPressed: () async {
-          // Update text
-          await EzConfig.setString(displayFontFamilyKey, roboto);
-          await EzConfig.setDouble(displayFontSizeKey, defaultDisplaySize);
-          await EzConfig.setBool(displayBoldKey, false);
-          await EzConfig.setBool(displayItalicsKey, false);
-          await EzConfig.setBool(displayUnderlinedKey, false);
-          await EzConfig.setDouble(displayFontHeightKey, defaultFontHeight);
-          await EzConfig.setDouble(
-              displayLetterSpacingKey, defaultLetterSpacing);
-          await EzConfig.setDouble(displayWordSpacingKey, defaultWordSpacing);
+      Tooltip(
+        message: l10n.psTryMe,
+        excludeFromSemantics: true,
+        child: EzTextIconButton(
+          onPressed: () async {
+            // Update text
+            await EzConfig.removeKeys(textStyleKeys.keys.toSet());
+            await EzConfig.setDouble(iconSizeKey, defaultIconSize * 1.5);
 
-          await EzConfig.setString(headlineFontFamilyKey, roboto);
-          await EzConfig.setDouble(headlineFontSizeKey, defaultHeadlineSize);
-          await EzConfig.setBool(headlineBoldKey, false);
-          await EzConfig.setBool(headlineItalicsKey, false);
-          await EzConfig.setBool(headlineUnderlinedKey, false);
-          await EzConfig.setDouble(headlineFontHeightKey, defaultFontHeight);
-          await EzConfig.setDouble(
-              headlineLetterSpacingKey, defaultLetterSpacing);
-          await EzConfig.setDouble(headlineWordSpacingKey, defaultWordSpacing);
+            // Update layout
+            await EzConfig.setDouble(marginKey, defaultMargin * 1.5);
+            await EzConfig.setDouble(paddingKey, defaultPadding * 1.5);
+            await EzConfig.setDouble(spacingKey, defaultSpacing * 2.0);
 
-          await EzConfig.setString(titleFontFamilyKey, roboto);
-          await EzConfig.setDouble(titleFontSizeKey, defaultTitleSize);
-          await EzConfig.setBool(titleBoldKey, true);
-          await EzConfig.setBool(titleItalicsKey, false);
-          await EzConfig.setBool(titleUnderlinedKey, false);
-          await EzConfig.setDouble(titleFontHeightKey, defaultFontHeight);
-          await EzConfig.setDouble(titleLetterSpacingKey, defaultLetterSpacing);
-          await EzConfig.setDouble(titleWordSpacingKey, defaultWordSpacing);
+            await EzConfig.setBool(hideScrollKey, false);
 
-          await EzConfig.setString(bodyFontFamilyKey, roboto);
-          await EzConfig.setDouble(bodyFontSizeKey, defaultBodySize);
-          await EzConfig.setBool(bodyBoldKey, false);
-          await EzConfig.setBool(bodyItalicsKey, false);
-          await EzConfig.setBool(bodyUnderlinedKey, false);
-          await EzConfig.setDouble(bodyFontHeightKey, defaultFontHeight);
-          await EzConfig.setDouble(bodyLetterSpacingKey, defaultLetterSpacing);
-          await EzConfig.setDouble(bodyWordSpacingKey, defaultWordSpacing);
+            // Reset colors
+            await EzConfig.removeKeys(colorKeys.keys.toSet());
 
-          await EzConfig.setString(labelFontFamilyKey, roboto);
-          await EzConfig.setDouble(labelFontSizeKey, defaultLabelSize);
-          await EzConfig.setBool(labelBoldKey, false);
-          await EzConfig.setBool(labelItalicsKey, false);
-          await EzConfig.setBool(labelUnderlinedKey, false);
-          await EzConfig.setDouble(labelFontHeightKey, defaultFontHeight);
-          await EzConfig.setDouble(labelLetterSpacingKey, defaultLetterSpacing);
-          await EzConfig.setDouble(labelWordSpacingKey, defaultWordSpacing);
-
-          // Update layout
-          await EzConfig.setDouble(marginKey, defaultMargin * 1.5);
-          await EzConfig.setDouble(paddingKey, defaultPadding * 1.5);
-          await EzConfig.setDouble(spacingKey, defaultSpacing * 2.0);
-
-          await EzConfig.removeKeys(colorKeys.keys.toSet());
-
-          // Reload
-          reloadSnack(reloadMessage);
-        },
-        icon: const Icon(Icons.touch_app),
-        label: l10n.psAccessible,
+            // Prompt for reload
+            reloadSnack(reloadMessage);
+          },
+          icon: EzIcon(Icons.touch_app),
+          label: l10n.psAccessible,
+        ),
       ),
       swapSpacer,
 
       // Low vision
-      EzTextIconButton(
-        onPressed: () async {
-          // Update text
-          await EzConfig.setString(displayFontFamilyKey, atkinsonHyperlegible);
-          await EzConfig.setDouble(
-            displayFontSizeKey,
-            defaultDisplaySize * 1.2,
-          );
-          await EzConfig.setBool(displayBoldKey, false);
-          await EzConfig.setBool(displayItalicsKey, false);
-          await EzConfig.setBool(displayUnderlinedKey, false);
-          await EzConfig.setDouble(
-            displayFontHeightKey,
-            defaultFontHeight,
-          );
-          await EzConfig.setDouble(
-            displayLetterSpacingKey,
-            defaultLetterSpacing * 1.1,
-          );
-          await EzConfig.setDouble(
-            displayWordSpacingKey,
-            defaultWordSpacing * 1.2,
-          );
-
-          await EzConfig.setString(headlineFontFamilyKey, atkinsonHyperlegible);
-          await EzConfig.setDouble(
-            headlineFontSizeKey,
-            defaultHeadlineSize * 1.2,
-          );
-          await EzConfig.setBool(headlineBoldKey, false);
-          await EzConfig.setBool(headlineItalicsKey, false);
-          await EzConfig.setBool(headlineUnderlinedKey, false);
-          await EzConfig.setDouble(
-            headlineFontHeightKey,
-            defaultFontHeight * 1.1,
-          );
-          await EzConfig.setDouble(
-            headlineLetterSpacingKey,
-            defaultLetterSpacing * 1.1,
-          );
-          await EzConfig.setDouble(
-            headlineWordSpacingKey,
-            defaultWordSpacing * 1.2,
-          );
-
-          await EzConfig.setString(titleFontFamilyKey, atkinsonHyperlegible);
-          await EzConfig.setDouble(
-            titleFontSizeKey,
-            defaultTitleSize * 1.2,
-          );
-          await EzConfig.setBool(titleBoldKey, true);
-          await EzConfig.setBool(titleItalicsKey, false);
-          await EzConfig.setBool(titleUnderlinedKey, false);
-          await EzConfig.setDouble(
-            titleFontHeightKey,
-            defaultFontHeight * 1.2,
-          );
-          await EzConfig.setDouble(
-            titleLetterSpacingKey,
-            defaultLetterSpacing * 1.1,
-          );
-          await EzConfig.setDouble(
-            titleWordSpacingKey,
-            defaultWordSpacing * 1.2,
-          );
-
-          await EzConfig.setString(bodyFontFamilyKey, atkinsonHyperlegible);
-          await EzConfig.setDouble(
-            bodyFontSizeKey,
-            defaultBodySize * 1.2,
-          );
-          await EzConfig.setBool(bodyBoldKey, false);
-          await EzConfig.setBool(bodyItalicsKey, false);
-          await EzConfig.setBool(bodyUnderlinedKey, false);
-          await EzConfig.setDouble(
-            bodyFontHeightKey,
-            defaultFontHeight * 1.2,
-          );
-          await EzConfig.setDouble(
-            bodyLetterSpacingKey,
-            defaultLetterSpacing * 1.1,
-          );
-          await EzConfig.setDouble(
-            bodyWordSpacingKey,
-            defaultWordSpacing * 1.2,
-          );
-
-          await EzConfig.setString(labelFontFamilyKey, atkinsonHyperlegible);
-          await EzConfig.setDouble(
-            labelFontSizeKey,
-            defaultLabelSize * 1.2,
-          );
-          await EzConfig.setBool(labelBoldKey, false);
-          await EzConfig.setBool(labelItalicsKey, false);
-          await EzConfig.setBool(labelUnderlinedKey, false);
-          await EzConfig.setDouble(
-            labelFontHeightKey,
-            defaultFontHeight * 1.2,
-          );
-          await EzConfig.setDouble(
-            labelLetterSpacingKey,
-            defaultLetterSpacing * 1.1,
-          );
-          await EzConfig.setDouble(
-            labelWordSpacingKey,
-            defaultWordSpacing * 1.2,
-          );
-
-          // Update layout
-          await EzConfig.setDouble(marginKey, defaultMargin * 1.2);
-          await EzConfig.setDouble(paddingKey, defaultPadding);
-          await EzConfig.setDouble(spacingKey, defaultSpacing * 1.2);
-
-          await EzConfig.setBool(hideScrollKey, true);
-
-          // Update colors
-          if (isDark) {
-            await storeColorScheme(
-              colorScheme: ezHighContrastDark,
-              brightness: Brightness.dark,
+      Tooltip(
+        message: l10n.psTryMe,
+        excludeFromSemantics: true,
+        child: EzTextIconButton(
+          onPressed: () async {
+            // Update text
+            await EzConfig.setString(
+                displayFontFamilyKey, atkinsonHyperlegible);
+            await EzConfig.setDouble(
+              displayFontSizeKey,
+              defaultDisplaySize * 1.2,
             );
-          } else {
-            await storeColorScheme(
-              colorScheme: ezHighContrastLight,
-              brightness: Brightness.light,
+            await EzConfig.setBool(displayBoldedKey, false);
+            await EzConfig.setBool(displayItalicizedKey, false);
+            await EzConfig.setBool(displayUnderlinedKey, false);
+            await EzConfig.setDouble(
+              displayFontHeightKey,
+              defaultFontHeight,
             );
-          }
+            await EzConfig.setDouble(
+              displayLetterSpacingKey,
+              defaultLetterSpacing * 1.1,
+            );
+            await EzConfig.setDouble(
+              displayWordSpacingKey,
+              defaultWordSpacing * 1.2,
+            );
 
-          // Reload
-          reloadSnack(reloadMessage);
-        },
-        icon: const Icon(Icons.contrast),
-        label: l10n.psZeroStrain,
+            await EzConfig.setString(
+                headlineFontFamilyKey, atkinsonHyperlegible);
+            await EzConfig.setDouble(
+              headlineFontSizeKey,
+              defaultHeadlineSize * 1.2,
+            );
+            await EzConfig.setBool(headlineBoldedKey, false);
+            await EzConfig.setBool(headlineItalicizedKey, false);
+            await EzConfig.setBool(headlineUnderlinedKey, false);
+            await EzConfig.setDouble(
+              headlineFontHeightKey,
+              defaultFontHeight * 1.1,
+            );
+            await EzConfig.setDouble(
+              headlineLetterSpacingKey,
+              defaultLetterSpacing * 1.1,
+            );
+            await EzConfig.setDouble(
+              headlineWordSpacingKey,
+              defaultWordSpacing * 1.2,
+            );
+
+            await EzConfig.setString(titleFontFamilyKey, atkinsonHyperlegible);
+            await EzConfig.setDouble(
+              titleFontSizeKey,
+              defaultTitleSize * 1.2,
+            );
+            await EzConfig.setBool(titleBoldedKey, true);
+            await EzConfig.setBool(titleItalicizedKey, false);
+            await EzConfig.setBool(titleUnderlinedKey, false);
+            await EzConfig.setDouble(
+              titleFontHeightKey,
+              defaultFontHeight * 1.2,
+            );
+            await EzConfig.setDouble(
+              titleLetterSpacingKey,
+              defaultLetterSpacing * 1.1,
+            );
+            await EzConfig.setDouble(
+              titleWordSpacingKey,
+              defaultWordSpacing * 1.2,
+            );
+
+            await EzConfig.setString(bodyFontFamilyKey, atkinsonHyperlegible);
+            await EzConfig.setDouble(
+              bodyFontSizeKey,
+              defaultBodySize * 1.2,
+            );
+            await EzConfig.setBool(bodyBoldedKey, false);
+            await EzConfig.setBool(bodyItalicizedKey, false);
+            await EzConfig.setBool(bodyUnderlinedKey, false);
+            await EzConfig.setDouble(
+              bodyFontHeightKey,
+              defaultFontHeight * 1.2,
+            );
+            await EzConfig.setDouble(
+              bodyLetterSpacingKey,
+              defaultLetterSpacing * 1.1,
+            );
+            await EzConfig.setDouble(
+              bodyWordSpacingKey,
+              defaultWordSpacing * 1.2,
+            );
+
+            await EzConfig.setString(labelFontFamilyKey, atkinsonHyperlegible);
+            await EzConfig.setDouble(
+              labelFontSizeKey,
+              defaultLabelSize * 1.2,
+            );
+            await EzConfig.setBool(labelBoldedKey, false);
+            await EzConfig.setBool(labelItalicizedKey, false);
+            await EzConfig.setBool(labelUnderlinedKey, false);
+            await EzConfig.setDouble(
+              labelFontHeightKey,
+              defaultFontHeight * 1.2,
+            );
+            await EzConfig.setDouble(
+              labelLetterSpacingKey,
+              defaultLetterSpacing * 1.1,
+            );
+            await EzConfig.setDouble(
+              labelWordSpacingKey,
+              defaultWordSpacing * 1.2,
+            );
+
+            await EzConfig.setDouble(iconSizeKey, defaultIconSize * 1.1);
+
+            // Update layout
+            await EzConfig.setDouble(marginKey, defaultMargin * 1.2);
+            await EzConfig.setDouble(paddingKey, defaultPadding);
+            await EzConfig.setDouble(spacingKey, defaultSpacing * 1.2);
+
+            await EzConfig.setBool(hideScrollKey, true);
+
+            // Update colors
+            if (isDark) {
+              await storeColorScheme(
+                colorScheme: ezHighContrastDark,
+                brightness: Brightness.dark,
+              );
+            } else {
+              await storeColorScheme(
+                colorScheme: ezHighContrastLight,
+                brightness: Brightness.light,
+              );
+            }
+
+            // Prompt for reload
+            reloadSnack(reloadMessage);
+          },
+          icon: EzIcon(Icons.contrast),
+          label: l10n.psZeroStrain,
+        ),
       ),
       halfSwapSpacer,
 
       // and
       Text(
         '&',
-        style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-              fontSize: Theme.of(context).textTheme.titleLarge?.fontSize,
-            ),
+        style: ezSubTitleStyle(Theme.of(context).textTheme),
         textAlign: TextAlign.center,
         semanticsLabel: el10n.gAnd,
       ),
       halfSwapSpacer,
 
       // Random
-      EzTextIconButton(
-        onPressed: () async {
-          // Randomize
-          await EzConfig.randomize(isDark);
+      Tooltip(
+        message: l10n.psTryMe,
+        excludeFromSemantics: true,
+        child: EzTextIconButton(
+          onPressed: () async {
+            // Randomize
+            await EzConfig.randomize(isDark);
 
-          // Notify user
-          reloadSnack('${l10n.psRandom} $reloadMessage');
-        },
-        icon: const Icon(LineIcons.diceD6),
-        label: l10n.psEverything,
+            // Notify user
+            reloadSnack('${l10n.psRandom} $reloadMessage');
+          },
+          icon: EzIcon(LineIcons.diceD6),
+          label: l10n.psEverything,
+        ),
       ),
     ];
 
@@ -281,7 +255,7 @@ class EFUIDemoButtons extends StatelessWidget {
             // Notify user
             reloadSnack(reloadMessage);
           },
-          icon: Icon(PlatformIcons(context).refresh),
+          icon: EzIcon(PlatformIcons(context).refresh),
           label: el10n.gReset,
         ),
       ],

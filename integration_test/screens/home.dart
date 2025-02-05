@@ -1,11 +1,10 @@
 /* dotnet
- * Copyright (c) 2022-2024 Empathetech LLC. All rights reserved.
+ * Copyright (c) 2022-2025 Empathetech LLC. All rights reserved.
  * See LICENSE for distribution and usage details.
  */
 
 import 'package:dotnet/main.dart';
 import 'package:dotnet/utils/export.dart';
-
 import 'package:efui_bios/efui_bios.dart';
 
 import 'package:flutter/material.dart';
@@ -25,16 +24,16 @@ void testSuite({
 
       // Load the app //
 
-      ezLog('Loading OpenUI');
+      ezLog('Loading Open UI');
       await tester.pumpWidget(const DotNet());
       await tester.pumpAndSettle();
 
       // Verify text and art loaded //
 
       ezLog('\nValidating text');
-      await validateText(tester, l10n.hsSlogan);
-      await validateWidget(tester, EmpathetechLogo);
-      await validateWidget(tester, EmpathetechLogoAnimation);
+      await ezFindText(tester, l10n.hsSlogan);
+      await ezFindWidget(tester, EmpathetechLogo);
+      await ezFindWidget(tester, EmpathetechLogoAnimation);
 
       //* Test functionality *//
 
@@ -56,14 +55,14 @@ Future<void> _largeLayoutTests(
 }) async {
   ezLog('Testing large layout');
 
-  await touch(tester, find.byType(MenuAnchor).last);
+  await ezTouch(tester, find.byType(MenuAnchor).last);
 
-  await validate(tester, find.widgetWithText(MenuItemButton, 'GitHub'));
-  await validate(tester, find.widgetWithText(MenuItemButton, 'LinkedIn'));
-  await validate(tester, find.widgetWithText(MenuItemButton, 'Mastodon'));
-  await validate(tester, find.widgetWithText(MenuItemButton, l10n.gNewsletter));
+  await ezFind(tester, find.widgetWithText(MenuItemButton, 'GitHub'));
+  await ezFind(tester, find.widgetWithText(MenuItemButton, 'LinkedIn'));
+  await ezFind(tester, find.widgetWithText(MenuItemButton, 'Mastodon'));
+  await ezFind(tester, find.widgetWithText(MenuItemButton, l10n.gNewsletter));
 
-  await dismissTap(tester);
+  await ezDismiss(tester);
 }
 
 Future<void> _smallLayoutTests(
@@ -72,12 +71,12 @@ Future<void> _smallLayoutTests(
 }) async {
   ezLog('Catching to small layout');
 
-  await touch(tester, find.byIcon(Icons.menu));
+  await ezTouch(tester, find.byIcon(Icons.menu));
 
-  await validate(tester, find.byIcon(LineIcons.github));
-  await validate(tester, find.byIcon(LineIcons.linkedin));
-  await validate(tester, find.byIcon(LineIcons.mastodon));
-  await validate(tester, find.byIcon(Icons.mail_outline));
+  await ezFind(tester, find.byIcon(LineIcons.github));
+  await ezFind(tester, find.byIcon(LineIcons.linkedin));
+  await ezFind(tester, find.byIcon(LineIcons.mastodon));
+  await ezFind(tester, find.byIcon(Icons.mail_outline));
 
-  await dismissTap(tester);
+  await ezDismiss(tester);
 }

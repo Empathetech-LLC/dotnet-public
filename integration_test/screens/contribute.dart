@@ -1,5 +1,5 @@
 /* dotnet
- * Copyright (c) 2022-2024 Empathetech LLC. All rights reserved.
+ * Copyright (c) 2022-2025 Empathetech LLC. All rights reserved.
  * See LICENSE for distribution and usage details.
  */
 
@@ -35,32 +35,32 @@ void testSuite({
       // Verify text loaded //
 
       ezLog('\nValidating text');
-      await validateText(tester, l10n.csThanks);
-      await validateText(tester, l10n.csGive);
+      await ezFindText(tester, l10n.csThanks);
+      await ezFindText(tester, l10n.csGive);
 
       //* Test functionality *//
 
       ezLog('\nTesting functionality');
 
       ezLog('Time');
-      await validateText(tester, l10n.csTimeQ);
+      await ezFindText(tester, l10n.csTimeQ);
 
-      await validate(tester, find.widgetWithText(EzLink, l10n.gReachOut));
-      await validate(tester, find.widgetWithText(EzLink, l10n.csGit));
+      await ezFind(tester, find.widgetWithText(EzLink, l10n.gReachOut));
+      await ezFind(tester, find.widgetWithText(EzLink, l10n.csGit));
 
       ezLog('Money');
-      await validateText(tester, l10n.csMoneyQ);
+      await ezFindText(tester, l10n.csMoneyQ);
 
-      await validateText(tester, 'GoFundMe');
-      await validateText(tester, 'Patreon');
-      await validateText(tester, 'Buy Me a Coffee');
-      await validateText(tester, 'Ko-fi');
-      await validateText(tester, 'PayPal');
-      await validateText(tester, 'Venmo');
-      await validateText(tester, 'CashApp');
+      await ezFindText(tester, 'GoFundMe');
+      await ezFindText(tester, 'Patreon');
+      await ezFindText(tester, 'Buy Me a Coffee');
+      await ezFindText(tester, 'Ko-fi');
+      await ezFindText(tester, 'PayPal');
+      await ezFindText(tester, 'Venmo');
+      await ezFindText(tester, 'CashApp');
 
       ezLog('Power');
-      await validateText(tester, l10n.csPowerQ);
+      await ezFindText(tester, l10n.csPowerQ);
 
       await testFaHBanner(tester, l10n);
 

@@ -1,5 +1,5 @@
 /* dotnet
- * Copyright (c) 2022-2024 Empathetech LLC. All rights reserved.
+ * Copyright (c) 2022-2025 Empathetech LLC. All rights reserved.
  * See LICENSE for distribution and usage details.
  */
 
@@ -12,6 +12,8 @@ import 'package:go_router/go_router.dart';
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 
 class TeamScreen extends StatefulWidget {
+  /// I believe
+  /// I believe that...
   const TeamScreen({super.key});
 
   @override
@@ -24,8 +26,8 @@ class _TeamScreenState extends State<TeamScreen> {
   static const EzSpacer spacer = EzSpacer();
   static const EzSeparator separator = EzSeparator();
 
-  final double margin = EzConfig.get(marginKey);
-  late final EzSpacer titleMargin = EzSpacer(space: margin);
+  late final EzSpacer margin = EzMargin();
+  late final double imageSize = ezImageSize(context);
 
   late final TextTheme textTheme = Theme.of(context).textTheme;
 
@@ -38,7 +40,7 @@ class _TeamScreenState extends State<TeamScreen> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    setPageTitle(l10n.tsPageTitle, colorScheme.primary);
+    ezWindowNamer(l10n.tsPageTitle, colorScheme.primary);
   }
 
   // Define custom widgets //
@@ -49,20 +51,20 @@ class _TeamScreenState extends State<TeamScreen> {
     children: <Widget>[
       // Avatar
       Container(
-        constraints: BoxConstraints(
-          maxHeight: MediaQuery.textScalerOf(context).scale(imageSize),
-        ),
+        constraints: EzBox.sym(imageSize),
         child: EzLinkWidget(
+          isImage: true,
           url: Uri.parse(saraHLink),
           tooltip: saraHLink,
-          semanticLabel: l10n.gFiverrPage(saraH),
+          label: l10n.tsProfile(saraH),
+          hint: l10n.gFiverrPage(saraH),
           child: ClipRRect(
             borderRadius: BorderRadius.circular(imageSize),
-            child: const Image(image: saraHProfile),
+            child: const Image(image: saraHProfile, fit: BoxFit.contain),
           ),
         ),
       ),
-      titleMargin,
+      margin,
 
       // Information
       MergeSemantics(
@@ -92,20 +94,20 @@ class _TeamScreenState extends State<TeamScreen> {
     children: <Widget>[
       // Avatar
       Container(
-        constraints: BoxConstraints(
-          maxHeight: MediaQuery.textScalerOf(context).scale(imageSize),
-        ),
+        constraints: EzBox.sym(imageSize),
         child: EzLinkWidget(
+          isImage: true,
           url: Uri.parse(alexisNLink),
-          semanticLabel: l10n.gFiverrPage(alexisN),
+          label: l10n.tsProfile(alexisN),
+          hint: l10n.gFiverrPage(alexisN),
           tooltip: alexisNLink,
           child: ClipRRect(
             borderRadius: BorderRadius.circular(imageSize),
-            child: const Image(image: alexisNProfile),
+            child: const Image(image: alexisNProfile, fit: BoxFit.contain),
           ),
         ),
       ),
-      titleMargin,
+      margin,
 
       // Information
       MergeSemantics(
@@ -154,20 +156,21 @@ class _TeamScreenState extends State<TeamScreen> {
               children: <Widget>[
                 // Avatar of Mike
                 Container(
-                  constraints: BoxConstraints(
-                    maxHeight:
-                        MediaQuery.textScalerOf(context).scale(imageSize),
-                  ),
+                  // Not an ego thing I swear
+                  // The image gets super pixelated if it's too small
+                  constraints: EzBox.sym(imageSize * 1.333),
                   child: EzLinkImageProvider(
                     image: founderImage,
-                    semanticLabel: l10n.tsTheFounderImageHint,
+                    fit: BoxFit.contain,
+                    label: l10n.tsTheFounderLabel,
+                    hint: l10n.tsTheFounderHint,
                     url: Uri.parse(
                       'mailto:$empathFounder?subject=Becoming%20a%20contributor',
                     ),
-                    tooltip: l10n.tsTheFounderImageHint.split('. ').last,
+                    tooltip: l10n.tsTheFounderHint,
                   ),
                 ),
-                EzSwapSpacer(space: margin),
+                EzSwapMargin(),
 
                 // Information
                 MergeSemantics(
@@ -206,7 +209,7 @@ class _TeamScreenState extends State<TeamScreen> {
               textColor: colorScheme.onSurface,
               decorationColor: colorScheme.primary,
               onTap: () => context.goNamed(contributePath),
-              semanticsLabel: l10n.gContributeHint,
+              hint: l10n.gContributeHint,
             ),
             spacer,
 

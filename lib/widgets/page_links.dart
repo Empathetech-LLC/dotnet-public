@@ -1,5 +1,5 @@
 /* dotnet
- * Copyright (c) 2022-2024 Empathetech LLC. All rights reserved.
+ * Copyright (c) 2022-2025 Empathetech LLC. All rights reserved.
  * See LICENSE for distribution and usage details.
  */
 
@@ -11,7 +11,10 @@ import 'package:go_router/go_router.dart';
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 
 class PageLinks extends StatelessWidget {
+  /// [BuildContext] passthrough for [Lang] and [GoRouter.goNamed]
   final BuildContext context;
+
+  /// [TextStyle] for the [EzLink]s
   final TextStyle style;
 
   /// Internal page links to put in the [AppBar]
@@ -27,7 +30,7 @@ class PageLinks extends StatelessWidget {
   double get width {
     final Lang l10n = Lang.of(context)!;
 
-    final double wordWidth = measureText(
+    final double wordWidth = ezTextSize(
       l10n.msPageTitle + l10n.psPageTitle + l10n.tsPageTitle + l10n.csPageTitle,
       style: style,
       context: context,
@@ -48,7 +51,7 @@ class PageLinks extends StatelessWidget {
       style: style,
       textAlign: TextAlign.center,
       onTap: () => context.goNamed(missionPath),
-      semanticsLabel: Lang.of(context)!.gMissionHint,
+      hint: Lang.of(context)!.gMissionHint,
       textColor: colorScheme.onSurface,
       decorationColor: colorScheme.primary,
     );
@@ -58,7 +61,7 @@ class PageLinks extends StatelessWidget {
       style: style,
       textAlign: TextAlign.center,
       onTap: () => context.goNamed(productsPath),
-      semanticsLabel: Lang.of(context)!.gProductsHint,
+      hint: Lang.of(context)!.gProductsHint,
       textColor: colorScheme.onSurface,
       decorationColor: colorScheme.primary,
     );
@@ -68,7 +71,7 @@ class PageLinks extends StatelessWidget {
       style: style,
       textAlign: TextAlign.center,
       onTap: () => context.goNamed(teamPath),
-      semanticsLabel: Lang.of(context)!.gTeamHint,
+      hint: Lang.of(context)!.gTeamHint,
       textColor: colorScheme.onSurface,
       decorationColor: colorScheme.primary,
     );
@@ -78,7 +81,7 @@ class PageLinks extends StatelessWidget {
       style: style,
       textAlign: TextAlign.center,
       onTap: () => context.goNamed(contributePath),
-      semanticsLabel: Lang.of(context)!.gContributeHint,
+      hint: Lang.of(context)!.gContributeHint,
       textColor: colorScheme.onSurface,
       decorationColor: colorScheme.primary,
     );

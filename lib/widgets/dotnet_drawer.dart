@@ -1,5 +1,5 @@
 /* dotnet
- * Copyright (c) 2022-2024 Empathetech LLC. All rights reserved.
+ * Copyright (c) 2022-2025 Empathetech LLC. All rights reserved.
  * See LICENSE for distribution and usage details.
  */
 
@@ -47,7 +47,7 @@ class DotNetDrawer extends StatelessWidget {
       style: style,
       textAlign: TextAlign.center,
       onTap: () => navigateTo(context, missionPath),
-      semanticsLabel: Lang.of(context)!.gMissionHint,
+      hint: Lang.of(context)!.gMissionHint,
       textColor: colorScheme.onSurface,
       decorationColor: colorScheme.primary,
     );
@@ -57,7 +57,7 @@ class DotNetDrawer extends StatelessWidget {
       style: style,
       textAlign: TextAlign.center,
       onTap: () => navigateTo(context, productsPath),
-      semanticsLabel: Lang.of(context)!.gProductsHint,
+      hint: Lang.of(context)!.gProductsHint,
       textColor: colorScheme.onSurface,
       decorationColor: colorScheme.primary,
     );
@@ -67,7 +67,7 @@ class DotNetDrawer extends StatelessWidget {
       style: style,
       textAlign: TextAlign.center,
       onTap: () => navigateTo(context, teamPath),
-      semanticsLabel: Lang.of(context)!.gTeamHint,
+      hint: Lang.of(context)!.gTeamHint,
       textColor: colorScheme.onSurface,
       decorationColor: colorScheme.primary,
     );
@@ -77,7 +77,7 @@ class DotNetDrawer extends StatelessWidget {
       style: style,
       textAlign: TextAlign.center,
       onTap: () => navigateTo(context, contributePath),
-      semanticsLabel: Lang.of(context)!.gContributeHint,
+      hint: Lang.of(context)!.gContributeHint,
       textColor: colorScheme.onSurface,
       decorationColor: colorScheme.primary,
     );
@@ -96,9 +96,9 @@ class DotNetDrawer extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: header.children.map((Widget child) {
                 switch (child.runtimeType) {
-                  case const (IconButton):
-                    child as IconButton;
-                    return IconButton(
+                  case const (EzIconButton):
+                    child as EzIconButton;
+                    return EzIconButton(
                       style: child.style,
                       onPressed: () {
                         Navigator.of(context).pop();

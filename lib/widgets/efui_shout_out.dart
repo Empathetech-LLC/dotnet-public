@@ -1,5 +1,5 @@
 /* dotnet
- * Copyright (c) 2022-2024 Empathetech LLC. All rights reserved.
+ * Copyright (c) 2022-2025 Empathetech LLC. All rights reserved.
  * See LICENSE for distribution and usage details.
  */
 
@@ -9,6 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 
 class EFUIShoutOut extends StatelessWidget {
+  /// Don't Cha Wish...
   const EFUIShoutOut({super.key});
 
   @override
@@ -27,7 +28,7 @@ class EFUIShoutOut extends StatelessWidget {
             style: style,
             textAlign: TextAlign.center,
             url: Uri.parse(settingsSource),
-            semanticsLabel: EFUILang.of(context)!.gEFUISourceHint,
+            hint: EFUILang.of(context)!.gEFUISourceHint,
             tooltip: settingsSource,
           ),
         ], textAlign: TextAlign.center),
@@ -36,7 +37,7 @@ class EFUIShoutOut extends StatelessWidget {
           style: style,
           textAlign: TextAlign.center,
           url: Uri.parse(efuiSource),
-          semanticsLabel: l10n.gDontChaHint,
+          hint: l10n.gDontChaHint,
           tooltip: efuiSource,
         ),
       ],

@@ -1,20 +1,26 @@
 /* dotnet
- * Copyright (c) 2022-2024 Empathetech LLC. All rights reserved.
+ * Copyright (c) 2022-2025 Empathetech LLC. All rights reserved.
  * See LICENSE for distribution and usage details.
  */
 
-import '../utils/export.dart';
 import './export.dart';
+import '../utils/export.dart';
+import 'package:efui_bios/efui_bios.dart';
 
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:efui_bios/efui_bios.dart';
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 
 class DotnetScaffold extends StatelessWidget {
+  /// Large screen:
+  ///   default: [logo] is [AppBar] top left
+  ///   isLefty: [logo] is [AppBar] top right
+  /// Small screen:
+  ///   [logo] is [AppBar] center
   final Widget? logo;
 
+  /// [Scaffold.body] passthrough
   final Widget body;
 
   /// [FloatingActionButton]
@@ -40,11 +46,9 @@ class DotnetScaffold extends StatelessWidget {
 
     final TextStyle appBarTextStyle =
         Theme.of(context).appBarTheme.titleTextStyle!;
-    final IconThemeData appBarIconData =
-        Theme.of(context).appBarTheme.iconTheme!;
 
     // Set appBar height to equal space above and below text links
-    final double toolbarHeight = measureText(
+    final double toolbarHeight = ezTextSize(
           l10n.csPageTitle,
           context: context,
           style: appBarTextStyle,
@@ -57,7 +61,8 @@ class DotnetScaffold extends StatelessWidget {
         EzLinkWidget(
           isImage: true,
           onTap: () => context.goNamed(homePath),
-          semanticLabel: l10n.gLogoHint,
+          label: l10n.gLogoLabel,
+          hint: l10n.gLogoHint,
           tooltip: l10n.gHomeHint,
           child: SizedBox(
             width: toolbarHeight,
@@ -74,26 +79,20 @@ class DotnetScaffold extends StatelessWidget {
     final IconLinks iconLinks = IconLinks(
       context: context,
       colorScheme: Theme.of(context).colorScheme,
-      iconSize: appBarIconData.size!,
       margin: margin,
     );
 
     final Widget iconLinksMenu = MenuAnchor(
       builder: (_, MenuController controller, ___) {
         return IconButton(
-          onPressed: () {
-            if (controller.isOpen) {
-              controller.close();
-            } else {
-              controller.open();
-            }
-          },
+          onPressed: () =>
+              controller.isOpen ? controller.close() : controller.open(),
           tooltip: l10n.gShare,
           icon: Icon(PlatformIcons(context).share),
         );
       },
       menuChildren: iconLinks.buttons
-          .map((IconButton button) => EzMenuButton(
+          .map((EzIconButton button) => EzMenuButton(
                 onPressed: button.onPressed,
                 icon: button.icon,
                 label: button.tooltip!,

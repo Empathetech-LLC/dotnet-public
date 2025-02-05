@@ -1,18 +1,20 @@
 /* dotnet
- * Copyright (c) 2022-2024 Empathetech LLC. All rights reserved.
+ * Copyright (c) 2022-2025 Empathetech LLC. All rights reserved.
  * See LICENSE for distribution and usage details.
  */
 
 import './export.dart';
 import '../utils/export.dart';
 import '../widgets/export.dart';
-
-import 'package:flutter/material.dart';
 import 'package:efui_bios/efui_bios.dart';
+
+import 'dart:math';
+import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 
 class HomeScreen extends StatefulWidget {
+  /// No place like it
   const HomeScreen({super.key});
 
   @override
@@ -25,21 +27,38 @@ class _HomeScreenState extends State<HomeScreen> {
   static const EzSpacer spacer = EzSpacer();
   static const EzSeparator separator = EzSeparator();
 
-  final double margin = EzConfig.get(marginKey);
-  final double spacing = EzConfig.get(spacingKey);
-
-  late bool isDark = isDarkTheme(context);
-
   late final Lang l10n = Lang.of(context)!;
 
   late final TextTheme textTheme = Theme.of(context).textTheme;
-  late final TextStyle? pitchStyle = textTheme.bodyLarge?.copyWith(
-    fontSize: Theme.of(context).textTheme.titleLarge?.fontSize,
+  late final TextStyle? subTitle = ezSubTitleStyle(textTheme);
+
+  final double margin = EzConfig.get(marginKey);
+
+  /// 0.667 <= [displayScale] <= 1.5
+  late final double displayScale = max(
+    0.667,
+    min(
+      1.5,
+      (EzConfig.get(displayFontSizeKey) ?? defaultDisplaySize) /
+          defaultDisplaySize,
+    ),
   );
+
+  late final double toolbarHeight = ezTextSize(
+        l10n.csPageTitle,
+        context: context,
+        style: Theme.of(context).appBarTheme.titleTextStyle,
+      ).height +
+      margin * 2;
+
+  late final double sloganWidth = widthOf(context);
+  late final double sloganHeight = (heightOf(context) / 3) * displayScale;
 
   // Define build data //
 
   late bool animFin;
+
+  // Init //
 
   @override
   void initState() {
@@ -47,35 +66,24 @@ class _HomeScreenState extends State<HomeScreen> {
     Navigator.canPop(context) ? animFin = true : animFin = false;
   }
 
-  // Set the page title //
-
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    setPageTitle(empathetech, Theme.of(context).colorScheme.primary);
+    ezWindowNamer(empathetech, Theme.of(context).colorScheme.primary);
   }
 
   // Return the build //
 
   @override
   Widget build(BuildContext context) {
-    final double toolbarHeight = measureText(
-          l10n.csPageTitle,
-          context: context,
-          style: Theme.of(context).appBarTheme.titleTextStyle,
-        ).height +
-        margin * 2;
-
-    final double sloganWidth = widthOf(context);
-    final double sloganHeight = heightOf(context) / 3;
-
     return DotnetScaffold(
       logo: Semantics(
         image: true,
         link: false,
         button: false,
-        label: l10n.gLogoHint.split('.')[0],
+        label: l10n.gLogoLabel,
         enabled: animFin,
+        excludeSemantics: !animFin,
         child: ExcludeSemantics(
           child: AnimatedOpacity(
             opacity: animFin ? 1.0 : 0.0,
@@ -105,7 +113,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 height: sloganHeight,
                 slogan: l10n.hsSlogan,
                 sloganSemantics: l10n.hsSloganFix,
-                videoSemantics: l10n.hsVideoHint,
+                videoSemantics: l10n.hsVideoLabel,
                 play: !animFin,
                 onComplete: () {
                   if (!animFin) setState(() => animFin = true);
@@ -130,37 +138,37 @@ class _HomeScreenState extends State<HomeScreen> {
                   spacer,
                   Text(
                     l10n.hsWell,
-                    style: pitchStyle,
+                    style: subTitle,
                     textAlign: TextAlign.center,
                   ),
                   spacer,
 
                   // But our data is
                   EzRichText(<InlineSpan>[
-                    EzPlainText(text: l10n.hsReality, style: pitchStyle),
+                    EzPlainText(text: l10n.hsReality, style: subTitle),
                     EzPlainText(
                       text: l10n.hsData,
-                      style: pitchStyle?.copyWith(fontStyle: FontStyle.italic),
+                      style: subTitle?.copyWith(fontStyle: FontStyle.italic),
                     ),
-                    EzPlainText(text: l10n.hsGold, style: pitchStyle),
+                    EzPlainText(text: l10n.hsGold, style: subTitle),
                   ], textAlign: TextAlign.center),
                   spacer,
 
                   // How about !(move fast && break things)
                   Text(
                     l10n.hsRush,
-                    style: pitchStyle,
+                    style: subTitle,
                     textAlign: TextAlign.center,
                   ),
                   spacer,
                   EzRichText(<InlineSpan>[
-                    EzPlainText(text: l10n.hsSlow, style: pitchStyle),
+                    EzPlainText(text: l10n.hsSlow, style: subTitle),
                     EzInlineLink(
                       l10n.hsPlan,
-                      style: pitchStyle,
+                      style: subTitle,
                       textAlign: TextAlign.center,
                       onTap: () => context.goNamed(missionPath),
-                      semanticsLabel: l10n.gMissionHint,
+                      hint: l10n.gMissionHint,
                     ),
                   ], textAlign: TextAlign.center),
                 ],

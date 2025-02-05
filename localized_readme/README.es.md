@@ -3,40 +3,19 @@
 [![es](https://img.shields.io/badge/lang-es-red.svg)](https://github.com/Empathetech-LLC/dotnet-public/blob/main/localized_readme/README.es.md)
 [![fr](https://img.shields.io/badge/lang-fr-white.svg)](https://github.com/Empathetech-LLC/dotnet-public/blob/main/localized_readme/README.fr.md)
 
-El código de Flutter de [empathetech.net](https://www.empathetech.net/)<br>Un gran ejemplo de cómo construir una aplicación web con [EFUI](https://github.com/Empathetech-LLC/empathetech_flutter_ui)
+<br>El código de Flutter de [empathetech.net](https://www.empathetech.net/)<br>Un gran ejemplo de cómo construir una aplicación web con [EFUI](https://github.com/Empathetech-LLC/empathetech_flutter_ui)
 
-# Contribuyendo
-
+# <br>Contribuyendo
 ## Tiempo
 
 Ponte en contacto con la [comunidad](mailto:community@empathetech.net?subject=Becoming%20a%20contributor) para colaborar. ¡Nunca faltan ideas, solo tiempo!
 
-## Dinero
+## <br>Dinero
 
 ¡Muchas gracias por las donaciones, grandes y pequeñas!
 
-### [GoFundMe](https://gofund.me/c047d07e)
+&nbsp;&nbsp;&nbsp;[GoFundMe](https://gofund.me/c047d07e)&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;[Patreon](https://patreon.com/empathetech)&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;[Buy Me a Coffee](https://www.buymeacoffee.com/empathetech)&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;[Ko-fi](https://ko-fi.com/empathetech)&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;[PayPal](https://www.paypal.com/donate/?hosted_button_id=NGEL6AB5A6KNL)&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;[Venmo](https://venmo.com/empathetech)&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;[Cash App](https://cash.app/$empathetech)
 
-### [Patreon](https://patreon.com/empathetech)
-
-### [Buy Me a Coffee](https://www.buymeacoffee.com/empathetech)
-
-### [Ko-fi](https://ko-fi.com/empathetech)
-
-### Paypal
-
-[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/donate/?hosted_button_id=NGEL6AB5A6KNL)
-
-### [Venmo](https://venmo.com/empathetech)
-
-### [Cash App](https://cash.app/$empathetech)
-
-# Licencia
+# <br>Licencia
 
 [GNU GPLv3](LICENSE)
-
-# Créditos
-
-## Traducciones
-
-Español: [Sara Herrera](https://www.fiverr.com/saraqua)

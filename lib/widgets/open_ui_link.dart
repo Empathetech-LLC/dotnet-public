@@ -26,7 +26,7 @@ class OpenUILink extends StatefulWidget {
 
 Future<String> getLatest() async {
   final http.Response response = await http.get(Uri.parse(
-      'https://raw.githubusercontent.com/Empathetech-LLC/empathetech_flutter_ui/refs/heads/main/example/APP_VERSION'));
+      'https://raw.githubusercontent.com/Empathetech-LLC/empathetech_flutter_ui/refs/heads/main/APP_VERSION'));
 
   return response.statusCode == 200 ? response.body.trim() : '8.0.0';
 }

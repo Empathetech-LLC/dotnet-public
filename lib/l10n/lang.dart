@@ -98,10 +98,16 @@ abstract class Lang {
     Locale('fr')
   ];
 
+  /// No description provided for @gLogoLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Empathetic LLC logo: a two dimensional hourglass.'**
+  String get gLogoLabel;
+
   /// No description provided for @gLogoHint.
   ///
   /// In en, this message translates to:
-  /// **'Empathetic LLC logo: a two dimensional hourglass. Activate to go to the home page'**
+  /// **'Activate to go to the home page.'**
   String get gLogoHint;
 
   /// No description provided for @gHomeHint.
@@ -158,12 +164,6 @@ abstract class Lang {
   /// **'Newsletter'**
   String get gNewsletter;
 
-  /// No description provided for @gSettingsHint.
-  ///
-  /// In en, this message translates to:
-  /// **'Open the settings page'**
-  String get gSettingsHint;
-
   /// No description provided for @gReachOut.
   ///
   /// In en, this message translates to:
@@ -200,10 +200,16 @@ abstract class Lang {
   /// **'Open the GitHub page for this screen\'s source code'**
   String get gDontChaHint;
 
+  /// No description provided for @gFahIconLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Folding at home logo: a protein molecule.'**
+  String get gFahIconLabel;
+
   /// No description provided for @gFahIconHint.
   ///
   /// In en, this message translates to:
-  /// **'Folding at home logo: a protein molecule. Activate to open their site'**
+  /// **'Activate to open their site.'**
   String get gFahIconHint;
 
   /// No description provided for @gFiverrPage.
@@ -224,11 +230,11 @@ abstract class Lang {
   /// **'Let\'s build a better world together\nbit by bit'**
   String get hsSloganFix;
 
-  /// No description provided for @hsVideoHint.
+  /// No description provided for @hsVideoLabel.
   ///
   /// In en, this message translates to:
   /// **'Empathetic LLC animated logo: the letters in Empathetic transform into the two dimensional hourglass logo'**
-  String get hsVideoHint;
+  String get hsVideoLabel;
 
   /// No description provided for @hsPeople.
   ///
@@ -290,17 +296,17 @@ abstract class Lang {
   /// **'For creating'**
   String get psCreate;
 
-  /// No description provided for @psUse.
-  ///
-  /// In en, this message translates to:
-  /// **'For using'**
-  String get psUse;
-
-  /// No description provided for @psEFUISlogan.
+  /// No description provided for @psSlogan.
   ///
   /// In en, this message translates to:
   /// **'Build apps for anyone'**
-  String get psEFUISlogan;
+  String get psSlogan;
+
+  /// No description provided for @psSloganHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Download Open UI'**
+  String get psSloganHint;
 
   /// No description provided for @psLike.
   ///
@@ -326,17 +332,83 @@ abstract class Lang {
   /// **'everything in-between'**
   String get psEverything;
 
+  /// No description provided for @psTryMe.
+  ///
+  /// In en, this message translates to:
+  /// **'Try me!'**
+  String get psTryMe;
+
   /// No description provided for @psRandom.
   ///
   /// In en, this message translates to:
   /// **'Random config applied.'**
   String get psRandom;
 
-  /// No description provided for @psEFUIDescription.
+  /// No description provided for @psOpenUIIs.
   ///
   /// In en, this message translates to:
-  /// **'EFUI is a starter kit for building truly accessible apps.\nEFUI handles every aspect of digital accessibility...'**
-  String get psEFUIDescription;
+  /// **'Open UI is an app generator.'**
+  String get psOpenUIIs;
+
+  /// No description provided for @psShowDemo.
+  ///
+  /// In en, this message translates to:
+  /// **'Show demo'**
+  String get psShowDemo;
+
+  /// No description provided for @psHideDemo.
+  ///
+  /// In en, this message translates to:
+  /// **'Hide demo'**
+  String get psHideDemo;
+
+  /// No description provided for @psOpenUIDemo.
+  ///
+  /// In en, this message translates to:
+  /// **'Demonstration of Open UI creating a new app.'**
+  String get psOpenUIDemo;
+
+  /// No description provided for @psFoundation.
+  ///
+  /// In en, this message translates to:
+  /// **'It creates the foundation for accessible, cross-platform, multi-language, production ready apps in one click.'**
+  String get psFoundation;
+
+  /// No description provided for @psLocal.
+  ///
+  /// In en, this message translates to:
+  /// **'Everything runs on your computer. There are no credentials, credit cards, or cookies.'**
+  String get psLocal;
+
+  /// No description provided for @psRequirements.
+  ///
+  /// In en, this message translates to:
+  /// **'The only requirements are an internet connection and an idea.'**
+  String get psRequirements;
+
+  /// No description provided for @psFlutterToo.
+  ///
+  /// In en, this message translates to:
+  /// **'...and Flutter...'**
+  String get psFlutterToo;
+
+  /// No description provided for @psHow.
+  ///
+  /// In en, this message translates to:
+  /// **'How does it work?'**
+  String get psHow;
+
+  /// No description provided for @psEFUIsHow.
+  ///
+  /// In en, this message translates to:
+  /// **'Open UI is built upon, and get\'s you started with, '**
+  String get psEFUIsHow;
+
+  /// No description provided for @psSimplifies.
+  ///
+  /// In en, this message translates to:
+  /// **'EFUI is a library for building truly accessible apps.\nIt simplifies...'**
+  String get psSimplifies;
 
   /// No description provided for @psPlatform.
   ///
@@ -347,14 +419,8 @@ abstract class Lang {
   /// No description provided for @psPlatformContent.
   ///
   /// In en, this message translates to:
-  /// **'Empathetech apps support users on all platforms.\nYou can use EFUI to create on Android, iOS, Linux, MacOS, Windows and Web!'**
+  /// **'You can use EFUI to create on Android, iOS, Linux, macOS, Windows and Web!'**
   String get psPlatformContent;
-
-  /// No description provided for @psPlatformContentFix.
-  ///
-  /// In en, this message translates to:
-  /// **'Empathetic apps support users on all platforms.\nYou can use EFUI to create on Android, iOS, Linux, MacOS, Windows and Web!'**
-  String get psPlatformContentFix;
 
   /// No description provided for @psResponsive.
   ///
@@ -365,14 +431,8 @@ abstract class Lang {
   /// No description provided for @psResponsiveContent.
   ///
   /// In en, this message translates to:
-  /// **'Empathetech apps support users on any screen.\nTo see it in action, play with the window you\'re using right now!'**
+  /// **'To see it in action, play with the window you\'re using right now!'**
   String get psResponsiveContent;
-
-  /// No description provided for @psResponsiveContentFix.
-  ///
-  /// In en, this message translates to:
-  /// **'Empathetic apps support users on any screen.\nTo see it in action, play with the window you\'re using right now!'**
-  String get psResponsiveContentFix;
 
   /// No description provided for @psScreen.
   ///
@@ -419,14 +479,8 @@ abstract class Lang {
   /// No description provided for @psCustomContent.
   ///
   /// In en, this message translates to:
-  /// **'Empathetech apps support all users by empowering them with the freedom of choice.\nEFUI exposes every aspect of an app\'s theme to be controlled by the user.\nTo see it in action, click the settings cog on the bottom of your screen!'**
+  /// **'The only way to be truly accessible to ALL customers is to empower them with the freedom of choice!\nEFUI provides an elegant UX for full control over an app\'s appearance.'**
   String get psCustomContent;
-
-  /// No description provided for @psCustomContentFix.
-  ///
-  /// In en, this message translates to:
-  /// **'Empathetic apps support all users by empowering them with the freedom of choice.\nEFUI exposes every aspect of an app\'s theme to be controlled by the user.\nTo see it in action, click the settings cog on the bottom of your screen!'**
-  String get psCustomContentFix;
 
   /// No description provided for @psInternational.
   ///
@@ -437,31 +491,37 @@ abstract class Lang {
   /// No description provided for @psInternationalContent.
   ///
   /// In en, this message translates to:
-  /// **'Empathetech apps support users where they are.\nCurrently, EFUI supports English, Spanish, French.\nAnd, infrastructure for unlimited future translations.'**
+  /// **'Empathetech apps have been translated to Spanish and French (so far).\nEFUI also provides the infrastructure for unlimited future translations.'**
   String get psInternationalContent;
 
   /// No description provided for @psInternationalContentFix.
   ///
   /// In en, this message translates to:
-  /// **'Empathetic apps support users where they are.\nCurrently, EFUI supports English, Spanish, French.\nAnd, infrastructure for unlimited future translations.'**
+  /// **'Empathetic apps have been translated to Spanish and French (so far).\nEFUI also provides the infrastructure for unlimited future translations.'**
   String get psInternationalContentFix;
 
-  /// No description provided for @psLive.
+  /// No description provided for @psStart.
   ///
   /// In en, this message translates to:
-  /// **'See it live'**
-  String get psLive;
+  /// **'Get started'**
+  String get psStart;
 
-  /// No description provided for @psLiveHint.
+  /// No description provided for @psStartLabel.
   ///
   /// In en, this message translates to:
-  /// **'The icon for Open UI: a settings sandbox. Open a link to Open UI on {platform}'**
-  String psLiveHint(Object platform);
+  /// **'The icon for Open UI: a settings sandbox.'**
+  String get psStartLabel;
+
+  /// No description provided for @psStartHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Download Open UI for {platform}.'**
+  String psStartHint(Object platform);
 
   /// No description provided for @psEFUITagLine.
   ///
   /// In en, this message translates to:
-  /// **'When built with EFUI, your apps can reach any audience.\n'**
+  /// **'When built with EFUI, your apps can truly reach any audience!\n'**
   String get psEFUITagLine;
 
   /// No description provided for @psConsult.
@@ -476,28 +536,40 @@ abstract class Lang {
   /// **' to learn more.'**
   String get psLearnMore;
 
+  /// No description provided for @psUse.
+  ///
+  /// In en, this message translates to:
+  /// **'For using'**
+  String get psUse;
+
   /// No description provided for @psComingSoon.
   ///
   /// In en, this message translates to:
   /// **'Coming soon...'**
   String get psComingSoon;
 
+  /// No description provided for @psSignalLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'The icon for Smoke Signal.'**
+  String get psSignalLabel;
+
   /// No description provided for @psSignalHint.
   ///
   /// In en, this message translates to:
-  /// **'The icon for Smoke Signal. Open a link to the development repo.'**
+  /// **'Open a link to the development repo.'**
   String get psSignalHint;
 
   /// No description provided for @psSignalPreview1.
   ///
   /// In en, this message translates to:
-  /// **'Empathetech\'s next app, '**
+  /// **'The next Empathetech app, '**
   String get psSignalPreview1;
 
   /// No description provided for @psSignalPreview1Fix.
   ///
   /// In en, this message translates to:
-  /// **'Empathetic\'s next app, '**
+  /// **'The next Empathetic app, '**
   String get psSignalPreview1Fix;
 
   /// No description provided for @psSignalPreview2.
@@ -575,13 +647,13 @@ abstract class Lang {
   /// No description provided for @msProvideValueContent1.
   ///
   /// In en, this message translates to:
-  /// **'Empathetech\'s mission is to re-balance the power in tech by making self hosting more accessible.\n\nWe will build apps that enable anyone to own their digital identity.\n\nWe will build bridges between the open source community and those without the required time, energy, or prior knowledge.\n\nAnd you can\'t build bridges (or apps) without a strong foundation! That\'s why '**
+  /// **'The Empathetech mission is to re-balance the power in tech by making self hosting more accessible.\n\nWe will build apps that enable anyone to own their digital identity.\n\nWe will build bridges between the open source community and those without the required time, energy, or prior knowledge.\n\nAnd you can\'t build bridges (or apps) without a strong foundation! That\'s why '**
   String get msProvideValueContent1;
 
   /// No description provided for @msProvideValueContent1Fix.
   ///
   /// In en, this message translates to:
-  /// **'Empathetic\'s mission is to re-balance the power in tech by making self hosting more accessible.\n\nWe will build apps that enable anyone to own their digital identity.\n\nWe will build bridges between the open source community and those without the required time, energy, or prior knowledge.\n\nAnd you can\'t build bridges (or apps) without a strong foundation! That\'s why '**
+  /// **'The Empathetic mission is to re-balance the power in tech by making self hosting more accessible.\n\nWe will build apps that enable anyone to own their digital identity.\n\nWe will build bridges between the open source community and those without the required time, energy, or prior knowledge.\n\nAnd you can\'t build bridges (or apps) without a strong foundation! That\'s why '**
   String get msProvideValueContent1Fix;
 
   /// No description provided for @msProvideValueContent2.
@@ -608,11 +680,17 @@ abstract class Lang {
   /// **'Core'**
   String get tsCore;
 
-  /// No description provided for @tsTheFounderImageHint.
+  /// No description provided for @tsTheFounderLabel.
   ///
   /// In en, this message translates to:
-  /// **'A two dimensional profile of Michael Waldron. Activate to send him an email.'**
-  String get tsTheFounderImageHint;
+  /// **'A two dimensional profile of Michael Waldron.'**
+  String get tsTheFounderLabel;
+
+  /// No description provided for @tsTheFounderHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Activate to send him an email.'**
+  String get tsTheFounderHint;
 
   /// No description provided for @tsTheFounder.
   ///
@@ -631,6 +709,12 @@ abstract class Lang {
   /// In en, this message translates to:
   /// **'Freelance'**
   String get tsFreelance;
+
+  /// No description provided for @tsProfile.
+  ///
+  /// In en, this message translates to:
+  /// **'{name}\'s profile'**
+  String tsProfile(Object name);
 
   /// No description provided for @tsSpanish.
   ///

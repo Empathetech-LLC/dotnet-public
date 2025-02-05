@@ -1,5 +1,5 @@
 /* dotnet
- * Copyright (c) 2022-2024 Empathetech LLC. All rights reserved.
+ * Copyright (c) 2022-2025 Empathetech LLC. All rights reserved.
  * See LICENSE for distribution and usage details.
  */
 
@@ -18,14 +18,16 @@ Future<void> goHome(WidgetTester tester) async {
   await tester.pumpAndSettle();
 }
 
+/// Unique navigation for DotNet
+/// Automatically handles large and small layouts
 Future<void> dotNetNav(WidgetTester tester, String text) async {
   try {
     ezLog('\nTesting navigation');
     ezLog('Try large layout');
-    await touchText(tester, text);
+    await ezTouchText(tester, text);
   } catch (_) {
     ezLog('Catching to small layout');
-    await touch(tester, find.byIcon(Icons.menu));
-    await touchText(tester, text);
+    await ezTouch(tester, find.byIcon(Icons.menu));
+    await ezTouchText(tester, text);
   }
 }

@@ -1,5 +1,5 @@
 /* dotnet
- * Copyright (c) 2022-2024 Empathetech LLC. All rights reserved.
+ * Copyright (c) 2022-2025 Empathetech LLC. All rights reserved.
  * See LICENSE for distribution and usage details.
  */
 
@@ -13,7 +13,7 @@ class LayoutSettingsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => DotnetScaffold(
-        body: const LayoutSettings(useImageDecoration: false),
-        fab: BackFAB(context),
+        body: const EzLayoutSettings(useImageDecoration: false),
+        fab: EzBackFAB(context),
       );
 }

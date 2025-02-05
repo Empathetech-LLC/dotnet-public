@@ -1,5 +1,5 @@
 /* dotnet
- * Copyright (c) 2022-2024 Empathetech LLC. All rights reserved.
+ * Copyright (c) 2022-2025 Empathetech LLC. All rights reserved.
  * See LICENSE for distribution and usage details.
  */
 
@@ -26,16 +26,13 @@ class _ErrorScreenState extends State<ErrorScreen> {
   late final EFUILang l10n = EFUILang.of(context)!;
 
   late final TextTheme textTheme = Theme.of(context).textTheme;
-  late final TextStyle? bodyStyle = textTheme.bodyLarge;
-  late final TextStyle? pitchStyle =
-      bodyStyle?.copyWith(fontSize: textTheme.titleLarge?.fontSize);
 
   // Set the page title //
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    setPageTitle('404 ${l10n.gError}', Theme.of(context).colorScheme.primary);
+    ezWindowNamer('404 ${l10n.gError}', Theme.of(context).colorScheme.primary);
   }
 
   // Return the build //
@@ -51,13 +48,13 @@ class _ErrorScreenState extends State<ErrorScreen> {
             children: <Widget>[
               Text(
                 l10n.g404Wonder,
-                style: pitchStyle,
+                style: ezSubTitleStyle(textTheme),
                 textAlign: TextAlign.center,
               ),
               const EzSpacer(),
               Text(
                 l10n.g404,
-                style: bodyStyle,
+                style: textTheme.bodyLarge,
                 textAlign: TextAlign.center,
               ),
               separator,

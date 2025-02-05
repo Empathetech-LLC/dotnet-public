@@ -3,7 +3,8 @@
 
 
 
-  "gLogoHint": "Logo de Empathetic LLC : un sablier en deux dimensions. Activer pour accéder à la page d'accueil",
+  "gLogoLabel": "Logo de Empathetic LLC : un sablier en deux dimensions.",
+  "gLogoHint": "Activer pour accéder à la page d'accueil.",
 
   "gHomeHint": "Ouvre la page d'accueil",
   "gProductsHint": "Ouvre la page des produits",
@@ -16,8 +17,6 @@
   "gEmailTo": "E-mail à {recipient}",
   "gNewsletter": "Lettre d'information",
 
-  "gSettingsHint": "Ouvre la page des paramètres",
-
   "gReachOut": "Contactez-nous",
   "gEmpathetechGitHint": "Ouvre la page GitHub d'Empathetic LLC",
 
@@ -26,7 +25,8 @@
   "gDontCha": "Hein ?",
   "gDontChaHint": "Ouvre la page GitHub pour le code source de cette interface",
 
-  "gFahIconHint": "Logo de Folding at home : une molécule de protéine. Activer pour ouvrir leur site",
+  "gFahIconLabel": "Logo de Folding at home : une molécule de protéine.",
+  "gFahIconHint": "Activer pour ouvrir leur site.",
 
   "gFiverrPage": "Ouvre la page Fiverr de {user}",
 
@@ -34,13 +34,15 @@
 
   "hsSlogan": "Construisons ensemble un monde meilleur\nbit x bit",
   "hsSloganFix": "Construisons ensemble un monde meilleur\npas à pas",
-  "hsVideoHint": "Logo animé d'Empathetic LLC : les lettres d'Empathetic se transforment en un logo, un sablier en deux dimensions",
+  "hsVideoLabel": "Logo animé d'Empathetic LLC : les lettres d'Empathetic se transforment en un logo, un sablier en deux dimensions",
 
   "hsPeople": "Les gens ne sont pas des produits.",
   "hsWell": "Eh bien, ils ne devraient pas l'être.",
+
   "hsReality": "La triste réalité est que nos identités, nos ",
   "hsData": "données",
   "hsGold": ", sont la nouvelle ruée vers l'or des grandes entreprises technologiques.",
+
   "hsRush": "Et les grandes entreprises technologiques adorent se précipiter.\nGrâce à leur sprint sans fin, les films de science-fiction dystopiques deviennent réalité beaucoup trop rapidement.",
   "hsSlow": "Il est temps de ralentir.\nIl est temps que nous ayons la propriété de notre moi numérique.\nIl est temps d'un meilleur ",
   "hsPlan": "plan.",
@@ -50,23 +52,35 @@
   "psPageTitle": "Produits",
 
   "psCreate": "Pour créer",
-  "psUse": "Pour utiliser",
 
-  "psEFUISlogan": "Créer des applications pour tous",
+  "psSlogan": "Créer des applications pour tous",
+  "psSloganHint": "Télécharger Open UI",
+
   "psLike": "Comme les utilisateurs qui ont besoin...",
   "psAccessible": "Commandes accessibles",
   "psZeroStrain": "zéro fatigue oculaire",
   "psEverything": "autre chose",
+  "psTryMe": "Essaie-moi !",
   "psRandom": "Configuration aléatoire appliquée.",
-  "psEFUIDescription": "EFUI est un kit de démarrage pour créer des environnements d'applications réellement accessibles.\nEFUI gère tous les aspects de l'accessibilité numérique...",
 
+  "psOpenUIIs": "Open UI est un générateur d'applications.",
+  "psShowDemo": "Afficher la démo",
+  "psHideDemo": "Masquer la démo",
+  "psOpenUIDemo": "Démonstration de Open UI créant une nouvelle application.",
+  "psFoundation": "Il crée les bases d'applications accessibles, multiplateformes, multilingues et prêtes à être produites en un seul clic.",
+  "psLocal": "Tout fonctionne sur votre ordinateur. Il n'y a pas d'identifiants, de cartes de crédit ou de cookies.",
+  "psRequirements": "Les seules exigences sont une connexion Internet et une idée.",
+  "psFlutterToo": "...et Flutter...",
+
+  "psHow": "Comment ça marche ?",
+  "psEFUIsHow": "Open UI vous permet de démarrer avec, ",
+  "psSimplifies": "EFUI est une bibliothèque permettant de créer des applications véritablement accessibles.\nCela simplifie...",
+  
   "psPlatform": "Multiplateforme",
-  "psPlatformContent": "Les applications Empathetech prennent en charge les utilisateurs sur toutes les plateformes.\nVous pouvez utiliser EFUI pour créer sur Android, iOS, Linux, MacOS, Windows et Web !",
-  "psPlatformContentFix": "Les applications Empathetic prennent en charge les utilisateurs sur toutes les plateformes.\nVous pouvez utiliser EFUI pour créer sur Android, iOS, Linux, MacOS, Windows et Web !",
+  "psPlatformContent": "Vous pouvez utiliser EFUI pour créer sur Android, iOS, Linux, macOS, Windows et Web !",
 
   "psResponsive": "Design réactif",
-  "psResponsiveContent": "Les applications Empathetech prennent en charge les utilisateurs sur n'importe quel écran.\nPour voir cela en action, jouez avec la fenêtre que vous utilisez actuellement !",
-  "psResponsiveContentFix": "Les applications Empathetic prennent en charge les utilisateurs sur n'importe quel écran.\nPour voir cela en action, jouez avec la fenêtre que vous utilisez actuellement !",
+  "psResponsiveContent": "Pour voir cela en action, jouez avec la fenêtre que vous utilisez actuellement !",
 
   "psScreen": "Prise en charge du lecteur d'écran",
   "psScreenContent": "Les applications Empathetech soutiennent les utilisateurs qui en ont besoin ",
@@ -76,23 +90,26 @@
   "psVoiceOverHint": "Ouvre un lien vers la documentation VoiceOver",
 
   "psCustom": "Personnalisation utilisateur",
-  "psCustomContent": "Les applications Empathetech soutiennent tous les utilisateurs en leur offrant la liberté de choix.\nEFUI expose chaque aspect du thème d'une application au contrôle de l'utilisateur.\nPour le voir en action, cliquez sur le rouage des paramètres en bas de votre écran !",
-  "psCustomContentFix": "Les applications Empathetic soutiennent tous les utilisateurs en leur offrant la liberté de choix.\nEFUI expose chaque aspect du thème d'une application au contrôle de l'utilisateur.\nPour le voir en action, cliquez sur le rouage des paramètres en bas de votre écran !",
+  "psCustomContent": "La seule façon d'être véritablement accessible à TOUS les clients est de leur donner la liberté de choix !\nEFUI fournit une expérience utilisateur élégante pour un contrôle total sur l'apparence d'une application.",
 
   "psInternational": "Internationalisation",
-  "psInternationalContent": "Les applications Empathetech accompagnent les utilisateurs là où ils se trouvent.\nActuellement, EFUI prend en charge l'anglais, l'espagnol et le français.\nIl possède également une infrastructure pour des traductions ultérieures illimitées.",
-  "psInternationalContentFix": "Les applications Empathetic accompagnent les utilisateurs là où ils se trouvent.\nActuellement, EFUI prend en charge l'anglais, l'espagnol et le français.\nIl possède également une infrastructure pour des traductions ultérieures illimitées.",
+  "psInternationalContent": "Les applications Empathetech ont été traduites en espagnol et en français (jusqu'à présent).\nEFUI fournit également l'infrastructure pour des traductions futures illimitées.",
+  "psInternationalContentFix": "Les applications Empathetic ont été traduites en espagnol et en français (jusqu'à présent).\nEFUI fournit également l'infrastructure pour des traductions futures illimitées.",
   
-  "psLive": "Testez-le en direct",
-  "psLiveHint": "L'icône de Open UI : un paramètres bac à sable. Ouvre un lien vers Open UI sur {platform}",
+  "psStart": "Testez-le en direct",
+  "psStartLabel": "L'icône de Open UI : un paramètres bac à sable.",
+  "psStartHint": "Télécharger Open UI pour {platform}.",
 
-  "psEFUITagLine": "En utilisant EFUI, vos applications peuvent toucher tous les publics.\n",
+  "psEFUITagLine": "En utilisant EFUI, vos applications peuvent toucher tous les publics !\n",
 
   "psConsult": " pour consultation et contractualisation.",
   "psLearnMore": " pour en savoir plus.",
 
+  "psUse": "Pour utiliser",
+
   "psComingSoon": "Bientôt disponible...",
-  "psSignalHint": "L'icône de Smoke Signal. Ouvrir un lien vers le dépôt de développement.",
+  "psSignalLabel": "L'icône de Smoke Signal.",
+  "psSignalHint": "Ouvrir un lien vers le dépôt de développement.",
   "psSignalPreview1": "La prochaine application d'Empathetech, ",
   "psSignalPreview1Fix": "La prochaine application d'Empathetic, ",
   "psSignalPreview2": ", est en cours de développement.\nSmoke Signal est une application de médias sociaux conçue pour nous éloigner de nos écrans.",
@@ -111,7 +128,7 @@
   "msIDProblemContent": "Les modèles économiques axés sur le profit ne sont pas durables.\n\nPar définition : Si le profit vient en premier, alors des choses comme travailler pour une mission, bien traiter les gens et consommer de manière responsable les ressources deviennent des sujets de second plan.\n\nEt cette cupidité n'a pas été maîtrisée dans les grandes entreprises technologiques. Les géants de la technologie ne se contentent plus de prendre notre argent. Ils créent désormais des produits qui ciblent nos identités et monopolisent nos esprits.",
 
   "msFindSolution": "Trouver une solution",
-  "msFindSolutionContent": "Heureusement, il existe partout dans le monde des technologues extraordinaires qui travaillent ensemble pour un meilleur récit.\nUn récit dans lequel les fournisseurs de services et les clients entretiennent une relation active, saine et mutuellement bénéfique.\n\nLa communauté open source.\n\nÀ la base, les logiciels open source sont librement disponibles pour que tout le monde puisse les consulter. De nombreux projets peuvent également être librement modifiés et redistribués.\nIl s'agit de logiciels qui n'ont rien à cacher, créés par des gens qui reconnaissent que les problèmes communs nécessitent des solutions communes.\n\nEt dans le monde merveilleux des logiciels open source, il existe une sous-catégorie : les logiciels auto-hébergés.\n\nL'auto-hébergement nous permet de prendre n'importe quel ordinateur non utilisé (y compris ceux de poche) et d'y stocker nos données.\nEn auto-hébergant, nous pouvons contrôler notre propre présence numérique, plutôt que de céder le contrôle à un serveur distant, appartenant à une société peu empathique.\n\nEt il existe des versions auto-hébergées de presque tout ! D'Adobe à Zoom, des hacktivistes passionnés créent des alternatives qui privilégient les personnes au profit.\n\nAlors, comment passe-t-on du profit/fermé à l'open source ? Comment commencent-ils à s'auto-héberger ?\nCela prend beaucoup de temps, d'énergie et de connaissances préalables.\n\nC'est là que nous intervenons.",
+  "msFindSolutionContent": "Heureusement, il existe partout dans le monde des technologues extraordinaires qui travaillent ensemble pour un meilleur récit.\nUn récit dans lequel les fournisseurs de services et les clients entretiennent une relation active, saine et mutuellement bénéfique.\n\nLa communauté open source.\n\nÀ la base, les logiciels open source sont librement disponibles pour que tout le monde puisse les consulter. De nombreux projets peuvent également être librement modifiés et redistribués.\nIl s'agit de logiciels qui n'ont rien à cacher, créés par des gens qui reconnaissent que les problèmes communs nécessitent des solutions communes.\n\nEt dans le monde merveilleux des logiciels open source, il existe une sous-catégorie : les logiciels auto-hébergés.\n\nL'auto-hébergement nous permet de prendre n'importe quel ordinateur non utilisé (y compris ceux de poche) et d'y stocker nos données.\nEn auto-hébergant, nous pouvons contrôler notre propre présence numérique, plutôt que de céder le contrôle à un serveur distant, appartenant à une société peu empathique.\n\nEt il existe des versions auto-hébergées de presque tout ! D'Adobe à Zoom, des hacktivistes passionnés créent des alternatives qui privilégient les personnes au profit.\n\nAlors, comment passe-t-on du profit/fermé à l'open source ? Comment commencent-ils à s'auto-héberger ?\nCela prend beaucoup de temps, d'énergie et de connaissances préalables.\n\nC'est là que nous intervenons.",
  
   "msProvideValue": "Faire le travail",
   "msProvideValueContent1": "La mission d'Empathetech est de rééquilibrer le pouvoir dans la technologie en rendant l'auto-hébergement plus accessible.\n\nNous allons construire des applications qui permettent à chacun de posséder sa propre identité numérique.\n\nNous allons construire des ponts entre la communauté open source et ceux qui n'ont pas le temps, l'énergie ou les connaissances préalables nécessaires.\n\nEt on ne peut pas construire de ponts (ou d'applications) sans fondations solides ! C'est pourquoi ",
@@ -124,12 +141,14 @@
   "tsPageTitle": "Équipe",
 
   "tsCore": "Cœur",
-  "tsTheFounderImageHint": "Un photo en deux dimensions de Michael Waldron. Activez pour lui envoyer un email.",
+  "tsTheFounderLabel": "Un photo en deux dimensions de Michael Waldron.",
+  "tsTheFounderHint": "Activez pour lui envoyer un email.",
   "tsTheFounder": "Le fondateur",
 
   "tsCommunity": "Communauté",
 
   "tsFreelance": "Free-lance",
+  "tsProfile": "Profil de {name}",
   "tsSpanish": "Traducteur espagnol",
   "tsFrench": "Traducteur français",
 

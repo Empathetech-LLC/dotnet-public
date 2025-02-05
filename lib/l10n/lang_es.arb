@@ -3,7 +3,8 @@
 
 
 
-  "gLogoHint": "Logotipo de Empathetic LLC: un reloj de arena bidimensional. Activar para ir a la página de inicio",
+  "gLogoLabel": "Logotipo de Empathetic LLC: un reloj de arena bidimensional.",
+  "gLogoHint": "Activar para ir a la página de inicio.",
 
   "gHomeHint": "Abrir la página de inicio",
   "gProductsHint": "Abrir la página de productos",
@@ -16,8 +17,6 @@
   "gEmailTo": "Email {recipient}",
   "gNewsletter": "Boletín de noticias",
 
-  "gSettingsHint": "Abrir la página de configuraciones",
-
   "gReachOut": "Contacto",
   "gEmpathetechGitHint": "Abrir la página de GitHub de Empathetic LLC",
 
@@ -26,7 +25,8 @@
   "gDontCha": "¿No?",
   "gDontChaHint": "Abre la página de GitHub del código fuente de esta pantalla",
 
-  "gFahIconHint": "Logotipo de Folding at home: una molécula de proteína. Activar para abrir su página",
+  "gFahIconLabel": "Logotipo de Folding at home: una molécula de proteína.",
+  "gFahIconHint": "Activar para abrir su página.",
 
   "gFiverrPage": "Abre la página de {user} en Fiverr",
 
@@ -34,13 +34,15 @@
 
   "hsSlogan": "Construyamos juntos un mundo mejor\nbit x bit",
   "hsSloganFix": "Construyamos juntos un mundo mejor\npoco a poco",
-  "hsVideoHint": "Logotipo animado de Empathetic LLC: las letras de Empathetic se transforman en el logotipo bidimensional del reloj de arena",
+  "hsVideoLabel": "Logotipo animado de Empathetic LLC: las letras de Empathetic se transforman en el logotipo bidimensional del reloj de arena",
 
   "hsPeople": "Las personas no son productos.",
   "hsWell": "Bueno, no deberían serlo.",
+
   "hsReality": "La desafortunada realidad es que nuestras identidades, nuestros ",
   "hsData": "datos",
   "hsGold": ", son la última fiebre del oro de las grandes tecnológicas.",
+  
   "hsRush": "Y a las grandes tecnológicas les encanta correr.\nGracias a su carrera sin fin, las películas distópicas de ciencia ficción se están haciendo realidad demasiado rápido.",
   "hsSlow": "Es hora de reducir la velocidad.\nEs hora de que tengamos la propiedad de nuestro yo digital.\nEs hora de un mejor ",
   "hsPlan": "plan.",
@@ -50,23 +52,35 @@
   "psPageTitle": "Productos",
 
   "psCreate": "Para crear",
-  "psUse": "Para usar",
 
-  "psEFUISlogan": "Crea apps para todos",
+  "psSlogan": "Crea apps para todos",
+  "psSloganHint": "Descargar Open UI",
+
   "psLike": "Como usuarios que necesitan ...",
   "psAccessible": "Controles accesibles",
   "psZeroStrain": "cero fatiga visual",
   "psEverything": "algo más",
+  "psTryMe": "¡Pruebame!",
   "psRandom": "Configuración aleatoria aplicada.",
-  "psEFUIDescription": "EFUI es un kit de inicio para creaciones accesibles de verdad apps.\nEFUI se encarga de todos los aspectos de la accesibilidad digital...",
+
+  "psOpenUIIs": "Open UI es un generador de aplicaciones.",
+  "psShowDemo": "Mostrar demo",
+  "psHideDemo": "Ocultar demo",
+  "psOpenUIDemo": "Demostración de Open UI creando una nueva aplicación.",
+  "psFoundation": "Crea la base para aplicaciones accesibles, multiplataforma, multilingües y listas para producción en un solo clic.",
+  "psLocal": "Todo funciona en tu ordenador. No hay credenciales, tarjetas de crédito ni cookies.",
+  "psRequirements": "Los únicos requisitos son una conexión a Internet y una idea.",
+  "psFlutterToo": "...y Flutter...",
+
+  "psHow": "¿Cómo funciona?",
+  "psEFUIsHow": "Open UI te ayuda a empezar a utilizar, ",
+  "psSimplifies": "EFUI es una biblioteca para crear aplicaciones verdaderamente accesibles.\nSe simplifica...",
   
   "psPlatform": "Disponibilidad de plataforma",
-  "psPlatformContent": "Las apps de Empathetech soportan usuarios en todas las plataformas.\n¡Puedes usar EFUI para crear apps de Android, iOS, Linux, MacOS, Windows y Web!",
-  "psPlatformContentFix": "Las apps de Empathetic soportan usuarios en todas las plataformas.\n¡Puedes usar EFUI para crear apps de Android, iOS, Linux, MacOS, Windows y Web!",
+  "psPlatformContent": "¡Puedes usar EFUI para crear apps de Android, iOS, Linux, macOS, Windows y Web!",
   
   "psResponsive": "Diseño adaptativo",
-  "psResponsiveContent": "Las apps de Empathetech soportan usuarios en cualquier pantalla.\nPara verlo en acción, ¡interactúa con la ventana que estás usando ahora mismo!",
-  "psResponsiveContentFix": "Las apps de Empathetic soportan usuarios en cualquier pantalla.\nPara verlo en acción, ¡interactúa con la ventana que estás usando ahora mismo!",
+  "psResponsiveContent": "Para verlo en acción, ¡interactúa con la ventana que estás usando ahora mismo!",
 
   "psScreen": "Soporte para lectores de pantalla",
   "psScreenContent": "Las apps de Empathetech ayudan a los usuarios que lo necesitan ",
@@ -76,23 +90,26 @@
   "psVoiceOverHint": "Abrir un enlace a la documentación de VoiceOver",
   
   "psCustom": "Personalización del usuario",
-  "psCustomContent": "Las apps de Empathetech apoyan a todos los usuarios dándoles la libertad de elegir.\nEFUI expone cada aspecto del tema de una aplicación para que sea controlado por el usuario.\nPara verlo en acción, ¡haz clic en el engranaje de configuración en la parte inferior de tu pantalla!",
-  "psCustomContentFix": "Las apps de Empathetic apoyan a todos los usuarios dándoles la libertad de elegir.\nEFUI expone cada aspecto del tema de una aplicación para que sea controlado por el usuario.\nPara verlo en acción, ¡haz clic en el engranaje de configuración en la parte inferior de tu pantalla!",
+  "psCustomContent": "¡La única forma de ser verdaderamente accesible para TODOS los clientes es brindarles la libertad de elección!\nEFUI proporciona una UX elegante para un control total sobre la apariencia de una aplicación.",
   
   "psInternational": "Internacionalización",
-  "psInternationalContent": "Las apps de Empathetech apoyan a los usuarios estén donde estén.\nAhora mismo, EFUI está disponible en inglés, español y francés.\nAdemás, tiene la infraestructura para ilimitadas futuras traducciones.",
-  "psInternationalContentFix": "Las apps de Empathetic apoyan a los usuarios estén donde estén.\nAhora mismo, EFUI está disponible en inglés, español y francés.\nAdemás, tiene la infraestructura para ilimitadas futuras traducciones.",
+  "psInternationalContent": "Las aplicaciones de Empathetech se han traducido al español y al francés (hasta el momento).\nEFUI también proporciona la infraestructura para futuras traducciones ilimitadas.",
+  "psInternationalContentFix": "Las aplicaciones de Empathetic se han traducido al español y al francés (hasta el momento).\nEFUI también proporciona la infraestructura para futuras traducciones ilimitadas.",
     
-  "psLive": "Velo en directo",
-  "psLiveHint": "El icono de Open UI: un configuración sandbox. Abrir un enlace a Open UI en {platform}",
+  "psStart": "Velo en directo",
+  "psStartLabel": "El icono de Open UI: un configuración sandbox.",
+  "psStartHint": "Descargar Open UI para {platform}.",
 
-  "psEFUITagLine": "Cuando se construye con EFUI, tus apps pueden llegar a cualquier audiencia.\n",
+  "psEFUITagLine": "¡Cuando se construye con EFUI, tus apps pueden llegar a cualquier audiencia!\n",
   
   "psConsult": " para consultas y contrataciones.",
   "psLearnMore": " para saber más.",
 
+  "psUse": "Para usar",
+
   "psComingSoon": "Próximamente...",
-  "psSignalHint": "El icono de Smoke Signal. Abre un enlace al repositorio de desarrollo.",
+  "psSignalLabel": "El icono de Smoke Signal.",
+  "psSignalHint": "Abre un enlace al repositorio de desarrollo.",
   "psSignalPreview1": "La próxima aplicación de Empathetech, ",
   "psSignalPreview1Fix": "La próxima aplicación de Empathetic, ",
   "psSignalPreview2": ", está en desarrollo.\n es una aplicación de redes sociales diseñada para mantenernos alejados de las pantallas.\n",
@@ -124,12 +141,14 @@
   "tsPageTitle": "Equipo",
   
   "tsCore": "Núcleo",
-  "tsTheFounderImageHint": "Perfil bidimensional de Michael Waldron. Activar para enviarle un E-mail.",
+  "tsTheFounderLabel": "Perfil bidimensional de Michael Waldron.",
+  "tsTheFounderHint": "Activar para enviarle un E-mail.",
   "tsTheFounder": "Fundador",
 
   "tsCommunity": "Comunidad",
 
   "tsFreelance": "Independiente",
+  "tsProfile": "Perfil de {name}",
   "tsSpanish": "Traductora de español",
   "tsFrench": "Traductor de francés",
 

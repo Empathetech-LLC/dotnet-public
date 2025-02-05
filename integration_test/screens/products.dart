@@ -1,5 +1,5 @@
 /* dotnet
- * Copyright (c) 2022-2024 Empathetech LLC. All rights reserved.
+ * Copyright (c) 2022-2025 Empathetech LLC. All rights reserved.
  * See LICENSE for distribution and usage details.
  */
 
@@ -36,46 +36,34 @@ void testSuite({
       // Verify text loaded //
 
       ezLog('\nValidating text');
-      await validateText(tester, efuiL);
-      await validate(tester, find.widgetWithText(EzLink, l10n.psEFUISlogan));
+      await ezFindText(tester, efuiL);
+      await ezFind(tester, find.widgetWithText(EzLink, l10n.psSlogan));
 
-      await validate(tester, find.widgetWithText(EzLink, 'Flutter'));
-      await validate(tester, find.widgetWithText(EzLink, 'Flutter'));
+      await ezFind(tester, find.widgetWithText(EzLink, 'Flutter'));
+      await ezFind(tester, find.widgetWithText(EzLink, 'Flutter'));
 
-      await validateText(tester, l10n.psPlatform);
-      await validateText(tester, l10n.psPlatformContent);
+      await ezFindText(tester, l10n.psPlatform);
+      await ezFindText(tester, l10n.psPlatformContent);
 
-      await validateText(tester, l10n.psResponsive);
-      await validateText(tester, l10n.psResponsiveContent);
+      await ezFindText(tester, l10n.psResponsive);
+      await ezFindText(tester, l10n.psResponsiveContent);
 
-      await validateText(tester, l10n.psScreen);
-      await validate(tester, find.widgetWithText(EzLink, 'TalkBack'));
-      await validate(tester, find.widgetWithText(EzLink, 'VoiceOver'));
+      await ezFindText(tester, l10n.psScreen);
+      await ezFind(tester, find.widgetWithText(EzLink, 'TalkBack'));
+      await ezFind(tester, find.widgetWithText(EzLink, 'VoiceOver'));
 
-      await validateText(tester, l10n.psCustom);
-      await validateText(tester, l10n.psCustomContent);
+      await ezFindText(tester, l10n.psCustom);
+      await ezFindText(tester, l10n.psCustomContent);
 
-      await validateText(tester, l10n.psInternational);
-      await validateText(tester, l10n.psInternationalContent);
+      await ezFindText(tester, l10n.psInternational);
+      await ezFindText(tester, l10n.psInternationalContent);
 
-      await validateText(tester, l10n.psEFUITagLine);
+      await ezFindText(tester, l10n.psEFUITagLine);
 
-      await validate(tester, find.widgetWithText(EzLink, l10n.gReachOut));
+      await ezFind(tester, find.widgetWithText(EzLink, l10n.gReachOut));
 
       ezLog('\nValidating Open UI links');
-      await validateWidget(tester, OpenUILinks);
-
-      await touch(tester, find.byType(DropdownMenu<String>));
-      await touchText(tester, android);
-
-      await touch(tester, find.byType(DropdownMenu<String>));
-      await touchText(tester, ios);
-
-      await touch(tester, find.byType(DropdownMenu<String>));
-      await touchText(tester, desktop);
-
-      await touch(tester, find.byType(DropdownMenu<String>));
-      await touchText(tester, web);
+      await ezFindWidget(tester, OpenUILink);
 
       // Reset for next test suite  //
 

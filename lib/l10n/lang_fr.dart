@@ -7,8 +7,11 @@ class LangFr extends Lang {
   LangFr([String locale = 'fr']) : super(locale);
 
   @override
-  String get gLogoHint =>
-      'Logo de Empathetic LLC : un sablier en deux dimensions. Activer pour accéder à la page d\'accueil';
+  String get gLogoLabel =>
+      'Logo de Empathetic LLC : un sablier en deux dimensions.';
+
+  @override
+  String get gLogoHint => 'Activer pour accéder à la page d\'accueil.';
 
   @override
   String get gHomeHint => 'Ouvre la page d\'accueil';
@@ -40,9 +43,6 @@ class LangFr extends Lang {
   String get gNewsletter => 'Lettre d\'information';
 
   @override
-  String get gSettingsHint => 'Ouvre la page des paramètres';
-
-  @override
   String get gReachOut => 'Contactez-nous';
 
   @override
@@ -63,8 +63,11 @@ class LangFr extends Lang {
       'Ouvre la page GitHub pour le code source de cette interface';
 
   @override
-  String get gFahIconHint =>
-      'Logo de Folding at home : une molécule de protéine. Activer pour ouvrir leur site';
+  String get gFahIconLabel =>
+      'Logo de Folding at home : une molécule de protéine.';
+
+  @override
+  String get gFahIconHint => 'Activer pour ouvrir leur site.';
 
   @override
   String gFiverrPage(Object user) {
@@ -79,7 +82,7 @@ class LangFr extends Lang {
       'Construisons ensemble un monde meilleur\npas à pas';
 
   @override
-  String get hsVideoHint =>
+  String get hsVideoLabel =>
       'Logo animé d\'Empathetic LLC : les lettres d\'Empathetic se transforment en un logo, un sablier en deux dimensions';
 
   @override
@@ -116,10 +119,10 @@ class LangFr extends Lang {
   String get psCreate => 'Pour créer';
 
   @override
-  String get psUse => 'Pour utiliser';
+  String get psSlogan => 'Créer des applications pour tous';
 
   @override
-  String get psEFUISlogan => 'Créer des applications pour tous';
+  String get psSloganHint => 'Télécharger Open UI';
 
   @override
   String get psLike => 'Comme les utilisateurs qui ont besoin...';
@@ -134,33 +137,62 @@ class LangFr extends Lang {
   String get psEverything => 'autre chose';
 
   @override
+  String get psTryMe => 'Essaie-moi !';
+
+  @override
   String get psRandom => 'Configuration aléatoire appliquée.';
 
   @override
-  String get psEFUIDescription =>
-      'EFUI est un kit de démarrage pour créer des environnements d\'applications réellement accessibles.\nEFUI gère tous les aspects de l\'accessibilité numérique...';
+  String get psOpenUIIs => 'Open UI est un générateur d\'applications.';
+
+  @override
+  String get psShowDemo => 'Afficher la démo';
+
+  @override
+  String get psHideDemo => 'Masquer la démo';
+
+  @override
+  String get psOpenUIDemo =>
+      'Démonstration de Open UI créant une nouvelle application.';
+
+  @override
+  String get psFoundation =>
+      'Il crée les bases d\'applications accessibles, multiplateformes, multilingues et prêtes à être produites en un seul clic.';
+
+  @override
+  String get psLocal =>
+      'Tout fonctionne sur votre ordinateur. Il n\'y a pas d\'identifiants, de cartes de crédit ou de cookies.';
+
+  @override
+  String get psRequirements =>
+      'Les seules exigences sont une connexion Internet et une idée.';
+
+  @override
+  String get psFlutterToo => '...et Flutter...';
+
+  @override
+  String get psHow => 'Comment ça marche ?';
+
+  @override
+  String get psEFUIsHow => 'Open UI vous permet de démarrer avec, ';
+
+  @override
+  String get psSimplifies =>
+      'EFUI est une bibliothèque permettant de créer des applications véritablement accessibles.\nCela simplifie...';
 
   @override
   String get psPlatform => 'Multiplateforme';
 
   @override
   String get psPlatformContent =>
-      'Les applications Empathetech prennent en charge les utilisateurs sur toutes les plateformes.\nVous pouvez utiliser EFUI pour créer sur Android, iOS, Linux, MacOS, Windows et Web !';
-
-  @override
-  String get psPlatformContentFix =>
-      'Les applications Empathetic prennent en charge les utilisateurs sur toutes les plateformes.\nVous pouvez utiliser EFUI pour créer sur Android, iOS, Linux, MacOS, Windows et Web !';
+      'Vous pouvez utiliser EFUI pour créer sur Android, iOS, Linux, macOS, Windows et Web !';
 
   @override
   String get psResponsive => 'Design réactif';
 
   @override
   String get psResponsiveContent =>
-      'Les applications Empathetech prennent en charge les utilisateurs sur n\'importe quel écran.\nPour voir cela en action, jouez avec la fenêtre que vous utilisez actuellement !';
-
-  @override
-  String get psResponsiveContentFix =>
-      'Les applications Empathetic prennent en charge les utilisateurs sur n\'importe quel écran.\nPour voir cela en action, jouez avec la fenêtre que vous utilisez actuellement !';
+      'Pour voir cela en action, jouez avec la fenêtre que vous utilisez actuellement !';
 
   @override
   String get psScreen => 'Prise en charge du lecteur d\'écran';
@@ -187,34 +219,33 @@ class LangFr extends Lang {
 
   @override
   String get psCustomContent =>
-      'Les applications Empathetech soutiennent tous les utilisateurs en leur offrant la liberté de choix.\nEFUI expose chaque aspect du thème d\'une application au contrôle de l\'utilisateur.\nPour le voir en action, cliquez sur le rouage des paramètres en bas de votre écran !';
-
-  @override
-  String get psCustomContentFix =>
-      'Les applications Empathetic soutiennent tous les utilisateurs en leur offrant la liberté de choix.\nEFUI expose chaque aspect du thème d\'une application au contrôle de l\'utilisateur.\nPour le voir en action, cliquez sur le rouage des paramètres en bas de votre écran !';
+      'La seule façon d\'être véritablement accessible à TOUS les clients est de leur donner la liberté de choix !\nEFUI fournit une expérience utilisateur élégante pour un contrôle total sur l\'apparence d\'une application.';
 
   @override
   String get psInternational => 'Internationalisation';
 
   @override
   String get psInternationalContent =>
-      'Les applications Empathetech accompagnent les utilisateurs là où ils se trouvent.\nActuellement, EFUI prend en charge l\'anglais, l\'espagnol et le français.\nIl possède également une infrastructure pour des traductions ultérieures illimitées.';
+      'Les applications Empathetech ont été traduites en espagnol et en français (jusqu\'à présent).\nEFUI fournit également l\'infrastructure pour des traductions futures illimitées.';
 
   @override
   String get psInternationalContentFix =>
-      'Les applications Empathetic accompagnent les utilisateurs là où ils se trouvent.\nActuellement, EFUI prend en charge l\'anglais, l\'espagnol et le français.\nIl possède également une infrastructure pour des traductions ultérieures illimitées.';
+      'Les applications Empathetic ont été traduites en espagnol et en français (jusqu\'à présent).\nEFUI fournit également l\'infrastructure pour des traductions futures illimitées.';
 
   @override
-  String get psLive => 'Testez-le en direct';
+  String get psStart => 'Testez-le en direct';
 
   @override
-  String psLiveHint(Object platform) {
-    return 'L\'icône de Open UI : un paramètres bac à sable. Ouvre un lien vers Open UI sur $platform';
+  String get psStartLabel => 'L\'icône de Open UI : un paramètres bac à sable.';
+
+  @override
+  String psStartHint(Object platform) {
+    return 'Télécharger Open UI pour $platform.';
   }
 
   @override
   String get psEFUITagLine =>
-      'En utilisant EFUI, vos applications peuvent toucher tous les publics.\n';
+      'En utilisant EFUI, vos applications peuvent toucher tous les publics !\n';
 
   @override
   String get psConsult => ' pour consultation et contractualisation.';
@@ -223,11 +254,16 @@ class LangFr extends Lang {
   String get psLearnMore => ' pour en savoir plus.';
 
   @override
+  String get psUse => 'Pour utiliser';
+
+  @override
   String get psComingSoon => 'Bientôt disponible...';
 
   @override
-  String get psSignalHint =>
-      'L\'icône de Smoke Signal. Ouvrir un lien vers le dépôt de développement.';
+  String get psSignalLabel => 'L\'icône de Smoke Signal.';
+
+  @override
+  String get psSignalHint => 'Ouvrir un lien vers le dépôt de développement.';
 
   @override
   String get psSignalPreview1 => 'La prochaine application d\'Empathetech, ';
@@ -270,7 +306,7 @@ class LangFr extends Lang {
 
   @override
   String get msFindSolutionContent =>
-      'Heureusement, il existe partout dans le monde des technologues extraordinaires qui travaillent ensemble pour un meilleur récit.\nUn récit dans lequel les fournisseurs de services et les clients entretiennent une relation active, saine et mutuellement bénéfique.\n\nLa communauté open source.\n\nÀ la base, les logiciels open source sont librement disponibles pour que tout le monde puisse les consulter. De nombreux projets peuvent également être librement modifiés et redistribués.\nIl s\'agit de logiciels qui n\'ont rien à cacher, créés par des gens qui reconnaissent que les problèmes communs nécessitent des solutions communes.\n\nEt dans le monde merveilleux des logiciels open source, il existe une sous-catégorie : les logiciels auto-hébergés.\n\nL\'auto-hébergement nous permet de prendre n\'importe quel ordinateur non utilisé (y compris ceux de poche) et d\'y stocker nos données.\nEn auto-hébergant, nous pouvons contrôler notre propre présence numérique, plutôt que de céder le contrôle à un serveur distant, appartenant à une société peu empathique.\n\nEt il existe des versions auto-hébergées de presque tout ! D\'Adobe à Zoom, des hacktivistes passionnés créent des alternatives qui privilégient les personnes au profit.\n\nAlors, comment passe-t-on du profit/fermé à l\'open source ? Comment commencent-ils à s\'auto-héberger ?\nCela prend beaucoup de temps, d\'énergie et de connaissances préalables.\n\nC\'est là que nous intervenons.';
+      'Heureusement, il existe partout dans le monde des technologues extraordinaires qui travaillent ensemble pour un meilleur récit.\nUn récit dans lequel les fournisseurs de services et les clients entretiennent une relation active, saine et mutuellement bénéfique.\n\nLa communauté open source.\n\nÀ la base, les logiciels open source sont librement disponibles pour que tout le monde puisse les consulter. De nombreux projets peuvent également être librement modifiés et redistribués.\nIl s\'agit de logiciels qui n\'ont rien à cacher, créés par des gens qui reconnaissent que les problèmes communs nécessitent des solutions communes.\n\nEt dans le monde merveilleux des logiciels open source, il existe une sous-catégorie : les logiciels auto-hébergés.\n\nL\'auto-hébergement nous permet de prendre n\'importe quel ordinateur non utilisé (y compris ceux de poche) et d\'y stocker nos données.\nEn auto-hébergant, nous pouvons contrôler notre propre présence numérique, plutôt que de céder le contrôle à un serveur distant, appartenant à une société peu empathique.\n\nEt il existe des versions auto-hébergées de presque tout ! D\'Adobe à Zoom, des hacktivistes passionnés créent des alternatives qui privilégient les personnes au profit.\n\nAlors, comment passe-t-on du profit/fermé à l\'open source ? Comment commencent-ils à s\'auto-héberger ?\nCela prend beaucoup de temps, d\'énergie et de connaissances préalables.\n\nC\'est là que nous intervenons.';
 
   @override
   String get msProvideValue => 'Faire le travail';
@@ -298,8 +334,11 @@ class LangFr extends Lang {
   String get tsCore => 'Cœur';
 
   @override
-  String get tsTheFounderImageHint =>
-      'Un photo en deux dimensions de Michael Waldron. Activez pour lui envoyer un email.';
+  String get tsTheFounderLabel =>
+      'Un photo en deux dimensions de Michael Waldron.';
+
+  @override
+  String get tsTheFounderHint => 'Activez pour lui envoyer un email.';
 
   @override
   String get tsTheFounder => 'Le fondateur';
@@ -309,6 +348,11 @@ class LangFr extends Lang {
 
   @override
   String get tsFreelance => 'Free-lance';
+
+  @override
+  String tsProfile(Object name) {
+    return 'Profil de $name';
+  }
 
   @override
   String get tsSpanish => 'Traducteur espagnol';

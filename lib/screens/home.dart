@@ -69,7 +69,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    ezWindowNamer(empathetech, Theme.of(context).colorScheme.primary);
+    ezWindowNamer(context, empathetech);
   }
 
   // Return the build //

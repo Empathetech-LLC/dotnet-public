@@ -40,7 +40,7 @@ class _TeamScreenState extends State<TeamScreen> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    ezWindowNamer(l10n.tsPageTitle, colorScheme.primary);
+    ezWindowNamer(context, l10n.tsPageTitle);
   }
 
   // Define custom widgets //

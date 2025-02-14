@@ -137,7 +137,7 @@ class _MissionScreenState extends State<MissionScreen> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    ezWindowNamer(l10n.msPageTitle, colorScheme.primary);
+    ezWindowNamer(context, l10n.msPageTitle);
   }
 
   // Return the build //

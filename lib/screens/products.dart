@@ -54,7 +54,7 @@ class _ProductsScreenState extends State<ProductsScreen>
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    ezWindowNamer(l10n.psPageTitle, Theme.of(context).colorScheme.primary);
+    ezWindowNamer(context, l10n.psPageTitle);
   }
 
   // Return the build //

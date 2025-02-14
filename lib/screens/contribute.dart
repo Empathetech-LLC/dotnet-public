@@ -26,6 +26,11 @@ class _ContributeScreenState extends State<ContributeScreen> {
   static const EzSwapSpacer swapSpacer = EzSwapSpacer();
   static const EzSeparator separator = EzSeparator();
 
+  late final Widget divider = ConstrainedBox(
+    constraints: BoxConstraints(maxWidth: widthOf(context) * 0.667),
+    child: const Divider(),
+  );
+
   late final TextTheme textTheme = Theme.of(context).textTheme;
   late final TextStyle? subTitle = ezSubTitleStyle(textTheme);
 
@@ -96,7 +101,7 @@ class _ContributeScreenState extends State<ContributeScreen> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    ezWindowNamer(l10n.csPageTitle, Theme.of(context).colorScheme.primary);
+    ezWindowNamer(context, l10n.csPageTitle);
   }
 
   // Return the build //
@@ -121,7 +126,7 @@ class _ContributeScreenState extends State<ContributeScreen> {
                     style: subTitle,
                     textAlign: TextAlign.center,
                   ),
-                  spacer,
+                  separator,
 
                   // Every bit
                   Text(
@@ -130,7 +135,7 @@ class _ContributeScreenState extends State<ContributeScreen> {
                     style: textTheme.headlineLarge,
                     textAlign: TextAlign.center,
                   ),
-                  spacer,
+                  separator,
 
                   // Would you like to give?...
                   Text(
@@ -179,12 +184,7 @@ class _ContributeScreenState extends State<ContributeScreen> {
                 tooltip: empathGitHub,
               ),
             ], textAlign: TextAlign.center),
-
-            // Divider
-            ConstrainedBox(
-              constraints: BoxConstraints(maxWidth: widthOf(context) * 0.667),
-              child: const Divider(),
-            ),
+            divider,
 
             // Money //
 
@@ -217,12 +217,7 @@ class _ContributeScreenState extends State<ContributeScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: directDonations,
             ),
-
-            // Divider
-            ConstrainedBox(
-              constraints: BoxConstraints(maxWidth: widthOf(context) * 0.667),
-              child: const Divider(),
-            ),
+            divider,
 
             // Power //
 

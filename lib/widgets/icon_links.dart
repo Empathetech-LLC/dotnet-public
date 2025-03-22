@@ -14,6 +14,7 @@ import 'package:line_icons/line_icons.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:file_saver/file_saver.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 
 class IconLinks extends StatelessWidget {
@@ -52,6 +53,12 @@ class IconLinks extends StatelessWidget {
     onPressed: () => launchUrl(Uri.parse(empathMastodon)),
     tooltip: 'Mastodon',
     icon: Icon(LineIcons.mastodon, color: colorScheme.primary),
+  );
+
+  late final EzIconButton bluesky = EzIconButton(
+    onPressed: () => launchUrl(Uri.parse(empathBluesky)),
+    tooltip: 'Bluesky',
+    icon: Icon(FontAwesomeIcons.bluesky, color: colorScheme.primary),
   );
 
   late final EzIconButton linkedIn = EzIconButton(
@@ -115,6 +122,7 @@ class IconLinks extends StatelessWidget {
         gitHub,
         newsletter,
         mastodon,
+        bluesky,
         linkedIn,
         feedback,
       ];
@@ -130,6 +138,8 @@ class IconLinks extends StatelessWidget {
       newsletter,
       spacer,
       mastodon,
+      spacer,
+      bluesky,
       spacer,
       linkedIn,
       spacer,

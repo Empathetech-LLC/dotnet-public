@@ -10,7 +10,6 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:url_launcher/url_launcher.dart';
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
-import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 
 //* Shared *//
 
@@ -20,24 +19,37 @@ const String efuiFallback = '8.1.0';
 /// '1.0.0'
 const String sosFallback = '1.1.0';
 
+/// 'https://github.com/Empathetech-LLC'
 const String _git = 'https://github.com/Empathetech-LLC';
+
+/// 'https://play.google.com/store/apps/details?id=net.empathetech'
 const String _gPlay =
     'https://play.google.com/store/apps/details?id=net.empathetech';
+
+/// 'https://apps.apple.com/us/app'
 const String _appStore = 'https://apps.apple.com/us/app';
 
-// Get a human readable (English) name for the platform
-String platformName(TargetPlatform platform) {
-  switch (platform) {
-    case TargetPlatform.android:
-      return 'Android';
-    case TargetPlatform.iOS:
-      return 'iOS';
-    case TargetPlatform.macOS:
-      return 'macOS';
-    case TargetPlatform.windows:
-      return 'Windows';
-    default:
-      return 'Linux';
+/// Download types
+enum DLType { gPlay, apk, iOS, macOS, windows, deb, rpm }
+
+extension Label on DLType {
+  String get name {
+    switch (this) {
+      case DLType.gPlay:
+        return 'Android (Google Play)';
+      case DLType.apk:
+        return 'Android (.apk)';
+      case DLType.iOS:
+        return 'iOS';
+      case DLType.macOS:
+        return 'macOS';
+      case DLType.windows:
+        return 'Windows';
+      case DLType.deb:
+        return 'Linux (.deb)';
+      case DLType.rpm:
+        return 'Linux (.rpm)';
+    }
   }
 }
 
@@ -49,66 +61,6 @@ Future<String> getLatest(String repo, String fallback) async {
 
   return response.statusCode == 200 ? response.body.trim() : fallback;
 }
-
-/// Confirm whether the user wants a Google Play link or an APK download
-Future<Uri?> chooseAndroidPackage(
-  BuildContext context, {
-  required String packageName,
-  required String gitTail,
-}) =>
-    showPlatformDialog<Uri?>(
-      context: context,
-      builder: (BuildContext dialogContext) {
-        final (
-          List<EzMaterialAction> materialActions,
-          List<EzCupertinoAction> cupertinoActions
-        ) = ezActionPairs(
-          context: context,
-          onConfirm: () => Navigator.of(dialogContext)
-              .pop(Uri.parse('$_gPlay.$packageName')),
-          confirmIsDefault: true,
-          onDeny: () =>
-              Navigator.of(dialogContext).pop(Uri.parse('$_git/$gitTail')),
-          denyMsg: '.apk',
-        );
-
-        return EzAlertDialog(
-          title: const Text('Google Play?', textAlign: TextAlign.center),
-          materialActions: materialActions,
-          cupertinoActions: cupertinoActions,
-        );
-      },
-    );
-
-/// Confirm whether the user is on .deb or .rpm based linux
-Future<Uri?> chooseLinuxPackage(
-  BuildContext context, {
-  required String debTail,
-  required String rpmTail,
-}) =>
-    showPlatformDialog<Uri?>(
-      context: context,
-      builder: (BuildContext dialogContext) {
-        final (
-          List<EzMaterialAction> materialActions,
-          List<EzCupertinoAction> cupertinoActions
-        ) = ezActionPairs(
-          context: context,
-          onConfirm: () =>
-              Navigator.of(dialogContext).pop(Uri.parse('$_git/$debTail')),
-          confirmIsDefault: true,
-          onDeny: () =>
-              Navigator.of(dialogContext).pop(Uri.parse('$_git/$rpmTail')),
-          denyMsg: '.rpm',
-        );
-
-        return EzAlertDialog(
-          title: const Text('.deb?', textAlign: TextAlign.center),
-          materialActions: materialActions,
-          cupertinoActions: cupertinoActions,
-        );
-      },
-    );
 
 //* EFUI *//
 
@@ -152,32 +104,25 @@ class EFUIShoutOut extends StatelessWidget {
 //* Open UI *//
 
 /// Get a [Uri] to download the latest version of Open UI
-Future<Uri?> openUIDownload(
-  BuildContext context,
-  TargetPlatform platform,
-  String version,
-) async {
-  const String releases = 'empathetech_flutter_ui/releases/download';
+Future<Uri?> openUIDownload(DLType dlType, String version) async {
+  late final String releases =
+      '$_git/empathetech_flutter_ui/releases/download/$version';
 
-  switch (platform) {
-    case TargetPlatform.android:
-      return await chooseAndroidPackage(
-        context,
-        packageName: 'open_ui',
-        gitTail: '$releases/$version/open-ui-android.apk',
-      );
-    case TargetPlatform.iOS:
+  switch (dlType) {
+    case DLType.gPlay:
+      return Uri.parse('$_gPlay.open_ui');
+    case DLType.apk:
+      return Uri.parse('$releases/open-ui-android.apk');
+    case DLType.iOS:
       return Uri.parse('$_appStore/open-ui/id6499560244');
-    case TargetPlatform.macOS:
-      return Uri.parse('$_git/$releases/$version/open-ui-mac.zip');
-    case TargetPlatform.windows:
-      return Uri.parse('$_git/$releases/$version/open-ui-windows.exe');
-    default:
-      return await chooseLinuxPackage(
-        context,
-        debTail: '$releases/$version/open-ui-linux.deb',
-        rpmTail: '$releases/$version/open-ui-linux.rpm',
-      );
+    case DLType.macOS:
+      return Uri.parse('$releases/open-ui-macOS.zip');
+    case DLType.windows:
+      return Uri.parse('$releases/open-ui-windows.exe');
+    case DLType.deb:
+      return Uri.parse('$releases/open-ui-linux.deb');
+    case DLType.rpm:
+      return Uri.parse('$releases/open-ui-linux.rpm');
   }
 }
 
@@ -198,16 +143,35 @@ class _OpenUILinkState extends State<OpenUILink> {
 
   // Define the build data //
 
-  TargetPlatform currPlatform = getBasePlatform();
-
+  final TargetPlatform basePlatform = getBasePlatform();
+  late DLType currDL;
   late final String latest;
   Uri? url;
 
   // Define custom functions //
 
-  void buildUrl() async {
+  /// Set an initial download link
+  void initUrl() async {
+    switch (basePlatform) {
+      case TargetPlatform.android:
+        currDL = DLType.gPlay;
+        break;
+      case TargetPlatform.iOS:
+        currDL = DLType.iOS;
+        break;
+      case TargetPlatform.macOS:
+        currDL = DLType.macOS;
+        break;
+      case TargetPlatform.windows:
+        currDL = DLType.windows;
+        break;
+      default:
+        currDL = DLType.deb;
+        break;
+    }
+
     latest = await getLatest('empathetech_flutter_ui', efuiFallback);
-    if (mounted) url = await openUIDownload(context, currPlatform, latest);
+    if (mounted) url = await openUIDownload(currDL, latest);
   }
 
   // Init //
@@ -215,7 +179,7 @@ class _OpenUILinkState extends State<OpenUILink> {
   @override
   void initState() {
     super.initState();
-    buildUrl();
+    initUrl();
   }
 
   // Return the build //
@@ -231,9 +195,9 @@ class _OpenUILinkState extends State<OpenUILink> {
           constraints: EzBox.sym(ezImageSize(context)),
           child: EzLinkWidget(
             onTap: () => launchUrl(url ?? Uri.parse(openUIReleases)),
-            tooltip: l10n.gDownloadHint(openUI, platformName(currPlatform)),
+            tooltip: l10n.gDownloadHint(openUI, currDL.name),
             label: l10n.gIconLabel(openUI) + l10n.psOpenUIIconLabel,
-            hint: l10n.gDownloadHint(openUI, platformName(currPlatform)),
+            hint: l10n.gDownloadHint(openUI, currDL.name),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(ezImageSize(context)),
               child: const Image(image: openUIImage, fit: BoxFit.contain),
@@ -243,29 +207,22 @@ class _OpenUILinkState extends State<OpenUILink> {
         EzMargin(),
 
         // Destination selector
-        EzDropdownMenu<TargetPlatform>(
+        EzDropdownMenu<DLType>(
           enableSearch: false,
-          initialSelection: currPlatform,
-          dropdownMenuEntries: <TargetPlatform>[
-            TargetPlatform.android,
-            TargetPlatform.iOS,
-            TargetPlatform.linux,
-            TargetPlatform.macOS,
-            TargetPlatform.windows,
-          ]
-              .map(
-                (TargetPlatform platform) => DropdownMenuEntry<TargetPlatform>(
-                  value: platform,
-                  label: platformName(platform),
-                  style: TextButton.styleFrom(padding: EzInsets.wrap(padding)),
-                ),
-              )
+          initialSelection: currDL,
+          dropdownMenuEntries: DLType.values
+              .map((DLType dlType) => DropdownMenuEntry<DLType>(
+                    value: dlType,
+                    label: dlType.name,
+                    style:
+                        TextButton.styleFrom(padding: EzInsets.wrap(padding)),
+                  ))
               .toList(),
-          onSelected: (TargetPlatform? platform) async {
-            if (platform == null) return;
+          onSelected: (DLType? choice) async {
+            if (choice == null) return;
 
-            currPlatform = platform;
-            url = await openUIDownload(context, currPlatform, latest);
+            currDL = choice;
+            url = await openUIDownload(currDL, latest);
 
             setState(() {});
           },
@@ -275,21 +232,20 @@ class _OpenUILinkState extends State<OpenUILink> {
   }
 }
 
-//* Open UI *//
+//* (Insta)SOS *//
 
 /// Get a [Uri] to download the latest version of InstaSOS
-Future<Uri?> sosDownload(
-  BuildContext context,
-  bool iOS,
-  String version,
-) async {
-  return iOS
-      ? Uri.parse('$_appStore/instasos/id6744280817')
-      : await chooseAndroidPackage(
-          context,
-          packageName: 'sos',
-          gitTail: 'sos/releases/download/$version/sos.apk',
-        );
+Future<Uri?> sosDownload(DLType dlType, String version) async {
+  late final String releases = '$_git/sos/releases/download/$version';
+
+  switch (dlType) {
+    case DLType.gPlay:
+      return Uri.parse('$_gPlay.sos');
+    case DLType.apk:
+      return Uri.parse('$releases/sos-android.apk');
+    default:
+      return Uri.parse('$_appStore/instasos/id6744280817');
+  }
 }
 
 class SOSLink extends StatefulWidget {
@@ -309,16 +265,28 @@ class _SOSLinkState extends State<SOSLink> {
 
   // Define the build data //
 
-  bool showIOS = isApple();
-
+  final TargetPlatform basePlatform = getBasePlatform();
+  late DLType currDL;
   late final String latest;
   Uri? url;
 
   // Define custom functions //
 
-  void buildUrl() async {
+  /// Set an initial download link
+  void initUrl() async {
+    switch (basePlatform) {
+      case TargetPlatform.iOS:
+      case TargetPlatform.macOS:
+        currDL = DLType.iOS;
+        break;
+
+      default:
+        currDL = DLType.gPlay;
+        break;
+    }
+
     latest = await getLatest('sos', sosFallback);
-    if (mounted) url = await sosDownload(context, showIOS, latest);
+    if (mounted) url = await sosDownload(currDL, latest);
   }
 
   // Init //
@@ -326,7 +294,7 @@ class _SOSLinkState extends State<SOSLink> {
   @override
   void initState() {
     super.initState();
-    buildUrl();
+    initUrl();
   }
 
   // Return the build //
@@ -342,9 +310,9 @@ class _SOSLinkState extends State<SOSLink> {
           constraints: EzBox.sym(ezImageSize(context)),
           child: EzLinkWidget(
             onTap: () => launchUrl(url ?? Uri.parse(sosReleases)),
-            tooltip: l10n.gDownloadHint(sosName, showIOS ? 'iOS' : 'Android'),
+            tooltip: l10n.gDownloadHint(sosName, currDL.name),
             label: l10n.gIconLabel(sosLabel) + l10n.psSOSIconLabel,
-            hint: l10n.gDownloadHint(sosLabel, showIOS ? 'iOS' : 'Android'),
+            hint: l10n.gDownloadHint(sosLabel, currDL.name),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(ezImageSize(context)),
               child: const Image(image: sosImage, fit: BoxFit.contain),
@@ -354,26 +322,31 @@ class _SOSLinkState extends State<SOSLink> {
         EzMargin(),
 
         // Destination selector
-        EzDropdownMenu<bool>(
+        EzDropdownMenu<DLType>(
           enableSearch: false,
-          initialSelection: showIOS,
-          dropdownMenuEntries: <DropdownMenuEntry<bool>>[
-            DropdownMenuEntry<bool>(
-              value: false,
-              label: 'Android',
+          initialSelection: currDL,
+          dropdownMenuEntries: <DropdownMenuEntry<DLType>>[
+            DropdownMenuEntry<DLType>(
+              value: DLType.gPlay,
+              label: DLType.gPlay.name,
               style: TextButton.styleFrom(padding: EzInsets.wrap(padding)),
             ),
-            DropdownMenuEntry<bool>(
-              value: true,
-              label: 'iOS',
+            DropdownMenuEntry<DLType>(
+              value: DLType.apk,
+              label: DLType.apk.name,
+              style: TextButton.styleFrom(padding: EzInsets.wrap(padding)),
+            ),
+            DropdownMenuEntry<DLType>(
+              value: DLType.iOS,
+              label: DLType.iOS.name,
               style: TextButton.styleFrom(padding: EzInsets.wrap(padding)),
             ),
           ],
-          onSelected: (bool? choice) async {
+          onSelected: (DLType? choice) async {
             if (choice == null) return;
 
-            showIOS = choice;
-            url = await sosDownload(context, showIOS, latest);
+            currDL = choice;
+            url = await sosDownload(currDL, latest);
 
             setState(() {});
           },

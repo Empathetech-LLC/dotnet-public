@@ -116,7 +116,7 @@ Future<Uri?> openUIDownload(DLType dlType, String version) async {
     case DLType.iOS:
       return Uri.parse('$_appStore/open-ui/id6499560244');
     case DLType.macOS:
-      return Uri.parse('$releases/open-ui-macOS.zip');
+      return Uri.parse('$releases/open-ui-mac.zip');
     case DLType.windows:
       return Uri.parse('$releases/open-ui-windows.exe');
     case DLType.deb:

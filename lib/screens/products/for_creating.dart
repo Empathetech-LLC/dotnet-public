@@ -36,16 +36,35 @@ class _CreatorProductsState extends State<CreatorProducts> {
 
   // Define the build data //
 
-  final TargetPlatform platform = getBasePlatform();
-
+  final TargetPlatform basePlatform = getBasePlatform();
+  late final DLType dlType;
   late final String latest;
   late final Uri? url;
 
   // Define custom functions //
 
-  void buildUrl() async {
+  /// Set the download link
+  void initUrl() async {
+    switch (basePlatform) {
+      case TargetPlatform.android:
+        dlType = DLType.gPlay;
+        break;
+      case TargetPlatform.iOS:
+        dlType = DLType.iOS;
+        break;
+      case TargetPlatform.macOS:
+        dlType = DLType.macOS;
+        break;
+      case TargetPlatform.windows:
+        dlType = DLType.windows;
+        break;
+      default:
+        dlType = DLType.deb;
+        break;
+    }
+
     latest = await getLatest('empathetech_flutter_ui', efuiFallback);
-    if (mounted) url = await openUIDownload(context, platform, latest);
+    if (mounted) url = await openUIDownload(dlType, latest);
   }
 
   // Init //
@@ -53,7 +72,7 @@ class _CreatorProductsState extends State<CreatorProducts> {
   @override
   void initState() {
     super.initState();
-    buildUrl();
+    initUrl();
   }
 
   // Return the build //
@@ -78,7 +97,7 @@ class _CreatorProductsState extends State<CreatorProducts> {
           style: textTheme.headlineLarge!,
           textAlign: TextAlign.center,
           onTap: () => launchUrl(url ?? Uri.parse(openUIReleases)),
-          hint: l10n.gDownloadHint(openUI, platformName(platform)),
+          hint: l10n.gDownloadHint(openUI, dlType.name),
         ),
         separator,
 

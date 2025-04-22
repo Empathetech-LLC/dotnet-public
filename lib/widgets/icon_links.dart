@@ -89,16 +89,16 @@ class IconLinks extends StatelessWidget {
         BetterFeedback.of(context).show(
           (UserFeedback feedback) async {
             if (isMobile) {
-              await Share.shareXFiles(
-                <XFile>[
+              await SharePlus.instance.share(ShareParams(
+                text: feedback.text,
+                files: <XFile>[
                   XFile.fromData(
                     feedback.screenshot,
                     name: 'screenshot.png',
                     mimeType: 'image/png',
                   )
                 ],
-                text: feedback.text,
-              );
+              ));
             } else {
               await FileSaver.instance.saveFile(
                 name: 'screenshot.png',

@@ -8,6 +8,7 @@ import '../utils/export.dart';
 import 'package:dotnet/main.dart';
 import 'package:dotnet/utils/export.dart';
 import 'package:dotnet/widgets/export.dart';
+import 'package:efui_bios/efui_bios.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -37,7 +38,7 @@ void testSuite({
 
       ezLog('\nValidating text');
       await ezFindText(tester, efuiL);
-      await ezFind(tester, find.widgetWithText(EzLink, l10n.psSlogan));
+      await ezFind(tester, find.widgetWithText(EzLink, l10n.psOpenUISlogan));
 
       await ezFind(tester, find.widgetWithText(EzLink, 'Flutter'));
       await ezFind(tester, find.widgetWithText(EzLink, 'Flutter'));

@@ -1,10 +1,8 @@
 {
   "@@locale": "es",
 
-
-
-  "gLogoLabel": "Logotipo de Empathetic LLC: un reloj de arena bidimensional.",
-  "gLogoHint": "Activar para ir a la página de inicio.",
+  "gEmpathLogoLabel": "un reloj de arena bidimensional.",
+  "gEmpathLogoHint": "Activar para ir a la página de inicio.",
 
   "gHomeHint": "Abrir la página de inicio",
   "gProductsHint": "Abrir la página de productos",
@@ -17,18 +15,19 @@
   "gEmailTo": "Email {recipient}",
   "gNewsletter": "Boletín de noticias",
 
-  "gReachOut": "Contacto",
+  "gLogoLabel": "Logotipo de {thing}: ",
+  "gIconLabel": "El icono de {app}: ",
+  "gDownloadHint": "Descargar {app} para {platform}.",
+  "gRepoHint": "Abre un enlace al repositorio de desarrollo.",
   "gEmpathetechGitHint": "Abrir la página de GitHub de Empathetic LLC",
+
+  "gReachOut": "Contacto",
+  "gFiverrPage": "Abre la página de {user} en Fiverr",
 
   "gDontChaWish": "¿No te gustaría que tu frontend fuera divertido ", 
   "gMeQ": "como yo?",
   "gDontCha": "¿No?",
   "gDontChaHint": "Abre la página de GitHub del código fuente de esta pantalla",
-
-  "gFahIconLabel": "Logotipo de Folding at home: una molécula de proteína.",
-  "gFahIconHint": "Activar para abrir su página.",
-
-  "gFiverrPage": "Abre la página de {user} en Fiverr",
 
 
 
@@ -49,12 +48,31 @@
 
 
 
+  "msPageTitle": "Misión",
+  
+  "msSoWe": "Así que nosotros",
+  "msBy": "Por",
+  "msFirst": "Por primera vez",
+  
+  "msIDProblem": "Identificación del problema",
+  "msIDProblemContent": "Los modelos de negocio que dan prioridad al beneficio no son sostenibles.\n\nPor definición, cosas como trabajar por una misión, tratar bien a las personas y consumir recursos de forma responsable pasan a un segundo plano.\n\nLos gigantes tecnológicos no se conforman con llevarse nuestro dinero. Ahora construyen productos para captar nuestras identidades y monopolizar nuestras mentes. Y nadie les dice nada.",
+  
+  "msFindSolution": "Encuentra una solución",
+  "msFindSolutionContent": "Afortunadamente, hay tecnólogos increíbles en todo el mundo que trabajan juntos para lograr una mejor narrativa.\nUna en la que los proveedores de servicios y los clientes tengan una relación activa, saludable y mutuamente beneficiosa.\n\nLa comunidad de código abierto.\n\nEn esencia, el software de código abierto está disponible de forma gratuita para que cualquiera lo vea. Muchos proyectos también se pueden modificar y redistribuir libremente.\nEs un software que no tiene nada que ocultar, creado por gente que reconoce que los problemas compartidos requieren soluciones compartidas.\n\nY en el maravilloso mundo del software de código abierto, existe una subcategoría: el software de alojamiento propio.\n\nEl alojamiento propio nos permite tomar cualquier computadora que no esté en uso (incluso las de bolsillo) y almacenar allí nuestros datos.\nAl alojarnos nosotros mismos, podemos controlar nuestra propia presencia digital, en lugar de ceder el control a un servidor lejano, propiedad de una corporación poco empática.\n\n¡Y existen versiones alojadas por nosotros mismos de casi todo! Desde Adobe hasta Zoom, hay hacktivistas apasionados que crean alternativas que priorizan a las personas por sobre las ganancias.\n\nEntonces, ¿cómo se hace la transición de un código cerrado que prioriza las ganancias a un código abierto? ¿Cómo empiezan a alojar sus propios archivos?\nRequiere mucho tiempo, energía y conocimientos previos.\n\nAhí es donde entramos nosotros.",
+  
+  "msProvideValue": "Haciendo el trabajo",
+  "msProvideValueContent1": "La misión de Empathetech es reequilibrar el poder en la tecnología al hacer que el autohospedaje sea más accesible.\n\nCrearemos aplicaciones que permitan a cualquier persona ser dueña de su identidad digital.\n\nConstruiremos puentes entre la comunidad de código abierto y aquellos que no tienen el tiempo, la energía o el conocimiento previo necesarios.\n\n¡Y no se pueden construir puentes (o aplicaciones) sin una base sólida! Es por eso que ",
+  "msProvideValueContent1Fix": "La misión de Empathetic es reequilibrar el poder en la tecnología al hacer que el autohospedaje sea más accesible.\n\nCrearemos aplicaciones que permitan a cualquier persona ser dueña de su identidad digital.\n\nConstruiremos puentes entre la comunidad de código abierto y aquellos que no tienen el tiempo, la energía o el conocimiento previo necesarios.\n\n¡Y no se pueden construir puentes (o aplicaciones) sin una base sólida! Es por eso que ",
+  "msProvideValueContent2": " existe.\nEmpathetech se enorgullece de cumplir las palabras con acciones y ha hecho que nuestra interfaz de usuario accesible sea de código abierto.\n\nConstruyamos un mundo mejor juntos, poco a poco.",
+  "msProvideValueContent2Fix": " existe.\nEmpathetic se enorgullece de cumplir las palabras con acciones y ha hecho que nuestra interfaz de usuario accesible sea de código abierto.\n\nConstruyamos un mundo mejor juntos, poco a poco.",
+
+
+
   "psPageTitle": "Productos",
+  "psCreator": "Para crear",
+  "psUser": "Para usar",
 
-  "psCreate": "Para crear",
-
-  "psSlogan": "Crea apps para todos",
-  "psSloganHint": "Descargar Open UI",
+  "psOpenUISlogan": "Crea apps para todos",
 
   "psLike": "Como usuarios que necesitan ...",
   "psAccessible": "Controles accesibles",
@@ -96,47 +114,31 @@
   "psInternationalContent": "Las aplicaciones de Empathetech se han traducido al español y al francés (hasta el momento).\nEFUI también proporciona la infraestructura para futuras traducciones ilimitadas.",
   "psInternationalContentFix": "Las aplicaciones de Empathetic se han traducido al español y al francés (hasta el momento).\nEFUI también proporciona la infraestructura para futuras traducciones ilimitadas.",
     
-  "psStart": "Velo en directo",
-  "psStartLabel": "El icono de Open UI: un configuración sandbox.",
-  "psStartHint": "Descargar Open UI para {platform}.",
+  "psGetStarted": "Velo en directo",
+  "psOpenUIIconLabel": "un configuración sandbox.",
 
   "psEFUITagLine": "¡Cuando se construye con EFUI, tus apps pueden llegar a cualquier audiencia!\n",
   
   "psConsult": " para consultas y contrataciones.",
   "psLearnMore": " para saber más.",
 
-  "psUse": "Para usar",
+  "psSOSIconLabel": "Un icono de notificación de color fuerte.",
 
+  "psSOSDescription": "Una cámara, una baliza SOS y una lista de tus derechos, todo en un solo lugar.",
+  "psFreeSOS": "InstaSOS es completamente gratuito y el código es de ",
+  "psOpenSource": "código abierto",
+  "psConsider": "Por favor, considere ",
+  "psContributing": "contribuir",
+  "psSAPS": " al soporte del software como un servicio público.",
+  
   "psComingSoon": "Próximamente...",
-  "psSignalLabel": "El icono de Smoke Signal.",
-  "psSignalHint": "Abre un enlace al repositorio de desarrollo.",
   "psSignalPreview1": "La próxima aplicación de Empathetech, ",
   "psSignalPreview1Fix": "La próxima aplicación de Empathetic, ",
-  "psSignalPreview2": ", está en desarrollo.\n es una aplicación de redes sociales diseñada para mantenernos alejados de las pantallas.\n",
+  "psSignalPreview2": ", está en desarrollo.\n es una aplicación de red social diseñada para mantenernos alejados de las pantallas.\n",
   "psSignalPreview3": "Smoke Signal también estará alojada completamente por el usuario, gracias a ",
   "psAPHint": "Abrir un enlace a la documentación de Activity Pub",
 
   
-
-  "msPageTitle": "Misión",
-  
-  "msSoWe": "Así que nosotros",
-  "msBy": "Por",
-  "msFirst": "Por primera vez",
-  
-  "msIDProblem": "Identificación del problema",
-  "msIDProblemContent": "Los modelos de negocio que dan prioridad al beneficio no son sostenibles.\n\nPor definición, cosas como trabajar por una misión, tratar bien a las personas y consumir recursos de forma responsable pasan a un segundo plano.\n\nLos gigantes tecnológicos no se conforman con llevarse nuestro dinero. Ahora construyen productos para captar nuestras identidades y monopolizar nuestras mentes. Y nadie les dice nada.",
-  
-  "msFindSolution": "Encuentra una solución",
-  "msFindSolutionContent": "Afortunadamente, hay tecnólogos increíbles en todo el mundo que trabajan juntos para lograr una mejor narrativa.\nUna en la que los proveedores de servicios y los clientes tengan una relación activa, saludable y mutuamente beneficiosa.\n\nLa comunidad de código abierto.\n\nEn esencia, el software de código abierto está disponible de forma gratuita para que cualquiera lo vea. Muchos proyectos también se pueden modificar y redistribuir libremente.\nEs un software que no tiene nada que ocultar, creado por gente que reconoce que los problemas compartidos requieren soluciones compartidas.\n\nY en el maravilloso mundo del software de código abierto, existe una subcategoría: el software de alojamiento propio.\n\nEl alojamiento propio nos permite tomar cualquier computadora que no esté en uso (incluso las de bolsillo) y almacenar allí nuestros datos.\nAl alojarnos nosotros mismos, podemos controlar nuestra propia presencia digital, en lugar de ceder el control a un servidor lejano, propiedad de una corporación poco empática.\n\n¡Y existen versiones alojadas por nosotros mismos de casi todo! Desde Adobe hasta Zoom, hay hacktivistas apasionados que crean alternativas que priorizan a las personas por sobre las ganancias.\n\nEntonces, ¿cómo se hace la transición de un código cerrado que prioriza las ganancias a un código abierto? ¿Cómo empiezan a alojar sus propios archivos?\nRequiere mucho tiempo, energía y conocimientos previos.\n\nAhí es donde entramos nosotros.",
-  
-  "msProvideValue": "Haciendo el trabajo",
-  "msProvideValueContent1": "La misión de Empathetech es reequilibrar el poder en la tecnología al hacer que el autohospedaje sea más accesible.\n\nCrearemos aplicaciones que permitan a cualquier persona ser dueña de su identidad digital.\n\nConstruiremos puentes entre la comunidad de código abierto y aquellos que no tienen el tiempo, la energía o el conocimiento previo necesarios.\n\n¡Y no se pueden construir puentes (o aplicaciones) sin una base sólida! Es por eso que ",
-  "msProvideValueContent1Fix": "La misión de Empathetic es reequilibrar el poder en la tecnología al hacer que el autohospedaje sea más accesible.\n\nCrearemos aplicaciones que permitan a cualquier persona ser dueña de su identidad digital.\n\nConstruiremos puentes entre la comunidad de código abierto y aquellos que no tienen el tiempo, la energía o el conocimiento previo necesarios.\n\n¡Y no se pueden construir puentes (o aplicaciones) sin una base sólida! Es por eso que ",
-  "msProvideValueContent2": " existe.\nEmpathetech se enorgullece de cumplir las palabras con acciones y ha hecho que nuestra interfaz de usuario accesible sea de código abierto.\n\nConstruyamos un mundo mejor juntos, poco a poco.",
-  "msProvideValueContent2Fix": " existe.\nEmpathetic se enorgullece de cumplir las palabras con acciones y ha hecho que nuestra interfaz de usuario accesible sea de código abierto.\n\nConstruyamos un mundo mejor juntos, poco a poco.",
-
-
 
   "tsPageTitle": "Equipo",
   
@@ -154,9 +156,24 @@
 
 
 
+  "fahJoin": "Únete a Fold",
+
+  "fahIconLabel": "Logotipo de Folding at home: una molécula de proteína.",
+  "fahIconHint": "Activar para abrir su página.",
+  
+  "fahIntro1": "¡Únete al ",
+  "fahIntro2": " equipo de Folding@home!",
+  "fahTeamHint": "Abre la página del equipo Empathetic folding at home",
+  
+  "fahWhatQ": "¿Qué es Folding@home?",
+  "fahWhatQHint": "Abrir la página de folding at home",
+  
+  "fahStats": "Juntos, hemos ganado más de 350 millones de puntos.\n¡Lo que nos sitúa en el 2% de los mejores equipos del mundo!",
+
+
+
   "csPageTitle": "Contribuir",
   
-  "csThanks": "¡Muchas gracias por todo el apoyo!",
   "csEveryBit": "Cada bit que das a Empathetech le quitas un byte a los gigantes tecnológicos.",
   "csEveryBitFix": "Cada bit que das a Empathetic le quitas un byte a los gigantes tecnológicos.",
   "csGive": "¿Te gustaría contribuir...",
@@ -169,16 +186,5 @@
   
   "csPowerQ": "Poder?",
   
-
-
-  "fahJoin": "Únete a Fold",
-  
-  "fahIntro1": "¡Únete al ",
-  "fahIntro2": " equipo de Folding@home!",
-  "fahTeamHint": "Abre la página del equipo Empathetic folding at home",
-  
-  "fahWhatQ": "¿Qué es Folding@home?",
-  "fahWhatQHint": "Abrir la página de folding at home",
-  
-  "fahStats": "Juntos, hemos ganado más de 350 millones de puntos.\n¡Lo que nos sitúa en el 2% de los mejores equipos del mundo!"
+  "csThanks": "¡Muchas gracias por todo el apoyo!"
 }

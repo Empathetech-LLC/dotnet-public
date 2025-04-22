@@ -3,6 +3,8 @@
  * See LICENSE for distribution and usage details.
  */
 
+import 'package:dotnet/utils/export.dart';
+
 import 'screens/home.dart' as home;
 import 'screens/settings_home.dart' as settings_home;
 import 'screens/products.dart' as products;
@@ -21,8 +23,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   final Map<String, Object> testConfig = <String, Object>{
-    ...empathetechConfig,
-    isDarkThemeKey: true,
+    ...dotnetConfig,
     isLeftyKey: true,
   };
 

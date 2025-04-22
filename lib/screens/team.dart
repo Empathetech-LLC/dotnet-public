@@ -6,6 +6,7 @@
 import '../screens/export.dart';
 import '../utils/export.dart';
 import '../widgets/export.dart';
+import 'package:efui_bios/efui_bios.dart';
 
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -25,6 +26,7 @@ class _TeamScreenState extends State<TeamScreen> {
 
   static const EzSpacer spacer = EzSpacer();
   static const EzSeparator separator = EzSeparator();
+  static const EzDivider divider = EzDivider();
 
   late final EzSpacer margin = EzMargin();
   late final double imageSize = ezImageSize(context);
@@ -193,12 +195,7 @@ class _TeamScreenState extends State<TeamScreen> {
                 ),
               ],
             ),
-
-            // Divider
-            ConstrainedBox(
-              constraints: BoxConstraints(maxWidth: widthOf(context) * 0.667),
-              child: const Divider(),
-            ),
+            divider,
 
             // Community //
 
@@ -215,11 +212,7 @@ class _TeamScreenState extends State<TeamScreen> {
 
             // Folding@home
             const FaHBanner(),
-
-            ConstrainedBox(
-              constraints: BoxConstraints(maxWidth: widthOf(context) * 0.667),
-              child: const Divider(),
-            ),
+            divider,
 
             // Freelance //
 

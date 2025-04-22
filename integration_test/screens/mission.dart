@@ -7,6 +7,7 @@ import '../utils/export.dart';
 
 import 'package:dotnet/main.dart';
 import 'package:dotnet/utils/export.dart';
+import 'package:efui_bios/efui_bios.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';

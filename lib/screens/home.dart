@@ -44,12 +44,7 @@ class _HomeScreenState extends State<HomeScreen> {
     ),
   );
 
-  late final double toolbarHeight = ezTextSize(
-        l10n.csPageTitle,
-        context: context,
-        style: Theme.of(context).appBarTheme.titleTextStyle,
-      ).height +
-      margin * 2;
+  late final double toolbarHeight = ezToolbarHeight(context, l10n.csPageTitle);
 
   late final double sloganWidth = widthOf(context);
   late final double sloganHeight = (heightOf(context) / 3) * displayScale;
@@ -81,7 +76,7 @@ class _HomeScreenState extends State<HomeScreen> {
         image: true,
         link: false,
         button: false,
-        label: l10n.gLogoLabel,
+        label: l10n.gLogoLabel(empatheticLLC),
         enabled: animFin,
         excludeSemantics: !animFin,
         child: ExcludeSemantics(

@@ -4,7 +4,7 @@
  */
 
 import '../utils/export.dart';
-import '../widgets/export.dart';
+import 'package:efui_bios/efui_bios.dart';
 
 import 'package:flutter/material.dart';
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
@@ -42,8 +42,8 @@ class FaHBanner extends StatelessWidget {
                 image: fahImage,
                 fit: BoxFit.contain,
                 url: Uri.parse(faHLink),
-                label: l10n.gFahIconLabel,
-                hint: l10n.gFahIconHint,
+                label: l10n.gIconLabel('Folding at Home') + l10n.fahIconLabel,
+                hint: l10n.fahIconHint,
                 tooltip: faHLink,
               ),
             ),

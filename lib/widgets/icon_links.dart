@@ -4,6 +4,7 @@
  */
 
 import '../utils/export.dart';
+import 'package:efui_bios/efui_bios.dart';
 
 import 'dart:io';
 import 'package:flutter/material.dart';

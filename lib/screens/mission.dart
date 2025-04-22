@@ -6,6 +6,7 @@
 import 'export.dart';
 import '../utils/export.dart';
 import '../widgets/export.dart';
+import 'package:efui_bios/efui_bios.dart';
 
 import 'dart:math';
 import 'package:flutter/material.dart';
@@ -196,7 +197,7 @@ class _MissionScreenState extends State<MissionScreen> {
                         style: textTheme.bodyLarge,
                       ),
                       EzInlineLink(
-                        'Open UI',
+                        openUI,
                         style: textTheme.bodyLarge,
                         textAlign: TextAlign.start,
                         onTap: () => context.goNamed(Products.openUI.path),

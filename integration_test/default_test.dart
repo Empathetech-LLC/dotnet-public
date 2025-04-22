@@ -3,6 +3,8 @@
  * See LICENSE for distribution and usage details.
  */
 
+import 'package:dotnet/utils/export.dart';
+
 import 'screens/home.dart' as home;
 import 'screens/settings_home.dart' as settings_home;
 import 'screens/products.dart' as products;
@@ -20,18 +22,13 @@ void main() async {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
   WidgetsFlutterBinding.ensureInitialized();
 
-  final Map<String, Object> testConfig = <String, Object>{
-    ...empathetechConfig,
-    isDarkThemeKey: true,
-  };
-
-  SharedPreferences.setMockInitialValues(testConfig);
+  SharedPreferences.setMockInitialValues(dotnetConfig);
   final SharedPreferences prefs = await SharedPreferences.getInstance();
 
   EzConfig.init(
     assetPaths: <String>{},
     preferences: prefs,
-    defaults: testConfig,
+    defaults: dotnetConfig,
   );
 
   group(

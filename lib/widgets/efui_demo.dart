@@ -10,9 +10,9 @@ import 'package:line_icons/line_icons.dart';
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 
-class DemoButtons extends StatelessWidget {
+class EFUIDemo extends StatelessWidget {
   /// 2 years of work in 3 buttons
-  const DemoButtons({super.key});
+  const EFUIDemo({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -250,7 +250,7 @@ class DemoButtons extends StatelessWidget {
         EzElevatedIconButton(
           onPressed: () async {
             // Reset
-            await EzConfig.reset();
+            await EzConfig.removeKeys(empathetechConfig.keys.toSet());
 
             // Notify user
             reloadSnack(reloadMessage);

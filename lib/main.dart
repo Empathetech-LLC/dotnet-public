@@ -5,7 +5,6 @@
 
 import './screens/export.dart';
 import './utils/export.dart';
-import './widgets/export.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -35,7 +34,7 @@ void main() async {
   EzConfig.init(
     assetPaths: assetPaths,
     preferences: prefs,
-    defaults: empathetechConfig,
+    defaults: dotnetConfig,
   );
 
   // Run the app //
@@ -102,6 +101,11 @@ final GoRouter router = GoRouter(
               builder: (_, __) => const ProductsScreen(target: Products.openUI),
             ),
             GoRoute(
+              path: Products.sos.path,
+              name: Products.sos.path,
+              builder: (_, __) => const ProductsScreen(target: Products.sos),
+            ),
+            GoRoute(
               path: Products.smokeSignal.path,
               name: Products.smokeSignal.path,
               builder: (_, __) =>
@@ -130,16 +134,16 @@ final GoRouter router = GoRouter(
               builder: (_, __) => const TextSettingsScreen(),
               routes: <RouteBase>[
                 GoRoute(
-                  path: EzSettingType.quick.path,
-                  name: 'text_${EzSettingType.quick.path}',
+                  path: EzTSType.quick.path,
+                  name: EzTSType.quick.name,
                   builder: (_, __) =>
-                      const TextSettingsScreen(target: EzSettingType.quick),
+                      const TextSettingsScreen(target: EzTSType.quick),
                 ),
                 GoRoute(
-                  path: EzSettingType.advanced.path,
-                  name: 'text_${EzSettingType.advanced.path}',
+                  path: EzTSType.advanced.path,
+                  name: EzTSType.advanced.name,
                   builder: (_, __) =>
-                      const TextSettingsScreen(target: EzSettingType.advanced),
+                      const TextSettingsScreen(target: EzTSType.advanced),
                 ),
               ],
             ),
@@ -154,16 +158,16 @@ final GoRouter router = GoRouter(
               builder: (_, __) => const ColorSettingsScreen(),
               routes: <RouteBase>[
                 GoRoute(
-                  path: EzSettingType.quick.path,
-                  name: 'color_${EzSettingType.quick.path}',
+                  path: EzCSType.quick.path,
+                  name: EzCSType.quick.name,
                   builder: (_, __) =>
-                      const ColorSettingsScreen(target: EzSettingType.quick),
+                      const ColorSettingsScreen(target: EzCSType.quick),
                 ),
                 GoRoute(
-                  path: EzSettingType.advanced.path,
-                  name: 'color_${EzSettingType.advanced.path}',
+                  path: EzCSType.advanced.path,
+                  name: EzCSType.advanced.name,
                   builder: (_, __) =>
-                      const ColorSettingsScreen(target: EzSettingType.advanced),
+                      const ColorSettingsScreen(target: EzCSType.advanced),
                 ),
               ],
             ),
@@ -182,6 +186,7 @@ class DotNet extends StatelessWidget {
   Future<void> precacheImages(BuildContext context) async {
     precacheImage(openUIImage, context);
 
+    precacheImage(sosImage, context);
     precacheImage(smokeSignalImage, context);
 
     precacheImage(founderImage, context);

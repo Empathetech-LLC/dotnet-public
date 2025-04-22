@@ -9,11 +9,10 @@ class LangEs extends Lang {
   LangEs([String locale = 'es']) : super(locale);
 
   @override
-  String get gLogoLabel =>
-      'Logotipo de Empathetic LLC: un reloj de arena bidimensional.';
+  String get gEmpathLogoLabel => 'un reloj de arena bidimensional.';
 
   @override
-  String get gLogoHint => 'Activar para ir a la página de inicio.';
+  String get gEmpathLogoHint => 'Activar para ir a la página de inicio.';
 
   @override
   String get gHomeHint => 'Abrir la página de inicio';
@@ -45,11 +44,34 @@ class LangEs extends Lang {
   String get gNewsletter => 'Boletín de noticias';
 
   @override
-  String get gReachOut => 'Contacto';
+  String gLogoLabel(Object thing) {
+    return 'Logotipo de $thing: ';
+  }
+
+  @override
+  String gIconLabel(Object app) {
+    return 'El icono de $app: ';
+  }
+
+  @override
+  String gDownloadHint(Object app, Object platform) {
+    return 'Descargar $app para $platform.';
+  }
+
+  @override
+  String get gRepoHint => 'Abre un enlace al repositorio de desarrollo.';
 
   @override
   String get gEmpathetechGitHint =>
       'Abrir la página de GitHub de Empathetic LLC';
+
+  @override
+  String get gReachOut => 'Contacto';
+
+  @override
+  String gFiverrPage(Object user) {
+    return 'Abre la página de $user en Fiverr';
+  }
 
   @override
   String get gDontChaWish => '¿No te gustaría que tu frontend fuera divertido ';
@@ -63,18 +85,6 @@ class LangEs extends Lang {
   @override
   String get gDontChaHint =>
       'Abre la página de GitHub del código fuente de esta pantalla';
-
-  @override
-  String get gFahIconLabel =>
-      'Logotipo de Folding at home: una molécula de proteína.';
-
-  @override
-  String get gFahIconHint => 'Activar para abrir su página.';
-
-  @override
-  String gFiverrPage(Object user) {
-    return 'Abre la página de $user en Fiverr';
-  }
 
   @override
   String get hsSlogan => 'Construyamos juntos un mundo mejor\nbit x bit';
@@ -115,16 +125,61 @@ class LangEs extends Lang {
   String get hsPlan => 'plan.';
 
   @override
+  String get msPageTitle => 'Misión';
+
+  @override
+  String get msSoWe => 'Así que nosotros';
+
+  @override
+  String get msBy => 'Por';
+
+  @override
+  String get msFirst => 'Por primera vez';
+
+  @override
+  String get msIDProblem => 'Identificación del problema';
+
+  @override
+  String get msIDProblemContent =>
+      'Los modelos de negocio que dan prioridad al beneficio no son sostenibles.\n\nPor definición, cosas como trabajar por una misión, tratar bien a las personas y consumir recursos de forma responsable pasan a un segundo plano.\n\nLos gigantes tecnológicos no se conforman con llevarse nuestro dinero. Ahora construyen productos para captar nuestras identidades y monopolizar nuestras mentes. Y nadie les dice nada.';
+
+  @override
+  String get msFindSolution => 'Encuentra una solución';
+
+  @override
+  String get msFindSolutionContent =>
+      'Afortunadamente, hay tecnólogos increíbles en todo el mundo que trabajan juntos para lograr una mejor narrativa.\nUna en la que los proveedores de servicios y los clientes tengan una relación activa, saludable y mutuamente beneficiosa.\n\nLa comunidad de código abierto.\n\nEn esencia, el software de código abierto está disponible de forma gratuita para que cualquiera lo vea. Muchos proyectos también se pueden modificar y redistribuir libremente.\nEs un software que no tiene nada que ocultar, creado por gente que reconoce que los problemas compartidos requieren soluciones compartidas.\n\nY en el maravilloso mundo del software de código abierto, existe una subcategoría: el software de alojamiento propio.\n\nEl alojamiento propio nos permite tomar cualquier computadora que no esté en uso (incluso las de bolsillo) y almacenar allí nuestros datos.\nAl alojarnos nosotros mismos, podemos controlar nuestra propia presencia digital, en lugar de ceder el control a un servidor lejano, propiedad de una corporación poco empática.\n\n¡Y existen versiones alojadas por nosotros mismos de casi todo! Desde Adobe hasta Zoom, hay hacktivistas apasionados que crean alternativas que priorizan a las personas por sobre las ganancias.\n\nEntonces, ¿cómo se hace la transición de un código cerrado que prioriza las ganancias a un código abierto? ¿Cómo empiezan a alojar sus propios archivos?\nRequiere mucho tiempo, energía y conocimientos previos.\n\nAhí es donde entramos nosotros.';
+
+  @override
+  String get msProvideValue => 'Haciendo el trabajo';
+
+  @override
+  String get msProvideValueContent1 =>
+      'La misión de Empathetech es reequilibrar el poder en la tecnología al hacer que el autohospedaje sea más accesible.\n\nCrearemos aplicaciones que permitan a cualquier persona ser dueña de su identidad digital.\n\nConstruiremos puentes entre la comunidad de código abierto y aquellos que no tienen el tiempo, la energía o el conocimiento previo necesarios.\n\n¡Y no se pueden construir puentes (o aplicaciones) sin una base sólida! Es por eso que ';
+
+  @override
+  String get msProvideValueContent1Fix =>
+      'La misión de Empathetic es reequilibrar el poder en la tecnología al hacer que el autohospedaje sea más accesible.\n\nCrearemos aplicaciones que permitan a cualquier persona ser dueña de su identidad digital.\n\nConstruiremos puentes entre la comunidad de código abierto y aquellos que no tienen el tiempo, la energía o el conocimiento previo necesarios.\n\n¡Y no se pueden construir puentes (o aplicaciones) sin una base sólida! Es por eso que ';
+
+  @override
+  String get msProvideValueContent2 =>
+      ' existe.\nEmpathetech se enorgullece de cumplir las palabras con acciones y ha hecho que nuestra interfaz de usuario accesible sea de código abierto.\n\nConstruyamos un mundo mejor juntos, poco a poco.';
+
+  @override
+  String get msProvideValueContent2Fix =>
+      ' existe.\nEmpathetic se enorgullece de cumplir las palabras con acciones y ha hecho que nuestra interfaz de usuario accesible sea de código abierto.\n\nConstruyamos un mundo mejor juntos, poco a poco.';
+
+  @override
   String get psPageTitle => 'Productos';
 
   @override
-  String get psCreate => 'Para crear';
+  String get psCreator => 'Para crear';
 
   @override
-  String get psSlogan => 'Crea apps para todos';
+  String get psUser => 'Para usar';
 
   @override
-  String get psSloganHint => 'Descargar Open UI';
+  String get psOpenUISlogan => 'Crea apps para todos';
 
   @override
   String get psLike => 'Como usuarios que necesitan ...';
@@ -236,15 +291,10 @@ class LangEs extends Lang {
       'Las aplicaciones de Empathetic se han traducido al español y al francés (hasta el momento).\nEFUI también proporciona la infraestructura para futuras traducciones ilimitadas.';
 
   @override
-  String get psStart => 'Velo en directo';
+  String get psGetStarted => 'Velo en directo';
 
   @override
-  String get psStartLabel => 'El icono de Open UI: un configuración sandbox.';
-
-  @override
-  String psStartHint(Object platform) {
-    return 'Descargar Open UI para $platform.';
-  }
+  String get psOpenUIIconLabel => 'un configuración sandbox.';
 
   @override
   String get psEFUITagLine =>
@@ -257,16 +307,30 @@ class LangEs extends Lang {
   String get psLearnMore => ' para saber más.';
 
   @override
-  String get psUse => 'Para usar';
+  String get psSOSIconLabel => 'Un icono de notificación de color fuerte.';
+
+  @override
+  String get psSOSDescription =>
+      'Una cámara, una baliza SOS y una lista de tus derechos, todo en un solo lugar.';
+
+  @override
+  String get psFreeSOS =>
+      'InstaSOS es completamente gratuito y el código es de ';
+
+  @override
+  String get psOpenSource => 'código abierto';
+
+  @override
+  String get psConsider => 'Por favor, considere ';
+
+  @override
+  String get psContributing => 'contribuir';
+
+  @override
+  String get psSAPS => ' al soporte del software como un servicio público.';
 
   @override
   String get psComingSoon => 'Próximamente...';
-
-  @override
-  String get psSignalLabel => 'El icono de Smoke Signal.';
-
-  @override
-  String get psSignalHint => 'Abre un enlace al repositorio de desarrollo.';
 
   @override
   String get psSignalPreview1 => 'La próxima aplicación de Empathetech, ';
@@ -276,7 +340,7 @@ class LangEs extends Lang {
 
   @override
   String get psSignalPreview2 =>
-      ', está en desarrollo.\n es una aplicación de redes sociales diseñada para mantenernos alejados de las pantallas.\n';
+      ', está en desarrollo.\n es una aplicación de red social diseñada para mantenernos alejados de las pantallas.\n';
 
   @override
   String get psSignalPreview3 =>
@@ -284,51 +348,6 @@ class LangEs extends Lang {
 
   @override
   String get psAPHint => 'Abrir un enlace a la documentación de Activity Pub';
-
-  @override
-  String get msPageTitle => 'Misión';
-
-  @override
-  String get msSoWe => 'Así que nosotros';
-
-  @override
-  String get msBy => 'Por';
-
-  @override
-  String get msFirst => 'Por primera vez';
-
-  @override
-  String get msIDProblem => 'Identificación del problema';
-
-  @override
-  String get msIDProblemContent =>
-      'Los modelos de negocio que dan prioridad al beneficio no son sostenibles.\n\nPor definición, cosas como trabajar por una misión, tratar bien a las personas y consumir recursos de forma responsable pasan a un segundo plano.\n\nLos gigantes tecnológicos no se conforman con llevarse nuestro dinero. Ahora construyen productos para captar nuestras identidades y monopolizar nuestras mentes. Y nadie les dice nada.';
-
-  @override
-  String get msFindSolution => 'Encuentra una solución';
-
-  @override
-  String get msFindSolutionContent =>
-      'Afortunadamente, hay tecnólogos increíbles en todo el mundo que trabajan juntos para lograr una mejor narrativa.\nUna en la que los proveedores de servicios y los clientes tengan una relación activa, saludable y mutuamente beneficiosa.\n\nLa comunidad de código abierto.\n\nEn esencia, el software de código abierto está disponible de forma gratuita para que cualquiera lo vea. Muchos proyectos también se pueden modificar y redistribuir libremente.\nEs un software que no tiene nada que ocultar, creado por gente que reconoce que los problemas compartidos requieren soluciones compartidas.\n\nY en el maravilloso mundo del software de código abierto, existe una subcategoría: el software de alojamiento propio.\n\nEl alojamiento propio nos permite tomar cualquier computadora que no esté en uso (incluso las de bolsillo) y almacenar allí nuestros datos.\nAl alojarnos nosotros mismos, podemos controlar nuestra propia presencia digital, en lugar de ceder el control a un servidor lejano, propiedad de una corporación poco empática.\n\n¡Y existen versiones alojadas por nosotros mismos de casi todo! Desde Adobe hasta Zoom, hay hacktivistas apasionados que crean alternativas que priorizan a las personas por sobre las ganancias.\n\nEntonces, ¿cómo se hace la transición de un código cerrado que prioriza las ganancias a un código abierto? ¿Cómo empiezan a alojar sus propios archivos?\nRequiere mucho tiempo, energía y conocimientos previos.\n\nAhí es donde entramos nosotros.';
-
-  @override
-  String get msProvideValue => 'Haciendo el trabajo';
-
-  @override
-  String get msProvideValueContent1 =>
-      'La misión de Empathetech es reequilibrar el poder en la tecnología al hacer que el autohospedaje sea más accesible.\n\nCrearemos aplicaciones que permitan a cualquier persona ser dueña de su identidad digital.\n\nConstruiremos puentes entre la comunidad de código abierto y aquellos que no tienen el tiempo, la energía o el conocimiento previo necesarios.\n\n¡Y no se pueden construir puentes (o aplicaciones) sin una base sólida! Es por eso que ';
-
-  @override
-  String get msProvideValueContent1Fix =>
-      'La misión de Empathetic es reequilibrar el poder en la tecnología al hacer que el autohospedaje sea más accesible.\n\nCrearemos aplicaciones que permitan a cualquier persona ser dueña de su identidad digital.\n\nConstruiremos puentes entre la comunidad de código abierto y aquellos que no tienen el tiempo, la energía o el conocimiento previo necesarios.\n\n¡Y no se pueden construir puentes (o aplicaciones) sin una base sólida! Es por eso que ';
-
-  @override
-  String get msProvideValueContent2 =>
-      ' existe.\nEmpathetech se enorgullece de cumplir las palabras con acciones y ha hecho que nuestra interfaz de usuario accesible sea de código abierto.\n\nConstruyamos un mundo mejor juntos, poco a poco.';
-
-  @override
-  String get msProvideValueContent2Fix =>
-      ' existe.\nEmpathetic se enorgullece de cumplir las palabras con acciones y ha hecho que nuestra interfaz de usuario accesible sea de código abierto.\n\nConstruyamos un mundo mejor juntos, poco a poco.';
 
   @override
   String get tsPageTitle => 'Equipo';
@@ -363,10 +382,37 @@ class LangEs extends Lang {
   String get tsFrench => 'Traductor de francés';
 
   @override
-  String get csPageTitle => 'Contribuir';
+  String get fahJoin => 'Únete a Fold';
 
   @override
-  String get csThanks => '¡Muchas gracias por todo el apoyo!';
+  String get fahIconLabel =>
+      'Logotipo de Folding at home: una molécula de proteína.';
+
+  @override
+  String get fahIconHint => 'Activar para abrir su página.';
+
+  @override
+  String get fahIntro1 => '¡Únete al ';
+
+  @override
+  String get fahIntro2 => ' equipo de Folding@home!';
+
+  @override
+  String get fahTeamHint =>
+      'Abre la página del equipo Empathetic folding at home';
+
+  @override
+  String get fahWhatQ => '¿Qué es Folding@home?';
+
+  @override
+  String get fahWhatQHint => 'Abrir la página de folding at home';
+
+  @override
+  String get fahStats =>
+      'Juntos, hemos ganado más de 350 millones de puntos.\n¡Lo que nos sitúa en el 2% de los mejores equipos del mundo!';
+
+  @override
+  String get csPageTitle => 'Contribuir';
 
   @override
   String get csEveryBit =>
@@ -395,25 +441,5 @@ class LangEs extends Lang {
   String get csPowerQ => 'Poder?';
 
   @override
-  String get fahJoin => 'Únete a Fold';
-
-  @override
-  String get fahIntro1 => '¡Únete al ';
-
-  @override
-  String get fahIntro2 => ' equipo de Folding@home!';
-
-  @override
-  String get fahTeamHint =>
-      'Abre la página del equipo Empathetic folding at home';
-
-  @override
-  String get fahWhatQ => '¿Qué es Folding@home?';
-
-  @override
-  String get fahWhatQHint => 'Abrir la página de folding at home';
-
-  @override
-  String get fahStats =>
-      'Juntos, hemos ganado más de 350 millones de puntos.\n¡Lo que nos sitúa en el 2% de los mejores equipos del mundo!';
+  String get csThanks => '¡Muchas gracias por todo el apoyo!';
 }

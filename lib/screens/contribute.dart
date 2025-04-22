@@ -5,6 +5,7 @@
 
 import '../utils/export.dart';
 import '../widgets/export.dart';
+import 'package:efui_bios/efui_bios.dart';
 
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
@@ -25,11 +26,10 @@ class _ContributeScreenState extends State<ContributeScreen> {
   static const EzSpacer spacer = EzSpacer();
   static const EzSwapSpacer swapSpacer = EzSwapSpacer();
   static const EzSeparator separator = EzSeparator();
+  static const Widget divider = EzDivider();
 
-  late final Widget divider = ConstrainedBox(
-    constraints: BoxConstraints(maxWidth: widthOf(context) * 0.667),
-    child: const Divider(),
-  );
+  final double margin = EzConfig.get(marginKey);
+  final double spacing = EzConfig.get(spacingKey);
 
   late final TextTheme textTheme = Theme.of(context).textTheme;
   late final TextStyle? subTitle = ezSubTitleStyle(textTheme);
@@ -113,6 +113,8 @@ class _ContributeScreenState extends State<ContributeScreen> {
         useImageDecoration: false,
         child: EzScrollView(
           children: <Widget>[
+            if (spacing > margin) EzSpacer(space: spacing - margin),
+
             // Intro //
 
             MergeSemantics(
@@ -120,14 +122,6 @@ class _ContributeScreenState extends State<ContributeScreen> {
                 mainAxisSize: MainAxisSize.min,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  // Thanks
-                  Text(
-                    l10n.csThanks,
-                    style: subTitle,
-                    textAlign: TextAlign.center,
-                  ),
-                  separator,
-
                   // Every bit
                   Text(
                     l10n.csEveryBit,
@@ -135,7 +129,7 @@ class _ContributeScreenState extends State<ContributeScreen> {
                     style: textTheme.headlineLarge,
                     textAlign: TextAlign.center,
                   ),
-                  separator,
+                  spacer,
 
                   // Would you like to give?...
                   Text(
@@ -230,6 +224,14 @@ class _ContributeScreenState extends State<ContributeScreen> {
 
             // F@H team
             const FaHBanner(),
+            divider,
+
+            // Thanks
+            Text(
+              l10n.csThanks,
+              style: subTitle,
+              textAlign: TextAlign.center,
+            ),
             separator,
           ],
         ),

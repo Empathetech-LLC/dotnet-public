@@ -98,17 +98,17 @@ abstract class Lang {
     Locale('fr')
   ];
 
-  /// No description provided for @gLogoLabel.
+  /// No description provided for @gEmpathLogoLabel.
   ///
   /// In en, this message translates to:
-  /// **'Empathetic LLC logo: a two dimensional hourglass.'**
-  String get gLogoLabel;
+  /// **'a two dimensional hourglass.'**
+  String get gEmpathLogoLabel;
 
-  /// No description provided for @gLogoHint.
+  /// No description provided for @gEmpathLogoHint.
   ///
   /// In en, this message translates to:
   /// **'Activate to go to the home page.'**
-  String get gLogoHint;
+  String get gEmpathLogoHint;
 
   /// No description provided for @gHomeHint.
   ///
@@ -164,17 +164,47 @@ abstract class Lang {
   /// **'Newsletter'**
   String get gNewsletter;
 
-  /// No description provided for @gReachOut.
+  /// No description provided for @gLogoLabel.
   ///
   /// In en, this message translates to:
-  /// **'Reach out'**
-  String get gReachOut;
+  /// **'{thing} logo: '**
+  String gLogoLabel(Object thing);
+
+  /// No description provided for @gIconLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'The icon for {app}: '**
+  String gIconLabel(Object app);
+
+  /// No description provided for @gDownloadHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Download {app} for {platform}.'**
+  String gDownloadHint(Object app, Object platform);
+
+  /// No description provided for @gRepoHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Open a link to the development repo.'**
+  String get gRepoHint;
 
   /// No description provided for @gEmpathetechGitHint.
   ///
   /// In en, this message translates to:
   /// **'Open the GitHub page for Empathetic LLC'**
   String get gEmpathetechGitHint;
+
+  /// No description provided for @gReachOut.
+  ///
+  /// In en, this message translates to:
+  /// **'Reach out'**
+  String get gReachOut;
+
+  /// No description provided for @gFiverrPage.
+  ///
+  /// In en, this message translates to:
+  /// **'Open {user}\'s Fiverr page'**
+  String gFiverrPage(Object user);
 
   /// No description provided for @gDontChaWish.
   ///
@@ -199,24 +229,6 @@ abstract class Lang {
   /// In en, this message translates to:
   /// **'Open the GitHub page for this screen\'s source code'**
   String get gDontChaHint;
-
-  /// No description provided for @gFahIconLabel.
-  ///
-  /// In en, this message translates to:
-  /// **'Folding at home logo: a protein molecule.'**
-  String get gFahIconLabel;
-
-  /// No description provided for @gFahIconHint.
-  ///
-  /// In en, this message translates to:
-  /// **'Activate to open their site.'**
-  String get gFahIconHint;
-
-  /// No description provided for @gFiverrPage.
-  ///
-  /// In en, this message translates to:
-  /// **'Open {user}\'s Fiverr page'**
-  String gFiverrPage(Object user);
 
   /// No description provided for @hsSlogan.
   ///
@@ -284,29 +296,107 @@ abstract class Lang {
   /// **'plan.'**
   String get hsPlan;
 
+  /// No description provided for @msPageTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Mission'**
+  String get msPageTitle;
+
+  /// No description provided for @msSoWe.
+  ///
+  /// In en, this message translates to:
+  /// **'So we'**
+  String get msSoWe;
+
+  /// No description provided for @msBy.
+  ///
+  /// In en, this message translates to:
+  /// **'By'**
+  String get msBy;
+
+  /// No description provided for @msFirst.
+  ///
+  /// In en, this message translates to:
+  /// **'By first'**
+  String get msFirst;
+
+  /// No description provided for @msIDProblem.
+  ///
+  /// In en, this message translates to:
+  /// **'Identifying the problem'**
+  String get msIDProblem;
+
+  /// No description provided for @msIDProblemContent.
+  ///
+  /// In en, this message translates to:
+  /// **'Profit first business models aren\'t sustainable.\n\nBy definition: if profit comes first, then things like working towards a mission, treating people right, and responsible consumption of resources all become afterthoughts.\n\nAnd this greed has gone unchecked in big tech. The tech giants have grown dissatisfied with our money, and are building products to target our identities and monopolize our minds.'**
+  String get msIDProblemContent;
+
+  /// No description provided for @msFindSolution.
+  ///
+  /// In en, this message translates to:
+  /// **'Find a solution'**
+  String get msFindSolution;
+
+  /// No description provided for @msFindSolutionContent.
+  ///
+  /// In en, this message translates to:
+  /// **'Fortunately, there are amazing technologists all over the world working together towards a better narrative.\nOne where the service providers and the customers have an active, healthy, and mutually beneficial relationship.\n\nThe open source community.\n\nAt its core, open source software is freely available for anyone to view. Many projects can also be freely modified and redistributed.\nIt\'s software with nothing to hide, built by folx who recognize shared problems require shared solutions.\n\nAnd in the wonderful world of open source software, there lies a sub category: self hosting software.\n\nSelf hosting lets us take any not-in-use computer (pocket sized ones too) and store our data there.\nBy self hosting, we can control our own digital presence, rather than sign away control to some far away server, owned by an un-empathetic corporation.\n\nAnd there are self hosted versions of just about everything! From Adobe to Zoom, there are passionate hacktivists building alternatives that put people over profits.\n\nSo, how does one make the switch from profit first/closed source to open source? How do they start self hosting?\nIt takes a lot of time, energy, and prior knowledge.\n\nThat\'s where we come in.'**
+  String get msFindSolutionContent;
+
+  /// No description provided for @msProvideValue.
+  ///
+  /// In en, this message translates to:
+  /// **'Doing the work'**
+  String get msProvideValue;
+
+  /// No description provided for @msProvideValueContent1.
+  ///
+  /// In en, this message translates to:
+  /// **'The Empathetech mission is to re-balance the power in tech by making self hosting more accessible.\n\nWe will build apps that enable anyone to own their digital identity.\n\nWe will build bridges between the open source community and those without the required time, energy, or prior knowledge.\n\nAnd you can\'t build bridges (or apps) without a strong foundation! That\'s why '**
+  String get msProvideValueContent1;
+
+  /// No description provided for @msProvideValueContent1Fix.
+  ///
+  /// In en, this message translates to:
+  /// **'The Empathetic mission is to re-balance the power in tech by making self hosting more accessible.\n\nWe will build apps that enable anyone to own their digital identity.\n\nWe will build bridges between the open source community and those without the required time, energy, or prior knowledge.\n\nAnd you can\'t build bridges (or apps) without a strong foundation! That\'s why '**
+  String get msProvideValueContent1Fix;
+
+  /// No description provided for @msProvideValueContent2.
+  ///
+  /// In en, this message translates to:
+  /// **' exists.\nEmpathetech takes pride in meeting words with actions, and have made our accessible UI open source.\n\nLet\'s build a better world together, bit by bit.'**
+  String get msProvideValueContent2;
+
+  /// No description provided for @msProvideValueContent2Fix.
+  ///
+  /// In en, this message translates to:
+  /// **' exists.\nEmpathetic takes pride in meeting words with actions, and have made our accessible UI open source.\n\nLet\'s build a better world together, bit by bit.'**
+  String get msProvideValueContent2Fix;
+
   /// No description provided for @psPageTitle.
   ///
   /// In en, this message translates to:
   /// **'Products'**
   String get psPageTitle;
 
-  /// No description provided for @psCreate.
+  /// No description provided for @psCreator.
   ///
   /// In en, this message translates to:
   /// **'For creating'**
-  String get psCreate;
+  String get psCreator;
 
-  /// No description provided for @psSlogan.
+  /// No description provided for @psUser.
+  ///
+  /// In en, this message translates to:
+  /// **'For using'**
+  String get psUser;
+
+  /// No description provided for @psOpenUISlogan.
   ///
   /// In en, this message translates to:
   /// **'Build apps for anyone'**
-  String get psSlogan;
-
-  /// No description provided for @psSloganHint.
-  ///
-  /// In en, this message translates to:
-  /// **'Download Open UI'**
-  String get psSloganHint;
+  String get psOpenUISlogan;
 
   /// No description provided for @psLike.
   ///
@@ -500,23 +590,17 @@ abstract class Lang {
   /// **'Empathetic apps have been translated to Spanish and French (so far).\nEFUI also provides the infrastructure for unlimited future translations.'**
   String get psInternationalContentFix;
 
-  /// No description provided for @psStart.
+  /// No description provided for @psGetStarted.
   ///
   /// In en, this message translates to:
   /// **'Get started'**
-  String get psStart;
+  String get psGetStarted;
 
-  /// No description provided for @psStartLabel.
+  /// No description provided for @psOpenUIIconLabel.
   ///
   /// In en, this message translates to:
-  /// **'The icon for Open UI: a settings sandbox.'**
-  String get psStartLabel;
-
-  /// No description provided for @psStartHint.
-  ///
-  /// In en, this message translates to:
-  /// **'Download Open UI for {platform}.'**
-  String psStartHint(Object platform);
+  /// **'a settings sandbox.'**
+  String get psOpenUIIconLabel;
 
   /// No description provided for @psEFUITagLine.
   ///
@@ -536,29 +620,53 @@ abstract class Lang {
   /// **' to learn more.'**
   String get psLearnMore;
 
-  /// No description provided for @psUse.
+  /// No description provided for @psSOSIconLabel.
   ///
   /// In en, this message translates to:
-  /// **'For using'**
-  String get psUse;
+  /// **'a loudly colored notification bell.'**
+  String get psSOSIconLabel;
+
+  /// No description provided for @psSOSDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'A camera, SOS beacon, and list of your rights all in one place.'**
+  String get psSOSDescription;
+
+  /// No description provided for @psFreeSOS.
+  ///
+  /// In en, this message translates to:
+  /// **'InstaSOS is completely free and the code is '**
+  String get psFreeSOS;
+
+  /// No description provided for @psOpenSource.
+  ///
+  /// In en, this message translates to:
+  /// **'open source'**
+  String get psOpenSource;
+
+  /// No description provided for @psConsider.
+  ///
+  /// In en, this message translates to:
+  /// **'Please consider '**
+  String get psConsider;
+
+  /// No description provided for @psContributing.
+  ///
+  /// In en, this message translates to:
+  /// **'contributing'**
+  String get psContributing;
+
+  /// No description provided for @psSAPS.
+  ///
+  /// In en, this message translates to:
+  /// **' to support software as a public service.'**
+  String get psSAPS;
 
   /// No description provided for @psComingSoon.
   ///
   /// In en, this message translates to:
   /// **'Coming soon...'**
   String get psComingSoon;
-
-  /// No description provided for @psSignalLabel.
-  ///
-  /// In en, this message translates to:
-  /// **'The icon for Smoke Signal.'**
-  String get psSignalLabel;
-
-  /// No description provided for @psSignalHint.
-  ///
-  /// In en, this message translates to:
-  /// **'Open a link to the development repo.'**
-  String get psSignalHint;
 
   /// No description provided for @psSignalPreview1.
   ///
@@ -575,7 +683,7 @@ abstract class Lang {
   /// No description provided for @psSignalPreview2.
   ///
   /// In en, this message translates to:
-  /// **', is in development.\nSmoke Signal is a social media app designed to keep us off our screens.'**
+  /// **', is in development.\nSmoke Signal is a social network app designed to keep us off our screens.'**
   String get psSignalPreview2;
 
   /// No description provided for @psSignalPreview3.
@@ -589,84 +697,6 @@ abstract class Lang {
   /// In en, this message translates to:
   /// **'Open a link to Activity Pub documentation'**
   String get psAPHint;
-
-  /// No description provided for @msPageTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Mission'**
-  String get msPageTitle;
-
-  /// No description provided for @msSoWe.
-  ///
-  /// In en, this message translates to:
-  /// **'So we'**
-  String get msSoWe;
-
-  /// No description provided for @msBy.
-  ///
-  /// In en, this message translates to:
-  /// **'By'**
-  String get msBy;
-
-  /// No description provided for @msFirst.
-  ///
-  /// In en, this message translates to:
-  /// **'By first'**
-  String get msFirst;
-
-  /// No description provided for @msIDProblem.
-  ///
-  /// In en, this message translates to:
-  /// **'Identifying the problem'**
-  String get msIDProblem;
-
-  /// No description provided for @msIDProblemContent.
-  ///
-  /// In en, this message translates to:
-  /// **'Profit first business models aren\'t sustainable.\n\nBy definition: if profit comes first, then things like working towards a mission, treating people right, and responsible consumption of resources all become afterthoughts.\n\nAnd this greed has gone unchecked in big tech. The tech giants have grown dissatisfied with our money, and are building products to target our identities and monopolize our minds.'**
-  String get msIDProblemContent;
-
-  /// No description provided for @msFindSolution.
-  ///
-  /// In en, this message translates to:
-  /// **'Find a solution'**
-  String get msFindSolution;
-
-  /// No description provided for @msFindSolutionContent.
-  ///
-  /// In en, this message translates to:
-  /// **'Fortunately, there are amazing technologists all over the world working together towards a better narrative.\nOne where the service providers and the customers have an active, healthy, and mutually beneficial relationship.\n\nThe open source community.\n\nAt its core, open source software is freely available for anyone to view. Many projects can also be freely modified and redistributed.\nIt\'s software with nothing to hide, built by folx who recognize shared problems require shared solutions.\n\nAnd in the wonderful world of open source software, there lies a sub category: self hosting software.\n\nSelf hosting lets us take any not-in-use computer (pocket sized ones too) and store our data there.\nBy self hosting, we can control our own digital presence, rather than sign away control to some far away server, owned by an un-empathetic corporation.\n\nAnd there are self hosted versions of just about everything! From Adobe to Zoom, there are passionate hacktivists building alternatives that put people over profits.\n\nSo, how does one make the switch from profit first/closed source to open source? How do they start self hosting?\nIt takes a lot of time, energy, and prior knowledge.\n\nThat\'s where we come in.'**
-  String get msFindSolutionContent;
-
-  /// No description provided for @msProvideValue.
-  ///
-  /// In en, this message translates to:
-  /// **'Doing the work'**
-  String get msProvideValue;
-
-  /// No description provided for @msProvideValueContent1.
-  ///
-  /// In en, this message translates to:
-  /// **'The Empathetech mission is to re-balance the power in tech by making self hosting more accessible.\n\nWe will build apps that enable anyone to own their digital identity.\n\nWe will build bridges between the open source community and those without the required time, energy, or prior knowledge.\n\nAnd you can\'t build bridges (or apps) without a strong foundation! That\'s why '**
-  String get msProvideValueContent1;
-
-  /// No description provided for @msProvideValueContent1Fix.
-  ///
-  /// In en, this message translates to:
-  /// **'The Empathetic mission is to re-balance the power in tech by making self hosting more accessible.\n\nWe will build apps that enable anyone to own their digital identity.\n\nWe will build bridges between the open source community and those without the required time, energy, or prior knowledge.\n\nAnd you can\'t build bridges (or apps) without a strong foundation! That\'s why '**
-  String get msProvideValueContent1Fix;
-
-  /// No description provided for @msProvideValueContent2.
-  ///
-  /// In en, this message translates to:
-  /// **' exists.\nEmpathetech takes pride in meeting words with actions, and have made our accessible UI open source.\n\nLet\'s build a better world together, bit by bit.'**
-  String get msProvideValueContent2;
-
-  /// No description provided for @msProvideValueContent2Fix.
-  ///
-  /// In en, this message translates to:
-  /// **' exists.\nEmpathetic takes pride in meeting words with actions, and have made our accessible UI open source.\n\nLet\'s build a better world together, bit by bit.'**
-  String get msProvideValueContent2Fix;
 
   /// No description provided for @tsPageTitle.
   ///
@@ -728,17 +758,65 @@ abstract class Lang {
   /// **'French translator'**
   String get tsFrench;
 
+  /// No description provided for @fahJoin.
+  ///
+  /// In en, this message translates to:
+  /// **'Join the Fold'**
+  String get fahJoin;
+
+  /// No description provided for @fahIconLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'a protein molecule.'**
+  String get fahIconLabel;
+
+  /// No description provided for @fahIconHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Activate to open their site.'**
+  String get fahIconHint;
+
+  /// No description provided for @fahIntro1.
+  ///
+  /// In en, this message translates to:
+  /// **'Join the '**
+  String get fahIntro1;
+
+  /// No description provided for @fahIntro2.
+  ///
+  /// In en, this message translates to:
+  /// **' Folding@home team!'**
+  String get fahIntro2;
+
+  /// No description provided for @fahTeamHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Open the Empathetic folding at home team page'**
+  String get fahTeamHint;
+
+  /// No description provided for @fahWhatQ.
+  ///
+  /// In en, this message translates to:
+  /// **'What\'s Folding@home?'**
+  String get fahWhatQ;
+
+  /// No description provided for @fahWhatQHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Open Folding at Home\'s about page'**
+  String get fahWhatQHint;
+
+  /// No description provided for @fahStats.
+  ///
+  /// In en, this message translates to:
+  /// **'Together, we\'ve earned over 350 million points.\nThat puts us in the top 2% of all teams worldwide!'**
+  String get fahStats;
+
   /// No description provided for @csPageTitle.
   ///
   /// In en, this message translates to:
   /// **'Contribute'**
   String get csPageTitle;
-
-  /// No description provided for @csThanks.
-  ///
-  /// In en, this message translates to:
-  /// **'Many thanks for any and all support!'**
-  String get csThanks;
 
   /// No description provided for @csEveryBit.
   ///
@@ -788,47 +866,11 @@ abstract class Lang {
   /// **'Power?'**
   String get csPowerQ;
 
-  /// No description provided for @fahJoin.
+  /// No description provided for @csThanks.
   ///
   /// In en, this message translates to:
-  /// **'Join the Fold'**
-  String get fahJoin;
-
-  /// No description provided for @fahIntro1.
-  ///
-  /// In en, this message translates to:
-  /// **'Join the '**
-  String get fahIntro1;
-
-  /// No description provided for @fahIntro2.
-  ///
-  /// In en, this message translates to:
-  /// **' Folding@home team!'**
-  String get fahIntro2;
-
-  /// No description provided for @fahTeamHint.
-  ///
-  /// In en, this message translates to:
-  /// **'Open the Empathetic folding at home team page'**
-  String get fahTeamHint;
-
-  /// No description provided for @fahWhatQ.
-  ///
-  /// In en, this message translates to:
-  /// **'What\'s Folding@home?'**
-  String get fahWhatQ;
-
-  /// No description provided for @fahWhatQHint.
-  ///
-  /// In en, this message translates to:
-  /// **'Open Folding at Home\'s about page'**
-  String get fahWhatQHint;
-
-  /// No description provided for @fahStats.
-  ///
-  /// In en, this message translates to:
-  /// **'Together, we\'ve earned over 350 million points.\nThat puts us in the top 2% of all teams worldwide!'**
-  String get fahStats;
+  /// **'Many thanks for any and all support!'**
+  String get csThanks;
 }
 
 class _LangDelegate extends LocalizationsDelegate<Lang> {

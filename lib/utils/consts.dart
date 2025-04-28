@@ -10,9 +10,14 @@ import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 
 const String showDevProducts = 'showDeveloperProducts';
 
-const Map<String, Object> dotnetConfig = <String, Object>{
-  ...empathetechConfig,
+const Map<String, Object> mobileDotnetConfig = <String, Object>{
+  ...mobileEmpathConfig,
   showDevProducts: false,
+};
+
+const Map<String, Object> desktopDotnetConfig = <String, Object>{
+  ...desktopEmpathConfig,
+  showDevProducts: true,
 };
 
 //* Names *//

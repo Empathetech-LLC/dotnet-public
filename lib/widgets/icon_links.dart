@@ -6,7 +6,6 @@
 import '../utils/export.dart';
 import 'package:efui_bios/efui_bios.dart';
 
-import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:feedback/feedback.dart';
@@ -70,10 +69,10 @@ class IconLinks extends StatelessWidget {
 
   late final EzIconButton feedback = EzIconButton(
     onPressed: () async {
-      final bool isMobile = !kIsWeb && (Platform.isAndroid || Platform.isIOS);
+      final bool strictMobile = !kIsWeb && isMobile();
       late final EFUILang l10n = EFUILang.of(context)!;
 
-      if (isMobile) {
+      if (strictMobile) {
         await Clipboard.setData(const ClipboardData(text: empathSupport));
 
         if (context.mounted) {
@@ -88,7 +87,7 @@ class IconLinks extends StatelessWidget {
       if (context.mounted) {
         BetterFeedback.of(context).show(
           (UserFeedback feedback) async {
-            if (isMobile) {
+            if (strictMobile) {
               await SharePlus.instance.share(ShareParams(
                 text: feedback.text,
                 files: <XFile>[

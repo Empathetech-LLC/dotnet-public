@@ -23,6 +23,7 @@ class EFUIDemo extends StatelessWidget {
         EzSwapSpacer(space: EzConfig.get(spacingKey) / 2);
 
     final bool isDark = isDarkTheme(context);
+    final bool onMobile = isMobile();
 
     final EFUILang el10n = EFUILang.of(context)!;
     final Lang l10n = Lang.of(context)!;
@@ -50,8 +51,14 @@ class EFUIDemo extends StatelessWidget {
 
             // Update layout
             await EzConfig.setDouble(marginKey, defaultMargin * 1.5);
-            await EzConfig.setDouble(paddingKey, defaultPadding * 1.5);
-            await EzConfig.setDouble(spacingKey, defaultSpacing * 2.0);
+            await EzConfig.setDouble(
+                paddingKey,
+                (onMobile ? defaultMobilePadding : defaultDesktopPadding) *
+                    1.5);
+            await EzConfig.setDouble(
+                spacingKey,
+                (onMobile ? defaultMobileSpacing : defaultDesktopSpacing) *
+                    2.0);
 
             await EzConfig.setBool(hideScrollKey, false);
 
@@ -185,8 +192,12 @@ class EFUIDemo extends StatelessWidget {
 
             // Update layout
             await EzConfig.setDouble(marginKey, defaultMargin * 1.2);
-            await EzConfig.setDouble(paddingKey, defaultPadding);
-            await EzConfig.setDouble(spacingKey, defaultSpacing * 1.2);
+            await EzConfig.setDouble(paddingKey,
+                (onMobile ? defaultMobilePadding : defaultDesktopPadding));
+            await EzConfig.setDouble(
+                spacingKey,
+                (onMobile ? defaultMobileSpacing : defaultDesktopSpacing) *
+                    1.2);
 
             await EzConfig.setBool(hideScrollKey, true);
 
@@ -250,7 +261,9 @@ class EFUIDemo extends StatelessWidget {
         EzElevatedIconButton(
           onPressed: () async {
             // Reset
-            await EzConfig.removeKeys(empathetechConfig.keys.toSet());
+            await EzConfig.removeKeys(onMobile
+                ? mobileEmpathConfig.keys.toSet()
+                : desktopEmpathConfig.keys.toSet());
 
             // Notify user
             reloadSnack(reloadMessage);

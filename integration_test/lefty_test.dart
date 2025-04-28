@@ -23,7 +23,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   final Map<String, Object> testConfig = <String, Object>{
-    ...dotnetConfig,
+    ...mobileDotnetConfig,
     isLeftyKey: true,
   };
 

@@ -34,7 +34,7 @@ void main() async {
   EzConfig.init(
     assetPaths: assetPaths,
     preferences: prefs,
-    defaults: dotnetConfig,
+    defaults: isMobile() ? mobileDotnetConfig : desktopDotnetConfig,
   );
 
   // Run the app //

@@ -22,13 +22,13 @@ void main() async {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
   WidgetsFlutterBinding.ensureInitialized();
 
-  SharedPreferences.setMockInitialValues(dotnetConfig);
+  SharedPreferences.setMockInitialValues(mobileDotnetConfig);
   final SharedPreferences prefs = await SharedPreferences.getInstance();
 
   EzConfig.init(
     assetPaths: <String>{},
     preferences: prefs,
-    defaults: dotnetConfig,
+    defaults: mobileDotnetConfig,
   );
 
   group(

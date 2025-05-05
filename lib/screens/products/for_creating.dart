@@ -172,7 +172,7 @@ class _CreatorProductsState extends State<CreatorProducts> {
             style: textTheme.bodyLarge,
             textAlign: TextAlign.center,
             onTap: () => launchUrl(Uri.parse(efuiGitHub)),
-            hint: EFUILang.of(context)!.gEFUISourceHint,
+            hint: ezL10n(context).gEFUISourceHint,
           ),
           EzPlainText(
             text: '.',

@@ -84,7 +84,7 @@ class EFUIShoutOut extends StatelessWidget {
             style: style,
             textAlign: TextAlign.center,
             url: Uri.parse(settingsSource),
-            hint: EFUILang.of(context)!.gEFUISourceHint,
+            hint: ezL10n(context).gEFUISourceHint,
             tooltip: settingsSource,
           ),
         ], textAlign: TextAlign.center),

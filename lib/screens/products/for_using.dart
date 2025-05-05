@@ -58,6 +58,16 @@ class UserProducts extends StatelessWidget {
         ),
         spacer,
 
+        // README link
+        EzLink(
+          l10n.psDocsLabel,
+          url: Uri.parse(
+              'https://github.com/Empathetech-LLC/sos/blob/dev/README.md#using'),
+          hint: l10n.psDocsHint,
+          textAlign: TextAlign.center,
+        ),
+        spacer,
+
         // Donation call-out
         EzRichText(<InlineSpan>[
           EzPlainText(

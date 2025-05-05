@@ -125,6 +125,8 @@
   "psSOSIconLabel": "a loudly colored notification bell.",
 
   "psSOSDescription": "A camera, SOS beacon, and list of your rights all in one place.",
+  "psDocsLabel": "How it works.",
+  "psDocsHint": "Open a link to the README",
   "psFreeSOS": "InstaSOS is completely free and the code is ",
   "psOpenSource": "open source",
   "psConsider": "Please consider ",

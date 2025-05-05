@@ -125,6 +125,8 @@
   "psSOSIconLabel": "Un icono de notificación de color fuerte.",
 
   "psSOSDescription": "Una cámara, una baliza SOS y una lista de tus derechos, todo en un solo lugar.",
+  "psDocsLabel": "Cómo funciona",
+  "psDocsHint": "Abrir un enlace al README",
   "psFreeSOS": "InstaSOS es completamente gratuito y el código es de ",
   "psOpenSource": "código abierto",
   "psConsider": "Por favor, considere ",

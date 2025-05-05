@@ -632,6 +632,18 @@ abstract class Lang {
   /// **'A camera, SOS beacon, and list of your rights all in one place.'**
   String get psSOSDescription;
 
+  /// No description provided for @psDocsLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'How it works.'**
+  String get psDocsLabel;
+
+  /// No description provided for @psDocsHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Open a link to the README'**
+  String get psDocsHint;
+
   /// No description provided for @psFreeSOS.
   ///
   /// In en, this message translates to:

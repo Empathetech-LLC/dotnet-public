@@ -32,9 +32,10 @@ void main() async {
   final SharedPreferences prefs = await SharedPreferences.getInstance();
 
   EzConfig.init(
-    assetPaths: assetPaths,
     preferences: prefs,
     defaults: isMobile() ? mobileDotnetConfig : desktopDotnetConfig,
+    fallbackLang: await EFUILang.delegate.load(english),
+    assetPaths: assetPaths,
   );
 
   // Run the app //
@@ -64,9 +65,6 @@ void main() async {
     ),
     themeMode: EzConfig.getThemeMode(),
     localizationsDelegates: <LocalizationsDelegate<dynamic>>[
-      const LocaleNamesLocalizationsDelegate(),
-      ...EFUILang.localizationsDelegates,
-      ...Lang.localizationsDelegates,
       EmpathetechFeedbackLocalizationsDelegate(),
     ],
     localeOverride: EzConfig.getLocale(),
@@ -210,7 +208,6 @@ class DotNet extends StatelessWidget {
           const LocaleNamesLocalizationsDelegate(),
           ...EFUILang.localizationsDelegates,
           ...Lang.localizationsDelegates,
-          EmpathetechFeedbackLocalizationsDelegate(),
         ],
         supportedLocales: Lang.supportedLocales,
         locale: EzConfig.getLocale(),

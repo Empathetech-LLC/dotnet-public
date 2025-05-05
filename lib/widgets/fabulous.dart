@@ -16,6 +16,6 @@ class SettingsFAB extends FloatingActionButton {
       : super(
           child: EzIcon(PlatformIcons(context).settings),
           onPressed: () => context.goNamed(settingsPath),
-          tooltip: EFUILang.of(context)!.ssNavHint,
+          tooltip: ezL10n(context).ssNavHint,
         );
 }

@@ -70,7 +70,7 @@ class IconLinks extends StatelessWidget {
   late final EzIconButton feedback = EzIconButton(
     onPressed: () async {
       final bool strictMobile = !kIsWeb && isMobile();
-      late final EFUILang l10n = EFUILang.of(context)!;
+      late final EFUILang l10n = ezL10n(context);
 
       if (strictMobile) {
         await Clipboard.setData(const ClipboardData(text: empathSupport));
@@ -112,7 +112,7 @@ class IconLinks extends StatelessWidget {
         );
       }
     },
-    tooltip: EFUILang.of(context)!.gGiveFeedback,
+    tooltip: ezL10n(context).gGiveFeedback,
     icon: Icon(Icons.feedback_outlined, color: colorScheme.primary),
   );
 

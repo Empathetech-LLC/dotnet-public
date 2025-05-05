@@ -308,6 +308,12 @@ class LangEn extends Lang {
       'A camera, SOS beacon, and list of your rights all in one place.';
 
   @override
+  String get psDocsLabel => 'How it works.';
+
+  @override
+  String get psDocsHint => 'Open a link to the README';
+
+  @override
   String get psFreeSOS => 'InstaSOS is completely free and the code is ';
 
   @override

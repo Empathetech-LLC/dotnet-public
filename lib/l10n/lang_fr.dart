@@ -313,6 +313,12 @@ class LangFr extends Lang {
       'Une caméra, une balise SOS et une liste de vos droits, le tout au même endroit.';
 
   @override
+  String get psDocsLabel => 'Comment ça marche.';
+
+  @override
+  String get psDocsHint => 'Ouvrir un lien vers le fichier README';
+
+  @override
   String get psFreeSOS => 'InstaSOS est entièrement gratuit et le code est ';
 
   @override

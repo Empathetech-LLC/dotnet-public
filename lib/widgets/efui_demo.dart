@@ -25,7 +25,7 @@ class EFUIDemo extends StatelessWidget {
     final bool isDark = isDarkTheme(context);
     final bool onMobile = isMobile();
 
-    final EFUILang el10n = EFUILang.of(context)!;
+    final EFUILang el10n = ezL10n(context);
     final Lang l10n = Lang.of(context)!;
 
     late final String reloadMessage = el10n.ssSettingsGuideWeb.split('\n')[0];

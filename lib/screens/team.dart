@@ -47,7 +47,52 @@ class _TeamScreenState extends State<TeamScreen> {
 
   // Define custom widgets //
 
-  late final Widget spanishCredits = Column(
+  late final EdgeInsets wrapPadding = EzInsets.wrap(EzConfig.get(spacingKey));
+
+  late final Widget arCredits = Column(
+    mainAxisSize: MainAxisSize.min,
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: <Widget>[
+      // Avatar
+      Container(
+        constraints: EzBox.sym(imageSize),
+        child: EzLinkWidget(
+          isImage: true,
+          url: Uri.parse(yasminSLink),
+          tooltip: yasminSLink,
+          label: l10n.tsProfile(yasminS),
+          hint: l10n.gFiverrPage(yasminS),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(imageSize),
+            child: const Image(image: yasminSProfile, fit: BoxFit.contain),
+          ),
+        ),
+      ),
+      margin,
+
+      // Information
+      MergeSemantics(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text(
+              l10n.tsAr,
+              style: textTheme.titleLarge,
+              textAlign: TextAlign.center,
+            ),
+            Text(
+              yasminS,
+              style: textTheme.bodyLarge,
+              textAlign: TextAlign.center,
+            ),
+          ],
+        ),
+      ),
+    ],
+  );
+
+  late final Widget esCredits = Column(
     mainAxisSize: MainAxisSize.min,
     mainAxisAlignment: MainAxisAlignment.center,
     children: <Widget>[
@@ -75,7 +120,7 @@ class _TeamScreenState extends State<TeamScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              l10n.tsSpanish,
+              l10n.tsEs,
               style: textTheme.titleLarge,
               textAlign: TextAlign.center,
             ),
@@ -90,7 +135,7 @@ class _TeamScreenState extends State<TeamScreen> {
     ],
   );
 
-  late final Widget frenchCredits = Column(
+  late final Widget frCredits = Column(
     mainAxisSize: MainAxisSize.min,
     mainAxisAlignment: MainAxisAlignment.center,
     children: <Widget>[
@@ -118,12 +163,55 @@ class _TeamScreenState extends State<TeamScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              l10n.tsFrench,
+              l10n.tsFr,
               style: textTheme.titleLarge,
               textAlign: TextAlign.center,
             ),
             Text(
               alexisN,
+              style: textTheme.bodyLarge,
+              textAlign: TextAlign.center,
+            ),
+          ],
+        ),
+      ),
+    ],
+  );
+
+  late final Widget htCredits = Column(
+    mainAxisSize: MainAxisSize.min,
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: <Widget>[
+      // Avatar
+      Container(
+        constraints: EzBox.sym(imageSize),
+        child: EzLinkWidget(
+          isImage: true,
+          url: Uri.parse(carlyLink),
+          tooltip: carlyLink,
+          label: l10n.tsProfile(carly),
+          hint: l10n.gFiverrPage(carly),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(imageSize),
+            child: const Image(image: carlyProfile, fit: BoxFit.contain),
+          ),
+        ),
+      ),
+      margin,
+
+      // Information
+      MergeSemantics(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text(
+              l10n.tsHt,
+              style: textTheme.titleLarge,
+              textAlign: TextAlign.center,
+            ),
+            Text(
+              carly,
               style: textTheme.bodyLarge,
               textAlign: TextAlign.center,
             ),
@@ -223,17 +311,16 @@ class _TeamScreenState extends State<TeamScreen> {
             ),
             spacer,
 
-            EzRowCol(
-              row: Row(
-                mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[spanishCredits, separator, frenchCredits],
-              ),
-              col: Column(
-                mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[spanishCredits, spacer, frenchCredits],
-              ),
+            Wrap(
+              alignment: WrapAlignment.center,
+              runAlignment: WrapAlignment.center,
+              crossAxisAlignment: WrapCrossAlignment.center,
+              children: <Widget>[
+                Padding(padding: wrapPadding, child: arCredits),
+                Padding(padding: wrapPadding, child: esCredits),
+                Padding(padding: wrapPadding, child: frCredits),
+                Padding(padding: wrapPadding, child: htCredits),
+              ],
             ),
             separator,
           ],

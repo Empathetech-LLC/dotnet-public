@@ -27,11 +27,17 @@ const Map<String, Object> desktopDotnetConfig = <String, Object>{
 /// 'Michael Waldron'; Founder
 const String mike = 'Michael Waldron';
 
-/// 'Sara Herrera'; Freelance Spanish translator
+/// 'Yasmin Sid'; Freelance Arabic (ar) translator
+const String yasminS = 'Yasmin Sid';
+
+/// 'Sara Herrera'; Freelance Spanish (es) translator
 const String saraH = 'Sara Herrera';
 
-/// 'Alexis Nguyen'; Freelance French translator
+/// 'Alexis Nguyen'; Freelance French (fr) translator
 const String alexisN = 'Alexis Nguyen';
+
+/// 'Carly'; Freelance Creole (ht) translator
+const String carly = 'Carly';
 
 // Things //
 
@@ -95,11 +101,17 @@ const ImageProvider smokeSignalImage = AssetImage(smokeSignalIconPath);
 /// [AssetImage] of [founderIconPath]
 const ImageProvider founderImage = AssetImage(founderIconPath);
 
+/// [NetworkImage] of [yasminSProfileLink]
+const ImageProvider yasminSProfile = NetworkImage(yasminSProfileLink);
+
 /// [NetworkImage] of [saraHProfileLink]
 const ImageProvider saraHProfile = NetworkImage(saraHProfileLink);
 
 /// [NetworkImage] of [alexisNProfileLink]
 const ImageProvider alexisNProfile = NetworkImage(alexisNProfileLink);
+
+/// [NetworkImage] of [carlyProfileLink]
+const ImageProvider carlyProfile = NetworkImage(carlyProfileLink);
 
 /// [AssetImage] of [fahIconPath]
 const ImageProvider fahImage = AssetImage(fahIconPath);
@@ -154,6 +166,12 @@ const String aboutFaHLink = 'https://foldingathome.org/about-2/';
 
 // Freelancers //
 
+/// [https://www.fiverr.com/yasminsid]
+const String yasminSLink = 'https://www.fiverr.com/yasminsid';
+
+const String yasminSProfileLink =
+    'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_original/v1/attachments/profile/photo/9272e7a04390711a68fdde232f04e1b4-1560632522775/1a69d9e8-2c06-42e6-b79d-03e5d790032f.jpg';
+
 /// [https://www.fiverr.com/saraqua]
 const String saraHLink = 'https://www.fiverr.com/saraqua';
 
@@ -165,6 +183,12 @@ const String alexisNLink = 'https://www.fiverr.com/alexisnguyen2';
 
 const String alexisNProfileLink =
     'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_original/v1/attachments/profile/photo/fa4ca8fc941f2c5e25aaa1814867e90c-1672317477265/e9da2515-5e39-4384-b6bc-2d6eec587f33.png';
+
+/// [https://www.fiverr.com/louiscarly]
+const String carlyLink = 'https://www.fiverr.com/louiscarly';
+
+const String carlyProfileLink =
+    'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_original/v1/attachments/profile/photo/e753d4d365edb4f2a8a8e4aa0eb1f8de-1526514773546/6b5a9b8d-07b4-46d6-a33b-3c352a6b1204.png';
 
 /// Dunvek, graphic designer
 /// https://www.fiverr.com/dunvek

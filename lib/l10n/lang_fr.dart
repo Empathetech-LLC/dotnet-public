@@ -310,7 +310,7 @@ class LangFr extends Lang {
 
   @override
   String get psSOSDescription =>
-      'Une caméra, une balise SOS et une liste de vos droits, le tout au même endroit.';
+      'Une caméra, une balise SOS et une liste de vos droits, le tout au même endroit.\nIl est disponible en anglais, arabe, espagnol, français et créole.';
 
   @override
   String get psDocsLabel => 'Comment ça marche.';
@@ -319,7 +319,11 @@ class LangFr extends Lang {
   String get psDocsHint => 'Ouvrir un lien vers le fichier README';
 
   @override
-  String get psFreeSOS => 'InstaSOS est entièrement gratuit et le code est ';
+  String get psSafeSOS =>
+      'InstaSOS n\'a pas de comptes, de cookies ou de publicités.\n';
+
+  @override
+  String get psFreeSOS => 'C\'est totalement gratuit et le code est ';
 
   @override
   String get psOpenSource => 'open source';
@@ -381,10 +385,16 @@ class LangFr extends Lang {
   }
 
   @override
-  String get tsSpanish => 'Traducteur espagnol';
+  String get tsAr => 'Traducteur arabe';
 
   @override
-  String get tsFrench => 'Traducteur français';
+  String get tsEs => 'Traducteur espagnol';
+
+  @override
+  String get tsFr => 'Traducteur français';
+
+  @override
+  String get tsHt => 'Traducteur créole';
 
   @override
   String get fahJoin => 'Rejoignez le Fold';

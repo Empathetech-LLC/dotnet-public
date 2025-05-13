@@ -40,10 +40,14 @@ void testSuite({
       await ezFindText(tester, mike);
       await ezFindText(tester, l10n.tsCommunity);
       await ezFindText(tester, l10n.tsFreelance);
-      await ezFindText(tester, l10n.tsSpanish);
+      await ezFindText(tester, l10n.tsAr);
+      await ezFindText(tester, yasminS);
+      await ezFindText(tester, l10n.tsEs);
       await ezFindText(tester, saraH);
-      await ezFindText(tester, l10n.tsFrench);
+      await ezFindText(tester, l10n.tsFr);
       await ezFindText(tester, alexisN);
+      await ezFindText(tester, l10n.tsHt);
+      await ezFindText(tester, carly);
 
       //* Test functionality *//
 

@@ -124,10 +124,11 @@
 
   "psSOSIconLabel": "Une icône de notification aux couleurs vives.",
 
-  "psSOSDescription": "Une caméra, une balise SOS et une liste de vos droits, le tout au même endroit.",
+  "psSOSDescription": "Une caméra, une balise SOS et une liste de vos droits, le tout au même endroit.\nIl est disponible en anglais, arabe, espagnol, français et créole.",
   "psDocsLabel": "Comment ça marche.",
   "psDocsHint": "Ouvrir un lien vers le fichier README",
-  "psFreeSOS": "InstaSOS est entièrement gratuit et le code est ",
+  "psSafeSOS": "InstaSOS n'a pas de comptes, de cookies ou de publicités.\n",
+  "psFreeSOS": "C'est totalement gratuit et le code est ",
   "psOpenSource": "open source",
   "psConsider": "Veuillez envisager de ",
   "psContributing": "contribuer",
@@ -153,8 +154,10 @@
 
   "tsFreelance": "Free-lance",
   "tsProfile": "Profil de {name}",
-  "tsSpanish": "Traducteur espagnol",
-  "tsFrench": "Traducteur français",
+  "tsAr": "Traducteur arabe",
+  "tsEs": "Traducteur espagnol",
+  "tsFr": "Traducteur français",
+  "tsHt": "Traducteur créole",
 
 
 

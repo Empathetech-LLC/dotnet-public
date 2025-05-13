@@ -62,7 +62,7 @@ class UserProducts extends StatelessWidget {
         EzLink(
           l10n.psDocsLabel,
           url: Uri.parse(
-              'https://github.com/Empathetech-LLC/sos/blob/dev/README.md#using'),
+              'https://github.com/Empathetech-LLC/sos/blob/main/README.md#using'),
           hint: l10n.psDocsHint,
           textAlign: TextAlign.center,
         ),
@@ -70,6 +70,10 @@ class UserProducts extends StatelessWidget {
 
         // Donation call-out
         EzRichText(<InlineSpan>[
+          EzPlainText(
+            text: l10n.psSafeSOS,
+            style: textTheme.bodyLarge,
+          ),
           EzPlainText(
             text: l10n.psFreeSOS,
             style: textTheme.bodyLarge,

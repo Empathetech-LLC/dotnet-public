@@ -64,9 +64,7 @@ void main() async {
       dragHandleColor: Colors.white,
     ),
     themeMode: EzConfig.getThemeMode(),
-    localizationsDelegates: <LocalizationsDelegate<dynamic>>[
-      EmpathetechFeedbackLocalizationsDelegate(),
-    ],
+    localizationsDelegates: <LocalizationsDelegate<dynamic>>[EzFeedbackLD()],
     localeOverride: EzConfig.getLocale(),
     child: const DotNet(),
   ));
@@ -191,8 +189,10 @@ class DotNet extends StatelessWidget {
 
     precacheImage(fahImage, context);
 
+    precacheImage(yasminSProfile, context);
     precacheImage(saraHProfile, context);
     precacheImage(alexisNProfile, context);
+    precacheImage(carlyProfile, context);
   }
 
   // Return the build //

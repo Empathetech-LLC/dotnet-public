@@ -94,6 +94,7 @@ abstract class Lang {
   /// A list of this localizations delegate's supported locales.
   static const List<Locale> supportedLocales = <Locale>[
     Locale('en'),
+    Locale('en', 'US'),
     Locale('es'),
     Locale('fr')
   ];
@@ -629,7 +630,7 @@ abstract class Lang {
   /// No description provided for @psSOSDescription.
   ///
   /// In en, this message translates to:
-  /// **'A camera, SOS beacon, and list of your rights all in one place.'**
+  /// **'A camera, SOS beacon, and list of your rights all in one place.\nIt\'s available in English, Arabic, Spanish, French, and Creole.'**
   String get psSOSDescription;
 
   /// No description provided for @psDocsLabel.
@@ -644,10 +645,16 @@ abstract class Lang {
   /// **'Open a link to the README'**
   String get psDocsHint;
 
+  /// No description provided for @psSafeSOS.
+  ///
+  /// In en, this message translates to:
+  /// **'InstaSOS has no accounts, cookies, or ads.\n'**
+  String get psSafeSOS;
+
   /// No description provided for @psFreeSOS.
   ///
   /// In en, this message translates to:
-  /// **'InstaSOS is completely free and the code is '**
+  /// **'It\'s completely free and the code is '**
   String get psFreeSOS;
 
   /// No description provided for @psOpenSource.
@@ -758,17 +765,29 @@ abstract class Lang {
   /// **'{name}\'s profile'**
   String tsProfile(Object name);
 
-  /// No description provided for @tsSpanish.
+  /// No description provided for @tsAr.
+  ///
+  /// In en, this message translates to:
+  /// **'Arabic translator'**
+  String get tsAr;
+
+  /// No description provided for @tsEs.
   ///
   /// In en, this message translates to:
   /// **'Spanish translator'**
-  String get tsSpanish;
+  String get tsEs;
 
-  /// No description provided for @tsFrench.
+  /// No description provided for @tsFr.
   ///
   /// In en, this message translates to:
   /// **'French translator'**
-  String get tsFrench;
+  String get tsFr;
+
+  /// No description provided for @tsHt.
+  ///
+  /// In en, this message translates to:
+  /// **'Creole translator'**
+  String get tsHt;
 
   /// No description provided for @fahJoin.
   ///
@@ -902,6 +921,20 @@ class _LangDelegate extends LocalizationsDelegate<Lang> {
 }
 
 Future<Lang> lookupLang(Locale locale) {
+  // Lookup logic when language+country codes are specified.
+  switch (locale.languageCode) {
+    case 'en':
+      {
+        switch (locale.countryCode) {
+          case 'US':
+            return lang_en
+                .loadLibrary()
+                .then((dynamic _) => lang_en.LangEnUs());
+        }
+        break;
+      }
+  }
+
   // Lookup logic when only language code is specified.
   switch (locale.languageCode) {
     case 'en':

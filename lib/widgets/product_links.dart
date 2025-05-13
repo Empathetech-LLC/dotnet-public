@@ -13,11 +13,11 @@ import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 
 //* Shared *//
 
-/// '8.1.0'
-const String efuiFallback = '8.1.0';
+/// '9.0.0'
+const String efuiFallback = '9.0.0';
 
-/// '1.0.0'
-const String sosFallback = '1.1.0';
+/// '1.2.0'
+const String sosFallback = '1.2.0';
 
 /// 'https://github.com/Empathetech-LLC'
 const String _git = 'https://github.com/Empathetech-LLC';
@@ -55,9 +55,11 @@ extension Label on DLType {
 
 /// Get the latest [String] version of [repo]
 Future<String> getLatest(String repo, String fallback) async {
-  final http.Response response = await http.get(Uri.parse(
-    'https://raw.githubusercontent.com/Empathetech-LLC/$repo/refs/heads/main/APP_VERSION',
-  ));
+  final http.Response response = await http.get(
+    Uri.parse(
+      'https://raw.githubusercontent.com/Empathetech-LLC/$repo/refs/heads/main/APP_VERSION',
+    ),
+  );
 
   return response.statusCode == 200 ? response.body.trim() : fallback;
 }
@@ -210,14 +212,18 @@ class _OpenUILinkState extends State<OpenUILink> {
         EzDropdownMenu<DLType>(
           enableSearch: false,
           initialSelection: currDL,
-          dropdownMenuEntries: DLType.values
-              .map((DLType dlType) => DropdownMenuEntry<DLType>(
-                    value: dlType,
-                    label: dlType.name,
-                    style:
-                        TextButton.styleFrom(padding: EzInsets.wrap(padding)),
-                  ))
-              .toList(),
+          dropdownMenuEntries:
+              DLType.values
+                  .map(
+                    (DLType dlType) => DropdownMenuEntry<DLType>(
+                      value: dlType,
+                      label: dlType.name,
+                      style: TextButton.styleFrom(
+                        padding: EzInsets.wrap(padding),
+                      ),
+                    ),
+                  )
+                  .toList(),
           onSelected: (DLType? choice) async {
             if (choice == null) return;
 

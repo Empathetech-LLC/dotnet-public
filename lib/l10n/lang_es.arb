@@ -156,8 +156,10 @@
   "tsProfile": "Perfil de {name}",
   "tsAr": "Traductor de árabe",
   "tsEs": "Traductora de español",
+  "tsFil": "Traductor de filipino",
   "tsFr": "Traductor de francés",
   "tsHt": "Traductor de criollo",
+  "tsZh": "Traductor de chino",
 
 
 
@@ -188,6 +190,7 @@
   "csGit": "colaborador de GitHub",
   
   "csMoneyQ": "Dinero?",
+  "csOpenLink": "Abre un enlace al {page} de Empathetic",
   
   "csPowerQ": "Poder?",
   

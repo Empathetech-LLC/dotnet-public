@@ -13,11 +13,11 @@ import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 
 //* Shared *//
 
-/// '9.0.0'
-const String efuiFallback = '9.0.0';
+/// '9.1.0'
+const String efuiFallback = '9.1.0';
 
-/// '1.2.0'
-const String sosFallback = '1.2.0';
+/// '1.2.1'
+const String sosFallback = '1.2.1';
 
 /// 'https://github.com/Empathetech-LLC'
 const String _git = 'https://github.com/Empathetech-LLC';
@@ -212,18 +212,15 @@ class _OpenUILinkState extends State<OpenUILink> {
         EzDropdownMenu<DLType>(
           enableSearch: false,
           initialSelection: currDL,
-          dropdownMenuEntries:
-              DLType.values
-                  .map(
-                    (DLType dlType) => DropdownMenuEntry<DLType>(
-                      value: dlType,
-                      label: dlType.name,
-                      style: TextButton.styleFrom(
-                        padding: EzInsets.wrap(padding),
-                      ),
-                    ),
-                  )
-                  .toList(),
+          dropdownMenuEntries: DLType.values
+              .map(
+                (DLType dlType) => DropdownMenuEntry<DLType>(
+                  value: dlType,
+                  label: dlType.name,
+                  style: TextButton.styleFrom(padding: EzInsets.wrap(padding)),
+                ),
+              )
+              .toList(),
           onSelected: (DLType? choice) async {
             if (choice == null) return;
 

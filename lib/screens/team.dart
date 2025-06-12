@@ -28,14 +28,15 @@ class _TeamScreenState extends State<TeamScreen> {
   static const EzSeparator separator = EzSeparator();
   static const EzDivider divider = EzDivider();
 
-  late final EzSpacer margin = EzMargin();
+  final EzSpacer margin = EzMargin();
+  final EdgeInsets wrapPadding = EzInsets.wrap(EzConfig.get(spacingKey));
+
   late final double imageSize = ezImageSize(context);
 
+  late final Lang l10n = Lang.of(context)!;
   late final TextTheme textTheme = Theme.of(context).textTheme;
 
   late final ColorScheme colorScheme = Theme.of(context).colorScheme;
-
-  late final Lang l10n = Lang.of(context)!;
 
   // Set the page title //
 
@@ -44,182 +45,6 @@ class _TeamScreenState extends State<TeamScreen> {
     super.didChangeDependencies();
     ezWindowNamer(context, l10n.tsPageTitle);
   }
-
-  // Define custom widgets //
-
-  late final EdgeInsets wrapPadding = EzInsets.wrap(EzConfig.get(spacingKey));
-
-  late final Widget arCredits = Column(
-    mainAxisSize: MainAxisSize.min,
-    mainAxisAlignment: MainAxisAlignment.center,
-    children: <Widget>[
-      // Avatar
-      Container(
-        constraints: EzBox.sym(imageSize),
-        child: EzLinkWidget(
-          isImage: true,
-          url: Uri.parse(yasminSLink),
-          tooltip: yasminSLink,
-          label: l10n.tsProfile(yasminS),
-          hint: l10n.gFiverrPage(yasminS),
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(imageSize),
-            child: const Image(image: yasminSProfile, fit: BoxFit.contain),
-          ),
-        ),
-      ),
-      margin,
-
-      // Information
-      MergeSemantics(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              l10n.tsAr,
-              style: textTheme.titleLarge,
-              textAlign: TextAlign.center,
-            ),
-            Text(
-              yasminS,
-              style: textTheme.bodyLarge,
-              textAlign: TextAlign.center,
-            ),
-          ],
-        ),
-      ),
-    ],
-  );
-
-  late final Widget esCredits = Column(
-    mainAxisSize: MainAxisSize.min,
-    mainAxisAlignment: MainAxisAlignment.center,
-    children: <Widget>[
-      // Avatar
-      Container(
-        constraints: EzBox.sym(imageSize),
-        child: EzLinkWidget(
-          isImage: true,
-          url: Uri.parse(saraHLink),
-          tooltip: saraHLink,
-          label: l10n.tsProfile(saraH),
-          hint: l10n.gFiverrPage(saraH),
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(imageSize),
-            child: const Image(image: saraHProfile, fit: BoxFit.contain),
-          ),
-        ),
-      ),
-      margin,
-
-      // Information
-      MergeSemantics(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              l10n.tsEs,
-              style: textTheme.titleLarge,
-              textAlign: TextAlign.center,
-            ),
-            Text(
-              saraH,
-              style: textTheme.bodyLarge,
-              textAlign: TextAlign.center,
-            ),
-          ],
-        ),
-      ),
-    ],
-  );
-
-  late final Widget frCredits = Column(
-    mainAxisSize: MainAxisSize.min,
-    mainAxisAlignment: MainAxisAlignment.center,
-    children: <Widget>[
-      // Avatar
-      Container(
-        constraints: EzBox.sym(imageSize),
-        child: EzLinkWidget(
-          isImage: true,
-          url: Uri.parse(alexisNLink),
-          label: l10n.tsProfile(alexisN),
-          hint: l10n.gFiverrPage(alexisN),
-          tooltip: alexisNLink,
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(imageSize),
-            child: const Image(image: alexisNProfile, fit: BoxFit.contain),
-          ),
-        ),
-      ),
-      margin,
-
-      // Information
-      MergeSemantics(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              l10n.tsFr,
-              style: textTheme.titleLarge,
-              textAlign: TextAlign.center,
-            ),
-            Text(
-              alexisN,
-              style: textTheme.bodyLarge,
-              textAlign: TextAlign.center,
-            ),
-          ],
-        ),
-      ),
-    ],
-  );
-
-  late final Widget htCredits = Column(
-    mainAxisSize: MainAxisSize.min,
-    mainAxisAlignment: MainAxisAlignment.center,
-    children: <Widget>[
-      // Avatar
-      Container(
-        constraints: EzBox.sym(imageSize),
-        child: EzLinkWidget(
-          isImage: true,
-          url: Uri.parse(carlyLink),
-          tooltip: carlyLink,
-          label: l10n.tsProfile(carly),
-          hint: l10n.gFiverrPage(carly),
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(imageSize),
-            child: const Image(image: carlyProfile, fit: BoxFit.contain),
-          ),
-        ),
-      ),
-      margin,
-
-      // Information
-      MergeSemantics(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              l10n.tsHt,
-              style: textTheme.titleLarge,
-              textAlign: TextAlign.center,
-            ),
-            Text(
-              carly,
-              style: textTheme.bodyLarge,
-              textAlign: TextAlign.center,
-            ),
-          ],
-        ),
-      ),
-    ],
-  );
 
   // Return the build //
 
@@ -249,7 +74,7 @@ class _TeamScreenState extends State<TeamScreen> {
                   // Not an ego thing I swear
                   // The image gets super pixelated if it's too small
                   constraints: EzBox.sym(imageSize * 1.333),
-                  child: EzLinkImageProvider(
+                  child: EzImageLink(
                     image: founderImage,
                     fit: BoxFit.contain,
                     label: l10n.tsTheFounderLabel,
@@ -316,10 +141,60 @@ class _TeamScreenState extends State<TeamScreen> {
               runAlignment: WrapAlignment.center,
               crossAxisAlignment: WrapCrossAlignment.center,
               children: <Widget>[
-                Padding(padding: wrapPadding, child: arCredits),
-                Padding(padding: wrapPadding, child: esCredits),
-                Padding(padding: wrapPadding, child: frCredits),
-                Padding(padding: wrapPadding, child: htCredits),
+                Padding(
+                  padding: wrapPadding,
+                  child: _Ar(
+                    l10n: l10n,
+                    textTheme: textTheme,
+                    margin: margin,
+                    imageSize: imageSize,
+                  ),
+                ),
+                Padding(
+                  padding: wrapPadding,
+                  child: _Es(
+                    l10n: l10n,
+                    textTheme: textTheme,
+                    margin: margin,
+                    imageSize: imageSize,
+                  ),
+                ),
+                Padding(
+                  padding: wrapPadding,
+                  child: _Fil(
+                    l10n: l10n,
+                    textTheme: textTheme,
+                    margin: margin,
+                    imageSize: imageSize,
+                  ),
+                ),
+                Padding(
+                  padding: wrapPadding,
+                  child: _Fr(
+                    l10n: l10n,
+                    textTheme: textTheme,
+                    margin: margin,
+                    imageSize: imageSize,
+                  ),
+                ),
+                Padding(
+                  padding: wrapPadding,
+                  child: _Ht(
+                    l10n: l10n,
+                    textTheme: textTheme,
+                    margin: margin,
+                    imageSize: imageSize,
+                  ),
+                ),
+                Padding(
+                  padding: wrapPadding,
+                  child: _Zh(
+                    l10n: l10n,
+                    textTheme: textTheme,
+                    margin: margin,
+                    imageSize: imageSize,
+                  ),
+                ),
               ],
             ),
             separator,
@@ -329,4 +204,356 @@ class _TeamScreenState extends State<TeamScreen> {
       fab: SettingsFAB(context),
     );
   }
+}
+
+// Credits Widgets //
+// There is a fair amount of duplication here, but it's likely there will eventually be more than one translator per language
+// So a little repetition is fine
+
+class _Ar extends StatelessWidget {
+  final Lang l10n;
+  final TextTheme textTheme;
+  final EzSpacer margin;
+  final double imageSize;
+
+  const _Ar({
+    required this.l10n,
+    required this.textTheme,
+    required this.margin,
+    required this.imageSize,
+  });
+
+  @override
+  Widget build(BuildContext context) => Column(
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          // Avatar
+          Container(
+            constraints: EzBox.sym(imageSize),
+            child: EzLinkWidget(
+              isImage: true,
+              url: Uri.parse(yasminSLink),
+              tooltip: yasminSLink,
+              label: l10n.tsProfile(yasminS),
+              hint: l10n.gFiverrPage(yasminS),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(imageSize),
+                child: const Image(image: yasminSProfile, fit: BoxFit.contain),
+              ),
+            ),
+          ),
+          margin,
+
+          // Information
+          MergeSemantics(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Text(
+                  l10n.tsAr,
+                  style: textTheme.titleLarge,
+                  textAlign: TextAlign.center,
+                ),
+                Text(
+                  yasminS,
+                  style: textTheme.bodyLarge,
+                  textAlign: TextAlign.center,
+                ),
+              ],
+            ),
+          ),
+        ],
+      );
+}
+
+class _Es extends StatelessWidget {
+  final Lang l10n;
+  final TextTheme textTheme;
+  final EzSpacer margin;
+  final double imageSize;
+
+  const _Es({
+    required this.l10n,
+    required this.textTheme,
+    required this.margin,
+    required this.imageSize,
+  });
+
+  @override
+  Widget build(BuildContext context) => Column(
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          // Avatar
+          Container(
+            constraints: EzBox.sym(imageSize),
+            child: EzLinkWidget(
+              isImage: true,
+              url: Uri.parse(saraHLink),
+              tooltip: saraHLink,
+              label: l10n.tsProfile(saraH),
+              hint: l10n.gFiverrPage(saraH),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(imageSize),
+                child: const Image(image: saraHProfile, fit: BoxFit.contain),
+              ),
+            ),
+          ),
+          margin,
+
+          // Information
+          MergeSemantics(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Text(
+                  l10n.tsEs,
+                  style: textTheme.titleLarge,
+                  textAlign: TextAlign.center,
+                ),
+                Text(
+                  saraH,
+                  style: textTheme.bodyLarge,
+                  textAlign: TextAlign.center,
+                ),
+              ],
+            ),
+          ),
+        ],
+      );
+}
+
+class _Fil extends StatelessWidget {
+  final Lang l10n;
+  final TextTheme textTheme;
+  final EzSpacer margin;
+  final double imageSize;
+
+  const _Fil({
+    required this.l10n,
+    required this.textTheme,
+    required this.margin,
+    required this.imageSize,
+  });
+
+  @override
+  Widget build(BuildContext context) => Column(
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          // Avatar
+          Container(
+            constraints: EzBox.sym(imageSize),
+            child: EzLinkWidget(
+              isImage: true,
+              url: Uri.parse(remalynLink),
+              tooltip: remalynLink,
+              label: l10n.tsProfile(remalyn),
+              hint: l10n.gFiverrPage(remalyn),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(imageSize),
+                child: const Image(image: remalynProfile, fit: BoxFit.contain),
+              ),
+            ),
+          ),
+          margin,
+
+          // Information
+          MergeSemantics(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Text(
+                  l10n.tsFil,
+                  style: textTheme.titleLarge,
+                  textAlign: TextAlign.center,
+                ),
+                Text(
+                  remalyn,
+                  style: textTheme.bodyLarge,
+                  textAlign: TextAlign.center,
+                ),
+              ],
+            ),
+          ),
+        ],
+      );
+}
+
+class _Fr extends StatelessWidget {
+  final Lang l10n;
+  final TextTheme textTheme;
+  final EzSpacer margin;
+  final double imageSize;
+
+  const _Fr({
+    required this.l10n,
+    required this.textTheme,
+    required this.margin,
+    required this.imageSize,
+  });
+
+  @override
+  Widget build(BuildContext context) => Column(
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          // Avatar
+          Container(
+            constraints: EzBox.sym(imageSize),
+            child: EzLinkWidget(
+              isImage: true,
+              url: Uri.parse(alexisNLink),
+              label: l10n.tsProfile(alexisN),
+              hint: l10n.gFiverrPage(alexisN),
+              tooltip: alexisNLink,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(imageSize),
+                child: const Image(image: alexisNProfile, fit: BoxFit.contain),
+              ),
+            ),
+          ),
+          margin,
+
+          // Information
+          MergeSemantics(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Text(
+                  l10n.tsFr,
+                  style: textTheme.titleLarge,
+                  textAlign: TextAlign.center,
+                ),
+                Text(
+                  alexisN,
+                  style: textTheme.bodyLarge,
+                  textAlign: TextAlign.center,
+                ),
+              ],
+            ),
+          ),
+        ],
+      );
+}
+
+class _Ht extends StatelessWidget {
+  final Lang l10n;
+  final TextTheme textTheme;
+  final EzSpacer margin;
+  final double imageSize;
+
+  const _Ht({
+    required this.l10n,
+    required this.textTheme,
+    required this.margin,
+    required this.imageSize,
+  });
+
+  @override
+  Widget build(BuildContext context) => Column(
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          // Avatar
+          Container(
+            constraints: EzBox.sym(imageSize),
+            child: EzLinkWidget(
+              isImage: true,
+              url: Uri.parse(carlyLink),
+              tooltip: carlyLink,
+              label: l10n.tsProfile(carly),
+              hint: l10n.gFiverrPage(carly),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(imageSize),
+                child: const Image(image: carlyProfile, fit: BoxFit.contain),
+              ),
+            ),
+          ),
+          margin,
+
+          // Information
+          MergeSemantics(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Text(
+                  l10n.tsHt,
+                  style: textTheme.titleLarge,
+                  textAlign: TextAlign.center,
+                ),
+                Text(
+                  carly,
+                  style: textTheme.bodyLarge,
+                  textAlign: TextAlign.center,
+                ),
+              ],
+            ),
+          ),
+        ],
+      );
+}
+
+class _Zh extends StatelessWidget {
+  final Lang l10n;
+  final TextTheme textTheme;
+  final EzSpacer margin;
+  final double imageSize;
+
+  const _Zh({
+    required this.l10n,
+    required this.textTheme,
+    required this.margin,
+    required this.imageSize,
+  });
+
+  @override
+  Widget build(BuildContext context) => Column(
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          // Avatar
+          Container(
+            constraints: EzBox.sym(imageSize),
+            child: EzLinkWidget(
+              isImage: true,
+              url: Uri.parse(hilariaLink),
+              tooltip: hilariaLink,
+              label: l10n.tsProfile(hilaria),
+              hint: l10n.gFiverrPage(hilaria),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(imageSize),
+                child: const Image(image: hilariaProfile, fit: BoxFit.contain),
+              ),
+            ),
+          ),
+          margin,
+
+          // Information
+          MergeSemantics(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Text(
+                  l10n.tsZh,
+                  style: textTheme.titleLarge,
+                  textAlign: TextAlign.center,
+                ),
+                Text(
+                  hilaria,
+                  style: textTheme.bodyLarge,
+                  textAlign: TextAlign.center,
+                ),
+              ],
+            ),
+          ),
+        ],
+      );
 }

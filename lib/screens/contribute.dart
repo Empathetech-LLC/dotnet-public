@@ -9,7 +9,6 @@ import 'package:efui_bios/efui_bios.dart';
 
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 
 class ContributeScreen extends StatefulWidget {
@@ -40,8 +39,10 @@ class _ContributeScreenState extends State<ContributeScreen> {
 
   late final List<Widget> crowdFundOrgs = <Widget>[
     // GoFundMe
-    EzElevatedIconButton(
-      onPressed: () => launchUrl(Uri.parse(empathGoFundMe)),
+    EzElevatedIconLink(
+      tooltip: empathGoFundMe,
+      hint: l10n.csOpenLink('GoFundMe'),
+      url: Uri.parse(empathGoFundMe),
       icon: EzIcon(Icons.wb_sunny_outlined),
       label: 'GoFundMe',
     ),
@@ -49,24 +50,30 @@ class _ContributeScreenState extends State<ContributeScreen> {
 
   late final List<Widget> affiliateDonations = <Widget>[
     // Patreon
-    EzElevatedIconButton(
-      onPressed: () => launchUrl(Uri.parse(empathPatreon)),
+    EzElevatedIconLink(
+      tooltip: empathPatreon,
+      hint: l10n.csOpenLink('Patreon'),
+      url: Uri.parse(empathPatreon),
       icon: EzIcon(LineIcons.patreon),
       label: 'Patreon',
     ),
     swapSpacer,
 
     // Buy Me a Coffee
-    EzElevatedIconButton(
-      onPressed: () => launchUrl(Uri.parse(empathCoffee)),
+    EzElevatedIconLink(
+      tooltip: empathCoffee,
+      hint: l10n.csOpenLink('Buy Me a Coffee'),
+      url: Uri.parse(empathCoffee),
       icon: EzIcon(LineIcons.coffee),
       label: 'Buy Me a Coffee',
     ),
     swapSpacer,
 
     // Ko-fi
-    EzElevatedIconButton(
-      onPressed: () => launchUrl(Uri.parse(empathKofi)),
+    EzElevatedIconLink(
+      tooltip: empathKofi,
+      hint: l10n.csOpenLink('Ko-fi'),
+      url: Uri.parse(empathKofi),
       icon: EzIcon(LineIcons.coffee),
       label: 'Ko-fi',
     ),
@@ -74,23 +81,29 @@ class _ContributeScreenState extends State<ContributeScreen> {
 
   late final List<Widget> directDonations = <Widget>[
     // PayPal
-    EzElevatedIconButton(
-      onPressed: () => launchUrl(Uri.parse(empathPayPal)),
+    EzElevatedIconLink(
+      tooltip: empathPayPal,
+      hint: l10n.csOpenLink('PayPal'),
+      url: Uri.parse(empathPayPal),
       icon: EzIcon(LineIcons.paypal),
       label: 'PayPal',
     ),
     swapSpacer,
 
     // Venmo
-    EzElevatedButton(
-      onPressed: () => launchUrl(Uri.parse(empathVenmo)),
+    EzElevatedLink(
+      tooltip: empathVenmo,
+      hint: l10n.csOpenLink('Venmo'),
+      url: Uri.parse(empathVenmo),
       text: 'Venmo',
     ),
     swapSpacer,
 
     // CashApp
-    EzElevatedIconButton(
-      onPressed: () => launchUrl(Uri.parse(empathCashApp)),
+    EzElevatedIconLink(
+      tooltip: empathCashApp,
+      hint: l10n.csOpenLink('CashApp'),
+      url: Uri.parse(empathCashApp),
       icon: EzIcon(LineIcons.dollarSign),
       label: 'CashApp',
     ),

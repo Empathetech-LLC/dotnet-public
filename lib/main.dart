@@ -191,8 +191,10 @@ class DotNet extends StatelessWidget {
 
     precacheImage(yasminSProfile, context);
     precacheImage(saraHProfile, context);
+    precacheImage(remalynProfile, context);
     precacheImage(alexisNProfile, context);
     precacheImage(carlyProfile, context);
+    precacheImage(hilariaProfile, context);
   }
 
   // Return the build //

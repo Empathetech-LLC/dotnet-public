@@ -171,7 +171,7 @@ class _CreatorProductsState extends State<CreatorProducts> {
             richLabel: efuiLFix,
             style: textTheme.bodyLarge,
             textAlign: TextAlign.center,
-            onTap: () => launchUrl(Uri.parse(efuiGitHub)),
+            url: Uri.parse(efuiGitHub),
             hint: ezL10n(context).gEFUISourceHint,
           ),
           EzPlainText(

@@ -20,6 +20,5 @@ class TextSettingsScreen extends StatelessWidget {
           showOpacity: false,
           target: target,
         ),
-        fab: EzBackFAB(context),
       );
 }

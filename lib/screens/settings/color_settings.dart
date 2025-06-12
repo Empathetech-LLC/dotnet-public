@@ -16,6 +16,5 @@ class ColorSettingsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) => DotnetScaffold(
         body: EzColorSettings(useImageDecoration: false, target: target),
-        fab: EzBackFAB(context),
       );
 }

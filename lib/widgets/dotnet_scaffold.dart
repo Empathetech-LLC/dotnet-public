@@ -9,6 +9,7 @@ import '../screens/export.dart';
 import 'package:efui_bios/efui_bios.dart';
 
 import 'package:flutter/material.dart';
+import 'package:url_launcher/link.dart';
 import 'package:go_router/go_router.dart';
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
@@ -85,13 +86,33 @@ class DotnetScaffold extends StatelessWidget {
           icon: Icon(PlatformIcons(context).share),
         );
       },
-      menuChildren: iconLinks.buttons
-          .map((EzIconButton button) => EzMenuButton(
-                onPressed: button.onPressed,
-                icon: button.icon,
-                label: button.tooltip!,
-              ))
-          .toList(),
+      menuChildren: iconLinks.buttons.map((Widget button) {
+        switch (button.runtimeType) {
+          case const (IconLink):
+            final IconLink alias = button as IconLink;
+
+            return Link(
+              uri: alias.url,
+              builder: (_, FollowLink? followLink) => EzMenuButton(
+                onPressed: followLink,
+                icon: alias.icon,
+                label: alias.tooltip,
+              ),
+            );
+          case const (EzIconButton):
+            final EzIconButton alias = button as EzIconButton;
+
+            return EzMenuButton(
+              onPressed: alias.onPressed,
+              icon: alias.icon,
+              label: alias.tooltip!,
+            );
+          default:
+            throw Exception(
+              'Unsupported iconLinksMenu button type: ${button.runtimeType}',
+            );
+        }
+      }).toList(),
     );
 
     final DotNetDrawer drawer = DotNetDrawer(

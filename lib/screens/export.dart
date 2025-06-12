@@ -9,7 +9,7 @@ export 'home.dart';
 
 export 'mission.dart';
 
-export 'products/products_screen.dart';
+export 'products/screen.dart';
 
 export 'team.dart';
 

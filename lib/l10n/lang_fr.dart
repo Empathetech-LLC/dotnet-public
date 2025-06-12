@@ -391,10 +391,16 @@ class LangFr extends Lang {
   String get tsEs => 'Traducteur espagnol';
 
   @override
+  String get tsFil => 'Traducteur philippin';
+
+  @override
   String get tsFr => 'Traducteur français';
 
   @override
   String get tsHt => 'Traducteur créole';
+
+  @override
+  String get tsZh => 'Traducteur chinois';
 
   @override
   String get fahJoin => 'Rejoignez le Fold';
@@ -451,6 +457,11 @@ class LangFr extends Lang {
 
   @override
   String get csMoneyQ => 'De l\'argent ?';
+
+  @override
+  String csOpenLink(Object page) {
+    return 'Ouvrir un lien vers $page de Empathetic';
+  }
 
   @override
   String get csPowerQ => 'De l\'énergie ?';

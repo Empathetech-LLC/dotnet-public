@@ -38,7 +38,7 @@ class FaHBanner extends StatelessWidget {
             // Icon
             Container(
               constraints: EzBox.sym(ezImageSize(context)),
-              child: EzLinkImageProvider(
+              child: EzImageLink(
                 image: fahImage,
                 fit: BoxFit.contain,
                 url: Uri.parse(faHLink),

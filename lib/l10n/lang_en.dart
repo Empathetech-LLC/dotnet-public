@@ -385,10 +385,16 @@ class LangEn extends Lang {
   String get tsEs => 'Spanish translator';
 
   @override
+  String get tsFil => 'Filipino translator';
+
+  @override
   String get tsFr => 'French translator';
 
   @override
   String get tsHt => 'Creole translator';
+
+  @override
+  String get tsZh => 'Chinese translator';
 
   @override
   String get fahJoin => 'Join the Fold';
@@ -443,6 +449,11 @@ class LangEn extends Lang {
 
   @override
   String get csMoneyQ => 'Money?';
+
+  @override
+  String csOpenLink(Object page) {
+    return 'Open a link to Empathetic\'s $page';
+  }
 
   @override
   String get csPowerQ => 'Power?';
@@ -832,10 +843,16 @@ class LangEnUs extends LangEn {
   String get tsEs => 'Spanish translator';
 
   @override
+  String get tsFil => 'Filipino translator';
+
+  @override
   String get tsFr => 'French translator';
 
   @override
   String get tsHt => 'Creole translator';
+
+  @override
+  String get tsZh => 'Chinese translator';
 
   @override
   String get fahJoin => 'Join the Fold';
@@ -890,6 +907,11 @@ class LangEnUs extends LangEn {
 
   @override
   String get csMoneyQ => 'Money?';
+
+  @override
+  String csOpenLink(Object page) {
+    return 'Open a link to Empathetic\'s $page';
+  }
 
   @override
   String get csPowerQ => 'Power?';

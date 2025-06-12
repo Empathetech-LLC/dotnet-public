@@ -777,6 +777,12 @@ abstract class Lang {
   /// **'Spanish translator'**
   String get tsEs;
 
+  /// No description provided for @tsFil.
+  ///
+  /// In en, this message translates to:
+  /// **'Filipino translator'**
+  String get tsFil;
+
   /// No description provided for @tsFr.
   ///
   /// In en, this message translates to:
@@ -788,6 +794,12 @@ abstract class Lang {
   /// In en, this message translates to:
   /// **'Creole translator'**
   String get tsHt;
+
+  /// No description provided for @tsZh.
+  ///
+  /// In en, this message translates to:
+  /// **'Chinese translator'**
+  String get tsZh;
 
   /// No description provided for @fahJoin.
   ///
@@ -890,6 +902,12 @@ abstract class Lang {
   /// In en, this message translates to:
   /// **'Money?'**
   String get csMoneyQ;
+
+  /// No description provided for @csOpenLink.
+  ///
+  /// In en, this message translates to:
+  /// **'Open a link to Empathetic\'s {page}'**
+  String csOpenLink(Object page);
 
   /// No description provided for @csPowerQ.
   ///

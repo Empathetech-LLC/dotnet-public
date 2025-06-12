@@ -33,11 +33,17 @@ const String yasminS = 'Yasmin Sid';
 /// 'Sara Herrera'; Freelance Spanish (es) translator
 const String saraH = 'Sara Herrera';
 
+/// 'Remalyn'; Freelance Filipino (fil) translator
+const String remalyn = 'Remalyn';
+
 /// 'Alexis Nguyen'; Freelance French (fr) translator
 const String alexisN = 'Alexis Nguyen';
 
 /// 'Carly'; Freelance Creole (ht) translator
 const String carly = 'Carly';
+
+/// 'Hilaria'; Freelance Simplified Chinese (zh) translator
+const String hilaria = 'Hilaria';
 
 // Things //
 
@@ -107,11 +113,17 @@ const ImageProvider yasminSProfile = NetworkImage(yasminSProfileLink);
 /// [NetworkImage] of [saraHProfileLink]
 const ImageProvider saraHProfile = NetworkImage(saraHProfileLink);
 
+/// [NetworkImage] of [remalynProfileLink]
+const ImageProvider remalynProfile = NetworkImage(remalynProfileLink);
+
 /// [NetworkImage] of [alexisNProfileLink]
 const ImageProvider alexisNProfile = NetworkImage(alexisNProfileLink);
 
 /// [NetworkImage] of [carlyProfileLink]
 const ImageProvider carlyProfile = NetworkImage(carlyProfileLink);
+
+/// [NetworkImage] of [hilariaProfileLink]
+const ImageProvider hilariaProfile = NetworkImage(hilariaProfileLink);
 
 /// [AssetImage] of [fahIconPath]
 const ImageProvider fahImage = AssetImage(fahIconPath);
@@ -178,6 +190,12 @@ const String saraHLink = 'https://www.fiverr.com/saraqua';
 const String saraHProfileLink =
     'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_original/v1/attachments/profile/photo/caeeca93d8d9dba80063f3bd7a58d4cb-1644185296216/02ace6d1-a57f-47c6-8a4e-68e491d55f60.jpg';
 
+/// [https://www.fiverr.com/remalynsayat]
+const String remalynLink = 'https://www.fiverr.com/remalynsayat';
+
+const String remalynProfileLink =
+    'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_original/v1/attachments/profile/photo/ee71fe7797d38e2952c2b878acb71d5c-1706369353865/a2720aad-2b18-4907-8a7c-f1f6b4b18054.jpg';
+
 /// [https://www.fiverr.com/alexisnguyen2]
 const String alexisNLink = 'https://www.fiverr.com/alexisnguyen2';
 
@@ -189,6 +207,12 @@ const String carlyLink = 'https://www.fiverr.com/louiscarly';
 
 const String carlyProfileLink =
     'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_original/v1/attachments/profile/photo/e753d4d365edb4f2a8a8e4aa0eb1f8de-1526514773546/6b5a9b8d-07b4-46d6-a33b-3c352a6b1204.png';
+
+/// [https://www.fiverr.com/hilariazoey]
+const String hilariaLink = 'https://www.fiverr.com/hilariazoey';
+
+const String hilariaProfileLink =
+    'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_original/v1/attachments/profile/photo/dbdf681e8134a0354b6d8ce46e65dc7c-1737204881968/9bf62bca-4a61-4b49-95f3-682aff62cd99.jpg';
 
 /// Dunvek, graphic designer
 /// https://www.fiverr.com/dunvek

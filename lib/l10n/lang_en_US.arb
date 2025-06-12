@@ -156,8 +156,10 @@
   "tsProfile": "{name}'s profile",
   "tsAr": "Arabic translator",
   "tsEs": "Spanish translator",
+  "tsFil": "Filipino translator",
   "tsFr": "French translator",
   "tsHt": "Creole translator",
+  "tsZh": "Chinese translator",
 
 
 
@@ -188,6 +190,7 @@
   "csGit": "GitHub contributor",
   
   "csMoneyQ": "Money?",
+  "csOpenLink": "Open a link to Empathetic's {page}",
   
   "csPowerQ": "Power?",
 

@@ -8,6 +8,7 @@ import 'package:efui_bios/efui_bios.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:url_launcher/link.dart';
 import 'package:feedback/feedback.dart';
 import 'package:flutter/foundation.dart';
 import 'package:line_icons/line_icons.dart';
@@ -16,6 +17,34 @@ import 'package:file_saver/file_saver.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
+
+class IconLink extends StatelessWidget {
+  /// Destination URL
+  final Uri url;
+
+  /// [IconButton.tooltip] passthrough
+  final String tooltip;
+
+  /// [IconButton.icon] passthrough
+  final Icon icon;
+
+  const IconLink({
+    super.key,
+    required this.url,
+    required this.tooltip,
+    required this.icon,
+  });
+
+  @override
+  Widget build(BuildContext context) => Link(
+        uri: url,
+        builder: (_, FollowLink? followLink) => EzIconButton(
+          onPressed: followLink,
+          tooltip: tooltip,
+          icon: icon,
+        ),
+      );
+}
 
 class IconLinks extends StatelessWidget {
   /// [BuildContext] passthrough for [Lang]
@@ -37,32 +66,32 @@ class IconLinks extends StatelessWidget {
 
   // Define the buttons //
 
-  late final EzIconButton gitHub = EzIconButton(
-    onPressed: () => launchUrl(Uri.parse(empathGitHub)),
+  late final IconLink gitHub = IconLink(
+    url: Uri.parse(empathGitHub),
     tooltip: 'GitHub',
     icon: Icon(LineIcons.github, color: colorScheme.primary),
   );
 
-  late final EzIconButton newsletter = EzIconButton(
-    onPressed: () => launchUrl(Uri.parse(empathNewsletter)),
+  late final IconLink newsletter = IconLink(
+    url: Uri.parse(empathNewsletter),
     tooltip: Lang.of(context)!.gNewsletter,
     icon: Icon(Icons.mail_outline, color: colorScheme.primary),
   );
 
-  late final EzIconButton mastodon = EzIconButton(
-    onPressed: () => launchUrl(Uri.parse(empathMastodon)),
+  late final IconLink mastodon = IconLink(
+    url: Uri.parse(empathMastodon),
     tooltip: 'Mastodon',
     icon: Icon(LineIcons.mastodon, color: colorScheme.primary),
   );
 
-  late final EzIconButton bluesky = EzIconButton(
-    onPressed: () => launchUrl(Uri.parse(empathBluesky)),
+  late final IconLink bluesky = IconLink(
+    url: Uri.parse(empathBluesky),
     tooltip: 'Bluesky',
     icon: Icon(FontAwesomeIcons.bluesky, color: colorScheme.primary),
   );
 
-  late final EzIconButton linkedIn = EzIconButton(
-    onPressed: () => launchUrl(Uri.parse(empathLinkedIn)),
+  late final IconLink linkedIn = IconLink(
+    url: Uri.parse(empathLinkedIn),
     tooltip: 'LinkedIn',
     icon: Icon(LineIcons.linkedin, color: colorScheme.primary),
   );
@@ -118,7 +147,7 @@ class IconLinks extends StatelessWidget {
 
   // Define the getters //
 
-  List<EzIconButton> get buttons => <EzIconButton>[
+  List<Widget> get buttons => <Widget>[
         gitHub,
         newsletter,
         mastodon,

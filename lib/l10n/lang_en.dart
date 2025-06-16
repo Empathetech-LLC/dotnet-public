@@ -305,7 +305,7 @@ class LangEn extends Lang {
 
   @override
   String get psSOSDescription =>
-      'A camera, SOS beacon, and list of your rights all in one place.\nIt\'s available in English, Arabic, Spanish, French, and Creole.';
+      'A camera, SOS beacon, and list of your rights all in one place.\nIt\'s available in English, Arabic, Spanish, Filipino, French, Creole, and Simplified Chinese.';
 
   @override
   String get psDocsLabel => 'How it works.';
@@ -374,27 +374,30 @@ class LangEn extends Lang {
   String get tsFreelance => 'Freelance';
 
   @override
+  String get tsTranslators => 'Translators';
+
+  @override
+  String get tsAr => 'Arabic';
+
+  @override
+  String get tsEs => 'Spanish';
+
+  @override
+  String get tsFil => 'Filipino';
+
+  @override
+  String get tsFr => 'French';
+
+  @override
+  String get tsHt => 'Creole';
+
+  @override
+  String get tsZh => 'Chinese (simplified)';
+
+  @override
   String tsProfile(Object name) {
     return '$name\'s profile';
   }
-
-  @override
-  String get tsAr => 'Arabic translator';
-
-  @override
-  String get tsEs => 'Spanish translator';
-
-  @override
-  String get tsFil => 'Filipino translator';
-
-  @override
-  String get tsFr => 'French translator';
-
-  @override
-  String get tsHt => 'Creole translator';
-
-  @override
-  String get tsZh => 'Chinese translator';
 
   @override
   String get fahJoin => 'Join the Fold';
@@ -763,7 +766,7 @@ class LangEnUs extends LangEn {
 
   @override
   String get psSOSDescription =>
-      'A camera, SOS beacon, and list of your rights all in one place.\nIt\'s available in English, Arabic, Spanish, French, and Creole.';
+      'A camera, SOS beacon, and list of your rights all in one place.\nIt\'s available in English, Arabic, Spanish, Filipino, French, Creole, and Simplified Chinese.';
 
   @override
   String get psDocsLabel => 'How it works.';
@@ -832,27 +835,30 @@ class LangEnUs extends LangEn {
   String get tsFreelance => 'Freelance';
 
   @override
+  String get tsTranslators => 'Translators';
+
+  @override
+  String get tsAr => 'Arabic';
+
+  @override
+  String get tsEs => 'Spanish';
+
+  @override
+  String get tsFil => 'Filipino';
+
+  @override
+  String get tsFr => 'French';
+
+  @override
+  String get tsHt => 'Creole';
+
+  @override
+  String get tsZh => 'Chinese (simplified)';
+
+  @override
   String tsProfile(Object name) {
     return '$name\'s profile';
   }
-
-  @override
-  String get tsAr => 'Arabic translator';
-
-  @override
-  String get tsEs => 'Spanish translator';
-
-  @override
-  String get tsFil => 'Filipino translator';
-
-  @override
-  String get tsFr => 'French translator';
-
-  @override
-  String get tsHt => 'Creole translator';
-
-  @override
-  String get tsZh => 'Chinese translator';
 
   @override
   String get fahJoin => 'Join the Fold';

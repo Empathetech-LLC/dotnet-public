@@ -630,7 +630,7 @@ abstract class Lang {
   /// No description provided for @psSOSDescription.
   ///
   /// In en, this message translates to:
-  /// **'A camera, SOS beacon, and list of your rights all in one place.\nIt\'s available in English, Arabic, Spanish, French, and Creole.'**
+  /// **'A camera, SOS beacon, and list of your rights all in one place.\nIt\'s available in English, Arabic, Spanish, Filipino, French, Creole, and Simplified Chinese.'**
   String get psSOSDescription;
 
   /// No description provided for @psDocsLabel.
@@ -759,47 +759,53 @@ abstract class Lang {
   /// **'Freelance'**
   String get tsFreelance;
 
-  /// No description provided for @tsProfile.
+  /// No description provided for @tsTranslators.
   ///
   /// In en, this message translates to:
-  /// **'{name}\'s profile'**
-  String tsProfile(Object name);
+  /// **'Translators'**
+  String get tsTranslators;
 
   /// No description provided for @tsAr.
   ///
   /// In en, this message translates to:
-  /// **'Arabic translator'**
+  /// **'Arabic'**
   String get tsAr;
 
   /// No description provided for @tsEs.
   ///
   /// In en, this message translates to:
-  /// **'Spanish translator'**
+  /// **'Spanish'**
   String get tsEs;
 
   /// No description provided for @tsFil.
   ///
   /// In en, this message translates to:
-  /// **'Filipino translator'**
+  /// **'Filipino'**
   String get tsFil;
 
   /// No description provided for @tsFr.
   ///
   /// In en, this message translates to:
-  /// **'French translator'**
+  /// **'French'**
   String get tsFr;
 
   /// No description provided for @tsHt.
   ///
   /// In en, this message translates to:
-  /// **'Creole translator'**
+  /// **'Creole'**
   String get tsHt;
 
   /// No description provided for @tsZh.
   ///
   /// In en, this message translates to:
-  /// **'Chinese translator'**
+  /// **'Chinese (simplified)'**
   String get tsZh;
+
+  /// No description provided for @tsProfile.
+  ///
+  /// In en, this message translates to:
+  /// **'{name}\'s profile'**
+  String tsProfile(Object name);
 
   /// No description provided for @fahJoin.
   ///

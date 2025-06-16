@@ -310,7 +310,7 @@ class LangFr extends Lang {
 
   @override
   String get psSOSDescription =>
-      'Une caméra, une balise SOS et une liste de vos droits, le tout au même endroit.\nIl est disponible en anglais, arabe, espagnol, français et créole.';
+      'Une caméra, une balise SOS et une liste de vos droits, le tout au même endroit.\nIl est disponible en anglais, arabe, espagnol, philippin, français, créole, et chinois simplifié.';
 
   @override
   String get psDocsLabel => 'Comment ça marche.';
@@ -380,27 +380,30 @@ class LangFr extends Lang {
   String get tsFreelance => 'Free-lance';
 
   @override
+  String get tsTranslators => 'Traducteurs';
+
+  @override
+  String get tsAr => 'Arabe';
+
+  @override
+  String get tsEs => 'Espagnol';
+
+  @override
+  String get tsFil => 'Philippin';
+
+  @override
+  String get tsFr => 'Français';
+
+  @override
+  String get tsHt => 'Créole';
+
+  @override
+  String get tsZh => 'Chinois (simplifié)';
+
+  @override
   String tsProfile(Object name) {
     return 'Profil de $name';
   }
-
-  @override
-  String get tsAr => 'Traducteur arabe';
-
-  @override
-  String get tsEs => 'Traducteur espagnol';
-
-  @override
-  String get tsFil => 'Traducteur philippin';
-
-  @override
-  String get tsFr => 'Traducteur français';
-
-  @override
-  String get tsHt => 'Traducteur créole';
-
-  @override
-  String get tsZh => 'Traducteur chinois';
 
   @override
   String get fahJoin => 'Rejoignez le Fold';

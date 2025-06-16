@@ -27,14 +27,14 @@ class _TeamScreenState extends State<TeamScreen> {
   static const EzSpacer spacer = EzSpacer();
   static const EzSeparator separator = EzSeparator();
   static const EzDivider divider = EzDivider();
-
   final EzSpacer margin = EzMargin();
-  final EdgeInsets wrapPadding = EzInsets.wrap(EzConfig.get(spacingKey));
 
   late final double imageSize = ezImageSize(context);
+  final double spacing = EzConfig.get(spacingKey);
 
   late final Lang l10n = Lang.of(context)!;
   late final TextTheme textTheme = Theme.of(context).textTheme;
+  late final TextStyle? subTitle = ezSubTitleStyle(textTheme);
 
   late final ColorScheme colorScheme = Theme.of(context).colorScheme;
 
@@ -136,64 +136,138 @@ class _TeamScreenState extends State<TeamScreen> {
             ),
             spacer,
 
+            // Translators
+            Text(
+              l10n.tsTranslators,
+              style: textTheme.titleLarge,
+              textAlign: TextAlign.center,
+            ),
             Wrap(
               alignment: WrapAlignment.center,
               runAlignment: WrapAlignment.center,
               crossAxisAlignment: WrapCrossAlignment.center,
               children: <Widget>[
-                Padding(
-                  padding: wrapPadding,
-                  child: _Ar(
-                    l10n: l10n,
-                    textTheme: textTheme,
-                    margin: margin,
-                    imageSize: imageSize,
-                  ),
+                // Arabic
+                _TranslatorGroup(
+                  margin: margin,
+                  spacing: spacing,
+                  title: l10n.tsAr,
+                  titleStyle: subTitle,
+                  freelancers: <Widget>[
+                    _Freelancer(
+                      l10n: l10n,
+                      textTheme: textTheme,
+                      imageSize: imageSize,
+                      margin: margin,
+                      name: yasminS,
+                      link: yasminSLink,
+                      image: yasminSProfile,
+                    ),
+                  ],
                 ),
-                Padding(
-                  padding: wrapPadding,
-                  child: _Es(
-                    l10n: l10n,
-                    textTheme: textTheme,
-                    margin: margin,
-                    imageSize: imageSize,
-                  ),
+
+                // Spanish
+                _TranslatorGroup(
+                  margin: margin,
+                  spacing: spacing,
+                  title: l10n.tsEs,
+                  titleStyle: subTitle,
+                  freelancers: <Widget>[
+                    _Freelancer(
+                      l10n: l10n,
+                      textTheme: textTheme,
+                      imageSize: imageSize,
+                      margin: margin,
+                      name: saraH,
+                      link: saraHLink,
+                      image: saraHProfile,
+                    ),
+                  ],
                 ),
-                Padding(
-                  padding: wrapPadding,
-                  child: _Fil(
-                    l10n: l10n,
-                    textTheme: textTheme,
-                    margin: margin,
-                    imageSize: imageSize,
-                  ),
+
+                // Filipino
+                _TranslatorGroup(
+                  margin: margin,
+                  spacing: spacing,
+                  title: l10n.tsFil,
+                  titleStyle: subTitle,
+                  freelancers: <Widget>[
+                    _Freelancer(
+                      l10n: l10n,
+                      textTheme: textTheme,
+                      imageSize: imageSize,
+                      margin: margin,
+                      name: remalyn,
+                      link: remalynLink,
+                      image: remalynProfile,
+                    ),
+                  ],
                 ),
-                Padding(
-                  padding: wrapPadding,
-                  child: _Fr(
-                    l10n: l10n,
-                    textTheme: textTheme,
-                    margin: margin,
-                    imageSize: imageSize,
-                  ),
+
+                // French
+                _TranslatorGroup(
+                  margin: margin,
+                  spacing: spacing,
+                  title: l10n.tsFr,
+                  titleStyle: subTitle,
+                  freelancers: <Widget>[
+                    _Freelancer(
+                      l10n: l10n,
+                      textTheme: textTheme,
+                      imageSize: imageSize,
+                      margin: margin,
+                      name: alexisN,
+                      link: alexisNLink,
+                      image: alexisNProfile,
+                    ),
+                  ],
                 ),
-                Padding(
-                  padding: wrapPadding,
-                  child: _Ht(
-                    l10n: l10n,
-                    textTheme: textTheme,
-                    margin: margin,
-                    imageSize: imageSize,
-                  ),
+
+                // Haitian Creole
+                _TranslatorGroup(
+                  margin: margin,
+                  spacing: spacing,
+                  title: l10n.tsHt,
+                  titleStyle: subTitle,
+                  freelancers: <Widget>[
+                    _Freelancer(
+                      l10n: l10n,
+                      textTheme: textTheme,
+                      imageSize: imageSize,
+                      margin: margin,
+                      name: carly,
+                      link: carlyLink,
+                      image: carlyProfile,
+                    ),
+                  ],
                 ),
-                Padding(
-                  padding: wrapPadding,
-                  child: _Zh(
-                    l10n: l10n,
-                    textTheme: textTheme,
-                    margin: margin,
-                    imageSize: imageSize,
-                  ),
+
+                // Simplified Chinese
+                _TranslatorGroup(
+                  margin: margin,
+                  spacing: spacing,
+                  title: l10n.tsZh,
+                  titleStyle: subTitle,
+                  freelancers: <Widget>[
+                    _Freelancer(
+                      l10n: l10n,
+                      textTheme: textTheme,
+                      imageSize: imageSize,
+                      margin: margin,
+                      name: leah,
+                      link: leahLink,
+                      image: leahProfile,
+                    ),
+                    _Freelancer(
+                      l10n: l10n,
+                      textTheme: textTheme,
+                      imageSize: imageSize,
+                      margin: margin,
+                      name: hilaria,
+                      link: hilariaLink,
+                      image: hilariaProfile,
+                    ),
+                  ],
                 ),
               ],
             ),
@@ -206,79 +280,87 @@ class _TeamScreenState extends State<TeamScreen> {
   }
 }
 
-// Credits Widgets //
-// There is a fair amount of duplication here, but it's likely there will eventually be more than one translator per language
-// So a little repetition is fine
-
-class _Ar extends StatelessWidget {
-  final Lang l10n;
-  final TextTheme textTheme;
+class _TranslatorGroup extends StatelessWidget {
   final EzSpacer margin;
-  final double imageSize;
+  final double spacing;
+  final String title;
+  final TextStyle? titleStyle;
+  final List<Widget> freelancers;
 
-  const _Ar({
-    required this.l10n,
-    required this.textTheme,
+  const _TranslatorGroup({
     required this.margin,
-    required this.imageSize,
+    required this.spacing,
+    required this.title,
+    required this.titleStyle,
+    required this.freelancers,
   });
 
   @override
-  Widget build(BuildContext context) => Column(
-        mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          // Avatar
-          Container(
-            constraints: EzBox.sym(imageSize),
-            child: EzLinkWidget(
-              isImage: true,
-              url: Uri.parse(yasminSLink),
-              tooltip: yasminSLink,
-              label: l10n.tsProfile(yasminS),
-              hint: l10n.gFiverrPage(yasminS),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(imageSize),
-                child: const Image(image: yasminSProfile, fit: BoxFit.contain),
-              ),
-            ),
-          ),
-          margin,
-
-          // Information
-          MergeSemantics(
+  Widget build(BuildContext context) {
+    return (freelancers.length > 1)
+        ? Padding(
+            padding: EdgeInsets.all(spacing),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Text(
-                  l10n.tsAr,
-                  style: textTheme.titleLarge,
-                  textAlign: TextAlign.center,
-                ),
-                Text(
-                  yasminS,
-                  style: textTheme.bodyLarge,
-                  textAlign: TextAlign.center,
+                Text(title, style: titleStyle, textAlign: TextAlign.center),
+                margin,
+                Wrap(
+                  alignment: WrapAlignment.center,
+                  runAlignment: WrapAlignment.center,
+                  crossAxisAlignment: WrapCrossAlignment.center,
+                  children: freelancers
+                      .map((Widget freelancer) => Padding(
+                            padding: EdgeInsets.only(
+                              left: spacing / 2,
+                              right: spacing / 2,
+                              bottom: spacing,
+                            ),
+                            child: freelancer,
+                          ))
+                      .toList(),
                 ),
               ],
             ),
-          ),
-        ],
-      );
+          )
+        : Padding(
+            padding: EdgeInsets.all(spacing),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Text(title, style: titleStyle, textAlign: TextAlign.center),
+                margin,
+                Wrap(
+                  alignment: WrapAlignment.center,
+                  runAlignment: WrapAlignment.center,
+                  crossAxisAlignment: WrapCrossAlignment.center,
+                  children: freelancers,
+                ),
+              ],
+            ),
+          );
+  }
 }
 
-class _Es extends StatelessWidget {
+class _Freelancer extends StatelessWidget {
   final Lang l10n;
   final TextTheme textTheme;
-  final EzSpacer margin;
   final double imageSize;
+  final EzSpacer margin;
+  final String name;
+  final String link;
+  final ImageProvider image;
 
-  const _Es({
+  const _Freelancer({
     required this.l10n,
     required this.textTheme,
-    required this.margin,
     required this.imageSize,
+    required this.margin,
+    required this.name,
+    required this.link,
+    required this.image,
   });
 
   @override
@@ -291,268 +373,23 @@ class _Es extends StatelessWidget {
             constraints: EzBox.sym(imageSize),
             child: EzLinkWidget(
               isImage: true,
-              url: Uri.parse(saraHLink),
-              tooltip: saraHLink,
-              label: l10n.tsProfile(saraH),
-              hint: l10n.gFiverrPage(saraH),
+              url: Uri.parse(link),
+              tooltip: link,
+              label: l10n.tsProfile(name),
+              hint: l10n.gFiverrPage(name),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(imageSize),
-                child: const Image(image: saraHProfile, fit: BoxFit.contain),
+                child: Image(image: image, fit: BoxFit.contain),
               ),
             ),
           ),
           margin,
 
-          // Information
-          MergeSemantics(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Text(
-                  l10n.tsEs,
-                  style: textTheme.titleLarge,
-                  textAlign: TextAlign.center,
-                ),
-                Text(
-                  saraH,
-                  style: textTheme.bodyLarge,
-                  textAlign: TextAlign.center,
-                ),
-              ],
-            ),
-          ),
-        ],
-      );
-}
-
-class _Fil extends StatelessWidget {
-  final Lang l10n;
-  final TextTheme textTheme;
-  final EzSpacer margin;
-  final double imageSize;
-
-  const _Fil({
-    required this.l10n,
-    required this.textTheme,
-    required this.margin,
-    required this.imageSize,
-  });
-
-  @override
-  Widget build(BuildContext context) => Column(
-        mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          // Avatar
-          Container(
-            constraints: EzBox.sym(imageSize),
-            child: EzLinkWidget(
-              isImage: true,
-              url: Uri.parse(remalynLink),
-              tooltip: remalynLink,
-              label: l10n.tsProfile(remalyn),
-              hint: l10n.gFiverrPage(remalyn),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(imageSize),
-                child: const Image(image: remalynProfile, fit: BoxFit.contain),
-              ),
-            ),
-          ),
-          margin,
-
-          // Information
-          MergeSemantics(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Text(
-                  l10n.tsFil,
-                  style: textTheme.titleLarge,
-                  textAlign: TextAlign.center,
-                ),
-                Text(
-                  remalyn,
-                  style: textTheme.bodyLarge,
-                  textAlign: TextAlign.center,
-                ),
-              ],
-            ),
-          ),
-        ],
-      );
-}
-
-class _Fr extends StatelessWidget {
-  final Lang l10n;
-  final TextTheme textTheme;
-  final EzSpacer margin;
-  final double imageSize;
-
-  const _Fr({
-    required this.l10n,
-    required this.textTheme,
-    required this.margin,
-    required this.imageSize,
-  });
-
-  @override
-  Widget build(BuildContext context) => Column(
-        mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          // Avatar
-          Container(
-            constraints: EzBox.sym(imageSize),
-            child: EzLinkWidget(
-              isImage: true,
-              url: Uri.parse(alexisNLink),
-              label: l10n.tsProfile(alexisN),
-              hint: l10n.gFiverrPage(alexisN),
-              tooltip: alexisNLink,
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(imageSize),
-                child: const Image(image: alexisNProfile, fit: BoxFit.contain),
-              ),
-            ),
-          ),
-          margin,
-
-          // Information
-          MergeSemantics(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Text(
-                  l10n.tsFr,
-                  style: textTheme.titleLarge,
-                  textAlign: TextAlign.center,
-                ),
-                Text(
-                  alexisN,
-                  style: textTheme.bodyLarge,
-                  textAlign: TextAlign.center,
-                ),
-              ],
-            ),
-          ),
-        ],
-      );
-}
-
-class _Ht extends StatelessWidget {
-  final Lang l10n;
-  final TextTheme textTheme;
-  final EzSpacer margin;
-  final double imageSize;
-
-  const _Ht({
-    required this.l10n,
-    required this.textTheme,
-    required this.margin,
-    required this.imageSize,
-  });
-
-  @override
-  Widget build(BuildContext context) => Column(
-        mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          // Avatar
-          Container(
-            constraints: EzBox.sym(imageSize),
-            child: EzLinkWidget(
-              isImage: true,
-              url: Uri.parse(carlyLink),
-              tooltip: carlyLink,
-              label: l10n.tsProfile(carly),
-              hint: l10n.gFiverrPage(carly),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(imageSize),
-                child: const Image(image: carlyProfile, fit: BoxFit.contain),
-              ),
-            ),
-          ),
-          margin,
-
-          // Information
-          MergeSemantics(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Text(
-                  l10n.tsHt,
-                  style: textTheme.titleLarge,
-                  textAlign: TextAlign.center,
-                ),
-                Text(
-                  carly,
-                  style: textTheme.bodyLarge,
-                  textAlign: TextAlign.center,
-                ),
-              ],
-            ),
-          ),
-        ],
-      );
-}
-
-class _Zh extends StatelessWidget {
-  final Lang l10n;
-  final TextTheme textTheme;
-  final EzSpacer margin;
-  final double imageSize;
-
-  const _Zh({
-    required this.l10n,
-    required this.textTheme,
-    required this.margin,
-    required this.imageSize,
-  });
-
-  @override
-  Widget build(BuildContext context) => Column(
-        mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          // Avatar
-          Container(
-            constraints: EzBox.sym(imageSize),
-            child: EzLinkWidget(
-              isImage: true,
-              url: Uri.parse(hilariaLink),
-              tooltip: hilariaLink,
-              label: l10n.tsProfile(hilaria),
-              hint: l10n.gFiverrPage(hilaria),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(imageSize),
-                child: const Image(image: hilariaProfile, fit: BoxFit.contain),
-              ),
-            ),
-          ),
-          margin,
-
-          // Information
-          MergeSemantics(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Text(
-                  l10n.tsZh,
-                  style: textTheme.titleLarge,
-                  textAlign: TextAlign.center,
-                ),
-                Text(
-                  hilaria,
-                  style: textTheme.bodyLarge,
-                  textAlign: TextAlign.center,
-                ),
-              ],
-            ),
+          // Name
+          Text(
+            name,
+            style: textTheme.bodyLarge,
+            textAlign: TextAlign.center,
           ),
         ],
       );

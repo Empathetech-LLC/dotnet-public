@@ -124,7 +124,7 @@
 
   "psSOSIconLabel": "a loudly colored notification bell.",
 
-  "psSOSDescription": "A camera, SOS beacon, and list of your rights all in one place.\nIt's available in English, Arabic, Spanish, French, and Creole.",
+  "psSOSDescription": "A camera, SOS beacon, and list of your rights all in one place.\nIt's available in English, Arabic, Spanish, Filipino, French, Creole, and Simplified Chinese.",
   "psDocsLabel": "How it works.",
   "psDocsHint": "Open a link to the README",
   "psSafeSOS": "InstaSOS has no accounts, cookies, or ads.\n",
@@ -153,13 +153,15 @@
   "tsCommunity": "Community",
 
   "tsFreelance": "Freelance",
+
+  "tsTranslators": "Translators",
+  "tsAr": "Arabic",
+  "tsEs": "Spanish",
+  "tsFil": "Filipino",
+  "tsFr": "French",
+  "tsHt": "Creole",
+  "tsZh": "Chinese (simplified)",
   "tsProfile": "{name}'s profile",
-  "tsAr": "Arabic translator",
-  "tsEs": "Spanish translator",
-  "tsFil": "Filipino translator",
-  "tsFr": "French translator",
-  "tsHt": "Creole translator",
-  "tsZh": "Chinese translator",
 
 
 

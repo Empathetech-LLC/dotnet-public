@@ -42,6 +42,9 @@ const String alexisN = 'Alexis Nguyen';
 /// 'Carly'; Freelance Creole (ht) translator
 const String carly = 'Carly';
 
+/// 'Leah'; Freelance Simplified Chinese (zh) translator
+const String leah = 'Leah';
+
 /// 'Hilaria'; Freelance Simplified Chinese (zh) translator
 const String hilaria = 'Hilaria';
 
@@ -122,6 +125,9 @@ const ImageProvider alexisNProfile = NetworkImage(alexisNProfileLink);
 /// [NetworkImage] of [carlyProfileLink]
 const ImageProvider carlyProfile = NetworkImage(carlyProfileLink);
 
+/// [NetworkImage] of [leahProfileLink]
+const ImageProvider leahProfile = NetworkImage(leahProfileLink);
+
 /// [NetworkImage] of [hilariaProfileLink]
 const ImageProvider hilariaProfile = NetworkImage(hilariaProfileLink);
 
@@ -178,37 +184,43 @@ const String aboutFaHLink = 'https://foldingathome.org/about-2/';
 
 // Freelancers //
 
-/// [https://www.fiverr.com/yasminsid]
+/// https://www.fiverr.com/yasminsid
 const String yasminSLink = 'https://www.fiverr.com/yasminsid';
 
 const String yasminSProfileLink =
     'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_original/v1/attachments/profile/photo/9272e7a04390711a68fdde232f04e1b4-1560632522775/1a69d9e8-2c06-42e6-b79d-03e5d790032f.jpg';
 
-/// [https://www.fiverr.com/saraqua]
+/// https://www.fiverr.com/saraqua
 const String saraHLink = 'https://www.fiverr.com/saraqua';
 
 const String saraHProfileLink =
     'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_original/v1/attachments/profile/photo/caeeca93d8d9dba80063f3bd7a58d4cb-1644185296216/02ace6d1-a57f-47c6-8a4e-68e491d55f60.jpg';
 
-/// [https://www.fiverr.com/remalynsayat]
+/// https://www.fiverr.com/remalynsayat
 const String remalynLink = 'https://www.fiverr.com/remalynsayat';
 
 const String remalynProfileLink =
     'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_original/v1/attachments/profile/photo/ee71fe7797d38e2952c2b878acb71d5c-1706369353865/a2720aad-2b18-4907-8a7c-f1f6b4b18054.jpg';
 
-/// [https://www.fiverr.com/alexisnguyen2]
+/// https://www.fiverr.com/alexisnguyen2
 const String alexisNLink = 'https://www.fiverr.com/alexisnguyen2';
 
 const String alexisNProfileLink =
     'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_original/v1/attachments/profile/photo/fa4ca8fc941f2c5e25aaa1814867e90c-1672317477265/e9da2515-5e39-4384-b6bc-2d6eec587f33.png';
 
-/// [https://www.fiverr.com/louiscarly]
+/// https://www.fiverr.com/louiscarly
 const String carlyLink = 'https://www.fiverr.com/louiscarly';
 
 const String carlyProfileLink =
     'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_original/v1/attachments/profile/photo/e753d4d365edb4f2a8a8e4aa0eb1f8de-1526514773546/6b5a9b8d-07b4-46d6-a33b-3c352a6b1204.png';
 
-/// [https://www.fiverr.com/hilariazoey]
+/// https://www.fiverr.com/leahli244
+const String leahLink = 'https://www.fiverr.com/leahli244';
+
+const String leahProfileLink =
+    'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_original/v1/attachments/profile/photo/219bf43d14dd11d4a38a1820b39b5f44-1579491837074/a6d9cf14-d70e-40bf-b263-b6de546b09bf.png';
+
+/// https://www.fiverr.com/hilariazoey
 const String hilariaLink = 'https://www.fiverr.com/hilariazoey';
 
 const String hilariaProfileLink =

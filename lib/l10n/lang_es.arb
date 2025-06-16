@@ -124,7 +124,7 @@
 
   "psSOSIconLabel": "Un icono de notificación de color fuerte.",
 
-  "psSOSDescription": "Una cámara, una baliza SOS y una lista de tus derechos, todo en un solo lugar.\nEstá disponible en inglés, árabe, español, francés y criollo.",
+  "psSOSDescription": "Una cámara, una baliza SOS y una lista de tus derechos, todo en un solo lugar.\nEstá disponible en inglés, árabe, español, filipino, francés, criollo, y chino simplificado.",
   "psDocsLabel": "Cómo funciona",
   "psDocsHint": "Abrir un enlace al README",
   "psSafeSOS": "InstaSOS no tiene cuentas, cookies ni anuncios.\n",
@@ -153,13 +153,15 @@
   "tsCommunity": "Comunidad",
 
   "tsFreelance": "Independiente",
+
+  "tsTranslators": "Traductores",
+  "tsAr": "Arabe",
+  "tsEs": "Español",
+  "tsFil": "Filipino",
+  "tsFr": "Francés",
+  "tsHt": "Criollo",
+  "tsZh": "Chino (simplificado)",
   "tsProfile": "Perfil de {name}",
-  "tsAr": "Traductor de árabe",
-  "tsEs": "Traductora de español",
-  "tsFil": "Traductor de filipino",
-  "tsFr": "Traductor de francés",
-  "tsHt": "Traductor de criollo",
-  "tsZh": "Traductor de chino",
 
 
 

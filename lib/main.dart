@@ -180,20 +180,30 @@ class DotNet extends StatelessWidget {
   // Define setup functions //
 
   Future<void> precacheImages(BuildContext context) async {
+    // Products //
+
+    // Creating
     precacheImage(openUIImage, context);
 
+    // Using
     precacheImage(sosImage, context);
     precacheImage(smokeSignalImage, context);
 
+    // Team //
+
+    // Core
     precacheImage(founderImage, context);
 
+    // Community
     precacheImage(fahImage, context);
 
+    // Freelance
     precacheImage(yasminSProfile, context);
     precacheImage(saraHProfile, context);
     precacheImage(remalynProfile, context);
     precacheImage(alexisNProfile, context);
     precacheImage(carlyProfile, context);
+    precacheImage(leahProfile, context);
     precacheImage(hilariaProfile, context);
   }
 

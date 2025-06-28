@@ -7,14 +7,8 @@ import '../utils/export.dart';
 import 'package:efui_bios/efui_bios.dart';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:url_launcher/link.dart';
-import 'package:feedback/feedback.dart';
-import 'package:flutter/foundation.dart';
 import 'package:line_icons/line_icons.dart';
-import 'package:share_plus/share_plus.dart';
-import 'package:file_saver/file_saver.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 
@@ -53,15 +47,11 @@ class IconLinks extends StatelessWidget {
   /// [ThemeData.colorScheme] passthrough
   final ColorScheme colorScheme;
 
-  /// Spacing between the [EzIconButton]s when [ScreenSpace] is not limited
-  final double margin;
-
   /// [Row] of [EzIconButton]s leading to all Empathetech contacts
   IconLinks({
     super.key,
     required this.context,
     required this.colorScheme,
-    required this.margin,
   });
 
   // Define the buttons //
@@ -97,50 +87,12 @@ class IconLinks extends StatelessWidget {
   );
 
   late final EzIconButton feedback = EzIconButton(
-    onPressed: () async {
-      final bool strictMobile = !kIsWeb && isMobile();
-      late final EFUILang l10n = ezL10n(context);
-
-      if (strictMobile) {
-        await Clipboard.setData(const ClipboardData(text: empathSupport));
-
-        if (context.mounted) {
-          await ezSnackBar(
-            context: context,
-            message:
-                '${l10n.gOpeningFeedback}\n${l10n.gClipboard(l10n.gSupportEmail)}',
-          ).closed;
-        }
-      }
-
-      if (context.mounted) {
-        BetterFeedback.of(context).show(
-          (UserFeedback feedback) async {
-            if (strictMobile) {
-              await SharePlus.instance.share(ShareParams(
-                text: feedback.text,
-                files: <XFile>[
-                  XFile.fromData(
-                    feedback.screenshot,
-                    name: 'screenshot.png',
-                    mimeType: 'image/png',
-                  )
-                ],
-              ));
-            } else {
-              await FileSaver.instance.saveFile(
-                name: 'screenshot.png',
-                bytes: feedback.screenshot,
-                mimeType: MimeType.png,
-              );
-              await launchUrl(Uri.parse(
-                'mailto:$empathSupport?subject=Site%20feedback&body=${feedback.text}\n\n----%20%20----%20%20----\n\n${l10n.gAttachScreenshot}',
-              ));
-            }
-          },
-        );
-      }
-    },
+    onPressed: () => ezFeedback(
+      parentContext: context,
+      l10n: ezL10n(context),
+      supportEmail: empathSupport,
+      appName: 'dotnet',
+    ),
     tooltip: ezL10n(context).gGiveFeedback,
     icon: Icon(Icons.feedback_outlined, color: colorScheme.primary),
   );

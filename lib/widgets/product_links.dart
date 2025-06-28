@@ -13,11 +13,11 @@ import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 
 //* Shared *//
 
-/// '9.1.0'
-const String efuiFallback = '9.1.0';
+/// '9.2.0'
+const String efuiFallback = '9.2.0';
 
-/// '1.3.0'
-const String sosFallback = '1.3.0';
+/// '1.3.2'
+const String sosFallback = '1.3.2';
 
 /// 'https://github.com/Empathetech-LLC'
 const String _git = 'https://github.com/Empathetech-LLC';

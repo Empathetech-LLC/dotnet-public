@@ -75,7 +75,6 @@ class DotnetScaffold extends StatelessWidget {
     final IconLinks iconLinks = IconLinks(
       context: context,
       colorScheme: Theme.of(context).colorScheme,
-      margin: margin,
     );
 
     final Widget iconLinksMenu = MenuAnchor(
@@ -121,11 +120,11 @@ class DotnetScaffold extends StatelessWidget {
       header: iconLinks,
     );
 
-    final double threshold = 2 * (toolbarHeight + 2 * margin) + pageLinks.width;
+    final double newSmall = 2 * (toolbarHeight + 2 * margin) + pageLinks.width;
 
     // Define the build(s) //
 
-    final _SmallBuild smallBuild = _SmallBuild(
+    final _RestrictedScaffold restricted = _RestrictedScaffold(
       toolbarHeight: toolbarHeight,
       isLefty: isLefty,
       logo: brandLogo,
@@ -134,9 +133,8 @@ class DotnetScaffold extends StatelessWidget {
       fab: fab,
     );
 
-    final _LargeBuild largeBuild = _LargeBuild(
+    final _ExpandedScaffold expanded = _ExpandedScaffold(
       toolbarHeight: toolbarHeight,
-      margin: margin,
       isLefty: isLefty,
       logo: brandLogo,
       pageLinks: pageLinks,
@@ -147,15 +145,15 @@ class DotnetScaffold extends StatelessWidget {
 
     // Return the build //
 
-    return EzSwapScaffold(
-      small: smallBuild,
-      large: largeBuild,
-      threshold: threshold,
+    return EzAdaptiveScaffold(
+      small: restricted,
+      medium: expanded,
+      offset: (newSmall - ScreenSize.small.size),
     );
   }
 }
 
-class _SmallBuild extends StatelessWidget {
+class _RestrictedScaffold extends StatelessWidget {
   final double width = double.infinity;
   final double toolbarHeight;
   final bool isLefty;
@@ -166,7 +164,7 @@ class _SmallBuild extends StatelessWidget {
 
   /// [DotnetScaffold] for when there is limited screen space
   /// Has a mobile-like layout
-  const _SmallBuild({
+  const _RestrictedScaffold({
     required this.toolbarHeight,
     required this.isLefty,
     required this.logo,
@@ -217,10 +215,9 @@ class _SmallBuild extends StatelessWidget {
   }
 }
 
-class _LargeBuild extends StatelessWidget {
+class _ExpandedScaffold extends StatelessWidget {
   final double width = double.infinity;
   final double toolbarHeight;
-  final double margin;
   final bool isLefty;
   final Widget logo;
   final PageLinks pageLinks;
@@ -230,9 +227,8 @@ class _LargeBuild extends StatelessWidget {
 
   /// [DotnetScaffold] for when there is ample screen space
   /// Has a traditional footer-less web page layout
-  const _LargeBuild({
+  const _ExpandedScaffold({
     required this.toolbarHeight,
-    required this.margin,
     required this.isLefty,
     required this.logo,
     required this.pageLinks,

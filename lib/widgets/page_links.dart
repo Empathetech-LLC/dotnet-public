@@ -26,7 +26,7 @@ class PageLinks extends StatelessWidget {
 
   // Define the helper functions //
 
-  /// Helpful for [EzSwapScaffold] calculations
+  /// Helpful for [EzAdaptiveScaffold] calculations
   double get width {
     final Lang l10n = Lang.of(context)!;
 

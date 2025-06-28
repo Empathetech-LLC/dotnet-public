@@ -16,6 +16,7 @@ class SettingsHomeScreen extends StatelessWidget {
   Widget build(BuildContext context) => const DotnetScaffold(
         body: EzSettingsHome(
           useImageDecoration: false,
+          protest: true,
           textSettingsPath: textSettingsPath,
           layoutSettingsPath: layoutSettingsPath,
           colorSettingsPath: colorSettingsPath,

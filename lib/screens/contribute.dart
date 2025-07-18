@@ -123,8 +123,7 @@ class _ContributeScreenState extends State<ContributeScreen> {
   Widget build(BuildContext context) {
     return DotnetScaffold(
       body: EzScreen(
-        useImageDecoration: false,
-        child: EzScrollView(
+        EzScrollView(
           children: <Widget>[
             if (spacing > margin) EzSpacer(space: spacing - margin),
 
@@ -248,6 +247,7 @@ class _ContributeScreenState extends State<ContributeScreen> {
             separator,
           ],
         ),
+        useImageDecoration: false,
       ),
       fab: SettingsFAB(context),
     );

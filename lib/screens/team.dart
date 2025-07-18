@@ -9,7 +9,6 @@ import '../widgets/export.dart';
 import 'package:efui_bios/efui_bios.dart';
 
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 
 class TeamScreen extends StatefulWidget {
@@ -52,228 +51,226 @@ class _TeamScreenState extends State<TeamScreen> {
   Widget build(BuildContext context) {
     return DotnetScaffold(
       body: EzScreen(
+        EzScrollView(children: <Widget>[
+          // Core //
+
+          Text(
+            l10n.tsCore,
+            style: textTheme.headlineLarge,
+            textAlign: TextAlign.center,
+          ),
+          spacer,
+
+          // Founder
+          EzRowCol.sym(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              // Avatar of Mike
+              Container(
+                // Not an ego thing I swear
+                // The image gets super pixelated if it's too small
+                constraints: EzBox.sym(imageSize * 1.333),
+                child: EzImageLink(
+                  image: founderImage,
+                  fit: BoxFit.contain,
+                  label: l10n.tsTheFounderLabel,
+                  hint: l10n.tsTheFounderHint,
+                  url: Uri.parse(
+                    'mailto:$empathFounder?subject=Becoming%20a%20contributor',
+                  ),
+                  tooltip: l10n.tsTheFounderHint,
+                ),
+              ),
+              EzSwapMargin(),
+
+              // Information
+              MergeSemantics(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Text(
+                      l10n.tsTheFounder,
+                      style: textTheme.titleLarge,
+                      textAlign: TextAlign.center,
+                    ),
+                    Text(
+                      mike,
+                      style: textTheme.bodyLarge,
+                      textAlign: TextAlign.center,
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+          divider,
+
+          // Community //
+
+          EzLink(
+            l10n.tsCommunity,
+            style: textTheme.headlineLarge,
+            textAlign: TextAlign.center,
+            textColor: colorScheme.onSurface,
+            decorationColor: colorScheme.primary,
+            url: Uri.parse(contributeURL),
+            hint: l10n.gContributeHint,
+          ),
+          spacer,
+
+          // Folding@home
+          const FaHBanner(),
+          divider,
+
+          // Freelance //
+
+          Text(
+            l10n.tsFreelance,
+            style: textTheme.headlineLarge,
+            textAlign: TextAlign.center,
+          ),
+          spacer,
+
+          // Translators
+          Text(
+            l10n.tsTranslators,
+            style: textTheme.titleLarge,
+            textAlign: TextAlign.center,
+          ),
+          Wrap(
+            alignment: WrapAlignment.center,
+            runAlignment: WrapAlignment.center,
+            crossAxisAlignment: WrapCrossAlignment.center,
+            children: <Widget>[
+              // Arabic
+              _TranslatorGroup(
+                margin: margin,
+                spacing: spacing,
+                title: l10n.tsAr,
+                titleStyle: subTitle,
+                freelancers: <Widget>[
+                  _Freelancer(
+                    l10n: l10n,
+                    textTheme: textTheme,
+                    imageSize: imageSize,
+                    margin: margin,
+                    name: yasminS,
+                    link: yasminSLink,
+                    image: yasminSProfile,
+                  ),
+                ],
+              ),
+
+              // Spanish
+              _TranslatorGroup(
+                margin: margin,
+                spacing: spacing,
+                title: l10n.tsEs,
+                titleStyle: subTitle,
+                freelancers: <Widget>[
+                  _Freelancer(
+                    l10n: l10n,
+                    textTheme: textTheme,
+                    imageSize: imageSize,
+                    margin: margin,
+                    name: saraH,
+                    link: saraHLink,
+                    image: saraHProfile,
+                  ),
+                ],
+              ),
+
+              // Filipino
+              _TranslatorGroup(
+                margin: margin,
+                spacing: spacing,
+                title: l10n.tsFil,
+                titleStyle: subTitle,
+                freelancers: <Widget>[
+                  _Freelancer(
+                    l10n: l10n,
+                    textTheme: textTheme,
+                    imageSize: imageSize,
+                    margin: margin,
+                    name: remalyn,
+                    link: remalynLink,
+                    image: remalynProfile,
+                  ),
+                ],
+              ),
+
+              // French
+              _TranslatorGroup(
+                margin: margin,
+                spacing: spacing,
+                title: l10n.tsFr,
+                titleStyle: subTitle,
+                freelancers: <Widget>[
+                  _Freelancer(
+                    l10n: l10n,
+                    textTheme: textTheme,
+                    imageSize: imageSize,
+                    margin: margin,
+                    name: alexisN,
+                    link: alexisNLink,
+                    image: alexisNProfile,
+                  ),
+                ],
+              ),
+
+              // Haitian Creole
+              _TranslatorGroup(
+                margin: margin,
+                spacing: spacing,
+                title: l10n.tsHt,
+                titleStyle: subTitle,
+                freelancers: <Widget>[
+                  _Freelancer(
+                    l10n: l10n,
+                    textTheme: textTheme,
+                    imageSize: imageSize,
+                    margin: margin,
+                    name: carly,
+                    link: carlyLink,
+                    image: carlyProfile,
+                  ),
+                ],
+              ),
+
+              // Simplified Chinese
+              _TranslatorGroup(
+                margin: margin,
+                spacing: spacing,
+                title: l10n.tsZh,
+                titleStyle: subTitle,
+                freelancers: <Widget>[
+                  _Freelancer(
+                    l10n: l10n,
+                    textTheme: textTheme,
+                    imageSize: imageSize,
+                    margin: margin,
+                    name: leah,
+                    link: leahLink,
+                    image: leahProfile,
+                  ),
+                  _Freelancer(
+                    l10n: l10n,
+                    textTheme: textTheme,
+                    imageSize: imageSize,
+                    margin: margin,
+                    name: hilaria,
+                    link: hilariaLink,
+                    image: hilariaProfile,
+                  ),
+                ],
+              ),
+            ],
+          ),
+          separator,
+        ]),
         useImageDecoration: false,
-        child: EzScrollView(
-          children: <Widget>[
-            // Core //
-
-            Text(
-              l10n.tsCore,
-              style: textTheme.headlineLarge,
-              textAlign: TextAlign.center,
-            ),
-            spacer,
-
-            // Founder
-            EzRowCol.sym(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                // Avatar of Mike
-                Container(
-                  // Not an ego thing I swear
-                  // The image gets super pixelated if it's too small
-                  constraints: EzBox.sym(imageSize * 1.333),
-                  child: EzImageLink(
-                    image: founderImage,
-                    fit: BoxFit.contain,
-                    label: l10n.tsTheFounderLabel,
-                    hint: l10n.tsTheFounderHint,
-                    url: Uri.parse(
-                      'mailto:$empathFounder?subject=Becoming%20a%20contributor',
-                    ),
-                    tooltip: l10n.tsTheFounderHint,
-                  ),
-                ),
-                EzSwapMargin(),
-
-                // Information
-                MergeSemantics(
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Text(
-                        l10n.tsTheFounder,
-                        style: textTheme.titleLarge,
-                        textAlign: TextAlign.center,
-                      ),
-                      Text(
-                        mike,
-                        style: textTheme.bodyLarge,
-                        textAlign: TextAlign.center,
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-            divider,
-
-            // Community //
-
-            EzLink(
-              l10n.tsCommunity,
-              style: textTheme.headlineLarge,
-              textAlign: TextAlign.center,
-              textColor: colorScheme.onSurface,
-              decorationColor: colorScheme.primary,
-              onTap: () => context.goNamed(contributePath),
-              hint: l10n.gContributeHint,
-            ),
-            spacer,
-
-            // Folding@home
-            const FaHBanner(),
-            divider,
-
-            // Freelance //
-
-            Text(
-              l10n.tsFreelance,
-              style: textTheme.headlineLarge,
-              textAlign: TextAlign.center,
-            ),
-            spacer,
-
-            // Translators
-            Text(
-              l10n.tsTranslators,
-              style: textTheme.titleLarge,
-              textAlign: TextAlign.center,
-            ),
-            Wrap(
-              alignment: WrapAlignment.center,
-              runAlignment: WrapAlignment.center,
-              crossAxisAlignment: WrapCrossAlignment.center,
-              children: <Widget>[
-                // Arabic
-                _TranslatorGroup(
-                  margin: margin,
-                  spacing: spacing,
-                  title: l10n.tsAr,
-                  titleStyle: subTitle,
-                  freelancers: <Widget>[
-                    _Freelancer(
-                      l10n: l10n,
-                      textTheme: textTheme,
-                      imageSize: imageSize,
-                      margin: margin,
-                      name: yasminS,
-                      link: yasminSLink,
-                      image: yasminSProfile,
-                    ),
-                  ],
-                ),
-
-                // Spanish
-                _TranslatorGroup(
-                  margin: margin,
-                  spacing: spacing,
-                  title: l10n.tsEs,
-                  titleStyle: subTitle,
-                  freelancers: <Widget>[
-                    _Freelancer(
-                      l10n: l10n,
-                      textTheme: textTheme,
-                      imageSize: imageSize,
-                      margin: margin,
-                      name: saraH,
-                      link: saraHLink,
-                      image: saraHProfile,
-                    ),
-                  ],
-                ),
-
-                // Filipino
-                _TranslatorGroup(
-                  margin: margin,
-                  spacing: spacing,
-                  title: l10n.tsFil,
-                  titleStyle: subTitle,
-                  freelancers: <Widget>[
-                    _Freelancer(
-                      l10n: l10n,
-                      textTheme: textTheme,
-                      imageSize: imageSize,
-                      margin: margin,
-                      name: remalyn,
-                      link: remalynLink,
-                      image: remalynProfile,
-                    ),
-                  ],
-                ),
-
-                // French
-                _TranslatorGroup(
-                  margin: margin,
-                  spacing: spacing,
-                  title: l10n.tsFr,
-                  titleStyle: subTitle,
-                  freelancers: <Widget>[
-                    _Freelancer(
-                      l10n: l10n,
-                      textTheme: textTheme,
-                      imageSize: imageSize,
-                      margin: margin,
-                      name: alexisN,
-                      link: alexisNLink,
-                      image: alexisNProfile,
-                    ),
-                  ],
-                ),
-
-                // Haitian Creole
-                _TranslatorGroup(
-                  margin: margin,
-                  spacing: spacing,
-                  title: l10n.tsHt,
-                  titleStyle: subTitle,
-                  freelancers: <Widget>[
-                    _Freelancer(
-                      l10n: l10n,
-                      textTheme: textTheme,
-                      imageSize: imageSize,
-                      margin: margin,
-                      name: carly,
-                      link: carlyLink,
-                      image: carlyProfile,
-                    ),
-                  ],
-                ),
-
-                // Simplified Chinese
-                _TranslatorGroup(
-                  margin: margin,
-                  spacing: spacing,
-                  title: l10n.tsZh,
-                  titleStyle: subTitle,
-                  freelancers: <Widget>[
-                    _Freelancer(
-                      l10n: l10n,
-                      textTheme: textTheme,
-                      imageSize: imageSize,
-                      margin: margin,
-                      name: leah,
-                      link: leahLink,
-                      image: leahProfile,
-                    ),
-                    _Freelancer(
-                      l10n: l10n,
-                      textTheme: textTheme,
-                      imageSize: imageSize,
-                      margin: margin,
-                      name: hilaria,
-                      link: hilariaLink,
-                      image: hilariaProfile,
-                    ),
-                  ],
-                ),
-              ],
-            ),
-            separator,
-          ],
-        ),
       ),
       fab: SettingsFAB(context),
     );

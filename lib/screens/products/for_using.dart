@@ -8,7 +8,6 @@ import '../../utils/export.dart';
 import '../../widgets/export.dart';
 
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 
 class UserProducts extends StatelessWidget {
@@ -99,7 +98,7 @@ class UserProducts extends StatelessWidget {
             l10n.psContributing,
             style: textTheme.bodyLarge,
             textAlign: TextAlign.center,
-            onTap: () => context.goNamed(contributePath),
+            url: Uri.parse(contributeURL),
             hint: l10n.gContributeHint,
           ),
           EzPlainText(
@@ -178,7 +177,7 @@ class UserProducts extends StatelessWidget {
             l10n.gReachOut,
             style: textTheme.bodyLarge,
             textAlign: TextAlign.center,
-            onTap: () => context.goNamed(teamPath),
+            url: Uri.parse(teamURL),
             hint: l10n.gTeamHint,
           ),
           EzPlainText(

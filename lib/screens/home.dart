@@ -10,7 +10,6 @@ import 'package:efui_bios/efui_bios.dart';
 
 import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -92,8 +91,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
       body: EzScreen(
-        useImageDecoration: false,
-        child: EzScrollView(
+        EzScrollView(
           children: <Widget>[
             // Video
             ConstrainedBox(
@@ -162,7 +160,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       l10n.hsPlan,
                       style: subTitle,
                       textAlign: TextAlign.center,
-                      onTap: () => context.goNamed(missionPath),
+                      url: Uri.parse(missionURL),
                       hint: l10n.gMissionHint,
                     ),
                   ], textAlign: TextAlign.center),
@@ -173,6 +171,7 @@ class _HomeScreenState extends State<HomeScreen> {
             const EzTranslationsPendingNotice(),
           ],
         ),
+        useImageDecoration: false,
       ),
       fab: SettingsFAB(context),
     );

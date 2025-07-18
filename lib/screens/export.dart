@@ -24,26 +24,55 @@ export 'error.dart';
 
 // Path names //
 
-/// 'mission'
+const String homeURL = 'https://www.empathetech.net/';
+
+/// mission
 const String missionPath = 'mission';
 
-/// 'products'
+/// https://www.empathetech.net/#/mission
+const String missionURL = 'https://www.empathetech.net/#/mission';
+
+/// products
 const String productsPath = 'products';
 
-/// 'team'
+/// https://www.empathetech.net/#/products
+const String productsURL = 'https://www.empathetech.net/#/products';
+
+/// team
 const String teamPath = 'team';
 
-/// 'contribute'
+/// https://www.empathetech.net/#/team
+const String teamURL = 'https://www.empathetech.net/#/team';
+
+/// contribute
 const String contributePath = 'contribute';
 
-/// 'settings'
+/// https://www.empathetech.net/#/contribute
+const String contributeURL = 'https://www.empathetech.net/#/contribute';
+
+/// settings
 const String settingsPath = 'settings';
 
-/// 'text-settings'
+/// https://www.empathetech.net/#/settings
+const String settingsURL = 'https://www.empathetech.net/#/settings';
+
+/// text-settings
 const String textSettingsPath = 'text-settings';
 
-/// 'layout-settings'
+/// https://www.empathetech.net/#/settings/text-settings
+const String textSettingsURL =
+    'https://www.empathetech.net/#/settings/text-settings';
+
+/// layout-settings
 const String layoutSettingsPath = 'layout-settings';
 
-/// 'color-settings'
+/// https://www.empathetech.net/#/settings/layout-settings
+const String layoutSettingsURL =
+    'https://www.empathetech.net/#/settings/layout-settings';
+
+/// color-settings
 const String colorSettingsPath = 'color-settings';
+
+/// https://www.empathetech.net/#/settings/color-settings
+const String colorSettingsURL =
+    'https://www.empathetech.net/#/settings/color-settings';

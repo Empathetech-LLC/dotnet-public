@@ -13,7 +13,20 @@ import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 
 enum Products { openUI, sos, smokeSignal }
 
-extension Path on Products {
+const String _creator = 'creator';
+const String _user = 'user';
+
+extension Config on Products {
+  String get type {
+    switch (this) {
+      case Products.openUI:
+        return _creator;
+      case Products.sos:
+      case Products.smokeSignal:
+        return _user;
+    }
+  }
+
   String get path {
     switch (this) {
       case Products.openUI:
@@ -24,19 +37,15 @@ extension Path on Products {
         return 'smoke-signal';
     }
   }
-}
 
-const String _creator = 'creator';
-const String _user = 'user';
-
-extension Type on Products {
-  String get type {
+  String get url {
     switch (this) {
       case Products.openUI:
-        return _creator;
+        return 'https://www.empathetech.net/#/products/open-ui';
       case Products.sos:
+        return 'https://www.empathetech.net/#/products/sos';
       case Products.smokeSignal:
-        return _user;
+        return 'https://www.empathetech.net/#/products/smoke-signal';
     }
   }
 }
@@ -88,54 +97,52 @@ class _ProductsScreenState extends State<ProductsScreen>
   Widget build(BuildContext context) {
     return DotnetScaffold(
       body: EzScreen(
-        useImageDecoration: false,
-        child: EzScrollView(
-          children: <Widget>[
-            // Mode switch
-            SegmentedButton<String>(
-              segments: <ButtonSegment<String>>[
-                ButtonSegment<String>(
-                  value: _creator,
-                  label: Text(l10n.psCreator, textAlign: TextAlign.center),
-                ),
-                ButtonSegment<String>(
-                  value: _user,
-                  label: Text(l10n.psUser, textAlign: TextAlign.center),
-                ),
-              ],
-              selected: <String>{currentTab},
-              showSelectedIcon: false,
-              onSelectionChanged: (Set<String> selected) async {
-                switch (selected.first) {
-                  case _creator:
-                    currentTab = _creator;
-                    await EzConfig.setBool(showDevProducts, true);
-                    break;
-                  case _user:
-                    currentTab = _user;
-                    await EzConfig.setBool(showDevProducts, false);
-                    break;
-                }
-                setState(() {});
-              },
-            ),
-            const EzSpacer(),
-
-            // Core view
-            if (currentTab == _creator)
-              const CreatorProducts()
-            else
-              UserProducts(
-                textTheme: textTheme,
-                l10n: l10n,
-                signalKey: signalKey,
+        EzScrollView(children: <Widget>[
+          // Mode switch
+          SegmentedButton<String>(
+            segments: <ButtonSegment<String>>[
+              ButtonSegment<String>(
+                value: _creator,
+                label: Text(l10n.psCreator, textAlign: TextAlign.center),
               ),
-            const EzSeparator(),
+              ButtonSegment<String>(
+                value: _user,
+                label: Text(l10n.psUser, textAlign: TextAlign.center),
+              ),
+            ],
+            selected: <String>{currentTab},
+            showSelectedIcon: false,
+            onSelectionChanged: (Set<String> selected) async {
+              switch (selected.first) {
+                case _creator:
+                  currentTab = _creator;
+                  await EzConfig.setBool(showDevProducts, true);
+                  break;
+                case _user:
+                  currentTab = _user;
+                  await EzConfig.setBool(showDevProducts, false);
+                  break;
+              }
+              setState(() {});
+            },
+          ),
+          const EzSpacer(),
 
-            // Include when AI translations have not been human verified
-            const EzTranslationsPendingNotice(),
-          ],
-        ),
+          // Core view
+          if (currentTab == _creator)
+            const CreatorProducts()
+          else
+            UserProducts(
+              textTheme: textTheme,
+              l10n: l10n,
+              signalKey: signalKey,
+            ),
+          const EzSeparator(),
+
+          // Include when AI translations have not been human verified
+          const EzTranslationsPendingNotice(),
+        ]),
+        useImageDecoration: false,
       ),
       fab: SettingsFAB(context),
     );

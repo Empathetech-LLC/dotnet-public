@@ -10,7 +10,6 @@ import 'package:efui_bios/efui_bios.dart';
 
 import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 
@@ -147,8 +146,7 @@ class _MissionScreenState extends State<MissionScreen> {
   Widget build(BuildContext context) {
     return DotnetScaffold(
       body: EzScreen(
-        useImageDecoration: false,
-        child: Column(
+        Column(
           children: <Widget>[
             Expanded(
               child: Stepper(
@@ -200,7 +198,7 @@ class _MissionScreenState extends State<MissionScreen> {
                         openUI,
                         style: textTheme.bodyLarge,
                         textAlign: TextAlign.start,
-                        onTap: () => context.goNamed(Products.openUI.path),
+                        url: Uri.parse(Products.openUI.url),
                         hint: l10n.gProductsHint,
                         richLabel: efuiLFix,
                       ),
@@ -244,6 +242,7 @@ class _MissionScreenState extends State<MissionScreen> {
             ),
           ],
         ),
+        useImageDecoration: false,
       ),
       fab: SettingsFAB(context),
     );

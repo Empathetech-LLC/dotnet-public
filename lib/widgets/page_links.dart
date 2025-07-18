@@ -7,11 +7,10 @@ import '../screens/export.dart';
 import '../utils/export.dart';
 
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 
 class PageLinks extends StatelessWidget {
-  /// [BuildContext] passthrough for [Lang] and [GoRouter.goNamed]
+  /// [BuildContext] passthrough
   final BuildContext context;
 
   /// [TextStyle] for the [EzLink]s
@@ -50,7 +49,7 @@ class PageLinks extends StatelessWidget {
       Lang.of(context)!.msPageTitle,
       style: style,
       textAlign: TextAlign.center,
-      onTap: () => context.goNamed(missionPath),
+      url: Uri.parse(missionURL),
       hint: Lang.of(context)!.gMissionHint,
       textColor: colorScheme.onSurface,
       decorationColor: colorScheme.primary,
@@ -60,7 +59,7 @@ class PageLinks extends StatelessWidget {
       Lang.of(context)!.psPageTitle,
       style: style,
       textAlign: TextAlign.center,
-      onTap: () => context.goNamed(productsPath),
+      url: Uri.parse(productsURL),
       hint: Lang.of(context)!.gProductsHint,
       textColor: colorScheme.onSurface,
       decorationColor: colorScheme.primary,
@@ -70,7 +69,7 @@ class PageLinks extends StatelessWidget {
       Lang.of(context)!.tsPageTitle,
       style: style,
       textAlign: TextAlign.center,
-      onTap: () => context.goNamed(teamPath),
+      url: Uri.parse(teamURL),
       hint: Lang.of(context)!.gTeamHint,
       textColor: colorScheme.onSurface,
       decorationColor: colorScheme.primary,
@@ -80,7 +79,7 @@ class PageLinks extends StatelessWidget {
       Lang.of(context)!.csPageTitle,
       style: style,
       textAlign: TextAlign.center,
-      onTap: () => context.goNamed(contributePath),
+      url: Uri.parse(contributeURL),
       hint: Lang.of(context)!.gContributeHint,
       textColor: colorScheme.onSurface,
       decorationColor: colorScheme.primary,

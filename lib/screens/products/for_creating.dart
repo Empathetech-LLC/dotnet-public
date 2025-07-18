@@ -9,8 +9,6 @@ import '../../widgets/export.dart';
 import 'package:efui_bios/efui_bios.dart';
 
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:video_player/video_player.dart';
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
@@ -96,7 +94,7 @@ class _CreatorProductsState extends State<CreatorProducts> {
           l10n.psOpenUISlogan,
           style: textTheme.headlineLarge!,
           textAlign: TextAlign.center,
-          onTap: () => launchUrl(url ?? Uri.parse(openUIReleases)),
+          url: url ?? Uri.parse(openUIReleases),
           hint: l10n.gDownloadHint(openUI, dlType.name),
         ),
         separator,
@@ -288,7 +286,7 @@ class _CreatorProductsState extends State<CreatorProducts> {
             l10n.gReachOut,
             style: textTheme.bodyLarge,
             textAlign: TextAlign.center,
-            onTap: () => context.goNamed(teamPath),
+            url: Uri.parse(teamURL),
             hint: l10n.gTeamHint,
           ),
           EzPlainText(

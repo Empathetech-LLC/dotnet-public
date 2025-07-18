@@ -14,14 +14,16 @@ class SettingsHomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => const DotnetScaffold(
-        body: EzSettingsHome(
+        body: EzScreen(
+          EzSettingsHome(
+            protest: true,
+            textSettingsPath: textSettingsPath,
+            layoutSettingsPath: layoutSettingsPath,
+            colorSettingsPath: colorSettingsPath,
+            imageSettingsPath: null,
+            footer: <Widget>[EFUIShoutOut()],
+          ),
           useImageDecoration: false,
-          protest: true,
-          textSettingsPath: textSettingsPath,
-          layoutSettingsPath: layoutSettingsPath,
-          colorSettingsPath: colorSettingsPath,
-          imageSettingsPath: null,
-          footer: <Widget>[EFUIShoutOut()],
         ),
       );
 }

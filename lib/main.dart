@@ -20,12 +20,7 @@ void main() async {
 
   WidgetsFlutterBinding.ensureInitialized();
 
-  await SystemChrome.setPreferredOrientations(<DeviceOrientation>[
-    DeviceOrientation.portraitUp,
-    DeviceOrientation.portraitDown,
-    DeviceOrientation.landscapeLeft,
-    DeviceOrientation.landscapeRight,
-  ]);
+  await SystemChrome.setPreferredOrientations(DeviceOrientation.values);
 
   // Initialize EzConfig //
 
@@ -34,35 +29,16 @@ void main() async {
   EzConfig.init(
     preferences: prefs,
     defaults: isMobile() ? mobileDotnetConfig : desktopDotnetConfig,
-    fallbackLang: await EFUILang.delegate.load(english),
+    fallbackLang: await EFUILang.delegate.load(americanEnglish),
     assetPaths: assetPaths,
   );
 
   // Run the app //
   // With a feedback wrapper
 
-  late final TextStyle lightFeedbackText = ezBodyStyle(Colors.black);
-  late final TextStyle darkFeedbackText = ezBodyStyle(Colors.white);
-
   runApp(BetterFeedback(
-    theme: FeedbackThemeData(
-      background: Colors.grey,
-      feedbackSheetColor: Colors.white,
-      activeFeedbackModeColor: empathPurple,
-      bottomSheetDescriptionStyle: lightFeedbackText,
-      bottomSheetTextInputStyle: lightFeedbackText,
-      sheetIsDraggable: true,
-      dragHandleColor: Colors.black,
-    ),
-    darkTheme: FeedbackThemeData(
-      background: Colors.grey,
-      feedbackSheetColor: Colors.black,
-      activeFeedbackModeColor: empathEucalyptus,
-      bottomSheetDescriptionStyle: darkFeedbackText,
-      bottomSheetTextInputStyle: darkFeedbackText,
-      sheetIsDraggable: true,
-      dragHandleColor: Colors.white,
-    ),
+    theme: empathFeedbackLight,
+    darkTheme: empathFeedbackDark,
     themeMode: EzConfig.getThemeMode(),
     localizationsDelegates: <LocalizationsDelegate<dynamic>>[EzFeedbackLD()],
     localeOverride: EzConfig.getLocale(),

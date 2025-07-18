@@ -15,10 +15,9 @@ class TextSettingsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => DotnetScaffold(
-        body: EzTextSettings(
+        body: EzScreen(
+          EzTextSettings(showOpacity: false, target: target),
           useImageDecoration: false,
-          showOpacity: false,
-          target: target,
         ),
       );
 }

@@ -10,7 +10,6 @@ import 'package:efui_bios/efui_bios.dart';
 
 import 'package:flutter/material.dart';
 import 'package:url_launcher/link.dart';
-import 'package:go_router/go_router.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
@@ -56,7 +55,7 @@ class DotnetScaffold extends StatelessWidget {
     final Widget brandLogo = logo ??
         EzLinkWidget(
           isImage: true,
-          onTap: () => context.goNamed(homePath),
+          url: Uri.parse(homeURL),
           label: l10n.gLogoLabel(empatheticLLC),
           hint: l10n.gEmpathLogoHint,
           tooltip: l10n.gHomeHint,
@@ -301,18 +300,13 @@ class DotNetDrawer extends StatelessWidget {
 
     // Define custom functions //
 
-    void navigateTo(BuildContext context, String routeName) {
-      Navigator.of(context).pop();
-      context.goNamed(routeName);
-    }
-
     // Define the buttons //
 
     final EzLink mission = EzLink(
       Lang.of(context)!.msPageTitle,
       style: style,
       textAlign: TextAlign.center,
-      onTap: () => navigateTo(context, missionPath),
+      url: Uri.parse(missionURL),
       hint: Lang.of(context)!.gMissionHint,
       textColor: colorScheme.onSurface,
       decorationColor: colorScheme.primary,
@@ -322,7 +316,7 @@ class DotNetDrawer extends StatelessWidget {
       Lang.of(context)!.psPageTitle,
       style: style,
       textAlign: TextAlign.center,
-      onTap: () => navigateTo(context, productsPath),
+      url: Uri.parse(productsURL),
       hint: Lang.of(context)!.gProductsHint,
       textColor: colorScheme.onSurface,
       decorationColor: colorScheme.primary,
@@ -332,7 +326,7 @@ class DotNetDrawer extends StatelessWidget {
       Lang.of(context)!.tsPageTitle,
       style: style,
       textAlign: TextAlign.center,
-      onTap: () => navigateTo(context, teamPath),
+      url: Uri.parse(teamURL),
       hint: Lang.of(context)!.gTeamHint,
       textColor: colorScheme.onSurface,
       decorationColor: colorScheme.primary,
@@ -342,7 +336,7 @@ class DotNetDrawer extends StatelessWidget {
       Lang.of(context)!.csPageTitle,
       style: style,
       textAlign: TextAlign.center,
-      onTap: () => navigateTo(context, contributePath),
+      url: Uri.parse(contributeURL),
       hint: Lang.of(context)!.gContributeHint,
       textColor: colorScheme.onSurface,
       decorationColor: colorScheme.primary,

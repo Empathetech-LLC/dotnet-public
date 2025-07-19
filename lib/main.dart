@@ -28,7 +28,7 @@ void main() async {
 
   EzConfig.init(
     preferences: prefs,
-    defaults: isMobile() ? mobileDotnetConfig : desktopDotnetConfig,
+    defaults: isMobile() ? mobileEmpathConfig : desktopEmpathConfig,
     fallbackLang: await EFUILang.delegate.load(americanEnglish),
     assetPaths: assetPaths,
   );
@@ -63,27 +63,19 @@ final GoRouter router = GoRouter(
           builder: (_, __) => const MissionScreen(),
         ),
         GoRoute(
-          path: productsPath,
-          name: productsPath,
-          builder: (_, __) => const ProductsScreen(),
-          routes: <RouteBase>[
-            GoRoute(
-              path: Products.openUI.path,
-              name: Products.openUI.path,
-              builder: (_, __) => const ProductsScreen(target: Products.openUI),
-            ),
-            GoRoute(
-              path: Products.sos.path,
-              name: Products.sos.path,
-              builder: (_, __) => const ProductsScreen(target: Products.sos),
-            ),
-            GoRoute(
-              path: Products.smokeSignal.path,
-              name: Products.smokeSignal.path,
-              builder: (_, __) =>
-                  const ProductsScreen(target: Products.smokeSignal),
-            ),
-          ],
+          path: Products.openUI.path,
+          name: Products.openUI.path,
+          builder: (_, __) => const OpenUIScreen(),
+        ),
+        GoRoute(
+          path: Products.sos.path,
+          name: Products.sos.path,
+          builder: (_, __) => const SOSScreen(),
+        ),
+        GoRoute(
+          path: Products.smokeSignal.path,
+          name: Products.smokeSignal.path,
+          builder: (_, __) => const SmokeSignalScreen(),
         ),
         GoRoute(
           path: teamPath,

@@ -3,13 +3,15 @@
  * See LICENSE for distribution and usage details.
  */
 
-// Exports //
+// Files //
 
 export 'home.dart';
 
 export 'mission.dart';
 
-export 'products/screen.dart';
+export 'products/open_ui.dart';
+export 'products/sos.dart';
+export 'products/smoke_signal.dart';
 
 export 'team.dart';
 
@@ -22,21 +24,16 @@ export 'settings/color_settings.dart';
 
 export 'error.dart';
 
-// Path names //
+// Paths && URLs //
 
-const String homeURL = 'https://www.empathetech.net/';
+/// https://www.empathetech.net
+const String homeURL = 'https://www.empathetech.net';
 
 /// mission
 const String missionPath = 'mission';
 
 /// https://www.empathetech.net/#/mission
 const String missionURL = 'https://www.empathetech.net/#/mission';
-
-/// products
-const String productsPath = 'products';
-
-/// https://www.empathetech.net/#/products
-const String productsURL = 'https://www.empathetech.net/#/products';
 
 /// team
 const String teamPath = 'team';

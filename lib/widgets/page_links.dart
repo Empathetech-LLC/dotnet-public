@@ -16,14 +16,18 @@ class PageLinks extends StatelessWidget {
   /// [TextStyle] for the [EzLink]s
   final TextStyle style;
 
+  /// [ColorScheme] for the [EzLink]s
+  final ColorScheme colorScheme;
+
   /// Internal page links to put in the [AppBar]
   const PageLinks({
     super.key,
     required this.context,
     required this.style,
+    required this.colorScheme,
   });
 
-  // Define the helper functions //
+  // Define custom functions //
 
   /// Helpful for [EzAdaptiveScaffold] calculations
   double get width {
@@ -38,14 +42,10 @@ class PageLinks extends StatelessWidget {
     return wordWidth + EzConfig.get(spacingKey) * 5;
   }
 
-  // Define the buttons //
+  // Define the build //
 
-  @override
-  Widget build(BuildContext context) {
-    const EzSpacer spacer = EzSpacer(vertical: false);
-    final ColorScheme colorScheme = Theme.of(context).colorScheme;
-
-    final EzLink mission = EzLink(
+  Widget get mission {
+    return EzLink(
       Lang.of(context)!.msPageTitle,
       style: style,
       textAlign: TextAlign.center,
@@ -54,18 +54,58 @@ class PageLinks extends StatelessWidget {
       textColor: colorScheme.onSurface,
       decorationColor: colorScheme.primary,
     );
+  }
 
-    final EzLink products = EzLink(
-      Lang.of(context)!.psPageTitle,
-      style: style,
-      textAlign: TextAlign.center,
-      url: Uri.parse(productsURL),
-      hint: Lang.of(context)!.gProductsHint,
-      textColor: colorScheme.onSurface,
-      decorationColor: colorScheme.primary,
+  Widget get products {
+    return MenuAnchor(
+      builder: (_, MenuController controller, __) => EzLink(
+        Lang.of(context)!.psPageTitle,
+        style: style,
+        textAlign: TextAlign.center,
+        onTap: () => controller.isOpen ? controller.close() : controller.open(),
+        hint: Lang.of(context)!.gProductsHint,
+        textColor: colorScheme.onSurface,
+        decorationColor: colorScheme.primary,
+      ),
+      menuChildren: <Widget>[
+        // Open UI
+        EzLink(
+          Products.openUI.name,
+          style: style,
+          textAlign: TextAlign.center,
+          url: Uri.parse(Products.openUI.url),
+          hint: Lang.of(context)!.gLearn(Products.openUI.name),
+          textColor: colorScheme.onSurface,
+          decorationColor: colorScheme.primary,
+        ),
+
+        // SOS
+        EzLink(
+          Products.sos.name,
+          style: style,
+          textAlign: TextAlign.center,
+          url: Uri.parse(Products.sos.url),
+          hint: Lang.of(context)!.gLearn(Products.sos.name),
+          textColor: colorScheme.onSurface,
+          decorationColor: colorScheme.primary,
+        ),
+
+        // Smoke Signal
+        EzLink(
+          Products.smokeSignal.name,
+          style: style,
+          textAlign: TextAlign.center,
+          url: Uri.parse(Products.smokeSignal.url),
+          hint: Lang.of(context)!.gLearn(Products.smokeSignal.name),
+          textColor: colorScheme.onSurface,
+          decorationColor: colorScheme.primary,
+        ),
+      ],
     );
+  }
 
-    final EzLink team = EzLink(
+  Widget get team {
+    return EzLink(
       Lang.of(context)!.tsPageTitle,
       style: style,
       textAlign: TextAlign.center,
@@ -74,8 +114,10 @@ class PageLinks extends StatelessWidget {
       textColor: colorScheme.onSurface,
       decorationColor: colorScheme.primary,
     );
+  }
 
-    final EzLink contribute = EzLink(
+  Widget get contribute {
+    return EzLink(
       Lang.of(context)!.csPageTitle,
       style: style,
       textAlign: TextAlign.center,
@@ -84,8 +126,13 @@ class PageLinks extends StatelessWidget {
       textColor: colorScheme.onSurface,
       decorationColor: colorScheme.primary,
     );
+  }
 
-    // Return the build //
+  // Return the build //
+
+  @override
+  Widget build(BuildContext context) {
+    const EzSpacer spacer = EzSpacer(vertical: false);
 
     return Row(
       mainAxisSize: MainAxisSize.min,

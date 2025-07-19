@@ -122,7 +122,7 @@ class _ContributeScreenState extends State<ContributeScreen> {
   @override
   Widget build(BuildContext context) {
     return DotnetScaffold(
-      body: EzScreen(
+      EzScreen(
         EzScrollView(
           children: <Widget>[
             if (spacing > margin) EzSpacer(space: spacing - margin),
@@ -245,6 +245,8 @@ class _ContributeScreenState extends State<ContributeScreen> {
               textAlign: TextAlign.center,
             ),
             separator,
+
+            const EzTranslationsPendingNotice(),
           ],
         ),
         useImageDecoration: false,

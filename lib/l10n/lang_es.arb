@@ -4,8 +4,9 @@
   "gEmpathLogoLabel": "un reloj de arena bidimensional.",
   "gEmpathLogoHint": "Activar para ir a la página de inicio.",
 
+  "gLearn": "Conozca más sobre {name}",
   "gHomeHint": "Abrir la página de inicio",
-  "gProductsHint": "Abrir la página de productos",
+  "gProductsHint": "Abrir una página de producto",
   "gMissionHint": "Abrir la página del misión",
   "gTeamHint": "Abrir la página del equipo",
   "gContributeHint": "Abrir la página de contribuir",
@@ -124,7 +125,7 @@
 
   "psSOSIconLabel": "Un icono de notificación de color fuerte.",
 
-  "psSOSDescription": "Una cámara, una baliza SOS y una lista de tus derechos, todo en un solo lugar.\nEstá disponible en inglés, árabe, español, filipino, francés, criollo, y chino simplificado.",
+  "psSOSDescription": "Una cámara, una baliza SOS y una lista de tus derechos, todo en un solo lugar.\nEstá disponible en inglés, árabe, español, filipino, francés, criollo, chino simplificado, y admite lectores de pantalla.",
   "psDocsLabel": "Cómo funciona",
   "psDocsHint": "Abrir un enlace al README",
   "psSafeSOS": "InstaSOS no tiene cuentas, cookies ni anuncios.\n",
@@ -153,6 +154,8 @@
   "tsCommunity": "Comunidad",
 
   "tsFreelance": "Independiente",
+
+  "tsVideoProduction": "Producción de video",
 
   "tsTranslators": "Traductores",
   "tsAr": "Arabe",

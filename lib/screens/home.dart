@@ -71,26 +71,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return DotnetScaffold(
-      logo: Semantics(
-        image: true,
-        link: false,
-        button: false,
-        label: l10n.gLogoLabel(empatheticLLC),
-        enabled: animFin,
-        excludeSemantics: !animFin,
-        child: ExcludeSemantics(
-          child: AnimatedOpacity(
-            opacity: animFin ? 1.0 : 0.0,
-            duration: const Duration(milliseconds: fadeTime),
-            child: SizedBox(
-              width: toolbarHeight,
-              height: toolbarHeight,
-              child: EmpathetechLogo(margin: margin),
-            ),
-          ),
-        ),
-      ),
-      body: EzScreen(
+      EzScreen(
         EzScrollView(
           children: <Widget>[
             // Video
@@ -172,6 +153,25 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
         useImageDecoration: false,
+      ),
+      logo: Semantics(
+        image: true,
+        link: false,
+        button: false,
+        label: l10n.gLogoLabel(empatheticLLC),
+        enabled: animFin,
+        excludeSemantics: !animFin,
+        child: ExcludeSemantics(
+          child: AnimatedOpacity(
+            opacity: animFin ? 1.0 : 0.0,
+            duration: const Duration(milliseconds: fadeTime),
+            child: SizedBox(
+              width: toolbarHeight,
+              height: toolbarHeight,
+              child: EmpathetechLogo(margin: margin),
+            ),
+          ),
+        ),
       ),
       fab: SettingsFAB(context),
     );

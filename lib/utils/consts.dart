@@ -4,96 +4,84 @@
  */
 
 import 'package:flutter/material.dart';
-import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
-
-//* App config *//
-
-const String showDevProducts = 'showDeveloperProducts';
-
-const Map<String, Object> mobileDotnetConfig = <String, Object>{
-  ...mobileEmpathConfig,
-  showDevProducts: false,
-};
-
-const Map<String, Object> desktopDotnetConfig = <String, Object>{
-  ...desktopEmpathConfig,
-  showDevProducts: true,
-};
 
 //* Names *//
 
 // People //
 
-/// 'Michael Waldron'; Founder
+/// Michael Waldron; Founder
 const String mike = 'Michael Waldron';
 
-/// 'Yasmin Sid'; Freelance Arabic (ar) translator
+/// Montana Monardes; Freelance video producer
+const String montanaM = 'Montana Monardes';
+
+/// Yasmin Sid; Freelance Arabic (ar) translator
 const String yasminS = 'Yasmin Sid';
 
-/// 'Sara Herrera'; Freelance Spanish (es) translator
+/// Sara Herrera; Freelance Spanish (es) translator
 const String saraH = 'Sara Herrera';
 
-/// 'Remalyn'; Freelance Filipino (fil) translator
+/// Remalyn; Freelance Filipino (fil) translator
 const String remalyn = 'Remalyn';
 
-/// 'Alexis Nguyen'; Freelance French (fr) translator
+/// Alexis Nguyen; Freelance French (fr) translator
 const String alexisN = 'Alexis Nguyen';
 
-/// 'Carly'; Freelance Creole (ht) translator
+/// Carly; Freelance Creole (ht) translator
 const String carly = 'Carly';
 
-/// 'Leah'; Freelance Simplified Chinese (zh) translator
+/// Leah; Freelance Simplified Chinese (zh) translator
 const String leah = 'Leah';
 
-/// 'Hilaria'; Freelance Simplified Chinese (zh) translator
+/// Hilaria; Freelance Simplified Chinese (zh) translator
 const String hilaria = 'Hilaria';
 
 // Things //
 
-/// 'Empathetech'
+/// Empathetech
 const String empathetech = 'Empathetech';
 
-/// 'Empathetic'
+/// Empathetic
 const String empathetic = 'Empathetic';
 
-/// 'Empathetech LLC'
+/// Empathetech LLC
 const String empathetechLLC = 'Empathetech LLC';
 
-/// 'Empathetic LLC'
+/// Empathetic LLC
 const String empatheticLLC = 'Empathetic LLC';
 
-/// 'Open UI'
+/// Open UI
 const String openUI = 'Open UI';
 
-/// 'InstaSOS'
+/// InstaSOS
 const String sosName = 'InstaSOS';
 
-/// 'Insta SOS'
+/// Insta SOS
 const String sosLabel = 'Insta SOS';
 
-/// 'Smoke Signal'
+/// Smoke Signal
 const String smokeSignal = 'Smoke Signal';
 
 //* Assets *//
 
 // Paths //
 
-/// 'assets/videos/eag-demo.mp4'
+/// assets/videos/eag-demo.mp4
 const String openUIDemoPath = 'assets/videos/eag-demo.mp4';
 
-/// 'assets/images/open-ui-icon.png'
+/// assets/images/open-ui-icon.png
 const String openUIIconPath = 'assets/images/open-ui-icon.png';
 
-/// 'assets/images/sos-icon.png'
+/// assets/images/sos-icon.png
 const String sosIconPath = 'assets/images/sos-icon.png';
 
-/// 'assets/images/smoke-signal-icon.png'
+/// assets/images/smoke-signal-icon.png
 const String smokeSignalIconPath = 'assets/images/smoke-signal-icon.png';
 
-/// 'assets/images/founder.png'
+/// assets/images/founder.png
 const String founderIconPath = 'assets/images/founder.png';
 
-/// 'assets/images/fah.png'
+/// assets/images/fah.png
 const String fahIconPath = 'assets/images/fah.png';
 
 // Images //
@@ -109,6 +97,9 @@ const ImageProvider smokeSignalImage = AssetImage(smokeSignalIconPath);
 
 /// [AssetImage] of [founderIconPath]
 const ImageProvider founderImage = AssetImage(founderIconPath);
+
+/// [NetworkImage] for Montana Monardes
+const ImageProvider montanaMProfile = NetworkImage(montanaMProfileLink);
 
 /// [NetworkImage] of [yasminSProfileLink]
 const ImageProvider yasminSProfile = NetworkImage(yasminSProfileLink);
@@ -183,6 +174,12 @@ const String faHLink = 'https://foldingathome.org/';
 const String aboutFaHLink = 'https://foldingathome.org/about-2/';
 
 // Freelancers //
+
+/// https://www.montanamonardes.com
+const String montanaMLink = 'https://www.montanamonardes.com';
+
+const String montanaMProfileLink =
+    'https://static.wixstatic.com/media/476909_a6b522a885314b758b961acbe83e036c~mv2.jpg/v1/crop/x_727,y_0,w_7048,h_8217/fill/w_370,h_438,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Montana%20Headshots%20(1%20of%2015)%20-%20Retouched%20JPEG.jpg';
 
 /// https://www.fiverr.com/yasminsid
 const String yasminSLink = 'https://www.fiverr.com/yasminsid';

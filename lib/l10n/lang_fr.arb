@@ -4,8 +4,9 @@
   "gEmpathLogoLabel": "un sablier en deux dimensions.",
   "gEmpathLogoHint": "Activer pour accéder à la page d'accueil.",
 
+  "gLearn": "En savoir plus sur {name}",
   "gHomeHint": "Ouvre la page d'accueil",
-  "gProductsHint": "Ouvre la page des produits",
+  "gProductsHint": "Ouvrir une page produit",
   "gMissionHint": "Ouvre la page de mission",
   "gTeamHint": "Ouvre la page de l'équipe",
   "gContributeHint": "Ouvre la page d'contribuer",
@@ -124,7 +125,7 @@
 
   "psSOSIconLabel": "Une icône de notification aux couleurs vives.",
 
-  "psSOSDescription": "Une caméra, une balise SOS et une liste de vos droits, le tout au même endroit.\nIl est disponible en anglais, arabe, espagnol, philippin, français, créole, et chinois simplifié.",
+  "psSOSDescription": "Une caméra, une balise SOS et une liste de vos droits, le tout au même endroit.\nIl est disponible en anglais, arabe, espagnol, philippin, français, créole, chinois simplifié, et prend en charge les lecteurs d'écran.",
   "psDocsLabel": "Comment ça marche.",
   "psDocsHint": "Ouvrir un lien vers le fichier README",
   "psSafeSOS": "InstaSOS n'a pas de comptes, de cookies ou de publicités.\n",
@@ -153,6 +154,8 @@
   "tsCommunity": "Communauté",
 
   "tsFreelance": "Free-lance",
+
+  "tsVideoProduction": "Production vidéo",
 
   "tsTranslators": "Traducteurs",
   "tsAr": "Arabe",

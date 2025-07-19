@@ -29,12 +29,7 @@ class DotnetScaffold extends StatelessWidget {
   final Widget? fab;
 
   /// Standardized [Scaffold] for all of empathetech dotnet's screens
-  const DotnetScaffold({
-    super.key,
-    this.logo,
-    required this.body,
-    this.fab,
-  });
+  const DotnetScaffold(this.body, {super.key, this.logo, this.fab});
 
   @override
   Widget build(BuildContext context) {
@@ -43,6 +38,8 @@ class DotnetScaffold extends StatelessWidget {
     final bool isLefty = EzConfig.get(isLeftyKey) ?? false;
 
     final double margin = EzConfig.get(marginKey);
+
+    late final ColorScheme colorScheme = Theme.of(context).colorScheme;
 
     final Lang l10n = Lang.of(context)!;
 
@@ -69,22 +66,21 @@ class DotnetScaffold extends StatelessWidget {
     final PageLinks pageLinks = PageLinks(
       context: context,
       style: appBarTextStyle,
+      colorScheme: colorScheme,
     );
 
     final IconLinks iconLinks = IconLinks(
       context: context,
-      colorScheme: Theme.of(context).colorScheme,
+      colorScheme: colorScheme,
     );
 
     final Widget iconLinksMenu = MenuAnchor(
-      builder: (_, MenuController controller, ___) {
-        return IconButton(
-          onPressed: () =>
-              controller.isOpen ? controller.close() : controller.open(),
-          tooltip: l10n.gShare,
-          icon: Icon(PlatformIcons(context).share),
-        );
-      },
+      builder: (_, MenuController controller, ___) => IconButton(
+        onPressed: () =>
+            controller.isOpen ? controller.close() : controller.open(),
+        tooltip: l10n.gShare,
+        icon: Icon(PlatformIcons(context).share),
+      ),
       menuChildren: iconLinks.buttons.map((Widget button) {
         switch (button.runtimeType) {
           case const (IconLink):
@@ -117,6 +113,7 @@ class DotnetScaffold extends StatelessWidget {
     final DotNetDrawer drawer = DotNetDrawer(
       style: appBarTextStyle,
       header: iconLinks,
+      pageLinks: pageLinks,
     );
 
     final double newSmall = 2 * (toolbarHeight + 2 * margin) + pageLinks.width;
@@ -283,66 +280,20 @@ class DotNetDrawer extends StatelessWidget {
   /// [IconLinks] to be displayed in the [DrawerHeader]
   final IconLinks header;
 
+  /// [PageLinks] to be displayed in the [NavigationDrawer]
+  final PageLinks pageLinks;
+
   /// Universal [NavigationDrawer] for dotnet
   const DotNetDrawer({
     super.key,
     required this.style,
     required this.header,
+    required this.pageLinks,
   });
 
   @override
   Widget build(BuildContext context) {
-    // Gather theme data //
-
     const EzSpacer spacer = EzSpacer();
-
-    final ColorScheme colorScheme = Theme.of(context).colorScheme;
-
-    // Define custom functions //
-
-    // Define the buttons //
-
-    final EzLink mission = EzLink(
-      Lang.of(context)!.msPageTitle,
-      style: style,
-      textAlign: TextAlign.center,
-      url: Uri.parse(missionURL),
-      hint: Lang.of(context)!.gMissionHint,
-      textColor: colorScheme.onSurface,
-      decorationColor: colorScheme.primary,
-    );
-
-    final EzLink products = EzLink(
-      Lang.of(context)!.psPageTitle,
-      style: style,
-      textAlign: TextAlign.center,
-      url: Uri.parse(productsURL),
-      hint: Lang.of(context)!.gProductsHint,
-      textColor: colorScheme.onSurface,
-      decorationColor: colorScheme.primary,
-    );
-
-    final EzLink team = EzLink(
-      Lang.of(context)!.tsPageTitle,
-      style: style,
-      textAlign: TextAlign.center,
-      url: Uri.parse(teamURL),
-      hint: Lang.of(context)!.gTeamHint,
-      textColor: colorScheme.onSurface,
-      decorationColor: colorScheme.primary,
-    );
-
-    final EzLink contribute = EzLink(
-      Lang.of(context)!.csPageTitle,
-      style: style,
-      textAlign: TextAlign.center,
-      url: Uri.parse(contributeURL),
-      hint: Lang.of(context)!.gContributeHint,
-      textColor: colorScheme.onSurface,
-      decorationColor: colorScheme.primary,
-    );
-
-    // Return the build //
 
     return NavigationDrawer(
       tilePadding: EdgeInsets.zero,
@@ -362,7 +313,7 @@ class DotNetDrawer extends StatelessWidget {
                       style: child.style,
                       onPressed: () {
                         Navigator.of(context).pop();
-                        child.onPressed!();
+                        child.onPressed?.call();
                       },
                       tooltip: child.tooltip,
                       icon: child.icon,
@@ -375,14 +326,13 @@ class DotNetDrawer extends StatelessWidget {
           ),
         ),
         spacer,
-        mission,
+        pageLinks.mission,
         spacer,
-        products,
+        pageLinks.products,
         spacer,
-        team,
+        pageLinks.team,
         spacer,
-        contribute,
-        spacer,
+        pageLinks.contribute,
       ],
     );
   }

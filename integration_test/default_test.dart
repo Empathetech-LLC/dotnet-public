@@ -3,8 +3,6 @@
  * See LICENSE for distribution and usage details.
  */
 
-import 'package:dotnet/utils/export.dart';
-
 import 'screens/home.dart' as home;
 import 'screens/settings_home.dart' as settings_home;
 import 'screens/products.dart' as products;
@@ -22,12 +20,12 @@ void main() async {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
   WidgetsFlutterBinding.ensureInitialized();
 
-  SharedPreferences.setMockInitialValues(mobileDotnetConfig);
+  SharedPreferences.setMockInitialValues(mobileEmpathConfig);
   final SharedPreferences prefs = await SharedPreferences.getInstance();
 
   EzConfig.init(
     preferences: prefs,
-    defaults: mobileDotnetConfig,
+    defaults: mobileEmpathConfig,
     fallbackLang: await EFUILang.delegate.load(americanEnglish),
     assetPaths: <String>{},
   );

@@ -4,8 +4,9 @@
   "gEmpathLogoLabel": "a two dimensional hourglass.",
   "gEmpathLogoHint": "Activate to go to the home page.",
 
+  "gLearn": "Learn about {name}",
   "gHomeHint": "Open the home page",
-  "gProductsHint": "Open the products page",
+  "gProductsHint": "Open a product page",
   "gMissionHint": "Open the mission page",
   "gTeamHint": "Open the team page",
   "gContributeHint": "Open the contribute page",
@@ -124,7 +125,7 @@
 
   "psSOSIconLabel": "a loudly colored notification bell.",
 
-  "psSOSDescription": "A camera, SOS beacon, and list of your rights all in one place.\nIt's available in English, Arabic, Spanish, Filipino, French, Creole, and Simplified Chinese.",
+  "psSOSDescription": "A camera, SOS beacon, and list of your rights all in one place.\nIt's available in English, Arabic, Spanish, Filipino, French, Creole, Simplified Chinese, and supports screen readers.",
   "psDocsLabel": "How it works.",
   "psDocsHint": "Open a link to the README",
   "psSafeSOS": "InstaSOS has no accounts, cookies, or ads.\n",
@@ -153,6 +154,8 @@
   "tsCommunity": "Community",
 
   "tsFreelance": "Freelance",
+
+  "tsVideoProduction": "Video Production",
 
   "tsTranslators": "Translators",
   "tsAr": "Arabic",

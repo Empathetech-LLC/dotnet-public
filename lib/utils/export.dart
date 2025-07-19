@@ -4,5 +4,6 @@
  */
 
 export 'consts.dart';
+export 'enums.dart';
 
 export '../l10n/lang.dart';

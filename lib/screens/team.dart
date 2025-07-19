@@ -50,7 +50,7 @@ class _TeamScreenState extends State<TeamScreen> {
   @override
   Widget build(BuildContext context) {
     return DotnetScaffold(
-      body: EzScreen(
+      EzScreen(
         EzScrollView(children: <Widget>[
           // Core //
 
@@ -132,6 +132,30 @@ class _TeamScreenState extends State<TeamScreen> {
             textAlign: TextAlign.center,
           ),
           spacer,
+
+          // Video production
+          Text(
+            l10n.tsVideoProduction,
+            style: textTheme.titleLarge,
+            textAlign: TextAlign.center,
+          ),
+          Wrap(
+            alignment: WrapAlignment.center,
+            runAlignment: WrapAlignment.center,
+            crossAxisAlignment: WrapCrossAlignment.center,
+            children: <Widget>[
+              _Freelancer(
+                l10n: l10n,
+                textTheme: textTheme,
+                imageSize: imageSize,
+                margin: margin,
+                name: montanaM,
+                link: montanaMLink,
+                image: montanaMProfile,
+              )
+            ],
+          ),
+          separator,
 
           // Translators
           Text(
@@ -269,6 +293,8 @@ class _TeamScreenState extends State<TeamScreen> {
             ],
           ),
           separator,
+
+          const EzTranslationsPendingNotice(),
         ]),
         useImageDecoration: false,
       ),

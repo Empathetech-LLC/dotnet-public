@@ -3,7 +3,6 @@
  * See LICENSE for distribution and usage details.
  */
 
-import 'export.dart';
 import '../utils/export.dart';
 import '../widgets/export.dart';
 import 'package:efui_bios/efui_bios.dart';
@@ -14,7 +13,6 @@ import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 
 class MissionScreen extends StatefulWidget {
-  /// This is the Empathetech way
   const MissionScreen({super.key});
 
   @override
@@ -26,11 +24,10 @@ class _MissionScreenState extends State<MissionScreen> {
 
   final double padding = EzConfig.get(paddingKey);
 
-  late final TextTheme textTheme = Theme.of(context).textTheme;
-
   late final ColorScheme colorScheme = Theme.of(context).colorScheme;
 
   late final Lang l10n = Lang.of(context)!;
+  late final TextTheme textTheme = Theme.of(context).textTheme;
 
   // Define the build data //
 
@@ -145,7 +142,7 @@ class _MissionScreenState extends State<MissionScreen> {
   @override
   Widget build(BuildContext context) {
     return DotnetScaffold(
-      body: EzScreen(
+      EzScreen(
         Column(
           children: <Widget>[
             Expanded(

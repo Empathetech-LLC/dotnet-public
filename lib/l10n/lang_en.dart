@@ -15,10 +15,15 @@ class LangEn extends Lang {
   String get gEmpathLogoHint => 'Activate to go to the home page.';
 
   @override
+  String gLearn(Object name) {
+    return 'Learn about $name';
+  }
+
+  @override
   String get gHomeHint => 'Open the home page';
 
   @override
-  String get gProductsHint => 'Open the products page';
+  String get gProductsHint => 'Open a product page';
 
   @override
   String get gMissionHint => 'Open the mission page';
@@ -305,7 +310,7 @@ class LangEn extends Lang {
 
   @override
   String get psSOSDescription =>
-      'A camera, SOS beacon, and list of your rights all in one place.\nIt\'s available in English, Arabic, Spanish, Filipino, French, Creole, and Simplified Chinese.';
+      'A camera, SOS beacon, and list of your rights all in one place.\nIt\'s available in English, Arabic, Spanish, Filipino, French, Creole, Simplified Chinese, and supports screen readers.';
 
   @override
   String get psDocsLabel => 'How it works.';
@@ -372,6 +377,9 @@ class LangEn extends Lang {
 
   @override
   String get tsFreelance => 'Freelance';
+
+  @override
+  String get tsVideoProduction => 'Video Production';
 
   @override
   String get tsTranslators => 'Translators';
@@ -476,10 +484,15 @@ class LangEnUs extends LangEn {
   String get gEmpathLogoHint => 'Activate to go to the home page.';
 
   @override
+  String gLearn(Object name) {
+    return 'Learn about $name';
+  }
+
+  @override
   String get gHomeHint => 'Open the home page';
 
   @override
-  String get gProductsHint => 'Open the products page';
+  String get gProductsHint => 'Open a product page';
 
   @override
   String get gMissionHint => 'Open the mission page';
@@ -766,7 +779,7 @@ class LangEnUs extends LangEn {
 
   @override
   String get psSOSDescription =>
-      'A camera, SOS beacon, and list of your rights all in one place.\nIt\'s available in English, Arabic, Spanish, Filipino, French, Creole, and Simplified Chinese.';
+      'A camera, SOS beacon, and list of your rights all in one place.\nIt\'s available in English, Arabic, Spanish, Filipino, French, Creole, Simplified Chinese, and supports screen readers.';
 
   @override
   String get psDocsLabel => 'How it works.';
@@ -833,6 +846,9 @@ class LangEnUs extends LangEn {
 
   @override
   String get tsFreelance => 'Freelance';
+
+  @override
+  String get tsVideoProduction => 'Video Production';
 
   @override
   String get tsTranslators => 'Translators';

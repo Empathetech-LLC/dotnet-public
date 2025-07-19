@@ -111,6 +111,12 @@ abstract class Lang {
   /// **'Activate to go to the home page.'**
   String get gEmpathLogoHint;
 
+  /// No description provided for @gLearn.
+  ///
+  /// In en, this message translates to:
+  /// **'Learn about {name}'**
+  String gLearn(Object name);
+
   /// No description provided for @gHomeHint.
   ///
   /// In en, this message translates to:
@@ -120,7 +126,7 @@ abstract class Lang {
   /// No description provided for @gProductsHint.
   ///
   /// In en, this message translates to:
-  /// **'Open the products page'**
+  /// **'Open a product page'**
   String get gProductsHint;
 
   /// No description provided for @gMissionHint.
@@ -630,7 +636,7 @@ abstract class Lang {
   /// No description provided for @psSOSDescription.
   ///
   /// In en, this message translates to:
-  /// **'A camera, SOS beacon, and list of your rights all in one place.\nIt\'s available in English, Arabic, Spanish, Filipino, French, Creole, and Simplified Chinese.'**
+  /// **'A camera, SOS beacon, and list of your rights all in one place.\nIt\'s available in English, Arabic, Spanish, Filipino, French, Creole, Simplified Chinese, and supports screen readers.'**
   String get psSOSDescription;
 
   /// No description provided for @psDocsLabel.
@@ -758,6 +764,12 @@ abstract class Lang {
   /// In en, this message translates to:
   /// **'Freelance'**
   String get tsFreelance;
+
+  /// No description provided for @tsVideoProduction.
+  ///
+  /// In en, this message translates to:
+  /// **'Video Production'**
+  String get tsVideoProduction;
 
   /// No description provided for @tsTranslators.
   ///

@@ -13,6 +13,6 @@ class LayoutSettingsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => const DotnetScaffold(
-        body: EzScreen(EzLayoutSettings(), useImageDecoration: false),
+        EzScreen(EzLayoutSettings(), useImageDecoration: false),
       );
 }

@@ -15,10 +15,15 @@ class LangFr extends Lang {
   String get gEmpathLogoHint => 'Activer pour accéder à la page d\'accueil.';
 
   @override
+  String gLearn(Object name) {
+    return 'En savoir plus sur $name';
+  }
+
+  @override
   String get gHomeHint => 'Ouvre la page d\'accueil';
 
   @override
-  String get gProductsHint => 'Ouvre la page des produits';
+  String get gProductsHint => 'Ouvrir une page produit';
 
   @override
   String get gMissionHint => 'Ouvre la page de mission';
@@ -310,7 +315,7 @@ class LangFr extends Lang {
 
   @override
   String get psSOSDescription =>
-      'Une caméra, une balise SOS et une liste de vos droits, le tout au même endroit.\nIl est disponible en anglais, arabe, espagnol, philippin, français, créole, et chinois simplifié.';
+      'Une caméra, une balise SOS et une liste de vos droits, le tout au même endroit.\nIl est disponible en anglais, arabe, espagnol, philippin, français, créole, chinois simplifié, et prend en charge les lecteurs d\'écran.';
 
   @override
   String get psDocsLabel => 'Comment ça marche.';
@@ -378,6 +383,9 @@ class LangFr extends Lang {
 
   @override
   String get tsFreelance => 'Free-lance';
+
+  @override
+  String get tsVideoProduction => 'Production vidéo';
 
   @override
   String get tsTranslators => 'Traducteurs';

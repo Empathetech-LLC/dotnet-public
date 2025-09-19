@@ -1,6 +1,6 @@
 name: dotnet
 description: "The Empathetech mission is to re-balance the power in tech by making self hosting more accessible."
-version: 4.7.1
+version: 5.0.0
 publish_to: 'none'
 
 environment:
@@ -14,7 +14,7 @@ dependencies:
 
   # Flutter (Google)
   go_router: ^14.8.1
-  http: ^1.4.0
+  http: ^1.5.0
   intl: ^0.20.2
   shared_preferences: ^2.5.3
   url_launcher: ^6.3.2
@@ -24,7 +24,7 @@ dependencies:
   feedback: ^3.2.0
   flutter_localized_locales: ^2.0.5
   flutter_platform_widgets: ^9.0.0
-  font_awesome_flutter: ^10.8.0
+  font_awesome_flutter: ^10.10.0
   line_icons: ^2.0.3
   
   efui_bios:
@@ -54,11 +54,17 @@ flutter:
     - assets/images/founder.png
     - assets/images/loading-dark.gif
     - assets/images/loading-light.gif
+    - assets/images/montana-headshot.jpg
+    - assets/images/open-sauce-2025.jpg
+    - assets/images/open-sauce-logo.png
     - assets/images/open-ui-icon.png
     - assets/images/smoke-signal-icon.png
     - assets/images/sos-icon.png
     - assets/videos/
     - assets/videos/eag-demo.mp4
+    - assets/videos/sos-promo.mp4
+    - assets/videos/sos-promo-vertical.mp4
+    - assets/videos/sos-promo-captions.srt
 
 flutter_launcher_icons:
   image_path: assets/images/app-icon.png

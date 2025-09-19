@@ -28,7 +28,7 @@ void main() async {
 
   EzConfig.init(
     preferences: prefs,
-    defaults: isMobile() ? mobileEmpathConfig : desktopEmpathConfig,
+    defaults: isMobile() ? empathMobileConfig : empathDesktopConfig,
     fallbackLang: await EFUILang.delegate.load(americanEnglish),
     assetPaths: assetPaths,
   );
@@ -55,7 +55,9 @@ final GoRouter router = GoRouter(
     GoRoute(
       path: homePath,
       name: homePath,
-      builder: (_, __) => const HomeScreen(),
+      builder: (_, GoRouterState state) => HomeScreen(
+        fin: state.uri.queryParameters['fin']?.toLowerCase() == 'true',
+      ),
       routes: <RouteBase>[
         GoRoute(
           path: missionPath,
@@ -93,30 +95,6 @@ final GoRouter router = GoRouter(
           builder: (_, __) => const SettingsHomeScreen(),
           routes: <RouteBase>[
             GoRoute(
-              path: textSettingsPath,
-              name: textSettingsPath,
-              builder: (_, __) => const TextSettingsScreen(),
-              routes: <RouteBase>[
-                GoRoute(
-                  path: EzTSType.quick.path,
-                  name: EzTSType.quick.name,
-                  builder: (_, __) =>
-                      const TextSettingsScreen(target: EzTSType.quick),
-                ),
-                GoRoute(
-                  path: EzTSType.advanced.path,
-                  name: EzTSType.advanced.name,
-                  builder: (_, __) =>
-                      const TextSettingsScreen(target: EzTSType.advanced),
-                ),
-              ],
-            ),
-            GoRoute(
-              path: layoutSettingsPath,
-              name: layoutSettingsPath,
-              builder: (_, __) => const LayoutSettingsScreen(),
-            ),
-            GoRoute(
               path: colorSettingsPath,
               name: colorSettingsPath,
               builder: (_, __) => const ColorSettingsScreen(),
@@ -135,6 +113,35 @@ final GoRouter router = GoRouter(
                 ),
               ],
             ),
+            GoRoute(
+              path: designSettingsPath,
+              name: designSettingsPath,
+              builder: (_, __) => const DesignSettingsScreen(),
+            ),
+            GoRoute(
+              path: layoutSettingsPath,
+              name: layoutSettingsPath,
+              builder: (_, __) => const LayoutSettingsScreen(),
+            ),
+            GoRoute(
+              path: textSettingsPath,
+              name: textSettingsPath,
+              builder: (_, __) => const TextSettingsScreen(),
+              routes: <RouteBase>[
+                GoRoute(
+                  path: EzTSType.quick.path,
+                  name: EzTSType.quick.name,
+                  builder: (_, __) =>
+                      const TextSettingsScreen(target: EzTSType.quick),
+                ),
+                GoRoute(
+                  path: EzTSType.advanced.path,
+                  name: EzTSType.advanced.name,
+                  builder: (_, __) =>
+                      const TextSettingsScreen(target: EzTSType.advanced),
+                ),
+              ],
+            ),
           ],
         ),
       ],
@@ -150,11 +157,13 @@ class DotNet extends StatelessWidget {
   Future<void> precacheImages(BuildContext context) async {
     // Products //
 
-    // Creating
+    // Open UI
     precacheImage(openUIImage, context);
 
-    // Using
+    // SOS
     precacheImage(sosImage, context);
+
+    // Smoke Signal
     precacheImage(smokeSignalImage, context);
 
     // Team //
@@ -162,10 +171,16 @@ class DotNet extends StatelessWidget {
     // Core
     precacheImage(founderImage, context);
 
+    // IRL
+    precacheImage(openSauce2025Image, context);
+    precacheImage(openSauceLogoImage, context);
+
     // Community
     precacheImage(fahImage, context);
 
     // Freelance
+    precacheImage(montanaImage, context);
+
     precacheImage(yasminSProfile, context);
     precacheImage(saraHProfile, context);
     precacheImage(remalynProfile, context);

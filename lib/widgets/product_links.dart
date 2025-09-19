@@ -13,8 +13,8 @@ import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 
 //* Shared *//
 
-/// '9.2.0'
-const String efuiFallback = '9.2.0';
+/// '10.0.0'
+const String efuiFallback = '10.0.0';
 
 /// '1.3.2'
 const String sosFallback = '1.3.2';
@@ -93,6 +93,7 @@ class EFUIShoutOut extends StatelessWidget {
         EzLink(
           l10n.gDontCha,
           style: style,
+          padding: EzInsets.wrap(EzConfig.get(marginKey)),
           textAlign: TextAlign.center,
           url: Uri.parse(efuiSource),
           hint: l10n.gDontChaHint,

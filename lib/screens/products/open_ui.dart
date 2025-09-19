@@ -21,14 +21,13 @@ class OpenUIScreen extends StatefulWidget {
 }
 
 class _OpenUIScreenState extends State<OpenUIScreen> {
-  // Gather the theme data //
+  // Gather the fixed theme data //
 
   static const EzSpacer spacer = EzSpacer();
   static const EzSeparator separator = EzSeparator();
   static const EzDivider divider = EzDivider();
 
-  late final TextTheme textTheme = Theme.of(context).textTheme;
-  late final TextStyle? subTitle = ezSubTitleStyle(textTheme);
+  final EdgeInsets linkPadding = EzInsets.wrap(EzConfig.get(marginKey));
 
   late final Lang l10n = Lang.of(context)!;
 
@@ -78,24 +77,30 @@ class _OpenUIScreenState extends State<OpenUIScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final TextTheme textTheme = Theme.of(context).textTheme;
+    final TextStyle? subTitle = ezSubTitleStyle(textTheme);
+
+    final Text newLine = Text(
+      '',
+      style: textTheme.bodyLarge,
+      textAlign: TextAlign.center,
+    );
+
     return DotnetScaffold(
       EzScreen(
         EzScrollView(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-            // Open UI intro/demo //
-
-            // Title
-            Text(
+            // Headline && slogan (link)
+            EzText(
               openUI,
               style: textTheme.displayLarge,
               textAlign: TextAlign.center,
             ),
-
-            // Slogan
             EzLink(
               l10n.psOpenUISlogan,
               style: textTheme.headlineLarge!,
+              padding: linkPadding,
               textAlign: TextAlign.center,
               url: url,
               hint: l10n.gDownloadHint(openUI, dlType.name),
@@ -103,7 +108,7 @@ class _OpenUIScreenState extends State<OpenUIScreen> {
             separator,
 
             // Demo
-            Text(
+            EzText(
               l10n.psLike,
               style: subTitle,
               textAlign: TextAlign.center,
@@ -112,10 +117,8 @@ class _OpenUIScreenState extends State<OpenUIScreen> {
             const EFUIDemo(),
             divider,
 
-            // Open UI video && description //
-
-            // Header
-            Text(
+            // Use it in a sentence
+            EzText(
               l10n.psOpenUIIs,
               style: subTitle,
               textAlign: TextAlign.center,
@@ -126,25 +129,25 @@ class _OpenUIScreenState extends State<OpenUIScreen> {
             separator,
 
             // Description
-            Text(
+            EzText(
               l10n.psFoundation,
               style: textTheme.bodyLarge,
               textAlign: TextAlign.center,
             ),
-            spacer,
-            Text(
+            newLine,
+            EzText(
               l10n.psLocal,
               style: textTheme.bodyLarge,
               textAlign: TextAlign.center,
             ),
-            spacer,
-            Text(
+            newLine,
+            EzText(
               l10n.psRequirements,
               style: textTheme.bodyLarge,
               textAlign: TextAlign.center,
             ),
             separator,
-            Text(
+            EzText(
               l10n.psFlutterToo,
               style: textTheme.labelLarge,
               textAlign: TextAlign.center,
@@ -153,14 +156,13 @@ class _OpenUIScreenState extends State<OpenUIScreen> {
 
             // EFUI //
 
-            // How?
-
-            Text(
+            // How it works
+            EzText(
               l10n.psHow,
               style: textTheme.headlineLarge,
               textAlign: TextAlign.center,
             ),
-            spacer,
+            newLine,
 
             EzRichText(<InlineSpan>[
               EzPlainText(
@@ -176,48 +178,44 @@ class _OpenUIScreenState extends State<OpenUIScreen> {
                 hint: ezL10n(context).gEFUISourceHint,
               ),
               EzPlainText(
-                text: '.',
+                text: '.\n',
+                style: textTheme.bodyLarge,
+              ),
+              EzPlainText(
+                text: l10n.psSimplifies,
                 style: textTheme.bodyLarge,
               ),
             ], textAlign: TextAlign.center),
-            spacer,
-
-            // Elevator pitch
-            Text(
-              l10n.psSimplifies,
-              style: textTheme.bodyLarge,
-              textAlign: TextAlign.center,
-            ),
             separator,
 
             // Platform availability
-            Text(
+            EzText(
               l10n.psPlatform,
               style: textTheme.titleLarge,
               textAlign: TextAlign.center,
             ),
-            Text(
+            EzText(
               l10n.psPlatformContent,
               style: textTheme.bodyLarge,
               textAlign: TextAlign.center,
             ),
-            spacer,
+            newLine,
 
             // Responsive design
-            Text(
+            EzText(
               l10n.psResponsive,
               style: textTheme.titleLarge,
               textAlign: TextAlign.center,
             ),
-            Text(
+            EzText(
               l10n.psResponsiveContent,
               style: textTheme.bodyLarge,
               textAlign: TextAlign.center,
             ),
-            spacer,
+            newLine,
 
             // Screen reader support
-            Text(
+            EzText(
               l10n.psScreen,
               style: textTheme.titleLarge,
               textAlign: TextAlign.center,
@@ -249,31 +247,44 @@ class _OpenUIScreenState extends State<OpenUIScreen> {
               ),
               EzPlainText(text: '.', style: textTheme.bodyLarge),
             ], textAlign: TextAlign.center),
-            spacer,
+            newLine,
 
             // User customization
-            Text(
+            EzText(
               l10n.psCustom,
               style: textTheme.titleLarge,
               textAlign: TextAlign.center,
             ),
-
-            Text(
+            EzText(
               l10n.psCustomContent,
               style: textTheme.bodyLarge,
               textAlign: TextAlign.center,
             ),
-            spacer,
+            newLine,
 
             // Internationalization
-            Text(
+            EzText(
               l10n.psInternational,
               style: textTheme.titleLarge,
               textAlign: TextAlign.center,
             ),
-            Text(
+            EzText(
               l10n.psInternationalContent,
               semanticsLabel: l10n.psInternationalContentFix,
+              style: textTheme.bodyLarge,
+              textAlign: TextAlign.center,
+            ),
+            newLine,
+
+            // Reliability
+            EzText(
+              l10n.psReliability,
+              style: textTheme.titleLarge,
+              textAlign: TextAlign.center,
+            ),
+            EzText(
+              l10n.psReliabilityContent,
+              semanticsLabel: l10n.psReliabilityContentFix,
               style: textTheme.bodyLarge,
               textAlign: TextAlign.center,
             ),
@@ -301,11 +312,12 @@ class _OpenUIScreenState extends State<OpenUIScreen> {
 
             // Download Open UI (again) //
 
-            Text(
+            EzText(
               l10n.psGetStarted,
               style: subTitle,
               textAlign: TextAlign.center,
             ),
+            EzMargin(),
             const OpenUILink(),
 
             separator,
@@ -313,7 +325,7 @@ class _OpenUIScreenState extends State<OpenUIScreen> {
           ],
         ),
       ),
-      fab: SettingsFAB(context),
+      fab: const SettingsFAB(),
     );
   }
 }
@@ -326,9 +338,10 @@ class _DemoVideo extends StatefulWidget {
 }
 
 class _DemoVideoState extends State<_DemoVideo> {
-  // Gather the theme data //
+  // Gather the fixed theme data //
 
-  late final ColorScheme colorScheme = Theme.of(context).colorScheme;
+  final TargetPlatform platform = getBasePlatform();
+
   late final Lang l10n = Lang.of(context)!;
 
   // Define the build data //
@@ -355,24 +368,14 @@ class _DemoVideoState extends State<_DemoVideo> {
       children: <Widget>[
         const EzSpacer(),
 
-        // Show
-        Visibility(
-          visible: !showVideo,
-          child: EzElevatedIconButton(
-            onPressed: () => setState(() => showVideo = true),
-            icon: Icon(PlatformIcons(context).eyeSolid),
-            label: l10n.psShowDemo,
-          ),
-        ),
-
         // Video
         Visibility(
           visible: showVideo,
           child: EzVideoPlayer(
             controller: controller,
             aspectRatio: 34 / 19,
-            maxHeight: heightOf(context) * 0.80,
             maxWidth: widthOf(context) * 0.90,
+            maxHeight: heightOf(context) * 0.80,
             backgroundColor: Colors.black,
             semantics: l10n.psOpenUIDemo,
             volumeVis: EzButtonVis.alwaysOff,
@@ -380,19 +383,20 @@ class _DemoVideoState extends State<_DemoVideo> {
             autoPlay: false,
           ),
         ),
+        if (showVideo) const EzSpacer(),
 
-        // Hide
-        Visibility(
-          visible: showVideo,
-          child: Padding(
-            padding: EdgeInsets.only(top: EzConfig.get(spacingKey)),
-            child: EzElevatedIconButton(
-              onPressed: () => setState(() => showVideo = false),
-              icon: Icon(PlatformIcons(context).eyeSlashSolid),
-              label: l10n.psHideDemo,
-            ),
-          ),
-        ),
+        // Show/Hide
+        showVideo
+            ? EzElevatedIconButton(
+                onPressed: () => setState(() => showVideo = false),
+                icon: Icon(PlatformIcons(context).eyeSlashSolid),
+                label: l10n.psHideDemo,
+              )
+            : EzElevatedIconButton(
+                onPressed: () => setState(() => showVideo = true),
+                icon: Icon(PlatformIcons(context).eyeSolid),
+                label: l10n.psShowDemo,
+              ),
       ],
     );
   }

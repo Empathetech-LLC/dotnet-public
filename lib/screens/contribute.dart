@@ -20,7 +20,7 @@ class ContributeScreen extends StatefulWidget {
 }
 
 class _ContributeScreenState extends State<ContributeScreen> {
-  // Gather the theme data //
+  // Gather the fixed theme data //
 
   static const EzSpacer spacer = EzSpacer();
   static const EzSwapSpacer swapSpacer = EzSwapSpacer();
@@ -29,9 +29,6 @@ class _ContributeScreenState extends State<ContributeScreen> {
 
   final double margin = EzConfig.get(marginKey);
   final double spacing = EzConfig.get(spacingKey);
-
-  late final TextTheme textTheme = Theme.of(context).textTheme;
-  late final TextStyle? subTitle = ezSubTitleStyle(textTheme);
 
   late final Lang l10n = Lang.of(context)!;
 
@@ -117,141 +114,136 @@ class _ContributeScreenState extends State<ContributeScreen> {
     ezWindowNamer(context, l10n.csPageTitle);
   }
 
-  // Return the build //
-
   @override
   Widget build(BuildContext context) {
+    // Return the build //
+
+    final TextTheme textTheme = Theme.of(context).textTheme;
+    final TextStyle? subTitle = ezSubTitleStyle(textTheme);
+
     return DotnetScaffold(
-      EzScreen(
-        EzScrollView(
-          children: <Widget>[
-            if (spacing > margin) EzSpacer(space: spacing - margin),
+      EzScreen(EzScrollView(children: <Widget>[
+        if (spacing > margin) EzSpacer(space: spacing - margin),
 
-            // Intro //
+        // Intro //
 
-            MergeSemantics(
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  // Every bit
-                  Text(
-                    l10n.csEveryBit,
-                    semanticsLabel: l10n.csEveryBitFix,
-                    style: textTheme.headlineLarge,
-                    textAlign: TextAlign.center,
-                  ),
-                  spacer,
-
-                  // Would you like to give?...
-                  Text(
-                    l10n.csGive,
-                    style: subTitle,
-                    textAlign: TextAlign.center,
-                  ),
-                ],
-              ),
-            ),
-            separator,
-
-            //* Donate *//
-
-            // Time //
-
-            Text(
-              l10n.csTimeQ,
-              style: textTheme.titleLarge,
-              textAlign: TextAlign.center,
-            ),
-            EzMargin(),
-
-            // GitHub contributor
-            EzRichText(<InlineSpan>[
-              EzInlineLink(
-                l10n.gReachOut,
-                style: textTheme.bodyLarge,
+        MergeSemantics(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              // Every bit
+              EzText(
+                l10n.csEveryBit,
+                semanticsLabel: l10n.csEveryBitFix,
+                style: textTheme.headlineLarge,
                 textAlign: TextAlign.center,
-                url: Uri.parse(
-                  'mailto:$empathCommunity?subject=Becoming%20a%20contributor',
-                ),
-                tooltip: l10n.gEmailTo(empathetechLLC),
-                hint: l10n.gEmailTo(empatheticLLC),
               ),
-              EzPlainText(
-                text: l10n.csBecome,
-                style: textTheme.bodyLarge,
-              ),
-              EzInlineLink(
-                l10n.csGit,
-                style: textTheme.bodyLarge,
+
+              // Would you like to give?...
+              EzText(
+                l10n.csGive,
+                style: subTitle,
                 textAlign: TextAlign.center,
-                url: Uri.parse(empathGitHub),
-                hint: l10n.gEmpathetechGitHint,
-                tooltip: empathGitHub,
               ),
-            ], textAlign: TextAlign.center),
-            divider,
-
-            // Money //
-
-            Text(
-              l10n.csMoneyQ,
-              style: textTheme.titleLarge,
-              textAlign: TextAlign.center,
-            ),
-            spacer,
-
-            // Crowdfunding organizations
-            EzRowCol.sym(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: crowdFundOrgs,
-            ),
-            spacer,
-
-            // Affiliate donations
-            EzRowCol.sym(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: affiliateDonations,
-            ),
-            spacer,
-
-            // Direct donations
-            EzRowCol.sym(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: directDonations,
-            ),
-            divider,
-
-            // Power //
-
-            Text(
-              l10n.csPowerQ,
-              style: textTheme.titleLarge,
-              textAlign: TextAlign.center,
-            ),
-            spacer,
-
-            // F@H team
-            const FaHBanner(),
-            divider,
-
-            // Thanks
-            Text(
-              l10n.csThanks,
-              style: subTitle,
-              textAlign: TextAlign.center,
-            ),
-            separator,
-
-            const EzTranslationsPendingNotice(),
-          ],
+            ],
+          ),
         ),
-        useImageDecoration: false,
-      ),
-      fab: SettingsFAB(context),
+        separator,
+
+        //* Donate *//
+
+        // Time //
+
+        EzText(
+          l10n.csTimeQ,
+          style: textTheme.titleLarge,
+          textAlign: TextAlign.center,
+        ),
+
+        // GitHub contributor
+        EzRichText(<InlineSpan>[
+          EzInlineLink(
+            l10n.gReachOut,
+            style: textTheme.bodyLarge,
+            textAlign: TextAlign.center,
+            url: Uri.parse(
+              'mailto:$empathCommunity?subject=Becoming%20a%20contributor',
+            ),
+            tooltip: l10n.gEmailTo(empathetechLLC),
+            hint: l10n.gEmailTo(empatheticLLC),
+          ),
+          EzPlainText(
+            text: l10n.csBecome,
+            style: textTheme.bodyLarge,
+          ),
+          EzInlineLink(
+            l10n.csGit,
+            style: textTheme.bodyLarge,
+            textAlign: TextAlign.center,
+            url: Uri.parse(empathGitHub),
+            hint: l10n.gEmpathetechGitHint,
+            tooltip: empathGitHub,
+          ),
+        ], textAlign: TextAlign.center),
+        divider,
+
+        // Money //
+
+        EzText(
+          l10n.csMoneyQ,
+          style: textTheme.titleLarge,
+          textAlign: TextAlign.center,
+        ),
+        spacer,
+
+        // Crowdfunding organizations
+        EzRowCol.sym(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: crowdFundOrgs,
+        ),
+        spacer,
+
+        // Affiliate donations
+        EzRowCol.sym(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: affiliateDonations,
+        ),
+        spacer,
+
+        // Direct donations
+        EzRowCol.sym(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: directDonations,
+        ),
+        divider,
+
+        // Power //
+
+        EzText(
+          l10n.csPowerQ,
+          style: textTheme.titleLarge,
+          textAlign: TextAlign.center,
+        ),
+
+        // F@H team
+        const FaHBanner(),
+        divider,
+
+        // Thanks
+        EzText(
+          l10n.csThanks,
+          style: subTitle,
+          textAlign: TextAlign.center,
+        ),
+        separator,
+
+        const EzTranslationsPendingNotice(),
+      ])),
+      fab: const SettingsFAB(),
     );
   }
 }

@@ -12,7 +12,8 @@ class LayoutSettingsScreen extends StatelessWidget {
   const LayoutSettingsScreen({super.key});
 
   @override
-  Widget build(BuildContext context) => const DotnetScaffold(
-        EzScreen(EzLayoutSettings(), useImageDecoration: false),
+  Widget build(BuildContext context) => DotnetScaffold(
+        const EzScreen(EzLayoutSettings()),
+        fab: EzConfigFAB(context, appName: 'dotnet', androidPackage: null),
       );
 }

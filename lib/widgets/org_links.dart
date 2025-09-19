@@ -15,12 +15,9 @@ class FaHBanner extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Gather theme data //
-
-    const EzSpacer spacer = EzSpacer();
+    // Gather the theme data //
 
     final Lang l10n = Lang.of(context)!;
-
     final TextTheme textTheme = Theme.of(context).textTheme;
 
     // Return the build //
@@ -50,7 +47,8 @@ class FaHBanner extends StatelessWidget {
             const EzSwapSpacer(),
 
             // External links && info
-            Column(
+            EzTextBackground(Column(
+              mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Text(
@@ -76,24 +74,24 @@ class FaHBanner extends StatelessWidget {
                     text: l10n.fahIntro2,
                     style: textTheme.bodyLarge,
                   ),
-                ], textAlign: TextAlign.center),
-                spacer,
+                ], textAlign: TextAlign.center, textBackground: false),
                 EzLink(
                   l10n.fahWhatQ,
-                  style: textTheme.bodyLarge!,
+                  style: textTheme.bodyLarge,
+                  backgroundColor: Colors.transparent,
                   textAlign: TextAlign.center,
                   url: Uri.parse(aboutFaHLink),
                   hint: l10n.fahWhatQHint,
                   tooltip: aboutFaHLink,
                 ),
               ],
-            ),
+            )),
           ],
         ),
-        spacer,
+        const EzSpacer(),
 
         // "Live" stats //
-        Text(
+        EzText(
           l10n.fahStats,
           style: textTheme.bodyLarge,
           textAlign: TextAlign.center,

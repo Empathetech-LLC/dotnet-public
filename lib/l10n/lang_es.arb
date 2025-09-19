@@ -70,21 +70,20 @@
 
 
   "psPageTitle": "Productos",
-  "psCreator": "Para crear",
-  "psUser": "Para usar",
+
+  "psShowDemo": "Mostrar demo",
+  "psHideDemo": "Ocultar demo",
+  "psShowPromo": "Mostrar promo",
+  "psHidePromo": "Ocultar promo",
 
   "psOpenUISlogan": "Crea apps para todos",
-
   "psLike": "Como usuarios que necesitan ...",
   "psAccessible": "Controles accesibles",
   "psZeroStrain": "cero fatiga visual",
-  "psEverything": "algo más",
-  "psTryMe": "¡Pruebame!",
+  "psEverything": "Algo más",
   "psRandom": "Configuración aleatoria aplicada.",
 
   "psOpenUIIs": "Open UI es un generador de aplicaciones.",
-  "psShowDemo": "Mostrar demo",
-  "psHideDemo": "Ocultar demo",
   "psOpenUIDemo": "Demostración de Open UI creando una nueva aplicación.",
   "psFoundation": "Crea la base para aplicaciones accesibles, multiplataforma, multilingües y listas para producción en un solo clic.",
   "psLocal": "Todo funciona en tu ordenador. No hay credenciales, tarjetas de crédito ni cookies.",
@@ -93,7 +92,7 @@
 
   "psHow": "¿Cómo funciona?",
   "psEFUIsHow": "Open UI te ayuda a empezar a utilizar, ",
-  "psSimplifies": "EFUI es una biblioteca para crear aplicaciones verdaderamente accesibles.\nSe simplifica...",
+  "psSimplifies": "EFUI es una biblioteca para crear aplicaciones verdaderamente accesibles. Se simplifica...",
   
   "psPlatform": "Disponibilidad de plataforma",
   "psPlatformContent": "¡Puedes usar EFUI para crear apps de Android, iOS, Linux, macOS, Windows y Web!",
@@ -115,6 +114,10 @@
   "psInternationalContent": "Las aplicaciones de Empathetech se han traducido al español y al francés (hasta el momento).\nEFUI también proporciona la infraestructura para futuras traducciones ilimitadas.",
   "psInternationalContentFix": "Las aplicaciones de Empathetic se han traducido al español y al francés (hasta el momento).\nEFUI también proporciona la infraestructura para futuras traducciones ilimitadas.",
     
+  "psReliability": "Fiabilidad",
+  "psReliabilityContent": "El software de Empathetech está diseñado para durar. Esto NO es generación de código de IA.\nLas programadoras Empathetech son personas. Los LLM son como patos de goma.",
+  "psReliabilityContentFix": "El software de Empathetic está diseñado para durar. Esto NO es generación de código de IA.\nLas programadoras Empathetic son personas. Los LLM son como patos de goma.",
+
   "psGetStarted": "Velo en directo",
   "psOpenUIIconLabel": "un configuración sandbox.",
 
@@ -123,17 +126,21 @@
   "psConsult": " para consultas y contrataciones.",
   "psLearnMore": " para saber más.",
 
-  "psSOSIconLabel": "Un icono de notificación de color fuerte.",
+  "psPromoLabel": "Un video promocional de Insta SOS.",
 
   "psSOSDescription": "Una cámara, una baliza SOS y una lista de tus derechos, todo en un solo lugar.\nEstá disponible en inglés, árabe, español, filipino, francés, criollo, chino simplificado, y admite lectores de pantalla.",
-  "psDocsLabel": "Cómo funciona",
-  "psDocsHint": "Abrir un enlace al README",
   "psSafeSOS": "InstaSOS no tiene cuentas, cookies ni anuncios.\n",
   "psFreeSOS": "Es completamente gratuito y el código es de ",
   "psOpenSource": "código abierto",
+  "psWeAlso": "También hicimos una ",
+  "psSetupGuide": "guía de instalación",
+  "psSetupGuideHint": "Abrir un enlace al README",
   "psConsider": "Por favor, considere ",
   "psContributing": "contribuir",
   "psSAPS": " al soporte del software como un servicio público.",
+
+  "psDownloadNow": "Descargar ahora",
+  "psSOSIconLabel": "Un icono de notificación de color fuerte.",
   
   "psComingSoon": "Próximamente...",
   "psSignalPreview1": "La próxima aplicación de Empathetech, ",
@@ -150,6 +157,12 @@
   "tsTheFounderLabel": "Perfil bidimensional de Michael Waldron.",
   "tsTheFounderHint": "Activar para enviarle un E-mail.",
   "tsTheFounder": "Fundador",
+
+  "tsWild": "En la naturaleza",
+  "ts2025BoothLabel": "El stand de Empathetech en Open Sauce 2025.",
+  "ts2025BoothHint": "Activar para abrir la página de los expositores de Open Sauce.",
+  "ts2025BoothDescription": "¡Open Sauce (2025) fue increíble!\nFue difícil volver a la vida normal, después de estar rodeado de tantas personas amables, motivadas, inteligentes y creativas.\n¡Gracias de nuevo si pasaste por el stand de Empathetech, y hasta el próximo año!",
+  "ts2025BoothDescriptionFix": "¡Open Sauce (2025) fue increíble!\nFue difícil volver a la vida normal, después de estar rodeado de tantas personas amables, motivadas, inteligentes y creativas.\n¡Gracias de nuevo si pasaste por el stand de Empathetic, y hasta el próximo año!",
 
   "tsCommunity": "Comunidad",
 

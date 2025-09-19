@@ -18,9 +18,8 @@ class SmokeSignalScreen extends StatefulWidget {
 }
 
 class _SmokeSignalScreenState extends State<SmokeSignalScreen> {
-  // Gather the theme data //
+  // Gather the fixed theme data //
 
-  static const EzSpacer spacer = EzSpacer();
   static const EzSeparator separator = EzSeparator();
 
   final double margin = EzConfig.get(marginKey);
@@ -29,93 +28,100 @@ class _SmokeSignalScreenState extends State<SmokeSignalScreen> {
   late final double imageSize = ezImageSize(context);
 
   late final Lang l10n = Lang.of(context)!;
-  late final TextTheme textTheme = Theme.of(context).textTheme;
 
   // Return the build //
 
   @override
   Widget build(BuildContext context) {
+    final TextTheme textTheme = Theme.of(context).textTheme;
+
+    final Text newLine = Text(
+      '',
+      style: textTheme.bodyLarge,
+      textAlign: TextAlign.center,
+    );
+
     return DotnetScaffold(
-      EzScreen(
-        EzScrollView(
-          mainAxisSize: MainAxisSize.min,
-          children: <Widget>[
-            if (spacing > margin) EzSpacer(space: spacing - margin),
-
-            // Icon
-            Container(
-              constraints: EzBox.sym(imageSize),
-              child: EzLinkWidget(
-                url: Uri.parse(smokeSignalSource),
-                tooltip: l10n.gRepoHint,
-                label: l10n.gIconLabel(smokeSignal),
-                hint: l10n.gRepoHint,
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(imageSize),
-                  child:
-                      const Image(image: smokeSignalImage, fit: BoxFit.contain),
-                ),
-              ),
-            ),
-            spacer,
-
-            // Description
-            EzRichText(<InlineSpan>[
-              EzPlainText(
-                text: l10n.psSignalPreview1,
-                style: textTheme.bodyLarge,
-                semanticsLabel: l10n.psSignalPreview1Fix,
-              ),
-              EzInlineLink(
-                smokeSignal,
-                style: textTheme.bodyLarge,
-                textAlign: TextAlign.center,
-                url: Uri.parse(smokeSignalSource),
-                hint: smokeSignalSource,
-              ),
-              EzPlainText(
-                text: l10n.psSignalPreview2,
-                style: textTheme.bodyLarge,
-              ),
-            ], textAlign: TextAlign.center),
-            spacer,
-
-            EzRichText(<InlineSpan>[
-              EzPlainText(
-                text: l10n.psSignalPreview3,
-                style: textTheme.bodyLarge,
-              ),
-              EzInlineLink(
-                'Activity Pub.',
-                style: textTheme.bodyLarge,
-                textAlign: TextAlign.center,
-                url: Uri.parse('https://www.w3.org/TR/activitypub/'),
-                hint: l10n.psAPHint,
-              ),
-            ], textAlign: TextAlign.center),
-            spacer,
-
-            // Collaboration call-out
-            EzRichText(<InlineSpan>[
-              EzInlineLink(
-                l10n.gReachOut,
-                style: textTheme.bodyLarge,
-                textAlign: TextAlign.center,
-                url: Uri.parse(teamURL),
-                hint: l10n.gTeamHint,
-              ),
-              EzPlainText(
-                text: l10n.psLearnMore,
-                style: textTheme.bodyLarge,
-              ),
-            ], textAlign: TextAlign.center),
-            separator,
-
-            const EzTranslationsPendingNotice(),
-          ],
+      EzScreen(EzScrollView(mainAxisSize: MainAxisSize.min, children: <Widget>[
+        // Headline
+        EzText(
+          smokeSignal,
+          style: textTheme.displayLarge,
+          textAlign: TextAlign.center,
         ),
-      ),
-      fab: SettingsFAB(context),
+        EzMargin(),
+
+        // Icon link
+        Container(
+          constraints: EzBox.sym(imageSize),
+          child: EzLinkWidget(
+            url: Uri.parse(smokeSignalSource),
+            tooltip: l10n.gRepoHint,
+            label: l10n.gIconLabel(smokeSignal),
+            hint: l10n.gRepoHint,
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(imageSize),
+              child: const Image(image: smokeSignalImage, fit: BoxFit.contain),
+            ),
+          ),
+        ),
+        const EzSpacer(),
+
+        // Description
+        EzRichText(<InlineSpan>[
+          EzPlainText(
+            text: l10n.psSignalPreview1,
+            style: textTheme.bodyLarge,
+            semanticsLabel: l10n.psSignalPreview1Fix,
+          ),
+          EzInlineLink(
+            smokeSignal,
+            style: textTheme.bodyLarge,
+            textAlign: TextAlign.center,
+            url: Uri.parse(smokeSignalSource),
+            hint: smokeSignalSource,
+          ),
+          EzPlainText(
+            text: l10n.psSignalPreview2,
+            style: textTheme.bodyLarge,
+          ),
+        ], textAlign: TextAlign.center),
+        newLine,
+
+        EzRichText(<InlineSpan>[
+          EzPlainText(
+            text: l10n.psSignalPreview3,
+            style: textTheme.bodyLarge,
+          ),
+          EzInlineLink(
+            'Activity Pub.',
+            style: textTheme.bodyLarge,
+            textAlign: TextAlign.center,
+            url: Uri.parse('https://www.w3.org/TR/activitypub/'),
+            hint: l10n.psAPHint,
+          ),
+        ], textAlign: TextAlign.center),
+        newLine,
+
+        // Collaboration call-out
+        EzRichText(<InlineSpan>[
+          EzInlineLink(
+            l10n.gReachOut,
+            style: textTheme.bodyLarge,
+            textAlign: TextAlign.center,
+            url: Uri.parse(teamURL),
+            hint: l10n.gTeamHint,
+          ),
+          EzPlainText(
+            text: l10n.psLearnMore,
+            style: textTheme.bodyLarge,
+          ),
+        ], textAlign: TextAlign.center),
+
+        separator,
+        const EzTranslationsPendingNotice(),
+      ])),
+      fab: const SettingsFAB(),
     );
   }
 }

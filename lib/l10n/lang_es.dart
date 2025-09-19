@@ -178,10 +178,16 @@ class LangEs extends Lang {
   String get psPageTitle => 'Productos';
 
   @override
-  String get psCreator => 'Para crear';
+  String get psShowDemo => 'Mostrar demo';
 
   @override
-  String get psUser => 'Para usar';
+  String get psHideDemo => 'Ocultar demo';
+
+  @override
+  String get psShowPromo => 'Mostrar promo';
+
+  @override
+  String get psHidePromo => 'Ocultar promo';
 
   @override
   String get psOpenUISlogan => 'Crea apps para todos';
@@ -196,22 +202,13 @@ class LangEs extends Lang {
   String get psZeroStrain => 'cero fatiga visual';
 
   @override
-  String get psEverything => 'algo más';
-
-  @override
-  String get psTryMe => '¡Pruebame!';
+  String get psEverything => 'Algo más';
 
   @override
   String get psRandom => 'Configuración aleatoria aplicada.';
 
   @override
   String get psOpenUIIs => 'Open UI es un generador de aplicaciones.';
-
-  @override
-  String get psShowDemo => 'Mostrar demo';
-
-  @override
-  String get psHideDemo => 'Ocultar demo';
 
   @override
   String get psOpenUIDemo =>
@@ -240,7 +237,7 @@ class LangEs extends Lang {
 
   @override
   String get psSimplifies =>
-      'EFUI es una biblioteca para crear aplicaciones verdaderamente accesibles.\nSe simplifica...';
+      'EFUI es una biblioteca para crear aplicaciones verdaderamente accesibles. Se simplifica...';
 
   @override
   String get psPlatform => 'Disponibilidad de plataforma';
@@ -296,6 +293,17 @@ class LangEs extends Lang {
       'Las aplicaciones de Empathetic se han traducido al español y al francés (hasta el momento).\nEFUI también proporciona la infraestructura para futuras traducciones ilimitadas.';
 
   @override
+  String get psReliability => 'Fiabilidad';
+
+  @override
+  String get psReliabilityContent =>
+      'El software de Empathetech está diseñado para durar. Esto NO es generación de código de IA.\nLas programadoras Empathetech son personas. Los LLM son como patos de goma.';
+
+  @override
+  String get psReliabilityContentFix =>
+      'El software de Empathetic está diseñado para durar. Esto NO es generación de código de IA.\nLas programadoras Empathetic son personas. Los LLM son como patos de goma.';
+
+  @override
   String get psGetStarted => 'Velo en directo';
 
   @override
@@ -312,17 +320,11 @@ class LangEs extends Lang {
   String get psLearnMore => ' para saber más.';
 
   @override
-  String get psSOSIconLabel => 'Un icono de notificación de color fuerte.';
+  String get psPromoLabel => 'Un video promocional de Insta SOS.';
 
   @override
   String get psSOSDescription =>
       'Una cámara, una baliza SOS y una lista de tus derechos, todo en un solo lugar.\nEstá disponible en inglés, árabe, español, filipino, francés, criollo, chino simplificado, y admite lectores de pantalla.';
-
-  @override
-  String get psDocsLabel => 'Cómo funciona';
-
-  @override
-  String get psDocsHint => 'Abrir un enlace al README';
 
   @override
   String get psSafeSOS => 'InstaSOS no tiene cuentas, cookies ni anuncios.\n';
@@ -334,6 +336,15 @@ class LangEs extends Lang {
   String get psOpenSource => 'código abierto';
 
   @override
+  String get psWeAlso => 'También hicimos una ';
+
+  @override
+  String get psSetupGuide => 'guía de instalación';
+
+  @override
+  String get psSetupGuideHint => 'Abrir un enlace al README';
+
+  @override
   String get psConsider => 'Por favor, considere ';
 
   @override
@@ -341,6 +352,12 @@ class LangEs extends Lang {
 
   @override
   String get psSAPS => ' al soporte del software como un servicio público.';
+
+  @override
+  String get psDownloadNow => 'Descargar ahora';
+
+  @override
+  String get psSOSIconLabel => 'Un icono de notificación de color fuerte.';
 
   @override
   String get psComingSoon => 'Próximamente...';
@@ -376,6 +393,24 @@ class LangEs extends Lang {
 
   @override
   String get tsTheFounder => 'Fundador';
+
+  @override
+  String get tsWild => 'En la naturaleza';
+
+  @override
+  String get ts2025BoothLabel => 'El stand de Empathetech en Open Sauce 2025.';
+
+  @override
+  String get ts2025BoothHint =>
+      'Activar para abrir la página de los expositores de Open Sauce.';
+
+  @override
+  String get ts2025BoothDescription =>
+      '¡Open Sauce (2025) fue increíble!\nFue difícil volver a la vida normal, después de estar rodeado de tantas personas amables, motivadas, inteligentes y creativas.\n¡Gracias de nuevo si pasaste por el stand de Empathetech, y hasta el próximo año!';
+
+  @override
+  String get ts2025BoothDescriptionFix =>
+      '¡Open Sauce (2025) fue increíble!\nFue difícil volver a la vida normal, después de estar rodeado de tantas personas amables, motivadas, inteligentes y creativas.\n¡Gracias de nuevo si pasaste por el stand de Empathetic, y hasta el próximo año!';
 
   @override
   String get tsCommunity => 'Comunidad';

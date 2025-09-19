@@ -9,8 +9,6 @@ import '../screens/export.dart';
 import 'package:efui_bios/efui_bios.dart';
 
 import 'package:flutter/material.dart';
-import 'package:url_launcher/link.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 
@@ -36,16 +34,15 @@ class DotnetScaffold extends StatelessWidget {
     // Gather the theme data //
 
     final bool isLefty = EzConfig.get(isLeftyKey) ?? false;
-
     final double margin = EzConfig.get(marginKey);
 
     late final ColorScheme colorScheme = Theme.of(context).colorScheme;
 
     final Lang l10n = Lang.of(context)!;
+    final TextTheme textTheme = Theme.of(context).textTheme;
 
-    final TextStyle appBarTextStyle =
-        Theme.of(context).appBarTheme.titleTextStyle!;
-    final double toolbarHeight = ezToolbarHeight(context, l10n.csPageTitle);
+    final double toolbarHeight =
+        ezToolbarHeight(context: context, title: l10n.csPageTitle);
 
     // Define custom widgets //
 
@@ -65,7 +62,8 @@ class DotnetScaffold extends StatelessWidget {
 
     final PageLinks pageLinks = PageLinks(
       context: context,
-      style: appBarTextStyle,
+      baseStyle: textTheme.headlineLarge,
+      menuStyle: textTheme.titleLarge,
       colorScheme: colorScheme,
     );
 
@@ -86,13 +84,10 @@ class DotnetScaffold extends StatelessWidget {
           case const (IconLink):
             final IconLink alias = button as IconLink;
 
-            return Link(
+            return EzMenuLink(
               uri: alias.url,
-              builder: (_, __) => EzMenuButton(
-                onPressed: () => launchUrl(alias.url),
-                icon: alias.icon,
-                label: alias.tooltip,
-              ),
+              icon: alias.icon,
+              label: alias.tooltip,
             );
           case const (EzIconButton):
             final EzIconButton alias = button as EzIconButton;
@@ -111,7 +106,7 @@ class DotnetScaffold extends StatelessWidget {
     );
 
     final DotNetDrawer drawer = DotNetDrawer(
-      style: appBarTextStyle,
+      style: textTheme.headlineLarge,
       header: iconLinks,
       pageLinks: pageLinks,
     );
@@ -275,7 +270,7 @@ class _ExpandedScaffold extends StatelessWidget {
 
 class DotNetDrawer extends StatelessWidget {
   /// [TextStyle] to use on the links' text
-  final TextStyle style;
+  final TextStyle? style;
 
   /// [IconLinks] to be displayed in the [DrawerHeader]
   final IconLinks header;

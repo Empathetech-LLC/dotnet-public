@@ -59,7 +59,7 @@
   "msIDProblemContent": "Profit first business models aren't sustainable.\n\nBy definition: if profit comes first, then things like working towards a mission, treating people right, and responsible consumption of resources all become afterthoughts.\n\nAnd this greed has gone unchecked in big tech. The tech giants have grown dissatisfied with our money, and are building products to target our identities and monopolize our minds.",
   
   "msFindSolution": "Find a solution",
-  "msFindSolutionContent": "Fortunately, there are amazing technologists all over the world working together towards a better narrative.\nOne where the service providers and the customers have an active, healthy, and mutually beneficial relationship.\n\nThe open source community.\n\nAt its core, open source software is freely available for anyone to view. Many projects can also be freely modified and redistributed.\nIt's software with nothing to hide, built by folx who recognize shared problems require shared solutions.\n\nAnd in the wonderful world of open source software, there lies a sub category: self hosting software.\n\nSelf hosting lets us take any not-in-use computer (pocket sized ones too) and store our data there.\nBy self hosting, we can control our own digital presence, rather than sign away control to some far away server, owned by an un-empathetic corporation.\n\nAnd there are self hosted versions of just about everything! From Adobe to Zoom, there are passionate hacktivists building alternatives that put people over profits.\n\nSo, how does one make the switch from profit first/closed source to open source? How do they start self hosting?\nIt takes a lot of time, energy, and prior knowledge.\n\nThat's where we come in.",
+  "msFindSolutionContent": "Fortunately, there are amazing technologists all over the world working together towards a better narrative.\nOne where the service providers and the customers have an active, healthy, and mutually beneficial relationship.\n\nThe open source community.\n\nAt its core, open source software is freely available for anyone to view. Many projects can also be freely modified and redistributed.\nIt's software with nothing to hide, built by folks who recognize shared problems require shared solutions.\n\nAnd in the wonderful world of open source software, there lies a sub category: self hosting software.\n\nSelf hosting lets us take any not-in-use computer (pocket sized ones too) and store our data there.\nBy self hosting, we can control our own digital presence, rather than sign away control to some far away server, owned by an un-empathetic corporation.\n\nAnd there are self hosted versions of just about everything! From Adobe to Zoom, there are passionate hacktivists building alternatives that put people over profits.\n\nSo, how does one make the switch from profit first/closed source to open source? How do they start self hosting?\nIt takes a lot of time, energy, and prior knowledge.\n\nThat's where we come in.",
   
   "msProvideValue": "Doing the work",
   "msProvideValueContent1": "The Empathetech mission is to re-balance the power in tech by making self hosting more accessible.\n\nWe will build apps that enable anyone to own their digital identity.\n\nWe will build bridges between the open source community and those without the required time, energy, or prior knowledge.\n\nAnd you can't build bridges (or apps) without a strong foundation! That's why ",
@@ -70,21 +70,20 @@
 
   
   "psPageTitle": "Products",
-  "psCreator": "For creating",
-  "psUser": "For using",
+
+  "psShowDemo": "Show demo",
+  "psHideDemo": "Hide demo",
+  "psShowPromo": "Show promo",
+  "psHidePromo": "Hide promo",
 
   "psOpenUISlogan": "Build apps for anyone",
-
   "psLike": "Like users who need...",
   "psAccessible": "Accessible controls",
   "psZeroStrain": "zero eye strain",
-  "psEverything": "everything in-between",
-  "psTryMe": "Try me!",
+  "psEverything": "Everything in-between",
   "psRandom": "Random config applied.",
 
   "psOpenUIIs": "Open UI is an app generator.",
-  "psShowDemo": "Show demo",
-  "psHideDemo": "Hide demo",
   "psOpenUIDemo": "Demonstration of Open UI creating a new app.",
   "psFoundation": "It creates the foundation for accessible, cross-platform, multi-language, production ready apps in one click.",
   "psLocal": "Everything runs on your computer. There are no credentials, credit cards, or cookies.",
@@ -93,7 +92,7 @@
 
   "psHow": "How does it work?",
   "psEFUIsHow": "Open UI is built upon, and get's you started with, ",
-  "psSimplifies": "EFUI is a library for building truly accessible apps.\nIt simplifies...",
+  "psSimplifies": "EFUI is a library for building truly accessible apps. It simplifies...",
   
   "psPlatform": "Platform availability",
   "psPlatformContent": "You can use EFUI to create on Android, iOS, Linux, macOS, Windows and Web!",
@@ -114,6 +113,10 @@
   "psInternational": "Internationalization",
   "psInternationalContent": "Empathetech apps have been translated to Spanish and French (so far).\nEFUI also provides the infrastructure for unlimited future translations.",
   "psInternationalContentFix": "Empathetic apps have been translated to Spanish and French (so far).\nEFUI also provides the infrastructure for unlimited future translations.",
+
+  "psReliability": "Reliability",
+  "psReliabilityContent": "Empathetech software is built to last. This is NOT AI code generation.\nEmpathetech programmers are people. LLMs are rubber ducks.",
+  "psReliabilityContentFix": "Empathetic software is built to last. This is NOT AI code generation.\nEmpathetic programmers are people. LLMs are rubber ducks.",
     
   "psGetStarted": "Get started",
   "psOpenUIIconLabel": "a settings sandbox.",
@@ -123,17 +126,21 @@
   "psConsult": " for consultation and contracting.",
   "psLearnMore": " to learn more.",
 
-  "psSOSIconLabel": "a loudly colored notification bell.",
+  "psPromoLabel": "A promotional video for Insta SOS.",
 
   "psSOSDescription": "A camera, SOS beacon, and list of your rights all in one place.\nIt's available in English, Arabic, Spanish, Filipino, French, Creole, Simplified Chinese, and supports screen readers.",
-  "psDocsLabel": "How it works.",
-  "psDocsHint": "Open a link to the README",
   "psSafeSOS": "InstaSOS has no accounts, cookies, or ads.\n",
   "psFreeSOS": "It's completely free and the code is ",
   "psOpenSource": "open source",
+  "psWeAlso": "We also made a ",
+  "psSetupGuide": "setup guide",
+  "psSetupGuideHint": "Open a link to the README",
   "psConsider": "Please consider ",
   "psContributing": "contributing",
   "psSAPS": " to support software as a public service.",
+
+  "psDownloadNow": "Download now",
+  "psSOSIconLabel": "a loudly colored notification bell.",
 
   "psComingSoon": "Coming soon...",
   "psSignalPreview1": "The next Empathetech app, ",
@@ -150,6 +157,12 @@
   "tsTheFounderLabel": "A two dimensional profile of Michael Waldron.",
   "tsTheFounderHint": "Activate to send him an email.",
   "tsTheFounder": "The Founder",
+
+  "tsWild": "In the wild",
+  "ts2025BoothLabel": "The Empathetech booth for Open Sauce 2025.",
+  "ts2025BoothHint": "Activate to open the Open Sauce exhibits page.",
+  "ts2025BoothDescription": "Open Sauce (2025) was a blast!\nIt was difficult to return to normal life, after being surrounded by so many kind, driven, intelligent, and creative people.\nThanks again if you stopped by the Empathetech booth, and here's to next year!",
+  "ts2025BoothDescriptionFix": "Open Sauce (2025) was a blast!\nIt was difficult to return to normal life, after being surrounded by so many kind, driven, intelligent, and creative people.\nThanks again if you stopped by the Empathetic booth, and here's to next year!",
 
   "tsCommunity": "Community",
 

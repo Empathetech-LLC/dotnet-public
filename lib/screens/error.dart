@@ -19,13 +19,11 @@ class ErrorScreen extends StatefulWidget {
 }
 
 class _ErrorScreenState extends State<ErrorScreen> {
-  // Gather the theme data //
+  // Gather the fixed theme data //
 
   static const EzSeparator separator = EzSeparator();
 
   late final EFUILang l10n = ezL10n(context);
-
-  late final TextTheme textTheme = Theme.of(context).textTheme;
 
   // Set the page title //
 
@@ -39,6 +37,8 @@ class _ErrorScreenState extends State<ErrorScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final TextTheme textTheme = Theme.of(context).textTheme;
+
     return DotnetScaffold(
       EzScreen(
         Center(
@@ -50,7 +50,7 @@ class _ErrorScreenState extends State<ErrorScreen> {
                 style: ezSubTitleStyle(textTheme),
                 textAlign: TextAlign.center,
               ),
-              const EzSpacer(),
+              EzMargin(),
               Text(
                 l10n.g404,
                 style: textTheme.bodyLarge,
@@ -68,7 +68,7 @@ class _ErrorScreenState extends State<ErrorScreen> {
         ),
         useImageDecoration: false,
       ),
-      fab: SettingsFAB(context),
+      fab: const SettingsFAB(),
     );
   }
 }

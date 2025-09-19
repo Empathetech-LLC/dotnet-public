@@ -20,21 +20,23 @@ class MissionScreen extends StatefulWidget {
 }
 
 class _MissionScreenState extends State<MissionScreen> {
-  // Gather the theme data //
+  // Gather the fixed theme data //
 
   final double padding = EzConfig.get(paddingKey);
-
-  late final ColorScheme colorScheme = Theme.of(context).colorScheme;
+  final EdgeInsets linkPadding = EzInsets.wrap(EzConfig.get(marginKey));
 
   late final Lang l10n = Lang.of(context)!;
-  late final TextTheme textTheme = Theme.of(context).textTheme;
 
   // Define the build data //
 
-  int index = 2;
+  int index = 0;
 
   /// Styles the index buttons based on [index]
-  StepStyle? _style(int indexTarget) {
+  StepStyle? _style(
+    int indexTarget,
+    ColorScheme colorScheme,
+    TextTheme textTheme,
+  ) {
     if (index > indexTarget) {
       // Passed
       return StepStyle(
@@ -76,7 +78,7 @@ class _MissionScreenState extends State<MissionScreen> {
         return <Widget>[
           EzTextIconButton(
             onPressed: details.onStepContinue,
-            style: TextButton.styleFrom(padding: EdgeInsets.zero),
+            style: TextButton.styleFrom(padding: linkPadding),
             icon: EzIcon(PlatformIcons(context).downArrow),
             label: l10n.msSoWe,
           ),
@@ -87,7 +89,7 @@ class _MissionScreenState extends State<MissionScreen> {
         return <Widget>[
           EzTextIconButton(
             onPressed: details.onStepContinue,
-            style: TextButton.styleFrom(padding: EdgeInsets.zero),
+            style: TextButton.styleFrom(padding: linkPadding),
             icon: EzIcon(PlatformIcons(context).downArrow),
             label: l10n.msBy,
           ),
@@ -99,7 +101,7 @@ class _MissionScreenState extends State<MissionScreen> {
         return <Widget>[
           EzTextIconButton(
             onPressed: () => setState(() => index = 0),
-            style: TextButton.styleFrom(padding: EdgeInsets.zero),
+            style: TextButton.styleFrom(padding: linkPadding),
             icon: EzIcon(PlatformIcons(context).upArrow),
             label: l10n.msFirst,
           )
@@ -108,8 +110,8 @@ class _MissionScreenState extends State<MissionScreen> {
   }
 
   /// [Step] title wrapper
-  Text _title(String title) =>
-      Text(title, style: textTheme.titleLarge, textAlign: TextAlign.start);
+  Text _title(String title, TextStyle? style) =>
+      Text(title, style: style, textAlign: TextAlign.start);
 
   /// [Step] content wrapper
   Container _content(Widget content) => Container(
@@ -123,8 +125,10 @@ class _MissionScreenState extends State<MissionScreen> {
     if (index > 0) setState(() => index -= 1);
   }
 
-  /// Increment
-  void _onStepContinue() => setState(() => index += 1);
+  /// Increment, max 2
+  void _onStepContinue() {
+    if (index < 2) setState(() => index += 1);
+  }
 
   /// GoTo
   void _onStepTapped(int step) => setState(() => index = step);
@@ -141,107 +145,105 @@ class _MissionScreenState extends State<MissionScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final ColorScheme colorScheme = Theme.of(context).colorScheme;
+    final TextTheme textTheme = Theme.of(context).textTheme;
+
     return DotnetScaffold(
-      EzScreen(
-        Column(
-          children: <Widget>[
-            Expanded(
-              child: Stepper(
-                physics: const BouncingScrollPhysics(),
-                stepIconWidth: max(24.0, padding * 1.5),
-                stepIconHeight: max(24.0, padding * 1.5),
-                connectorColor: WidgetStateProperty.resolveWith(
-                  (Set<WidgetState> states) =>
-                      (states.contains(WidgetState.selected)
-                          ? colorScheme.secondary
-                          : colorScheme.outline),
-                ),
-                steps: <Step>[
-                  // Step 1: Identify the problem
-                  Step(
-                    stepStyle: _style(0),
-                    isActive: index >= 0,
-                    title: _title(l10n.msIDProblem),
-                    content: _content(Text(
-                      l10n.msIDProblemContent,
-                      style: textTheme.bodyLarge,
-                      textAlign: TextAlign.start,
-                    )),
-                  ),
+      EzScreen(Column(children: <Widget>[
+        Expanded(
+          child: Stepper(
+            physics: const BouncingScrollPhysics(),
+            stepIconWidth: max(24.0, padding * 1.5),
+            stepIconHeight: max(24.0, padding * 1.5),
+            connectorColor: WidgetStateProperty.resolveWith(
+              (Set<WidgetState> states) =>
+                  (states.contains(WidgetState.selected)
+                      ? colorScheme.secondary
+                      : colorScheme.outline),
+            ),
+            steps: <Step>[
+              // Step 1: Identify the problem
+              Step(
+                stepStyle: _style(0, colorScheme, textTheme),
+                isActive: index >= 0,
+                title: _title(l10n.msIDProblem, textTheme.titleLarge),
+                content: _content(EzText(
+                  l10n.msIDProblemContent,
+                  style: textTheme.bodyLarge,
+                  textAlign: TextAlign.start,
+                )),
+              ),
 
-                  // Step 2: Be a part of the solution
-                  Step(
-                    stepStyle: _style(1),
-                    isActive: index >= 1,
-                    title: _title(l10n.msFindSolution),
-                    content: _content(Text(
-                      l10n.msFindSolutionContent,
-                      style: textTheme.bodyLarge,
-                      textAlign: TextAlign.start,
-                    )),
-                  ),
+              // Step 2: Be a part of the solution
+              Step(
+                stepStyle: _style(1, colorScheme, textTheme),
+                isActive: index >= 1,
+                title: _title(l10n.msFindSolution, textTheme.titleLarge),
+                content: _content(EzText(
+                  l10n.msFindSolutionContent,
+                  style: textTheme.bodyLarge,
+                  textAlign: TextAlign.start,
+                )),
+              ),
 
-                  // Step 3: Provide value
-                  Step(
-                    stepStyle: _style(2),
-                    isActive: index >= 2,
-                    title: _title(l10n.msProvideValue),
-                    content: _content(EzRichText(<InlineSpan>[
-                      EzPlainText(
-                        text: l10n.msProvideValueContent1,
-                        style: textTheme.bodyLarge,
-                      ),
-                      EzInlineLink(
-                        openUI,
-                        style: textTheme.bodyLarge,
-                        textAlign: TextAlign.start,
-                        url: Uri.parse(Products.openUI.url),
-                        hint: l10n.gProductsHint,
-                        richLabel: efuiLFix,
-                      ),
-                      EzPlainText(
-                        text: l10n.msProvideValueContent2,
-                        style: textTheme.bodyLarge,
-                      ),
-                    ], textAlign: TextAlign.start)),
+              // Step 3: Provide value
+              Step(
+                stepStyle: _style(2, colorScheme, textTheme),
+                isActive: index >= 2,
+                title: _title(l10n.msProvideValue, textTheme.titleLarge),
+                content: _content(EzRichText(<InlineSpan>[
+                  EzPlainText(
+                    text: l10n.msProvideValueContent1,
+                    style: textTheme.bodyLarge,
+                  ),
+                  EzInlineLink(
+                    openUI,
+                    style: textTheme.bodyLarge,
+                    textAlign: TextAlign.start,
+                    url: Uri.parse(Products.openUI.url),
+                    hint: l10n.gProductsHint,
+                    richLabel: efuiLFix,
+                  ),
+                  EzPlainText(
+                    text: l10n.msProvideValueContent2,
+                    style: textTheme.bodyLarge,
+                  ),
+                ], textAlign: TextAlign.start)),
+              ),
+            ],
+            currentStep: index,
+            onStepCancel: _onStepCancel,
+            onStepContinue: _onStepContinue,
+            onStepTapped: _onStepTapped,
+            controlsBuilder: (_, ControlsDetails details) => Align(
+              alignment: Alignment.centerLeft,
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  const EzSpacer(),
+                  EzScrollView(
+                    scrollDirection: Axis.horizontal,
+                    primary: false,
+                    mainAxisSize: MainAxisSize.min,
+                    children: stepButtons(details),
                   ),
                 ],
-                currentStep: index,
-                onStepCancel: _onStepCancel,
-                onStepContinue: _onStepContinue,
-                onStepTapped: _onStepTapped,
-                controlsBuilder: (_, ControlsDetails details) => Align(
-                  alignment: Alignment.centerLeft,
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      const EzSpacer(),
-                      EzScrollView(
-                        scrollDirection: Axis.horizontal,
-                        primary: false,
-                        mainAxisSize: MainAxisSize.min,
-                        children: stepButtons(details),
-                      ),
-                    ],
-                  ),
-                ),
               ),
             ),
-            const EzSeparator(),
-            Container(
-              width: double.infinity,
-              padding: EdgeInsets.only(left: EzConfig.get(marginKey) + padding),
-              alignment: Alignment.centerLeft,
-              child: const EzTranslationsPendingNotice(
-                textAlign: TextAlign.start,
-              ),
-            ),
-          ],
+          ),
         ),
-        useImageDecoration: false,
-      ),
-      fab: SettingsFAB(context),
+        const EzSeparator(),
+        Container(
+          width: double.infinity,
+          padding: EdgeInsets.only(left: EzConfig.get(marginKey) + padding),
+          alignment: Directionality.of(context) == TextDirection.ltr
+              ? Alignment.centerLeft
+              : Alignment.centerRight,
+          child: const EzTranslationsPendingNotice(textAlign: TextAlign.start),
+        ),
+      ])),
+      fab: const SettingsFAB(),
     );
   }
 }

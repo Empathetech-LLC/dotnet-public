@@ -14,8 +14,8 @@ class ColorSettingsScreen extends StatelessWidget {
   const ColorSettingsScreen({super.key, this.target});
 
   @override
-  Widget build(BuildContext context) => DotnetScaffold(EzScreen(
-        EzColorSettings(target: target),
-        useImageDecoration: false,
-      ));
+  Widget build(BuildContext context) => DotnetScaffold(
+        EzScreen(EzColorSettings(target: target)),
+        fab: EzConfigFAB(context, appName: 'dotnet', androidPackage: null),
+      );
 }

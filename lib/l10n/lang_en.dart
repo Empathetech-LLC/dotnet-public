@@ -150,7 +150,7 @@ class LangEn extends Lang {
 
   @override
   String get msFindSolutionContent =>
-      'Fortunately, there are amazing technologists all over the world working together towards a better narrative.\nOne where the service providers and the customers have an active, healthy, and mutually beneficial relationship.\n\nThe open source community.\n\nAt its core, open source software is freely available for anyone to view. Many projects can also be freely modified and redistributed.\nIt\'s software with nothing to hide, built by folx who recognize shared problems require shared solutions.\n\nAnd in the wonderful world of open source software, there lies a sub category: self hosting software.\n\nSelf hosting lets us take any not-in-use computer (pocket sized ones too) and store our data there.\nBy self hosting, we can control our own digital presence, rather than sign away control to some far away server, owned by an un-empathetic corporation.\n\nAnd there are self hosted versions of just about everything! From Adobe to Zoom, there are passionate hacktivists building alternatives that put people over profits.\n\nSo, how does one make the switch from profit first/closed source to open source? How do they start self hosting?\nIt takes a lot of time, energy, and prior knowledge.\n\nThat\'s where we come in.';
+      'Fortunately, there are amazing technologists all over the world working together towards a better narrative.\nOne where the service providers and the customers have an active, healthy, and mutually beneficial relationship.\n\nThe open source community.\n\nAt its core, open source software is freely available for anyone to view. Many projects can also be freely modified and redistributed.\nIt\'s software with nothing to hide, built by folks who recognize shared problems require shared solutions.\n\nAnd in the wonderful world of open source software, there lies a sub category: self hosting software.\n\nSelf hosting lets us take any not-in-use computer (pocket sized ones too) and store our data there.\nBy self hosting, we can control our own digital presence, rather than sign away control to some far away server, owned by an un-empathetic corporation.\n\nAnd there are self hosted versions of just about everything! From Adobe to Zoom, there are passionate hacktivists building alternatives that put people over profits.\n\nSo, how does one make the switch from profit first/closed source to open source? How do they start self hosting?\nIt takes a lot of time, energy, and prior knowledge.\n\nThat\'s where we come in.';
 
   @override
   String get msProvideValue => 'Doing the work';
@@ -175,10 +175,16 @@ class LangEn extends Lang {
   String get psPageTitle => 'Products';
 
   @override
-  String get psCreator => 'For creating';
+  String get psShowDemo => 'Show demo';
 
   @override
-  String get psUser => 'For using';
+  String get psHideDemo => 'Hide demo';
+
+  @override
+  String get psShowPromo => 'Show promo';
+
+  @override
+  String get psHidePromo => 'Hide promo';
 
   @override
   String get psOpenUISlogan => 'Build apps for anyone';
@@ -193,22 +199,13 @@ class LangEn extends Lang {
   String get psZeroStrain => 'zero eye strain';
 
   @override
-  String get psEverything => 'everything in-between';
-
-  @override
-  String get psTryMe => 'Try me!';
+  String get psEverything => 'Everything in-between';
 
   @override
   String get psRandom => 'Random config applied.';
 
   @override
   String get psOpenUIIs => 'Open UI is an app generator.';
-
-  @override
-  String get psShowDemo => 'Show demo';
-
-  @override
-  String get psHideDemo => 'Hide demo';
 
   @override
   String get psOpenUIDemo => 'Demonstration of Open UI creating a new app.';
@@ -237,7 +234,7 @@ class LangEn extends Lang {
 
   @override
   String get psSimplifies =>
-      'EFUI is a library for building truly accessible apps.\nIt simplifies...';
+      'EFUI is a library for building truly accessible apps. It simplifies...';
 
   @override
   String get psPlatform => 'Platform availability';
@@ -290,6 +287,17 @@ class LangEn extends Lang {
       'Empathetic apps have been translated to Spanish and French (so far).\nEFUI also provides the infrastructure for unlimited future translations.';
 
   @override
+  String get psReliability => 'Reliability';
+
+  @override
+  String get psReliabilityContent =>
+      'Empathetech software is built to last. This is NOT AI code generation.\nEmpathetech programmers are people. LLMs are rubber ducks.';
+
+  @override
+  String get psReliabilityContentFix =>
+      'Empathetic software is built to last. This is NOT AI code generation.\nEmpathetic programmers are people. LLMs are rubber ducks.';
+
+  @override
   String get psGetStarted => 'Get started';
 
   @override
@@ -306,17 +314,11 @@ class LangEn extends Lang {
   String get psLearnMore => ' to learn more.';
 
   @override
-  String get psSOSIconLabel => 'a loudly colored notification bell.';
+  String get psPromoLabel => 'A promotional video for Insta SOS.';
 
   @override
   String get psSOSDescription =>
       'A camera, SOS beacon, and list of your rights all in one place.\nIt\'s available in English, Arabic, Spanish, Filipino, French, Creole, Simplified Chinese, and supports screen readers.';
-
-  @override
-  String get psDocsLabel => 'How it works.';
-
-  @override
-  String get psDocsHint => 'Open a link to the README';
 
   @override
   String get psSafeSOS => 'InstaSOS has no accounts, cookies, or ads.\n';
@@ -328,6 +330,15 @@ class LangEn extends Lang {
   String get psOpenSource => 'open source';
 
   @override
+  String get psWeAlso => 'We also made a ';
+
+  @override
+  String get psSetupGuide => 'setup guide';
+
+  @override
+  String get psSetupGuideHint => 'Open a link to the README';
+
+  @override
   String get psConsider => 'Please consider ';
 
   @override
@@ -335,6 +346,12 @@ class LangEn extends Lang {
 
   @override
   String get psSAPS => ' to support software as a public service.';
+
+  @override
+  String get psDownloadNow => 'Download now';
+
+  @override
+  String get psSOSIconLabel => 'a loudly colored notification bell.';
 
   @override
   String get psComingSoon => 'Coming soon...';
@@ -371,6 +388,24 @@ class LangEn extends Lang {
 
   @override
   String get tsTheFounder => 'The Founder';
+
+  @override
+  String get tsWild => 'In the wild';
+
+  @override
+  String get ts2025BoothLabel => 'The Empathetech booth for Open Sauce 2025.';
+
+  @override
+  String get ts2025BoothHint =>
+      'Activate to open the Open Sauce exhibits page.';
+
+  @override
+  String get ts2025BoothDescription =>
+      'Open Sauce (2025) was a blast!\nIt was difficult to return to normal life, after being surrounded by so many kind, driven, intelligent, and creative people.\nThanks again if you stopped by the Empathetech booth, and here\'s to next year!';
+
+  @override
+  String get ts2025BoothDescriptionFix =>
+      'Open Sauce (2025) was a blast!\nIt was difficult to return to normal life, after being surrounded by so many kind, driven, intelligent, and creative people.\nThanks again if you stopped by the Empathetic booth, and here\'s to next year!';
 
   @override
   String get tsCommunity => 'Community';
@@ -619,7 +654,7 @@ class LangEnUs extends LangEn {
 
   @override
   String get msFindSolutionContent =>
-      'Fortunately, there are amazing technologists all over the world working together towards a better narrative.\nOne where the service providers and the customers have an active, healthy, and mutually beneficial relationship.\n\nThe open source community.\n\nAt its core, open source software is freely available for anyone to view. Many projects can also be freely modified and redistributed.\nIt\'s software with nothing to hide, built by folx who recognize shared problems require shared solutions.\n\nAnd in the wonderful world of open source software, there lies a sub category: self hosting software.\n\nSelf hosting lets us take any not-in-use computer (pocket sized ones too) and store our data there.\nBy self hosting, we can control our own digital presence, rather than sign away control to some far away server, owned by an un-empathetic corporation.\n\nAnd there are self hosted versions of just about everything! From Adobe to Zoom, there are passionate hacktivists building alternatives that put people over profits.\n\nSo, how does one make the switch from profit first/closed source to open source? How do they start self hosting?\nIt takes a lot of time, energy, and prior knowledge.\n\nThat\'s where we come in.';
+      'Fortunately, there are amazing technologists all over the world working together towards a better narrative.\nOne where the service providers and the customers have an active, healthy, and mutually beneficial relationship.\n\nThe open source community.\n\nAt its core, open source software is freely available for anyone to view. Many projects can also be freely modified and redistributed.\nIt\'s software with nothing to hide, built by folks who recognize shared problems require shared solutions.\n\nAnd in the wonderful world of open source software, there lies a sub category: self hosting software.\n\nSelf hosting lets us take any not-in-use computer (pocket sized ones too) and store our data there.\nBy self hosting, we can control our own digital presence, rather than sign away control to some far away server, owned by an un-empathetic corporation.\n\nAnd there are self hosted versions of just about everything! From Adobe to Zoom, there are passionate hacktivists building alternatives that put people over profits.\n\nSo, how does one make the switch from profit first/closed source to open source? How do they start self hosting?\nIt takes a lot of time, energy, and prior knowledge.\n\nThat\'s where we come in.';
 
   @override
   String get msProvideValue => 'Doing the work';
@@ -644,10 +679,16 @@ class LangEnUs extends LangEn {
   String get psPageTitle => 'Products';
 
   @override
-  String get psCreator => 'For creating';
+  String get psShowDemo => 'Show demo';
 
   @override
-  String get psUser => 'For using';
+  String get psHideDemo => 'Hide demo';
+
+  @override
+  String get psShowPromo => 'Show promo';
+
+  @override
+  String get psHidePromo => 'Hide promo';
 
   @override
   String get psOpenUISlogan => 'Build apps for anyone';
@@ -662,22 +703,13 @@ class LangEnUs extends LangEn {
   String get psZeroStrain => 'zero eye strain';
 
   @override
-  String get psEverything => 'everything in-between';
-
-  @override
-  String get psTryMe => 'Try me!';
+  String get psEverything => 'Everything in-between';
 
   @override
   String get psRandom => 'Random config applied.';
 
   @override
   String get psOpenUIIs => 'Open UI is an app generator.';
-
-  @override
-  String get psShowDemo => 'Show demo';
-
-  @override
-  String get psHideDemo => 'Hide demo';
 
   @override
   String get psOpenUIDemo => 'Demonstration of Open UI creating a new app.';
@@ -706,7 +738,7 @@ class LangEnUs extends LangEn {
 
   @override
   String get psSimplifies =>
-      'EFUI is a library for building truly accessible apps.\nIt simplifies...';
+      'EFUI is a library for building truly accessible apps. It simplifies...';
 
   @override
   String get psPlatform => 'Platform availability';
@@ -759,6 +791,17 @@ class LangEnUs extends LangEn {
       'Empathetic apps have been translated to Spanish and French (so far).\nEFUI also provides the infrastructure for unlimited future translations.';
 
   @override
+  String get psReliability => 'Reliability';
+
+  @override
+  String get psReliabilityContent =>
+      'Empathetech software is built to last. This is NOT AI code generation.\nEmpathetech programmers are people. LLMs are rubber ducks.';
+
+  @override
+  String get psReliabilityContentFix =>
+      'Empathetic software is built to last. This is NOT AI code generation.\nEmpathetic programmers are people. LLMs are rubber ducks.';
+
+  @override
   String get psGetStarted => 'Get started';
 
   @override
@@ -775,17 +818,11 @@ class LangEnUs extends LangEn {
   String get psLearnMore => ' to learn more.';
 
   @override
-  String get psSOSIconLabel => 'a loudly colored notification bell.';
+  String get psPromoLabel => 'A promotional video for Insta SOS.';
 
   @override
   String get psSOSDescription =>
       'A camera, SOS beacon, and list of your rights all in one place.\nIt\'s available in English, Arabic, Spanish, Filipino, French, Creole, Simplified Chinese, and supports screen readers.';
-
-  @override
-  String get psDocsLabel => 'How it works.';
-
-  @override
-  String get psDocsHint => 'Open a link to the README';
 
   @override
   String get psSafeSOS => 'InstaSOS has no accounts, cookies, or ads.\n';
@@ -797,6 +834,15 @@ class LangEnUs extends LangEn {
   String get psOpenSource => 'open source';
 
   @override
+  String get psWeAlso => 'We also made a ';
+
+  @override
+  String get psSetupGuide => 'setup guide';
+
+  @override
+  String get psSetupGuideHint => 'Open a link to the README';
+
+  @override
   String get psConsider => 'Please consider ';
 
   @override
@@ -804,6 +850,12 @@ class LangEnUs extends LangEn {
 
   @override
   String get psSAPS => ' to support software as a public service.';
+
+  @override
+  String get psDownloadNow => 'Download now';
+
+  @override
+  String get psSOSIconLabel => 'a loudly colored notification bell.';
 
   @override
   String get psComingSoon => 'Coming soon...';
@@ -840,6 +892,24 @@ class LangEnUs extends LangEn {
 
   @override
   String get tsTheFounder => 'The Founder';
+
+  @override
+  String get tsWild => 'In the wild';
+
+  @override
+  String get ts2025BoothLabel => 'The Empathetech booth for Open Sauce 2025.';
+
+  @override
+  String get ts2025BoothHint =>
+      'Activate to open the Open Sauce exhibits page.';
+
+  @override
+  String get ts2025BoothDescription =>
+      'Open Sauce (2025) was a blast!\nIt was difficult to return to normal life, after being surrounded by so many kind, driven, intelligent, and creative people.\nThanks again if you stopped by the Empathetech booth, and here\'s to next year!';
+
+  @override
+  String get ts2025BoothDescriptionFix =>
+      'Open Sauce (2025) was a blast!\nIt was difficult to return to normal life, after being surrounded by so many kind, driven, intelligent, and creative people.\nThanks again if you stopped by the Empathetic booth, and here\'s to next year!';
 
   @override
   String get tsCommunity => 'Community';

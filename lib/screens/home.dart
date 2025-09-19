@@ -13,25 +13,25 @@ import 'package:flutter/material.dart';
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 
 class HomeScreen extends StatefulWidget {
+  /// Whether the animation should play
+  final bool fin;
+
   /// No place like it
-  const HomeScreen({super.key});
+  const HomeScreen({super.key, this.fin = false});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  // Gather the theme data //
+  // Gather the fixed theme data //
 
-  static const EzSpacer spacer = EzSpacer();
   static const EzSeparator separator = EzSeparator();
 
-  late final Lang l10n = Lang.of(context)!;
-
-  late final TextTheme textTheme = Theme.of(context).textTheme;
-  late final TextStyle? subTitle = ezSubTitleStyle(textTheme);
-
   final double margin = EzConfig.get(marginKey);
+  final double spacing = EzConfig.get(spacingKey);
+
+  late final Lang l10n = Lang.of(context)!;
 
   /// 0.667 <= [displayScale] <= 1.5
   late final double displayScale = max(
@@ -43,22 +43,14 @@ class _HomeScreenState extends State<HomeScreen> {
     ),
   );
 
-  late final double toolbarHeight = ezToolbarHeight(context, l10n.csPageTitle);
+  late final double toolbarHeight =
+      ezToolbarHeight(context: context, title: l10n.csPageTitle);
 
-  late final double sloganWidth = widthOf(context);
-  late final double sloganHeight = (heightOf(context) / 3) * displayScale;
+  // Define the build data //
 
-  // Define build data //
+  late bool fin = widget.fin;
 
-  late bool animFin;
-
-  // Init //
-
-  @override
-  void initState() {
-    super.initState();
-    Navigator.canPop(context) ? animFin = true : animFin = false;
-  }
+  // Set the page title //
 
   @override
   void didChangeDependencies() {
@@ -66,104 +58,133 @@ class _HomeScreenState extends State<HomeScreen> {
     ezWindowNamer(context, empathetech);
   }
 
-  // Return the build //
-
   @override
   Widget build(BuildContext context) {
+    // Gather the dynamic theme data //
+
+    final TextTheme textTheme = Theme.of(context).textTheme;
+    final TextStyle? subTitle = ezSubTitleStyle(textTheme);
+
+    final double sloganHeight =
+        max(spacing * 7, (heightOf(context) / 3) * displayScale);
+
+    final Text newLine = Text(
+      '',
+      style: subTitle,
+      textAlign: TextAlign.center,
+    );
+
+    // Return the build //
+
     return DotnetScaffold(
       EzScreen(
-        EzScrollView(
-          children: <Widget>[
-            // Video
-            ConstrainedBox(
-              constraints: BoxConstraints(
-                minWidth: sloganWidth,
-                maxWidth: sloganWidth,
-                minHeight: sloganHeight,
-                maxHeight: sloganHeight,
-              ),
-              child: EmpathetechLogoAnimation(
+        EzScrollView(children: <Widget>[
+          // Video
+          Container(
+            color: Theme.of(context).colorScheme.surfaceContainer,
+            constraints: BoxConstraints(
+              minWidth: double.infinity,
+              maxWidth: double.infinity,
+              minHeight: sloganHeight,
+              maxHeight: sloganHeight,
+            ),
+            child: EzSwapWidget(
+              restricted: EmpathetechLogoAnimation(
                 margin: margin,
                 height: sloganHeight,
+                letterRatio: 0.90,
+                finSpacing: spacing * 2,
                 slogan: l10n.hsSlogan,
                 sloganSemantics: l10n.hsSloganFix,
                 videoSemantics: l10n.hsVideoLabel,
-                play: !animFin,
+                play: !fin,
                 onComplete: () {
-                  if (!animFin) setState(() => animFin = true);
+                  if (!fin) setState(() => fin = true);
+                },
+              ),
+              expanded: EmpathetechLogoAnimation(
+                margin: margin,
+                height: sloganHeight,
+                letterRatio: 0.75,
+                finSpacing: spacing * 2,
+                slogan: l10n.hsSlogan,
+                sloganSemantics: l10n.hsSloganFix,
+                videoSemantics: l10n.hsVideoLabel,
+                play: !fin,
+                onComplete: () {
+                  if (!fin) setState(() => fin = true);
                 },
               ),
             ),
-            separator,
+          ),
+          separator,
 
-            // Mini-mission statement
-            AnimatedOpacity(
-              opacity: animFin ? 1.0 : 0.0,
-              duration: const Duration(milliseconds: fadeTime),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
-                  // People shouldn't be products
-                  Text(
-                    l10n.hsPeople,
-                    style: textTheme.headlineLarge,
-                    textAlign: TextAlign.center,
+          // Mini-mission statement
+          AnimatedOpacity(
+            opacity: fin ? 1.0 : 0.0,
+            duration: const Duration(milliseconds: fadeTime),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                // People shouldn't be products
+                EzText(
+                  l10n.hsPeople,
+                  style: textTheme.headlineLarge,
+                  textAlign: TextAlign.center,
+                ),
+                EzText(
+                  l10n.hsWell,
+                  style: subTitle,
+                  textAlign: TextAlign.center,
+                ),
+                newLine,
+
+                // But our data is
+                EzRichText(<InlineSpan>[
+                  EzPlainText(text: l10n.hsReality, style: subTitle),
+                  EzPlainText(
+                    text: l10n.hsData,
+                    style: subTitle?.copyWith(fontStyle: FontStyle.italic),
                   ),
-                  spacer,
-                  Text(
-                    l10n.hsWell,
+                  EzPlainText(text: l10n.hsGold, style: subTitle),
+                ], textAlign: TextAlign.center),
+                newLine,
+
+                // How about !(move fast && break things)
+                EzText(
+                  l10n.hsRush,
+                  style: subTitle,
+                  textAlign: TextAlign.center,
+                ),
+                newLine,
+                EzRichText(<InlineSpan>[
+                  EzPlainText(text: l10n.hsSlow, style: subTitle),
+                  EzInlineLink(
+                    l10n.hsPlan,
                     style: subTitle,
                     textAlign: TextAlign.center,
+                    url: Uri.parse(missionURL),
+                    hint: l10n.gMissionHint,
                   ),
-                  spacer,
-
-                  // But our data is
-                  EzRichText(<InlineSpan>[
-                    EzPlainText(text: l10n.hsReality, style: subTitle),
-                    EzPlainText(
-                      text: l10n.hsData,
-                      style: subTitle?.copyWith(fontStyle: FontStyle.italic),
-                    ),
-                    EzPlainText(text: l10n.hsGold, style: subTitle),
-                  ], textAlign: TextAlign.center),
-                  spacer,
-
-                  // How about !(move fast && break things)
-                  Text(
-                    l10n.hsRush,
-                    style: subTitle,
-                    textAlign: TextAlign.center,
-                  ),
-                  spacer,
-                  EzRichText(<InlineSpan>[
-                    EzPlainText(text: l10n.hsSlow, style: subTitle),
-                    EzInlineLink(
-                      l10n.hsPlan,
-                      style: subTitle,
-                      textAlign: TextAlign.center,
-                      url: Uri.parse(missionURL),
-                      hint: l10n.gMissionHint,
-                    ),
-                  ], textAlign: TextAlign.center),
-                ],
-              ),
+                ], textAlign: TextAlign.center),
+              ],
             ),
-            separator,
-            const EzTranslationsPendingNotice(),
-          ],
-        ),
-        useImageDecoration: false,
+          ),
+          separator,
+          const EzTranslationsPendingNotice(),
+        ]),
+        margin: EdgeInsets.zero,
       ),
       logo: Semantics(
         image: true,
         link: false,
         button: false,
         label: l10n.gLogoLabel(empatheticLLC),
-        enabled: animFin,
-        excludeSemantics: !animFin,
+        enabled: fin,
+        excludeSemantics: !fin,
         child: ExcludeSemantics(
           child: AnimatedOpacity(
-            opacity: animFin ? 1.0 : 0.0,
+            opacity: fin ? 1.0 : 0.0,
             duration: const Duration(milliseconds: fadeTime),
             child: SizedBox(
               width: toolbarHeight,
@@ -173,7 +194,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
       ),
-      fab: SettingsFAB(context),
+      fab: const SettingsFAB(),
     );
   }
 }

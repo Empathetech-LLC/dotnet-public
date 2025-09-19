@@ -75,11 +75,29 @@ const String openUIIconPath = 'assets/images/open-ui-icon.png';
 /// assets/images/sos-icon.png
 const String sosIconPath = 'assets/images/sos-icon.png';
 
+/// assets/videos/sos-promo.mp4
+const String sosPromoPath = 'assets/videos/sos-promo.mp4';
+
+/// assets/videos/sos-promo-vertical.mp4
+const String sosVerticalPromoPath = 'assets/videos/sos-promo-vertical.mp4';
+
+/// assets/videos/sos-promo-captions.srt
+const String sosPromoCaptionsPath = 'assets/videos/sos-promo-captions.srt';
+
 /// assets/images/smoke-signal-icon.png
 const String smokeSignalIconPath = 'assets/images/smoke-signal-icon.png';
 
 /// assets/images/founder.png
 const String founderIconPath = 'assets/images/founder.png';
+
+/// assets/images/open-sauce-2025.jpg
+const String openSauce2025Path = 'assets/images/open-sauce-2025.jpg';
+
+/// assets/images/open-sauce-logo.png
+const String openSauceLogoPath = 'assets/images/open-sauce-logo.png';
+
+/// assets/images/montana-headshot.jpg
+const String montanaHeadshotPath = 'assets/images/montana-headshot.jpg';
 
 /// assets/images/fah.png
 const String fahIconPath = 'assets/images/fah.png';
@@ -98,8 +116,14 @@ const ImageProvider smokeSignalImage = AssetImage(smokeSignalIconPath);
 /// [AssetImage] of [founderIconPath]
 const ImageProvider founderImage = AssetImage(founderIconPath);
 
-/// [NetworkImage] for Montana Monardes
-const ImageProvider montanaMProfile = NetworkImage(montanaMProfileLink);
+/// [AssetImage] of [openSauce2025Path]
+const ImageProvider openSauce2025Image = AssetImage(openSauce2025Path);
+
+/// [AssetImage] of [openSauceLogoPath]
+const ImageProvider openSauceLogoImage = AssetImage(openSauceLogoPath);
+
+/// [AssetImage] of [montanaHeadshotPath]
+const ImageProvider montanaImage = AssetImage(montanaHeadshotPath);
 
 /// [NetworkImage] of [yasminSProfileLink]
 const ImageProvider yasminSProfile = NetworkImage(yasminSProfileLink);
@@ -130,20 +154,29 @@ const ImageProvider fahImage = AssetImage(fahIconPath);
 const Set<String> assetPaths = <String>{
   openUIDemoPath,
   openUIIconPath,
+  sosPromoPath,
   sosIconPath,
   smokeSignalIconPath,
   founderIconPath,
+  openSauce2025Path,
+  openSauceLogoPath,
   fahIconPath,
+  montanaHeadshotPath,
 };
 
 /// aka assetSources
 const Map<String, String> credits = <String, String>{
   openUIDemoPath: mike,
   openUIIconPath: '$mike & Google Gemini',
+  sosPromoPath: '$montanaM & $mike',
+  sosVerticalPromoPath: '$montanaM & $mike',
   sosIconPath: materialIconsLink,
   smokeSignalIconPath: '$mike & $pimenLink',
   founderIconPath: '$mike & $dunvekLink',
+  openSauce2025Path: mike,
+  openSauceLogoPath: 'https://opensauce.com/',
   fahIconPath: faHLink,
+  montanaHeadshotPath: montanaM,
 };
 
 //* Links *//
@@ -177,9 +210,6 @@ const String aboutFaHLink = 'https://foldingathome.org/about-2/';
 
 /// https://www.montanamonardes.com
 const String montanaMLink = 'https://www.montanamonardes.com';
-
-const String montanaMProfileLink =
-    'https://static.wixstatic.com/media/476909_a6b522a885314b758b961acbe83e036c~mv2.jpg/v1/crop/x_727,y_0,w_7048,h_8217/fill/w_370,h_438,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Montana%20Headshots%20(1%20of%2015)%20-%20Retouched%20JPEG.jpg';
 
 /// https://www.fiverr.com/yasminsid
 const String yasminSLink = 'https://www.fiverr.com/yasminsid';

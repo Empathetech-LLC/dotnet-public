@@ -6,15 +6,20 @@
 import '../screens/export.dart';
 import '../utils/export.dart';
 
+import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 
 class PageLinks extends StatelessWidget {
   /// [BuildContext] passthrough
   final BuildContext context;
 
-  /// [TextStyle] for the [EzLink]s
-  final TextStyle style;
+  /// [TextStyle] for the main [EzLink]s
+  final TextStyle? baseStyle;
+
+  /// [TextStyle] for the menu [EzLink]s
+  final TextStyle? menuStyle;
 
   /// [ColorScheme] for the [EzLink]s
   final ColorScheme colorScheme;
@@ -23,7 +28,8 @@ class PageLinks extends StatelessWidget {
   const PageLinks({
     super.key,
     required this.context,
-    required this.style,
+    required this.baseStyle,
+    required this.menuStyle,
     required this.colorScheme,
   });
 
@@ -35,7 +41,7 @@ class PageLinks extends StatelessWidget {
 
     final double wordWidth = ezTextSize(
       l10n.msPageTitle + l10n.psPageTitle + l10n.tsPageTitle + l10n.csPageTitle,
-      style: style,
+      style: baseStyle,
       context: context,
     ).width;
 
@@ -47,84 +53,135 @@ class PageLinks extends StatelessWidget {
   Widget get mission {
     return EzLink(
       Lang.of(context)!.msPageTitle,
-      style: style,
+      style: baseStyle,
       textAlign: TextAlign.center,
       url: Uri.parse(missionURL),
       hint: Lang.of(context)!.gMissionHint,
       textColor: colorScheme.onSurface,
-      decorationColor: colorScheme.primary,
     );
   }
 
   Widget get products {
-    return MenuAnchor(
-      builder: (_, MenuController controller, __) => EzLink(
-        Lang.of(context)!.psPageTitle,
-        style: style,
-        textAlign: TextAlign.center,
-        onTap: () => controller.isOpen ? controller.close() : controller.open(),
-        hint: Lang.of(context)!.gProductsHint,
-        textColor: colorScheme.onSurface,
-        decorationColor: colorScheme.primary,
+    final Lang l10n = Lang.of(context)!;
+    final EdgeInsets menuPadding =
+        EdgeInsets.symmetric(horizontal: EzConfig.get(marginKey));
+
+    final MenuController controller = MenuController();
+
+    Timer? dontAutoOpen;
+    Timer? autoClose;
+
+    void setAutoClose(bool focused) {
+      if (focused) {
+        autoClose?.cancel();
+      } else {
+        autoClose = Timer(
+          const Duration(milliseconds: 500),
+          () => controller.close(),
+        );
+      }
+    }
+
+    return MouseRegion(
+      onHover: (PointerHoverEvent event) {
+        autoClose?.cancel();
+
+        if (!controller.isOpen &&
+            (dontAutoOpen == null || !dontAutoOpen!.isActive)) {
+          controller.open();
+        }
+      },
+      onExit: (PointerExitEvent event) {
+        if (!controller.isOpen) return;
+
+        autoClose?.cancel();
+        autoClose = Timer(
+          const Duration(milliseconds: 500),
+          () => controller.close(),
+        );
+      },
+      child: MenuAnchor(
+        controller: controller,
+        builder: (_, __, ___) => EzTextButton(
+          text: l10n.psPageTitle,
+          textStyle: baseStyle,
+          textAlign: TextAlign.center,
+          onPressed: () {
+            autoClose?.cancel();
+
+            if (controller.isOpen) {
+              controller.close();
+
+              dontAutoOpen?.cancel();
+              dontAutoOpen = Timer(
+                const Duration(milliseconds: 1500),
+                doNothing,
+              );
+            } else {
+              controller.open();
+            }
+          },
+        ),
+        menuChildren: <Widget>[
+          // Open UI
+          EzLink(
+            Products.openUI.name,
+            style: menuStyle,
+            padding: menuPadding,
+            textColor: colorScheme.onSurface,
+            textAlign: TextAlign.center,
+            url: Uri.parse(Products.openUI.url),
+            hint: l10n.gLearn(Products.openUI.name),
+            onHover: setAutoClose,
+          ),
+
+          // SOS
+          EzLink(
+            Products.sos.name,
+            style: menuStyle,
+            padding: menuPadding,
+            textColor: colorScheme.onSurface,
+            textAlign: TextAlign.center,
+            url: Uri.parse(Products.sos.url),
+            hint: l10n.gLearn(Products.sos.name),
+            onHover: setAutoClose,
+          ),
+
+          // Smoke Signal
+          EzLink(
+            Products.smokeSignal.name,
+            style: menuStyle,
+            padding: menuPadding,
+            textColor: colorScheme.onSurface,
+            textAlign: TextAlign.center,
+            url: Uri.parse(Products.smokeSignal.url),
+            hint: l10n.gLearn(Products.smokeSignal.name),
+            onHover: setAutoClose,
+          ),
+        ],
       ),
-      menuChildren: <Widget>[
-        // Open UI
-        EzLink(
-          Products.openUI.name,
-          style: style,
-          textAlign: TextAlign.center,
-          url: Uri.parse(Products.openUI.url),
-          hint: Lang.of(context)!.gLearn(Products.openUI.name),
-          textColor: colorScheme.onSurface,
-          decorationColor: colorScheme.primary,
-        ),
-
-        // SOS
-        EzLink(
-          Products.sos.name,
-          style: style,
-          textAlign: TextAlign.center,
-          url: Uri.parse(Products.sos.url),
-          hint: Lang.of(context)!.gLearn(Products.sos.name),
-          textColor: colorScheme.onSurface,
-          decorationColor: colorScheme.primary,
-        ),
-
-        // Smoke Signal
-        EzLink(
-          Products.smokeSignal.name,
-          style: style,
-          textAlign: TextAlign.center,
-          url: Uri.parse(Products.smokeSignal.url),
-          hint: Lang.of(context)!.gLearn(Products.smokeSignal.name),
-          textColor: colorScheme.onSurface,
-          decorationColor: colorScheme.primary,
-        ),
-      ],
     );
   }
 
   Widget get team {
     return EzLink(
       Lang.of(context)!.tsPageTitle,
-      style: style,
+      style: baseStyle,
+      textColor: colorScheme.onSurface,
       textAlign: TextAlign.center,
       url: Uri.parse(teamURL),
       hint: Lang.of(context)!.gTeamHint,
-      textColor: colorScheme.onSurface,
-      decorationColor: colorScheme.primary,
     );
   }
 
   Widget get contribute {
     return EzLink(
       Lang.of(context)!.csPageTitle,
-      style: style,
+      style: baseStyle,
+      textColor: colorScheme.onSurface,
       textAlign: TextAlign.center,
       url: Uri.parse(contributeURL),
       hint: Lang.of(context)!.gContributeHint,
-      textColor: colorScheme.onSurface,
-      decorationColor: colorScheme.primary,
     );
   }
 

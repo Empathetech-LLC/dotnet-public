@@ -13,15 +13,15 @@ class SettingsHomeScreen extends StatelessWidget {
   const SettingsHomeScreen({super.key});
 
   @override
-  Widget build(BuildContext context) => const DotnetScaffold(EzScreen(
-        EzSettingsHome(
+  Widget build(BuildContext context) => DotnetScaffold(
+        const EzScreen(EzSettingsHome(
           protest: true,
-          textSettingsPath: textSettingsPath,
-          layoutSettingsPath: layoutSettingsPath,
-          colorSettingsPath: colorSettingsPath,
-          imageSettingsPath: null,
-          footer: <Widget>[EFUIShoutOut()],
-        ),
-        useImageDecoration: false,
-      ));
+          colorSettingsPath: colorSettingsURL,
+          designSettingsPath: designSettingsURL,
+          layoutSettingsPath: layoutSettingsURL,
+          textSettingsPath: textSettingsURL,
+          footer: <Widget>[EzSeparator(), EFUIShoutOut()],
+        )),
+        fab: EzConfigFAB(context, appName: 'dotnet', androidPackage: null),
+      );
 }

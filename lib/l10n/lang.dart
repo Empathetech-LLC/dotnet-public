@@ -348,7 +348,7 @@ abstract class Lang {
   /// No description provided for @msFindSolutionContent.
   ///
   /// In en, this message translates to:
-  /// **'Fortunately, there are amazing technologists all over the world working together towards a better narrative.\nOne where the service providers and the customers have an active, healthy, and mutually beneficial relationship.\n\nThe open source community.\n\nAt its core, open source software is freely available for anyone to view. Many projects can also be freely modified and redistributed.\nIt\'s software with nothing to hide, built by folx who recognize shared problems require shared solutions.\n\nAnd in the wonderful world of open source software, there lies a sub category: self hosting software.\n\nSelf hosting lets us take any not-in-use computer (pocket sized ones too) and store our data there.\nBy self hosting, we can control our own digital presence, rather than sign away control to some far away server, owned by an un-empathetic corporation.\n\nAnd there are self hosted versions of just about everything! From Adobe to Zoom, there are passionate hacktivists building alternatives that put people over profits.\n\nSo, how does one make the switch from profit first/closed source to open source? How do they start self hosting?\nIt takes a lot of time, energy, and prior knowledge.\n\nThat\'s where we come in.'**
+  /// **'Fortunately, there are amazing technologists all over the world working together towards a better narrative.\nOne where the service providers and the customers have an active, healthy, and mutually beneficial relationship.\n\nThe open source community.\n\nAt its core, open source software is freely available for anyone to view. Many projects can also be freely modified and redistributed.\nIt\'s software with nothing to hide, built by folks who recognize shared problems require shared solutions.\n\nAnd in the wonderful world of open source software, there lies a sub category: self hosting software.\n\nSelf hosting lets us take any not-in-use computer (pocket sized ones too) and store our data there.\nBy self hosting, we can control our own digital presence, rather than sign away control to some far away server, owned by an un-empathetic corporation.\n\nAnd there are self hosted versions of just about everything! From Adobe to Zoom, there are passionate hacktivists building alternatives that put people over profits.\n\nSo, how does one make the switch from profit first/closed source to open source? How do they start self hosting?\nIt takes a lot of time, energy, and prior knowledge.\n\nThat\'s where we come in.'**
   String get msFindSolutionContent;
 
   /// No description provided for @msProvideValue.
@@ -387,17 +387,29 @@ abstract class Lang {
   /// **'Products'**
   String get psPageTitle;
 
-  /// No description provided for @psCreator.
+  /// No description provided for @psShowDemo.
   ///
   /// In en, this message translates to:
-  /// **'For creating'**
-  String get psCreator;
+  /// **'Show demo'**
+  String get psShowDemo;
 
-  /// No description provided for @psUser.
+  /// No description provided for @psHideDemo.
   ///
   /// In en, this message translates to:
-  /// **'For using'**
-  String get psUser;
+  /// **'Hide demo'**
+  String get psHideDemo;
+
+  /// No description provided for @psShowPromo.
+  ///
+  /// In en, this message translates to:
+  /// **'Show promo'**
+  String get psShowPromo;
+
+  /// No description provided for @psHidePromo.
+  ///
+  /// In en, this message translates to:
+  /// **'Hide promo'**
+  String get psHidePromo;
 
   /// No description provided for @psOpenUISlogan.
   ///
@@ -426,14 +438,8 @@ abstract class Lang {
   /// No description provided for @psEverything.
   ///
   /// In en, this message translates to:
-  /// **'everything in-between'**
+  /// **'Everything in-between'**
   String get psEverything;
-
-  /// No description provided for @psTryMe.
-  ///
-  /// In en, this message translates to:
-  /// **'Try me!'**
-  String get psTryMe;
 
   /// No description provided for @psRandom.
   ///
@@ -446,18 +452,6 @@ abstract class Lang {
   /// In en, this message translates to:
   /// **'Open UI is an app generator.'**
   String get psOpenUIIs;
-
-  /// No description provided for @psShowDemo.
-  ///
-  /// In en, this message translates to:
-  /// **'Show demo'**
-  String get psShowDemo;
-
-  /// No description provided for @psHideDemo.
-  ///
-  /// In en, this message translates to:
-  /// **'Hide demo'**
-  String get psHideDemo;
 
   /// No description provided for @psOpenUIDemo.
   ///
@@ -504,7 +498,7 @@ abstract class Lang {
   /// No description provided for @psSimplifies.
   ///
   /// In en, this message translates to:
-  /// **'EFUI is a library for building truly accessible apps.\nIt simplifies...'**
+  /// **'EFUI is a library for building truly accessible apps. It simplifies...'**
   String get psSimplifies;
 
   /// No description provided for @psPlatform.
@@ -597,6 +591,24 @@ abstract class Lang {
   /// **'Empathetic apps have been translated to Spanish and French (so far).\nEFUI also provides the infrastructure for unlimited future translations.'**
   String get psInternationalContentFix;
 
+  /// No description provided for @psReliability.
+  ///
+  /// In en, this message translates to:
+  /// **'Reliability'**
+  String get psReliability;
+
+  /// No description provided for @psReliabilityContent.
+  ///
+  /// In en, this message translates to:
+  /// **'Empathetech software is built to last. This is NOT AI code generation.\nEmpathetech programmers are people. LLMs are rubber ducks.'**
+  String get psReliabilityContent;
+
+  /// No description provided for @psReliabilityContentFix.
+  ///
+  /// In en, this message translates to:
+  /// **'Empathetic software is built to last. This is NOT AI code generation.\nEmpathetic programmers are people. LLMs are rubber ducks.'**
+  String get psReliabilityContentFix;
+
   /// No description provided for @psGetStarted.
   ///
   /// In en, this message translates to:
@@ -627,29 +639,17 @@ abstract class Lang {
   /// **' to learn more.'**
   String get psLearnMore;
 
-  /// No description provided for @psSOSIconLabel.
+  /// No description provided for @psPromoLabel.
   ///
   /// In en, this message translates to:
-  /// **'a loudly colored notification bell.'**
-  String get psSOSIconLabel;
+  /// **'A promotional video for Insta SOS.'**
+  String get psPromoLabel;
 
   /// No description provided for @psSOSDescription.
   ///
   /// In en, this message translates to:
   /// **'A camera, SOS beacon, and list of your rights all in one place.\nIt\'s available in English, Arabic, Spanish, Filipino, French, Creole, Simplified Chinese, and supports screen readers.'**
   String get psSOSDescription;
-
-  /// No description provided for @psDocsLabel.
-  ///
-  /// In en, this message translates to:
-  /// **'How it works.'**
-  String get psDocsLabel;
-
-  /// No description provided for @psDocsHint.
-  ///
-  /// In en, this message translates to:
-  /// **'Open a link to the README'**
-  String get psDocsHint;
 
   /// No description provided for @psSafeSOS.
   ///
@@ -669,6 +669,24 @@ abstract class Lang {
   /// **'open source'**
   String get psOpenSource;
 
+  /// No description provided for @psWeAlso.
+  ///
+  /// In en, this message translates to:
+  /// **'We also made a '**
+  String get psWeAlso;
+
+  /// No description provided for @psSetupGuide.
+  ///
+  /// In en, this message translates to:
+  /// **'setup guide'**
+  String get psSetupGuide;
+
+  /// No description provided for @psSetupGuideHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Open a link to the README'**
+  String get psSetupGuideHint;
+
   /// No description provided for @psConsider.
   ///
   /// In en, this message translates to:
@@ -686,6 +704,18 @@ abstract class Lang {
   /// In en, this message translates to:
   /// **' to support software as a public service.'**
   String get psSAPS;
+
+  /// No description provided for @psDownloadNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Download now'**
+  String get psDownloadNow;
+
+  /// No description provided for @psSOSIconLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'a loudly colored notification bell.'**
+  String get psSOSIconLabel;
 
   /// No description provided for @psComingSoon.
   ///
@@ -752,6 +782,36 @@ abstract class Lang {
   /// In en, this message translates to:
   /// **'The Founder'**
   String get tsTheFounder;
+
+  /// No description provided for @tsWild.
+  ///
+  /// In en, this message translates to:
+  /// **'In the wild'**
+  String get tsWild;
+
+  /// No description provided for @ts2025BoothLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'The Empathetech booth for Open Sauce 2025.'**
+  String get ts2025BoothLabel;
+
+  /// No description provided for @ts2025BoothHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Activate to open the Open Sauce exhibits page.'**
+  String get ts2025BoothHint;
+
+  /// No description provided for @ts2025BoothDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Open Sauce (2025) was a blast!\nIt was difficult to return to normal life, after being surrounded by so many kind, driven, intelligent, and creative people.\nThanks again if you stopped by the Empathetech booth, and here\'s to next year!'**
+  String get ts2025BoothDescription;
+
+  /// No description provided for @ts2025BoothDescriptionFix.
+  ///
+  /// In en, this message translates to:
+  /// **'Open Sauce (2025) was a blast!\nIt was difficult to return to normal life, after being surrounded by so many kind, driven, intelligent, and creative people.\nThanks again if you stopped by the Empathetic booth, and here\'s to next year!'**
+  String get ts2025BoothDescriptionFix;
 
   /// No description provided for @tsCommunity.
   ///

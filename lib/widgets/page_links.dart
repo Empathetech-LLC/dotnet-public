@@ -68,7 +68,7 @@ class PageLinks extends StatelessWidget {
 
     final MenuController controller = MenuController();
 
-    Timer? dontAutoOpen;
+    Timer? dontClose;
     Timer? autoClose;
 
     void setAutoClose(bool focused) {
@@ -83,13 +83,16 @@ class PageLinks extends StatelessWidget {
     }
 
     return MouseRegion(
-      onHover: (PointerHoverEvent event) {
+      onEnter: (PointerEnterEvent event) {
         autoClose?.cancel();
 
-        if (!controller.isOpen &&
-            (dontAutoOpen == null || !dontAutoOpen!.isActive)) {
-          controller.open();
-        }
+        dontClose?.cancel();
+        dontClose = Timer(
+          const Duration(milliseconds: 250),
+          () => controller.close(),
+        ); // Stops the UX of instinctively clicking on 'Products', having it open/close, and then having to open it again
+
+        if (!controller.isOpen) controller.open();
       },
       onExit: (PointerExitEvent event) {
         if (!controller.isOpen) return;
@@ -109,16 +112,11 @@ class PageLinks extends StatelessWidget {
           onPressed: () {
             autoClose?.cancel();
 
-            if (controller.isOpen) {
-              controller.close();
-
-              dontAutoOpen?.cancel();
-              dontAutoOpen = Timer(
-                const Duration(milliseconds: 1500),
-                doNothing,
-              );
-            } else {
+            if (!controller.isOpen) {
               controller.open();
+            } else {
+              if (dontClose?.isActive == true) return;
+              controller.close();
             }
           },
         ),

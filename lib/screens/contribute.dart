@@ -9,6 +9,7 @@ import 'package:efui_bios/efui_bios.dart';
 
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 
 class ContributeScreen extends StatefulWidget {
@@ -101,7 +102,7 @@ class _ContributeScreenState extends State<ContributeScreen> {
       tooltip: empathCashApp,
       hint: l10n.csOpenLink('CashApp'),
       url: Uri.parse(empathCashApp),
-      icon: EzIcon(LineIcons.dollarSign),
+      icon: EzIcon(FontAwesomeIcons.cashApp),
       label: 'CashApp',
     ),
   ];

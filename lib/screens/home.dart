@@ -10,6 +10,7 @@ import 'package:efui_bios/efui_bios.dart';
 
 import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -48,7 +49,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   // Define the build data //
 
-  late bool fin = widget.fin;
+  late bool fin = widget.fin || GoRouter.of(context).state.uri.path != homePath;
 
   // Set the page title //
 
@@ -68,8 +69,7 @@ class _HomeScreenState extends State<HomeScreen> {
     final double sloganHeight =
         max(spacing * 7, (heightOf(context) / 3) * displayScale);
 
-    final Text newLine = Text(
-      '',
+    final Widget newLine = EzNewLine(
       style: subTitle,
       textAlign: TextAlign.center,
     );
@@ -97,7 +97,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 slogan: l10n.hsSlogan,
                 sloganSemantics: l10n.hsSloganFix,
                 videoSemantics: l10n.hsVideoLabel,
-                play: !fin,
+                play: mounted && !fin,
                 onComplete: () {
                   if (!fin) setState(() => fin = true);
                 },
@@ -110,7 +110,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 slogan: l10n.hsSlogan,
                 sloganSemantics: l10n.hsSloganFix,
                 videoSemantics: l10n.hsVideoLabel,
-                play: !fin,
+                play: mounted && !fin,
                 onComplete: () {
                   if (!fin) setState(() => fin = true);
                 },
@@ -157,16 +157,20 @@ class _HomeScreenState extends State<HomeScreen> {
                   textAlign: TextAlign.center,
                 ),
                 newLine,
-                EzRichText(<InlineSpan>[
-                  EzPlainText(text: l10n.hsSlow, style: subTitle),
-                  EzInlineLink(
-                    l10n.hsPlan,
-                    style: subTitle,
-                    textAlign: TextAlign.center,
-                    url: Uri.parse(missionURL),
-                    hint: l10n.gMissionHint,
-                  ),
-                ], textAlign: TextAlign.center),
+                EzRichText(
+                  key: UniqueKey(), // Include for selectable registrar
+                  <InlineSpan>[
+                    EzPlainText(text: l10n.hsSlow, style: subTitle),
+                    EzInlineLink(
+                      l10n.hsPlan,
+                      style: subTitle,
+                      textAlign: TextAlign.center,
+                      url: Uri.parse(missionURL),
+                      hint: l10n.gMissionHint,
+                    ),
+                  ],
+                  textAlign: TextAlign.center,
+                ),
               ],
             ),
           ),

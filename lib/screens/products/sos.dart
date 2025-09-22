@@ -27,6 +27,7 @@ class _SOSScreenState extends State<SOSScreen> {
   // Gather the fixed theme data //
 
   final double spacing = EzConfig.get(spacingKey);
+  static const Widget newLine = EzNewLine(textAlign: TextAlign.center);
 
   late final Lang l10n = Lang.of(context)!;
 
@@ -35,12 +36,6 @@ class _SOSScreenState extends State<SOSScreen> {
   @override
   Widget build(BuildContext context) {
     final TextTheme textTheme = Theme.of(context).textTheme;
-
-    final Text newLine = Text(
-      '',
-      style: textTheme.bodyLarge,
-      textAlign: TextAlign.center,
-    );
 
     return DotnetScaffold(
       EzScreen(EzScrollView(mainAxisSize: MainAxisSize.min, children: <Widget>[
@@ -279,11 +274,11 @@ class _PromoVideoState extends State<_PromoVideo> {
                   icon: EzIcon(LineIcons.redditAlien),
                   label: 'Reddit',
                 ),
-                // EzMenuLink(
-                //   uri: Uri.parse('blarg'),
-                //   icon: EzIcon(FontAwesomeIcons.threads),
-                //   label: 'Threads',
-                // ),
+                EzMenuLink(
+                  uri: Uri.parse('$empathThreads/post/DO5AYJcD7Qd'),
+                  icon: EzIcon(FontAwesomeIcons.threads),
+                  label: 'Threads',
+                ),
                 EzMenuLink(
                   uri: Uri.parse('$empathTikTok/video/7551616465720315149'),
                   icon: EzIcon(Icons.tiktok),

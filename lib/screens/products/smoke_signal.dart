@@ -20,6 +20,7 @@ class SmokeSignalScreen extends StatefulWidget {
 class _SmokeSignalScreenState extends State<SmokeSignalScreen> {
   // Gather the fixed theme data //
 
+  static const Widget newLine = EzNewLine(textAlign: TextAlign.center);
   static const EzSeparator separator = EzSeparator();
 
   final double margin = EzConfig.get(marginKey);
@@ -34,12 +35,6 @@ class _SmokeSignalScreenState extends State<SmokeSignalScreen> {
   @override
   Widget build(BuildContext context) {
     final TextTheme textTheme = Theme.of(context).textTheme;
-
-    final Text newLine = Text(
-      '',
-      style: textTheme.bodyLarge,
-      textAlign: TextAlign.center,
-    );
 
     return DotnetScaffold(
       EzScreen(EzScrollView(mainAxisSize: MainAxisSize.min, children: <Widget>[

@@ -26,6 +26,7 @@ class _OpenUIScreenState extends State<OpenUIScreen> {
   static const EzSpacer spacer = EzSpacer();
   static const EzSeparator separator = EzSeparator();
   static const EzDivider divider = EzDivider();
+  static const Widget newLine = EzNewLine(textAlign: TextAlign.center);
 
   final EdgeInsets linkPadding = EzInsets.wrap(EzConfig.get(marginKey));
 
@@ -79,12 +80,6 @@ class _OpenUIScreenState extends State<OpenUIScreen> {
   Widget build(BuildContext context) {
     final TextTheme textTheme = Theme.of(context).textTheme;
     final TextStyle? subTitle = ezSubTitleStyle(textTheme);
-
-    final Text newLine = Text(
-      '',
-      style: textTheme.bodyLarge,
-      textAlign: TextAlign.center,
-    );
 
     return DotnetScaffold(
       EzScreen(

@@ -63,7 +63,7 @@ class PageLinks extends StatelessWidget {
 
   Widget get products {
     final Lang l10n = Lang.of(context)!;
-    final EdgeInsets menuPadding =
+    final EdgeInsets linkPadding =
         EdgeInsets.symmetric(horizontal: EzConfig.get(marginKey));
 
     final MenuController controller = MenuController();
@@ -76,7 +76,7 @@ class PageLinks extends StatelessWidget {
         autoClose?.cancel();
       } else {
         autoClose = Timer(
-          const Duration(milliseconds: 500),
+          const Duration(milliseconds: 750),
           () => controller.close(),
         );
       }
@@ -88,9 +88,9 @@ class PageLinks extends StatelessWidget {
 
         dontClose?.cancel();
         dontClose = Timer(
-          const Duration(milliseconds: 250),
-          () => controller.close(),
-        ); // Stops the UX of instinctively clicking on 'Products', having it open/close, and then having to open it again
+          const Duration(milliseconds: 500),
+          doNothing, // Stops the UX of instinctively clicking on 'Products', having it open/close, and then having to open it again
+        );
 
         if (!controller.isOpen) controller.open();
       },
@@ -99,7 +99,7 @@ class PageLinks extends StatelessWidget {
 
         autoClose?.cancel();
         autoClose = Timer(
-          const Duration(milliseconds: 500),
+          const Duration(milliseconds: 750),
           () => controller.close(),
         );
       },
@@ -125,7 +125,7 @@ class PageLinks extends StatelessWidget {
           EzLink(
             Products.openUI.name,
             style: menuStyle,
-            padding: menuPadding,
+            padding: linkPadding,
             textColor: colorScheme.onSurface,
             textAlign: TextAlign.center,
             url: Uri.parse(Products.openUI.url),
@@ -137,7 +137,7 @@ class PageLinks extends StatelessWidget {
           EzLink(
             Products.sos.name,
             style: menuStyle,
-            padding: menuPadding,
+            padding: linkPadding,
             textColor: colorScheme.onSurface,
             textAlign: TextAlign.center,
             url: Uri.parse(Products.sos.url),
@@ -149,7 +149,7 @@ class PageLinks extends StatelessWidget {
           EzLink(
             Products.smokeSignal.name,
             style: menuStyle,
-            padding: menuPadding,
+            padding: linkPadding,
             textColor: colorScheme.onSurface,
             textAlign: TextAlign.center,
             url: Uri.parse(Products.smokeSignal.url),

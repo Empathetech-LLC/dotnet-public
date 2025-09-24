@@ -16,8 +16,8 @@ import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 /// '10.0.0'
 const String efuiFallback = '10.0.0';
 
-/// '1.3.2'
-const String sosFallback = '1.3.2';
+/// '1.4.0'
+const String sosFallback = '1.4.0';
 
 /// 'https://github.com/Empathetech-LLC'
 const String _git = 'https://github.com/Empathetech-LLC';
@@ -218,7 +218,6 @@ class _OpenUILinkState extends State<OpenUILink> {
                 (DLType dlType) => DropdownMenuEntry<DLType>(
                   value: dlType,
                   label: dlType.name,
-                  style: TextButton.styleFrom(padding: EzInsets.wrap(padding)),
                 ),
               )
               .toList(),
@@ -333,17 +332,14 @@ class _SOSLinkState extends State<SOSLink> {
             DropdownMenuEntry<DLType>(
               value: DLType.gPlay,
               label: DLType.gPlay.name,
-              style: TextButton.styleFrom(padding: EzInsets.wrap(padding)),
             ),
             DropdownMenuEntry<DLType>(
               value: DLType.apk,
               label: DLType.apk.name,
-              style: TextButton.styleFrom(padding: EzInsets.wrap(padding)),
             ),
             DropdownMenuEntry<DLType>(
               value: DLType.iOS,
               label: DLType.iOS.name,
-              style: TextButton.styleFrom(padding: EzInsets.wrap(padding)),
             ),
           ],
           onSelected: (DLType? choice) async {

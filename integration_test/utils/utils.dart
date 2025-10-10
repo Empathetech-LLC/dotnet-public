@@ -9,9 +9,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 
-/// Find and touch the [EmpathetechLogo] home "button"
+/// Find and touch the [Logo] home "button"
 Future<void> goHome(WidgetTester tester) async {
-  final Finder icon = find.byType(EmpathetechLogo);
+  final Finder icon = find.byType(Logo);
 
   await tester.ensureVisible(icon);
   await tester.tapAt(tester.getCenter(icon));

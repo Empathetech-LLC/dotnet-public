@@ -14,6 +14,8 @@
   "gShare": "Compartir",
   "gEmail": "Email",
   "gEmailTo": "Email {recipient}",
+  "gAnEmail": "un email",
+  "gEmailHint": "Abrir el cliente de email",
   "gNewsletter": "Boletín de noticias",
 
   "gLogoLabel": "Logotipo de {thing}: ",
@@ -21,6 +23,8 @@
   "gDownloadHint": "Descargar {app} para {platform}.",
   "gRepoHint": "Abre un enlace al repositorio de desarrollo.",
   "gEmpathetechGitHint": "Abrir la página de GitHub de Empathetic LLC",
+
+  "gImageCredit": "Crédito de la imagen: {creator}",
 
   "gReachOut": "Contacto",
   "gFiverrPage": "Abre la página de {user} en Fiverr",
@@ -62,8 +66,8 @@
   "msFindSolutionContent": "Afortunadamente, hay tecnólogos increíbles en todo el mundo que trabajan juntos para lograr una mejor narrativa.\nUna en la que los proveedores de servicios y los clientes tengan una relación activa, saludable y mutuamente beneficiosa.\n\nLa comunidad de código abierto.\n\nEn esencia, el software de código abierto está disponible de forma gratuita para que cualquiera lo vea. Muchos proyectos también se pueden modificar y redistribuir libremente.\nEs un software que no tiene nada que ocultar, creado por gente que reconoce que los problemas compartidos requieren soluciones compartidas.\n\nY en el maravilloso mundo del software de código abierto, existe una subcategoría: el software de alojamiento propio.\n\nEl alojamiento propio nos permite tomar cualquier computadora que no esté en uso (incluso las de bolsillo) y almacenar allí nuestros datos.\nAl alojarnos nosotros mismos, podemos controlar nuestra propia presencia digital, en lugar de ceder el control a un servidor lejano, propiedad de una corporación poco empática.\n\n¡Y existen versiones alojadas por nosotros mismos de casi todo! Desde Adobe hasta Zoom, hay hacktivistas apasionados que crean alternativas que priorizan a las personas por sobre las ganancias.\n\nEntonces, ¿cómo se hace la transición de un código cerrado que prioriza las ganancias a un código abierto? ¿Cómo empiezan a alojar sus propios archivos?\nRequiere mucho tiempo, energía y conocimientos previos.\n\nAhí es donde entramos nosotros.",
   
   "msProvideValue": "Haciendo el trabajo",
-  "msProvideValueContent1": "La misión de Empathetech es reequilibrar el poder en la tecnología al hacer que el autohospedaje sea más accesible.\n\nCrearemos aplicaciones que permitan a cualquier persona ser dueña de su identidad digital.\n\nConstruiremos puentes entre la comunidad de código abierto y aquellos que no tienen el tiempo, la energía o el conocimiento previo necesarios.\n\n¡Y no se pueden construir puentes (o aplicaciones) sin una base sólida! Es por eso que ",
-  "msProvideValueContent1Fix": "La misión de Empathetic es reequilibrar el poder en la tecnología al hacer que el autohospedaje sea más accesible.\n\nCrearemos aplicaciones que permitan a cualquier persona ser dueña de su identidad digital.\n\nConstruiremos puentes entre la comunidad de código abierto y aquellos que no tienen el tiempo, la energía o el conocimiento previo necesarios.\n\n¡Y no se pueden construir puentes (o aplicaciones) sin una base sólida! Es por eso que ",
+  "msProvideValueContent1": "La misión de Empathetech es reequilibrar el poder en la tecnología al hacer que el autohospedaje sea más accesible.\n\nCrearemos aplicaciones que permitan a cualquier persona ser dueña de su identidad digital.\nConstruiremos puentes entre la comunidad de código abierto y aquellos que no tienen el tiempo, la energía o el conocimiento previo necesarios.\n\n¡Y no se pueden construir puentes (o aplicaciones) sin una base sólida! Es por eso que ",
+  "msProvideValueContent1Fix": "La misión de Empathetic es reequilibrar el poder en la tecnología al hacer que el autohospedaje sea más accesible.\n\nCrearemos aplicaciones que permitan a cualquier persona ser dueña de su identidad digital.\nConstruiremos puentes entre la comunidad de código abierto y aquellos que no tienen el tiempo, la energía o el conocimiento previo necesarios.\n\n¡Y no se pueden construir puentes (o aplicaciones) sin una base sólida! Es por eso que ",
   "msProvideValueContent2": " existe.\nEmpathetech se enorgullece de cumplir las palabras con acciones y ha hecho que nuestra interfaz de usuario accesible sea de código abierto.\n\nConstruyamos un mundo mejor juntos, poco a poco.",
   "msProvideValueContent2Fix": " existe.\nEmpathetic se enorgullece de cumplir las palabras con acciones y ha hecho que nuestra interfaz de usuario accesible sea de código abierto.\n\nConstruyamos un mundo mejor juntos, poco a poco.",
 
@@ -76,78 +80,119 @@
   "psShowPromo": "Mostrar promo",
   "psHidePromo": "Ocultar promo",
 
-  "psOpenUISlogan": "Crea apps para todos",
-  "psLike": "Como usuarios que necesitan ...",
-  "psAccessible": "Controles accesibles",
-  "psZeroStrain": "cero fatiga visual",
-  "psEverything": "Algo más",
-  "psRandom": "Configuración aleatoria aplicada.",
-
-  "psOpenUIIs": "Open UI es un generador de aplicaciones.",
-  "psOpenUIDemo": "Demostración de Open UI creando una nueva aplicación.",
-  "psFoundation": "Crea la base para aplicaciones accesibles, multiplataforma, multilingües y listas para producción en un solo clic.",
-  "psLocal": "Todo funciona en tu ordenador. No hay credenciales, tarjetas de crédito ni cookies.",
-  "psRequirements": "Los únicos requisitos son una conexión a Internet y una idea.",
-  "psFlutterToo": "...y Flutter...",
-
-  "psHow": "¿Cómo funciona?",
-  "psEFUIsHow": "Open UI te ayuda a empezar a utilizar, ",
-  "psSimplifies": "EFUI es una biblioteca para crear aplicaciones verdaderamente accesibles. Se simplifica...",
-  
-  "psPlatform": "Disponibilidad de plataforma",
-  "psPlatformContent": "¡Puedes usar EFUI para crear apps de Android, iOS, Linux, macOS, Windows y Web!",
-  
-  "psResponsive": "Diseño adaptativo",
-  "psResponsiveContent": "Para verlo en acción, ¡interactúa con la ventana que estás usando ahora mismo!",
-
-  "psScreen": "Soporte para lectores de pantalla",
-  "psScreenContent": "Las apps de Empathetech ayudan a los usuarios que lo necesitan ",
-  "psScreenContentFix": "Las apps de Empathetic ayudan a los usuarios que lo necesitan ",
-  "psTalkBackHint": "Abrir un enlace a la documentación de TalkBack",
-  "psAnd": " y ",
-  "psVoiceOverHint": "Abrir un enlace a la documentación de VoiceOver",
-  
-  "psCustom": "Personalización del usuario",
-  "psCustomContent": "¡La única forma de ser verdaderamente accesible para TODOS los clientes es brindarles la libertad de elección!\nEFUI proporciona una UX elegante para un control total sobre la apariencia de una aplicación.",
-  
-  "psInternational": "Internacionalización",
-  "psInternationalContent": "Las aplicaciones de Empathetech se han traducido al español y al francés (hasta el momento).\nEFUI también proporciona la infraestructura para futuras traducciones ilimitadas.",
-  "psInternationalContentFix": "Las aplicaciones de Empathetic se han traducido al español y al francés (hasta el momento).\nEFUI también proporciona la infraestructura para futuras traducciones ilimitadas.",
-    
-  "psReliability": "Fiabilidad",
-  "psReliabilityContent": "El software de Empathetech está diseñado para durar. Esto NO es generación de código de IA.\nLas programadoras Empathetech son personas. Los LLM son como patos de goma.",
-  "psReliabilityContentFix": "El software de Empathetic está diseñado para durar. Esto NO es generación de código de IA.\nLas programadoras Empathetic son personas. Los LLM son como patos de goma.",
-
-  "psGetStarted": "Velo en directo",
-  "psOpenUIIconLabel": "un configuración sandbox.",
-
-  "psEFUITagLine": "¡Cuando se construye con EFUI, tus apps pueden llegar a cualquier audiencia!\n",
-  
-  "psConsult": " para consultas y contrataciones.",
   "psLearnMore": " para saber más.",
-
-  "psPromoLabel": "Un video promocional de Insta SOS.",
-
-  "psSOSDescription": "Una cámara, una baliza SOS y una lista de tus derechos, todo en un solo lugar.\nEstá disponible en inglés, árabe, español, filipino, francés, criollo, chino simplificado, y admite lectores de pantalla.",
-  "psSafeSOS": "InstaSOS no tiene cuentas, cookies ni anuncios.\n",
-  "psFreeSOS": "Es completamente gratuito y el código es de ",
-  "psOpenSource": "código abierto",
-  "psWeAlso": "También hicimos una ",
-  "psSetupGuide": "guía de instalación",
-  "psSetupGuideHint": "Abrir un enlace al README",
-  "psConsider": "Por favor, considere ",
-  "psContributing": "contribuir",
-  "psSAPS": " al soporte del software como un servicio público.",
-
   "psDownloadNow": "Descargar ahora",
-  "psSOSIconLabel": "Un icono de notificación de color fuerte.",
-  
   "psComingSoon": "Próximamente...",
-  "psSignalPreview1": "La próxima aplicación de Empathetech, ",
-  "psSignalPreview1Fix": "La próxima aplicación de Empathetic, ",
-  "psSignalPreview2": ", está en desarrollo.\n es una aplicación de red social diseñada para mantenernos alejados de las pantallas.\n",
-  "psSignalPreview3": "Smoke Signal también estará alojada completamente por el usuario, gracias a ",
-  "psAPHint": "Abrir un enlace a la documentación de Activity Pub",
+
+
+
+  "ouSlogan": "Crea apps para todos",
+  "ouLike": "Como usuarios que necesitan ...",
+  "ouAccessible": "Controles accesibles",
+  "ouZeroStrain": "cero fatiga visual",
+  "ouEverything": "Algo más",
+  "ouRandom": "Configuración aleatoria aplicada.",
+
+  "ouIs": "Open UI es un generador de aplicaciones.",
+  "ouDemo": "Demostración de Open UI creando una nueva aplicación.",
+  "ouFoundation": "Crea la base para aplicaciones accesibles, multiplataforma, multilingües y listas para producción en un solo clic.",
+  "ouLocal": "Todo funciona en tu ordenador. No hay credenciales, tarjetas de crédito ni cookies.",
+  "ouRequirements": "Los únicos requisitos son una conexión a Internet y una idea.",
+  "ouFlutterToo": "...y Flutter...",
+
+  "ouHow": "¿Cómo funciona?",
+  "ouEFUIsHow": "Open UI te ayuda a empezar a utilizar, ",
+  "ouSimplifies": "EFUI es una biblioteca para crear aplicaciones verdaderamente accesibles. Se simplifica...",
+  
+  "ouPlatform": "Disponibilidad de plataforma",
+  "ouPlatformContent": "¡Puedes usar EFUI para crear apps de Android, iOS, Linux, macOS, Windows y Web!",
+  
+  "ouResponsive": "Diseño adaptativo",
+  "ouResponsiveContent": "Para verlo en acción, ¡interactúa con la ventana que estás usando ahora mismo!",
+
+  "ouScreen": "Soporte para lectores de pantalla",
+  "ouScreenContent": "Las apps de Empathetech ayudan a los usuarios que lo necesitan ",
+  "ouScreenContentFix": "Las apps de Empathetic ayudan a los usuarios que lo necesitan ",
+  "ouTalkBackHint": "Abrir un enlace a la documentación de TalkBack",
+  "ouAnd": " y ",
+  "ouVoiceOverHint": "Abrir un enlace a la documentación de VoiceOver",
+  
+  "ouCustom": "Personalización del usuario",
+  "ouCustomContent": "¡La única forma de ser verdaderamente accesible para TODOS los clientes es brindarles la libertad de elección!\nEFUI proporciona una UX elegante para un control total sobre la apariencia de una aplicación.",
+  
+  "ouInternational": "Internacionalización",
+  "ouInternationalContent": "Las aplicaciones de Empathetech se han traducido al español y al francés (hasta el momento).\nEFUI también proporciona la infraestructura para futuras traducciones ilimitadas.",
+  "ouInternationalContentFix": "Las aplicaciones de Empathetic se han traducido al español y al francés (hasta el momento).\nEFUI también proporciona la infraestructura para futuras traducciones ilimitadas.",
+    
+  "ouReliability": "Fiabilidad",
+  "ouReliabilityContent": "El software de Empathetech está diseñado para durar. Esto NO es generación de código de IA.\nLas programadoras Empathetech son personas. Los LLM son como patos de goma.",
+  "ouReliabilityContentFix": "El software de Empathetic está diseñado para durar. Esto NO es generación de código de IA.\nLas programadoras Empathetic son personas. Los LLM son como patos de goma.",
+
+  "ouGetStarted": "Velo en directo",
+  "ouOpenUIIconLabel": "un configuración sandbox.",
+
+  "ouEFUITagLine": "¡Cuando se construye con EFUI, tus apps pueden llegar a cualquier audiencia!\n",
+  
+  "ouConsult": " para consultas y contrataciones.",
+
+
+
+  "sosPromoLabel": "Un video promocional de Insta SOS.",
+
+  "sosDescription": "Una cámara, una baliza SOS y una lista de tus derechos, todo en un solo lugar.\nEstá disponible en inglés, árabe, español, filipino, francés, criollo, chino simplificado, y admite lectores de pantalla.",
+  "sosPrivate": "InstaSOS no tiene cuentas, cookies ni anuncios.\n",
+  "sosFree": "Es completamente gratuito y el código es de ",
+  "sosOpenSource": "código abierto",
+  "sosWeAlso": "También hicimos una ",
+  "sosSetupGuide": "guía de instalación",
+  "sosSetupGuideHint": "Abrir un enlace al README",
+  "sosConsider": "Por favor, considere ",
+  "sosContributing": "contribuir",
+  "sosSAPS": " al soporte del software como un servicio público.",
+
+  "sosIconLabel": "Un icono de notificación de color fuerte.",
+
+
+
+  "llDescription": "Un lanzador de Android Empathetech.",
+  "llDescriptionFix": "Un lanzador de Android empático.",
+
+  "llInDev": "Liminal está en desarrollo.\nSu diseño se inclina hacia el minimalismo, porque nuestros teléfonos deberían ser herramientas para que las usemos, no al revés.",
+  "llBut": "Pero es un lanzador minimalista creado con ",
+  "llWhimsy": ".\nAsí que tu pantalla de inicio estará libre de desorden y distracciones, Y será infinitamente personalizable. Con un toque de fantasía, además.",
+
+  "llTheHood": "Una pantalla de inicio de muestra con una foto del monte Hood en Portland.",
+  "llLasRosas": "Una pantalla de inicio de muestra con una foto del jardín de rosas de Portland.",
+  "llFrogAndPigs": "Una pantalla de inicio de muestra con una foto de la fauna de Portland.",
+
+  "llModel": "Liminal se lanzará bajo un modelo de \"paga lo que puedas\".\nLa versión de Google Play será de pago, porque el (buen) código no se escribe solo.\nEl repositorio de GitHub también tendrá un APK disponible de forma gratuita, porque una relación saludable con la tecnología no debería ser exclusiva de quienes tienen ingresos disponibles.",
+  
+
+
+  "ssPreview1": "La próxima aplicación de Empathetech, ",
+  "ssPreview1Fix": "La próxima aplicación de Empathetic, ",
+  "ssPreview2": ", está en desarrollo.\n es una aplicación de red social diseñada para mantenernos alejados de las pantallas.\n",
+  "ssPreview3": "Smoke Signal también estará alojada completamente por el usuario, gracias a ",
+  "ssAPHint": "Abrir un enlace a la documentación de Activity Pub",
+
+
+
+  "vaIntro": "La forma en que se usa una tecnología no puede ser decidida por quienes la crean.",
+  "vaTheBad": "Lo cual puede ser algo bueno, algo malo o algo intermedio. Tomémonos un momento para hablar de lo malo: las aplicaciones fraudulentas.",
+  "vaScamRisk": " reduce enormemente la dificultad de crear aplicaciones listas para producción. Combinado con herramientas de codificación con IA, ahora es más fácil que nunca para los estafadores crear aplicaciones que parecen y se sienten legítimas. Para ayudar a combatir esto, mantendremos una lista de aplicaciones verificadas.",
+  "vaCheckIn": "Si ves una aplicación que usa nuestra interfaz, revisa aquí primero. Si no está verificada, nuestro consejo es: no la descargues.\nMás allá de eso, esta no es una lista de recomendaciones. El único requisito para estar en esta lista es no ser una estafa.\nDicho esto, el UIniverso conocido contiene...",
+
+  "vaFirst": "Propia",
+  "vaThird": "Verificada por terceros",
+  "vaWaiting": "En espera",
+  "vaWillYou": "¿Serás el primero?",
+  "vaKnown": "Estafas conocidas",
+  "vaSoGood": "Hasta ahora, todo bien.\nPor favor, no seas el primero :)",
+
+  "vaPublished": "Si has publicado una aplicación usando EFUI, envíanos ",
+  "vaDoNoHarm": ".\nNo tenemos que amar la aplicación, y no la evaluaremos públicamente. Mientras no cause daño, será verificada.",
+  "vaPrivateFree": "Si tu aplicación no está disponible públicamente, ¡no te preocupes!\nPero si personas que no conoces pueden descargarla, avísanos para que podamos verificarla.",
+  "vaDoYourPart": "Si no hemos tenido noticias tuyas, asumiremos que tu producto es una estafa hasta que se demuestre lo contrario.\nSi crees que eso es exagerado, piénsalo bien. EFUI son años de trabajo, compartidos libremente. Enviar un correo electrónico es lo mínimo que puedes hacer.",
 
   
 
@@ -157,6 +202,12 @@
   "tsTheFounderLabel": "Perfil bidimensional de Michael Waldron.",
   "tsTheFounderHint": "Activar para enviarle un E-mail.",
   "tsTheFounder": "Fundador",
+  "tsBoardMember": "Miembro de la Junta",
+  "tsYou": "¿Tú?",
+  "tsMirrorLabel": "Un círculo negro con un brillo, para imitar un espejo.",
+  "tsMirrorTip": "Activa para enviarnos un correo electrónico",
+  "tsMirrorHint": "Pregunta sobre cómo unirte al equipo.",
+  "tsNonProfit": "Lo único que impide que Empathetech se convierta en una organización sin fines de lucro adecuada es el número de personas.\n\nSi crees en la misión que he expuesto y tienes unas horas libres a la semana, ¡ponte en contacto!\n\nSerá completamente voluntario al principio. Yo tampoco estoy recibiendo pago (todavía).\nPero no haría esto si no tuviera un buen plan para eso también.",
 
   "tsWild": "En la naturaleza",
   "ts2025BoothLabel": "El stand de Empathetech en Open Sauce 2025.",
@@ -201,16 +252,15 @@
   
   "csEveryBit": "Cada bit que das a Empathetech le quitas un byte a los gigantes tecnológicos.",
   "csEveryBitFix": "Cada bit que das a Empathetic le quitas un byte a los gigantes tecnológicos.",
-  "csGive": "¿Te gustaría contribuir...",
   
-  "csTimeQ": "Tiempo?",
+  "csTime": "Tiempo",
   "csBecome": " acerca de convertirse en un ",
   "csGit": "colaborador de GitHub",
   
-  "csMoneyQ": "Dinero?",
+  "csMoney": "Dinero",
   "csOpenLink": "Abre un enlace al {page} de Empathetic",
   
-  "csPowerQ": "Poder?",
+  "csPower": "Poder",
   
   "csThanks": "¡Muchas gracias por todo el apoyo!"
 }

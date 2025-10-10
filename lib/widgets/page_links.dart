@@ -35,7 +35,7 @@ class PageLinks extends StatelessWidget {
 
   // Define custom functions //
 
-  /// Helpful for [EzAdaptiveScaffold] calculations
+  /// Helpful for [EzAdaptiveParent] calculations
   double get width {
     final Lang l10n = Lang.of(context)!;
 
@@ -145,6 +145,18 @@ class PageLinks extends StatelessWidget {
             onHover: setAutoClose,
           ),
 
+          // Liminal
+          EzLink(
+            Products.liminal.name,
+            style: menuStyle,
+            padding: linkPadding,
+            textColor: colorScheme.onSurface,
+            textAlign: TextAlign.center,
+            url: Uri.parse(Products.liminal.url),
+            hint: l10n.gLearn(Products.liminal.name),
+            onHover: setAutoClose,
+          ),
+
           // Smoke Signal
           EzLink(
             Products.smokeSignal.name,
@@ -154,6 +166,18 @@ class PageLinks extends StatelessWidget {
             textAlign: TextAlign.center,
             url: Uri.parse(Products.smokeSignal.url),
             hint: l10n.gLearn(Products.smokeSignal.name),
+            onHover: setAutoClose,
+          ),
+
+          // Verified
+          EzLink(
+            Products.verified.name,
+            style: menuStyle,
+            padding: linkPadding,
+            textColor: colorScheme.onSurface,
+            textAlign: TextAlign.center,
+            url: Uri.parse(Products.verified.url),
+            hint: l10n.gLearn(Products.verified.name),
             onHover: setAutoClose,
           ),
         ],
@@ -186,21 +210,17 @@ class PageLinks extends StatelessWidget {
   // Return the build //
 
   @override
-  Widget build(BuildContext context) {
-    const EzSpacer spacer = EzSpacer(vertical: false);
-
-    return Row(
-      mainAxisSize: MainAxisSize.min,
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        mission,
-        spacer,
-        products,
-        spacer,
-        team,
-        spacer,
-        contribute,
-      ],
-    );
-  }
+  Widget build(BuildContext context) => Row(
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          mission,
+          ezRowSpacer,
+          products,
+          ezRowSpacer,
+          team,
+          ezRowSpacer,
+          contribute,
+        ],
+      );
 }

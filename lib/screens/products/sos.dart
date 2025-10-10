@@ -27,7 +27,6 @@ class _SOSScreenState extends State<SOSScreen> {
   // Gather the fixed theme data //
 
   final double spacing = EzConfig.get(spacingKey);
-  static const Widget newLine = EzNewLine(textAlign: TextAlign.center);
 
   late final Lang l10n = Lang.of(context)!;
 
@@ -52,24 +51,24 @@ class _SOSScreenState extends State<SOSScreen> {
 
         // Description
         EzText(
-          l10n.psSOSDescription,
+          l10n.sosDescription,
           style: textTheme.bodyLarge,
           textAlign: TextAlign.center,
         ),
-        newLine,
+        ezCenterLine,
 
         // Donation call-out
         EzRichText(<InlineSpan>[
           EzPlainText(
-            text: l10n.psSafeSOS,
+            text: l10n.sosPrivate,
             style: textTheme.bodyLarge,
           ),
           EzPlainText(
-            text: l10n.psFreeSOS,
+            text: l10n.sosFree,
             style: textTheme.bodyLarge,
           ),
           EzInlineLink(
-            l10n.psOpenSource,
+            l10n.sosOpenSource,
             style: textTheme.bodyLarge,
             textAlign: TextAlign.center,
             url: Uri.parse(sosSource),
@@ -80,48 +79,48 @@ class _SOSScreenState extends State<SOSScreen> {
             style: textTheme.bodyLarge,
           ),
         ], textAlign: TextAlign.center),
-        newLine,
+        ezCenterLine,
 
         // README link
         EzRichText(<InlineSpan>[
           EzPlainText(
-            text: l10n.psWeAlso,
+            text: l10n.sosWeAlso,
             style: textTheme.bodyLarge,
           ),
           EzInlineLink(
-            l10n.psSetupGuide,
+            l10n.sosSetupGuide,
             style: textTheme.bodyLarge,
             textAlign: TextAlign.center,
             url: Uri.parse(
                 'https://github.com/Empathetech-LLC/sos/blob/main/README.md#using'),
-            hint: l10n.psSetupGuideHint,
+            hint: l10n.sosSetupGuideHint,
           ),
           EzPlainText(
             text: '.',
             style: textTheme.bodyLarge,
           ),
         ], textAlign: TextAlign.center),
-        newLine,
+        ezCenterLine,
 
         // Contribution call-out
         EzRichText(<InlineSpan>[
           EzPlainText(
-            text: l10n.psConsider,
+            text: l10n.sosConsider,
             style: textTheme.bodyLarge,
           ),
           EzInlineLink(
-            l10n.psContributing,
+            l10n.sosContributing,
             style: textTheme.bodyLarge,
             textAlign: TextAlign.center,
             url: Uri.parse(contributeURL),
             hint: l10n.gContributeHint,
           ),
           EzPlainText(
-            text: l10n.psSAPS,
+            text: l10n.sosSAPS,
             style: textTheme.bodyLarge,
           ),
         ], textAlign: TextAlign.center),
-        EzDivider(height: spacing * 2),
+        ezDivider,
 
         // Download link(s)
         EzText(
@@ -129,13 +128,13 @@ class _SOSScreenState extends State<SOSScreen> {
           style: ezSubTitleStyle(textTheme),
           textAlign: TextAlign.center,
         ),
-        EzMargin(),
+        ezMargin,
         const SOSLink(),
 
-        const EzSeparator(),
+        ezSeparator,
         const EzTranslationsPendingNotice(),
       ])),
-      fab: const SettingsFAB(),
+      fabs: const <Widget>[SettingsFAB()],
     );
   }
 }
@@ -149,8 +148,6 @@ class _PromoVideo extends StatefulWidget {
 
 class _PromoVideoState extends State<_PromoVideo> {
   // Gather the fixed theme data //
-
-  static const EzSpacer spacer = EzSpacer();
 
   final double spacing = EzConfig.get(spacingKey);
 
@@ -190,45 +187,47 @@ class _PromoVideoState extends State<_PromoVideo> {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: <Widget>[
-        EzMargin(),
+        ezMargin,
 
         // Video
         Visibility(
           visible: showVideo,
-          child: EzSwapWidget(
-            restricted: EzVideoPlayer(
-              key: const ValueKey<String>('vertical'),
-              controller: vertCon,
-              aspectRatio: 9 / 16,
-              maxWidth: widthOf(context) * 0.90,
-              maxHeight: heightOf(context) * 0.80,
-              backgroundColor: Colors.black,
-              semantics: l10n.psPromoLabel,
-              hasCaptions: true,
-              autoPlay: false,
-              startingVolume: 0.50,
-            ),
-            expanded: EzVideoPlayer(
-              key: const ValueKey<String>('standard'),
-              controller: normCon,
-              aspectRatio: 16 / 9,
-              maxWidth: widthOf(context) * 0.90,
-              maxHeight: heightOf(context) * 0.80,
-              backgroundColor: Colors.black,
-              semantics: l10n.psPromoLabel,
-              hasCaptions: true,
-              autoPlay: false,
-              startingVolume: 0.50,
+          child: Padding(
+            padding: EdgeInsets.only(bottom: spacing),
+            child: EzSwapWidget(
+              restricted: EzVideoPlayer(
+                key: const ValueKey<String>('vertical'),
+                controller: vertCon,
+                aspectRatio: 9 / 16,
+                maxWidth: widthOf(context) * 0.90,
+                maxHeight: heightOf(context) * 0.80,
+                backgroundColor: Colors.black,
+                semantics: l10n.sosPromoLabel,
+                hasCaptions: true,
+                autoPlay: false,
+                startingVolume: 0.50,
+              ),
+              expanded: EzVideoPlayer(
+                key: const ValueKey<String>('standard'),
+                controller: normCon,
+                aspectRatio: 16 / 9,
+                maxWidth: widthOf(context) * 0.90,
+                maxHeight: heightOf(context) * 0.80,
+                backgroundColor: Colors.black,
+                semantics: l10n.sosPromoLabel,
+                hasCaptions: true,
+                autoPlay: false,
+                startingVolume: 0.50,
+              ),
             ),
           ),
         ),
-        if (showVideo) spacer,
 
         // Hide/Show && share
         EzScrollView(
+          reverseHands: true,
           mainAxisSize: MainAxisSize.min,
           scrollDirection: Axis.horizontal,
-          reverseHands: true,
           children: <Widget>[
             // Hide/show
             showVideo
@@ -242,7 +241,7 @@ class _PromoVideoState extends State<_PromoVideo> {
                     icon: Icon(PlatformIcons(context).eyeSolid),
                     label: l10n.psShowPromo,
                   ),
-            spacer,
+            ezRowSpacer,
 
             // Share
             MenuAnchor(
@@ -269,12 +268,6 @@ class _PromoVideoState extends State<_PromoVideo> {
                   label: 'Mastodon',
                 ),
                 EzMenuLink(
-                  uri: Uri.parse(
-                      '$empathReddit/comments/1nkr32b/spread_the_word_melt_the_ice/'),
-                  icon: EzIcon(LineIcons.redditAlien),
-                  label: 'Reddit',
-                ),
-                EzMenuLink(
                   uri: Uri.parse('$empathThreads/post/DO5AYJcD7Qd'),
                   icon: EzIcon(FontAwesomeIcons.threads),
                   label: 'Threads',
@@ -293,8 +286,7 @@ class _PromoVideoState extends State<_PromoVideo> {
             ),
           ],
         ),
-
-        EzDivider(height: spacing * 2),
+        ezDivider,
       ],
     );
   }

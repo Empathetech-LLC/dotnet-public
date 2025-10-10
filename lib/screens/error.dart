@@ -19,12 +19,6 @@ class ErrorScreen extends StatefulWidget {
 }
 
 class _ErrorScreenState extends State<ErrorScreen> {
-  // Gather the fixed theme data //
-
-  static const EzSeparator separator = EzSeparator();
-
-  late final EFUILang l10n = ezL10n(context);
-
   // Set the page title //
 
   @override
@@ -34,6 +28,8 @@ class _ErrorScreenState extends State<ErrorScreen> {
   }
 
   // Return the build //
+
+  late final EFUILang l10n = ezL10n(context);
 
   @override
   Widget build(BuildContext context) {
@@ -50,25 +46,25 @@ class _ErrorScreenState extends State<ErrorScreen> {
                 style: ezSubTitleStyle(textTheme),
                 textAlign: TextAlign.center,
               ),
-              EzMargin(),
+              ezMargin,
               Text(
                 l10n.g404,
                 style: textTheme.bodyLarge,
                 textAlign: TextAlign.center,
               ),
-              separator,
+              ezSeparator,
               Text(
                 l10n.g404Note,
                 style: textTheme.labelLarge,
                 textAlign: TextAlign.center,
               ),
-              separator,
+              ezSeparator,
             ],
           ),
         ),
         useImageDecoration: false,
       ),
-      fab: const SettingsFAB(),
+      fabs: <Widget>[const SettingsFAB()],
     );
   }
 }

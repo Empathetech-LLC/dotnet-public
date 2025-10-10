@@ -13,20 +13,20 @@ import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 
 //* Shared *//
 
-/// '10.1.0'
+/// 10.1.0
 const String efuiFallback = '10.1.0';
 
-/// '1.4.1'
+/// 1.4.1
 const String sosFallback = '1.4.1';
 
-/// 'https://github.com/Empathetech-LLC'
+/// https://github.com/Empathetech-LLC
 const String _git = 'https://github.com/Empathetech-LLC';
 
-/// 'https://play.google.com/store/apps/details?id=net.empathetech'
+/// https://play.google.com/store/apps/details?id=net.empathetech
 const String _gPlay =
     'https://play.google.com/store/apps/details?id=net.empathetech';
 
-/// 'https://apps.apple.com/us/app'
+/// https://apps.apple.com/us/app
 const String _appStore = 'https://apps.apple.com/us/app';
 
 /// Download types
@@ -36,7 +36,7 @@ extension Label on DLType {
   String get name {
     switch (this) {
       case DLType.gPlay:
-        return 'Android (Google Play)';
+        return 'Android (GPlay)';
       case DLType.apk:
         return 'Android (.apk)';
       case DLType.iOS:
@@ -199,7 +199,7 @@ class _OpenUILinkState extends State<OpenUILink> {
           child: EzLinkWidget(
             onTap: () => launchUrl(url ?? Uri.parse(openUIReleases)),
             tooltip: l10n.gDownloadHint(openUI, currDL.name),
-            label: l10n.gIconLabel(openUI) + l10n.psOpenUIIconLabel,
+            label: l10n.gIconLabel(openUI) + l10n.ouOpenUIIconLabel,
             hint: l10n.gDownloadHint(openUI, currDL.name),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(ezImageSize(context)),
@@ -207,7 +207,7 @@ class _OpenUILinkState extends State<OpenUILink> {
             ),
           ),
         ),
-        EzMargin(),
+        ezMargin,
 
         // Destination selector
         EzDropdownMenu<DLType>(
@@ -314,7 +314,7 @@ class _SOSLinkState extends State<SOSLink> {
           child: EzLinkWidget(
             onTap: () => launchUrl(url ?? Uri.parse(sosReleases)),
             tooltip: l10n.gDownloadHint(sosName, currDL.name),
-            label: l10n.gIconLabel(sosLabel) + l10n.psSOSIconLabel,
+            label: l10n.gIconLabel(sosLabel) + l10n.sosIconLabel,
             hint: l10n.gDownloadHint(sosLabel, currDL.name),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(ezImageSize(context)),
@@ -322,7 +322,7 @@ class _SOSLinkState extends State<SOSLink> {
             ),
           ),
         ),
-        EzMargin(),
+        ezMargin,
 
         // Destination selector
         EzDropdownMenu<DLType>(

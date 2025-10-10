@@ -5,6 +5,9 @@
 
 import 'package:flutter/material.dart';
 
+/// dotnet
+const String appName = 'dotnet';
+
 //* Names *//
 
 // People //
@@ -64,63 +67,70 @@ const String smokeSignal = 'Smoke Signal';
 
 //* Assets *//
 
-// Paths //
-
-/// assets/videos/eag-demo.mp4
-const String openUIDemoPath = 'assets/videos/eag-demo.mp4';
+// Images //
 
 /// assets/images/open-ui-icon.png
 const String openUIIconPath = 'assets/images/open-ui-icon.png';
 
-/// assets/images/sos-icon.png
-const String sosIconPath = 'assets/images/sos-icon.png';
-
-/// assets/videos/sos-promo.mp4
-const String sosPromoPath = 'assets/videos/sos-promo.mp4';
-
-/// assets/videos/sos-promo-vertical.mp4
-const String sosVerticalPromoPath = 'assets/videos/sos-promo-vertical.mp4';
-
-/// assets/videos/sos-promo-captions.srt
-const String sosPromoCaptionsPath = 'assets/videos/sos-promo-captions.srt';
-
-/// assets/images/smoke-signal-icon.png
-const String smokeSignalIconPath = 'assets/images/smoke-signal-icon.png';
-
-/// assets/images/founder.png
-const String founderIconPath = 'assets/images/founder.png';
-
-/// assets/images/open-sauce-2025.jpg
-const String openSauce2025Path = 'assets/images/open-sauce-2025.jpg';
-
-/// assets/images/open-sauce-logo.png
-const String openSauceLogoPath = 'assets/images/open-sauce-logo.png';
-
-/// assets/images/montana-headshot.jpg
-const String montanaHeadshotPath = 'assets/images/montana-headshot.jpg';
-
-/// assets/images/fah.png
-const String fahIconPath = 'assets/images/fah.png';
-
-// Images //
-
 /// [AssetImage] of [openUIIconPath]
 const ImageProvider openUIImage = AssetImage(openUIIconPath);
+
+/// assets/images/sos-icon.png
+const String sosIconPath = 'assets/images/sos-icon.png';
 
 /// [AssetImage] of [sosImage]
 const ImageProvider sosImage = AssetImage(sosIconPath);
 
+/// assets/images/the-hood.png
+const String theHoodPath = 'assets/images/the-hood.png';
+
+/// [AssetImage] of [theHoodPath]
+const ImageProvider theHoodImage = AssetImage(theHoodPath);
+
+/// assets/images/las-rosas.png
+const String lasRosasPath = 'assets/images/las-rosas.png';
+
+/// [AssetImage] of [lasRosasPath]
+const ImageProvider lasRosasImage = AssetImage(lasRosasPath);
+
+/// assets/images/la-grenouille.png
+const String laGrenouillePath = 'assets/images/la-grenouille.png';
+
+/// [AssetImage] of [laGrenouillePath]
+const ImageProvider laGrenouilleImage = AssetImage(laGrenouillePath);
+
+/// assets/images/smoke-signal-icon.png
+const String smokeSignalIconPath = 'assets/images/smoke-signal-icon.png';
+
 /// [AssetImage] of [smokeSignalIconPath]
 const ImageProvider smokeSignalImage = AssetImage(smokeSignalIconPath);
+
+/// assets/images/founder.png
+const String founderIconPath = 'assets/images/founder.png';
 
 /// [AssetImage] of [founderIconPath]
 const ImageProvider founderImage = AssetImage(founderIconPath);
 
+/// assets/images/open-sauce-2025.jpg
+const String openSauce2025Path = 'assets/images/open-sauce-2025.jpg';
+
 /// [AssetImage] of [openSauce2025Path]
 const ImageProvider openSauce2025Image = AssetImage(openSauce2025Path);
 
+/// assets/images/open-sauce-logo.png
+const String openSauceLogoPath = 'assets/images/open-sauce-logo.png';
+
 /// [AssetImage] of [openSauceLogoPath]
 const ImageProvider openSauceLogoImage = AssetImage(openSauceLogoPath);
+
+/// assets/images/fah.png
+const String fahIconPath = 'assets/images/fah.png';
+
+/// [AssetImage] of [fahIconPath]
+const ImageProvider fahImage = AssetImage(fahIconPath);
+
+/// assets/images/montana-headshot.jpg
+const String montanaHeadshotPath = 'assets/images/montana-headshot.jpg';
 
 /// [AssetImage] of [montanaHeadshotPath]
 const ImageProvider montanaImage = AssetImage(montanaHeadshotPath);
@@ -146,42 +156,76 @@ const ImageProvider leahProfile = NetworkImage(leahProfileLink);
 /// [NetworkImage] of [hilariaProfileLink]
 const ImageProvider hilariaProfile = NetworkImage(hilariaProfileLink);
 
-/// [AssetImage] of [fahIconPath]
-const ImageProvider fahImage = AssetImage(fahIconPath);
+// Videos //
+
+/// assets/videos/eag-demo.mp4
+const String openUIDemoPath = 'assets/videos/eag-demo.mp4';
+
+/// assets/videos/sos-promo.mp4
+const String sosPromoPath = 'assets/videos/sos-promo.mp4';
+
+/// assets/videos/sos-promo-vertical.mp4
+const String sosVerticalPromoPath = 'assets/videos/sos-promo-vertical.mp4';
+
+/// assets/videos/sos-promo-captions.srt
+const String sosPromoCaptionsPath = 'assets/videos/sos-promo-captions.srt';
 
 // Trackers //
 
 const Set<String> assetPaths = <String>{
-  openUIDemoPath,
+  // Images
   openUIIconPath,
-  sosPromoPath,
   sosIconPath,
+  theHoodPath,
+  lasRosasPath,
+  laGrenouillePath,
   smokeSignalIconPath,
   founderIconPath,
   openSauce2025Path,
   openSauceLogoPath,
   fahIconPath,
   montanaHeadshotPath,
+
+  // Videos
+  openUIDemoPath,
+  sosPromoPath,
+  sosVerticalPromoPath,
 };
+
+/// Nikkolas Smith
+const String nikkolas = 'Nikkolas Smith';
+
+/// Kevin Crosby
+const String crosby = 'Kevin Crosby';
 
 /// aka assetSources
 const Map<String, String> credits = <String, String>{
-  openUIDemoPath: mike,
+  // Images
   openUIIconPath: '$mike & Google Gemini',
-  sosPromoPath: '$montanaM & $mike',
-  sosVerticalPromoPath: '$montanaM & $mike',
   sosIconPath: materialIconsLink,
+  theHoodPath: '$crosby & $mike',
+  lasRosasPath: mike,
+  laGrenouillePath: '$nikkolas & $mike',
   smokeSignalIconPath: '$mike & $pimenLink',
   founderIconPath: '$mike & $dunvekLink',
   openSauce2025Path: mike,
   openSauceLogoPath: 'https://opensauce.com/',
   fahIconPath: faHLink,
   montanaHeadshotPath: montanaM,
+
+  // Videos
+  openUIDemoPath: mike,
+  sosPromoPath: '$montanaM & $mike',
+  sosVerticalPromoPath: '$montanaM & $mike',
 };
 
 //* Links *//
 
 // Code //
+
+/// https://github.com/Empathetech-LLC/dotnet-public/blob/main/lib/screens/settings_home.dart
+const String settingsSource =
+    'https://github.com/Empathetech-LLC/dotnet-public/blob/main/lib/screens/settings/settings_home.dart';
 
 /// https://github.com/Empathetech-LLC/empathetech_flutter_ui
 const String efuiSource =
@@ -190,13 +234,13 @@ const String efuiSource =
 /// https://github.com/Empathetech-LLC/sos
 const String sosSource = 'https://github.com/Empathetech-LLC/sos';
 
+/// https://github.com/Empathetech-LLC/liminal_launcher
+const String liminalSource =
+    'https://github.com/Empathetech-LLC/liminal_launcher';
+
 /// https://github.com/Empathetech-LLC/smoke_signal
 const String smokeSignalSource =
     'https://github.com/Empathetech-LLC/smoke_signal';
-
-/// https://github.com/Empathetech-LLC/dotnet-public/blob/main/lib/screens/settings_home.dart
-const String settingsSource =
-    'https://github.com/Empathetech-LLC/dotnet-public/blob/main/lib/screens/settings/settings_home.dart';
 
 // Non-profits //
 

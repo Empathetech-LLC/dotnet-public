@@ -91,7 +91,7 @@ class IconLinks extends StatelessWidget {
       parentContext: context,
       l10n: ezL10n(context),
       supportEmail: empathSupport,
-      appName: 'dotnet',
+      appName: appName,
     ),
     tooltip: ezL10n(context).gGiveFeedback,
     icon: Icon(Icons.feedback_outlined, color: colorScheme.primary),
@@ -108,26 +108,21 @@ class IconLinks extends StatelessWidget {
         feedback,
       ];
 
-  List<Widget> get children {
-    const EzSpacer spacer = EzSpacer(vertical: false);
-    final EzSpacer margin = EzMargin(vertical: false);
-
-    return <Widget>[
-      margin,
-      gitHub,
-      spacer,
-      newsletter,
-      spacer,
-      mastodon,
-      spacer,
-      bluesky,
-      spacer,
-      linkedIn,
-      spacer,
-      feedback,
-      margin,
-    ];
-  }
+  List<Widget> get children => <Widget>[
+        ezRowMargin,
+        gitHub,
+        ezRowSpacer,
+        newsletter,
+        ezRowSpacer,
+        mastodon,
+        ezRowSpacer,
+        bluesky,
+        ezRowSpacer,
+        linkedIn,
+        ezRowSpacer,
+        feedback,
+        ezRowMargin,
+      ];
 
   // Return the build //
 

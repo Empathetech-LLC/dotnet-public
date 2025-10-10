@@ -23,11 +23,6 @@ class OpenUIScreen extends StatefulWidget {
 class _OpenUIScreenState extends State<OpenUIScreen> {
   // Gather the fixed theme data //
 
-  static const EzSpacer spacer = EzSpacer();
-  static const EzSeparator separator = EzSeparator();
-  static const EzDivider divider = EzDivider();
-  static const Widget newLine = EzNewLine(textAlign: TextAlign.center);
-
   final EdgeInsets linkPadding = EzInsets.wrap(EzConfig.get(marginKey));
 
   late final Lang l10n = Lang.of(context)!;
@@ -93,75 +88,71 @@ class _OpenUIScreenState extends State<OpenUIScreen> {
               textAlign: TextAlign.center,
             ),
             EzLink(
-              l10n.psOpenUISlogan,
+              l10n.ouSlogan,
               style: textTheme.headlineLarge!,
               padding: linkPadding,
               textAlign: TextAlign.center,
               url: url,
               hint: l10n.gDownloadHint(openUI, dlType.name),
             ),
-            separator,
+            ezCenterLine,
 
             // Demo
             EzText(
-              l10n.psLike,
+              l10n.ouLike,
               style: subTitle,
               textAlign: TextAlign.center,
             ),
-            spacer,
+            ezMargin,
             const EFUIDemo(),
-            divider,
+            ezDivider,
 
             // Use it in a sentence
             EzText(
-              l10n.psOpenUIIs,
+              l10n.ouIs,
               style: subTitle,
               textAlign: TextAlign.center,
             ),
 
             // Video
             const _DemoVideo(),
-            separator,
+            ezSpacer,
 
             // Description
             EzText(
-              l10n.psFoundation,
+              l10n.ouFoundation,
               style: textTheme.bodyLarge,
               textAlign: TextAlign.center,
             ),
-            newLine,
             EzText(
-              l10n.psLocal,
+              l10n.ouLocal,
               style: textTheme.bodyLarge,
               textAlign: TextAlign.center,
             ),
-            newLine,
             EzText(
-              l10n.psRequirements,
+              l10n.ouRequirements,
               style: textTheme.bodyLarge,
               textAlign: TextAlign.center,
             ),
-            separator,
+            ezCenterLine,
             EzText(
-              l10n.psFlutterToo,
+              l10n.ouFlutterToo,
               style: textTheme.labelLarge,
               textAlign: TextAlign.center,
             ),
-            divider,
+            ezDivider,
 
             // EFUI //
 
             // How it works
             EzText(
-              l10n.psHow,
+              l10n.ouHow,
               style: textTheme.headlineLarge,
               textAlign: TextAlign.center,
             ),
-            newLine,
-
             EzRichText(<InlineSpan>[
               EzPlainText(
-                text: l10n.psEFUIsHow,
+                text: l10n.ouEFUIsHow,
                 style: textTheme.bodyLarge,
               ),
               EzInlineLink(
@@ -177,48 +168,48 @@ class _OpenUIScreenState extends State<OpenUIScreen> {
                 style: textTheme.bodyLarge,
               ),
               EzPlainText(
-                text: l10n.psSimplifies,
+                text: l10n.ouSimplifies,
                 style: textTheme.bodyLarge,
               ),
             ], textAlign: TextAlign.center),
-            separator,
+            ezSeparator,
 
             // Platform availability
             EzText(
-              l10n.psPlatform,
+              l10n.ouPlatform,
               style: textTheme.titleLarge,
               textAlign: TextAlign.center,
             ),
             EzText(
-              l10n.psPlatformContent,
+              l10n.ouPlatformContent,
               style: textTheme.bodyLarge,
               textAlign: TextAlign.center,
             ),
-            newLine,
+            ezCenterLine,
 
             // Responsive design
             EzText(
-              l10n.psResponsive,
+              l10n.ouResponsive,
               style: textTheme.titleLarge,
               textAlign: TextAlign.center,
             ),
             EzText(
-              l10n.psResponsiveContent,
+              l10n.ouResponsiveContent,
               style: textTheme.bodyLarge,
               textAlign: TextAlign.center,
             ),
-            newLine,
+            ezCenterLine,
 
             // Screen reader support
             EzText(
-              l10n.psScreen,
+              l10n.ouScreen,
               style: textTheme.titleLarge,
               textAlign: TextAlign.center,
             ),
             EzRichText(<InlineSpan>[
               EzPlainText(
-                text: l10n.psScreenContent,
-                semanticsLabel: l10n.psScreenContentFix,
+                text: l10n.ouScreenContent,
+                semanticsLabel: l10n.ouScreenContentFix,
                 style: textTheme.bodyLarge,
               ),
               EzInlineLink(
@@ -228,9 +219,9 @@ class _OpenUIScreenState extends State<OpenUIScreen> {
                 url: Uri.parse(
                   'https://support.google.com/accessibility/android/answer/6006598?hl=en',
                 ),
-                hint: l10n.psTalkBackHint,
+                hint: l10n.ouTalkBackHint,
               ),
-              EzPlainText(text: l10n.psAnd, style: textTheme.bodyLarge),
+              EzPlainText(text: l10n.ouAnd, style: textTheme.bodyLarge),
               EzInlineLink(
                 'VoiceOver',
                 style: textTheme.bodyLarge,
@@ -238,57 +229,57 @@ class _OpenUIScreenState extends State<OpenUIScreen> {
                 url: Uri.parse(
                   'https://support.apple.com/guide/iphone/turn-on-and-practice-voiceover-iph3e2e415f/ios',
                 ),
-                hint: l10n.psVoiceOverHint,
+                hint: l10n.ouVoiceOverHint,
               ),
               EzPlainText(text: '.', style: textTheme.bodyLarge),
             ], textAlign: TextAlign.center),
-            newLine,
+            ezCenterLine,
 
             // User customization
             EzText(
-              l10n.psCustom,
+              l10n.ouCustom,
               style: textTheme.titleLarge,
               textAlign: TextAlign.center,
             ),
             EzText(
-              l10n.psCustomContent,
+              l10n.ouCustomContent,
               style: textTheme.bodyLarge,
               textAlign: TextAlign.center,
             ),
-            newLine,
+            ezCenterLine,
 
             // Internationalization
             EzText(
-              l10n.psInternational,
+              l10n.ouInternational,
               style: textTheme.titleLarge,
               textAlign: TextAlign.center,
             ),
             EzText(
-              l10n.psInternationalContent,
-              semanticsLabel: l10n.psInternationalContentFix,
+              l10n.ouInternationalContent,
+              semanticsLabel: l10n.ouInternationalContentFix,
               style: textTheme.bodyLarge,
               textAlign: TextAlign.center,
             ),
-            newLine,
+            ezCenterLine,
 
             // Reliability
             EzText(
-              l10n.psReliability,
+              l10n.ouReliability,
               style: textTheme.titleLarge,
               textAlign: TextAlign.center,
             ),
             EzText(
-              l10n.psReliabilityContent,
-              semanticsLabel: l10n.psReliabilityContentFix,
+              l10n.ouReliabilityContent,
+              semanticsLabel: l10n.ouReliabilityContentFix,
               style: textTheme.bodyLarge,
               textAlign: TextAlign.center,
             ),
-            separator,
+            ezSeparator,
 
             // Tag line && consultation call-out
             EzRichText(<InlineSpan>[
               EzPlainText(
-                text: l10n.psEFUITagLine,
+                text: l10n.ouEFUITagLine,
                 style: textTheme.bodyLarge,
               ),
               EzInlineLink(
@@ -299,28 +290,32 @@ class _OpenUIScreenState extends State<OpenUIScreen> {
                 hint: l10n.gTeamHint,
               ),
               EzPlainText(
-                text: l10n.psConsult,
+                text: l10n.ouConsult,
                 style: textTheme.bodyLarge,
               ),
             ], textAlign: TextAlign.center),
-            divider,
+            ezDivider,
 
             // Download Open UI (again) //
 
             EzText(
-              l10n.psGetStarted,
+              l10n.ouGetStarted,
               style: subTitle,
               textAlign: TextAlign.center,
             ),
-            EzMargin(),
+            ezMargin,
             const OpenUILink(),
 
-            separator,
+            ezSeparator,
             const EzTranslationsPendingNotice(),
           ],
         ),
       ),
-      fab: const SettingsFAB(),
+      fabs: <Widget>[
+        EzConfigFAB(context, appName: appName, androidPackage: null),
+        ezSpacer,
+        const SettingsFAB(),
+      ],
     );
   }
 }
@@ -361,24 +356,26 @@ class _DemoVideoState extends State<_DemoVideo> {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: <Widget>[
-        const EzSpacer(),
+        ezSpacer,
 
         // Video
         Visibility(
           visible: showVideo,
-          child: EzVideoPlayer(
-            controller: controller,
-            aspectRatio: 34 / 19,
-            maxWidth: widthOf(context) * 0.90,
-            maxHeight: heightOf(context) * 0.80,
-            backgroundColor: Colors.black,
-            semantics: l10n.psOpenUIDemo,
-            volumeVis: EzButtonVis.alwaysOff,
-            variableVolume: false,
-            autoPlay: false,
+          child: Padding(
+            padding: EdgeInsets.only(bottom: EzConfig.get(spacingKey)),
+            child: EzVideoPlayer(
+              controller: controller,
+              aspectRatio: 34 / 19,
+              maxWidth: widthOf(context) * 0.90,
+              maxHeight: heightOf(context) * 0.80,
+              backgroundColor: Colors.black,
+              semantics: l10n.ouDemo,
+              volumeVis: EzButtonVis.alwaysOff,
+              variableVolume: false,
+              autoPlay: false,
+            ),
           ),
         ),
-        if (showVideo) const EzSpacer(),
 
         // Show/Hide
         showVideo

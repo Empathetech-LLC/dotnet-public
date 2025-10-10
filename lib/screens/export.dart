@@ -11,7 +11,9 @@ export 'mission.dart';
 
 export 'products/open_ui.dart';
 export 'products/sos.dart';
+export 'products/liminal.dart';
 export 'products/smoke_signal.dart';
+export 'products/verified.dart';
 
 export 'team.dart';
 

@@ -4,6 +4,7 @@
  */
 
 import '../export.dart';
+import '../../utils/export.dart';
 import '../../widgets/export.dart';
 
 import 'package:flutter/material.dart';
@@ -22,6 +23,10 @@ class SettingsHomeScreen extends StatelessWidget {
           textSettingsPath: textSettingsURL,
           footer: <Widget>[EzSeparator(), EFUIShoutOut()],
         )),
-        fab: EzConfigFAB(context, appName: 'dotnet', androidPackage: null),
+        fabs: <Widget>[
+          EzConfigFAB(context, appName: appName, androidPackage: null),
+          ezSpacer,
+          EzBackFAB(context),
+        ],
       );
 }

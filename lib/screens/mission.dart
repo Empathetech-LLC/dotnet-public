@@ -221,7 +221,7 @@ class _MissionScreenState extends State<MissionScreen> {
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  const EzSpacer(),
+                  ezSpacer,
                   EzScrollView(
                     scrollDirection: Axis.horizontal,
                     primary: false,
@@ -233,7 +233,7 @@ class _MissionScreenState extends State<MissionScreen> {
             ),
           ),
         ),
-        const EzSeparator(),
+        ezSeparator,
         Container(
           width: double.infinity,
           padding: EdgeInsets.only(left: EzConfig.get(marginKey) + padding),
@@ -243,7 +243,7 @@ class _MissionScreenState extends State<MissionScreen> {
           child: const EzTranslationsPendingNotice(textAlign: TextAlign.start),
         ),
       ])),
-      fab: const SettingsFAB(),
+      fabs: <Widget>[const SettingsFAB()],
     );
   }
 }

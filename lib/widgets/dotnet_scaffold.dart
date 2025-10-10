@@ -23,11 +23,12 @@ class DotnetScaffold extends StatelessWidget {
   /// [Scaffold.body] passthrough
   final Widget body;
 
-  /// [FloatingActionButton]
-  final Widget? fab;
+  /// [FloatingActionButton]s to add on top of the [EzUpdaterFAB]
+  /// BYO spacing widgets
+  final List<Widget>? fabs;
 
   /// Standardized [Scaffold] for all of empathetech dotnet's screens
-  const DotnetScaffold(this.body, {super.key, this.logo, this.fab});
+  const DotnetScaffold(this.body, {super.key, this.logo, this.fabs});
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +57,7 @@ class DotnetScaffold extends StatelessWidget {
           child: SizedBox(
             width: toolbarHeight,
             height: toolbarHeight,
-            child: EmpathetechLogo(margin: margin),
+            child: Logo(margin: margin),
           ),
         );
 
@@ -121,7 +122,7 @@ class DotnetScaffold extends StatelessWidget {
       logo: brandLogo,
       drawer: drawer,
       body: body,
-      fab: fab,
+      fabs: fabs,
     );
 
     final _ExpandedScaffold expanded = _ExpandedScaffold(
@@ -131,12 +132,12 @@ class DotnetScaffold extends StatelessWidget {
       pageLinks: pageLinks,
       iconLinksMenu: iconLinksMenu,
       body: body,
-      fab: fab,
+      fabs: fabs,
     );
 
     // Return the build //
 
-    return EzAdaptiveScaffold(
+    return EzAdaptiveParent(
       small: restricted,
       medium: expanded,
       offset: (newSmall - ScreenSize.small.size),
@@ -151,7 +152,7 @@ class _RestrictedScaffold extends StatelessWidget {
   final Widget logo;
   final DotNetDrawer drawer;
   final Widget body;
-  final Widget? fab;
+  final List<Widget>? fabs;
 
   /// [DotnetScaffold] for when there is limited screen space
   /// Has a mobile-like layout
@@ -161,7 +162,7 @@ class _RestrictedScaffold extends StatelessWidget {
     required this.logo,
     required this.drawer,
     required this.body,
-    required this.fab,
+    required this.fabs,
   });
 
   @override
@@ -194,7 +195,9 @@ class _RestrictedScaffold extends StatelessWidget {
         body: body,
 
         // FAB
-        floatingActionButton: fab,
+        floatingActionButton: fabs == null
+            ? null
+            : Column(mainAxisSize: MainAxisSize.min, children: fabs!),
         floatingActionButtonLocation: isLefty
             ? FloatingActionButtonLocation.startFloat
             : FloatingActionButtonLocation.endFloat,
@@ -214,7 +217,7 @@ class _ExpandedScaffold extends StatelessWidget {
   final PageLinks pageLinks;
   final Widget iconLinksMenu;
   final Widget body;
-  final Widget? fab;
+  final List<Widget>? fabs;
 
   /// [DotnetScaffold] for when there is ample screen space
   /// Has a traditional footer-less web page layout
@@ -225,7 +228,7 @@ class _ExpandedScaffold extends StatelessWidget {
     required this.pageLinks,
     required this.iconLinksMenu,
     required this.body,
-    required this.fab,
+    required this.fabs,
   });
 
   @override
@@ -255,8 +258,10 @@ class _ExpandedScaffold extends StatelessWidget {
         // Body
         body: body,
 
-        // FAB
-        floatingActionButton: fab,
+        // FABs
+        floatingActionButton: fabs == null
+            ? null
+            : Column(mainAxisSize: MainAxisSize.min, children: fabs!),
         floatingActionButtonLocation: isLefty
             ? FloatingActionButtonLocation.startFloat
             : FloatingActionButtonLocation.endFloat,
@@ -287,48 +292,45 @@ class DotNetDrawer extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext context) {
-    const EzSpacer spacer = EzSpacer();
-
-    return NavigationDrawer(
-      tilePadding: EdgeInsets.zero,
-      children: <Widget>[
-        DrawerHeader(
-          margin: EdgeInsets.zero,
-          padding: EdgeInsets.zero,
-          child: Center(
-            child: EzScrollView(
-              scrollDirection: Axis.horizontal,
-              mainAxisSize: MainAxisSize.min,
-              children: header.children.map((Widget child) {
-                switch (child.runtimeType) {
-                  case const (EzIconButton):
-                    child as EzIconButton;
-                    return EzIconButton(
-                      style: child.style,
-                      onPressed: () {
-                        Navigator.of(context).pop();
-                        child.onPressed?.call();
-                      },
-                      tooltip: child.tooltip,
-                      icon: child.icon,
-                    );
-                  default:
-                    return child;
-                }
-              }).toList(),
+  Widget build(BuildContext context) => NavigationDrawer(
+        tilePadding: EdgeInsets.zero,
+        children: <Widget>[
+          DrawerHeader(
+            margin: EdgeInsets.zero,
+            padding: EdgeInsets.zero,
+            child: Center(
+              child: EzScrollView(
+                mainAxisSize: MainAxisSize.min,
+                scrollDirection: Axis.horizontal,
+                showScrollHint: true,
+                children: header.children.map((Widget child) {
+                  switch (child.runtimeType) {
+                    case const (EzIconButton):
+                      child as EzIconButton;
+                      return EzIconButton(
+                        style: child.style,
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                          child.onPressed?.call();
+                        },
+                        tooltip: child.tooltip,
+                        icon: child.icon,
+                      );
+                    default:
+                      return child;
+                  }
+                }).toList(),
+              ),
             ),
           ),
-        ),
-        spacer,
-        pageLinks.mission,
-        spacer,
-        pageLinks.products,
-        spacer,
-        pageLinks.team,
-        spacer,
-        pageLinks.contribute,
-      ],
-    );
-  }
+          ezSpacer,
+          pageLinks.mission,
+          ezSpacer,
+          pageLinks.products,
+          ezSpacer,
+          pageLinks.team,
+          ezSpacer,
+          pageLinks.contribute,
+        ],
+      );
 }

@@ -60,6 +60,11 @@ class DotNet extends StatelessWidget {
     // SOS
     precacheImage(sosImage, context);
 
+    // Liminal
+    precacheImage(theHoodImage, context);
+    precacheImage(lasRosasImage, context);
+    precacheImage(laGrenouilleImage, context);
+
     // Smoke Signal
     precacheImage(smokeSignalImage, context);
 
@@ -137,9 +142,19 @@ class DotNet extends StatelessWidget {
                   builder: (_, __) => const SOSScreen(),
                 ),
                 GoRoute(
+                  path: Products.liminal.path,
+                  name: Products.liminal.path,
+                  builder: (_, __) => const LiminalScreen(),
+                ),
+                GoRoute(
                   path: Products.smokeSignal.path,
                   name: Products.smokeSignal.path,
                   builder: (_, __) => const SmokeSignalScreen(),
+                ),
+                GoRoute(
+                  path: Products.verified.path,
+                  name: Products.verified.path,
+                  builder: (_, __) => const VerifiedScreen(),
                 ),
                 GoRoute(
                   path: teamPath,

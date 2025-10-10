@@ -1,6 +1,6 @@
 name: dotnet
 description: "The Empathetech mission is to re-balance the power in tech by making self hosting more accessible."
-version: 5.0.3
+version: 5.1.0
 publish_to: 'none'
 
 environment:
@@ -26,6 +26,9 @@ dependencies:
   flutter_platform_widgets: ^9.0.0
   font_awesome_flutter: ^10.10.0
   line_icons: ^2.0.3
+  shimmer:
+    git: 
+      url: https://github.com/jinyus/flutter_shimmer
   
   efui_bios:
     path: ../efui_bios
@@ -52,6 +55,8 @@ flutter:
     - assets/images/app-icon.png
     - assets/images/fah.png
     - assets/images/founder.png
+    - assets/images/la-grenouille.png
+    - assets/images/las-rosas.png
     - assets/images/loading-dark.gif
     - assets/images/loading-light.gif
     - assets/images/montana-headshot.jpg
@@ -60,6 +65,7 @@ flutter:
     - assets/images/open-ui-icon.png
     - assets/images/smoke-signal-icon.png
     - assets/images/sos-icon.png
+    - assets/images/the-hood.png
     - assets/videos/
     - assets/videos/eag-demo.mp4
     - assets/videos/sos-promo.mp4

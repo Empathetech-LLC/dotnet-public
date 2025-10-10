@@ -44,7 +44,7 @@ class FaHBanner extends StatelessWidget {
                 tooltip: faHLink,
               ),
             ),
-            const EzSwapSpacer(),
+            ezSwapSpacer,
 
             // External links && info
             EzTextBackground(Column(
@@ -88,7 +88,7 @@ class FaHBanner extends StatelessWidget {
             )),
           ],
         ),
-        const EzSpacer(),
+        ezSpacer,
 
         // "Live" stats //
         EzText(

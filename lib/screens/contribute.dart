@@ -23,11 +23,6 @@ class ContributeScreen extends StatefulWidget {
 class _ContributeScreenState extends State<ContributeScreen> {
   // Gather the fixed theme data //
 
-  static const EzSpacer spacer = EzSpacer();
-  static const EzSwapSpacer swapSpacer = EzSwapSpacer();
-  static const EzSeparator separator = EzSeparator();
-  static const Widget divider = EzDivider();
-
   final double margin = EzConfig.get(marginKey);
   final double spacing = EzConfig.get(spacingKey);
 
@@ -55,7 +50,7 @@ class _ContributeScreenState extends State<ContributeScreen> {
       icon: EzIcon(LineIcons.patreon),
       label: 'Patreon',
     ),
-    swapSpacer,
+    ezSwapSpacer,
 
     // Buy Me a Coffee
     EzElevatedIconLink(
@@ -65,7 +60,7 @@ class _ContributeScreenState extends State<ContributeScreen> {
       icon: EzIcon(LineIcons.coffee),
       label: 'Buy Me a Coffee',
     ),
-    swapSpacer,
+    ezSwapSpacer,
 
     // Ko-fi
     EzElevatedIconLink(
@@ -86,7 +81,7 @@ class _ContributeScreenState extends State<ContributeScreen> {
       icon: EzIcon(LineIcons.paypal),
       label: 'PayPal',
     ),
-    swapSpacer,
+    ezSwapSpacer,
 
     // Venmo
     EzElevatedLink(
@@ -95,7 +90,7 @@ class _ContributeScreenState extends State<ContributeScreen> {
       url: Uri.parse(empathVenmo),
       text: 'Venmo',
     ),
-    swapSpacer,
+    ezSwapSpacer,
 
     // CashApp
     EzElevatedIconLink(
@@ -128,36 +123,20 @@ class _ContributeScreenState extends State<ContributeScreen> {
 
         // Intro //
 
-        MergeSemantics(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              // Every bit
-              EzText(
-                l10n.csEveryBit,
-                semanticsLabel: l10n.csEveryBitFix,
-                style: textTheme.headlineLarge,
-                textAlign: TextAlign.center,
-              ),
-
-              // Would you like to give?...
-              EzText(
-                l10n.csGive,
-                style: subTitle,
-                textAlign: TextAlign.center,
-              ),
-            ],
-          ),
+        EzText(
+          l10n.csEveryBit,
+          semanticsLabel: l10n.csEveryBitFix,
+          style: textTheme.headlineLarge,
+          textAlign: TextAlign.center,
         ),
-        separator,
+        ezCenterLine,
 
         //* Donate *//
 
         // Time //
 
         EzText(
-          l10n.csTimeQ,
+          l10n.csTime,
           style: textTheme.titleLarge,
           textAlign: TextAlign.center,
         ),
@@ -187,16 +166,16 @@ class _ContributeScreenState extends State<ContributeScreen> {
             tooltip: empathGitHub,
           ),
         ], textAlign: TextAlign.center),
-        divider,
+        ezDivider,
 
         // Money //
 
         EzText(
-          l10n.csMoneyQ,
+          l10n.csMoney,
           style: textTheme.titleLarge,
           textAlign: TextAlign.center,
         ),
-        spacer,
+        ezSpacer,
 
         // Crowdfunding organizations
         EzRowCol.sym(
@@ -204,7 +183,7 @@ class _ContributeScreenState extends State<ContributeScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: crowdFundOrgs,
         ),
-        spacer,
+        ezSpacer,
 
         // Affiliate donations
         EzRowCol.sym(
@@ -212,7 +191,7 @@ class _ContributeScreenState extends State<ContributeScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: affiliateDonations,
         ),
-        spacer,
+        ezSpacer,
 
         // Direct donations
         EzRowCol.sym(
@@ -220,19 +199,19 @@ class _ContributeScreenState extends State<ContributeScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: directDonations,
         ),
-        divider,
+        ezDivider,
 
         // Power //
 
         EzText(
-          l10n.csPowerQ,
+          l10n.csPower,
           style: textTheme.titleLarge,
           textAlign: TextAlign.center,
         ),
 
         // F@H team
         const FaHBanner(),
-        divider,
+        ezDivider,
 
         // Thanks
         EzText(
@@ -240,11 +219,11 @@ class _ContributeScreenState extends State<ContributeScreen> {
           style: subTitle,
           textAlign: TextAlign.center,
         ),
-        separator,
+        ezSeparator,
 
         const EzTranslationsPendingNotice(),
       ])),
-      fab: const SettingsFAB(),
+      fabs: <Widget>[const SettingsFAB()],
     );
   }
 }

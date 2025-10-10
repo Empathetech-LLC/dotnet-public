@@ -36,20 +36,19 @@ void testSuite({
 
       ezLog('\nValidating text');
       await ezFindText(tester, l10n.csThanks);
-      await ezFindText(tester, l10n.csGive);
 
       //* Test functionality *//
 
       ezLog('\nTesting functionality');
 
       ezLog('Time');
-      await ezFindText(tester, l10n.csTimeQ);
+      await ezFindText(tester, l10n.csTime);
 
       await ezFind(tester, find.widgetWithText(EzLink, l10n.gReachOut));
       await ezFind(tester, find.widgetWithText(EzLink, l10n.csGit));
 
       ezLog('Money');
-      await ezFindText(tester, l10n.csMoneyQ);
+      await ezFindText(tester, l10n.csMoney);
 
       await ezFindText(tester, 'GoFundMe');
       await ezFindText(tester, 'Patreon');
@@ -60,7 +59,7 @@ void testSuite({
       await ezFindText(tester, 'CashApp');
 
       ezLog('Power');
-      await ezFindText(tester, l10n.csPowerQ);
+      await ezFindText(tester, l10n.csPower);
 
       await testFaHBanner(tester, l10n);
 

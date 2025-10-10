@@ -3,6 +3,7 @@
  * See LICENSE for distribution and usage details.
  */
 
+import '../../utils/export.dart';
 import '../../widgets/export.dart';
 
 import 'package:flutter/material.dart';
@@ -16,6 +17,10 @@ class TextSettingsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) => DotnetScaffold(
         EzScreen(EzTextSettings(target: target)),
-        fab: EzConfigFAB(context, appName: 'dotnet', androidPackage: null),
+        fabs: <Widget>[
+          EzConfigFAB(context, appName: appName, androidPackage: null),
+          ezSpacer,
+          EzBackFAB(context),
+        ],
       );
 }

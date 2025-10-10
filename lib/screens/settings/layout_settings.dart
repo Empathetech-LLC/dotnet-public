@@ -3,6 +3,7 @@
  * See LICENSE for distribution and usage details.
  */
 
+import '../../utils/export.dart';
 import '../../widgets/export.dart';
 
 import 'package:flutter/material.dart';
@@ -14,6 +15,10 @@ class LayoutSettingsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) => DotnetScaffold(
         const EzScreen(EzLayoutSettings()),
-        fab: EzConfigFAB(context, appName: 'dotnet', androidPackage: null),
+        fabs: <Widget>[
+          EzConfigFAB(context, appName: appName, androidPackage: null),
+          ezSpacer,
+          EzBackFAB(context),
+        ],
       );
 }

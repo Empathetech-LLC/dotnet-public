@@ -165,6 +165,18 @@ abstract class Lang {
   /// **'Email {recipient}'**
   String gEmailTo(Object recipient);
 
+  /// No description provided for @gAnEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'an email'**
+  String get gAnEmail;
+
+  /// No description provided for @gEmailHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Opens your email client'**
+  String get gEmailHint;
+
   /// No description provided for @gNewsletter.
   ///
   /// In en, this message translates to:
@@ -200,6 +212,12 @@ abstract class Lang {
   /// In en, this message translates to:
   /// **'Open the GitHub page for Empathetic LLC'**
   String get gEmpathetechGitHint;
+
+  /// No description provided for @gImageCredit.
+  ///
+  /// In en, this message translates to:
+  /// **'Image credit: {creator}'**
+  String gImageCredit(Object creator);
 
   /// No description provided for @gReachOut.
   ///
@@ -360,13 +378,13 @@ abstract class Lang {
   /// No description provided for @msProvideValueContent1.
   ///
   /// In en, this message translates to:
-  /// **'The Empathetech mission is to re-balance the power in tech by making self hosting more accessible.\n\nWe will build apps that enable anyone to own their digital identity.\n\nWe will build bridges between the open source community and those without the required time, energy, or prior knowledge.\n\nAnd you can\'t build bridges (or apps) without a strong foundation! That\'s why '**
+  /// **'The Empathetech mission is to re-balance the power in tech by making self hosting more accessible.\n\nWe will build apps that enable anyone to own their digital identity.\nWe will build bridges between the open source community and those without the required time, energy, or prior knowledge.\n\nAnd you can\'t build bridges (or apps) without a strong foundation! That\'s why '**
   String get msProvideValueContent1;
 
   /// No description provided for @msProvideValueContent1Fix.
   ///
   /// In en, this message translates to:
-  /// **'The Empathetic mission is to re-balance the power in tech by making self hosting more accessible.\n\nWe will build apps that enable anyone to own their digital identity.\n\nWe will build bridges between the open source community and those without the required time, energy, or prior knowledge.\n\nAnd you can\'t build bridges (or apps) without a strong foundation! That\'s why '**
+  /// **'The Empathetic mission is to re-balance the power in tech by making self hosting more accessible.\n\nWe will build apps that enable anyone to own their digital identity.\nWe will build bridges between the open source community and those without the required time, energy, or prior knowledge.\n\nAnd you can\'t build bridges (or apps) without a strong foundation! That\'s why '**
   String get msProvideValueContent1Fix;
 
   /// No description provided for @msProvideValueContent2.
@@ -411,299 +429,11 @@ abstract class Lang {
   /// **'Hide promo'**
   String get psHidePromo;
 
-  /// No description provided for @psOpenUISlogan.
-  ///
-  /// In en, this message translates to:
-  /// **'Build apps for anyone'**
-  String get psOpenUISlogan;
-
-  /// No description provided for @psLike.
-  ///
-  /// In en, this message translates to:
-  /// **'Like users who need...'**
-  String get psLike;
-
-  /// No description provided for @psAccessible.
-  ///
-  /// In en, this message translates to:
-  /// **'Accessible controls'**
-  String get psAccessible;
-
-  /// No description provided for @psZeroStrain.
-  ///
-  /// In en, this message translates to:
-  /// **'zero eye strain'**
-  String get psZeroStrain;
-
-  /// No description provided for @psEverything.
-  ///
-  /// In en, this message translates to:
-  /// **'Everything in-between'**
-  String get psEverything;
-
-  /// No description provided for @psRandom.
-  ///
-  /// In en, this message translates to:
-  /// **'Random config applied.'**
-  String get psRandom;
-
-  /// No description provided for @psOpenUIIs.
-  ///
-  /// In en, this message translates to:
-  /// **'Open UI is an app generator.'**
-  String get psOpenUIIs;
-
-  /// No description provided for @psOpenUIDemo.
-  ///
-  /// In en, this message translates to:
-  /// **'Demonstration of Open UI creating a new app.'**
-  String get psOpenUIDemo;
-
-  /// No description provided for @psFoundation.
-  ///
-  /// In en, this message translates to:
-  /// **'It creates the foundation for accessible, cross-platform, multi-language, production ready apps in one click.'**
-  String get psFoundation;
-
-  /// No description provided for @psLocal.
-  ///
-  /// In en, this message translates to:
-  /// **'Everything runs on your computer. There are no credentials, credit cards, or cookies.'**
-  String get psLocal;
-
-  /// No description provided for @psRequirements.
-  ///
-  /// In en, this message translates to:
-  /// **'The only requirements are an internet connection and an idea.'**
-  String get psRequirements;
-
-  /// No description provided for @psFlutterToo.
-  ///
-  /// In en, this message translates to:
-  /// **'...and Flutter...'**
-  String get psFlutterToo;
-
-  /// No description provided for @psHow.
-  ///
-  /// In en, this message translates to:
-  /// **'How does it work?'**
-  String get psHow;
-
-  /// No description provided for @psEFUIsHow.
-  ///
-  /// In en, this message translates to:
-  /// **'Open UI is built upon, and get\'s you started with, '**
-  String get psEFUIsHow;
-
-  /// No description provided for @psSimplifies.
-  ///
-  /// In en, this message translates to:
-  /// **'EFUI is a library for building truly accessible apps. It simplifies...'**
-  String get psSimplifies;
-
-  /// No description provided for @psPlatform.
-  ///
-  /// In en, this message translates to:
-  /// **'Platform availability'**
-  String get psPlatform;
-
-  /// No description provided for @psPlatformContent.
-  ///
-  /// In en, this message translates to:
-  /// **'You can use EFUI to create on Android, iOS, Linux, macOS, Windows and Web!'**
-  String get psPlatformContent;
-
-  /// No description provided for @psResponsive.
-  ///
-  /// In en, this message translates to:
-  /// **'Responsive design'**
-  String get psResponsive;
-
-  /// No description provided for @psResponsiveContent.
-  ///
-  /// In en, this message translates to:
-  /// **'To see it in action, play with the window you\'re using right now!'**
-  String get psResponsiveContent;
-
-  /// No description provided for @psScreen.
-  ///
-  /// In en, this message translates to:
-  /// **'Screen reader support'**
-  String get psScreen;
-
-  /// No description provided for @psScreenContent.
-  ///
-  /// In en, this message translates to:
-  /// **'Empathetech apps support users who need '**
-  String get psScreenContent;
-
-  /// No description provided for @psScreenContentFix.
-  ///
-  /// In en, this message translates to:
-  /// **'Empathetic apps support users who need '**
-  String get psScreenContentFix;
-
-  /// No description provided for @psTalkBackHint.
-  ///
-  /// In en, this message translates to:
-  /// **'Open a link to TalkBack documentation'**
-  String get psTalkBackHint;
-
-  /// No description provided for @psAnd.
-  ///
-  /// In en, this message translates to:
-  /// **' and '**
-  String get psAnd;
-
-  /// No description provided for @psVoiceOverHint.
-  ///
-  /// In en, this message translates to:
-  /// **'Open a link to VoiceOver documentation'**
-  String get psVoiceOverHint;
-
-  /// No description provided for @psCustom.
-  ///
-  /// In en, this message translates to:
-  /// **'User customization'**
-  String get psCustom;
-
-  /// No description provided for @psCustomContent.
-  ///
-  /// In en, this message translates to:
-  /// **'The only way to be truly accessible to ALL customers is to empower them with the freedom of choice!\nEFUI provides an elegant UX for full control over an app\'s appearance.'**
-  String get psCustomContent;
-
-  /// No description provided for @psInternational.
-  ///
-  /// In en, this message translates to:
-  /// **'Internationalization'**
-  String get psInternational;
-
-  /// No description provided for @psInternationalContent.
-  ///
-  /// In en, this message translates to:
-  /// **'Empathetech apps have been translated to Spanish and French (so far).\nEFUI also provides the infrastructure for unlimited future translations.'**
-  String get psInternationalContent;
-
-  /// No description provided for @psInternationalContentFix.
-  ///
-  /// In en, this message translates to:
-  /// **'Empathetic apps have been translated to Spanish and French (so far).\nEFUI also provides the infrastructure for unlimited future translations.'**
-  String get psInternationalContentFix;
-
-  /// No description provided for @psReliability.
-  ///
-  /// In en, this message translates to:
-  /// **'Reliability'**
-  String get psReliability;
-
-  /// No description provided for @psReliabilityContent.
-  ///
-  /// In en, this message translates to:
-  /// **'Empathetech software is built to last. This is NOT AI code generation.\nEmpathetech programmers are people. LLMs are rubber ducks.'**
-  String get psReliabilityContent;
-
-  /// No description provided for @psReliabilityContentFix.
-  ///
-  /// In en, this message translates to:
-  /// **'Empathetic software is built to last. This is NOT AI code generation.\nEmpathetic programmers are people. LLMs are rubber ducks.'**
-  String get psReliabilityContentFix;
-
-  /// No description provided for @psGetStarted.
-  ///
-  /// In en, this message translates to:
-  /// **'Get started'**
-  String get psGetStarted;
-
-  /// No description provided for @psOpenUIIconLabel.
-  ///
-  /// In en, this message translates to:
-  /// **'a settings sandbox.'**
-  String get psOpenUIIconLabel;
-
-  /// No description provided for @psEFUITagLine.
-  ///
-  /// In en, this message translates to:
-  /// **'When built with EFUI, your apps can truly reach any audience!\n'**
-  String get psEFUITagLine;
-
-  /// No description provided for @psConsult.
-  ///
-  /// In en, this message translates to:
-  /// **' for consultation and contracting.'**
-  String get psConsult;
-
   /// No description provided for @psLearnMore.
   ///
   /// In en, this message translates to:
   /// **' to learn more.'**
   String get psLearnMore;
-
-  /// No description provided for @psPromoLabel.
-  ///
-  /// In en, this message translates to:
-  /// **'A promotional video for Insta SOS.'**
-  String get psPromoLabel;
-
-  /// No description provided for @psSOSDescription.
-  ///
-  /// In en, this message translates to:
-  /// **'A camera, SOS beacon, and list of your rights all in one place.\nIt\'s available in English, Arabic, Spanish, Filipino, French, Creole, Simplified Chinese, and supports screen readers.'**
-  String get psSOSDescription;
-
-  /// No description provided for @psSafeSOS.
-  ///
-  /// In en, this message translates to:
-  /// **'InstaSOS has no accounts, cookies, or ads.\n'**
-  String get psSafeSOS;
-
-  /// No description provided for @psFreeSOS.
-  ///
-  /// In en, this message translates to:
-  /// **'It\'s completely free and the code is '**
-  String get psFreeSOS;
-
-  /// No description provided for @psOpenSource.
-  ///
-  /// In en, this message translates to:
-  /// **'open source'**
-  String get psOpenSource;
-
-  /// No description provided for @psWeAlso.
-  ///
-  /// In en, this message translates to:
-  /// **'We also made a '**
-  String get psWeAlso;
-
-  /// No description provided for @psSetupGuide.
-  ///
-  /// In en, this message translates to:
-  /// **'setup guide'**
-  String get psSetupGuide;
-
-  /// No description provided for @psSetupGuideHint.
-  ///
-  /// In en, this message translates to:
-  /// **'Open a link to the README'**
-  String get psSetupGuideHint;
-
-  /// No description provided for @psConsider.
-  ///
-  /// In en, this message translates to:
-  /// **'Please consider '**
-  String get psConsider;
-
-  /// No description provided for @psContributing.
-  ///
-  /// In en, this message translates to:
-  /// **'contributing'**
-  String get psContributing;
-
-  /// No description provided for @psSAPS.
-  ///
-  /// In en, this message translates to:
-  /// **' to support software as a public service.'**
-  String get psSAPS;
 
   /// No description provided for @psDownloadNow.
   ///
@@ -711,47 +441,473 @@ abstract class Lang {
   /// **'Download now'**
   String get psDownloadNow;
 
-  /// No description provided for @psSOSIconLabel.
-  ///
-  /// In en, this message translates to:
-  /// **'a loudly colored notification bell.'**
-  String get psSOSIconLabel;
-
   /// No description provided for @psComingSoon.
   ///
   /// In en, this message translates to:
   /// **'Coming soon...'**
   String get psComingSoon;
 
-  /// No description provided for @psSignalPreview1.
+  /// No description provided for @ouSlogan.
   ///
   /// In en, this message translates to:
-  /// **'The next Empathetech app, '**
-  String get psSignalPreview1;
+  /// **'Build apps for anyone'**
+  String get ouSlogan;
 
-  /// No description provided for @psSignalPreview1Fix.
+  /// No description provided for @ouLike.
   ///
   /// In en, this message translates to:
-  /// **'The next Empathetic app, '**
-  String get psSignalPreview1Fix;
+  /// **'Like users who need...'**
+  String get ouLike;
 
-  /// No description provided for @psSignalPreview2.
+  /// No description provided for @ouAccessible.
+  ///
+  /// In en, this message translates to:
+  /// **'Accessible controls'**
+  String get ouAccessible;
+
+  /// No description provided for @ouZeroStrain.
+  ///
+  /// In en, this message translates to:
+  /// **'zero eye strain'**
+  String get ouZeroStrain;
+
+  /// No description provided for @ouEverything.
+  ///
+  /// In en, this message translates to:
+  /// **'Everything in-between'**
+  String get ouEverything;
+
+  /// No description provided for @ouRandom.
+  ///
+  /// In en, this message translates to:
+  /// **'Random config applied.'**
+  String get ouRandom;
+
+  /// No description provided for @ouIs.
+  ///
+  /// In en, this message translates to:
+  /// **'Open UI is an app generator.'**
+  String get ouIs;
+
+  /// No description provided for @ouDemo.
+  ///
+  /// In en, this message translates to:
+  /// **'Demonstration of Open UI creating a new app.'**
+  String get ouDemo;
+
+  /// No description provided for @ouFoundation.
+  ///
+  /// In en, this message translates to:
+  /// **'It creates the foundation for accessible, cross-platform, multi-language, production ready apps in one click.'**
+  String get ouFoundation;
+
+  /// No description provided for @ouLocal.
+  ///
+  /// In en, this message translates to:
+  /// **'Everything runs on your computer. There are no credentials, credit cards, or cookies.'**
+  String get ouLocal;
+
+  /// No description provided for @ouRequirements.
+  ///
+  /// In en, this message translates to:
+  /// **'The only requirements are an internet connection and an idea.'**
+  String get ouRequirements;
+
+  /// No description provided for @ouFlutterToo.
+  ///
+  /// In en, this message translates to:
+  /// **'...and Flutter...'**
+  String get ouFlutterToo;
+
+  /// No description provided for @ouHow.
+  ///
+  /// In en, this message translates to:
+  /// **'How does it work?'**
+  String get ouHow;
+
+  /// No description provided for @ouEFUIsHow.
+  ///
+  /// In en, this message translates to:
+  /// **'Open UI is built upon, and get\'s you started with, '**
+  String get ouEFUIsHow;
+
+  /// No description provided for @ouSimplifies.
+  ///
+  /// In en, this message translates to:
+  /// **'EFUI is a library for building truly accessible apps. It simplifies...'**
+  String get ouSimplifies;
+
+  /// No description provided for @ouPlatform.
+  ///
+  /// In en, this message translates to:
+  /// **'Platform availability'**
+  String get ouPlatform;
+
+  /// No description provided for @ouPlatformContent.
+  ///
+  /// In en, this message translates to:
+  /// **'You can use EFUI to create on Android, iOS, Linux, macOS, Windows and Web!'**
+  String get ouPlatformContent;
+
+  /// No description provided for @ouResponsive.
+  ///
+  /// In en, this message translates to:
+  /// **'Responsive design'**
+  String get ouResponsive;
+
+  /// No description provided for @ouResponsiveContent.
+  ///
+  /// In en, this message translates to:
+  /// **'To see it in action, play with the window you\'re using right now!'**
+  String get ouResponsiveContent;
+
+  /// No description provided for @ouScreen.
+  ///
+  /// In en, this message translates to:
+  /// **'Screen reader support'**
+  String get ouScreen;
+
+  /// No description provided for @ouScreenContent.
+  ///
+  /// In en, this message translates to:
+  /// **'Empathetech apps support users who need '**
+  String get ouScreenContent;
+
+  /// No description provided for @ouScreenContentFix.
+  ///
+  /// In en, this message translates to:
+  /// **'Empathetic apps support users who need '**
+  String get ouScreenContentFix;
+
+  /// No description provided for @ouTalkBackHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Open a link to TalkBack documentation'**
+  String get ouTalkBackHint;
+
+  /// No description provided for @ouAnd.
+  ///
+  /// In en, this message translates to:
+  /// **' and '**
+  String get ouAnd;
+
+  /// No description provided for @ouVoiceOverHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Open a link to VoiceOver documentation'**
+  String get ouVoiceOverHint;
+
+  /// No description provided for @ouCustom.
+  ///
+  /// In en, this message translates to:
+  /// **'User customization'**
+  String get ouCustom;
+
+  /// No description provided for @ouCustomContent.
+  ///
+  /// In en, this message translates to:
+  /// **'The only way to be truly accessible to ALL customers is to empower them with the freedom of choice!\nEFUI provides an elegant UX for full control over an app\'s appearance.'**
+  String get ouCustomContent;
+
+  /// No description provided for @ouInternational.
+  ///
+  /// In en, this message translates to:
+  /// **'Internationalization'**
+  String get ouInternational;
+
+  /// No description provided for @ouInternationalContent.
+  ///
+  /// In en, this message translates to:
+  /// **'Empathetech apps have been translated to Spanish and French (so far).\nEFUI also provides the infrastructure for unlimited future translations.'**
+  String get ouInternationalContent;
+
+  /// No description provided for @ouInternationalContentFix.
+  ///
+  /// In en, this message translates to:
+  /// **'Empathetic apps have been translated to Spanish and French (so far).\nEFUI also provides the infrastructure for unlimited future translations.'**
+  String get ouInternationalContentFix;
+
+  /// No description provided for @ouReliability.
+  ///
+  /// In en, this message translates to:
+  /// **'Reliability'**
+  String get ouReliability;
+
+  /// No description provided for @ouReliabilityContent.
+  ///
+  /// In en, this message translates to:
+  /// **'Empathetech software is built to last. This is NOT AI code generation.\nEmpathetech programmers are people. LLMs are rubber ducks.'**
+  String get ouReliabilityContent;
+
+  /// No description provided for @ouReliabilityContentFix.
+  ///
+  /// In en, this message translates to:
+  /// **'Empathetic software is built to last. This is NOT AI code generation.\nEmpathetic programmers are people. LLMs are rubber ducks.'**
+  String get ouReliabilityContentFix;
+
+  /// No description provided for @ouGetStarted.
+  ///
+  /// In en, this message translates to:
+  /// **'Get started'**
+  String get ouGetStarted;
+
+  /// No description provided for @ouOpenUIIconLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'a settings sandbox.'**
+  String get ouOpenUIIconLabel;
+
+  /// No description provided for @ouEFUITagLine.
+  ///
+  /// In en, this message translates to:
+  /// **'When built with EFUI, your apps can truly reach any audience!\n'**
+  String get ouEFUITagLine;
+
+  /// No description provided for @ouConsult.
+  ///
+  /// In en, this message translates to:
+  /// **' for consultation and contracting.'**
+  String get ouConsult;
+
+  /// No description provided for @sosPromoLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'A promotional video for Insta SOS.'**
+  String get sosPromoLabel;
+
+  /// No description provided for @sosDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'A camera, SOS beacon, and list of your rights all in one place.\nIt\'s available in English, Arabic, Spanish, Filipino, French, Creole, Simplified Chinese, and supports screen readers.'**
+  String get sosDescription;
+
+  /// No description provided for @sosPrivate.
+  ///
+  /// In en, this message translates to:
+  /// **'InstaSOS has no accounts, cookies, or ads.\n'**
+  String get sosPrivate;
+
+  /// No description provided for @sosFree.
+  ///
+  /// In en, this message translates to:
+  /// **'It\'s completely free and the code is '**
+  String get sosFree;
+
+  /// No description provided for @sosOpenSource.
+  ///
+  /// In en, this message translates to:
+  /// **'open source'**
+  String get sosOpenSource;
+
+  /// No description provided for @sosWeAlso.
+  ///
+  /// In en, this message translates to:
+  /// **'We also made a '**
+  String get sosWeAlso;
+
+  /// No description provided for @sosSetupGuide.
+  ///
+  /// In en, this message translates to:
+  /// **'setup guide'**
+  String get sosSetupGuide;
+
+  /// No description provided for @sosSetupGuideHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Open a link to the README'**
+  String get sosSetupGuideHint;
+
+  /// No description provided for @sosConsider.
+  ///
+  /// In en, this message translates to:
+  /// **'Please consider '**
+  String get sosConsider;
+
+  /// No description provided for @sosContributing.
+  ///
+  /// In en, this message translates to:
+  /// **'contributing'**
+  String get sosContributing;
+
+  /// No description provided for @sosSAPS.
+  ///
+  /// In en, this message translates to:
+  /// **' to support software as a public service.'**
+  String get sosSAPS;
+
+  /// No description provided for @sosIconLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'a loudly colored notification bell.'**
+  String get sosIconLabel;
+
+  /// No description provided for @llDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'An Empathetech Android Launcher.'**
+  String get llDescription;
+
+  /// No description provided for @llDescriptionFix.
+  ///
+  /// In en, this message translates to:
+  /// **'An Empathetic Android Launcher.'**
+  String get llDescriptionFix;
+
+  /// No description provided for @llInDev.
+  ///
+  /// In en, this message translates to:
+  /// **'Liminal is in development.\nIt\'s design leans towards minimalism, because our phones should be tools for us to use, not the other way around.'**
+  String get llInDev;
+
+  /// No description provided for @llBut.
+  ///
+  /// In en, this message translates to:
+  /// **'But, it\'s a minimalist launcher built with '**
+  String get llBut;
+
+  /// No description provided for @llWhimsy.
+  ///
+  /// In en, this message translates to:
+  /// **'.\nSo, your home screen will be free of clutter and distractions, AND be limitlessly customizable. With a bit of whimsy to boot.'**
+  String get llWhimsy;
+
+  /// No description provided for @llTheHood.
+  ///
+  /// In en, this message translates to:
+  /// **'A sample home screen with a picture of Portland\'s Mount Hood.'**
+  String get llTheHood;
+
+  /// No description provided for @llLasRosas.
+  ///
+  /// In en, this message translates to:
+  /// **'A sample home screen with a picture of Portland\'s Rose garden.'**
+  String get llLasRosas;
+
+  /// No description provided for @llFrogAndPigs.
+  ///
+  /// In en, this message translates to:
+  /// **'A sample home screen with a picture of Portland\'s wildlife.'**
+  String get llFrogAndPigs;
+
+  /// No description provided for @llModel.
+  ///
+  /// In en, this message translates to:
+  /// **'Liminal will be released under a \"pay what you can\" model.\nThe Google Play version will be paid, because (good) code doesn\'t write itself.\nThe GitHub repo will also have a freely available APK, because a healthy relationship with technology shouldn\'t be exclusive to those with expendable income.'**
+  String get llModel;
+
+  /// No description provided for @ssPreview1.
+  ///
+  /// In en, this message translates to:
+  /// **'Another Empathetech app, '**
+  String get ssPreview1;
+
+  /// No description provided for @ssPreview1Fix.
+  ///
+  /// In en, this message translates to:
+  /// **'Another Empathetic app, '**
+  String get ssPreview1Fix;
+
+  /// No description provided for @ssPreview2.
   ///
   /// In en, this message translates to:
   /// **', is in development.\nSmoke Signal is a social network app designed to keep us off our screens.'**
-  String get psSignalPreview2;
+  String get ssPreview2;
 
-  /// No description provided for @psSignalPreview3.
+  /// No description provided for @ssPreview3.
   ///
   /// In en, this message translates to:
   /// **'Smoke Signal will also be fully self hosted, thanks to '**
-  String get psSignalPreview3;
+  String get ssPreview3;
 
-  /// No description provided for @psAPHint.
+  /// No description provided for @ssAPHint.
   ///
   /// In en, this message translates to:
   /// **'Open a link to Activity Pub documentation'**
-  String get psAPHint;
+  String get ssAPHint;
+
+  /// No description provided for @vaIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'The way a technology is used cannot be decided by those who create it.'**
+  String get vaIntro;
+
+  /// No description provided for @vaTheBad.
+  ///
+  /// In en, this message translates to:
+  /// **'Which can be a good thing, a bad thing, or an in-between thing. Let\'s take a moment to discuss the bad: scam apps.'**
+  String get vaTheBad;
+
+  /// No description provided for @vaScamRisk.
+  ///
+  /// In en, this message translates to:
+  /// **' massively reduces the difficulty for building production ready apps. Combined with AI coding tools, it\'s easier than ever for scammers to create apps that look and feel legitimate. To help combat this, we\'ll maintain a list of verified apps.'**
+  String get vaScamRisk;
+
+  /// No description provided for @vaCheckIn.
+  ///
+  /// In en, this message translates to:
+  /// **'If you see an app that uses our UI, check here first. If it\'s not verified, our advice is: don\'t download it.\nBeyond that, this is not a list of recommendations. The only requirement to be on this list, is to not be a scam.\nWith that covered, the known UIniverse contains...'**
+  String get vaCheckIn;
+
+  /// No description provided for @vaFirst.
+  ///
+  /// In en, this message translates to:
+  /// **'First party'**
+  String get vaFirst;
+
+  /// No description provided for @vaThird.
+  ///
+  /// In en, this message translates to:
+  /// **'Third party verified'**
+  String get vaThird;
+
+  /// No description provided for @vaWaiting.
+  ///
+  /// In en, this message translates to:
+  /// **'Waiting'**
+  String get vaWaiting;
+
+  /// No description provided for @vaWillYou.
+  ///
+  /// In en, this message translates to:
+  /// **'Will you be the first?'**
+  String get vaWillYou;
+
+  /// No description provided for @vaKnown.
+  ///
+  /// In en, this message translates to:
+  /// **'Known scams'**
+  String get vaKnown;
+
+  /// No description provided for @vaSoGood.
+  ///
+  /// In en, this message translates to:
+  /// **'So far, so good!\nPlease don\'t be the first :)'**
+  String get vaSoGood;
+
+  /// No description provided for @vaPublished.
+  ///
+  /// In en, this message translates to:
+  /// **'If you\'ve published an app using EFUI, send us '**
+  String get vaPublished;
+
+  /// No description provided for @vaDoNoHarm.
+  ///
+  /// In en, this message translates to:
+  /// **'.\nWe don\'t have to love the app, and we\'re not publicly reviewing it. As long as it doesn\'t cause harm, it\'ll be verified.'**
+  String get vaDoNoHarm;
+
+  /// No description provided for @vaPrivateFree.
+  ///
+  /// In en, this message translates to:
+  /// **'If your app isn\'t publicly available, don\'t worry!\nBut if people you don\'t know can download it, let us know so we can verify it.'**
+  String get vaPrivateFree;
+
+  /// No description provided for @vaDoYourPart.
+  ///
+  /// In en, this message translates to:
+  /// **'If we haven\'t heard from you, we\'ll assume your product is a scam until proven otherwise.\nIf you think that\'s intense, think again. EFUI is years of work, shared freely. Sending an email is the least you can do.'**
+  String get vaDoYourPart;
 
   /// No description provided for @tsPageTitle.
   ///
@@ -782,6 +938,42 @@ abstract class Lang {
   /// In en, this message translates to:
   /// **'The Founder'**
   String get tsTheFounder;
+
+  /// No description provided for @tsBoardMember.
+  ///
+  /// In en, this message translates to:
+  /// **'Board Member'**
+  String get tsBoardMember;
+
+  /// No description provided for @tsYou.
+  ///
+  /// In en, this message translates to:
+  /// **'You?'**
+  String get tsYou;
+
+  /// No description provided for @tsMirrorLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'A black circle with a shimmer, to mimic a mirror.'**
+  String get tsMirrorLabel;
+
+  /// No description provided for @tsMirrorTip.
+  ///
+  /// In en, this message translates to:
+  /// **'Activate to send us an email'**
+  String get tsMirrorTip;
+
+  /// No description provided for @tsMirrorHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Ask about joining the team.'**
+  String get tsMirrorHint;
+
+  /// No description provided for @tsNonProfit.
+  ///
+  /// In en, this message translates to:
+  /// **'The only thing in the way of Empathetech becoming a proper nonprofit is the head count.\n\nIf you believe in the mission I\'ve laid out, and have a few hours a week to spare, please reach out!\n\nIt will be fully volunteer to start. I\'m not getting paid (yet) either.\nBut, I wouldn\'t be doing this if I didn\'t have a good plan for that too.'**
+  String get tsNonProfit;
 
   /// No description provided for @tsWild.
   ///
@@ -951,17 +1143,11 @@ abstract class Lang {
   /// **'Every bit you give to Empathetic takes a byte out of big tech.'**
   String get csEveryBitFix;
 
-  /// No description provided for @csGive.
+  /// No description provided for @csTime.
   ///
   /// In en, this message translates to:
-  /// **'Would you like to give...'**
-  String get csGive;
-
-  /// No description provided for @csTimeQ.
-  ///
-  /// In en, this message translates to:
-  /// **'Time?'**
-  String get csTimeQ;
+  /// **'Time'**
+  String get csTime;
 
   /// No description provided for @csBecome.
   ///
@@ -975,11 +1161,11 @@ abstract class Lang {
   /// **'GitHub contributor'**
   String get csGit;
 
-  /// No description provided for @csMoneyQ.
+  /// No description provided for @csMoney.
   ///
   /// In en, this message translates to:
-  /// **'Money?'**
-  String get csMoneyQ;
+  /// **'Money'**
+  String get csMoney;
 
   /// No description provided for @csOpenLink.
   ///
@@ -987,11 +1173,11 @@ abstract class Lang {
   /// **'Open a link to Empathetic\'s {page}'**
   String csOpenLink(Object page);
 
-  /// No description provided for @csPowerQ.
+  /// No description provided for @csPower.
   ///
   /// In en, this message translates to:
-  /// **'Power?'**
-  String get csPowerQ;
+  /// **'Power'**
+  String get csPower;
 
   /// No description provided for @csThanks.
   ///

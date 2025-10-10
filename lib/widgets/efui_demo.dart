@@ -18,7 +18,6 @@ class EFUIDemo extends StatelessWidget {
   Widget build(BuildContext context) {
     // Gather the fixed theme data //
 
-    const EzSwapSpacer swapSpacer = EzSwapSpacer();
     final EzSwapSpacer halfSwapSpacer =
         EzSwapSpacer(space: EzConfig.get(spacingKey) / 2);
 
@@ -46,14 +45,14 @@ class EFUIDemo extends StatelessWidget {
         child: EzTextIconButton(
           onPressed: () async {
             await EzBigButtonsConfig.onPressed();
-            reloadSnack('${l10n.psRandom} $reloadMessage');
+            reloadSnack('${l10n.ouRandom} $reloadMessage');
           },
           style: TextButton.styleFrom(padding: linkPadding),
           icon: EzIcon(Icons.touch_app),
-          label: l10n.psAccessible,
+          label: l10n.ouAccessible,
         ),
       ),
-      swapSpacer,
+      ezSwapSpacer,
 
       // Low vision
       Tooltip(
@@ -62,11 +61,11 @@ class EFUIDemo extends StatelessWidget {
         child: EzTextIconButton(
           onPressed: () async {
             await EzHighVisibilityConfig.onPressed(isDarkTheme(context));
-            reloadSnack('${l10n.psRandom} $reloadMessage');
+            reloadSnack('${l10n.ouRandom} $reloadMessage');
           },
           style: TextButton.styleFrom(padding: linkPadding),
           icon: EzIcon(Icons.contrast),
-          label: l10n.psZeroStrain,
+          label: l10n.ouZeroStrain,
         ),
       ),
       halfSwapSpacer,
@@ -87,11 +86,11 @@ class EFUIDemo extends StatelessWidget {
         child: EzTextIconButton(
           onPressed: () async {
             await EzConfig.randomize(isDarkTheme(context));
-            reloadSnack('${l10n.psRandom} $reloadMessage');
+            reloadSnack('${l10n.ouRandom} $reloadMessage');
           },
           style: TextButton.styleFrom(padding: linkPadding),
           icon: EzIcon(LineIcons.diceD6),
-          label: l10n.psEverything,
+          label: l10n.ouEverything,
         ),
       ),
     ];
@@ -101,7 +100,7 @@ class EFUIDemo extends StatelessWidget {
       children: <Widget>[
         // Demo buttons
         EzRowCol.sym(mainAxisSize: MainAxisSize.min, children: demos),
-        const EzSeparator(),
+        ezSpacer,
 
         // Reset button
         EzElevatedIconButton(

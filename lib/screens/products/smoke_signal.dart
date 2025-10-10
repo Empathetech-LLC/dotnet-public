@@ -20,9 +20,6 @@ class SmokeSignalScreen extends StatefulWidget {
 class _SmokeSignalScreenState extends State<SmokeSignalScreen> {
   // Gather the fixed theme data //
 
-  static const Widget newLine = EzNewLine(textAlign: TextAlign.center);
-  static const EzSeparator separator = EzSeparator();
-
   final double margin = EzConfig.get(marginKey);
   final double spacing = EzConfig.get(spacingKey);
 
@@ -44,7 +41,7 @@ class _SmokeSignalScreenState extends State<SmokeSignalScreen> {
           style: textTheme.displayLarge,
           textAlign: TextAlign.center,
         ),
-        EzMargin(),
+        ezMargin,
 
         // Icon link
         Container(
@@ -60,14 +57,14 @@ class _SmokeSignalScreenState extends State<SmokeSignalScreen> {
             ),
           ),
         ),
-        const EzSpacer(),
+        ezSpacer,
 
         // Description
         EzRichText(<InlineSpan>[
           EzPlainText(
-            text: l10n.psSignalPreview1,
+            text: l10n.ssPreview1,
             style: textTheme.bodyLarge,
-            semanticsLabel: l10n.psSignalPreview1Fix,
+            semanticsLabel: l10n.ssPreview1Fix,
           ),
           EzInlineLink(
             smokeSignal,
@@ -77,15 +74,15 @@ class _SmokeSignalScreenState extends State<SmokeSignalScreen> {
             hint: smokeSignalSource,
           ),
           EzPlainText(
-            text: l10n.psSignalPreview2,
+            text: l10n.ssPreview2,
             style: textTheme.bodyLarge,
           ),
         ], textAlign: TextAlign.center),
-        newLine,
+        ezCenterLine,
 
         EzRichText(<InlineSpan>[
           EzPlainText(
-            text: l10n.psSignalPreview3,
+            text: l10n.ssPreview3,
             style: textTheme.bodyLarge,
           ),
           EzInlineLink(
@@ -93,10 +90,10 @@ class _SmokeSignalScreenState extends State<SmokeSignalScreen> {
             style: textTheme.bodyLarge,
             textAlign: TextAlign.center,
             url: Uri.parse('https://www.w3.org/TR/activitypub/'),
-            hint: l10n.psAPHint,
+            hint: l10n.ssAPHint,
           ),
         ], textAlign: TextAlign.center),
-        newLine,
+        ezCenterLine,
 
         // Collaboration call-out
         EzRichText(<InlineSpan>[
@@ -113,10 +110,10 @@ class _SmokeSignalScreenState extends State<SmokeSignalScreen> {
           ),
         ], textAlign: TextAlign.center),
 
-        separator,
+        ezSeparator,
         const EzTranslationsPendingNotice(),
       ])),
-      fab: const SettingsFAB(),
+      fabs: const <Widget>[SettingsFAB()],
     );
   }
 }

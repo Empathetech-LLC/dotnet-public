@@ -27,8 +27,6 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   // Gather the fixed theme data //
 
-  static const EzSeparator separator = EzSeparator();
-
   final double margin = EzConfig.get(marginKey);
   final double spacing = EzConfig.get(spacingKey);
 
@@ -51,6 +49,25 @@ class _HomeScreenState extends State<HomeScreen> {
 
   late bool fin = widget.fin || GoRouter.of(context).state.uri.path != homePath;
 
+  Widget animation({
+    required double sloganHeight,
+    required double letterRatio,
+  }) =>
+      LogoAnimation(
+        key: ValueKey<double>(letterRatio),
+        margin: margin,
+        height: sloganHeight,
+        letterRatio: letterRatio,
+        finSpacing: spacing * 2,
+        slogan: l10n.hsSlogan,
+        sloganSemantics: l10n.hsSloganFix,
+        videoSemantics: l10n.hsVideoLabel,
+        play: mounted && !fin,
+        onComplete: () {
+          if (!fin) setState(() => fin = true);
+        },
+      );
+
   // Set the page title //
 
   @override
@@ -69,10 +86,8 @@ class _HomeScreenState extends State<HomeScreen> {
     final double sloganHeight =
         max(spacing * 7, (heightOf(context) / 3) * displayScale);
 
-    final Widget newLine = EzNewLine(
-      style: subTitle,
-      textAlign: TextAlign.center,
-    );
+    final Widget newLine =
+        EzNewLine(style: subTitle, textAlign: TextAlign.center);
 
     // Return the build //
 
@@ -88,36 +103,13 @@ class _HomeScreenState extends State<HomeScreen> {
               minHeight: sloganHeight,
               maxHeight: sloganHeight,
             ),
-            child: EzSwapWidget(
-              restricted: EmpathetechLogoAnimation(
-                margin: margin,
-                height: sloganHeight,
-                letterRatio: 0.90,
-                finSpacing: spacing * 2,
-                slogan: l10n.hsSlogan,
-                sloganSemantics: l10n.hsSloganFix,
-                videoSemantics: l10n.hsVideoLabel,
-                play: mounted && !fin,
-                onComplete: () {
-                  if (!fin) setState(() => fin = true);
-                },
-              ),
-              expanded: EmpathetechLogoAnimation(
-                margin: margin,
-                height: sloganHeight,
-                letterRatio: 0.75,
-                finSpacing: spacing * 2,
-                slogan: l10n.hsSlogan,
-                sloganSemantics: l10n.hsSloganFix,
-                videoSemantics: l10n.hsVideoLabel,
-                play: mounted && !fin,
-                onComplete: () {
-                  if (!fin) setState(() => fin = true);
-                },
-              ),
+            child: EzAdaptiveWidget(
+              small: animation(sloganHeight: sloganHeight, letterRatio: 0.9),
+              medium: animation(sloganHeight: sloganHeight, letterRatio: 0.75),
+              large: animation(sloganHeight: sloganHeight, letterRatio: 0.667),
             ),
           ),
-          separator,
+          ezSeparator,
 
           // Mini-mission statement
           AnimatedOpacity(
@@ -174,7 +166,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
             ),
           ),
-          separator,
+          ezSeparator,
           const EzTranslationsPendingNotice(),
         ]),
         margin: EdgeInsets.zero,
@@ -193,12 +185,12 @@ class _HomeScreenState extends State<HomeScreen> {
             child: SizedBox(
               width: toolbarHeight,
               height: toolbarHeight,
-              child: EmpathetechLogo(margin: margin),
+              child: Logo(margin: margin),
             ),
           ),
         ),
       ),
-      fab: const SettingsFAB(),
+      fabs: <Widget>[const SettingsFAB()],
     );
   }
 }

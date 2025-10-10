@@ -38,28 +38,28 @@ void testSuite({
 
       ezLog('\nValidating text');
       await ezFindText(tester, efuiL);
-      await ezFind(tester, find.widgetWithText(EzLink, l10n.psOpenUISlogan));
+      await ezFind(tester, find.widgetWithText(EzLink, l10n.ouSlogan));
 
       await ezFind(tester, find.widgetWithText(EzLink, 'Flutter'));
       await ezFind(tester, find.widgetWithText(EzLink, 'Flutter'));
 
-      await ezFindText(tester, l10n.psPlatform);
-      await ezFindText(tester, l10n.psPlatformContent);
+      await ezFindText(tester, l10n.ouPlatform);
+      await ezFindText(tester, l10n.ouPlatformContent);
 
-      await ezFindText(tester, l10n.psResponsive);
-      await ezFindText(tester, l10n.psResponsiveContent);
+      await ezFindText(tester, l10n.ouResponsive);
+      await ezFindText(tester, l10n.ouResponsiveContent);
 
-      await ezFindText(tester, l10n.psScreen);
+      await ezFindText(tester, l10n.ouScreen);
       await ezFind(tester, find.widgetWithText(EzLink, 'TalkBack'));
       await ezFind(tester, find.widgetWithText(EzLink, 'VoiceOver'));
 
-      await ezFindText(tester, l10n.psCustom);
-      await ezFindText(tester, l10n.psCustomContent);
+      await ezFindText(tester, l10n.ouCustom);
+      await ezFindText(tester, l10n.ouCustomContent);
 
-      await ezFindText(tester, l10n.psInternational);
-      await ezFindText(tester, l10n.psInternationalContent);
+      await ezFindText(tester, l10n.ouInternational);
+      await ezFindText(tester, l10n.ouInternationalContent);
 
-      await ezFindText(tester, l10n.psEFUITagLine);
+      await ezFindText(tester, l10n.ouEFUITagLine);
 
       await ezFind(tester, find.widgetWithText(EzLink, l10n.gReachOut));
 

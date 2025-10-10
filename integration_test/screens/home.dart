@@ -32,8 +32,8 @@ void testSuite({
 
       ezLog('\nValidating text');
       await ezFindText(tester, l10n.hsSlogan);
-      await ezFindWidget(tester, EmpathetechLogo);
-      await ezFindWidget(tester, EmpathetechLogoAnimation);
+      await ezFindWidget(tester, Logo);
+      await ezFindWidget(tester, LogoAnimation);
 
       //* Test functionality *//
 

@@ -24,9 +24,10 @@ class SettingsHomeScreen extends StatelessWidget {
           footer: <Widget>[EzSeparator(), EFUIShoutOut()],
         )),
         fabs: <Widget>[
+          ezSpacer,
           EzConfigFAB(context, appName: appName, androidPackage: null),
           ezSpacer,
-          EzBackFAB(context),
+          const EzBackFAB(),
         ],
       );
 }

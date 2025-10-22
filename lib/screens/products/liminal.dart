@@ -20,7 +20,6 @@ class LiminalScreen extends StatefulWidget {
 class _LiminalScreenState extends State<LiminalScreen> {
   // Gather the fixed theme data //
 
-  final EdgeInsets wrapPadding = EzInsets.wrap(EzConfig.get(spacingKey));
   late final double imageWidth = ezImageSize(context) * 1.5;
 
   late final Lang l10n = Lang.of(context)!;
@@ -77,50 +76,49 @@ class _LiminalScreenState extends State<LiminalScreen> {
           style: textTheme.bodyLarge,
           textAlign: TextAlign.center,
         ),
-        ezSpacer,
+        ezSeparator,
 
-        Wrap(
-          alignment: WrapAlignment.center,
-          runAlignment: WrapAlignment.center,
-          crossAxisAlignment: WrapCrossAlignment.center,
+        EzScrollView(
+          startCentered: true,
+          showScrollHint: true,
+          scrollDirection: Axis.horizontal,
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            Padding(
-              padding: wrapPadding,
-              child: Tooltip(
-                message: '${l10n.llTheHood}\n${l10n.gImageCredit(crosby)}',
-                child: EzImage(
-                  width: imageWidth,
-                  image: theHoodImage,
-                  semanticLabel: l10n.llTheHood,
-                ),
+            // Mt Hood
+            Tooltip(
+              message: '${l10n.llTheHood}\n${l10n.gImageCredit(crosby)}',
+              child: EzImage(
+                width: imageWidth,
+                image: theHoodImage,
+                semanticLabel: l10n.llTheHood,
               ),
             ),
-            Padding(
-              padding: wrapPadding,
-              child: Tooltip(
-                message: '${l10n.llLasRosas}\n${l10n.gImageCredit(mike)}',
-                child: EzImage(
-                  width: imageWidth,
-                  image: lasRosasImage,
-                  semanticLabel: l10n.llLasRosas,
-                ),
+            ezRowSpacer,
+
+            // Rose Garden
+            Tooltip(
+              message: '${l10n.llLasRosas}\n${l10n.gImageCredit(mike)}',
+              child: EzImage(
+                width: imageWidth,
+                image: lasRosasImage,
+                semanticLabel: l10n.llLasRosas,
               ),
             ),
-            Padding(
-              padding: wrapPadding,
-              child: Tooltip(
-                message:
-                    '${l10n.llFrogAndPigs}\n${l10n.gImageCredit(nikkolas)}',
-                child: EzImage(
-                  width: imageWidth,
-                  image: laGrenouilleImage,
-                  semanticLabel: l10n.llFrogAndPigs,
-                ),
+            ezRowSpacer,
+
+            // La Grenouille
+            Tooltip(
+              message: '${l10n.llFrogAndPigs}\n${l10n.gImageCredit(nikkolas)}',
+              child: EzImage(
+                width: imageWidth,
+                image: laGrenouilleImage,
+                semanticLabel: l10n.llFrogAndPigs,
               ),
             ),
           ],
         ),
-        ezSpacer,
+        ezSeparator,
 
         // Pricing && contact
         EzText(
@@ -147,7 +145,7 @@ class _LiminalScreenState extends State<LiminalScreen> {
         ezSeparator,
         const EzTranslationsPendingNotice(),
       ])),
-      fabs: const <Widget>[SettingsFAB()],
+      fabs: const <Widget>[ezSpacer, SettingsFAB()],
     );
   }
 }

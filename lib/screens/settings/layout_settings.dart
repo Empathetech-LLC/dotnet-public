@@ -16,9 +16,10 @@ class LayoutSettingsScreen extends StatelessWidget {
   Widget build(BuildContext context) => DotnetScaffold(
         const EzScreen(EzLayoutSettings()),
         fabs: <Widget>[
+          ezSpacer,
           EzConfigFAB(context, appName: appName, androidPackage: null),
           ezSpacer,
-          EzBackFAB(context),
+          const EzBackFAB(),
         ],
       );
 }

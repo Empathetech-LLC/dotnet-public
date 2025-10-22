@@ -223,7 +223,7 @@ class _ContributeScreenState extends State<ContributeScreen> {
 
         const EzTranslationsPendingNotice(),
       ])),
-      fabs: <Widget>[const SettingsFAB()],
+      fabs: const <Widget>[ezSpacer, SettingsFAB()],
     );
   }
 }

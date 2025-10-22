@@ -112,7 +112,12 @@ class DotnetScaffold extends StatelessWidget {
       pageLinks: pageLinks,
     );
 
-    final double newSmall = 2 * (toolbarHeight + 2 * margin) + pageLinks.width;
+    const Widget updater = EzUpdaterFAB(
+      appVersion: '5.1.1',
+      versionSource:
+          'https://raw.githubusercontent.com/Empathetech-LLC/dotnet-public/refs/heads/main/APP_VERSION',
+      isWeb: true,
+    );
 
     // Define the build(s) //
 
@@ -122,7 +127,7 @@ class DotnetScaffold extends StatelessWidget {
       logo: brandLogo,
       drawer: drawer,
       body: body,
-      fabs: fabs,
+      fabs: <Widget>[updater, if (fabs != null) ...fabs!],
     );
 
     final _ExpandedScaffold expanded = _ExpandedScaffold(
@@ -132,10 +137,12 @@ class DotnetScaffold extends StatelessWidget {
       pageLinks: pageLinks,
       iconLinksMenu: iconLinksMenu,
       body: body,
-      fabs: fabs,
+      fabs: <Widget>[updater, if (fabs != null) ...fabs!],
     );
 
     // Return the build //
+
+    final double newSmall = 2 * (toolbarHeight + 2 * margin) + pageLinks.width;
 
     return EzAdaptiveParent(
       small: restricted,

@@ -64,7 +64,7 @@ class _ErrorScreenState extends State<ErrorScreen> {
         ),
         useImageDecoration: false,
       ),
-      fabs: <Widget>[const SettingsFAB()],
+      fabs: const <Widget>[ezSpacer, SettingsFAB()],
     );
   }
 }

@@ -428,7 +428,7 @@ class LangEs extends Lang {
 
   @override
   String get vaTheBad =>
-      'Lo cual puede ser algo bueno, algo malo o algo intermedio. Tomémonos un momento para hablar de lo malo: las aplicaciones fraudulentas.';
+      'Lo cual puede ser algo bueno, algo malo o algo intermedio.\nTomémonos un momento para hablar de lo malo: las aplicaciones fraudulentas.';
 
   @override
   String get vaScamRisk =>
@@ -459,7 +459,7 @@ class LangEs extends Lang {
 
   @override
   String get vaPublished =>
-      'Si has publicado una aplicación usando EFUI, envíanos ';
+      'Si has publicado una aplicación usando Open UI, envíanos ';
 
   @override
   String get vaDoNoHarm =>
@@ -471,7 +471,7 @@ class LangEs extends Lang {
 
   @override
   String get vaDoYourPart =>
-      'Si no hemos tenido noticias tuyas, asumiremos que tu producto es una estafa hasta que se demuestre lo contrario.\nSi crees que eso es exagerado, piénsalo bien. EFUI son años de trabajo, compartidos libremente. Enviar un correo electrónico es lo mínimo que puedes hacer.';
+      'Si no hemos tenido noticias tuyas, asumiremos que tu producto es una estafa hasta que se demuestre lo contrario.\nSi crees que eso es exagerado, piénsalo bien. Open UI son años de trabajo, compartidos libremente. Enviar un correo electrónico es lo mínimo que puedes hacer.';
 
   @override
   String get tsPageTitle => 'Equipo';
@@ -506,7 +506,7 @@ class LangEs extends Lang {
 
   @override
   String get tsNonProfit =>
-      'Lo único que impide que Empathetech se convierta en una organización sin fines de lucro adecuada es el número de personas.\n\nSi crees en la misión que he expuesto y tienes unas horas libres a la semana, ¡ponte en contacto!\n\nSerá completamente voluntario al principio. Yo tampoco estoy recibiendo pago (todavía).\nPero no haría esto si no tuviera un buen plan para eso también.';
+      'Lo único que impide que Empathetech se convierta en una organización sin fines de lucro adecuada es el número de personas.\nSi crees en la misión que he expuesto y tienes unas horas libres a la semana, ¡ponte en contacto!\n\nSerá completamente voluntario al principio. Yo tampoco estoy recibiendo pago (todavía).\nPero no haría esto si no tuviera un buen plan para eso también.\n\nSe anima a todos los interesados ​​a que se pongan en contacto, pero existe una necesidad particular de personas con experiencia en:\ngestión de redes sociales, recaudación de fondos, y redacción de subvenciones.';
 
   @override
   String get tsWild => 'En la naturaleza';

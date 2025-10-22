@@ -193,7 +193,7 @@ class _VerifiedScreenState extends State<VerifiedScreen> {
         ezSeparator,
         const EzTranslationsPendingNotice(),
       ])),
-      fabs: const <Widget>[SettingsFAB()],
+      fabs: const <Widget>[ezSpacer, SettingsFAB()],
     );
   }
 }

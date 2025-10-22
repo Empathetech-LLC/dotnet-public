@@ -178,7 +178,7 @@
 
 
   "vaIntro": "La forma en que se usa una tecnología no puede ser decidida por quienes la crean.",
-  "vaTheBad": "Lo cual puede ser algo bueno, algo malo o algo intermedio. Tomémonos un momento para hablar de lo malo: las aplicaciones fraudulentas.",
+  "vaTheBad": "Lo cual puede ser algo bueno, algo malo o algo intermedio.\nTomémonos un momento para hablar de lo malo: las aplicaciones fraudulentas.",
   "vaScamRisk": " reduce enormemente la dificultad de crear aplicaciones listas para producción. Combinado con herramientas de codificación con IA, ahora es más fácil que nunca para los estafadores crear aplicaciones que parecen y se sienten legítimas. Para ayudar a combatir esto, mantendremos una lista de aplicaciones verificadas.",
   "vaCheckIn": "Si ves una aplicación que usa nuestra interfaz, revisa aquí primero. Si no está verificada, nuestro consejo es: no la descargues.\nMás allá de eso, esta no es una lista de recomendaciones. El único requisito para estar en esta lista es no ser una estafa.\nDicho esto, el UIniverso conocido contiene...",
 
@@ -189,10 +189,10 @@
   "vaKnown": "Estafas conocidas",
   "vaSoGood": "Hasta ahora, todo bien.\nPor favor, no seas el primero :)",
 
-  "vaPublished": "Si has publicado una aplicación usando EFUI, envíanos ",
+  "vaPublished": "Si has publicado una aplicación usando Open UI, envíanos ",
   "vaDoNoHarm": ".\nNo tenemos que amar la aplicación, y no la evaluaremos públicamente. Mientras no cause daño, será verificada.",
   "vaPrivateFree": "Si tu aplicación no está disponible públicamente, ¡no te preocupes!\nPero si personas que no conoces pueden descargarla, avísanos para que podamos verificarla.",
-  "vaDoYourPart": "Si no hemos tenido noticias tuyas, asumiremos que tu producto es una estafa hasta que se demuestre lo contrario.\nSi crees que eso es exagerado, piénsalo bien. EFUI son años de trabajo, compartidos libremente. Enviar un correo electrónico es lo mínimo que puedes hacer.",
+  "vaDoYourPart": "Si no hemos tenido noticias tuyas, asumiremos que tu producto es una estafa hasta que se demuestre lo contrario.\nSi crees que eso es exagerado, piénsalo bien. Open UI son años de trabajo, compartidos libremente. Enviar un correo electrónico es lo mínimo que puedes hacer.",
 
   
 
@@ -207,7 +207,7 @@
   "tsMirrorLabel": "Un círculo negro con un brillo, para imitar un espejo.",
   "tsMirrorTip": "Activa para enviarnos un correo electrónico",
   "tsMirrorHint": "Pregunta sobre cómo unirte al equipo.",
-  "tsNonProfit": "Lo único que impide que Empathetech se convierta en una organización sin fines de lucro adecuada es el número de personas.\n\nSi crees en la misión que he expuesto y tienes unas horas libres a la semana, ¡ponte en contacto!\n\nSerá completamente voluntario al principio. Yo tampoco estoy recibiendo pago (todavía).\nPero no haría esto si no tuviera un buen plan para eso también.",
+  "tsNonProfit": "Lo único que impide que Empathetech se convierta en una organización sin fines de lucro adecuada es el número de personas.\nSi crees en la misión que he expuesto y tienes unas horas libres a la semana, ¡ponte en contacto!\n\nSerá completamente voluntario al principio. Yo tampoco estoy recibiendo pago (todavía).\nPero no haría esto si no tuviera un buen plan para eso también.\n\nSe anima a todos los interesados ​​a que se pongan en contacto, pero existe una necesidad particular de personas con experiencia en:\ngestión de redes sociales, recaudación de fondos, y redacción de subvenciones.",
 
   "tsWild": "En la naturaleza",
   "ts2025BoothLabel": "El stand de Empathetech en Open Sauce 2025.",

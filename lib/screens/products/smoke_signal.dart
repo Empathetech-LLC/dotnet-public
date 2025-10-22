@@ -113,7 +113,7 @@ class _SmokeSignalScreenState extends State<SmokeSignalScreen> {
         ezSeparator,
         const EzTranslationsPendingNotice(),
       ])),
-      fabs: const <Widget>[SettingsFAB()],
+      fabs: const <Widget>[ezSpacer, SettingsFAB()],
     );
   }
 }

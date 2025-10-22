@@ -312,6 +312,7 @@ class _OpenUIScreenState extends State<OpenUIScreen> {
         ),
       ),
       fabs: <Widget>[
+        ezSpacer,
         EzConfigFAB(context, appName: appName, androidPackage: null),
         ezSpacer,
         const SettingsFAB(),

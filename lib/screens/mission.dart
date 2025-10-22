@@ -243,7 +243,7 @@ class _MissionScreenState extends State<MissionScreen> {
           child: const EzTranslationsPendingNotice(textAlign: TextAlign.start),
         ),
       ])),
-      fabs: <Widget>[const SettingsFAB()],
+      fabs: const <Widget>[ezSpacer, SettingsFAB()],
     );
   }
 }

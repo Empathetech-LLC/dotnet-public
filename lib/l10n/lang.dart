@@ -366,7 +366,7 @@ abstract class Lang {
   /// No description provided for @msFindSolutionContent.
   ///
   /// In en, this message translates to:
-  /// **'Fortunately, there are amazing technologists all over the world working together towards a better narrative.\nOne where the service providers and the customers have an active, healthy, and mutually beneficial relationship.\n\nThe open source community.\n\nAt its core, open source software is freely available for anyone to view. Many projects can also be freely modified and redistributed.\nIt\'s software with nothing to hide, built by folks who recognize shared problems require shared solutions.\n\nAnd in the wonderful world of open source software, there lies a sub category: self hosting software.\n\nSelf hosting lets us take any not-in-use computer (pocket sized ones too) and store our data there.\nBy self hosting, we can control our own digital presence, rather than sign away control to some far away server, owned by an un-empathetic corporation.\n\nAnd there are self hosted versions of just about everything! From Adobe to Zoom, there are passionate hacktivists building alternatives that put people over profits.\n\nSo, how does one make the switch from profit first/closed source to open source? How do they start self hosting?\nIt takes a lot of time, energy, and prior knowledge.\n\nThat\'s where we come in.'**
+  /// **'Fortunately, there are amazing technologists all over the world working together towards a better narrative.\nOne where the service providers and the customers have an active, healthy, and mutually beneficial relationship.\n\nThe open source community.\n\nAt its core, open source software is freely available for anyone to view. Many projects can also be freely modified and redistributed.\nIt\'s software with nothing to hide, built by folks who recognize shared problems require shared solutions.\n\nAnd in the wonderful world of open source software, there lies a sub category: self-hosting software.\n\nSelf-hosting lets us take any not-in-use computer (pocket sized ones too) and store our data there.\nBy self-hosting, we can control our own digital presence, rather than sign away control to some far away server, owned by an un-empathetic corporation.\n\nAnd there are self-hosted versions of just about everything! From Adobe to Zoom, there are passionate hacktivists building alternatives that put people over profits.\n\nSo, how does one make the switch from profit first/closed source to open source? How do they start self-hosting?\nIt takes a lot of time, energy, and prior knowledge.\n\nThat\'s where we come in.'**
   String get msFindSolutionContent;
 
   /// No description provided for @msProvideValue.
@@ -378,13 +378,13 @@ abstract class Lang {
   /// No description provided for @msProvideValueContent1.
   ///
   /// In en, this message translates to:
-  /// **'The Empathetech mission is to re-balance the power in tech by making self hosting more accessible.\n\nWe will build apps that enable anyone to own their digital identity.\nWe will build bridges between the open source community and those without the required time, energy, or prior knowledge.\n\nAnd you can\'t build bridges (or apps) without a strong foundation! That\'s why '**
+  /// **'The Empathetech mission is to re-balance the power in tech by making self-hosting more accessible.\n\nWe will build apps that enable anyone to own their digital identity.\nWe will build bridges between the open source community and those without the required time, energy, or prior knowledge.\n\nAnd you can\'t build bridges (or apps) without a strong foundation! That\'s why '**
   String get msProvideValueContent1;
 
   /// No description provided for @msProvideValueContent1Fix.
   ///
   /// In en, this message translates to:
-  /// **'The Empathetic mission is to re-balance the power in tech by making self hosting more accessible.\n\nWe will build apps that enable anyone to own their digital identity.\nWe will build bridges between the open source community and those without the required time, energy, or prior knowledge.\n\nAnd you can\'t build bridges (or apps) without a strong foundation! That\'s why '**
+  /// **'The Empathetic mission is to re-balance the power in tech by making self-hosting more accessible.\n\nWe will build apps that enable anyone to own their digital identity.\nWe will build bridges between the open source community and those without the required time, energy, or prior knowledge.\n\nAnd you can\'t build bridges (or apps) without a strong foundation! That\'s why '**
   String get msProvideValueContent1Fix;
 
   /// No description provided for @msProvideValueContent2.
@@ -816,7 +816,7 @@ abstract class Lang {
   /// No description provided for @ssPreview3.
   ///
   /// In en, this message translates to:
-  /// **'Smoke Signal will also be fully self hosted, thanks to '**
+  /// **'Smoke Signal will also be fully self-hosted, thanks to '**
   String get ssPreview3;
 
   /// No description provided for @ssAPHint.
@@ -834,7 +834,7 @@ abstract class Lang {
   /// No description provided for @vaTheBad.
   ///
   /// In en, this message translates to:
-  /// **'Which can be a good thing, a bad thing, or an in-between thing. Let\'s take a moment to discuss the bad: scam apps.'**
+  /// **'Which can be a good thing, a bad thing, or an in-between thing.\nLet\'s take a moment to discuss the bad: scam apps.'**
   String get vaTheBad;
 
   /// No description provided for @vaScamRisk.
@@ -894,7 +894,7 @@ abstract class Lang {
   /// No description provided for @vaDoNoHarm.
   ///
   /// In en, this message translates to:
-  /// **'.\nWe don\'t have to love the app, and we\'re not publicly reviewing it. As long as it doesn\'t cause harm, it\'ll be verified.'**
+  /// **'.\nWe don\'t have to love the app, and we\'re not publicly reviewing it.\nWe\'ll check the code, and as long as it doesn\'t cause harm, it\'ll be verified.'**
   String get vaDoNoHarm;
 
   /// No description provided for @vaPrivateFree.
@@ -906,7 +906,7 @@ abstract class Lang {
   /// No description provided for @vaDoYourPart.
   ///
   /// In en, this message translates to:
-  /// **'If we haven\'t heard from you, we\'ll assume your product is a scam until proven otherwise.\nIf you think that\'s intense, think again. EFUI is years of work, shared freely. Sending an email is the least you can do.'**
+  /// **'If we haven\'t heard from you, we\'ll assume your product is a scam until proven otherwise.\nIf you think that\'s intense, think again. Open UI is years of work, shared freely. Sending an email is the least you can do.'**
   String get vaDoYourPart;
 
   /// No description provided for @tsPageTitle.
@@ -972,7 +972,7 @@ abstract class Lang {
   /// No description provided for @tsNonProfit.
   ///
   /// In en, this message translates to:
-  /// **'The only thing in the way of Empathetech becoming a proper nonprofit is the head count.\n\nIf you believe in the mission I\'ve laid out, and have a few hours a week to spare, please reach out!\n\nIt will be fully volunteer to start. I\'m not getting paid (yet) either.\nBut, I wouldn\'t be doing this if I didn\'t have a good plan for that too.'**
+  /// **'The only thing in the way of Empathetech becoming a proper nonprofit is the head count.\nIf you believe in the mission I\'ve laid out, and have a few hours a week to spare, please reach out!\n\nIt will be fully volunteer to start. I\'m not getting paid (yet) either.\nBut, I wouldn\'t be doing this if I didn\'t have a good plan for that too.\n\nAll who are interested are encouraged to reach out, but there is a particular need for folks with experience in:\nsocial media management, fundraising, and grant writing.'**
   String get tsNonProfit;
 
   /// No description provided for @tsWild.

@@ -429,7 +429,7 @@ class LangFr extends Lang {
 
   @override
   String get vaTheBad =>
-      'Ce qui peut être une bonne chose, une mauvaise chose, ou quelque chose entre les deux. Prenons un moment pour parler du mauvais : les applications frauduleuses.';
+      'Ce qui peut être une bonne chose, une mauvaise chose, ou quelque chose entre les deux.\nPrenons un moment pour parler du mauvais : les applications frauduleuses.';
 
   @override
   String get vaScamRisk =>
@@ -460,7 +460,7 @@ class LangFr extends Lang {
 
   @override
   String get vaPublished =>
-      'Si vous avez publié une application utilisant EFUI, envoyez-nous ';
+      'Si vous avez publié une application utilisant Open UI, envoyez-nous ';
 
   @override
   String get vaDoNoHarm =>
@@ -472,7 +472,7 @@ class LangFr extends Lang {
 
   @override
   String get vaDoYourPart =>
-      'Si nous n’avons pas eu de vos nouvelles, nous supposerons que votre produit est une arnaque jusqu’à preuve du contraire.\nSi cela vous semble sévère, réfléchissez-y. EFUI représente des années de travail, partagées librement. Envoyer un e-mail est le minimum que vous puissiez faire.';
+      'Si nous n’avons pas eu de vos nouvelles, nous supposerons que votre produit est une arnaque jusqu’à preuve du contraire.\nSi cela vous semble sévère, réfléchissez-y. Open UI représente des années de travail, partagées librement. Envoyer un e-mail est le minimum que vous puissiez faire.';
 
   @override
   String get tsPageTitle => 'Équipe';
@@ -508,7 +508,7 @@ class LangFr extends Lang {
 
   @override
   String get tsNonProfit =>
-      'La seule chose qui empêche Empathetech de devenir une véritable organisation à but non lucratif est le nombre de personnes.\n\nSi vous croyez en la mission que j’ai présentée et que vous avez quelques heures par semaine à consacrer, contactez-nous !\n\nCe sera entièrement bénévole au début. Je ne suis pas payé (pas encore) non plus.\nMais je ne ferais pas cela si je n’avais pas aussi un bon plan pour cela.';
+      'La seule chose qui empêche Empathetech de devenir une véritable organisation à but non lucratif est le nombre de personnes.\nSi vous croyez en la mission que j’ai présentée et que vous avez quelques heures par semaine à consacrer, contactez-nous !\n\nCe sera entièrement bénévole au début. Je ne suis pas payé (pas encore) non plus.\nMais je ne ferais pas cela si je n’avais pas aussi un bon plan pour cela.\n\nTous ceux qui sont intéressés sont encouragés à nous contacter, mais il existe un besoin particulier de personnes ayant de l\'expérience dans les domaines suivants :\ngestion des médias sociaux, collecte de fonds, et rédaction de subventions.';
 
   @override
   String get tsWild => 'Dans la nature';

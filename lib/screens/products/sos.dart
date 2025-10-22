@@ -134,7 +134,7 @@ class _SOSScreenState extends State<SOSScreen> {
         ezSeparator,
         const EzTranslationsPendingNotice(),
       ])),
-      fabs: const <Widget>[SettingsFAB()],
+      fabs: const <Widget>[ezSpacer, SettingsFAB()],
     );
   }
 }

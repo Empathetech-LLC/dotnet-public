@@ -115,39 +115,37 @@ class _TeamScreenState extends State<TeamScreen> {
           textAlign: TextAlign.center,
         ),
         ezMargin,
-        Stack(
-          children: <Widget>[
-            Container(
+        Stack(children: <Widget>[
+          Container(
+            constraints: BoxConstraints(
+              maxWidth: widthOf(context) * 0.90,
+              maxHeight: heightOf(context) * 0.80,
+            ),
+            child: EzImageLink(
+              image: openSauce2025Image,
+              fit: BoxFit.contain,
+              label: l10n.ts2025BoothLabel,
+              hint: l10n.ts2025BoothHint,
+              url: Uri.parse('https://opensauce.com/exhibits/'),
+              tooltip: 'https://opensauce.com/exhibits/',
+            ),
+          ),
+          Positioned(
+            left: 0,
+            top: 0,
+            child: Container(
               constraints: BoxConstraints(
-                maxWidth: widthOf(context) * 0.90,
-                maxHeight: heightOf(context) * 0.80,
+                maxWidth: widthOf(context) * 0.125,
+                maxHeight: heightOf(context) * 0.150,
               ),
-              child: EzImageLink(
-                image: openSauce2025Image,
+              padding: EdgeInsets.all(EzConfig.get(marginKey)),
+              child: const Image(
+                image: openSauceLogoImage,
                 fit: BoxFit.contain,
-                label: l10n.ts2025BoothLabel,
-                hint: l10n.ts2025BoothHint,
-                url: Uri.parse('https://opensauce.com/exhibits/'),
-                tooltip: 'https://opensauce.com/exhibits/',
               ),
             ),
-            Positioned(
-              left: 0,
-              top: 0,
-              child: Container(
-                constraints: BoxConstraints(
-                  maxWidth: widthOf(context) * 0.125,
-                  maxHeight: heightOf(context) * 0.150,
-                ),
-                padding: EdgeInsets.all(EzConfig.get(marginKey)),
-                child: const Image(
-                  image: openSauceLogoImage,
-                  fit: BoxFit.contain,
-                ),
-              ),
-            ),
-          ],
-        ),
+          ),
+        ]),
         ezCenterLine,
         EzText(
           l10n.ts2025BoothDescription,
@@ -338,7 +336,7 @@ class _TeamScreenState extends State<TeamScreen> {
         ezSpacer, // Usually ezSeparator, but there's a trailing ezSpacer above
         const EzTranslationsPendingNotice(),
       ])),
-      fabs: <Widget>[const SettingsFAB()],
+      fabs: const <Widget>[ezSpacer, SettingsFAB()],
     );
   }
 }

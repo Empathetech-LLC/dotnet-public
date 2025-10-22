@@ -14,11 +14,12 @@ class DesignSettingsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => DotnetScaffold(
-        const EzScreen(EzDesignSettings(includeAnimation: false)),
+        const EzScreen(EzDesignSettings()),
         fabs: <Widget>[
+          ezSpacer,
           EzConfigFAB(context, appName: appName, androidPackage: null),
           ezSpacer,
-          EzBackFAB(context),
+          const EzBackFAB(),
         ],
       );
 }

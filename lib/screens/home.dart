@@ -190,7 +190,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
       ),
-      fabs: <Widget>[const SettingsFAB()],
+      fabs: const <Widget>[ezSpacer, SettingsFAB()],
     );
   }
 }

@@ -18,9 +18,10 @@ class ColorSettingsScreen extends StatelessWidget {
   Widget build(BuildContext context) => DotnetScaffold(
         EzScreen(EzColorSettings(target: target)),
         fabs: <Widget>[
+          ezSpacer,
           EzConfigFAB(context, appName: appName, androidPackage: null),
           ezSpacer,
-          EzBackFAB(context),
+          const EzBackFAB(),
         ],
       );
 }

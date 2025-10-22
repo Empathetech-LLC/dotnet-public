@@ -63,11 +63,11 @@
   "msIDProblemContent": "Profit first business models aren't sustainable.\n\nBy definition: if profit comes first, then things like working towards a mission, treating people right, and responsible consumption of resources all become afterthoughts.\n\nAnd this greed has gone unchecked in big tech. The tech giants have grown dissatisfied with our money, and are building products to target our identities and monopolize our minds.",
   
   "msFindSolution": "Find a solution",
-  "msFindSolutionContent": "Fortunately, there are amazing technologists all over the world working together towards a better narrative.\nOne where the service providers and the customers have an active, healthy, and mutually beneficial relationship.\n\nThe open source community.\n\nAt its core, open source software is freely available for anyone to view. Many projects can also be freely modified and redistributed.\nIt's software with nothing to hide, built by folks who recognize shared problems require shared solutions.\n\nAnd in the wonderful world of open source software, there lies a sub category: self hosting software.\n\nSelf hosting lets us take any not-in-use computer (pocket sized ones too) and store our data there.\nBy self hosting, we can control our own digital presence, rather than sign away control to some far away server, owned by an un-empathetic corporation.\n\nAnd there are self hosted versions of just about everything! From Adobe to Zoom, there are passionate hacktivists building alternatives that put people over profits.\n\nSo, how does one make the switch from profit first/closed source to open source? How do they start self hosting?\nIt takes a lot of time, energy, and prior knowledge.\n\nThat's where we come in.",
+  "msFindSolutionContent": "Fortunately, there are amazing technologists all over the world working together towards a better narrative.\nOne where the service providers and the customers have an active, healthy, and mutually beneficial relationship.\n\nThe open source community.\n\nAt its core, open source software is freely available for anyone to view. Many projects can also be freely modified and redistributed.\nIt's software with nothing to hide, built by folks who recognize shared problems require shared solutions.\n\nAnd in the wonderful world of open source software, there lies a sub category: self-hosting software.\n\nSelf-hosting lets us take any not-in-use computer (pocket sized ones too) and store our data there.\nBy self-hosting, we can control our own digital presence, rather than sign away control to some far away server, owned by an un-empathetic corporation.\n\nAnd there are self-hosted versions of just about everything! From Adobe to Zoom, there are passionate hacktivists building alternatives that put people over profits.\n\nSo, how does one make the switch from profit first/closed source to open source? How do they start self-hosting?\nIt takes a lot of time, energy, and prior knowledge.\n\nThat's where we come in.",
   
   "msProvideValue": "Doing the work",
-  "msProvideValueContent1": "The Empathetech mission is to re-balance the power in tech by making self hosting more accessible.\n\nWe will build apps that enable anyone to own their digital identity.\nWe will build bridges between the open source community and those without the required time, energy, or prior knowledge.\n\nAnd you can't build bridges (or apps) without a strong foundation! That's why ",
-  "msProvideValueContent1Fix": "The Empathetic mission is to re-balance the power in tech by making self hosting more accessible.\n\nWe will build apps that enable anyone to own their digital identity.\nWe will build bridges between the open source community and those without the required time, energy, or prior knowledge.\n\nAnd you can't build bridges (or apps) without a strong foundation! That's why ",
+  "msProvideValueContent1": "The Empathetech mission is to re-balance the power in tech by making self-hosting more accessible.\n\nWe will build apps that enable anyone to own their digital identity.\nWe will build bridges between the open source community and those without the required time, energy, or prior knowledge.\n\nAnd you can't build bridges (or apps) without a strong foundation! That's why ",
+  "msProvideValueContent1Fix": "The Empathetic mission is to re-balance the power in tech by making self-hosting more accessible.\n\nWe will build apps that enable anyone to own their digital identity.\nWe will build bridges between the open source community and those without the required time, energy, or prior knowledge.\n\nAnd you can't build bridges (or apps) without a strong foundation! That's why ",
   "msProvideValueContent2": " exists.\nEmpathetech takes pride in meeting words with actions, and have made our accessible UI open source.\n\nLet's build a better world together, bit by bit.",
   "msProvideValueContent2Fix": " exists.\nEmpathetic takes pride in meeting words with actions, and have made our accessible UI open source.\n\nLet's build a better world together, bit by bit.",
 
@@ -172,13 +172,13 @@
   "ssPreview1": "Another Empathetech app, ",
   "ssPreview1Fix": "Another Empathetic app, ",
   "ssPreview2": ", is in development.\nSmoke Signal is a social network app designed to keep us off our screens.",
-  "ssPreview3": "Smoke Signal will also be fully self hosted, thanks to ",
+  "ssPreview3": "Smoke Signal will also be fully self-hosted, thanks to ",
   "ssAPHint": "Open a link to Activity Pub documentation",
 
 
   
   "vaIntro": "The way a technology is used cannot be decided by those who create it.",
-  "vaTheBad": "Which can be a good thing, a bad thing, or an in-between thing. Let's take a moment to discuss the bad: scam apps.",
+  "vaTheBad": "Which can be a good thing, a bad thing, or an in-between thing.\nLet's take a moment to discuss the bad: scam apps.",
   "vaScamRisk": " massively reduces the difficulty for building production ready apps. Combined with AI coding tools, it's easier than ever for scammers to create apps that look and feel legitimate. To help combat this, we'll maintain a list of verified apps.",
   "vaCheckIn": "If you see an app that uses our UI, check here first. If it's not verified, our advice is: don't download it.\nBeyond that, this is not a list of recommendations. The only requirement to be on this list, is to not be a scam.\nWith that covered, the known UIniverse contains...",
 
@@ -190,9 +190,9 @@
   "vaSoGood": "So far, so good!\nPlease don't be the first :)",
 
   "vaPublished": "If you've published an app using EFUI, send us ",
-  "vaDoNoHarm": ".\nWe don't have to love the app, and we're not publicly reviewing it. As long as it doesn't cause harm, it'll be verified.",
+  "vaDoNoHarm": ".\nWe don't have to love the app, and we're not publicly reviewing it.\nWe'll check the code, and as long as it doesn't cause harm, it'll be verified.",
   "vaPrivateFree": "If your app isn't publicly available, don't worry!\nBut if people you don't know can download it, let us know so we can verify it.",
-  "vaDoYourPart": "If we haven't heard from you, we'll assume your product is a scam until proven otherwise.\nIf you think that's intense, think again. EFUI is years of work, shared freely. Sending an email is the least you can do.",
+  "vaDoYourPart": "If we haven't heard from you, we'll assume your product is a scam until proven otherwise.\nIf you think that's intense, think again. Open UI is years of work, shared freely. Sending an email is the least you can do.",
 
   
 
@@ -207,7 +207,7 @@
   "tsMirrorLabel": "A black circle with a shimmer, to mimic a mirror.",
   "tsMirrorTip": "Activate to send us an email",
   "tsMirrorHint": "Ask about joining the team.",
-  "tsNonProfit": "The only thing in the way of Empathetech becoming a proper nonprofit is the head count.\n\nIf you believe in the mission I've laid out, and have a few hours a week to spare, please reach out!\n\nIt will be fully volunteer to start. I'm not getting paid (yet) either.\nBut, I wouldn't be doing this if I didn't have a good plan for that too.",
+  "tsNonProfit": "The only thing in the way of Empathetech becoming a proper nonprofit is the head count.\nIf you believe in the mission I've laid out, and have a few hours a week to spare, please reach out!\n\nIt will be fully volunteer to start. I'm not getting paid (yet) either.\nBut, I wouldn't be doing this if I didn't have a good plan for that too.\n\nAll who are interested are encouraged to reach out, but there is a particular need for folks with experience in:\nsocial media management, fundraising, and grant writing.",
 
   "tsWild": "In the wild",
   "ts2025BoothLabel": "The Empathetech booth for Open Sauce 2025.",

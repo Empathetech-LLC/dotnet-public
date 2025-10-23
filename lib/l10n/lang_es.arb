@@ -179,7 +179,7 @@
 
   "vaIntro": "La forma en que se usa una tecnología no puede ser decidida por quienes la crean.",
   "vaTheBad": "Lo cual puede ser algo bueno, algo malo o algo intermedio.\nTomémonos un momento para hablar de lo malo: las aplicaciones fraudulentas.",
-  "vaScamRisk": " reduce enormemente la dificultad de crear aplicaciones listas para producción. Combinado con herramientas de codificación con IA, ahora es más fácil que nunca para los estafadores crear aplicaciones que parecen y se sienten legítimas. Para ayudar a combatir esto, mantendremos una lista de aplicaciones verificadas.",
+  "vaScamRisk": " reduce enormemente la dificultad de crear aplicaciones listas para producción. Combinado con herramientas de codificación con IA, ahora es más fácil que nunca para los estafadores crear aplicaciones que parecen y se sienten legítimas.\nPara ayudar a combatir esto, mantendremos una lista de aplicaciones verificadas.",
   "vaCheckIn": "Si ves una aplicación que usa nuestra interfaz, revisa aquí primero. Si no está verificada, nuestro consejo es: no la descargues.\nMás allá de eso, esta no es una lista de recomendaciones. El único requisito para estar en esta lista es no ser una estafa.\nDicho esto, el UIniverso conocido contiene...",
 
   "vaFirst": "Propia",
@@ -241,8 +241,9 @@
   "fahIntro2": " equipo de Folding@home!",
   "fahTeamHint": "Abre la página del equipo Empathetic folding at home",
   
-  "fahWhatQ": "¿Qué es Folding@home?",
-  "fahWhatQHint": "Abrir la página de folding at home",
+  "fahWhats": "¿Qué es ",
+  "fahName": "Folding@home?",
+  "fahNameHint": "Abrir la página de folding at home",
   
   "fahStats": "Juntos, hemos ganado más de 350 millones de puntos.\n¡Lo que nos sitúa en el 2% de los mejores equipos del mundo!",
 

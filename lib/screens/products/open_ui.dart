@@ -95,7 +95,7 @@ class _OpenUIScreenState extends State<OpenUIScreen> {
               url: url,
               hint: l10n.gDownloadHint(openUI, dlType.name),
             ),
-            ezCenterLine,
+            ezSpacer,
 
             // Demo
             EzText(
@@ -172,7 +172,8 @@ class _OpenUIScreenState extends State<OpenUIScreen> {
                 style: textTheme.bodyLarge,
               ),
             ], textAlign: TextAlign.center),
-            ezSeparator,
+            ezCenterLine,
+            ezCenterLine,
 
             // Platform availability
             EzText(
@@ -274,7 +275,8 @@ class _OpenUIScreenState extends State<OpenUIScreen> {
               style: textTheme.bodyLarge,
               textAlign: TextAlign.center,
             ),
-            ezSeparator,
+            ezCenterLine,
+            ezCenterLine,
 
             // Tag line && consultation call-out
             EzRichText(<InlineSpan>[

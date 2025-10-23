@@ -56,6 +56,7 @@ class FaHBanner extends StatelessWidget {
                   style: textTheme.titleLarge,
                   textAlign: TextAlign.center,
                 ),
+                ezMargin,
                 EzRichText(<InlineSpan>[
                   EzPlainText(
                     text: l10n.fahIntro1,
@@ -75,15 +76,20 @@ class FaHBanner extends StatelessWidget {
                     style: textTheme.bodyLarge,
                   ),
                 ], textAlign: TextAlign.center, textBackground: false),
-                EzLink(
-                  l10n.fahWhatQ,
-                  style: textTheme.bodyLarge,
-                  backgroundColor: Colors.transparent,
-                  textAlign: TextAlign.center,
-                  url: Uri.parse(aboutFaHLink),
-                  hint: l10n.fahWhatQHint,
-                  tooltip: aboutFaHLink,
-                ),
+                EzRichText(<InlineSpan>[
+                  EzPlainText(
+                    text: l10n.fahWhats,
+                    style: textTheme.bodyLarge,
+                  ),
+                  EzInlineLink(
+                    l10n.fahName,
+                    style: textTheme.bodyLarge,
+                    textAlign: TextAlign.center,
+                    url: Uri.parse(aboutFaHLink),
+                    hint: l10n.fahNameHint,
+                    tooltip: aboutFaHLink,
+                  ),
+                ], textAlign: TextAlign.center, textBackground: false),
               ],
             )),
           ],

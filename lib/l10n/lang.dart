@@ -840,7 +840,7 @@ abstract class Lang {
   /// No description provided for @vaScamRisk.
   ///
   /// In en, this message translates to:
-  /// **' massively reduces the difficulty for building production ready apps. Combined with AI coding tools, it\'s easier than ever for scammers to create apps that look and feel legitimate. To help combat this, we\'ll maintain a list of verified apps.'**
+  /// **' massively reduces the difficulty for building production ready apps. Combined with AI coding tools, it\'s easier than ever for scammers to create apps that look and feel legitimate.\nTo help combat this, we\'ll maintain a list of verified apps.'**
   String get vaScamRisk;
 
   /// No description provided for @vaCheckIn.
@@ -1107,17 +1107,23 @@ abstract class Lang {
   /// **'Open the Empathetic folding at home team page'**
   String get fahTeamHint;
 
-  /// No description provided for @fahWhatQ.
+  /// No description provided for @fahWhats.
   ///
   /// In en, this message translates to:
-  /// **'What\'s Folding@home?'**
-  String get fahWhatQ;
+  /// **'What\'s '**
+  String get fahWhats;
 
-  /// No description provided for @fahWhatQHint.
+  /// No description provided for @fahName.
+  ///
+  /// In en, this message translates to:
+  /// **'Folding@home?'**
+  String get fahName;
+
+  /// No description provided for @fahNameHint.
   ///
   /// In en, this message translates to:
   /// **'Open Folding at Home\'s about page'**
-  String get fahWhatQHint;
+  String get fahNameHint;
 
   /// No description provided for @fahStats.
   ///

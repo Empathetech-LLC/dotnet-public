@@ -427,7 +427,7 @@ class LangEn extends Lang {
 
   @override
   String get vaScamRisk =>
-      ' massively reduces the difficulty for building production ready apps. Combined with AI coding tools, it\'s easier than ever for scammers to create apps that look and feel legitimate. To help combat this, we\'ll maintain a list of verified apps.';
+      ' massively reduces the difficulty for building production ready apps. Combined with AI coding tools, it\'s easier than ever for scammers to create apps that look and feel legitimate.\nTo help combat this, we\'ll maintain a list of verified apps.';
 
   @override
   String get vaCheckIn =>
@@ -574,10 +574,13 @@ class LangEn extends Lang {
   String get fahTeamHint => 'Open the Empathetic folding at home team page';
 
   @override
-  String get fahWhatQ => 'What\'s Folding@home?';
+  String get fahWhats => 'What\'s ';
 
   @override
-  String get fahWhatQHint => 'Open Folding at Home\'s about page';
+  String get fahName => 'Folding@home?';
+
+  @override
+  String get fahNameHint => 'Open Folding at Home\'s about page';
 
   @override
   String get fahStats =>
@@ -1041,7 +1044,7 @@ class LangEnUs extends LangEn {
 
   @override
   String get vaScamRisk =>
-      ' massively reduces the difficulty for building production ready apps. Combined with AI coding tools, it\'s easier than ever for scammers to create apps that look and feel legitimate. To help combat this, we\'ll maintain a list of verified apps.';
+      ' massively reduces the difficulty for building production ready apps. Combined with AI coding tools, it\'s easier than ever for scammers to create apps that look and feel legitimate.\nTo help combat this, we\'ll maintain a list of verified apps.';
 
   @override
   String get vaCheckIn =>
@@ -1188,10 +1191,13 @@ class LangEnUs extends LangEn {
   String get fahTeamHint => 'Open the Empathetic folding at home team page';
 
   @override
-  String get fahWhatQ => 'What\'s Folding@home?';
+  String get fahWhats => 'What\'s ';
 
   @override
-  String get fahWhatQHint => 'Open Folding at Home\'s about page';
+  String get fahName => 'Folding@home?';
+
+  @override
+  String get fahNameHint => 'Open Folding at Home\'s about page';
 
   @override
   String get fahStats =>

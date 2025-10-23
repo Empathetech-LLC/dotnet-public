@@ -12,7 +12,7 @@ Future<void> testFaHBanner(WidgetTester tester, Lang l10n) async {
   await ezFindText(tester, l10n.fahJoin);
 
   await ezFind(tester, find.widgetWithText(EzLink, empathetech));
-  await ezFind(tester, find.widgetWithText(EzLink, l10n.fahWhatQ));
+  await ezFind(tester, find.widgetWithText(EzLink, l10n.fahWhats));
 
   await ezFindText(tester, l10n.fahStats);
 }

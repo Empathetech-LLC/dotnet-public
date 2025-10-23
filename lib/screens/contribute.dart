@@ -121,18 +121,6 @@ class _ContributeScreenState extends State<ContributeScreen> {
       EzScreen(EzScrollView(children: <Widget>[
         if (spacing > margin) EzSpacer(space: spacing - margin),
 
-        // Intro //
-
-        EzText(
-          l10n.csEveryBit,
-          semanticsLabel: l10n.csEveryBitFix,
-          style: textTheme.headlineLarge,
-          textAlign: TextAlign.center,
-        ),
-        ezCenterLine,
-
-        //* Donate *//
-
         // Time //
 
         EzText(
@@ -215,7 +203,7 @@ class _ContributeScreenState extends State<ContributeScreen> {
 
         // Thanks
         EzText(
-          l10n.csThanks,
+          l10n.csEveryBit,
           style: subTitle,
           textAlign: TextAlign.center,
         ),

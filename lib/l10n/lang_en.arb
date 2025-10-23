@@ -179,7 +179,7 @@
   
   "vaIntro": "The way a technology is used cannot be decided by those who create it.",
   "vaTheBad": "Which can be a good thing, a bad thing, or an in-between thing.\nLet's take a moment to discuss the bad: scam apps.",
-  "vaScamRisk": " massively reduces the difficulty for building production ready apps. Combined with AI coding tools, it's easier than ever for scammers to create apps that look and feel legitimate. To help combat this, we'll maintain a list of verified apps.",
+  "vaScamRisk": " massively reduces the difficulty for building production ready apps. Combined with AI coding tools, it's easier than ever for scammers to create apps that look and feel legitimate.\nTo help combat this, we'll maintain a list of verified apps.",
   "vaCheckIn": "If you see an app that uses our UI, check here first. If it's not verified, our advice is: don't download it.\nBeyond that, this is not a list of recommendations. The only requirement to be on this list, is to not be a scam.\nWith that covered, the known UIniverse contains...",
 
   "vaFirst": "First party",
@@ -241,8 +241,9 @@
   "fahIntro2": " Folding@home team!",
   "fahTeamHint": "Open the Empathetic folding at home team page",
   
-  "fahWhatQ": "What's Folding@home?",
-  "fahWhatQHint": "Open Folding at Home's about page",
+  "fahWhats": "What's ",
+  "fahName": "Folding@home?",
+  "fahNameHint": "Open Folding at Home's about page",
   
   "fahStats": "Together, we've earned over 350 million points.\nThat puts us in the top 2% of all teams worldwide!",
 

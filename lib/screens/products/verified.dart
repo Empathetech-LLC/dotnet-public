@@ -48,6 +48,7 @@ class _VerifiedScreenState extends State<VerifiedScreen> {
           style: textTheme.headlineLarge,
           textAlign: TextAlign.center,
         ),
+        ezCenterLine,
         EzText(
           l10n.vaTheBad,
           style: textTheme.bodyLarge,

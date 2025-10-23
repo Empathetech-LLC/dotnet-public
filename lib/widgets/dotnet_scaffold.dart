@@ -42,12 +42,15 @@ class DotnetScaffold extends StatelessWidget {
     final Lang l10n = Lang.of(context)!;
     final TextTheme textTheme = Theme.of(context).textTheme;
 
-    final double toolbarHeight =
-        ezToolbarHeight(context: context, title: l10n.csPageTitle);
+    final double toolbarHeight = ezToolbarHeight(
+      context: context,
+      title: l10n.csPageTitle,
+    );
 
     // Define custom widgets //
 
-    final Widget brandLogo = logo ??
+    final Widget brandLogo =
+        logo ??
         EzLinkWidget(
           isImage: true,
           url: Uri.parse(homeURL),
@@ -113,7 +116,7 @@ class DotnetScaffold extends StatelessWidget {
     );
 
     const Widget updater = EzUpdaterFAB(
-      appVersion: '5.1.1',
+      appVersion: '5.1.2',
       versionSource:
           'https://raw.githubusercontent.com/Empathetech-LLC/dotnet-public/refs/heads/main/APP_VERSION',
       isWeb: true,
@@ -300,44 +303,44 @@ class DotNetDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => NavigationDrawer(
-        tilePadding: EdgeInsets.zero,
-        children: <Widget>[
-          DrawerHeader(
-            margin: EdgeInsets.zero,
-            padding: EdgeInsets.zero,
-            child: Center(
-              child: EzScrollView(
-                mainAxisSize: MainAxisSize.min,
-                scrollDirection: Axis.horizontal,
-                showScrollHint: true,
-                children: header.children.map((Widget child) {
-                  switch (child.runtimeType) {
-                    case const (EzIconButton):
-                      child as EzIconButton;
-                      return EzIconButton(
-                        style: child.style,
-                        onPressed: () {
-                          Navigator.of(context).pop();
-                          child.onPressed?.call();
-                        },
-                        tooltip: child.tooltip,
-                        icon: child.icon,
-                      );
-                    default:
-                      return child;
-                  }
-                }).toList(),
-              ),
-            ),
+    tilePadding: EdgeInsets.zero,
+    children: <Widget>[
+      DrawerHeader(
+        margin: EdgeInsets.zero,
+        padding: EdgeInsets.zero,
+        child: Center(
+          child: EzScrollView(
+            mainAxisSize: MainAxisSize.min,
+            scrollDirection: Axis.horizontal,
+            showScrollHint: true,
+            children: header.children.map((Widget child) {
+              switch (child.runtimeType) {
+                case const (EzIconButton):
+                  child as EzIconButton;
+                  return EzIconButton(
+                    style: child.style,
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                      child.onPressed?.call();
+                    },
+                    tooltip: child.tooltip,
+                    icon: child.icon,
+                  );
+                default:
+                  return child;
+              }
+            }).toList(),
           ),
-          ezSpacer,
-          pageLinks.mission,
-          ezSpacer,
-          pageLinks.products,
-          ezSpacer,
-          pageLinks.team,
-          ezSpacer,
-          pageLinks.contribute,
-        ],
-      );
+        ),
+      ),
+      ezSpacer,
+      pageLinks.mission,
+      ezSpacer,
+      pageLinks.products,
+      ezSpacer,
+      pageLinks.team,
+      ezSpacer,
+      pageLinks.contribute,
+    ],
+  );
 }

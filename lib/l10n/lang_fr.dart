@@ -433,7 +433,7 @@ class LangFr extends Lang {
 
   @override
   String get vaScamRisk =>
-      ' réduit considérablement la difficulté de création d’applications prêtes pour la production. Combiné aux outils de codage basés sur l’IA, il est plus facile que jamais pour les fraudeurs de créer des applications qui semblent légitimes. Pour aider à lutter contre cela, nous maintiendrons une liste d’applications vérifiées.';
+      ' réduit considérablement la difficulté de création d’applications prêtes pour la production. Combiné aux outils de codage basés sur l’IA, il est plus facile que jamais pour les fraudeurs de créer des applications qui semblent légitimes.\nPour aider à lutter contre cela, nous maintiendrons une liste d’applications vérifiées.';
 
   @override
   String get vaCheckIn =>
@@ -584,10 +584,13 @@ class LangFr extends Lang {
       'Ouvre la page de l\'équipe Empathetic de folding at home';
 
   @override
-  String get fahWhatQ => 'Qu\'est-ce que Folding@home ?';
+  String get fahWhats => 'Qu\'est-ce que ';
 
   @override
-  String get fahWhatQHint => 'Ouvre la page à propos de folding at home';
+  String get fahName => 'Folding@home ?';
+
+  @override
+  String get fahNameHint => 'Ouvre la page à propos de folding at home';
 
   @override
   String get fahStats =>

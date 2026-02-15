@@ -1,5 +1,5 @@
 /* dotnet
- * Copyright (c) 2025 Empathetech LLC. All rights reserved.
+ * Copyright (c) 2026 Empathetech LLC. All rights reserved.
  * See LICENSE for distribution and usage details.
  */
 
@@ -11,23 +11,22 @@ import 'package:flutter/material.dart';
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 
 class SettingsHomeScreen extends StatelessWidget {
-  const SettingsHomeScreen({super.key});
+  SettingsHomeScreen() : super(key: ValueKey<int>(EzConfig.seed));
 
   @override
   Widget build(BuildContext context) => DotnetScaffold(
-        const EzScreen(EzSettingsHome(
+        EzScreen(EzSettingsHome(
           protest: true,
           colorSettingsPath: colorSettingsURL,
           designSettingsPath: designSettingsURL,
           layoutSettingsPath: layoutSettingsURL,
           textSettingsPath: textSettingsURL,
-          footer: <Widget>[EzSeparator(), EFUIShoutOut()],
+          appName: appName,
+          footer: <Widget>[EzConfig.separator, const EFUIShoutOut()],
         )),
         fabs: <Widget>[
-          ezSpacer,
+          EzConfig.spacer,
           EzConfigFAB(context, appName: appName, androidPackage: null),
-          ezSpacer,
-          const EzBackFAB(),
         ],
       );
 }

@@ -1,5 +1,5 @@
 /* dotnet
- * Copyright (c) 2025 Empathetech LLC. All rights reserved.
+ * Copyright (c) 2026 Empathetech LLC. All rights reserved.
  * See LICENSE for distribution and usage details.
  */
 
@@ -18,47 +18,28 @@ class HomeScreen extends StatefulWidget {
   final bool fin;
 
   /// No place like it
-  const HomeScreen({super.key, this.fin = false});
+  HomeScreen({this.fin = false}) : super(key: ValueKey<int>(EzConfig.seed));
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  // Gather the fixed theme data //
-
-  final double margin = EzConfig.get(marginKey);
-  final double spacing = EzConfig.get(spacingKey);
-
-  late final Lang l10n = Lang.of(context)!;
-
-  /// 0.667 <= [displayScale] <= 1.5
-  late final double displayScale = max(
-    0.667,
-    min(
-      1.5,
-      (EzConfig.get(displayFontSizeKey) ?? defaultDisplaySize) /
-          defaultDisplaySize,
-    ),
-  );
-
-  late final double toolbarHeight =
-      ezToolbarHeight(context: context, title: l10n.csPageTitle);
-
   // Define the build data //
 
   late bool fin = widget.fin || GoRouter.of(context).state.uri.path != homePath;
 
   Widget animation({
+    required Lang l10n,
     required double sloganHeight,
     required double letterRatio,
   }) =>
       LogoAnimation(
         key: ValueKey<double>(letterRatio),
-        margin: margin,
+        margin: EzConfig.marginVal,
         height: sloganHeight,
         letterRatio: letterRatio,
-        finSpacing: spacing * 2,
+        finSpacing: EzConfig.spacing * 2,
         slogan: l10n.hsSlogan,
         sloganSemantics: l10n.hsSloganFix,
         videoSemantics: l10n.hsVideoLabel,
@@ -71,23 +52,33 @@ class _HomeScreenState extends State<HomeScreen> {
   // Set the page title //
 
   @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    ezWindowNamer(context, empathetech);
+  void initState() {
+    super.initState();
+    ezWindowNamer(empathetech);
   }
 
   @override
   Widget build(BuildContext context) {
-    // Gather the dynamic theme data //
+    // Gather the contextual theme data //
 
-    final TextTheme textTheme = Theme.of(context).textTheme;
-    final TextStyle? subTitle = ezSubTitleStyle(textTheme);
-
-    final double sloganHeight =
-        max(spacing * 7, (heightOf(context) / 3) * displayScale);
-
+    final TextStyle? subTitle = ezSubTitleStyle();
     final Widget newLine =
         EzNewLine(style: subTitle, textAlign: TextAlign.center);
+
+    /// 0.667 <= [displayScale] <= 1.5
+    final double displayScale = max(
+      0.667,
+      min(
+        1.5,
+        (EzConfig.styles.displayLarge?.fontSize ?? defaultDisplaySize) /
+            defaultDisplaySize,
+      ),
+    );
+
+    final double toolbarHeight =
+        ezToolbarHeight(context: context, title: l10n.csPageTitle);
+    final double sloganHeight =
+        max(EzConfig.spacing * 7, (heightOf(context) / 3) * displayScale);
 
     // Return the build //
 
@@ -96,7 +87,7 @@ class _HomeScreenState extends State<HomeScreen> {
         EzScrollView(children: <Widget>[
           // Video
           Container(
-            color: Theme.of(context).colorScheme.surfaceContainer,
+            color: EzConfig.colors.surfaceContainer,
             constraints: BoxConstraints(
               minWidth: double.infinity,
               maxWidth: double.infinity,
@@ -104,12 +95,24 @@ class _HomeScreenState extends State<HomeScreen> {
               maxHeight: sloganHeight,
             ),
             child: EzAdaptiveWidget(
-              small: animation(sloganHeight: sloganHeight, letterRatio: 0.9),
-              medium: animation(sloganHeight: sloganHeight, letterRatio: 0.75),
-              large: animation(sloganHeight: sloganHeight, letterRatio: 0.667),
+              small: animation(
+                l10n: l10n,
+                sloganHeight: sloganHeight,
+                letterRatio: 0.9,
+              ),
+              medium: animation(
+                l10n: l10n,
+                sloganHeight: sloganHeight,
+                letterRatio: 0.75,
+              ),
+              large: animation(
+                l10n: l10n,
+                sloganHeight: sloganHeight,
+                letterRatio: 0.667,
+              ),
             ),
           ),
-          ezSeparator,
+          EzConfig.separator,
 
           // Mini-mission statement
           AnimatedOpacity(
@@ -121,7 +124,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 // People shouldn't be products
                 EzText(
                   l10n.hsPeople,
-                  style: textTheme.headlineLarge,
+                  style: EzConfig.styles.headlineLarge,
                   textAlign: TextAlign.center,
                 ),
                 EzText(
@@ -150,7 +153,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 newLine,
                 EzRichText(
-                  key: UniqueKey(), // Include for selectable registrar
+                  // Inclue a key for the selectable registrar
+                  // ...tbhidkybiwsdri
+                  key: UniqueKey(),
                   <InlineSpan>[
                     EzPlainText(text: l10n.hsSlow, style: subTitle),
                     EzInlineLink(
@@ -166,7 +171,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
             ),
           ),
-          ezSeparator,
+          EzConfig.separator,
           const EzTranslationsPendingNotice(),
         ]),
         margin: EdgeInsets.zero,
@@ -185,12 +190,12 @@ class _HomeScreenState extends State<HomeScreen> {
             child: SizedBox(
               width: toolbarHeight,
               height: toolbarHeight,
-              child: Logo(margin: margin),
+              child: Logo(margin: EzConfig.marginVal),
             ),
           ),
         ),
       ),
-      fabs: const <Widget>[ezSpacer, SettingsFAB()],
+      fabs: <Widget>[EzConfig.spacer, const SettingsFAB()],
     );
   }
 }

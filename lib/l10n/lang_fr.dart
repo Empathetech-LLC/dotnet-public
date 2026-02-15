@@ -594,7 +594,7 @@ class LangFr extends Lang {
 
   @override
   String get fahStats =>
-      'Ensemble, nous avons gagné plus de 350 millions de points.\nCela nous place dans les 2 % des meilleures équipes du monde !';
+      'Ensemble, nous avons gagné plus de 400 millions de points.\nCela nous place dans les 2 % des meilleures équipes du monde !';
 
   @override
   String get csPageTitle => 'Contribuer';

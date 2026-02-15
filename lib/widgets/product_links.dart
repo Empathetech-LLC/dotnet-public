@@ -1,5 +1,5 @@
 /* dotnet
- * Copyright (c) 2025 Empathetech LLC. All rights reserved.
+ * Copyright (c) 2026 Empathetech LLC. All rights reserved.
  * See LICENSE for distribution and usage details.
  */
 
@@ -13,11 +13,11 @@ import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 
 //* Shared *//
 
-/// 10.2.0
-const String efuiFallback = '10.2.0';
+/// 11.0.0
+const String efuiFallback = '11.0.0';
 
-/// 1.5.1
-const String sosFallback = '1.5.1';
+/// 1.5.2
+const String sosFallback = '1.5.2';
 
 /// https://github.com/Empathetech-LLC
 const String _git = 'https://github.com/Empathetech-LLC';
@@ -55,11 +55,8 @@ extension Label on DLType {
 
 /// Get the latest [String] version of [repo]
 Future<String> getLatest(String repo, String fallback) async {
-  final http.Response response = await http.get(
-    Uri.parse(
-      'https://raw.githubusercontent.com/Empathetech-LLC/$repo/refs/heads/main/APP_VERSION',
-    ),
-  );
+  final http.Response response = await http.get(Uri.parse(
+      'https://raw.githubusercontent.com/Empathetech-LLC/$repo/refs/heads/main/APP_VERSION'));
 
   return response.statusCode == 200 ? response.body.trim() : fallback;
 }
@@ -71,43 +68,41 @@ class EFUIShoutOut extends StatelessWidget {
   const EFUIShoutOut({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    final Lang l10n = Lang.of(context)!;
-    final TextStyle style = Theme.of(context).textTheme.labelLarge!;
-
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        EzRichText(<InlineSpan>[
-          EzPlainText(text: l10n.gDontChaWish, style: style),
-          EzInlineLink(
-            l10n.gMeQ,
-            style: style,
+  Widget build(BuildContext context) => Column(
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          EzRichText(<InlineSpan>[
+            EzPlainText(
+              text: l10n.gDontChaWish,
+              style: EzConfig.styles.labelLarge,
+            ),
+            EzInlineLink(
+              l10n.gMeQ,
+              style: EzConfig.styles.labelLarge,
+              textAlign: TextAlign.center,
+              url: Uri.parse(settingsSource),
+              hint: EzConfig.l10n.gEFUISourceHint,
+              tooltip: settingsSource,
+            ),
+          ], textAlign: TextAlign.center),
+          EzLink(
+            l10n.gDontCha,
+            style: EzConfig.styles.labelLarge,
+            padding: EzInsets.wrap(EzConfig.marginVal),
             textAlign: TextAlign.center,
-            url: Uri.parse(settingsSource),
-            hint: ezL10n(context).gEFUISourceHint,
-            tooltip: settingsSource,
+            url: Uri.parse(efuiSource),
+            hint: l10n.gDontChaHint,
+            tooltip: efuiSource,
           ),
-        ], textAlign: TextAlign.center),
-        EzLink(
-          l10n.gDontCha,
-          style: style,
-          padding: EzInsets.wrap(EzConfig.get(marginKey)),
-          textAlign: TextAlign.center,
-          url: Uri.parse(efuiSource),
-          hint: l10n.gDontChaHint,
-          tooltip: efuiSource,
-        ),
-      ],
-    );
-  }
+        ],
+      );
 }
 
 //* Open UI *//
 
 /// Get a [Uri] to download the latest version of Open UI
-Future<Uri?> openUIDownload(DLType dlType, String version) async {
+Uri openUIDownload(DLType dlType, String version) {
   late final String releases =
       '$_git/empathetech_flutter_ui/releases/download/$version';
 
@@ -138,15 +133,8 @@ class OpenUILink extends StatefulWidget {
 }
 
 class _OpenUILinkState extends State<OpenUILink> {
-  // Gather the data //
-
-  final double padding = EzConfig.get(paddingKey);
-
-  late final Lang l10n = Lang.of(context)!;
-
   // Define the build data //
 
-  final TargetPlatform basePlatform = getBasePlatform();
   late DLType currDL;
   late final String latest;
   Uri? url;
@@ -155,7 +143,7 @@ class _OpenUILinkState extends State<OpenUILink> {
 
   /// Set an initial download link
   void initUrl() async {
-    switch (basePlatform) {
+    switch (EzConfig.platform) {
       case TargetPlatform.android:
         currDL = DLType.gPlay;
         break;
@@ -174,7 +162,7 @@ class _OpenUILinkState extends State<OpenUILink> {
     }
 
     latest = await getLatest('empathetech_flutter_ui', efuiFallback);
-    if (mounted) url = await openUIDownload(currDL, latest);
+    url = openUIDownload(currDL, latest);
   }
 
   // Init //
@@ -188,57 +176,53 @@ class _OpenUILinkState extends State<OpenUILink> {
   // Return the build //
 
   @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        // Icon link
-        Container(
-          constraints: EzBox.sym(ezImageSize(context)),
-          child: EzLinkWidget(
-            onTap: () => launchUrl(url ?? Uri.parse(openUIReleases)),
-            tooltip: l10n.gDownloadHint(openUI, currDL.name),
-            label: l10n.gIconLabel(openUI) + l10n.ouOpenUIIconLabel,
-            hint: l10n.gDownloadHint(openUI, currDL.name),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(ezImageSize(context)),
-              child: const Image(image: openUIImage, fit: BoxFit.contain),
+  Widget build(BuildContext context) => Column(
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          // Icon link
+          Container(
+            constraints: EzBox.sym(ezImageSize(context)),
+            child: EzLinkWidget(
+              onTap: () => launchUrl(url ?? Uri.parse(openUIReleases)),
+              tooltip: l10n.gDownloadHint(openUI, currDL.name),
+              label: l10n.gIconLabel(openUI) + l10n.ouOpenUIIconLabel,
+              hint: l10n.gDownloadHint(openUI, currDL.name),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(ezImageSize(context)),
+                child: const Image(image: openUIImage, fit: BoxFit.contain),
+              ),
             ),
           ),
-        ),
-        ezMargin,
+          EzConfig.margin,
 
-        // Destination selector
-        EzDropdownMenu<DLType>(
-          enableSearch: false,
-          initialSelection: currDL,
-          dropdownMenuEntries: DLType.values
-              .map(
-                (DLType dlType) => DropdownMenuEntry<DLType>(
-                  value: dlType,
-                  label: dlType.name,
-                ),
-              )
-              .toList(),
-          onSelected: (DLType? choice) async {
-            if (choice == null) return;
+          // Destination selector
+          EzDropdownMenu<DLType>(
+            enableSearch: false,
+            initialSelection: currDL,
+            dropdownMenuEntries: DLType.values
+                .map((DLType dlType) => DropdownMenuEntry<DLType>(
+                      value: dlType,
+                      label: dlType.name,
+                    ))
+                .toList(),
+            onSelected: (DLType? choice) {
+              if (choice == null) return;
 
-            currDL = choice;
-            url = await openUIDownload(currDL, latest);
+              currDL = choice;
+              url = openUIDownload(currDL, latest);
 
-            setState(() {});
-          },
-        ),
-      ],
-    );
-  }
+              setState(() {});
+            },
+          ),
+        ],
+      );
 }
 
 //* (Insta)SOS *//
 
 /// Get a [Uri] to download the latest version of InstaSOS
-Future<Uri?> sosDownload(DLType dlType, String version) async {
+Uri sosDownload(DLType dlType, String version) {
   late final String releases = '$_git/sos/releases/download/$version';
 
   switch (dlType) {
@@ -260,15 +244,8 @@ class SOSLink extends StatefulWidget {
 }
 
 class _SOSLinkState extends State<SOSLink> {
-  // Gather data //
-
-  final double padding = EzConfig.get(paddingKey);
-
-  late final Lang l10n = Lang.of(context)!;
-
   // Define the build data //
 
-  final TargetPlatform basePlatform = getBasePlatform();
   late DLType currDL;
   late final String latest;
   Uri? url;
@@ -277,7 +254,7 @@ class _SOSLinkState extends State<SOSLink> {
 
   /// Set an initial download link
   void initUrl() async {
-    switch (basePlatform) {
+    switch (EzConfig.platform) {
       case TargetPlatform.iOS:
       case TargetPlatform.macOS:
         currDL = DLType.iOS;
@@ -289,7 +266,7 @@ class _SOSLinkState extends State<SOSLink> {
     }
 
     latest = await getLatest('sos', sosFallback);
-    if (mounted) url = await sosDownload(currDL, latest);
+    url = sosDownload(currDL, latest);
   }
 
   // Init //
@@ -303,55 +280,53 @@ class _SOSLinkState extends State<SOSLink> {
   // Return the build //
 
   @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        // Icon link
-        Container(
-          constraints: EzBox.sym(ezImageSize(context)),
-          child: EzLinkWidget(
-            onTap: () => launchUrl(url ?? Uri.parse(sosReleases)),
-            tooltip: l10n.gDownloadHint(sosName, currDL.name),
-            label: l10n.gIconLabel(sosLabel) + l10n.sosIconLabel,
-            hint: l10n.gDownloadHint(sosLabel, currDL.name),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(ezImageSize(context)),
-              child: const Image(image: sosImage, fit: BoxFit.contain),
+  Widget build(BuildContext context) => Column(
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          // Icon link
+          Container(
+            constraints: EzBox.sym(ezImageSize(context)),
+            child: EzLinkWidget(
+              onTap: () => launchUrl(url ?? Uri.parse(sosReleases)),
+              tooltip: l10n.gDownloadHint(sosName, currDL.name),
+              label: l10n.gIconLabel(sosLabel) + l10n.sosIconLabel,
+              hint: l10n.gDownloadHint(sosLabel, currDL.name),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(ezImageSize(context)),
+                child: const Image(image: sosImage, fit: BoxFit.contain),
+              ),
             ),
           ),
-        ),
-        ezMargin,
+          EzConfig.margin,
 
-        // Destination selector
-        EzDropdownMenu<DLType>(
-          enableSearch: false,
-          initialSelection: currDL,
-          dropdownMenuEntries: <DropdownMenuEntry<DLType>>[
-            DropdownMenuEntry<DLType>(
-              value: DLType.gPlay,
-              label: DLType.gPlay.name,
-            ),
-            DropdownMenuEntry<DLType>(
-              value: DLType.apk,
-              label: DLType.apk.name,
-            ),
-            DropdownMenuEntry<DLType>(
-              value: DLType.iOS,
-              label: DLType.iOS.name,
-            ),
-          ],
-          onSelected: (DLType? choice) async {
-            if (choice == null) return;
+          // Destination selector
+          EzDropdownMenu<DLType>(
+            enableSearch: false,
+            initialSelection: currDL,
+            dropdownMenuEntries: <DropdownMenuEntry<DLType>>[
+              DropdownMenuEntry<DLType>(
+                value: DLType.gPlay,
+                label: DLType.gPlay.name,
+              ),
+              DropdownMenuEntry<DLType>(
+                value: DLType.apk,
+                label: DLType.apk.name,
+              ),
+              DropdownMenuEntry<DLType>(
+                value: DLType.iOS,
+                label: DLType.iOS.name,
+              ),
+            ],
+            onSelected: (DLType? choice) async {
+              if (choice == null) return;
 
-            currDL = choice;
-            url = await sosDownload(currDL, latest);
+              currDL = choice;
+              url = sosDownload(currDL, latest);
 
-            setState(() {});
-          },
-        ),
-      ],
-    );
-  }
+              setState(() {});
+            },
+          ),
+        ],
+      );
 }

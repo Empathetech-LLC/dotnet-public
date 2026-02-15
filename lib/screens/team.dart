@@ -1,5 +1,5 @@
 /* dotnet
- * Copyright (c) 2025 Empathetech LLC. All rights reserved.
+ * Copyright (c) 2026 Empathetech LLC. All rights reserved.
  * See LICENSE for distribution and usage details.
  */
 
@@ -12,49 +12,40 @@ import 'package:shimmer/shimmer.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
-import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 
 class TeamScreen extends StatefulWidget {
   /// I believe
-  /// I believe that...
-  const TeamScreen({super.key});
+  /// I believe that
+  /// I believe that we...
+  TeamScreen() : super(key: ValueKey<int>(EzConfig.seed));
 
   @override
   State<TeamScreen> createState() => _TeamScreenState();
 }
 
 class _TeamScreenState extends State<TeamScreen> {
-  // Gather the fixed theme data //
-
-  final double margin = EzConfig.get(marginKey);
-  final double spacing = EzConfig.get(spacingKey);
-  late final double imageSize = ezImageSize(context);
-
-  late final Lang l10n = Lang.of(context)!;
-
   // Set the page title //
 
   @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    ezWindowNamer(context, l10n.tsPageTitle);
+  void initState() {
+    super.initState();
+    ezWindowNamer(l10n.tsPageTitle);
   }
-
-  // Return the build //
 
   @override
   Widget build(BuildContext context) {
-    final ColorScheme colorScheme = Theme.of(context).colorScheme;
+    // Gather the contextual theme data //
 
-    final TextTheme textTheme = Theme.of(context).textTheme;
-    final TextStyle? subTitle = ezSubTitleStyle(textTheme);
+    final double imageSize = ezImageSize(context);
+    final TextStyle? subTitle = ezSubTitleStyle();
+
+    // Return the build //
 
     final Widget mirror = _Member(
       title: l10n.tsBoardMember,
       name: l10n.tsYou,
       l10n: l10n,
       hiring: true,
-      textTheme: textTheme,
       imageSize: imageSize,
       decoration: const BoxDecoration(
         color: Colors.black,
@@ -68,7 +59,7 @@ class _TeamScreenState extends State<TeamScreen> {
 
         EzText(
           l10n.tsCore,
-          style: textTheme.headlineLarge,
+          style: EzConfig.styles.headlineLarge,
           textAlign: TextAlign.center,
         ),
         EzScrollView(
@@ -79,14 +70,13 @@ class _TeamScreenState extends State<TeamScreen> {
           children: <Widget>[
             // Future Board Member
             mirror,
-            ezRowSpacer,
+            EzConfig.rowSpacer,
 
             // The Founder (Mike)
             _Member(
               title: l10n.tsTheFounder,
               name: mike,
               l10n: l10n,
-              textTheme: textTheme,
               imageSize: imageSize,
               child: EzImageLink(
                 image: founderImage,
@@ -94,27 +84,28 @@ class _TeamScreenState extends State<TeamScreen> {
                 label: l10n.tsTheFounderLabel,
                 hint: l10n.tsTheFounderHint,
                 url: Uri.parse(
-                    'mailto:$empathFounder?subject=Becoming%20a%20contributor'),
+                  'mailto:$empathFounder?subject=Becoming%20a%20contributor',
+                ),
                 tooltip: l10n.tsTheFounderHint,
               ),
             ),
-            ezRowSpacer,
+            EzConfig.rowSpacer,
 
             // Future Board Member
             mirror,
           ],
         ),
-        ezDivider,
+        EzConfig.divider,
 
         // IRL //
 
         // Open Sauce 2025
         EzText(
           l10n.tsWild,
-          style: textTheme.headlineLarge,
+          style: EzConfig.styles.headlineLarge,
           textAlign: TextAlign.center,
         ),
-        ezMargin,
+        EzConfig.margin,
         Stack(children: <Widget>[
           Container(
             constraints: BoxConstraints(
@@ -138,7 +129,7 @@ class _TeamScreenState extends State<TeamScreen> {
                 maxWidth: widthOf(context) * 0.125,
                 maxHeight: heightOf(context) * 0.150,
               ),
-              padding: EdgeInsets.all(EzConfig.get(marginKey)),
+              padding: EdgeInsets.all(EzConfig.marginVal),
               child: const Image(
                 image: openSauceLogoImage,
                 fit: BoxFit.contain,
@@ -146,45 +137,45 @@ class _TeamScreenState extends State<TeamScreen> {
             ),
           ),
         ]),
-        ezCenterLine,
+        EzConfig.centerLine,
         EzText(
           l10n.ts2025BoothDescription,
           semanticsLabel: l10n.ts2025BoothDescriptionFix,
-          style: textTheme.bodyLarge,
+          style: EzConfig.styles.bodyLarge,
           textAlign: TextAlign.center,
         ),
-        ezDivider,
+        EzConfig.divider,
 
         // Community //
 
         EzLink(
           l10n.tsCommunity,
-          style: textTheme.headlineLarge,
-          padding: EzInsets.wrap(EzConfig.get(marginKey)),
+          style: EzConfig.styles.headlineLarge,
+          padding: EzInsets.wrap(EzConfig.marginVal),
           textAlign: TextAlign.center,
-          textColor: colorScheme.onSurface,
-          decorationColor: colorScheme.primary,
+          textColor: EzConfig.colors.onSurface,
+          decorationColor: EzConfig.colors.primary,
           url: Uri.parse(contributeURL),
           hint: l10n.gContributeHint,
         ),
 
         // Folding@home
         const FaHBanner(),
-        ezDivider,
+        EzConfig.divider,
 
         // Freelance //
 
         EzText(
           l10n.tsFreelance,
-          style: textTheme.headlineLarge,
+          style: EzConfig.styles.headlineLarge,
           textAlign: TextAlign.center,
         ),
-        ezSpacer,
+        EzConfig.spacer,
 
         // Video production
         EzText(
           l10n.tsVideoProduction,
-          style: textTheme.titleLarge,
+          style: EzConfig.styles.titleLarge,
           textAlign: TextAlign.center,
         ),
         Wrap(
@@ -193,12 +184,10 @@ class _TeamScreenState extends State<TeamScreen> {
           crossAxisAlignment: WrapCrossAlignment.center,
           children: <Widget>[
             _Group(
-              spacing: spacing,
               titleStyle: subTitle,
               freelancers: <Widget>[
                 _Freelancer(
                   l10n: l10n,
-                  textTheme: textTheme,
                   imageSize: imageSize,
                   name: montanaM,
                   link: montanaMLink,
@@ -208,12 +197,12 @@ class _TeamScreenState extends State<TeamScreen> {
             ),
           ],
         ),
-        ezSpacer,
+        EzConfig.spacer,
 
         // Translators
         EzText(
           l10n.tsTranslators,
-          style: textTheme.titleLarge,
+          style: EzConfig.styles.titleLarge,
           textAlign: TextAlign.center,
         ),
         Wrap(
@@ -223,13 +212,11 @@ class _TeamScreenState extends State<TeamScreen> {
           children: <Widget>[
             // Arabic
             _Group(
-              spacing: spacing,
               title: l10n.tsAr,
               titleStyle: subTitle,
               freelancers: <_Freelancer>[
                 _Freelancer(
                   l10n: l10n,
-                  textTheme: textTheme,
                   imageSize: imageSize,
                   name: yasminS,
                   link: yasminSLink,
@@ -240,13 +227,11 @@ class _TeamScreenState extends State<TeamScreen> {
 
             // Spanish
             _Group(
-              spacing: spacing,
               title: l10n.tsEs,
               titleStyle: subTitle,
               freelancers: <Widget>[
                 _Freelancer(
                   l10n: l10n,
-                  textTheme: textTheme,
                   imageSize: imageSize,
                   name: saraH,
                   link: saraHLink,
@@ -257,13 +242,11 @@ class _TeamScreenState extends State<TeamScreen> {
 
             // Filipino
             _Group(
-              spacing: spacing,
               title: l10n.tsFil,
               titleStyle: subTitle,
               freelancers: <Widget>[
                 _Freelancer(
                   l10n: l10n,
-                  textTheme: textTheme,
                   imageSize: imageSize,
                   name: remalyn,
                   link: remalynLink,
@@ -274,13 +257,11 @@ class _TeamScreenState extends State<TeamScreen> {
 
             // French
             _Group(
-              spacing: spacing,
               title: l10n.tsFr,
               titleStyle: subTitle,
               freelancers: <Widget>[
                 _Freelancer(
                   l10n: l10n,
-                  textTheme: textTheme,
                   imageSize: imageSize,
                   name: alexisN,
                   link: alexisNLink,
@@ -291,13 +272,11 @@ class _TeamScreenState extends State<TeamScreen> {
 
             // Haitian Creole
             _Group(
-              spacing: spacing,
               title: l10n.tsHt,
               titleStyle: subTitle,
               freelancers: <Widget>[
                 _Freelancer(
                   l10n: l10n,
-                  textTheme: textTheme,
                   imageSize: imageSize,
                   name: carly,
                   link: carlyLink,
@@ -308,13 +287,11 @@ class _TeamScreenState extends State<TeamScreen> {
 
             // Simplified Chinese
             _Group(
-              spacing: spacing,
               title: l10n.tsZh,
               titleStyle: subTitle,
               freelancers: <Widget>[
                 _Freelancer(
                   l10n: l10n,
-                  textTheme: textTheme,
                   imageSize: imageSize,
                   name: leah,
                   link: leahLink,
@@ -322,7 +299,6 @@ class _TeamScreenState extends State<TeamScreen> {
                 ),
                 _Freelancer(
                   l10n: l10n,
-                  textTheme: textTheme,
                   imageSize: imageSize,
                   name: hilaria,
                   link: hilariaLink,
@@ -333,10 +309,10 @@ class _TeamScreenState extends State<TeamScreen> {
           ],
         ),
 
-        ezSpacer, // Usually ezSeparator, but there's a trailing ezSpacer above
+        EzConfig.spacer,
         const EzTranslationsPendingNotice(),
       ])),
-      fabs: const <Widget>[ezSpacer, SettingsFAB()],
+      fabs: <Widget>[EzConfig.spacer, const SettingsFAB()],
     );
   }
 }
@@ -345,7 +321,6 @@ class _Member extends StatelessWidget {
   final String title;
   final String name;
   final Lang l10n;
-  final TextTheme textTheme;
   final double imageSize;
   final BoxDecoration? decoration;
   final bool hiring;
@@ -355,7 +330,6 @@ class _Member extends StatelessWidget {
     required this.title,
     required this.name,
     required this.l10n,
-    required this.textTheme,
     required this.imageSize,
     this.hiring = false,
     this.decoration,
@@ -368,7 +342,7 @@ class _Member extends StatelessWidget {
         hiring
             ? EzLinkWidget(
                 label: l10n.tsMirrorLabel,
-                onTap: () => showPlatformDialog(
+                onTap: () => showDialog(
                   context: context,
                   builder: (_) => EzAlertDialog(
                     title: const Text(
@@ -377,21 +351,13 @@ class _Member extends StatelessWidget {
                     ),
                     content:
                         Text(l10n.tsNonProfit, textAlign: TextAlign.center),
-                    materialActions: <EzMaterialAction>[
+                    actions: <EzMaterialAction>[
                       EzMaterialAction(
                         text: l10n.gEmail,
                         onPressed: () => launchUrl(Uri.parse(
                             'mailto:$empathFounder?subject=Becoming%20a%20member')),
                         isDefaultAction: true,
-                      )
-                    ],
-                    cupertinoActions: <EzCupertinoAction>[
-                      EzCupertinoAction(
-                        text: l10n.gEmail,
-                        onPressed: () => launchUrl(Uri.parse(
-                            'mailto:$empathFounder?subject=Becoming%20a%20member')),
-                        isDefaultAction: true,
-                      )
+                      ),
                     ],
                   ),
                 ),
@@ -400,10 +366,10 @@ class _Member extends StatelessWidget {
                 child: Shimmer.fromColors(
                   baseColor: Colors.black,
                   highlightColor: Colors.white,
-                  direction: Directionality.of(context) == TextDirection.ltr
+                  direction: EzConfig.isLTR
                       ? ShimmerDirection.ltr
                       : ShimmerDirection.rtl,
-                  period: ezAnimDuration(mod: 2),
+                  period: ezAnimDuration(mod: 2.0),
                   delay: const Duration(seconds: 4),
                   child: Container(
                     constraints: EzBox.sym(imageSize),
@@ -417,7 +383,7 @@ class _Member extends StatelessWidget {
                 decoration: decoration,
                 child: child,
               ),
-        ezMargin,
+        EzConfig.margin,
         MergeSemantics(
           child: EzTextBackground(Column(
             mainAxisSize: MainAxisSize.min,
@@ -425,12 +391,12 @@ class _Member extends StatelessWidget {
             children: <Widget>[
               Text(
                 title,
-                style: textTheme.titleLarge,
+                style: EzConfig.styles.titleLarge,
                 textAlign: TextAlign.center,
               ),
               Text(
                 name,
-                style: textTheme.bodyLarge,
+                style: EzConfig.styles.bodyLarge,
                 textAlign: TextAlign.center,
               ),
             ],
@@ -441,7 +407,6 @@ class _Member extends StatelessWidget {
 
 class _Freelancer extends StatelessWidget {
   final Lang l10n;
-  final TextTheme textTheme;
   final double imageSize;
   final String name;
   final String link;
@@ -449,7 +414,6 @@ class _Freelancer extends StatelessWidget {
 
   const _Freelancer({
     required this.l10n,
-    required this.textTheme,
     required this.imageSize,
     required this.name,
     required this.link,
@@ -476,12 +440,12 @@ class _Freelancer extends StatelessWidget {
               ),
             ),
           ),
-          ezMargin,
+          EzConfig.margin,
 
           // Name
           EzText(
             name,
-            style: textTheme.bodyLarge,
+            style: EzConfig.styles.bodyLarge,
             textAlign: TextAlign.center,
           ),
         ],
@@ -490,70 +454,58 @@ class _Freelancer extends StatelessWidget {
 
 class _Group extends StatelessWidget {
   final List<Widget> freelancers;
-  final double spacing;
   final String? title;
   final TextStyle? titleStyle;
 
   const _Group({
     required this.freelancers,
-    required this.spacing,
     this.title,
     required this.titleStyle,
   });
 
   @override
-  Widget build(BuildContext context) {
-    return (freelancers.length > 1)
-        ? Padding(
-            padding: EdgeInsets.all(spacing),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                if (title != null)
-                  EzText(
-                    title!,
-                    style: titleStyle,
-                    textAlign: TextAlign.center,
-                  ),
-                Wrap(
-                  alignment: WrapAlignment.center,
-                  runAlignment: WrapAlignment.center,
-                  crossAxisAlignment: WrapCrossAlignment.center,
-                  children: freelancers
-                      .map((Widget freelancer) => Padding(
-                            padding: EdgeInsets.only(
-                              left: spacing / 2,
-                              right: spacing / 2,
-                              bottom: spacing,
-                            ),
-                            child: freelancer,
-                          ))
-                      .toList(),
-                ),
-              ],
-            ),
-          )
-        : Padding(
-            padding: EdgeInsets.all(spacing),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                if (title != null)
-                  EzText(
-                    title!,
-                    style: titleStyle,
-                    textAlign: TextAlign.center,
-                  ),
-                Wrap(
-                  alignment: WrapAlignment.center,
-                  runAlignment: WrapAlignment.center,
-                  crossAxisAlignment: WrapCrossAlignment.center,
-                  children: freelancers,
-                ),
-              ],
-            ),
-          );
-  }
+  Widget build(BuildContext context) => (freelancers.length > 1)
+      ? Padding(
+          padding: EdgeInsets.all(EzConfig.spacing),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              if (title != null)
+                EzText(title!, style: titleStyle, textAlign: TextAlign.center),
+              Wrap(
+                alignment: WrapAlignment.center,
+                runAlignment: WrapAlignment.center,
+                crossAxisAlignment: WrapCrossAlignment.center,
+                children: freelancers
+                    .map((Widget freelancer) => Padding(
+                          padding: EdgeInsets.only(
+                            left: EzConfig.spacing / 2,
+                            right: EzConfig.spacing / 2,
+                            bottom: EzConfig.spacing,
+                          ),
+                          child: freelancer,
+                        ))
+                    .toList(),
+              ),
+            ],
+          ),
+        )
+      : Padding(
+          padding: EdgeInsets.all(EzConfig.spacing),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              if (title != null)
+                EzText(title!, style: titleStyle, textAlign: TextAlign.center),
+              Wrap(
+                alignment: WrapAlignment.center,
+                runAlignment: WrapAlignment.center,
+                crossAxisAlignment: WrapCrossAlignment.center,
+                children: freelancers,
+              ),
+            ],
+          ),
+        );
 }

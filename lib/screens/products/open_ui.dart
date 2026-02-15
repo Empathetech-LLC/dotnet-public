@@ -1,5 +1,5 @@
 /* dotnet
- * Copyright (c) 2025 Empathetech LLC. All rights reserved.
+ * Copyright (c) 2026 Empathetech LLC. All rights reserved.
  * See LICENSE for distribution and usage details.
  */
 
@@ -11,34 +11,28 @@ import 'package:efui_bios/efui_bios.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
-import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 
 class OpenUIScreen extends StatefulWidget {
-  const OpenUIScreen({super.key});
+  OpenUIScreen() : super(key: ValueKey<int>(EzConfig.seed));
 
   @override
   State<OpenUIScreen> createState() => _OpenUIScreenState();
 }
 
 class _OpenUIScreenState extends State<OpenUIScreen> {
-  // Gather the fixed theme data //
-
-  final EdgeInsets linkPadding = EzInsets.wrap(EzConfig.get(marginKey));
-
-  late final Lang l10n = Lang.of(context)!;
-
   // Define the build data //
 
-  final TargetPlatform basePlatform = getBasePlatform();
   late final DLType dlType;
   late final String latest;
   Uri url = Uri.parse(openUIReleases);
 
   // Define custom functions //
 
+  void redraw() => setState(() {});
+
   /// Set the download link
   void initUrl() async {
-    switch (basePlatform) {
+    switch (EzConfig.platform) {
       case TargetPlatform.android:
         dlType = DLType.gPlay;
         break;
@@ -57,8 +51,8 @@ class _OpenUIScreenState extends State<OpenUIScreen> {
     }
 
     latest = await getLatest('empathetech_flutter_ui', efuiFallback);
-    url = await openUIDownload(dlType, latest) ?? url;
-    if (mounted) setState(() {});
+    url = openUIDownload(dlType, latest);
+    redraw();
   }
 
   // Init //
@@ -69,258 +63,239 @@ class _OpenUIScreenState extends State<OpenUIScreen> {
     initUrl();
   }
 
-  // Return the build //
-
   @override
-  Widget build(BuildContext context) {
-    final TextTheme textTheme = Theme.of(context).textTheme;
-    final TextStyle? subTitle = ezSubTitleStyle(textTheme);
-
-    return DotnetScaffold(
-      EzScreen(
-        EzScrollView(
-          mainAxisSize: MainAxisSize.min,
-          children: <Widget>[
-            // Headline && slogan (link)
-            EzText(
-              openUI,
-              style: textTheme.displayLarge,
-              textAlign: TextAlign.center,
-            ),
-            EzLink(
-              l10n.ouSlogan,
-              style: textTheme.headlineLarge!,
-              padding: linkPadding,
-              textAlign: TextAlign.center,
-              url: url,
-              hint: l10n.gDownloadHint(openUI, dlType.name),
-            ),
-            ezSpacer,
-
-            // Demo
-            EzText(
-              l10n.ouLike,
-              style: subTitle,
-              textAlign: TextAlign.center,
-            ),
-            ezMargin,
-            const EFUIDemo(),
-            ezDivider,
-
-            // Use it in a sentence
-            EzText(
-              l10n.ouIs,
-              style: subTitle,
-              textAlign: TextAlign.center,
-            ),
-
-            // Video
-            const _DemoVideo(),
-            ezSpacer,
-
-            // Description
-            EzText(
-              l10n.ouFoundation,
-              style: textTheme.bodyLarge,
-              textAlign: TextAlign.center,
-            ),
-            EzText(
-              l10n.ouLocal,
-              style: textTheme.bodyLarge,
-              textAlign: TextAlign.center,
-            ),
-            EzText(
-              l10n.ouRequirements,
-              style: textTheme.bodyLarge,
-              textAlign: TextAlign.center,
-            ),
-            ezCenterLine,
-            EzText(
-              l10n.ouFlutterToo,
-              style: textTheme.labelLarge,
-              textAlign: TextAlign.center,
-            ),
-            ezDivider,
-
-            // EFUI //
-
-            // How it works
-            EzText(
-              l10n.ouHow,
-              style: textTheme.headlineLarge,
-              textAlign: TextAlign.center,
-            ),
-            EzRichText(<InlineSpan>[
-              EzPlainText(
-                text: l10n.ouEFUIsHow,
-                style: textTheme.bodyLarge,
-              ),
-              EzInlineLink(
-                efuiL,
-                richLabel: efuiLFix,
-                style: textTheme.bodyLarge,
+  Widget build(BuildContext context) => DotnetScaffold(
+        EzScreen(
+          EzScrollView(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              // Headline && slogan (link)
+              EzText(
+                openUI,
+                style: EzConfig.styles.displayLarge,
                 textAlign: TextAlign.center,
-                url: Uri.parse(efuiGitHub),
-                hint: ezL10n(context).gEFUISourceHint,
               ),
-              EzPlainText(
-                text: '.\n',
-                style: textTheme.bodyLarge,
-              ),
-              EzPlainText(
-                text: l10n.ouSimplifies,
-                style: textTheme.bodyLarge,
-              ),
-            ], textAlign: TextAlign.center),
-            ezCenterLine,
-            ezCenterLine,
-
-            // Platform availability
-            EzText(
-              l10n.ouPlatform,
-              style: textTheme.titleLarge,
-              textAlign: TextAlign.center,
-            ),
-            EzText(
-              l10n.ouPlatformContent,
-              style: textTheme.bodyLarge,
-              textAlign: TextAlign.center,
-            ),
-            ezCenterLine,
-
-            // Responsive design
-            EzText(
-              l10n.ouResponsive,
-              style: textTheme.titleLarge,
-              textAlign: TextAlign.center,
-            ),
-            EzText(
-              l10n.ouResponsiveContent,
-              style: textTheme.bodyLarge,
-              textAlign: TextAlign.center,
-            ),
-            ezCenterLine,
-
-            // Screen reader support
-            EzText(
-              l10n.ouScreen,
-              style: textTheme.titleLarge,
-              textAlign: TextAlign.center,
-            ),
-            EzRichText(<InlineSpan>[
-              EzPlainText(
-                text: l10n.ouScreenContent,
-                semanticsLabel: l10n.ouScreenContentFix,
-                style: textTheme.bodyLarge,
-              ),
-              EzInlineLink(
-                'TalkBack',
-                style: textTheme.bodyLarge,
+              EzLink(
+                l10n.ouSlogan,
+                style: EzConfig.styles.headlineLarge!,
+                padding: EzInsets.wrap(EzConfig.marginVal),
                 textAlign: TextAlign.center,
-                url: Uri.parse(
-                  'https://support.google.com/accessibility/android/answer/6006598?hl=en',
+                url: url,
+                hint: l10n.gDownloadHint(openUI, dlType.name),
+              ),
+              EzConfig.spacer,
+
+              // Demo
+              EzText(
+                l10n.ouLike,
+                style: ezSubTitleStyle(),
+                textAlign: TextAlign.center,
+              ),
+              EzConfig.margin,
+              EFUIDemo(redraw),
+              EzConfig.divider,
+
+              // Use it in a sentence
+              EzText(
+                l10n.ouIs,
+                style: ezSubTitleStyle(),
+                textAlign: TextAlign.center,
+              ),
+
+              // Video
+              const _DemoVideo(),
+              EzConfig.spacer,
+
+              // Description
+              EzText(
+                l10n.ouFoundation,
+                style: EzConfig.styles.bodyLarge,
+                textAlign: TextAlign.center,
+              ),
+              EzText(
+                l10n.ouLocal,
+                style: EzConfig.styles.bodyLarge,
+                textAlign: TextAlign.center,
+              ),
+              EzText(
+                l10n.ouRequirements,
+                style: EzConfig.styles.bodyLarge,
+                textAlign: TextAlign.center,
+              ),
+              EzConfig.centerLine,
+              EzText(
+                l10n.ouFlutterToo,
+                style: EzConfig.styles.labelLarge,
+                textAlign: TextAlign.center,
+              ),
+              EzConfig.divider,
+
+              // EFUI //
+
+              // How it works
+              EzText(
+                l10n.ouHow,
+                style: EzConfig.styles.headlineLarge,
+                textAlign: TextAlign.center,
+              ),
+              EzRichText(<InlineSpan>[
+                EzPlainText(
+                    text: l10n.ouEFUIsHow, style: EzConfig.styles.bodyLarge),
+                EzInlineLink(
+                  efuiL,
+                  richLabel: efuiLFix,
+                  style: EzConfig.styles.bodyLarge,
+                  textAlign: TextAlign.center,
+                  url: Uri.parse(efuiGitHub),
+                  hint: EzConfig.l10n.gEFUISourceHint,
                 ),
-                hint: l10n.ouTalkBackHint,
-              ),
-              EzPlainText(text: l10n.ouAnd, style: textTheme.bodyLarge),
-              EzInlineLink(
-                'VoiceOver',
-                style: textTheme.bodyLarge,
+                EzPlainText(text: '.\n', style: EzConfig.styles.bodyLarge),
+                EzPlainText(
+                    text: l10n.ouSimplifies, style: EzConfig.styles.bodyLarge),
+              ], textAlign: TextAlign.center),
+              EzConfig.centerLine,
+              EzConfig.centerLine,
+
+              // Platform availability
+              EzText(
+                l10n.ouPlatform,
+                style: EzConfig.styles.titleLarge,
                 textAlign: TextAlign.center,
-                url: Uri.parse(
-                  'https://support.apple.com/guide/iphone/turn-on-and-practice-voiceover-iph3e2e415f/ios',
+              ),
+              EzText(
+                l10n.ouPlatformContent,
+                style: EzConfig.styles.bodyLarge,
+                textAlign: TextAlign.center,
+              ),
+              EzConfig.centerLine,
+
+              // Responsive design
+              EzText(
+                l10n.ouResponsive,
+                style: EzConfig.styles.titleLarge,
+                textAlign: TextAlign.center,
+              ),
+              EzText(
+                l10n.ouResponsiveContent,
+                style: EzConfig.styles.bodyLarge,
+                textAlign: TextAlign.center,
+              ),
+              EzConfig.centerLine,
+
+              // Screen reader support
+              EzText(
+                l10n.ouScreen,
+                style: EzConfig.styles.titleLarge,
+                textAlign: TextAlign.center,
+              ),
+              EzRichText(<InlineSpan>[
+                EzPlainText(
+                  text: l10n.ouScreenContent,
+                  semanticsLabel: l10n.ouScreenContentFix,
+                  style: EzConfig.styles.bodyLarge,
                 ),
-                hint: l10n.ouVoiceOverHint,
-              ),
-              EzPlainText(text: '.', style: textTheme.bodyLarge),
-            ], textAlign: TextAlign.center),
-            ezCenterLine,
+                EzInlineLink(
+                  'TalkBack',
+                  style: EzConfig.styles.bodyLarge,
+                  textAlign: TextAlign.center,
+                  url: Uri.parse(
+                    'https://support.google.com/accessibility/android/answer/6006598?hl=en',
+                  ),
+                  hint: l10n.ouTalkBackHint,
+                ),
+                EzPlainText(text: l10n.ouAnd, style: EzConfig.styles.bodyLarge),
+                EzInlineLink(
+                  'VoiceOver',
+                  style: EzConfig.styles.bodyLarge,
+                  textAlign: TextAlign.center,
+                  url: Uri.parse(
+                    'https://support.apple.com/guide/iphone/turn-on-and-practice-voiceover-iph3e2e415f/ios',
+                  ),
+                  hint: l10n.ouVoiceOverHint,
+                ),
+                EzPlainText(text: '.', style: EzConfig.styles.bodyLarge),
+              ], textAlign: TextAlign.center),
+              EzConfig.centerLine,
 
-            // User customization
-            EzText(
-              l10n.ouCustom,
-              style: textTheme.titleLarge,
-              textAlign: TextAlign.center,
-            ),
-            EzText(
-              l10n.ouCustomContent,
-              style: textTheme.bodyLarge,
-              textAlign: TextAlign.center,
-            ),
-            ezCenterLine,
-
-            // Internationalization
-            EzText(
-              l10n.ouInternational,
-              style: textTheme.titleLarge,
-              textAlign: TextAlign.center,
-            ),
-            EzText(
-              l10n.ouInternationalContent,
-              semanticsLabel: l10n.ouInternationalContentFix,
-              style: textTheme.bodyLarge,
-              textAlign: TextAlign.center,
-            ),
-            ezCenterLine,
-
-            // Reliability
-            EzText(
-              l10n.ouReliability,
-              style: textTheme.titleLarge,
-              textAlign: TextAlign.center,
-            ),
-            EzText(
-              l10n.ouReliabilityContent,
-              semanticsLabel: l10n.ouReliabilityContentFix,
-              style: textTheme.bodyLarge,
-              textAlign: TextAlign.center,
-            ),
-            ezCenterLine,
-            ezCenterLine,
-
-            // Tag line && consultation call-out
-            EzRichText(<InlineSpan>[
-              EzPlainText(
-                text: l10n.ouEFUITagLine,
-                style: textTheme.bodyLarge,
-              ),
-              EzInlineLink(
-                l10n.gReachOut,
-                style: textTheme.bodyLarge,
+              // User customization
+              EzText(
+                l10n.ouCustom,
+                style: EzConfig.styles.titleLarge,
                 textAlign: TextAlign.center,
-                url: Uri.parse(teamURL),
-                hint: l10n.gTeamHint,
               ),
-              EzPlainText(
-                text: l10n.ouConsult,
-                style: textTheme.bodyLarge,
+              EzText(
+                l10n.ouCustomContent,
+                style: EzConfig.styles.bodyLarge,
+                textAlign: TextAlign.center,
               ),
-            ], textAlign: TextAlign.center),
-            ezDivider,
+              EzConfig.centerLine,
 
-            // Download Open UI (again) //
+              // Internationalization
+              EzText(
+                l10n.ouInternational,
+                style: EzConfig.styles.titleLarge,
+                textAlign: TextAlign.center,
+              ),
+              EzText(
+                l10n.ouInternationalContent,
+                semanticsLabel: l10n.ouInternationalContentFix,
+                style: EzConfig.styles.bodyLarge,
+                textAlign: TextAlign.center,
+              ),
+              EzConfig.centerLine,
 
-            EzText(
-              l10n.ouGetStarted,
-              style: subTitle,
-              textAlign: TextAlign.center,
-            ),
-            ezMargin,
-            const OpenUILink(),
+              // Reliability
+              EzText(
+                l10n.ouReliability,
+                style: EzConfig.styles.titleLarge,
+                textAlign: TextAlign.center,
+              ),
+              EzText(
+                l10n.ouReliabilityContent,
+                semanticsLabel: l10n.ouReliabilityContentFix,
+                style: EzConfig.styles.bodyLarge,
+                textAlign: TextAlign.center,
+              ),
+              EzConfig.centerLine,
+              EzConfig.centerLine,
 
-            ezSeparator,
-            const EzTranslationsPendingNotice(),
-          ],
+              // Tag line && consultation call-out
+              EzRichText(<InlineSpan>[
+                EzPlainText(
+                    text: l10n.ouEFUITagLine, style: EzConfig.styles.bodyLarge),
+                EzInlineLink(
+                  l10n.gReachOut,
+                  style: EzConfig.styles.bodyLarge,
+                  textAlign: TextAlign.center,
+                  url: Uri.parse(teamURL),
+                  hint: l10n.gTeamHint,
+                ),
+                EzPlainText(
+                    text: l10n.ouConsult, style: EzConfig.styles.bodyLarge),
+              ], textAlign: TextAlign.center),
+              EzConfig.divider,
+
+              // Download Open UI (again) //
+              EzText(
+                l10n.ouGetStarted,
+                style: ezSubTitleStyle(),
+                textAlign: TextAlign.center,
+              ),
+              EzConfig.margin,
+              const OpenUILink(),
+
+              EzConfig.separator,
+              const EzTranslationsPendingNotice(),
+            ],
+          ),
         ),
-      ),
-      fabs: <Widget>[
-        ezSpacer,
-        EzConfigFAB(context, appName: appName, androidPackage: null),
-        ezSpacer,
-        const SettingsFAB(),
-      ],
-    );
-  }
+        fabs: <Widget>[
+          EzConfig.spacer,
+          EzConfigFAB(context, appName: appName, androidPackage: null),
+          EzConfig.spacer,
+          const SettingsFAB(),
+        ],
+      );
 }
 
 class _DemoVideo extends StatefulWidget {
@@ -331,12 +306,6 @@ class _DemoVideo extends StatefulWidget {
 }
 
 class _DemoVideoState extends State<_DemoVideo> {
-  // Gather the fixed theme data //
-
-  final TargetPlatform platform = getBasePlatform();
-
-  late final Lang l10n = Lang.of(context)!;
-
   // Define the build data //
 
   final VideoPlayerController controller =
@@ -355,46 +324,44 @@ class _DemoVideoState extends State<_DemoVideo> {
   // Return the build //
 
   @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: <Widget>[
-        ezSpacer,
+  Widget build(BuildContext context) => Column(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          EzConfig.spacer,
 
-        // Video
-        Visibility(
-          visible: showVideo,
-          child: Padding(
-            padding: EdgeInsets.only(bottom: EzConfig.get(spacingKey)),
-            child: EzVideoPlayer(
-              controller: controller,
-              aspectRatio: 34 / 19,
-              maxWidth: widthOf(context) * 0.90,
-              maxHeight: heightOf(context) * 0.80,
-              backgroundColor: Colors.black,
-              semantics: l10n.ouDemo,
-              volumeVis: EzButtonVis.alwaysOff,
-              variableVolume: false,
-              autoPlay: false,
+          // Video
+          Visibility(
+            visible: showVideo,
+            child: Padding(
+              padding: EdgeInsets.only(bottom: EzConfig.spacing),
+              child: EzVideoPlayer(
+                controller: controller,
+                aspectRatio: 34 / 19,
+                maxWidth: widthOf(context) * 0.90,
+                maxHeight: heightOf(context) * 0.80,
+                backgroundColor: Colors.black,
+                semantics: l10n.ouDemo,
+                volumeVis: EzButtonVis.alwaysOff,
+                variableVolume: false,
+                autoPlay: false,
+              ),
             ),
           ),
-        ),
 
-        // Show/Hide
-        showVideo
-            ? EzElevatedIconButton(
-                onPressed: () => setState(() => showVideo = false),
-                icon: Icon(PlatformIcons(context).eyeSlashSolid),
-                label: l10n.psHideDemo,
-              )
-            : EzElevatedIconButton(
-                onPressed: () => setState(() => showVideo = true),
-                icon: Icon(PlatformIcons(context).eyeSolid),
-                label: l10n.psShowDemo,
-              ),
-      ],
-    );
-  }
+          // Show/Hide
+          showVideo
+              ? EzElevatedIconButton(
+                  onPressed: () => setState(() => showVideo = false),
+                  icon: const Icon(Icons.visibility_off),
+                  label: l10n.psHideDemo,
+                )
+              : EzElevatedIconButton(
+                  onPressed: () => setState(() => showVideo = true),
+                  icon: const Icon(Icons.visibility),
+                  label: l10n.psShowDemo,
+                ),
+        ],
+      );
 
   @override
   void dispose() {

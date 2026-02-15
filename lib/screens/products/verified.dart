@@ -1,5 +1,5 @@
 /* dotnet
- * Copyright (c) 2025 Empathetech LLC. All rights reserved.
+ * Copyright (c) 2026 Empathetech LLC. All rights reserved.
  * See LICENSE for distribution and usage details.
  */
 
@@ -11,50 +11,43 @@ import 'package:flutter/material.dart';
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 
 class VerifiedScreen extends StatefulWidget {
-  const VerifiedScreen({super.key});
+  VerifiedScreen() : super(key: ValueKey<int>(EzConfig.seed));
 
   @override
   State<VerifiedScreen> createState() => _VerifiedScreenState();
 }
 
 class _VerifiedScreenState extends State<VerifiedScreen> {
-  // Gather the fixed theme data //
-
-  final double margin = EzConfig.get(marginKey);
-  final double spacing = EzConfig.get(spacingKey);
-
-  late final EdgeInsets wrapPadding = EdgeInsets.only(
-    left: spacing,
-    right: spacing,
-    bottom: spacing * 2,
-  );
-  late final double loadingSize = ezImageSize(context);
-
-  late final Lang l10n = Lang.of(context)!;
-
-  // Return the build //
-
   @override
   Widget build(BuildContext context) {
-    final TextTheme textTheme = Theme.of(context).textTheme;
+    // Gather the contextual  theme data //
+
+    final EdgeInsets wrapPadding = EdgeInsets.only(
+      left: EzConfig.spacing,
+      right: EzConfig.spacing,
+      bottom: EzConfig.spacing * 2,
+    );
+    final double loadingSize = ezImageSize(context);
+
+    // Return the build //
 
     return DotnetScaffold(
       EzScreen(EzScrollView(mainAxisSize: MainAxisSize.min, children: <Widget>[
-        if (spacing > margin) EzSpacer(space: spacing - margin),
+        EzHeader(),
 
         // Headline
         EzText(
           l10n.vaIntro,
-          style: textTheme.headlineLarge,
+          style: EzConfig.styles.headlineLarge,
           textAlign: TextAlign.center,
         ),
-        ezCenterLine,
+        EzConfig.centerLine,
         EzText(
           l10n.vaTheBad,
-          style: textTheme.bodyLarge,
+          style: EzConfig.styles.bodyLarge,
           textAlign: TextAlign.center,
         ),
-        ezCenterLine,
+        EzConfig.centerLine,
 
         // Why we verify
         EzRichText(
@@ -63,29 +56,29 @@ class _VerifiedScreenState extends State<VerifiedScreen> {
               Products.openUI.name,
               url: Uri.parse(Products.openUI.url),
               hint: l10n.gLearn(Products.openUI.name),
-              style: textTheme.bodyLarge,
+              style: EzConfig.styles.bodyLarge,
               textAlign: TextAlign.center,
             ),
             EzPlainText(
               text: l10n.vaScamRisk,
-              style: textTheme.bodyLarge,
+              style: EzConfig.styles.bodyLarge,
             ),
           ],
-          style: textTheme.bodyLarge,
+          style: EzConfig.styles.bodyLarge,
           textAlign: TextAlign.center,
         ),
-        ezCenterLine,
+        EzConfig.centerLine,
         EzText(
           l10n.vaCheckIn,
-          style: textTheme.bodyLarge,
+          style: EzConfig.styles.bodyLarge,
           textAlign: TextAlign.center,
         ),
-        ezSpacer,
+        EzConfig.spacer,
 
         // 1st party apps
         EzText(
           l10n.vaFirst,
-          style: textTheme.headlineLarge,
+          style: EzConfig.styles.headlineLarge,
           textAlign: TextAlign.center,
         ),
         Wrap(
@@ -98,7 +91,10 @@ class _VerifiedScreenState extends State<VerifiedScreen> {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
-                  EzText(Products.openUI.name, style: textTheme.titleLarge),
+                  EzText(
+                    Products.openUI.name,
+                    style: EzConfig.styles.titleLarge,
+                  ),
                   const OpenUILink(),
                 ],
               ),
@@ -108,7 +104,7 @@ class _VerifiedScreenState extends State<VerifiedScreen> {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
-                  EzText(Products.sos.name, style: textTheme.titleLarge),
+                  EzText(Products.sos.name, style: EzConfig.styles.titleLarge),
                   const SOSLink(),
                 ],
               ),
@@ -119,7 +115,7 @@ class _VerifiedScreenState extends State<VerifiedScreen> {
         // 3rd party verified
         EzText(
           l10n.vaThird,
-          style: textTheme.headlineLarge,
+          style: EzConfig.styles.headlineLarge,
           textAlign: TextAlign.center,
         ),
         Row(
@@ -132,69 +128,69 @@ class _VerifiedScreenState extends State<VerifiedScreen> {
             ),
             EzText(
               l10n.vaWillYou,
-              style: textTheme.bodyLarge,
+              style: EzConfig.styles.bodyLarge,
               textAlign: TextAlign.center,
             ),
           ],
         ),
-        ezSpacer,
+        EzConfig.spacer,
 
         // Known scams
         EzText(
           l10n.vaKnown,
-          style: textTheme.headlineLarge,
+          style: EzConfig.styles.headlineLarge,
           textAlign: TextAlign.center,
         ),
-        ezMargin,
+        EzConfig.margin,
         EzText(
           l10n.vaSoGood,
-          style: textTheme.bodyLarge,
+          style: EzConfig.styles.bodyLarge,
           textAlign: TextAlign.center,
         ),
-        ezDivider,
+        EzConfig.divider,
 
         // How (and why again) to submit
         EzRichText(
           <InlineSpan>[
             EzPlainText(
               text: l10n.vaPublished,
-              style: textTheme.bodyLarge,
+              style: EzConfig.styles.bodyLarge,
             ),
             EzInlineLink(
               l10n.gAnEmail,
               url: Uri.parse(
                   'mailto:$empathSupport?subject=Sharing%20an%20EFUI%20app'),
               hint: l10n.gEmailHint,
-              style: textTheme.bodyLarge,
+              style: EzConfig.styles.bodyLarge,
               textAlign: TextAlign.center,
             ),
             EzPlainText(
               text: l10n.vaDoNoHarm,
-              style: textTheme.bodyLarge,
+              style: EzConfig.styles.bodyLarge,
             )
           ],
-          style: textTheme.bodyLarge,
+          style: EzConfig.styles.bodyLarge,
           textAlign: TextAlign.center,
         ),
-        ezCenterLine,
+        EzConfig.centerLine,
 
         // Closing statements
         EzText(
           l10n.vaPrivateFree,
-          style: textTheme.bodyLarge,
+          style: EzConfig.styles.bodyLarge,
           textAlign: TextAlign.center,
         ),
-        ezCenterLine,
+        EzConfig.centerLine,
         EzText(
           l10n.vaDoYourPart,
-          style: textTheme.bodyLarge,
+          style: EzConfig.styles.bodyLarge,
           textAlign: TextAlign.center,
         ),
 
-        ezSeparator,
+        EzConfig.separator,
         const EzTranslationsPendingNotice(),
       ])),
-      fabs: const <Widget>[ezSpacer, SettingsFAB()],
+      fabs: <Widget>[EzConfig.spacer, const SettingsFAB()],
     );
   }
 }

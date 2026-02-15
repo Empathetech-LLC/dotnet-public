@@ -1,5 +1,5 @@
 /* dotnet
- * Copyright (c) 2025 Empathetech LLC. All rights reserved.
+ * Copyright (c) 2026 Empathetech LLC. All rights reserved.
  * See LICENSE for distribution and usage details.
  */
 
@@ -41,60 +41,39 @@ class IconLink extends StatelessWidget {
 }
 
 class IconLinks extends StatelessWidget {
-  /// [BuildContext] passthrough for [Lang]
-  final BuildContext context;
-
-  /// [ThemeData.colorScheme] passthrough
-  final ColorScheme colorScheme;
-
   /// [Row] of [EzIconButton]s leading to all Empathetech contacts
-  IconLinks({
-    super.key,
-    required this.context,
-    required this.colorScheme,
-  });
+  IconLinks({super.key});
 
   // Define the buttons //
 
-  late final IconLink gitHub = IconLink(
+  final IconLink gitHub = IconLink(
     url: Uri.parse(empathGitHub),
     tooltip: 'GitHub',
-    icon: Icon(LineIcons.github, color: colorScheme.primary),
+    icon: Icon(LineIcons.github, color: EzConfig.colors.primary),
   );
 
-  late final IconLink newsletter = IconLink(
+  final IconLink newsletter = IconLink(
     url: Uri.parse(empathNewsletter),
-    tooltip: Lang.of(context)!.gNewsletter,
-    icon: Icon(Icons.mail_outline, color: colorScheme.primary),
+    tooltip: l10n.gNewsletter,
+    icon: Icon(Icons.mail_outline, color: EzConfig.colors.primary),
   );
 
-  late final IconLink mastodon = IconLink(
+  final IconLink mastodon = IconLink(
     url: Uri.parse(empathMastodon),
     tooltip: 'Mastodon',
-    icon: Icon(LineIcons.mastodon, color: colorScheme.primary),
+    icon: Icon(LineIcons.mastodon, color: EzConfig.colors.primary),
   );
 
-  late final IconLink bluesky = IconLink(
+  final IconLink bluesky = IconLink(
     url: Uri.parse(empathBluesky),
     tooltip: 'Bluesky',
-    icon: Icon(FontAwesomeIcons.bluesky, color: colorScheme.primary),
+    icon: Icon(FontAwesomeIcons.bluesky, color: EzConfig.colors.primary),
   );
 
-  late final IconLink linkedIn = IconLink(
+  final IconLink linkedIn = IconLink(
     url: Uri.parse(empathLinkedIn),
     tooltip: 'LinkedIn',
-    icon: Icon(LineIcons.linkedin, color: colorScheme.primary),
-  );
-
-  late final EzIconButton feedback = EzIconButton(
-    onPressed: () => ezFeedback(
-      parentContext: context,
-      l10n: ezL10n(context),
-      supportEmail: empathSupport,
-      appName: appName,
-    ),
-    tooltip: ezL10n(context).gGiveFeedback,
-    icon: Icon(Icons.feedback_outlined, color: colorScheme.primary),
+    icon: Icon(LineIcons.linkedin, color: EzConfig.colors.primary),
   );
 
   // Define the getters //
@@ -105,33 +84,28 @@ class IconLinks extends StatelessWidget {
         mastodon,
         bluesky,
         linkedIn,
-        feedback,
       ];
 
   List<Widget> get children => <Widget>[
-        ezRowMargin,
+        EzMargin(vertical: false),
         gitHub,
-        ezRowSpacer,
+        EzConfig.rowSpacer,
         newsletter,
-        ezRowSpacer,
+        EzConfig.rowSpacer,
         mastodon,
-        ezRowSpacer,
+        EzConfig.rowSpacer,
         bluesky,
-        ezRowSpacer,
+        EzConfig.rowSpacer,
         linkedIn,
-        ezRowSpacer,
-        feedback,
-        ezRowMargin,
+        EzMargin(vertical: false),
       ];
 
   // Return the build //
 
   @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisSize: MainAxisSize.min,
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: children,
-    );
-  }
+  Widget build(BuildContext context) => Row(
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: children,
+      );
 }

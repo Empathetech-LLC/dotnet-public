@@ -1,5 +1,5 @@
 /* dotnet
- * Copyright (c) 2025 Empathetech LLC. All rights reserved.
+ * Copyright (c) 2026 Empathetech LLC. All rights reserved.
  * See LICENSE for distribution and usage details.
  */
 
@@ -11,24 +11,16 @@ import 'package:flutter/material.dart';
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 
 class LiminalScreen extends StatefulWidget {
-  const LiminalScreen({super.key});
+  LiminalScreen() : super(key: ValueKey<int>(EzConfig.seed));
 
   @override
   State<LiminalScreen> createState() => _LiminalScreenState();
 }
 
 class _LiminalScreenState extends State<LiminalScreen> {
-  // Gather the fixed theme data //
-
-  late final double imageWidth = ezImageSize(context) * 1.5;
-
-  late final Lang l10n = Lang.of(context)!;
-
-  // Return the build //
-
   @override
   Widget build(BuildContext context) {
-    final TextTheme textTheme = Theme.of(context).textTheme;
+    final double imageWidth = ezImageSize(context) * 1.5;
 
     return DotnetScaffold(
       EzScreen(EzScrollView(mainAxisSize: MainAxisSize.min, children: <Widget>[
@@ -37,46 +29,46 @@ class _LiminalScreenState extends State<LiminalScreen> {
           Products.liminal.name,
           url: Uri.parse(liminalSource),
           hint: l10n.gRepoHint,
-          style: textTheme.displayLarge,
+          style: EzConfig.styles.displayLarge,
           textAlign: TextAlign.center,
         ),
         EzText(
           l10n.llDescription,
           semanticsLabel: l10n.llDescriptionFix,
-          style: textTheme.headlineLarge,
+          style: EzConfig.styles.headlineLarge,
           textAlign: TextAlign.center,
         ),
-        ezCenterLine,
+        EzConfig.centerLine,
 
         // In dev
         EzText(
           l10n.llInDev,
-          style: textTheme.bodyLarge,
+          style: EzConfig.styles.bodyLarge,
           textAlign: TextAlign.center,
         ),
-        ezCenterLine,
+        EzConfig.centerLine,
         EzRichText(
           <InlineSpan>[
             EzPlainText(
               text: l10n.llBut,
-              style: textTheme.bodyLarge,
+              style: EzConfig.styles.bodyLarge,
             ),
             EzInlineLink(
               Products.openUI.name,
               url: Uri.parse(Products.openUI.url),
               hint: l10n.gLearn(Products.openUI.name),
-              style: textTheme.bodyLarge,
+              style: EzConfig.styles.bodyLarge,
               textAlign: TextAlign.center,
             ),
             EzPlainText(
               text: l10n.llWhimsy,
-              style: textTheme.bodyLarge,
+              style: EzConfig.styles.bodyLarge,
             ),
           ],
-          style: textTheme.bodyLarge,
+          style: EzConfig.styles.bodyLarge,
           textAlign: TextAlign.center,
         ),
-        ezSeparator,
+        EzConfig.separator,
 
         EzScrollView(
           startCentered: true,
@@ -94,7 +86,7 @@ class _LiminalScreenState extends State<LiminalScreen> {
                 semanticLabel: l10n.llTheHood,
               ),
             ),
-            ezRowSpacer,
+            EzConfig.rowSpacer,
 
             // Rose Garden
             Tooltip(
@@ -105,7 +97,7 @@ class _LiminalScreenState extends State<LiminalScreen> {
                 semanticLabel: l10n.llLasRosas,
               ),
             ),
-            ezRowSpacer,
+            EzConfig.rowSpacer,
 
             // La Grenouille
             Tooltip(
@@ -118,34 +110,34 @@ class _LiminalScreenState extends State<LiminalScreen> {
             ),
           ],
         ),
-        ezSeparator,
+        EzConfig.separator,
 
         // Pricing && contact
         EzText(
           l10n.llModel,
-          style: textTheme.bodyLarge,
+          style: EzConfig.styles.bodyLarge,
           textAlign: TextAlign.center,
         ),
-        ezCenterLine,
+        EzConfig.centerLine,
 
         EzRichText(<InlineSpan>[
           EzInlineLink(
             l10n.gReachOut,
-            style: textTheme.bodyLarge,
+            style: EzConfig.styles.bodyLarge,
             textAlign: TextAlign.center,
             url: Uri.parse(teamURL),
             hint: l10n.gTeamHint,
           ),
           EzPlainText(
             text: l10n.psLearnMore,
-            style: textTheme.bodyLarge,
+            style: EzConfig.styles.bodyLarge,
           ),
         ], textAlign: TextAlign.center),
 
-        ezSeparator,
+        EzConfig.separator,
         const EzTranslationsPendingNotice(),
       ])),
-      fabs: const <Widget>[ezSpacer, SettingsFAB()],
+      fabs: <Widget>[EzConfig.spacer, const SettingsFAB()],
     );
   }
 }

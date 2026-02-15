@@ -1,5 +1,5 @@
 /* dotnet
- * Copyright (c) 2025 Empathetech LLC. All rights reserved.
+ * Copyright (c) 2026 Empathetech LLC. All rights reserved.
  * See LICENSE for distribution and usage details.
  */
 
@@ -11,37 +11,26 @@ import 'package:flutter/material.dart';
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 
 class SmokeSignalScreen extends StatefulWidget {
-  const SmokeSignalScreen({super.key});
+  SmokeSignalScreen() : super(key: ValueKey<int>(EzConfig.seed));
 
   @override
   State<SmokeSignalScreen> createState() => _SmokeSignalScreenState();
 }
 
 class _SmokeSignalScreenState extends State<SmokeSignalScreen> {
-  // Gather the fixed theme data //
-
-  final double margin = EzConfig.get(marginKey);
-  final double spacing = EzConfig.get(spacingKey);
-
-  late final double imageSize = ezImageSize(context);
-
-  late final Lang l10n = Lang.of(context)!;
-
-  // Return the build //
-
   @override
   Widget build(BuildContext context) {
-    final TextTheme textTheme = Theme.of(context).textTheme;
+    final double imageSize = ezImageSize(context);
 
     return DotnetScaffold(
       EzScreen(EzScrollView(mainAxisSize: MainAxisSize.min, children: <Widget>[
         // Headline
         EzText(
           smokeSignal,
-          style: textTheme.displayLarge,
+          style: EzConfig.styles.displayLarge,
           textAlign: TextAlign.center,
         ),
-        ezMargin,
+        EzConfig.margin,
 
         // Icon link
         Container(
@@ -57,63 +46,63 @@ class _SmokeSignalScreenState extends State<SmokeSignalScreen> {
             ),
           ),
         ),
-        ezSpacer,
+        EzConfig.spacer,
 
         // Description
         EzRichText(<InlineSpan>[
           EzPlainText(
             text: l10n.ssPreview1,
-            style: textTheme.bodyLarge,
+            style: EzConfig.styles.bodyLarge,
             semanticsLabel: l10n.ssPreview1Fix,
           ),
           EzInlineLink(
             smokeSignal,
-            style: textTheme.bodyLarge,
+            style: EzConfig.styles.bodyLarge,
             textAlign: TextAlign.center,
             url: Uri.parse(smokeSignalSource),
             hint: smokeSignalSource,
           ),
           EzPlainText(
             text: l10n.ssPreview2,
-            style: textTheme.bodyLarge,
+            style: EzConfig.styles.bodyLarge,
           ),
         ], textAlign: TextAlign.center),
-        ezCenterLine,
+        EzConfig.centerLine,
 
         EzRichText(<InlineSpan>[
           EzPlainText(
             text: l10n.ssPreview3,
-            style: textTheme.bodyLarge,
+            style: EzConfig.styles.bodyLarge,
           ),
           EzInlineLink(
             'Activity Pub.',
-            style: textTheme.bodyLarge,
+            style: EzConfig.styles.bodyLarge,
             textAlign: TextAlign.center,
             url: Uri.parse('https://www.w3.org/TR/activitypub/'),
             hint: l10n.ssAPHint,
           ),
         ], textAlign: TextAlign.center),
-        ezCenterLine,
+        EzConfig.centerLine,
 
         // Collaboration call-out
         EzRichText(<InlineSpan>[
           EzInlineLink(
             l10n.gReachOut,
-            style: textTheme.bodyLarge,
+            style: EzConfig.styles.bodyLarge,
             textAlign: TextAlign.center,
             url: Uri.parse(teamURL),
             hint: l10n.gTeamHint,
           ),
           EzPlainText(
             text: l10n.psLearnMore,
-            style: textTheme.bodyLarge,
+            style: EzConfig.styles.bodyLarge,
           ),
         ], textAlign: TextAlign.center),
 
-        ezSeparator,
+        EzConfig.separator,
         const EzTranslationsPendingNotice(),
       ])),
-      fabs: const <Widget>[ezSpacer, SettingsFAB()],
+      fabs: <Widget>[EzConfig.spacer, const SettingsFAB()],
     );
   }
 }

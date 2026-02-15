@@ -1,5 +1,5 @@
 /* dotnet
- * Copyright (c) 2025 Empathetech LLC. All rights reserved.
+ * Copyright (c) 2026 Empathetech LLC. All rights reserved.
  * See LICENSE for distribution and usage details.
  */
 
@@ -14,35 +14,24 @@ import 'package:line_icons/line_icons.dart';
 import 'package:video_player/video_player.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
-import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 
 class SOSScreen extends StatefulWidget {
-  const SOSScreen({super.key});
+  SOSScreen() : super(key: ValueKey<int>(EzConfig.seed));
 
   @override
   State<SOSScreen> createState() => _SOSScreenState();
 }
 
 class _SOSScreenState extends State<SOSScreen> {
-  // Gather the fixed theme data //
-
-  final double spacing = EzConfig.get(spacingKey);
-
-  late final Lang l10n = Lang.of(context)!;
-
-  // Return the build //
-
   @override
   Widget build(BuildContext context) {
-    final TextTheme textTheme = Theme.of(context).textTheme;
-
     return DotnetScaffold(
       EzScreen(EzScrollView(mainAxisSize: MainAxisSize.min, children: <Widget>[
         // Headline
         EzText(
           sosName,
           semanticsLabel: sosLabel,
-          style: textTheme.displayLarge,
+          style: EzConfig.styles.displayLarge,
           textAlign: TextAlign.center,
         ),
 
@@ -52,89 +41,69 @@ class _SOSScreenState extends State<SOSScreen> {
         // Description
         EzText(
           l10n.sosDescription,
-          style: textTheme.bodyLarge,
+          style: EzConfig.styles.bodyLarge,
           textAlign: TextAlign.center,
         ),
-        ezCenterLine,
+        EzConfig.centerLine,
 
         // Donation call-out
         EzRichText(<InlineSpan>[
-          EzPlainText(
-            text: l10n.sosPrivate,
-            style: textTheme.bodyLarge,
-          ),
-          EzPlainText(
-            text: l10n.sosFree,
-            style: textTheme.bodyLarge,
-          ),
+          EzPlainText(text: l10n.sosPrivate, style: EzConfig.styles.bodyLarge),
+          EzPlainText(text: l10n.sosFree, style: EzConfig.styles.bodyLarge),
           EzInlineLink(
             l10n.sosOpenSource,
-            style: textTheme.bodyLarge,
+            style: EzConfig.styles.bodyLarge,
             textAlign: TextAlign.center,
             url: Uri.parse(sosSource),
             hint: l10n.gRepoHint,
           ),
-          EzPlainText(
-            text: '.',
-            style: textTheme.bodyLarge,
-          ),
+          EzPlainText(text: '.', style: EzConfig.styles.bodyLarge),
         ], textAlign: TextAlign.center),
-        ezCenterLine,
+        EzConfig.centerLine,
 
         // README link
         EzRichText(<InlineSpan>[
-          EzPlainText(
-            text: l10n.sosWeAlso,
-            style: textTheme.bodyLarge,
-          ),
+          EzPlainText(text: l10n.sosWeAlso, style: EzConfig.styles.bodyLarge),
           EzInlineLink(
             l10n.sosSetupGuide,
-            style: textTheme.bodyLarge,
+            style: EzConfig.styles.bodyLarge,
             textAlign: TextAlign.center,
             url: Uri.parse(
-                'https://github.com/Empathetech-LLC/sos/blob/main/README.md#using'),
+              'https://github.com/Empathetech-LLC/sos/blob/main/README.md#using',
+            ),
             hint: l10n.sosSetupGuideHint,
           ),
-          EzPlainText(
-            text: '.',
-            style: textTheme.bodyLarge,
-          ),
+          EzPlainText(text: '.', style: EzConfig.styles.bodyLarge),
         ], textAlign: TextAlign.center),
-        ezCenterLine,
+        EzConfig.centerLine,
 
         // Contribution call-out
         EzRichText(<InlineSpan>[
-          EzPlainText(
-            text: l10n.sosConsider,
-            style: textTheme.bodyLarge,
-          ),
+          EzPlainText(text: l10n.sosConsider, style: EzConfig.styles.bodyLarge),
           EzInlineLink(
             l10n.sosContributing,
-            style: textTheme.bodyLarge,
+            style: EzConfig.styles.bodyLarge,
             textAlign: TextAlign.center,
             url: Uri.parse(contributeURL),
             hint: l10n.gContributeHint,
           ),
-          EzPlainText(
-            text: l10n.sosSAPS,
-            style: textTheme.bodyLarge,
-          ),
+          EzPlainText(text: l10n.sosSAPS, style: EzConfig.styles.bodyLarge),
         ], textAlign: TextAlign.center),
-        ezDivider,
+        EzConfig.divider,
 
         // Download link(s)
         EzText(
           l10n.psDownloadNow,
-          style: ezSubTitleStyle(textTheme),
+          style: ezSubTitleStyle(),
           textAlign: TextAlign.center,
         ),
-        ezMargin,
+        EzConfig.margin,
         const SOSLink(),
 
-        ezSeparator,
+        EzConfig.separator,
         const EzTranslationsPendingNotice(),
       ])),
-      fabs: const <Widget>[ezSpacer, SettingsFAB()],
+      fabs: <Widget>[EzConfig.spacer, const SettingsFAB()],
     );
   }
 }
@@ -147,12 +116,6 @@ class _PromoVideo extends StatefulWidget {
 }
 
 class _PromoVideoState extends State<_PromoVideo> {
-  // Gather the fixed theme data //
-
-  final double spacing = EzConfig.get(spacingKey);
-
-  late final Lang l10n = Lang.of(context)!;
-
   // Define the build data //
 
   final Future<ClosedCaptionFile>? cc = rootBundle
@@ -187,13 +150,13 @@ class _PromoVideoState extends State<_PromoVideo> {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: <Widget>[
-        ezMargin,
+        EzConfig.margin,
 
         // Video
         Visibility(
           visible: showVideo,
           child: Padding(
-            padding: EdgeInsets.only(bottom: spacing),
+            padding: EdgeInsets.only(bottom: EzConfig.spacing),
             child: EzSwapWidget(
               restricted: EzVideoPlayer(
                 key: const ValueKey<String>('vertical'),
@@ -233,15 +196,15 @@ class _PromoVideoState extends State<_PromoVideo> {
             showVideo
                 ? EzElevatedIconButton(
                     onPressed: () => setState(() => showVideo = false),
-                    icon: Icon(PlatformIcons(context).eyeSlashSolid),
+                    icon: const Icon(Icons.visibility_off),
                     label: l10n.psHidePromo,
                   )
                 : EzElevatedIconButton(
                     onPressed: () => setState(() => showVideo = true),
-                    icon: Icon(PlatformIcons(context).eyeSolid),
+                    icon: const Icon(Icons.visibility),
                     label: l10n.psShowPromo,
                   ),
-            ezRowSpacer,
+            EzConfig.rowSpacer,
 
             // Share
             MenuAnchor(
@@ -249,7 +212,7 @@ class _PromoVideoState extends State<_PromoVideo> {
                 onPressed: () =>
                     controller.isOpen ? controller.close() : controller.open(),
                 tooltip: l10n.gShare,
-                icon: Icon(PlatformIcons(context).share),
+                icon: const Icon(Icons.share),
               ),
               menuChildren: <Widget>[
                 EzMenuLink(
@@ -286,7 +249,7 @@ class _PromoVideoState extends State<_PromoVideo> {
             ),
           ],
         ),
-        ezDivider,
+        EzConfig.divider,
       ],
     );
   }

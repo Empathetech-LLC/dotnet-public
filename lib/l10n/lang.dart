@@ -1128,7 +1128,7 @@ abstract class Lang {
   /// No description provided for @fahStats.
   ///
   /// In en, this message translates to:
-  /// **'Together, we\'ve earned over 350 million points.\nThat puts us in the top 2% of all teams worldwide!'**
+  /// **'Together, we\'ve earned over 400 million points.\nThat puts us in the top 2% of all teams worldwide!'**
   String get fahStats;
 
   /// No description provided for @csPageTitle.

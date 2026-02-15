@@ -1,5 +1,5 @@
 /* dotnet
- * Copyright (c) 2025 Empathetech LLC. All rights reserved.
+ * Copyright (c) 2026 Empathetech LLC. All rights reserved.
  * See LICENSE for distribution and usage details.
  */
 
@@ -8,115 +8,97 @@ import '../utils/export.dart';
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
-import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 
 class EFUIDemo extends StatelessWidget {
+  /// setState((){})
+  final void Function() stateCallback;
+
   /// 2 years of work in 3 buttons
-  const EFUIDemo({super.key});
+  const EFUIDemo(this.stateCallback, {super.key});
 
   @override
   Widget build(BuildContext context) {
-    // Gather the fixed theme data //
+    // Gather the contextual theme data //
 
     final EzSwapSpacer halfSwapSpacer =
-        EzSwapSpacer(space: EzConfig.get(spacingKey) / 2);
-
-    final EdgeInsets linkPadding = EzInsets.wrap(EzConfig.get(marginKey));
-
-    final EFUILang el10n = ezL10n(context);
-    final Lang l10n = Lang.of(context)!;
+        EzSwapSpacer(space: EzConfig.spacing / 2);
+    final EdgeInsets linkPadding = EzInsets.wrap(EzConfig.marginVal);
 
     // Define custom functions //
 
-    ScaffoldFeatureController<SnackBar, SnackBarClosedReason> reloadSnack(
-      String message,
-    ) =>
-        ezSnackBar(context: context, message: message);
+    Future<void> redraw() => EzConfig.rebuildUI(stateCallback);
 
-    // Define the build data //
+    // Return the build //
 
-    late final String reloadMessage = el10n.ssRestartReminderWeb;
-
-    late final List<Widget> demos = <Widget>[
-      // Low mobility
-      Tooltip(
-        message: el10n.ssTryMe,
-        excludeFromSemantics: true,
-        child: EzTextIconButton(
-          onPressed: () async {
-            await EzBigButtonsConfig.onPressed();
-            reloadSnack('${l10n.ouRandom} $reloadMessage');
-          },
-          style: TextButton.styleFrom(padding: linkPadding),
-          icon: EzIcon(Icons.touch_app),
-          label: l10n.ouAccessible,
+    return Column(mainAxisSize: MainAxisSize.min, children: <Widget>[
+      // 3 demo buttons
+      EzRowCol.sym(mainAxisSize: MainAxisSize.min, children: <Widget>[
+        // Low mobility
+        Tooltip(
+          message: EzConfig.l10n.ssTryMe,
+          excludeFromSemantics: true,
+          child: EzTextIconButton(
+            onPressed: () async {
+              await EzBigButtonsConfig.onPressed(EzConfig.isDark);
+              await redraw();
+            },
+            style: TextButton.styleFrom(padding: linkPadding),
+            icon: const Icon(Icons.touch_app),
+            label: l10n.ouAccessible,
+          ),
         ),
-      ),
-      ezSwapSpacer,
+        const EzSwapSpacer(),
 
-      // Low vision
-      Tooltip(
-        message: el10n.ssTryMe,
-        excludeFromSemantics: true,
-        child: EzTextIconButton(
-          onPressed: () async {
-            await EzHighVisibilityConfig.onPressed(isDarkTheme(context));
-            reloadSnack('${l10n.ouRandom} $reloadMessage');
-          },
-          style: TextButton.styleFrom(padding: linkPadding),
-          icon: EzIcon(Icons.contrast),
-          label: l10n.ouZeroStrain,
+        // Low vision
+        Tooltip(
+          message: EzConfig.l10n.ssTryMe,
+          excludeFromSemantics: true,
+          child: EzTextIconButton(
+            onPressed: () async {
+              await EzHighVisibilityConfig.onPressed(EzConfig.isDark);
+              await redraw();
+            },
+            style: TextButton.styleFrom(padding: linkPadding),
+            icon: const Icon(Icons.contrast),
+            label: l10n.ouZeroStrain,
+          ),
         ),
-      ),
-      halfSwapSpacer,
+        halfSwapSpacer,
 
-      // and
-      Text(
-        '&',
-        style: ezSubTitleStyle(Theme.of(context).textTheme),
-        textAlign: TextAlign.center,
-        semanticsLabel: el10n.gAnd,
-      ),
-      halfSwapSpacer,
-
-      // Random
-      Tooltip(
-        message: el10n.ssTryMe,
-        excludeFromSemantics: true,
-        child: EzTextIconButton(
-          onPressed: () async {
-            await EzConfig.randomize(isDarkTheme(context));
-            reloadSnack('${l10n.ouRandom} $reloadMessage');
-          },
-          style: TextButton.styleFrom(padding: linkPadding),
-          icon: EzIcon(LineIcons.diceD6),
-          label: l10n.ouEverything,
+        // and
+        Text(
+          '&',
+          style: ezSubTitleStyle(),
+          textAlign: TextAlign.center,
+          semanticsLabel: EzConfig.l10n.gAnd,
         ),
-      ),
-    ];
+        halfSwapSpacer,
 
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: <Widget>[
-        // Demo buttons
-        EzRowCol.sym(mainAxisSize: MainAxisSize.min, children: demos),
-        ezSpacer,
-
-        // Reset button
-        EzElevatedIconButton(
-          onPressed: () async {
-            // Reset
-            await EzConfig.removeKeys(isMobile()
-                ? empathMobileConfig.keys.toSet()
-                : empathDesktopConfig.keys.toSet());
-
-            // Notify user
-            reloadSnack(reloadMessage);
-          },
-          icon: EzIcon(PlatformIcons(context).refresh),
-          label: el10n.gReset,
+        // Random
+        Tooltip(
+          message: EzConfig.l10n.ssTryMe,
+          excludeFromSemantics: true,
+          child: EzTextIconButton(
+            onPressed: () async {
+              await EzConfig.randomize();
+              await redraw();
+            },
+            style: TextButton.styleFrom(padding: linkPadding),
+            icon: const Icon(LineIcons.diceD6),
+            label: l10n.ouEverything,
+          ),
         ),
-      ],
-    );
+      ]),
+      // Reset button
+      EzConfig.spacer,
+      EzElevatedIconButton(
+        onPressed: () async {
+          await EzConfig.reset(false);
+          await redraw();
+        },
+        icon: const Icon(Icons.refresh),
+        label: EzConfig.l10n.gReset,
+      ),
+    ]);
   }
 }

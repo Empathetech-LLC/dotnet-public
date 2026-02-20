@@ -332,6 +332,7 @@ class _DemoVideoState extends State<_DemoVideo> {
           // Video
           Visibility(
             visible: showVideo,
+            maintainState: true,
             child: Padding(
               padding: EdgeInsets.only(bottom: EzConfig.spacing),
               child: EzVideoPlayer(

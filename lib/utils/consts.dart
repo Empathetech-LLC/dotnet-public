@@ -167,8 +167,14 @@ const String sosPromoPath = 'assets/videos/sos-promo.mp4';
 /// assets/videos/sos-promo-vertical.mp4
 const String sosVerticalPromoPath = 'assets/videos/sos-promo-vertical.mp4';
 
-/// assets/videos/sos-promo-captions.srt
-const String sosPromoCaptionsPath = 'assets/videos/sos-promo-captions.srt';
+/// assets/videos/captions/sos-promo-en.srt
+const String sosEnCaptionsPath = 'assets/videos/captions/sos-promo-en.srt';
+
+/// assets/videos/captions/sos-promo-es.srt
+const String sosEsCaptionsPath = 'assets/videos/captions/sos-promo-es.srt';
+
+/// assets/videos/captions/sos-promo-fr.srt
+const String sosFrCaptionsPath = 'assets/videos/captions/sos-promo-fr.srt';
 
 // Trackers //
 

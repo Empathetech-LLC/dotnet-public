@@ -87,7 +87,7 @@ class IconLinks extends StatelessWidget {
       ];
 
   List<Widget> get children => <Widget>[
-        EzMargin(vertical: false),
+        EzConfig.rowMargin,
         gitHub,
         EzConfig.rowSpacer,
         newsletter,
@@ -97,7 +97,7 @@ class IconLinks extends StatelessWidget {
         bluesky,
         EzConfig.rowSpacer,
         linkedIn,
-        EzMargin(vertical: false),
+        EzConfig.rowMargin,
       ];
 
   // Return the build //

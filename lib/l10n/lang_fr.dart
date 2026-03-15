@@ -347,6 +347,10 @@ class LangFr extends Lang {
       'InstaSOS n\'a pas de comptes, de cookies ou de publicités.\n';
 
   @override
+  String get sosPrivateFix =>
+      'Insta-SOS n\'a pas de comptes, de cookies ou de publicités.\n';
+
+  @override
   String get sosFree => 'C\'est totalement gratuit et le code est ';
 
   @override
@@ -372,6 +376,10 @@ class LangFr extends Lang {
 
   @override
   String get sosIconLabel => 'Une icône de notification aux couleurs vives.';
+
+  @override
+  String get sosWeb =>
+      'Une façon spécifique, et à fort impact, de contribuer serait de régler la facture de l\'hébergement d\'InstaSOS en ligne.\n\nLes propriétaires des boutiques d\'applications ont clairement affiché la couleur quant à leurs alliances, et InstaSOS risque d\'être retiré si/quand il gagnera du terrain.\nLes utilisateurs d\'Android auront toujours la possibilité de l\'installer manuellement, mais la seule alternative viable pour les utilisateurs d\'iOS serait une application web.\n\nHeureusement, les applications Flutter effectuent leurs calculs côté client, la facture serait donc peu élevée.\nNous n\'aurions (vous n\'auriez) à payer que pour la gestion du trafic.';
 
   @override
   String get llDescription => 'Un lanceur Android Empathetech.';

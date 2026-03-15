@@ -346,6 +346,10 @@ class LangEs extends Lang {
   String get sosPrivate => 'InstaSOS no tiene cuentas, cookies ni anuncios.\n';
 
   @override
+  String get sosPrivateFix =>
+      'Insta-SOS no tiene cuentas, cookies ni anuncios.\n';
+
+  @override
   String get sosFree => 'Es completamente gratuito y el código es de ';
 
   @override
@@ -371,6 +375,10 @@ class LangEs extends Lang {
 
   @override
   String get sosIconLabel => 'Un icono de notificación de color fuerte.';
+
+  @override
+  String get sosWeb =>
+      'Una forma específica y de gran impacto de contribuir sería asumir el costo de alojar InstaSOS en línea.\n\nLos dueños de las tiendas de aplicaciones han dejado claras sus lealtades, e InstaSOS podría ser eliminada si/cuando gane tracción.\nLos usuarios de Android siempre tendrán la opción de instalarla manualmente, pero la única alternativa viable para los usuarios de iOS sería una aplicación web.\n\nAfortunadamente, el procesamiento de las aplicaciones hechas en Flutter se realiza del lado del cliente, por lo que la factura sería baja.\nSolo tendríamos (tendrías) que pagar por la gestión del tráfico.';
 
   @override
   String get llDescription => 'Un lanzador de Android Empathetech.';

@@ -67,7 +67,7 @@ class IconLinks extends StatelessWidget {
   final IconLink bluesky = IconLink(
     url: Uri.parse(empathBluesky),
     tooltip: 'Bluesky',
-    icon: Icon(FontAwesomeIcons.bluesky, color: EzConfig.colors.primary),
+    icon: FaIcon(FontAwesomeIcons.bluesky, color: EzConfig.colors.primary),
   );
 
   final IconLink linkedIn = IconLink(

@@ -687,6 +687,12 @@ abstract class Lang {
   /// **'InstaSOS has no accounts, cookies, or ads.\n'**
   String get sosPrivate;
 
+  /// No description provided for @sosPrivateFix.
+  ///
+  /// In en, this message translates to:
+  /// **'Insta-SOS has no accounts, cookies, or ads.\n'**
+  String get sosPrivateFix;
+
   /// No description provided for @sosFree.
   ///
   /// In en, this message translates to:
@@ -740,6 +746,12 @@ abstract class Lang {
   /// In en, this message translates to:
   /// **'a loudly colored notification bell.'**
   String get sosIconLabel;
+
+  /// No description provided for @sosWeb.
+  ///
+  /// In en, this message translates to:
+  /// **'One specific, and highly impactful, way to contribute would be to foot the bill for hosting InstaSOS online.\n\nThe app store owners have made their allegiances clear, and InstaSOS may be removed if/when it gains traction.\nAndroid users will always have the option to self install, but the only viable alternative for iOS users would be a web app.\n\nThankfully, Flutter apps are client side compute, so the bill would be low.\nWe\'d (you\'d) only need to pay for traffic management.'**
+  String get sosWeb;
 
   /// No description provided for @llDescription.
   ///

@@ -16,7 +16,6 @@ class SettingsHomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) => DotnetScaffold(
         EzScreen(EzSettingsHome(
-          protest: true,
           colorSettingsPath: colorSettingsURL,
           designSettingsPath: designSettingsURL,
           layoutSettingsPath: layoutSettingsURL,

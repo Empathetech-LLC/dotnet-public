@@ -162,7 +162,7 @@ class _ContributeScreenState extends State<ContributeScreen> {
                 tooltip: empathCashApp,
                 hint: l10n.csOpenLink('CashApp'),
                 url: Uri.parse(empathCashApp),
-                icon: const Icon(FontAwesomeIcons.cashApp),
+                icon: const FaIcon(FontAwesomeIcons.cashApp),
                 label: 'CashApp',
               ),
             ],

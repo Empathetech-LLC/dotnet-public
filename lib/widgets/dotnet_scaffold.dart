@@ -103,12 +103,21 @@ class DotnetScaffold extends StatelessWidget {
 
     // Define the build(s) //
 
+    final List<Widget> finalFabs = <Widget>[
+      updater,
+      if (fabs != null) ...fabs!,
+      if (EzConfig.showBackFAB && ezRootNav.currentState!.canPop()) ...<Widget>[
+        EzConfig.spacer,
+        const EzBackFAB(),
+      ],
+    ];
+
     final _RestrictedScaffold restricted = _RestrictedScaffold(
       toolbarHeight: toolbarHeight,
       logo: brandLogo,
       drawer: DotNetDrawer(header: iconLinks),
       body: body,
-      fabs: <Widget>[updater, if (fabs != null) ...fabs!],
+      fabs: finalFabs,
     );
 
     final _ExpandedScaffold expanded = _ExpandedScaffold(
@@ -116,7 +125,7 @@ class DotnetScaffold extends StatelessWidget {
       logo: brandLogo,
       iconLinksMenu: iconLinksMenu,
       body: body,
-      fabs: <Widget>[updater, if (fabs != null) ...fabs!],
+      fabs: finalFabs,
     );
 
     // Return the build //

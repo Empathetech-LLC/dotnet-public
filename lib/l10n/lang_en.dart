@@ -341,6 +341,9 @@ class LangEn extends Lang {
   String get sosPrivate => 'InstaSOS has no accounts, cookies, or ads.\n';
 
   @override
+  String get sosPrivateFix => 'Insta-SOS has no accounts, cookies, or ads.\n';
+
+  @override
   String get sosFree => 'It\'s completely free and the code is ';
 
   @override
@@ -366,6 +369,10 @@ class LangEn extends Lang {
 
   @override
   String get sosIconLabel => 'a loudly colored notification bell.';
+
+  @override
+  String get sosWeb =>
+      'One specific, and highly impactful, way to contribute would be to foot the bill for hosting InstaSOS online.\n\nThe app store owners have made their allegiances clear, and InstaSOS may be removed if/when it gains traction.\nAndroid users will always have the option to self install, but the only viable alternative for iOS users would be a web app.\n\nThankfully, Flutter apps are client side compute, so the bill would be low.\nWe\'d (you\'d) only need to pay for traffic management.';
 
   @override
   String get llDescription => 'An Empathetech Android Launcher.';
@@ -958,6 +965,9 @@ class LangEnUs extends LangEn {
   String get sosPrivate => 'InstaSOS has no accounts, cookies, or ads.\n';
 
   @override
+  String get sosPrivateFix => 'Insta-SOS has no accounts, cookies, or ads.\n';
+
+  @override
   String get sosFree => 'It\'s completely free and the code is ';
 
   @override
@@ -983,6 +993,10 @@ class LangEnUs extends LangEn {
 
   @override
   String get sosIconLabel => 'a loudly colored notification bell.';
+
+  @override
+  String get sosWeb =>
+      'One specific, and highly impactful, way to contribute would be to foot the bill for hosting InstaSOS online.\n\nThe app store owners have made their allegiances clear, and InstaSOS may be removed if/when it gains traction.\nAndroid users will always have the option to self install, but the only viable alternative for iOS users would be a web app.\n\nThankfully, Flutter apps are client side compute, so the bill would be low.\nWe\'d (you\'d) only need to pay for traffic management.';
 
   @override
   String get llDescription => 'An Empathetech Android Launcher.';

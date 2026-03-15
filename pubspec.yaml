@@ -1,6 +1,6 @@
 name: dotnet
 description: "The Empathetech mission is to re-balance the power in tech by making self hosting more accessible."
-version: 6.0.1
+version: 6.0.2
 publish_to: 'none'
 
 environment:
@@ -18,11 +18,11 @@ dependencies:
   intl: ^0.20.2
   shared_preferences: ^2.5.4
   url_launcher: ^6.3.2
-  video_player: ^2.11.0
+  video_player: ^2.11.1
 
   # Community
   flutter_localized_locales: ^2.0.5
-  font_awesome_flutter: ^10.12.0
+  font_awesome_flutter: ^11.0.0
   line_icons: ^2.0.3
   provider: ^6.1.5+1
   shimmer:

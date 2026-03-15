@@ -141,6 +141,7 @@
 
   "sosDescription": "A camera, SOS beacon, and list of your rights all in one place.\nIt's available in English, Arabic, Spanish, Filipino, French, Creole, Simplified Chinese, and supports screen readers.",
   "sosPrivate": "InstaSOS has no accounts, cookies, or ads.\n",
+  "sosPrivateFix": "Insta-SOS has no accounts, cookies, or ads.\n",
   "sosFree": "It's completely free and the code is ",
   "sosOpenSource": "open source",
   "sosWeAlso": "We also made a ",
@@ -151,6 +152,7 @@
   "sosSAPS": " to support software as a public service.",
 
   "sosIconLabel": "a loudly colored notification bell.",
+  "sosWeb": "One specific, and highly impactful, way to contribute would be to foot the bill for hosting InstaSOS online.\n\nThe app store owners have made their allegiances clear, and InstaSOS may be removed if/when it gains traction.\nAndroid users will always have the option to self install, but the only viable alternative for iOS users would be a web app.\n\nThankfully, Flutter apps are client side compute, so the bill would be low.\nWe'd (you'd) only need to pay for traffic management.",
 
 
 

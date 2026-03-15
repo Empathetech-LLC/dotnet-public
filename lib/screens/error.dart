@@ -33,29 +33,34 @@ class _ErrorScreenState extends State<ErrorScreen> {
   Widget build(BuildContext context) => DotnetScaffold(
         EzScreen(
           Center(
-            child: EzScrollView(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Text(
-                  EzConfig.l10n.g404Wonder,
-                  style: EzConfig.styles.headlineLarge,
-                  textAlign: TextAlign.center,
-                ),
-                EzConfig.separator,
-                Text(
-                  EzConfig.l10n.g404,
-                  style: ezSubTitleStyle(),
-                  textAlign: TextAlign.center,
-                ),
-                EzConfig.separator,
-                Text(
-                  EzConfig.l10n.g404Note,
-                  style: EzConfig.styles.labelLarge,
-                  textAlign: TextAlign.center,
-                ),
-                EzConfig.separator,
-              ],
-            ),
+            child: EzScrollView(children: <Widget>[
+              // 404
+              Text(
+                EzConfig.l10n.g404Wonder,
+                style: EzConfig.styles.headlineLarge,
+                textAlign: TextAlign.center,
+              ),
+              EzConfig.separator,
+              Text(
+                EzConfig.l10n.g404,
+                style: ezSubTitleStyle(),
+                textAlign: TextAlign.center,
+              ),
+              EzConfig.separator,
+
+              // Path reminder
+              Text(
+                EzConfig.l10n.g404Note,
+                style: EzConfig.styles.labelLarge,
+                textAlign: TextAlign.center,
+              ),
+
+              // Translations (conditional)
+              EzTranslationsPendingNotice(
+                header: EzConfig.separator,
+                footer: const SizedBox.shrink(),
+              ),
+            ]),
           ),
           useImageDecoration: false,
         ),

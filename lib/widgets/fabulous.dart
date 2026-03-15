@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 
 const Widget updater = EzUpdaterFAB(
-  appVersion: '6.0.1',
+  appVersion: '6.0.2',
   versionSource:
       'https://raw.githubusercontent.com/Empathetech-LLC/dotnet-public/refs/heads/main/APP_VERSION',
   isWeb: true,
@@ -20,8 +20,8 @@ class SettingsFAB extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => EzFABLink(
-        uri: Uri.parse(settingsURL),
-        tooltip: EzConfig.l10n.ssNavHint,
-        child: EzIcon(Icons.settings),
-      );
+    uri: Uri.parse(settingsURL),
+    tooltip: EzConfig.l10n.ssNavHint,
+    child: EzIcon(Icons.settings),
+  );
 }

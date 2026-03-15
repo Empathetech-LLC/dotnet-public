@@ -40,7 +40,6 @@ class _SOSScreenState extends State<SOSScreen> {
               () => setState(() {}),
               locales: Lang.supportedLocales,
               skip: <Locale>{arabic, english, chinese}, // Dupes
-              protest: true,
             ),
             EzConfig.spacer,
 
@@ -52,10 +51,11 @@ class _SOSScreenState extends State<SOSScreen> {
             ),
             EzConfig.centerLine,
 
-            // Donation call-out
+            // Safe to use
             EzRichText(<InlineSpan>[
               EzPlainText(
                 text: l10n.sosPrivate,
+                semanticsLabel: l10n.sosPrivateFix,
                 style: EzConfig.styles.bodyLarge,
               ),
               EzPlainText(
@@ -125,6 +125,14 @@ class _SOSScreenState extends State<SOSScreen> {
             ),
             EzConfig.margin,
             const SOSLink(),
+
+            // SOS web
+            EzConfig.separator,
+            EzText(
+              l10n.sosWeb,
+              style: EzConfig.styles.bodyLarge,
+              textAlign: TextAlign.center,
+            ),
 
             EzConfig.separator,
             const EzTranslationsPendingNotice(),
@@ -242,7 +250,10 @@ class _PromoVideoState extends State<_PromoVideo> {
                 menuChildren: <Widget>[
                   EzMenuLink(
                     uri: Uri.parse('$empathBluesky/post/3lz55bkyouc27'),
-                    icon: EzIcon(FontAwesomeIcons.bluesky),
+                    icon: FaIcon(
+                      FontAwesomeIcons.bluesky,
+                      size: EzConfig.iconSize,
+                    ),
                     label: 'Bluesky',
                   ),
                   EzMenuLink(
@@ -257,7 +268,10 @@ class _PromoVideoState extends State<_PromoVideo> {
                   ),
                   EzMenuLink(
                     uri: Uri.parse('$empathThreads/post/DO5AYJcD7Qd'),
-                    icon: EzIcon(FontAwesomeIcons.threads),
+                    icon: FaIcon(
+                      FontAwesomeIcons.threads,
+                      size: EzConfig.iconSize,
+                    ),
                     label: 'Threads',
                   ),
                   EzMenuLink(

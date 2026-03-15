@@ -30,7 +30,10 @@ class _MissionScreenState extends State<MissionScreen> {
       return StepStyle(
         color: EzConfig.colors.secondary,
         connectorColor: EzConfig.colors.secondary,
-        border: Border.all(color: EzConfig.colors.secondaryContainer),
+        border: Border.all(
+          color: EzConfig.colors.secondaryContainer,
+          width: borderWidth,
+        ),
         indexStyle: EzConfig.styles.labelLarge
             ?.copyWith(color: EzConfig.colors.onSecondary),
       );
@@ -39,7 +42,10 @@ class _MissionScreenState extends State<MissionScreen> {
       return StepStyle(
         color: EzConfig.colors.primary,
         connectorColor: EzConfig.colors.secondary,
-        border: Border.all(color: EzConfig.colors.primaryContainer),
+        border: Border.all(
+          color: EzConfig.colors.primaryContainer,
+          width: borderWidth,
+        ),
         indexStyle: EzConfig.styles.labelLarge
             ?.copyWith(color: EzConfig.colors.onPrimary),
       );

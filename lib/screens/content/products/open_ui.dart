@@ -3,9 +3,9 @@
  * See LICENSE for distribution and usage details.
  */
 
-import '../export.dart';
-import '../../utils/export.dart';
-import '../../widgets/export.dart';
+import '../../export.dart';
+import '../../../utils/export.dart';
+import '../../../widgets/export.dart';
 import 'package:efui_bios/efui_bios.dart';
 
 import 'package:flutter/material.dart';
@@ -293,7 +293,7 @@ class _OpenUIScreenState extends State<OpenUIScreen> {
           EzConfig.spacer,
           EzConfigFAB(context, appName: appName, androidPackage: null),
           EzConfig.spacer,
-          const SettingsFAB(),
+          SettingsFAB(redraw),
         ],
       );
 }

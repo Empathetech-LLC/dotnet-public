@@ -13,11 +13,11 @@ import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 
 //* Shared *//
 
-/// 11.0.0
-const String efuiFallback = '11.0.0';
+/// 11.1.0
+const String efuiFallback = '11.1.0';
 
-/// 1.5.2
-const String sosFallback = '2.0.0';
+/// 2.0.2
+const String sosFallback = '2.0.2';
 
 /// https://github.com/Empathetech-LLC
 const String _git = 'https://github.com/Empathetech-LLC';
@@ -72,31 +72,34 @@ class EFUIShoutOut extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Column(
-    mainAxisSize: MainAxisSize.min,
-    mainAxisAlignment: MainAxisAlignment.center,
-    children: <Widget>[
-      EzRichText(<InlineSpan>[
-        EzPlainText(text: l10n.gDontChaWish, style: EzConfig.styles.labelLarge),
-        EzInlineLink(
-          l10n.gMeQ,
-          style: EzConfig.styles.labelLarge,
-          textAlign: TextAlign.center,
-          url: Uri.parse(settingsSource),
-          hint: EzConfig.l10n.gEFUISourceHint,
-          tooltip: settingsSource,
-        ),
-      ], textAlign: TextAlign.center),
-      EzLink(
-        l10n.gDontCha,
-        style: EzConfig.styles.labelLarge,
-        padding: EzInsets.wrap(EzConfig.marginVal),
-        textAlign: TextAlign.center,
-        url: Uri.parse(efuiSource),
-        hint: l10n.gDontChaHint,
-        tooltip: efuiSource,
-      ),
-    ],
-  );
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          EzRichText(<InlineSpan>[
+            EzPlainText(
+              text: l10n.gDontChaWish,
+              style: EzConfig.styles.labelLarge,
+            ),
+            EzInlineLink(
+              l10n.gMeQ,
+              style: EzConfig.styles.labelLarge,
+              textAlign: TextAlign.center,
+              url: Uri.parse(settingsSource),
+              hint: EzConfig.l10n.gEFUISourceHint,
+              tooltip: settingsSource,
+            ),
+          ], textAlign: TextAlign.center),
+          EzLink(
+            l10n.gDontCha,
+            style: EzConfig.styles.labelLarge,
+            padding: EzInsets.wrap(EzConfig.marginVal),
+            textAlign: TextAlign.center,
+            url: Uri.parse(efuiSource),
+            hint: l10n.gDontChaHint,
+            tooltip: efuiSource,
+          ),
+        ],
+      );
 }
 
 //* Open UI *//
@@ -177,46 +180,48 @@ class _OpenUILinkState extends State<OpenUILink> {
 
   @override
   Widget build(BuildContext context) => Column(
-    mainAxisSize: MainAxisSize.min,
-    mainAxisAlignment: MainAxisAlignment.center,
-    children: <Widget>[
-      // Icon link
-      Container(
-        constraints: EzBox.sym(ezImageSize(context)),
-        child: EzLinkWidget(
-          onTap: () => launchUrl(url ?? Uri.parse(openUIReleases)),
-          tooltip: l10n.gDownloadHint(openUI, currDL.name),
-          label: l10n.gIconLabel(openUI) + l10n.ouOpenUIIconLabel,
-          hint: l10n.gDownloadHint(openUI, currDL.name),
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(ezImageSize(context)),
-            child: const Image(image: openUIImage, fit: BoxFit.contain),
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          // Icon link
+          Container(
+            constraints: EzBox.sym(ezImageSize(context)),
+            child: EzLinkWidget(
+              onTap: () => launchUrl(url ?? Uri.parse(openUIReleases)),
+              tooltip: l10n.gDownloadHint(openUI, currDL.name),
+              label: l10n.gIconLabel(openUI) + l10n.ouOpenUIIconLabel,
+              hint: l10n.gDownloadHint(openUI, currDL.name),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(ezImageSize(context)),
+                child: const Image(image: openUIImage, fit: BoxFit.contain),
+              ),
+            ),
           ),
-        ),
-      ),
-      EzConfig.margin,
+          EzConfig.margin,
 
-      // Destination selector
-      EzDropdownMenu<DLType>(
-        enableSearch: false,
-        initialSelection: currDL,
-        dropdownMenuEntries: DLType.values
-            .map(
-              (DLType dlType) =>
-                  DropdownMenuEntry<DLType>(value: dlType, label: dlType.name),
-            )
-            .toList(),
-        onSelected: (DLType? choice) {
-          if (choice == null) return;
+          // Destination selector
+          EzDropdownMenu<DLType>(
+            enableSearch: false,
+            initialSelection: currDL,
+            dropdownMenuEntries: DLType.values
+                .map(
+                  (DLType dlType) => DropdownMenuEntry<DLType>(
+                    value: dlType,
+                    label: dlType.name,
+                  ),
+                )
+                .toList(),
+            onSelected: (DLType? choice) {
+              if (choice == null) return;
 
-          currDL = choice;
-          url = openUIDownload(currDL, latest);
+              currDL = choice;
+              url = openUIDownload(currDL, latest);
 
-          setState(() {});
-        },
-      ),
-    ],
-  );
+              setState(() {});
+            },
+          ),
+        ],
+      );
 }
 
 //* (Insta)SOS *//
@@ -281,46 +286,52 @@ class _SOSLinkState extends State<SOSLink> {
 
   @override
   Widget build(BuildContext context) => Column(
-    mainAxisSize: MainAxisSize.min,
-    mainAxisAlignment: MainAxisAlignment.center,
-    children: <Widget>[
-      // Icon link
-      Container(
-        constraints: EzBox.sym(ezImageSize(context)),
-        child: EzLinkWidget(
-          onTap: () => launchUrl(url ?? Uri.parse(sosReleases)),
-          tooltip: l10n.gDownloadHint(sosName, currDL.name),
-          label: l10n.gIconLabel(sosLabel) + l10n.sosIconLabel,
-          hint: l10n.gDownloadHint(sosLabel, currDL.name),
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(ezImageSize(context)),
-            child: const Image(image: sosImage, fit: BoxFit.contain),
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          // Icon link
+          Container(
+            constraints: EzBox.sym(ezImageSize(context)),
+            child: EzLinkWidget(
+              onTap: () => launchUrl(url ?? Uri.parse(sosReleases)),
+              tooltip: l10n.gDownloadHint(sosName, currDL.name),
+              label: l10n.gIconLabel(sosLabel) + l10n.sosIconLabel,
+              hint: l10n.gDownloadHint(sosLabel, currDL.name),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(ezImageSize(context)),
+                child: const Image(image: sosImage, fit: BoxFit.contain),
+              ),
+            ),
           ),
-        ),
-      ),
-      EzConfig.margin,
+          EzConfig.margin,
 
-      // Destination selector
-      EzDropdownMenu<DLType>(
-        enableSearch: false,
-        initialSelection: currDL,
-        dropdownMenuEntries: <DropdownMenuEntry<DLType>>[
-          DropdownMenuEntry<DLType>(
-            value: DLType.gPlay,
-            label: DLType.gPlay.name,
+          // Destination selector
+          EzDropdownMenu<DLType>(
+            enableSearch: false,
+            initialSelection: currDL,
+            dropdownMenuEntries: <DropdownMenuEntry<DLType>>[
+              DropdownMenuEntry<DLType>(
+                value: DLType.gPlay,
+                label: DLType.gPlay.name,
+              ),
+              DropdownMenuEntry<DLType>(
+                value: DLType.apk,
+                label: DLType.apk.name,
+              ),
+              DropdownMenuEntry<DLType>(
+                value: DLType.iOS,
+                label: DLType.iOS.name,
+              ),
+            ],
+            onSelected: (DLType? choice) {
+              if (choice == null) return;
+
+              currDL = choice;
+              url = sosDownload(currDL, latest);
+
+              setState(() {});
+            },
           ),
-          DropdownMenuEntry<DLType>(value: DLType.apk, label: DLType.apk.name),
-          DropdownMenuEntry<DLType>(value: DLType.iOS, label: DLType.iOS.name),
         ],
-        onSelected: (DLType? choice) async {
-          if (choice == null) return;
-
-          currDL = choice;
-          url = sosDownload(currDL, latest);
-
-          setState(() {});
-        },
-      ),
-    ],
-  );
+      );
 }

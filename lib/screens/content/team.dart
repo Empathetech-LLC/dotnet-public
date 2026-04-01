@@ -3,9 +3,9 @@
  * See LICENSE for distribution and usage details.
  */
 
-import '../screens/export.dart';
-import '../utils/export.dart';
-import '../widgets/export.dart';
+import '../export.dart';
+import '../../utils/export.dart';
+import '../../widgets/export.dart';
 import 'package:efui_bios/efui_bios.dart';
 
 import 'package:shimmer/shimmer.dart';
@@ -312,7 +312,7 @@ class _TeamScreenState extends State<TeamScreen> {
         EzConfig.spacer,
         const EzTranslationsPendingNotice(),
       ])),
-      fabs: <Widget>[EzConfig.spacer, const SettingsFAB()],
+      fabs: <Widget>[EzConfig.spacer, SettingsFAB(() => setState(() {}))],
     );
   }
 }

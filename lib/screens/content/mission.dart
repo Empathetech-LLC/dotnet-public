@@ -3,8 +3,8 @@
  * See LICENSE for distribution and usage details.
  */
 
-import '../utils/export.dart';
-import '../widgets/export.dart';
+import '../../utils/export.dart';
+import '../../widgets/export.dart';
 import 'package:efui_bios/efui_bios.dart';
 
 import 'dart:math';
@@ -32,7 +32,7 @@ class _MissionScreenState extends State<MissionScreen> {
         connectorColor: EzConfig.colors.secondary,
         border: Border.all(
           color: EzConfig.colors.secondaryContainer,
-          width: borderWidth,
+          width: EzConfig.borderWidth,
         ),
         indexStyle: EzConfig.styles.labelLarge
             ?.copyWith(color: EzConfig.colors.onSecondary),
@@ -44,7 +44,7 @@ class _MissionScreenState extends State<MissionScreen> {
         connectorColor: EzConfig.colors.secondary,
         border: Border.all(
           color: EzConfig.colors.primaryContainer,
-          width: borderWidth,
+          width: EzConfig.borderWidth,
         ),
         indexStyle: EzConfig.styles.labelLarge
             ?.copyWith(color: EzConfig.colors.onPrimary),
@@ -234,7 +234,7 @@ class _MissionScreenState extends State<MissionScreen> {
           child: const EzTranslationsPendingNotice(textAlign: TextAlign.start),
         ),
       ])),
-      fabs: <Widget>[EzConfig.spacer, const SettingsFAB()],
+      fabs: <Widget>[EzConfig.spacer, SettingsFAB(() => setState(() {}))],
     );
   }
 }

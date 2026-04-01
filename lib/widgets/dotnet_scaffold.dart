@@ -261,6 +261,7 @@ class DotNetDrawer extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 scrollDirection: Axis.horizontal,
                 showScrollHint: true,
+                thumbVisibility: false,
                 children: header.children.map((Widget child) {
                   switch (child.runtimeType) {
                     case const (EzIconButton):

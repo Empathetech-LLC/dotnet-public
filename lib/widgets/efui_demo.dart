@@ -26,7 +26,7 @@ class EFUIDemo extends StatelessWidget {
 
     // Define custom functions //
 
-    Future<void> redraw() => EzConfig.rebuildUI(stateCallback);
+    Future<void> rebuild() => EzConfig.rebuildUI(stateCallback);
 
     // Return the build //
 
@@ -39,8 +39,8 @@ class EFUIDemo extends StatelessWidget {
           excludeFromSemantics: true,
           child: EzTextIconButton(
             onPressed: () async {
-              await EzBigButtonsConfig.onPressed(EzConfig.isDark);
-              await redraw();
+              await EzBigButtonsConfig.onPressed();
+              await rebuild();
             },
             style: TextButton.styleFrom(padding: linkPadding),
             icon: const Icon(Icons.touch_app),
@@ -55,8 +55,8 @@ class EFUIDemo extends StatelessWidget {
           excludeFromSemantics: true,
           child: EzTextIconButton(
             onPressed: () async {
-              await EzHighVisibilityConfig.onPressed(EzConfig.isDark);
-              await redraw();
+              await EzHighVisibilityConfig.onPressed(monoChrome: true);
+              await rebuild();
             },
             style: TextButton.styleFrom(padding: linkPadding),
             icon: const Icon(Icons.contrast),
@@ -81,7 +81,7 @@ class EFUIDemo extends StatelessWidget {
           child: EzTextIconButton(
             onPressed: () async {
               await EzConfig.randomize();
-              await redraw();
+              await rebuild();
             },
             style: TextButton.styleFrom(padding: linkPadding),
             icon: const Icon(LineIcons.diceD6),
@@ -93,8 +93,8 @@ class EFUIDemo extends StatelessWidget {
       EzConfig.spacer,
       EzElevatedIconButton(
         onPressed: () async {
-          await EzConfig.reset(false);
-          await redraw();
+          await EzConfig.reset(forceOne: true);
+          await rebuild();
         },
         icon: const Icon(Icons.refresh),
         label: EzConfig.l10n.gReset,

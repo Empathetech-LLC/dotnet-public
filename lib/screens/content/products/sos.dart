@@ -3,9 +3,9 @@
  * See LICENSE for distribution and usage details.
  */
 
-import '../export.dart';
-import '../../utils/export.dart';
-import '../../widgets/export.dart';
+import '../../export.dart';
+import '../../../utils/export.dart';
+import '../../../widgets/export.dart';
 import 'package:efui_bios/efui_bios.dart';
 
 import 'package:flutter/material.dart';
@@ -138,7 +138,7 @@ class _SOSScreenState extends State<SOSScreen> {
             const EzTranslationsPendingNotice(),
           ]),
         ),
-        fabs: <Widget>[EzConfig.spacer, const SettingsFAB()],
+        fabs: <Widget>[EzConfig.spacer, SettingsFAB(() => setState(() {}))],
       );
 }
 

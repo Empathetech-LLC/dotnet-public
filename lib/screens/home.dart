@@ -87,7 +87,8 @@ class _HomeScreenState extends State<HomeScreen> {
         EzScrollView(children: <Widget>[
           // Video
           Container(
-            color: EzConfig.colors.surfaceContainer,
+            color: EzConfig.colors.surfaceContainer
+                .withValues(alpha: EzConfig.textBackgroundOpacity),
             constraints: BoxConstraints(
               minWidth: double.infinity,
               maxWidth: double.infinity,
@@ -195,7 +196,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
       ),
-      fabs: <Widget>[EzConfig.spacer, const SettingsFAB()],
+      fabs: <Widget>[EzConfig.spacer, SettingsFAB(() => setState(() {}))],
     );
   }
 }

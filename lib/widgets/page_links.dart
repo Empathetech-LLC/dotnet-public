@@ -24,6 +24,7 @@ class PageLinks extends StatelessWidget {
         url: Uri.parse(missionURL),
         hint: l10n.gMissionHint,
         textColor: EzConfig.colors.onSurface,
+        backgroundColor: Colors.transparent,
       );
 
   Widget get products {
@@ -72,6 +73,7 @@ class PageLinks extends StatelessWidget {
         builder: (_, __, ___) => EzTextButton(
           text: l10n.psPageTitle,
           textStyle: EzConfig.styles.headlineLarge,
+          style: TextButton.styleFrom(backgroundColor: Colors.transparent),
           textAlign: TextAlign.center,
           onPressed: () {
             autoClose?.cancel();
@@ -91,6 +93,7 @@ class PageLinks extends StatelessWidget {
             style: EzConfig.styles.titleLarge,
             padding: linkPadding,
             textColor: EzConfig.colors.onSurface,
+            backgroundColor: Colors.transparent,
             textAlign: TextAlign.center,
             url: Uri.parse(Products.openUI.url),
             hint: l10n.gLearn(Products.openUI.name),
@@ -103,6 +106,7 @@ class PageLinks extends StatelessWidget {
             style: EzConfig.styles.titleLarge,
             padding: linkPadding,
             textColor: EzConfig.colors.onSurface,
+            backgroundColor: Colors.transparent,
             textAlign: TextAlign.center,
             url: Uri.parse(Products.sos.url),
             hint: l10n.gLearn(Products.sos.name),
@@ -115,6 +119,7 @@ class PageLinks extends StatelessWidget {
             style: EzConfig.styles.titleLarge,
             padding: linkPadding,
             textColor: EzConfig.colors.onSurface,
+            backgroundColor: Colors.transparent,
             textAlign: TextAlign.center,
             url: Uri.parse(Products.liminal.url),
             hint: l10n.gLearn(Products.liminal.name),
@@ -127,6 +132,7 @@ class PageLinks extends StatelessWidget {
             style: EzConfig.styles.titleLarge,
             padding: linkPadding,
             textColor: EzConfig.colors.onSurface,
+            backgroundColor: Colors.transparent,
             textAlign: TextAlign.center,
             url: Uri.parse(Products.smokeSignal.url),
             hint: l10n.gLearn(Products.smokeSignal.name),
@@ -139,6 +145,7 @@ class PageLinks extends StatelessWidget {
             style: EzConfig.styles.titleLarge,
             padding: linkPadding,
             textColor: EzConfig.colors.onSurface,
+            backgroundColor: Colors.transparent,
             textAlign: TextAlign.center,
             url: Uri.parse(Products.verified.url),
             hint: l10n.gLearn(Products.verified.name),
@@ -153,6 +160,7 @@ class PageLinks extends StatelessWidget {
         l10n.tsPageTitle,
         style: EzConfig.styles.headlineLarge,
         textColor: EzConfig.colors.onSurface,
+        backgroundColor: Colors.transparent,
         textAlign: TextAlign.center,
         url: Uri.parse(teamURL),
         hint: l10n.gTeamHint,
@@ -162,6 +170,7 @@ class PageLinks extends StatelessWidget {
         l10n.csPageTitle,
         style: EzConfig.styles.headlineLarge,
         textColor: EzConfig.colors.onSurface,
+        backgroundColor: Colors.transparent,
         textAlign: TextAlign.center,
         url: Uri.parse(contributeURL),
         hint: l10n.gContributeHint,

@@ -30,40 +30,39 @@ class _ErrorScreenState extends State<ErrorScreen> {
   // Return the build //
 
   @override
-  Widget build(BuildContext context) => DotnetScaffold(
-        EzScreen(
-          Center(
-            child: EzScrollView(children: <Widget>[
-              // 404
-              Text(
-                EzConfig.l10n.g404Wonder,
-                style: EzConfig.styles.headlineLarge,
-                textAlign: TextAlign.center,
-              ),
-              EzConfig.separator,
-              Text(
-                EzConfig.l10n.g404,
-                style: ezSubTitleStyle(),
-                textAlign: TextAlign.center,
-              ),
-              EzConfig.separator,
-
-              // Path reminder
-              Text(
-                EzConfig.l10n.g404Note,
-                style: EzConfig.styles.labelLarge,
-                textAlign: TextAlign.center,
-              ),
-
-              // Translations (conditional)
-              EzTranslationsPendingNotice(
-                header: EzConfig.separator,
-                footer: const SizedBox.shrink(),
-              ),
-            ]),
+  Widget build(BuildContext context) {
+    return DotnetScaffold(
+      EzScreen(Center(
+        child: EzScrollView(children: <Widget>[
+          // 404
+          Text(
+            EzConfig.l10n.g404Wonder,
+            style: EzConfig.styles.headlineLarge,
+            textAlign: TextAlign.center,
           ),
-          useImageDecoration: false,
-        ),
-        fabs: <Widget>[EzConfig.spacer, SettingsFAB(() => setState(() {}))],
-      );
+          EzConfig.separator,
+          Text(
+            EzConfig.l10n.g404,
+            style: ezSubTitleStyle(),
+            textAlign: TextAlign.center,
+          ),
+          EzConfig.separator,
+
+          // Path reminder
+          Text(
+            EzConfig.l10n.g404Note,
+            style: EzConfig.styles.labelLarge,
+            textAlign: TextAlign.center,
+          ),
+
+          // Translations (conditional)
+          EzTranslationsPendingNotice(
+            header: EzConfig.separator,
+            footer: const SizedBox.shrink(),
+          ),
+        ]),
+      )),
+      fabs: <Widget>[EzConfig.spacer, SettingsFAB(() => setState(() {}))],
+    );
+  }
 }

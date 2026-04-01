@@ -1,6 +1,6 @@
 name: dotnet
 description: "The Empathetech mission is to re-balance the power in tech by making self hosting more accessible."
-version: 6.0.3
+version: 6.0.4
 publish_to: 'none'
 
 environment:

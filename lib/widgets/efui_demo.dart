@@ -10,40 +10,23 @@ import 'package:line_icons/line_icons.dart';
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 
 class EFUIDemo extends StatelessWidget {
-  /// setState((){})
-  final void Function() stateCallback;
-
   /// 2 years of work in 3 buttons
-  const EFUIDemo(this.stateCallback, {super.key});
+  const EFUIDemo({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // Gather the contextual theme data //
+    final EzSwapSpacer halfSwapSpacer = EzSwapSpacer(space: EzConfig.spacing / 2);
 
-    final EzSwapSpacer halfSwapSpacer =
-        EzSwapSpacer(space: EzConfig.spacing / 2);
-    final EdgeInsets linkPadding = EzInsets.wrap(EzConfig.marginVal);
-
-    // Define custom functions //
-
-    Future<void> rebuild() => EzConfig.rebuildUI(stateCallback);
-
-    // Return the build //
-
-    return Column(mainAxisSize: MainAxisSize.min, children: <Widget>[
+    return EzCol(children: <Widget>[
       // 3 demo buttons
-      EzRowCol.sym(mainAxisSize: MainAxisSize.min, children: <Widget>[
+      EzRowCol.sym(children: <Widget>[
         // Low mobility
         Tooltip(
           message: EzConfig.l10n.ssTryMe,
           excludeFromSemantics: true,
           child: EzTextIconButton(
-            onPressed: () async {
-              await EzBigButtonsConfig.onPressed();
-              await rebuild();
-            },
-            style: TextButton.styleFrom(padding: linkPadding),
-            icon: const Icon(Icons.touch_app),
+            onPressed: () => EzConfig.rebuildUI(changes: () => EzBigButtonsConfig.onPressed(false)),
+            icon: EzIcon(Icons.touch_app),
             label: l10n.ouAccessible,
           ),
         ),
@@ -54,12 +37,12 @@ class EFUIDemo extends StatelessWidget {
           message: EzConfig.l10n.ssTryMe,
           excludeFromSemantics: true,
           child: EzTextIconButton(
-            onPressed: () async {
-              await EzHighVisibilityConfig.onPressed(monoChrome: true);
-              await rebuild();
-            },
-            style: TextButton.styleFrom(padding: linkPadding),
-            icon: const Icon(Icons.contrast),
+            onPressed: () => EzConfig.rebuildUI(
+                changes: () => EzHighVisibilityConfig.onPressed(
+                      updateBoth: false,
+                      monoChrome: true,
+                    )),
+            icon: EzIcon(Icons.contrast),
             label: l10n.ouZeroStrain,
           ),
         ),
@@ -79,12 +62,8 @@ class EFUIDemo extends StatelessWidget {
           message: EzConfig.l10n.ssTryMe,
           excludeFromSemantics: true,
           child: EzTextIconButton(
-            onPressed: () async {
-              await EzConfig.randomize();
-              await rebuild();
-            },
-            style: TextButton.styleFrom(padding: linkPadding),
-            icon: const Icon(LineIcons.diceD6),
+            onPressed: () => EzConfig.rebuildUI(changes: () => EzConfig.randomize()),
+            icon: EzIcon(LineIcons.diceD6),
             label: l10n.ouEverything,
           ),
         ),
@@ -92,11 +71,8 @@ class EFUIDemo extends StatelessWidget {
       // Reset button
       EzConfig.spacer,
       EzElevatedIconButton(
-        onPressed: () async {
-          await EzConfig.reset(forceOne: true);
-          await rebuild();
-        },
-        icon: const Icon(Icons.refresh),
+        onPressed: () => EzConfig.rebuildUI(changes: () => EzConfig.reset(forceOne: true)),
+        icon: EzIcon(Icons.refresh),
         label: EzConfig.l10n.gReset,
       ),
     ]);

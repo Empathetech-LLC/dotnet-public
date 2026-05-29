@@ -189,6 +189,9 @@ class LangFr extends Lang {
   String get psPageTitle => 'Produits';
 
   @override
+  String get psTitleHint => 'Afficher la liste';
+
+  @override
   String get psShowDemo => 'Afficher la démo';
 
   @override
@@ -305,11 +308,11 @@ class LangFr extends Lang {
 
   @override
   String get ouInternationalContent =>
-      'Les applications Empathetech ont été traduites en espagnol et en français (jusqu\'à présent).\nEFUI fournit également l\'infrastructure pour des traductions futures illimitées.';
+      'Les applications Empathetech ont été traduites en 14 langues (jusqu\'à présent).\nEFUI fournit également l\'infrastructure pour des traductions futures illimitées.';
 
   @override
   String get ouInternationalContentFix =>
-      'Les applications Empathetic ont été traduites en espagnol et en français (jusqu\'à présent).\nEFUI fournit également l\'infrastructure pour des traductions futures illimitées.';
+      'Les applications Empathetic ont été traduites en 14 langues (jusqu\'à présent).\nEFUI fournit également l\'infrastructure pour des traductions futures illimitées.';
 
   @override
   String get ouReliability => 'Fiabilité';
@@ -333,14 +336,11 @@ class LangFr extends Lang {
       'En utilisant EFUI, vos applications peuvent toucher tous les publics !\n';
 
   @override
-  String get ouConsult => ' pour consultation et contractualisation.';
-
-  @override
   String get sosPromoLabel => 'Une vidéo promotionnelle pour Insta SOS.';
 
   @override
   String get sosDescription =>
-      'Une caméra, une balise SOS et une liste de vos droits, le tout au même endroit.\nIl est disponible en anglais, arabe, espagnol, philippin, français, créole, chinois simplifié, et prend en charge les lecteurs d\'écran.';
+      'Une caméra, une balise SOS et une liste de vos droits, le tout au même endroit.\nIl est disponible en 14 langues et prend en charge les lecteurs d\'écran.';
 
   @override
   String get sosPrivate =>
@@ -355,15 +355,6 @@ class LangFr extends Lang {
 
   @override
   String get sosOpenSource => 'open source';
-
-  @override
-  String get sosWeAlso => 'Nous avons également créé un ';
-
-  @override
-  String get sosSetupGuide => 'guide d\'installation';
-
-  @override
-  String get sosSetupGuideHint => 'Ouvrir un lien vers le README';
 
   @override
   String get sosConsider => 'Veuillez envisager de ';
@@ -430,6 +421,58 @@ class LangFr extends Lang {
 
   @override
   String get ssAPHint => 'Ouvrir un lien vers la documentation d\'Activity Pub';
+
+  @override
+  String get trWonder =>
+      'Si vous vous demandez comment une équipe d\'une seule personne gère 14 langues : en utilisant les LLM de manière responsable.\nLe processus est le suivant...';
+
+  @override
+  String get trFirst => '1. Finaliser && organiser l\'anglais (américain) ';
+
+  @override
+  String get trSource => 'source';
+
+  @override
+  String get trSecond => '2. Demander à ';
+
+  @override
+  String get trBeNice =>
+      ' gentiment de traduire les entrées.\nUne langue par discussion, pour que le contexte n\'explose pas.';
+
+  @override
+  String get trThird => '3. Auditer les résultats avec ';
+
+  @override
+  String get trScript => 'ce script';
+
+  @override
+  String get trReverse =>
+      'Il effectue une traduction inversée pour toutes les langues, une entrée à la fois. Je lis chaque résultat et je signale ceux qui ont perdu leur sens d\'origine.';
+
+  @override
+  String get trFourth =>
+      '4. Utiliser Google Traduction (sans Gemini) pour corriger les erreurs, une par une. Et/ou...';
+
+  @override
+  String get trFifth =>
+      '5. Engager des professionnels pour les parties importantes.\nPar exemple, les droits (entrées rvX) dans ';
+
+  @override
+  String get trBy => ' ont été traduits par ';
+
+  @override
+  String get trHumans => 'des humains';
+
+  @override
+  String get trProcess =>
+      'C\'est un processus imparfait, mais cela demande beaucoup plus d\'efforts qu\'une simple génération à la chaîne par LLM.\nEt, honnêtement, c\'est ce que je peux m\'offrir (pour l\'instant).';
+
+  @override
+  String get trSpeaking => 'À ce propos, veuillez envisager de ';
+
+  @override
+  String get trEither =>
+      '.\nDe l\'argent, ou du temps. J\'estime à 100 % le risque d\'erreurs (mineures).';
 
   @override
   String get vaIntro =>
@@ -547,24 +590,6 @@ class LangFr extends Lang {
 
   @override
   String get tsTranslators => 'Traducteurs';
-
-  @override
-  String get tsAr => 'Arabe';
-
-  @override
-  String get tsEs => 'Espagnol';
-
-  @override
-  String get tsFil => 'Philippin';
-
-  @override
-  String get tsFr => 'Français';
-
-  @override
-  String get tsHt => 'Créole';
-
-  @override
-  String get tsZh => 'Chinois (simplifié)';
 
   @override
   String tsProfile(Object name) {

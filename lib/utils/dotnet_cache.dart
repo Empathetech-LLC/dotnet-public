@@ -21,15 +21,9 @@ class DotnetCache extends EzAppCache {
       : _locale = locale,
         _l10n = l10n {
     _sosCaptions = _SOSCaptionsCache(
-      en: rootBundle
-          .loadString(sosEnCaptionsPath)
-          .then((String data) => SubRipCaptionFile(data)),
-      es: rootBundle
-          .loadString(sosEsCaptionsPath)
-          .then((String data) => SubRipCaptionFile(data)),
-      fr: rootBundle
-          .loadString(sosFrCaptionsPath)
-          .then((String data) => SubRipCaptionFile(data)),
+      en: rootBundle.loadString(sosEnCaptionsPath).then((String data) => SubRipCaptionFile(data)),
+      es: rootBundle.loadString(sosEsCaptionsPath).then((String data) => SubRipCaptionFile(data)),
+      fr: rootBundle.loadString(sosFrCaptionsPath).then((String data) => SubRipCaptionFile(data)),
     );
   }
 
@@ -43,6 +37,9 @@ class DotnetCache extends EzAppCache {
   // Set //
 
   @override
+  void init(_) {}
+
+  @override
   Future<void> rebuild() async {
     if (_locale != EzConfig.locale) {
       _locale = EzConfig.locale;
@@ -54,16 +51,11 @@ class DotnetCache extends EzAppCache {
 DotnetCache get _cache => EzConfig.appCache! as DotnetCache;
 
 Lang get l10n => _cache.l10n;
-Future<ClosedCaptionFile> get sosCaptions {
-  switch (EzConfig.locale.languageCode) {
-    case 'es':
-      return _cache.sosEsCap;
-    case 'fr':
-      return _cache.sosFrCap;
-    default:
-      return _cache.sosEnCap;
-  }
-}
+Future<ClosedCaptionFile> get sosCaptions => switch (EzConfig.locale.languageCode) {
+      'es' => _cache.sosEsCap,
+      'fr' => _cache.sosFrCap,
+      _ => _cache.sosEnCap,
+    };
 
 class _SOSCaptionsCache {
   final Future<ClosedCaptionFile> en;

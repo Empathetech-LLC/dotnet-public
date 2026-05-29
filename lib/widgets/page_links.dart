@@ -24,13 +24,10 @@ class PageLinks extends StatelessWidget {
         url: Uri.parse(missionURL),
         hint: l10n.gMissionHint,
         textColor: EzConfig.colors.onSurface,
-        backgroundColor: Colors.transparent,
+        backgroundColor: EzConfig.colors.surfaceDim,
       );
 
   Widget get products {
-    final EdgeInsets linkPadding =
-        EdgeInsets.symmetric(horizontal: EzConfig.marginVal);
-
     final MenuController controller = MenuController();
 
     Timer? dontClose;
@@ -70,12 +67,14 @@ class PageLinks extends StatelessWidget {
       },
       child: MenuAnchor(
         controller: controller,
-        builder: (_, __, ___) => EzTextButton(
-          text: l10n.psPageTitle,
-          textStyle: EzConfig.styles.headlineLarge,
-          style: TextButton.styleFrom(backgroundColor: Colors.transparent),
+        builder: (_, __, ___) => EzLink(
+          l10n.psPageTitle,
+          style: EzConfig.styles.headlineLarge,
+          textColor: EzConfig.colors.onSurface,
+          backgroundColor: EzConfig.colors.surfaceDim,
           textAlign: TextAlign.center,
-          onPressed: () {
+          hint: l10n.psTitleHint,
+          onTap: () {
             autoClose?.cancel();
 
             if (!controller.isOpen) {
@@ -91,9 +90,8 @@ class PageLinks extends StatelessWidget {
           EzLink(
             Products.openUI.name,
             style: EzConfig.styles.titleLarge,
-            padding: linkPadding,
             textColor: EzConfig.colors.onSurface,
-            backgroundColor: Colors.transparent,
+            backgroundColor: EzConfig.colors.surfaceDim,
             textAlign: TextAlign.center,
             url: Uri.parse(Products.openUI.url),
             hint: l10n.gLearn(Products.openUI.name),
@@ -104,9 +102,8 @@ class PageLinks extends StatelessWidget {
           EzLink(
             Products.sos.name,
             style: EzConfig.styles.titleLarge,
-            padding: linkPadding,
             textColor: EzConfig.colors.onSurface,
-            backgroundColor: Colors.transparent,
+            backgroundColor: EzConfig.colors.surfaceDim,
             textAlign: TextAlign.center,
             url: Uri.parse(Products.sos.url),
             hint: l10n.gLearn(Products.sos.name),
@@ -117,9 +114,8 @@ class PageLinks extends StatelessWidget {
           EzLink(
             Products.liminal.name,
             style: EzConfig.styles.titleLarge,
-            padding: linkPadding,
             textColor: EzConfig.colors.onSurface,
-            backgroundColor: Colors.transparent,
+            backgroundColor: EzConfig.colors.surfaceDim,
             textAlign: TextAlign.center,
             url: Uri.parse(Products.liminal.url),
             hint: l10n.gLearn(Products.liminal.name),
@@ -130,12 +126,23 @@ class PageLinks extends StatelessWidget {
           EzLink(
             Products.smokeSignal.name,
             style: EzConfig.styles.titleLarge,
-            padding: linkPadding,
             textColor: EzConfig.colors.onSurface,
-            backgroundColor: Colors.transparent,
+            backgroundColor: EzConfig.colors.surfaceDim,
             textAlign: TextAlign.center,
             url: Uri.parse(Products.smokeSignal.url),
             hint: l10n.gLearn(Products.smokeSignal.name),
+            onHover: setAutoClose,
+          ),
+
+          // Translations
+          EzLink(
+            Products.translations.name,
+            style: EzConfig.styles.titleLarge,
+            textColor: EzConfig.colors.onSurface,
+            backgroundColor: EzConfig.colors.surfaceDim,
+            textAlign: TextAlign.center,
+            url: Uri.parse(Products.translations.url),
+            hint: l10n.gLearn(Products.translations.name),
             onHover: setAutoClose,
           ),
 
@@ -143,9 +150,8 @@ class PageLinks extends StatelessWidget {
           EzLink(
             Products.verified.name,
             style: EzConfig.styles.titleLarge,
-            padding: linkPadding,
             textColor: EzConfig.colors.onSurface,
-            backgroundColor: Colors.transparent,
+            backgroundColor: EzConfig.colors.surfaceDim,
             textAlign: TextAlign.center,
             url: Uri.parse(Products.verified.url),
             hint: l10n.gLearn(Products.verified.name),
@@ -160,7 +166,7 @@ class PageLinks extends StatelessWidget {
         l10n.tsPageTitle,
         style: EzConfig.styles.headlineLarge,
         textColor: EzConfig.colors.onSurface,
-        backgroundColor: Colors.transparent,
+        backgroundColor: EzConfig.colors.surfaceDim,
         textAlign: TextAlign.center,
         url: Uri.parse(teamURL),
         hint: l10n.gTeamHint,
@@ -170,7 +176,7 @@ class PageLinks extends StatelessWidget {
         l10n.csPageTitle,
         style: EzConfig.styles.headlineLarge,
         textColor: EzConfig.colors.onSurface,
-        backgroundColor: Colors.transparent,
+        backgroundColor: EzConfig.colors.surfaceDim,
         textAlign: TextAlign.center,
         url: Uri.parse(contributeURL),
         hint: l10n.gContributeHint,
@@ -179,8 +185,8 @@ class PageLinks extends StatelessWidget {
   // Return the build //
 
   @override
-  Widget build(BuildContext context) => Row(
-        mainAxisSize: MainAxisSize.min,
+  Widget build(BuildContext context) => EzRow(
+        reverseHands: false,
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           mission,

@@ -4,6 +4,7 @@
  */
 
 export 'consts.dart';
+export 'contributors.dart';
 export 'dotnet_cache.dart';
 export 'enums.dart';
 

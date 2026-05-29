@@ -1,0 +1,277 @@
+{
+  "@@locale": "sw",
+
+  "gEmpathLogoLabel": "Kipima saa cha mchanga cha pande mbili.",
+  "gEmpathLogoHint": "Washa ili uende kwenye ukurasa wa mwanzo.",
+
+  "gLearn": "Jifunze kuhusu {name}",
+  "gHomeHint": "Fungua ukurasa wa mwanzo",
+  "gProductsHint": "Fungua ukurasa wa bidhaa",
+  "gMissionHint": "Fungua ukurasa wa dhamira",
+  "gTeamHint": "Fungua ukurasa wa timu",
+  "gContributeHint": "Fungua ukurasa wa kuchangia",
+
+  "gShare": "Shiriki",
+  "gEmail": "Barua pepe",
+  "gEmailTo": "Tuma barua pepe kwa {recipient}",
+  "gAnEmail": "barua pepe",
+  "gEmailHint": "Hufungua programu yako ya barua pepe",
+  "gNewsletter": "Jarida",
+
+  "gLogoLabel": "Nembo ya {thing}: ",
+  "gIconLabel": "Aikoni ya {app}: ",
+  "gDownloadHint": "Pakua {app} kwa ajili ya {platform}.",
+  "gRepoHint": "Fungua kiungo cha hifadhi ya uundaji.",
+  "gEmpathetechGitHint": "Fungua ukurasa wa GitHub wa Empathetic LLC",
+
+  "gImageCredit": "Hisani ya picha: {creator}",
+
+  "gReachOut": "Wasiliana",
+  "gFiverrPage": "Fungua ukurasa wa Fiverr wa {user}",
+
+  "gDontChaWish": "Hutamani upande wako wa mbele wa programu uwe wa kufurahisha ", 
+  "gMeQ": "kama mimi?",
+  "gDontCha": "Hutamani?",
+  "gDontChaHint": "Fungua ukurasa wa GitHub kwa ajili ya msimbo wa skrini hii",
+
+
+
+  "hsSlogan": "Tujenge ulimwengu bora pamoja\nbiti x biti",
+  "hsSloganFix": "Tujenge ulimwengu bora pamoja\nkidogo kidogo",
+  "hsVideoLabel": "Nembo ya uhuishaji ya Empathetic LLC: herufi katika Empathetic zinabadilika na kuwa nembo ya kipima saa cha mchanga cha pande mbili",
+
+  "hsPeople": "Watu si bidhaa.",
+  "hsWell": "Kweli, hawapaswi kuwa hivyo.",
+
+  "hsReality": "Ukweli wa kusikitisha ni kwamba utambulisho wetu, ",
+  "hsData": "data zetu",
+  "hsGold": ", ndiyo biashara mpya inayoingiza faida kubwa kwa kampuni kubwa za teknolojia.",
+
+  "hsRush": "Na kampuni kubwa za teknolojia kwa hakika zinapenda kuharakisha.\nKutokana na mbio zao zisizoisha, filamu za kutisha za sayansi ya kubuni zinatimia haraka mno.",
+  "hsSlow": "Ni wakati wa kupunguza kasi.\nNi wakati wa kuwa na umiliki wa nafsi zetu za kidijitali.\nNi wakati wa kuwa na ",
+  "hsPlan": "mpango bora.",
+
+
+
+  "msPageTitle": "Dhamira",
+  
+  "msSoWe": "Hivyo basi sisi",
+  "msBy": "Kwa",
+  "msFirst": "Kwa kuanza na",
+  
+  "msIDProblem": "Kutambua tatizo",
+  "msIDProblemContent": "Mifumo ya biashara inayotanguliza faida si endelevu.\n\nKimsingi: ikiwa faida itatangulizwa, mambo kama vile kufanyia kazi dhamira, kuwatendea watu haki, na matumizi ya rasilimali kwa njia inayofaa huwa mambo ya ziada tu.\n\nNa uchoyo huu umekithiri katika kampuni kubwa za teknolojia. Miamba ya teknolojia hawaridhishwi tena na pesa zetu, na wanaunda bidhaa ili kulenga utambulisho wetu na kutawala akili zetu.",
+  
+  "msFindSolution": "Kutafuta suluhu",
+  "msFindSolutionContent": "Kwa bahati nzuri, kuna wataalamu wa teknolojia wa ajabu duniani kote wanaofanya kazi pamoja ili kujenga mwelekeo bora zaidi.\nAmbapo watoa huduma na wateja wana uhusiano hai, thabiti, na wenye manufaa kwa pande zote mbili.\n\nJumuiya ya programu huria (open source).\n\nKimsingi, programu huria inapatikana bila malipo kwa mtu yeyote kuangalia. Miradi mingi pia inaweza kurekebishwa na kusambazwa tena bila malipo.\nNi programu isiyo na siri yoyote, inayoundwa na watu wanaotambua kuwa matatizo ya pamoja yanahitaji masuluhisho ya pamoja.\n\nNa katika ulimwengu mzuri wa programu huria, kuna aina ndogo: programu za kujihifadhi (self-hosting).\n\nKujihifadhi kunaturuhusu kuchukua kompyuta yoyote isiyotumika (hata za ukubwa wa mfukoni) na kuhifadhi data zetu hapo.\nKwa kujihifadhi, tunaweza kudhibiti uwepo wetu wa kidijitali, badala ya kutoa udhibiti kwa seva iliyo mbali, inayomilikiwa na shirika lisilo na huruma.\n\nNa kuna matoleo ya kujihifadhi kwa karibu kila kitu! Kuanzia Adobe hadi Zoom, kuna wanaharakati wa teknolojia wenye shauku wanaounda mbadala zinazowatanguliza watu badala ya faida.\n\nHivyo basi, mtu anafanyaje mabadiliko kutoka kwenye programu inayotanguliza faida/isiyo huria na kwenda kwenye programu huria? Wanaanzaje kujihifadhi?\nInachukua muda mwingi, nguvu, na ujuzi wa awali.\n\nHapo ndipo tunapoingia.",
+  
+  "msProvideValue": "Kufanya kazi",
+  "msProvideValueContent1": "Dhamira ya Empathetech ni kusawazisha nguvu katika teknolojia kwa kufanya upangishaji binafsi (self-hosting) kufikika zaidi.\n\nTutaunda programu zinazomwezesha mtu yeyote kumiliki utambulisho wake wa kidijitali.\nTutajenga madaraja kati ya jumuiya ya programu huria na wale wasio na muda, nguvu, au ujuzi wa awali unaohitajika.\n\nNa huwezi kujenga madaraja (au programu) bila msingi imara! Ndiyo maana ",
+  "msProvideValueContent1Fix": "Dhamira ya Empathetic ni kusawazisha nguvu katika teknolojia kwa kufanya upangishaji binafsi (self-hosting) kufikika zaidi.\n\nTutaunda programu zinazomwezesha mtu yeyote kumiliki utambulisho wake wa kidijitali.\nTutajenga madaraja kati ya jumuiya ya programu huria na wale wasio na muda, nguvu, au ujuzi wa awali unaohitajika.\n\nNa huwezi kujenga madaraja (au programu) bila msingi imara! Ndiyo maana ",
+  "msProvideValueContent2": " ipo.\nEmpathetech inajivunia kuweka maneno katika vitendo, na imefanya kiolesura chetu (UI) kinachofikika kwa wote kuwa programu huria.\n\nTujenge ulimwengu bora pamoja, kidogo kidogo.",
+  "msProvideValueContent2Fix": " ipo.\nEmpathetic inajivunia kuweka maneno katika vitendo, na imefanya kiolesura chetu (UI) kinachofikika kwa wote kuwa programu huria.\n\nTujenge ulimwengu bora pamoja, kidogo kidogo.",
+
+
+
+  "psPageTitle": "Bidhaa",
+  "psTitleHint": "Onyesha orodha",
+
+  "psShowDemo": "Onyesha onyesho",
+  "psHideDemo": "Ficha onyesho",
+  "psShowPromo": "Onyesha promo",
+  "psHidePromo": "Ficha promo",
+
+  "psLearnMore": " ili kujifunza zaidi.",
+  "psDownloadNow": "Pakua sasa",
+  "psComingSoon": "Inakuja hivi karibuni...",
+
+
+
+  "ouSlogan": "Unda programu kwa ajili ya yeyote",
+  "ouLike": "Kama vile watumiaji wanaohitaji...",
+  "ouAccessible": "Vidhibiti vinavyofikika kwa wote",
+  "ouZeroStrain": "kutosumbua macho kabisa",
+  "ouEverything": "Kila kitu katikati",
+  "ouRandom": "Usanidi wa kubahatisha umetumika.",
+
+  "ouIs": "Open UI ni kitengeneza programu.",
+  "ouDemo": "Onyesho la Open UI likitengeneza programu mpya.",
+  "ouFoundation": "Inaunda msingi wa programu zinazofikika kwa wote, zinazofanya kazi kwenye mifumo mbalimbali, za lugha nyingi, zilizo tayari kwa uzalishaji kwa kubofya mara moja tu.",
+  "ouLocal": "Kila kitu kinaendeshwa kwenye kompyuta yako. Hakuna vitambulisho, kadi za mkopo, au vidakuzi.",
+  "ouRequirements": "Mahitaji pekee ni muunganisho wa intaneti na wazo.",
+  "ouFlutterToo": "...na Flutter...",
+
+  "ouHow": "Inafanyaje kazi?",
+  "ouEFUIsHow": "Open UI imejengwa juu ya, na inakufanya uanze na, ",
+  "ouSimplifies": "EFUI ni maktaba (library) ya kuunda programu zinazofikika kwa wote kweli. Inarahisisha...",
+  
+  "ouPlatform": "Upatikanaji kwenye mifumo",
+  "ouPlatformContent": "Unaweza kutumia EFUI kuunda kwenye Android, iOS, Linux, macOS, Windows na Wavuti!",
+  
+  "ouResponsive": "Muundo unaobadilika",
+  "ouResponsiveContent": "Ili kuona jinsi inavyofanya kazi, cheza na dirisha unalotumia sasa hivi!",
+
+  "ouScreen": "Usaidizi wa kisoma skrini",
+  "ouScreenContent": "Programu za Empathetech zinasaidia watumiaji wanaohitaji ",
+  "ouScreenContentFix": "Programu za Empathetic zinasaidia watumiaji wanaohitaji ",
+  "ouTalkBackHint": "Fungua kiungo cha nyaraka za TalkBack",
+  "ouAnd": " na ",
+  "ouVoiceOverHint": "Fungua kiungo cha nyaraka za VoiceOver",
+  
+  "ouCustom": "Ugeuzaji kukufaa wa mtumiaji",
+  "ouCustomContent": "Njia pekee ya kufikika kikweli na wateja WOTE ni kuwawezesha kwa uhuru wa kuchagua!\nEFUI hutoa muundo bora wa mtumiaji (UX) kwa udhibiti kamili wa mwonekano wa programu.",
+  
+  "ouInternational": "Uboreshaji wa kimataifa",
+  "ouInternationalContent": "Programu za Empathetech zimetafsiriwa kwa lugha 14 (kufikia sasa).\nEFUI pia inatoa miundombinu ya tafsiri zisizo na kikomo za baadaye.",
+  "ouInternationalContentFix": "Programu za Empathetic zimetafsiriwa kwa lugha 14 (kufikia sasa).\nEFUI pia inatoa miundombinu ya tafsiri zisizo na kikomo za baadaye.",
+
+  "ouReliability": "Utegemezi",
+  "ouReliabilityContent": "Programu za Empathetech zimeundwa kudumu. Hii SIO uundaji wa msimbo kwa kutumia AI.\nWaandaaji wa programu wa Empathetech ni watu. LLM ni mabata wa mpira (rubber ducks).",
+  "ouReliabilityContentFix": "Programu za Empathetic zimeundwa kudumu. Hii SIO uundaji wa msimbo kwa kutumia AI.\nWaandaaji wa programu wa Empathetic ni watu. LLM ni mabata wa mpira.",
+    
+  "ouGetStarted": "Anza",
+  "ouOpenUIIconLabel": "kikasha mchanga cha mipangilio (settings sandbox).",
+
+  "ouEFUITagLine": "Zinapoundwa kwa EFUI, programu zako zinaweza kuwafikia watu wa aina yoyote kweli!\n",
+
+
+
+  "sosPromoLabel": "Video ya matangazo ya Insta SOS.",
+
+  "sosDescription": "Kamera, kiashirio cha SOS, na orodha ya haki zako vyote mahali pamoja.\nInapatikana katika lugha 14 na inasaidia visomaji vya skrini.",
+  "sosPrivate": "InstaSOS haina akaunti, vidakuzi, au matangazo.\n",
+  "sosPrivateFix": "Insta-SOS haina akaunti, vidakuzi, au matangazo.\n",
+  "sosFree": "Ni bure kabisa na msimbo huu ni ",
+  "sosOpenSource": "programu huria",
+  "sosConsider": "Tafadhali fikiria ",
+  "sosContributing": "kuchangia",
+  "sosSAPS": " ili kusaidia programu kama huduma ya umma.",
+
+  "sosIconLabel": "kengele ya arifa yenye rangi inayong'aa sana.",
+  "sosWeb": "Njia moja hususa, na yenye athari kubwa ya kuchangia itakuwa kulipia gharama za kuweka InstaSOS mtandaoni.\n\nWamiliki wa maduka ya programu wameweka wazi utiifu wao, na InstaSOS inaweza kuondolewa ikiwa/wakati itakapopata umaarufu.\nWatumiaji wa Android kila wakati watakuwa na chaguo la kusakinisha wenyewe, lakini mbadala pekee unaofaa kwa watumiaji wa iOS itakuwa ni programu ya wavuti.\n\nTunashukuru, programu za Flutter hufanya kazi upande wa mteja, kwa hivyo bili itakuwa ndogo.\nSisi (Wewe) tutahitaji tu kulipia usimamizi wa trafiki ya mtandao.",
+
+
+
+  "llDescription": "Kianzishi (Launcher) cha Android cha Empathetech.",
+  "llDescriptionFix": "Kianzishi (Launcher) cha Android cha Empathetic.",
+
+  "llInDev": "Liminal inaundwa.\nMuundo wake unaegemea kwenye urahisi, kwa sababu simu zetu zinapaswa kuwa zana za sisi kutumia, na sio kinyume chake.",
+  "llBut": "Lakini, ni kianzishi chepesi kilichoundwa na ",
+  "llWhimsy": ".\nHivyo, skrini yako ya mwanzo haitakuwa na msongamano na usumbufu, NA itaweza kugeuzwa kukufaa bila kikomo. Pamoja na ucheshi kidogo wa kuanzia.",
+
+  "llTheHood": "Sampuli ya skrini ya mwanzo yenye picha ya Mlima Hood wa Portland.",
+  "llLasRosas": "Sampuli ya skrini ya mwanzo yenye picha ya bustani ya Mawaridi ya Portland.",
+  "llFrogAndPigs": "Sampuli ya skrini ya mwanzo yenye picha ya wanyamapori wa Portland.",
+
+  "llModel": "Liminal itatolewa chini ya mfumo wa \"lipa unachoweza\".\nToleo la Google Play litauzwa, kwa sababu msimbo (mzuri) haujiandiki wenyewe.\nHifadhi ya GitHub pia itakuwa na APK inayopatikana bila malipo, kwa sababu uhusiano mzuri na teknolojia haupaswi kuwa tu kwa wale walio na kipato cha ziada.",
+
+  
+
+  "ssPreview1": "Programu nyingine ya Empathetech, ",
+  "ssPreview1Fix": "Programu nyingine ya Empathetic, ",
+  "ssPreview2": ", inaundwa.\nSmoke Signal ni programu ya mtandao wa kijamii iliyoundwa ili kutuweka mbali na skrini zetu.",
+  "ssPreview3": "Smoke Signal pia itakuwa ya kujihifadhi kikamilifu, kutokana na ",
+  "ssAPHint": "Fungua kiungo cha nyaraka za Activity Pub",
+
+
+
+  "trWonder": "Ikiwa unajiuliza jinsi timu ya mtu mmoja inavyohudumia lugha 14: Kutumia LLM kwa uwajibikaji.\nMchakato ni kama ifuatavyo...",
+  "trFirst": "1. Kamilisha && panga Kiingereza (cha Marekani) cha ",
+  "trSource": "chanzo",
+  "trSecond": "2. Omba ",
+  "trBeNice": " kwa hisani kutafsiri maingizo.\nLugha moja kwa kila uzi, ili muktadha usivurugike.",
+  "trThird": "3. Kagua matokeo ukitumia ",
+  "trScript": "skripti hii",
+  "trReverse": "Inatafsiri kinyume lugha zote, ingizo moja kwa wakati. Ninasoma kila tokeo na kuweka alama kwa yale yaliyopoteza maana ya asili.",
+  "trFourth": "4. Tumia Google Translate (Gemini ikiwa imezimwa) kurekebisha makosa, moja kwa wakati. Na/au...",
+  "trFifth": "5. Ajiri wataalamu kwa sehemu muhimu.\nKwa mfano, haki (maingizo ya rvX) katika ",
+  "trBy": " zilitafsiriwa na ",
+  "trHumans": "binadamu",
+  "trProcess": "Ni mchakato usio kamilifu, lakini inahitaji juhudi kubwa zaidi kuliko kutumia LLM tu bila kufikiri.\nNa, kusema kweli, ndicho ninachoweza kumudu (kwa sasa).",
+  "trSpeaking": "Kuhusiana na hilo, tafadhali fikiria ",
+  "trEither": ".\nPesa, au muda. Ninakadiria asilimia 100 ya uwezekano wa makosa (madogo).",
+
+
+  
+  "vaIntro": "Jinsi teknolojia inavyotumika haiwezi kuamuliwa na wale wanaoiunda.",
+  "vaTheBad": "Jambo ambalo linaweza kuwa zuri, baya, au katikati.\nHebu tuchukue muda kujadili mabaya: programu za utapeli.",
+  "vaScamRisk": " hupunguza kwa kiasi kikubwa ugumu wa kuunda programu zilizo tayari kwa matumizi. Ikichanganywa na zana za uandishi wa msimbo za AI, ni rahisi zaidi kuliko hapo awali kwa matapeli kuunda programu zinazoonekana halali.\nIli kusaidia kupambana na hili, tutadumisha orodha ya programu zilizothibitishwa.",
+  "vaCheckIn": "Ukiona programu inayotumia UI yetu, angalia hapa kwanza. Ikiwa haijathibitishwa, ushauri wetu ni: usiipakue.\nZaidi ya hayo, hii si orodha ya mapendekezo. Sharti pekee la kuwa kwenye orodha hii, ni kutokuwa tapeli.\nBaada ya kueleza hayo, ulimwengu wa UI unaojulikana una...",
+
+  "vaFirst": "Mhusika wa kwanza",
+  "vaThird": "Mhusika wa tatu aliyethibitishwa",
+  "vaWaiting": "Inasubiri",
+  "vaWillYou": "Utakuwa wa kwanza?",
+  "vaKnown": "Matapeli wanaojulikana",
+  "vaSoGood": "Hadi sasa, mambo ni mazuri!\nTafadhali usiwe wa kwanza :)",
+
+  "vaPublished": "Ikiwa umechapisha programu kwa kutumia EFUI, tutumie ",
+  "vaDoNoHarm": ".\nHatuhitaji kuipenda programu, na hatuifanyii uhakiki hadharani.\nTutakagua msimbo, na mradi tu hausababishi madhara, itathibitishwa.",
+  "vaPrivateFree": "Ikiwa programu yako haipatikani kwa umma, usijali!\nLakini ikiwa watu usiowajua wanaweza kuipakua, tujulishe ili tuweze kuithibitisha.",
+  "vaDoYourPart": "Ikiwa hutasikia kutoka kwetu, tutachukulia kuwa bidhaa yako ni tapeli hadi ithibitishwe vinginevyo.\nIkiwa unafikiri hilo ni kali, fikiria tena. Open UI ni kazi ya miaka mingi, iliyoshirikiwa bila malipo. Kutuma barua pepe ni jambo dogo sana unaloweza kufanya.",
+
+  
+
+  "tsPageTitle": "Timu",
+  
+  "tsCore": "Msingi",
+  "tsTheFounderLabel": "Wasifu wa pande mbili wa Michael Waldron.",
+  "tsTheFounderHint": "Washa ili kumtumia barua pepe.",
+  "tsTheFounder": "Mwanzilishi",
+  "tsBoardMember": "Mjumbe wa Bodi",
+  "tsYou": "Wewe?",
+  "tsMirrorLabel": "Mduara mweusi unaong'aa, ili kuiga kioo.",
+  "tsMirrorTip": "Washa ili kututumia barua pepe",
+  "tsMirrorHint": "Uliza kuhusu kujiunga na timu.",
+  "tsNonProfit": "Kitu pekee kinachozuia Empathetech kuwa shirika kamili lisilo la faida ni idadi ya watu.\nIkiwa unaamini katika dhamira niliyoelezea, na una saa chache kwa wiki za kujitolea, tafadhali wasiliana nasi!\n\nItakuwa ni ya kujitolea kikamilifu kwa kuanzia. Silipwi (bado) pia.\nLakini, nisingekuwa ninafanya hivi kama nisingekuwa na mpango mzuri wa hilo pia.\n\nWote wanaovutiwa wanahimizwa kuwasiliana, lakini kuna uhitaji maalum kwa watu wenye uzoefu katika:\nusimamizi wa mitandao ya kijamii, kuchangisha fedha, na kuandika mapendekezo ya ruzuku.",
+
+  "tsWild": "Huko nje",
+  "ts2025BoothLabel": "Kibanda cha Empathetech cha Open Sauce 2025.",
+  "ts2025BoothHint": "Washa ili kufungua ukurasa wa maonyesho wa Open Sauce.",
+  "ts2025BoothDescription": "Open Sauce (2025) ilikuwa ya kufurahisha sana!\nIlikuwa vigumu kurudi kwenye maisha ya kawaida, baada ya kuzungukwa na watu wengi wazuri, wenye msukumo, wenye akili, na wabunifu.\nAsante tena ikiwa ulipitia kwenye kibanda cha Empathetech, na tunatazamia kwa hamu mwaka ujao!",
+  "ts2025BoothDescriptionFix": "Open Sauce (2025) ilikuwa ya kufurahisha sana!\nIlikuwa vigumu kurudi kwenye maisha ya kawaida, baada ya kuzungukwa na watu wengi wazuri, wenye msukumo, wenye akili, na wabunifu.\nAsante tena ikiwa ulipitia kwenye kibanda cha Empathetic, na tunatazamia kwa hamu mwaka ujao!",
+
+  "tsCommunity": "Jumuiya",
+
+  "tsFreelance": "Wafanyakazi Huru",
+
+  "tsVideoProduction": "Uzalishaji wa Video",
+
+  "tsTranslators": "Watafsiri",
+  "tsProfile": "Wasifu wa {name}",
+
+
+
+  "fahJoin": "Jiunge na Kundi",
+
+  "fahIconLabel": "molekuli ya protini.",
+  "fahIconHint": "Washa ili kufungua tovuti yao.",
+  
+  "fahIntro1": "Jiunge na ",
+  "fahIntro2": " timu ya Folding@home!",
+  "fahTeamHint": "Fungua ukurasa wa timu ya Empathetic wa folding at home",
+  
+  "fahWhats": "Nini maana ya ",
+  "fahName": "Folding@home?",
+  "fahNameHint": "Fungua ukurasa wa kuhusu wa Folding at Home",
+  
+  "fahStats": "Pamoja, tumejipatia pointi zaidi ya milioni 400.\nHilo linatuweka katika asilimia 2 bora ya timu zote duniani kote!",
+
+
+
+  "csPageTitle": "Changia",
+  
+  "csEveryBit": "Kila biti unayotoa kwa Empathetech huondoa baiti kutoka kwa makampuni makubwa ya teknolojia.",
+  "csEveryBitFix": "Kila biti unayotoa kwa Empathetic huondoa baiti kutoka kwa makampuni makubwa ya teknolojia.",
+  
+  "csTime": "Muda",
+  "csBecome": " kuhusu kuwa ",
+  "csGit": "mchangiaji wa GitHub",
+  
+  "csMoney": "Pesa",
+  "csOpenLink": "Fungua kiungo cha {page} ya Empathetic",
+  
+  "csPower": "Nguvu",
+
+  "csThanks": "Asante sana kwa usaidizi wowote na wa kila aina!"
+}

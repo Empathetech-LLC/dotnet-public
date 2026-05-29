@@ -39,6 +39,7 @@ class _HomeScreenState extends State<HomeScreen> {
         margin: EzConfig.marginVal,
         height: sloganHeight,
         letterRatio: letterRatio,
+        colorScheme: EzConfig.colors,
         finSpacing: EzConfig.spacing * 2,
         slogan: l10n.hsSlogan,
         sloganSemantics: l10n.hsSloganFix,
@@ -62,23 +63,19 @@ class _HomeScreenState extends State<HomeScreen> {
     // Gather the contextual theme data //
 
     final TextStyle? subTitle = ezSubTitleStyle();
-    final Widget newLine =
-        EzNewLine(style: subTitle, textAlign: TextAlign.center);
+    final Widget newLine = EzNewLine(style: subTitle, textAlign: TextAlign.center);
 
     /// 0.667 <= [displayScale] <= 1.5
     final double displayScale = max(
       0.667,
       min(
         1.5,
-        (EzConfig.styles.displayLarge?.fontSize ?? defaultDisplaySize) /
-            defaultDisplaySize,
+        (EzConfig.styles.displayLarge?.fontSize ?? defaultDisplaySize) / defaultDisplaySize,
       ),
     );
 
-    final double toolbarHeight =
-        ezToolbarHeight(context: context, title: l10n.csPageTitle);
-    final double sloganHeight =
-        max(EzConfig.spacing * 7, (heightOf(context) / 3) * displayScale);
+    final double toolbarHeight = ezToolbarHeight(context: context, title: l10n.csPageTitle);
+    final double sloganHeight = max(EzConfig.spacing * 7, (heightOf(context) / 3) * displayScale);
 
     // Return the build //
 
@@ -87,8 +84,8 @@ class _HomeScreenState extends State<HomeScreen> {
         EzScrollView(children: <Widget>[
           // Video
           Container(
-            color: EzConfig.colors.surfaceContainer
-                .withValues(alpha: EzConfig.textBackgroundOpacity),
+            color:
+                EzConfig.colors.surfaceContainer.withValues(alpha: EzConfig.textBackgroundOpacity),
             constraints: BoxConstraints(
               minWidth: double.infinity,
               maxWidth: double.infinity,
@@ -118,62 +115,58 @@ class _HomeScreenState extends State<HomeScreen> {
           // Mini-mission statement
           AnimatedOpacity(
             opacity: fin ? 1.0 : 0.0,
-            duration: const Duration(milliseconds: fadeTime),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
-                // People shouldn't be products
-                EzText(
-                  l10n.hsPeople,
-                  style: EzConfig.styles.headlineLarge,
-                  textAlign: TextAlign.center,
-                ),
-                EzText(
-                  l10n.hsWell,
-                  style: subTitle,
-                  textAlign: TextAlign.center,
-                ),
-                newLine,
+            duration: const Duration(milliseconds: logoAnimFade),
+            child: EzCol(children: <Widget>[
+              // People shouldn't be products
+              EzText(
+                l10n.hsPeople,
+                style: EzConfig.styles.headlineLarge,
+                textAlign: TextAlign.center,
+              ),
+              EzText(
+                l10n.hsWell,
+                style: subTitle,
+                textAlign: TextAlign.center,
+              ),
+              newLine,
 
-                // But our data is
-                EzRichText(<InlineSpan>[
-                  EzPlainText(text: l10n.hsReality, style: subTitle),
-                  EzPlainText(
-                    text: l10n.hsData,
-                    style: subTitle?.copyWith(fontStyle: FontStyle.italic),
+              // But our data is
+              EzRichText(<InlineSpan>[
+                EzPlainText(text: l10n.hsReality, style: subTitle),
+                EzPlainText(
+                  text: l10n.hsData,
+                  style: subTitle?.copyWith(fontStyle: FontStyle.italic),
+                ),
+                EzPlainText(text: l10n.hsGold, style: subTitle),
+              ], textAlign: TextAlign.center),
+              newLine,
+
+              // How about !(move fast && break things)
+              EzText(
+                l10n.hsRush,
+                style: subTitle,
+                textAlign: TextAlign.center,
+              ),
+              newLine,
+              EzRichText(
+                // Inclue a key for the selectable registrar
+                // ...tbhidkybiwsdri
+                key: UniqueKey(),
+                <InlineSpan>[
+                  EzPlainText(text: l10n.hsSlow, style: subTitle),
+                  EzInlineLink(
+                    l10n.hsPlan,
+                    style: subTitle,
+                    textAlign: TextAlign.center,
+                    url: Uri.parse(missionURL),
+                    hint: l10n.gMissionHint,
                   ),
-                  EzPlainText(text: l10n.hsGold, style: subTitle),
-                ], textAlign: TextAlign.center),
-                newLine,
-
-                // How about !(move fast && break things)
-                EzText(
-                  l10n.hsRush,
-                  style: subTitle,
-                  textAlign: TextAlign.center,
-                ),
-                newLine,
-                EzRichText(
-                  // Inclue a key for the selectable registrar
-                  // ...tbhidkybiwsdri
-                  key: UniqueKey(),
-                  <InlineSpan>[
-                    EzPlainText(text: l10n.hsSlow, style: subTitle),
-                    EzInlineLink(
-                      l10n.hsPlan,
-                      style: subTitle,
-                      textAlign: TextAlign.center,
-                      url: Uri.parse(missionURL),
-                      hint: l10n.gMissionHint,
-                    ),
-                  ],
-                  textAlign: TextAlign.center,
-                ),
-              ],
-            ),
+                ],
+                textAlign: TextAlign.center,
+              ),
+            ]),
           ),
-          EzConfig.separator,
-          const EzTranslationsPendingNotice(),
+          const EzFooter(),
         ]),
         margin: EdgeInsets.zero,
       ),
@@ -187,16 +180,17 @@ class _HomeScreenState extends State<HomeScreen> {
         child: ExcludeSemantics(
           child: AnimatedOpacity(
             opacity: fin ? 1.0 : 0.0,
-            duration: const Duration(milliseconds: fadeTime),
+            duration: const Duration(milliseconds: logoAnimFade),
             child: SizedBox(
               width: toolbarHeight,
               height: toolbarHeight,
-              child: Logo(margin: EzConfig.marginVal),
+              child: Logo(margin: EzConfig.marginVal, colorScheme: EzConfig.colors),
             ),
           ),
         ),
       ),
-      fabs: <Widget>[EzConfig.spacer, SettingsFAB(() => setState(() {}))],
+      fabs: <Widget>[EzConfig.spacer, const SettingsFAB()],
+      home: true,
     );
   }
 }

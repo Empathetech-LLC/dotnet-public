@@ -1,0 +1,277 @@
+{
+  "@@locale": "fil",
+
+  "gEmpathLogoLabel": "isang two-dimensional na orasa.",
+  "gEmpathLogoHint": "I-activate para pumunta sa home page.",
+
+  "gLearn": "Matuto tungkol sa {name}",
+  "gHomeHint": "Buksan ang home page",
+  "gProductsHint": "Buksan ang page ng produkto",
+  "gMissionHint": "Buksan ang page ng misyon",
+  "gTeamHint": "Buksan ang page ng team",
+  "gContributeHint": "Buksan ang page para mag-ambag",
+
+  "gShare": "Ibahagi",
+  "gEmail": "Email",
+  "gEmailTo": "Mag-email kay {recipient}",
+  "gAnEmail": "isang email",
+  "gEmailHint": "Bubuksan ang iyong email client",
+  "gNewsletter": "Newsletter",
+
+  "gLogoLabel": "Logo ng {thing}: ",
+  "gIconLabel": "Ang icon para sa {app}: ",
+  "gDownloadHint": "I-download ang {app} para sa {platform}.",
+  "gRepoHint": "Buksan ang link sa development repo.",
+  "gEmpathetechGitHint": "Buksan ang GitHub page para sa Empathetic LLC",
+
+  "gImageCredit": "Credit sa larawan: {creator}",
+
+  "gReachOut": "Makipag-ugnayan",
+  "gFiverrPage": "Buksan ang Fiverr page ni {user}",
+
+  "gDontChaWish": "Hindi mo ba hinahangad na maging masaya ang iyong frontend ", 
+  "gMeQ": "tulad ko?",
+  "gDontCha": "Hindi ba?",
+  "gDontChaHint": "Buksan ang GitHub page para sa source code ng screen na ito",
+
+
+
+  "hsSlogan": "Bumuo tayo ng mas magandang mundo nang magkasama\nbit x bit",
+  "hsSloganFix": "Bumuo tayo ng mas magandang mundo nang magkasama\nunti-unti",
+  "hsVideoLabel": "Animated na logo ng Empathetic LLC: ang mga titik sa Empathetic ay nagiging two-dimensional na logo ng orasa",
+
+  "hsPeople": "Ang mga tao ay hindi produkto.",
+  "hsWell": "Well, hindi sila dapat maging ganon.",
+
+  "hsReality": "Ang nakakalungkot na katotohanan ay ang ating mga pagkakakilanlan, ang ating ",
+  "hsData": "datos",
+  "hsGold": ", ang pinakabagong gold rush ng malalaking tech.",
+
+  "hsRush": "At gustong-gusto talagang magmadali ng malalaking tech.\nDahil sa kanilang walang-katapusang pagmamadali, masyadong mabilis na nagkakatotoo ang mga dystopian sci-fi na pelikula.",
+  "hsSlow": "Panahon na para bumagal.\nPanahon na para magkaroon tayo ng pagmamay-ari sa ating mga digital na sarili.\nPanahon na para sa mas magandang ",
+  "hsPlan": "plano.",
+
+
+
+  "msPageTitle": "Misyon",
+  
+  "msSoWe": "Kaya tayo",
+  "msBy": "Sa pamamagitan ng",
+  "msFirst": "Sa pamamagitan muna ng",
+  
+  "msIDProblem": "Pag-alam sa problema",
+  "msIDProblemContent": "Ang mga business model na inuuna ang kita ay hindi napapanatili.\n\nSa madaling salita: kung kita ang inuuna, ang mga bagay tulad ng paggawa para sa isang misyon, tamang pagtrato sa mga tao, at responsableng paggamit ng mga mapagkukunan ay nagiging pangalawang prayoridad na lamang.\n\nAt ang kasakimang ito ay hindi nakontrol sa malalaking tech. Ang mga tech giant ay hindi na nakukuntento sa ating pera, at gumagawa sila ng mga produkto para puntiryahin ang ating mga pagkakakilanlan at kontrolin ang ating isipan.",
+  
+  "msFindSolution": "Humanap ng solusyon",
+  "msFindSolutionContent": "Sa kabutihang palad, may mga kahanga-hangang technologist sa buong mundo na nagtutulungan tungo sa mas magandang naratibo.\nIsang naratibo kung saan ang mga service provider at ang mga customer ay may aktibo, malusog, at kapwa kapaki-pakinabang na relasyon.\n\nAng komunidad ng open source.\n\nSa kaibuturan nito, ang open source software ay malayang nakikita ng sinuman. Maraming proyekto ang maaari ring malayang baguhin at ipamahagi muli.\nIto ay software na walang tinatago, ginawa ng mga taong kinikilala na ang mga ibinahaging problema ay nangangailangan ng mga ibinahaging solusyon.\n\nAt sa magandang mundo ng open source software, mayroong isang sub category: ang self-hosting software.\n\nAng self-hosting ay nagbibigay-daan sa atin na gumamit ng anumang hindi ginagamit na computer (kahit ang mga kasing-laki ng bulsa) at i-store ang ating datos doon.\nSa pamamagitan ng self-hosting, makokontrol natin ang ating sariling digital presence, sa halip na ipaubaya ang kontrol sa isang malayong server na pagmamay-ari ng isang walang-empatayang korporasyon.\n\nAt may mga self-hosted na bersyon para sa halos lahat ng bagay! Mula Adobe hanggang Zoom, may mga dedikadong hacktivist na gumagawa ng mga alternatibo na inuuna ang tao kaysa kita.\n\nKaya, paano lumipat mula sa kita-muna/closed source patungo sa open source? Paano sila magsisimulang mag-self-host?\nNangangailangan ito ng maraming oras, enerhiya, at kaalaman.\n\nDiyan kami papasok.",
+  
+  "msProvideValue": "Paggawa ng trabaho",
+  "msProvideValueContent1": "Ang misyon ng Empathetech ay balansehin muli ang kapangyarihan sa tech sa pamamagitan ng paggawa sa self-hosting na mas madaling ma-access.\n\nGagawa kami ng mga app na magbibigay-daan sa sinuman na magkaroon ng sarili nilang digital na pagkakakilanlan.\nBubuo kami ng mga tulay sa pagitan ng komunidad ng open source at ng mga taong walang sapat na oras, enerhiya, o dating kaalaman.\n\nAt hindi ka makakabuo ng mga tulay (o mga app) nang walang matibay na pundasyon! Iyan ang dahilan kung bakit ",
+  "msProvideValueContent1Fix": "Ang misyon ng Empathetic ay balansehin muli ang kapangyarihan sa tech sa pamamagitan ng paggawa sa self-hosting na mas madaling ma-access.\n\nGagawa kami ng mga app na magbibigay-daan sa sinuman na magkaroon ng sarili nilang digital na pagkakakilanlan.\nBubuo kami ng mga tulay sa pagitan ng komunidad ng open source at ng mga taong walang sapat na oras, enerhiya, o dating kaalaman.\n\nAt hindi ka makakabuo ng mga tulay (o mga app) nang walang matibay na pundasyon! Iyan ang dahilan kung bakit ",
+  "msProvideValueContent2": " ay umiiral.\nIpinagmamalaki ng Empathetech ang pagtupad sa mga salita sa pamamagitan ng gawa, at ginawa naming open source ang aming accessible UI.\n\nBumuo tayo ng mas magandang mundo nang magkasama, unti-unti.",
+  "msProvideValueContent2Fix": " ay umiiral.\nIpinagmamalaki ng Empathetic ang pagtupad sa mga salita sa pamamagitan ng gawa, at ginawa naming open source ang aming accessible UI.\n\nBumuo tayo ng mas magandang mundo nang magkasama, unti-unti.",
+
+
+  
+  "psPageTitle": "Mga Produkto",
+  "psTitleHint": "Ipakita ang listahan",
+
+  "psShowDemo": "Ipakita ang demo",
+  "psHideDemo": "Itago ang demo",
+  "psShowPromo": "Ipakita ang promo",
+  "psHidePromo": "Itago ang promo",
+
+  "psLearnMore": " upang matuto pa.",
+  "psDownloadNow": "I-download na",
+  "psComingSoon": "Malapit na...",
+
+
+
+  "ouSlogan": "Bumuo ng mga app para sa sinuman",
+  "ouLike": "Tulad ng mga user na nangangailangan ng...",
+  "ouAccessible": "Mga accessible na kontrol",
+  "ouZeroStrain": "walang pagkapagod ng mata",
+  "ouEverything": "Lahat ng nasa pagitan nito",
+  "ouRandom": "Inlapat ang random config.",
+
+  "ouIs": "Ang Open UI ay isang app generator.",
+  "ouDemo": "Demonstrasyon ng pagbuo ng bagong app ng Open UI.",
+  "ouFoundation": "Lumilikha ito ng pundasyon para sa accessible, cross-platform, multi-language, at production-ready na mga app sa isang click.",
+  "ouLocal": "Tumatakbo ang lahat sa iyong computer. Walang kinakailangang credentials, credit card, o cookies.",
+  "ouRequirements": "Ang tanging mga kailangan ay internet connection at isang ideya.",
+  "ouFlutterToo": "...at Flutter...",
+
+  "ouHow": "Paano ito gumagana?",
+  "ouEFUIsHow": "Ang Open UI ay nakabuo sa, at magpapasimula sa iyo sa, ",
+  "ouSimplifies": "Ang EFUI ay isang library para sa pagbuo ng totoong accessible na mga app. Pinapasimple nito...",
+  
+  "ouPlatform": "Availability sa platform",
+  "ouPlatformContent": "Maaari mong gamitin ang EFUI upang bumuo sa Android, iOS, Linux, macOS, Windows at Web!",
+  
+  "ouResponsive": "Responsive na disenyo",
+  "ouResponsiveContent": "Upang makita ito sa aksyon, paglaruan ang window na ginagamit mo ngayon!",
+
+  "ouScreen": "Suporta sa screen reader",
+  "ouScreenContent": "Sinusuportahan ng mga Empathetech app ang mga user na nangangailangan ng ",
+  "ouScreenContentFix": "Sinusuportahan ng mga Empathetic app ang mga user na nangangailangan ng ",
+  "ouTalkBackHint": "Buksan ang link sa TalkBack documentation",
+  "ouAnd": " at ",
+  "ouVoiceOverHint": "Buksan ang link sa VoiceOver documentation",
+  
+  "ouCustom": "Customization ng user",
+  "ouCustomContent": "Ang tanging paraan upang maging totoong accessible sa LAHAT ng customer ay bigyan sila ng kalayaang pumili!\nNagbibigay ang EFUI ng eleganteng UX para sa ganap na kontrol sa anyo ng app.",
+  
+  "ouInternational": "Internasyonalisasyon",
+  "ouInternationalContent": "Ang mga Empathetech app ay naisalin na sa 14 na wika (sa ngayon).\nNagbibigay rin ang EFUI ng imprastraktura para sa walang limitasyong pagsasalin sa hinaharap.",
+  "ouInternationalContentFix": "Ang mga Empathetic app ay naisalin na sa 14 na wika (sa ngayon).\nNagbibigay rin ang EFUI ng imprastraktura para sa walang limitasyong pagsasalin sa hinaharap.",
+
+  "ouReliability": "Pagiging maaasahan",
+  "ouReliabilityContent": "Ang Empathetech software ay ginawa para tumagal. HINDI ito AI code generation.\nAng mga Empathetech programmer ay mga tao. Ang mga LLM ay mga rubber duck.",
+  "ouReliabilityContentFix": "Ang Empathetic software ay ginawa para tumagal. HINDI ito AI code generation.\nAng mga Empathetic programmer ay mga tao. Ang mga LLM ay mga rubber duck.",
+    
+  "ouGetStarted": "Magsimula",
+  "ouOpenUIIconLabel": "isang sandbox para sa mga setting.",
+
+  "ouEFUITagLine": "Kapag binuo gamit ang EFUI, ang iyong mga app ay totoong makakaabot sa anumang madla!\n",
+
+
+
+  "sosPromoLabel": "Isang promotional video para sa Insta SOS.",
+
+  "sosDescription": "Isang camera, SOS beacon, at listahan ng iyong mga karapatan lahat sa isang lugar.\nIto ay makukuha sa 14 na wika at sumusuporta sa mga screen reader.",
+  "sosPrivate": "Ang InstaSOS ay walang accounts, cookies, o mga ad.\n",
+  "sosPrivateFix": "Ang Insta-SOS ay walang accounts, cookies, o mga ad.\n",
+  "sosFree": "Ito ay ganap na libre at ang code ay ",
+  "sosOpenSource": "open source",
+  "sosConsider": "Mangyaring isaalang-alang ang ",
+  "sosContributing": "pag-aambag",
+  "sosSAPS": " upang suportahan ang software bilang isang pampublikong serbisyo.",
+
+  "sosIconLabel": "isang matingkad na kulay ng notification bell.",
+  "sosWeb": "Isang tiyak, at napakaimpluwensyang paraan upang makatulong ay ang pagbabayad para sa hosting ng InstaSOS online.\n\nMalinaw na ang kinikilingan ng mga may-ari ng app store, at maaaring alisin ang InstaSOS kung/kapag nakakuha ito ng traksyon.\nLaging may opsyon ang mga user ng Android na mag-install nang sarili, ngunit ang tanging mabubuhay na alternatibo para sa mga user ng iOS ay isang web app.\n\nSa kabutihang palad, ang mga Flutter app ay client side compute, kaya't mababa lang ang bayarin.\nKailangan lang naming (ninyong) magbayad para sa traffic management.",
+
+
+
+  "llDescription": "Isang Empathetech Android Launcher.",
+  "llDescriptionFix": "Isang Empathetic Android Launcher.",
+
+  "llInDev": "Ang Liminal ay nasa in-development pa.\nAng disenyo nito ay nakaayon sa minimalism, dahil ang ating mga telepono ay dapat na mga kagamitang gagamitin natin, hindi pabaligtad.",
+  "llBut": "Ngunit, ito ay isang minimalist launcher na binuo gamit ang ",
+  "llWhimsy": ".\nKaya, ang iyong home screen ay malaya sa kalat at mga panggambala, AT walang limitasyon sa pag-customize. May kasama ring kaunting kakatuwaan.",
+
+  "llTheHood": "Isang halimbawang home screen na may larawan ng Mount Hood sa Portland.",
+  "llLasRosas": "Isang halimbawang home screen na may larawan ng Rose garden sa Portland.",
+  "llFrogAndPigs": "Isang halimbawang home screen na may larawan ng wildlife sa Portland.",
+
+  "llModel": "Ipapalabas ang Liminal sa ilalim ng modelong \"magbayad kung magkano ang kaya mo\".\nAng bersyon sa Google Play ay may bayad, dahil ang (magandang) code ay hindi nagsusulat ng kusa.\nAng GitHub repo ay magkakaroon din ng libre at available na APK, dahil ang malusog na ugnayan sa teknolohiya ay hindi dapat eksklusibo lamang para sa mga may sobrang pera.",
+
+  
+
+  "ssPreview1": "Isa pang Empathetech app, ",
+  "ssPreview1Fix": "Isa pang Empathetic app, ",
+  "ssPreview2": ", ay in-development.\nAng Smoke Signal ay isang social network app na idinisenyo upang ilayo tayo sa ating mga screen.",
+  "ssPreview3": "Ang Smoke Signal ay magiging fully self-hosted din, salamat sa ",
+  "ssAPHint": "Buksan ang link sa Activity Pub documentation",
+
+
+
+  "trWonder": "Kung nagtataka ka kung paano nasusuportahan ng isang tao ang 14 na wika: responsableng paggamit ng LLM.\nAng proseso ay ang mga sumusunod...",
+  "trFirst": "1. Tapusin && ayusin ang (Amerikanong) Ingles na ",
+  "trSource": "pinagmulan",
+  "trSecond": "2. Pakiusapan ",
+  "trBeNice": " nang maayos na isalin ang mga entry.\nIsang wika bawat thread, para hindi sumabog ang konteksto.",
+  "trThird": "3. I-audit ang mga resulta gamit ang ",
+  "trScript": "script na ito",
+  "trReverse": "Pabaliktad nitong isinasalin ang lahat ng wika, isa-isang entry. Binabasa ko ang bawat resulta at minamarkahan ang mga nawalan ng orihinal na kahulugan.",
+  "trFourth": "4. Gumamit ng Google Translate (naka-off ang Gemini) para ayusin ang mga sablay, nang isa-isa. At/o...",
+  "trFifth": "5. Kumuha ng mga propesyonal para sa mga mahahalagang bahagi.\nHalimbawa, ang mga karapatan (mga rvX entry) sa ",
+  "trBy": " ay isinalin ng mga ",
+  "trHumans": "tao",
+  "trProcess": "Hindi perpekto ang prosesong ito, pero mas pinaghirapan ito kaysa sa simpleng plug-n-chug ng LLM.\nAt, sa totoo lang, ito lang ang kaya kong tustusan (sa ngayon).",
+  "trSpeaking": "Kaugnay nito, mangyaring isaalang-alang ang ",
+  "trEither": ".\nPera, o oras. Tinatantiya ko na may 100% na posibilidad ng mga (maliliit na) pagkakamali.",
+
+
+  
+  "vaIntro": "Ang paraan ng paggamit sa teknolohiya ay hindi maaaring pagpasyahan ng mga lumikha nito.",
+  "vaTheBad": "Na maaaring maging isang magandang bagay, masamang bagay, o nasa gitna.\nMaglaan tayo ng sandali upang talakayin ang masama: mga scam na app.",
+  "vaScamRisk": " ay lubos na nakakabawas sa hirap ng pagbuo ng mga production ready na app. Kapag isinama sa mga AI coding tool, mas madali na ngayon para sa mga scammer na gumawa ng mga app na mukha at pakiramdam ay lehitimo.\nUpang makatulong na labanan ito, magpapanatili kami ng listahan ng mga na-verify na app.",
+  "vaCheckIn": "Kung nakakita ka ng app na gumagamit ng aming UI, suriin muna dito. Kung hindi ito na-verify, ang payo namin ay: huwag itong i-download.\nBukod doon, hindi ito listahan ng mga rekomendasyon. Ang tanging requirement upang mapabilang sa listahang ito, ay huwag maging isang scam.\nPagkatapos malinaw iyon, ang kilalang UIniverse ay naglalaman ng...",
+
+  "vaFirst": "First party",
+  "vaThird": "Third party na na-verify",
+  "vaWaiting": "Naghahintay",
+  "vaWillYou": "Ikaw ba ang magiging una?",
+  "vaKnown": "Mga kilalang scam",
+  "vaSoGood": "Ayos pa naman sa ngayon!\nSana ay huwag kang maging una :)",
+
+  "vaPublished": "Kung nag-publish ka ng app gamit ang EFUI, padalhan kami ng ",
+  "vaDoNoHarm": ".\nHindi namin kailangang magustuhan ang app, at hindi namin ito ire-review nang pampubliko.\nSusuriin namin ang code, at basta walang itong dulot na pinsala, maive-verify ito.",
+  "vaPrivateFree": "Kung hindi pampubliko ang iyong app, huwag mag-alala!\nNgunit kung mada-download ito ng mga taong hindi mo kilala, ipaalam sa amin upang ma-verify namin ito.",
+  "vaDoYourPart": "Kung wala kaming narinig mula sa iyo, ipapalagay naming isang scam ang iyong produkto hanggang mapatunayang hindi.\nKung sa tingin mo ay matindi iyon, mag-isip kang muli. Ang Open UI ay resulta ng maraming taong trabaho, na ibinabahagi nang libre. Ang pagpapadala ng email ay ang pinakamaliit na bagay na magagawa mo.",
+
+  
+
+  "tsPageTitle": "Team",
+  
+  "tsCore": "Core",
+  "tsTheFounderLabel": "Isang two-dimensional na profile ni Michael Waldron.",
+  "tsTheFounderHint": "I-activate para padalhan siya ng email.",
+  "tsTheFounder": "Ang Founder",
+  "tsBoardMember": "Board Member",
+  "tsYou": "Ikaw?",
+  "tsMirrorLabel": "Isang itim na bilog na may kislap, upang gayahin ang isang salamin.",
+  "tsMirrorTip": "I-activate para padalhan kami ng email",
+  "tsMirrorHint": "Magtanong tungkol sa pagsali sa team.",
+  "tsNonProfit": "Ang tanging hadlang upang maging isang ganap na nonprofit ang Empathetech ay ang bilang ng mga tao.\nKung naniniwala ka sa misyong inilatag ko, at may ilang oras sa isang linggo na mailalaan, mangyaring makipag-ugnayan!\n\nIto ay magsisimula bilang fully volunteer. Hindi pa rin ako sumusuweldo (sa ngayon).\nNgunit, hindi ko ito gagawin kung wala rin akong magandang plano para diyan.\n\nHinihikayat ang lahat ng interesado na makipag-ugnayan, ngunit may partikular na pangangailangan para sa mga taong may karanasan sa:\nsocial media management, fundraising, at paggawa ng proposal para sa grant.",
+
+  "tsWild": "Sa labas",
+  "ts2025BoothLabel": "Ang Empathetech booth para sa Open Sauce 2025.",
+  "ts2025BoothHint": "I-activate para buksan ang page ng mga exhibit ng Open Sauce.",
+  "ts2025BoothDescription": "Naging napakasaya ng Open Sauce (2025)!\nMahirap bumalik sa normal na buhay, matapos mapalibutan ng napakaraming mababait, determinado, matatalino, at malikhaing tao.\nSalamat muli kung dumaan ka sa Empathetech booth, at para sa susunod na taon!",
+  "ts2025BoothDescriptionFix": "Naging napakasaya ng Open Sauce (2025)!\nMahirap bumalik sa normal na buhay, matapos mapalibutan ng napakaraming mababait, determinado, matatalino, at malikhaing tao.\nSalamat muli kung dumaan ka sa Empathetic booth, at para sa susunod na taon!",
+
+  "tsCommunity": "Komunidad",
+
+  "tsFreelance": "Freelance",
+
+  "tsVideoProduction": "Video Production",
+
+  "tsTranslators": "Mga Tagasalin",
+  "tsProfile": "Profile ni {name}",
+
+
+
+  "fahJoin": "Sumali sa Fold",
+
+  "fahIconLabel": "isang protein molecule.",
+  "fahIconHint": "I-activate para buksan ang kanilang site.",
+  
+  "fahIntro1": "Sumali sa ",
+  "fahIntro2": " Folding@home team!",
+  "fahTeamHint": "Buksan ang page ng Empathetic folding at home team",
+  
+  "fahWhats": "Ano ang ",
+  "fahName": "Folding@home?",
+  "fahNameHint": "Buksan ang about page ng Folding at Home",
+  
+  "fahStats": "Sama-sama, nakakuha tayo ng higit sa 400 milyong puntos.\nDahil dito, kabilang tayo sa top 2% ng lahat ng team sa buong mundo!",
+
+
+
+  "csPageTitle": "Mag-ambag",
+  
+  "csEveryBit": "Ang bawat bit na ibinibigay mo sa Empathetech ay kumukuha ng isang byte mula sa malalaking tech.",
+  "csEveryBitFix": "Ang bawat bit na ibinibigay mo sa Empathetic ay kumukuha ng isang byte mula sa malalaking tech.",
+  
+  "csTime": "Oras",
+  "csBecome": " tungkol sa pagiging isang ",
+  "csGit": "GitHub contributor",
+  
+  "csMoney": "Pera",
+  "csOpenLink": "Buksan ang link sa {page} ng Empathetic",
+  
+  "csPower": "Kapangyarihan",
+
+  "csThanks": "Maraming salamat sa anuman at lahat ng suporta!"
+}

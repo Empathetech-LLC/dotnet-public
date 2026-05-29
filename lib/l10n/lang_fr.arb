@@ -74,6 +74,7 @@
 
 
   "psPageTitle": "Produits",
+  "psTitleHint": "Afficher la liste",
 
   "psShowDemo": "Afficher la démo",
   "psHideDemo": "Masquer la démo",
@@ -121,8 +122,8 @@
   "ouCustomContent": "La seule façon d'être véritablement accessible à TOUS les clients est de leur donner la liberté de choix !\nEFUI fournit une expérience utilisateur élégante pour un contrôle total sur l'apparence d'une application.",
 
   "ouInternational": "Internationalisation",
-  "ouInternationalContent": "Les applications Empathetech ont été traduites en espagnol et en français (jusqu'à présent).\nEFUI fournit également l'infrastructure pour des traductions futures illimitées.",
-  "ouInternationalContentFix": "Les applications Empathetic ont été traduites en espagnol et en français (jusqu'à présent).\nEFUI fournit également l'infrastructure pour des traductions futures illimitées.",
+  "ouInternationalContent": "Les applications Empathetech ont été traduites en 14 langues (jusqu'à présent).\nEFUI fournit également l'infrastructure pour des traductions futures illimitées.",
+  "ouInternationalContentFix": "Les applications Empathetic ont été traduites en 14 langues (jusqu'à présent).\nEFUI fournit également l'infrastructure pour des traductions futures illimitées.",
   
   "ouReliability": "Fiabilité",
   "ouReliabilityContent": "Les logiciels Empathetech sont conçus pour durer. Il ne s’agit PAS d’une génération de code IA.\nLes programmeurs d’Empathetech sont des personnes. Les LLM sont des canards en caoutchouc.",
@@ -133,20 +134,15 @@
 
   "ouEFUITagLine": "En utilisant EFUI, vos applications peuvent toucher tous les publics !\n",
 
-  "ouConsult": " pour consultation et contractualisation.",
-
 
 
   "sosPromoLabel": "Une vidéo promotionnelle pour Insta SOS.",
 
-  "sosDescription": "Une caméra, une balise SOS et une liste de vos droits, le tout au même endroit.\nIl est disponible en anglais, arabe, espagnol, philippin, français, créole, chinois simplifié, et prend en charge les lecteurs d'écran.",
+  "sosDescription": "Une caméra, une balise SOS et une liste de vos droits, le tout au même endroit.\nIl est disponible en 14 langues et prend en charge les lecteurs d'écran.",
   "sosPrivate": "InstaSOS n'a pas de comptes, de cookies ou de publicités.\n",
   "sosPrivateFix": "Insta-SOS n'a pas de comptes, de cookies ou de publicités.\n",
   "sosFree": "C'est totalement gratuit et le code est ",
   "sosOpenSource": "open source",
-  "sosWeAlso": "Nous avons également créé un ",
-  "sosSetupGuide": "guide d'installation",
-  "sosSetupGuideHint": "Ouvrir un lien vers le README",
   "sosConsider": "Veuillez envisager de ",
   "sosContributing": "contribuer",
   "sosSAPS": " au support des logiciels en tant que service public.",
@@ -176,6 +172,24 @@
   "ssPreview2": ", est en cours de développement.\nSmoke Signal est une application de réseau social conçue pour nous éloigner de nos écrans.",
   "ssPreview3": "Smoke Signal sera également entièrement auto-hébergée, grâce à ",
   "ssAPHint": "Ouvrir un lien vers la documentation d'Activity Pub",
+
+
+
+  "trWonder": "Si vous vous demandez comment une équipe d'une seule personne gère 14 langues : en utilisant les LLM de manière responsable.\nLe processus est le suivant...",
+  "trFirst": "1. Finaliser && organiser l'anglais (américain) ",
+  "trSource": "source",
+  "trSecond": "2. Demander à ",
+  "trBeNice": " gentiment de traduire les entrées.\nUne langue par discussion, pour que le contexte n'explose pas.",
+  "trThird": "3. Auditer les résultats avec ",
+  "trScript": "ce script",
+  "trReverse": "Il effectue une traduction inversée pour toutes les langues, une entrée à la fois. Je lis chaque résultat et je signale ceux qui ont perdu leur sens d'origine.",
+  "trFourth": "4. Utiliser Google Traduction (sans Gemini) pour corriger les erreurs, une par une. Et/ou...",
+  "trFifth": "5. Engager des professionnels pour les parties importantes.\nPar exemple, les droits (entrées rvX) dans ",
+  "trBy": " ont été traduits par ",
+  "trHumans": "des humains",
+  "trProcess": "C'est un processus imparfait, mais cela demande beaucoup plus d'efforts qu'une simple génération à la chaîne par LLM.\nEt, honnêtement, c'est ce que je peux m'offrir (pour l'instant).",
+  "trSpeaking": "À ce propos, veuillez envisager de ",
+  "trEither": ".\nDe l'argent, ou du temps. J'estime à 100 % le risque d'erreurs (mineures).",
   
 
 
@@ -224,12 +238,6 @@
   "tsVideoProduction": "Production vidéo",
 
   "tsTranslators": "Traducteurs",
-  "tsAr": "Arabe",
-  "tsEs": "Espagnol",
-  "tsFil": "Philippin",
-  "tsFr": "Français",
-  "tsHt": "Créole",
-  "tsZh": "Chinois (simplifié)",
   "tsProfile": "Profil de {name}",
 
 

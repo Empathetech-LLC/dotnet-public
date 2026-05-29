@@ -5,10 +5,11 @@
 
 //* Files *//
 
-export 'content/products/open_ui.dart';
-export 'content/products/sos.dart';
 export 'content/products/liminal.dart';
+export 'content/products/open_ui.dart';
 export 'content/products/smoke_signal.dart';
+export 'content/products/sos.dart';
+export 'content/products/translations.dart';
 export 'content/products/verified.dart';
 
 export 'content/contribute.dart';
@@ -28,6 +29,9 @@ const String typeQP = 'type';
 
 /// Advanced query parameter == 'advanced'
 const String advQP = 'advanced';
+
+/// Page query parameter == 'advanced'
+const String pageQP = 'page';
 
 // Core //
 
@@ -80,15 +84,6 @@ const String designRedirect = 'design';
 /// https://www.empathetech.net/#/settings?type=design
 const String designSettingsURL = '$settingsURL?$typeQP=$designRedirect';
 
-/// layout-settings
-const String layoutSettingsPath = 'layout-settings';
-
-/// layout
-const String layoutRedirect = 'layout';
-
-/// https://www.empathetech.net/#/settings?type=layout
-const String layoutSettingsURL = '$settingsURL?$typeQP=$layoutRedirect';
-
 /// text-settings
 const String textSettingsPath = 'text-settings';
 
@@ -100,21 +95,20 @@ const String textSettingsURL = '$settingsURL?$typeQP=$textRedirect';
 
 // Settings' lookups //
 
+/// Gives order to the page redirects
+/// color, design, text, null
 const Map<String?, int?> targetLookup = <String?, int?>{
   colorRedirect: 1,
   designRedirect: 2,
-  layoutRedirect: 3,
-  textRedirect: 4,
+  textRedirect: 3,
   null: null,
 };
 
-bool? advancedLookup(String? qp) {
-  switch (qp) {
-    case 'true':
-      return true;
-    case 'false':
-      return false;
-    default:
-      return null;
-  }
-}
+/// Quick bool parse
+bool? qbParse(String? qp) => (qp == null)
+    ? null
+    : switch (qp.toLowerCase()) {
+        'true' => true,
+        'false' => false,
+        _ => null,
+      };

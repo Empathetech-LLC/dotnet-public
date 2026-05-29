@@ -10,14 +10,9 @@ import 'package:efui_bios/efui_bios.dart';
 import 'package:flutter/material.dart';
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 
-class VerifiedScreen extends StatefulWidget {
+class VerifiedScreen extends StatelessWidget {
   VerifiedScreen() : super(key: ValueKey<int>(EzConfig.seed));
 
-  @override
-  State<VerifiedScreen> createState() => _VerifiedScreenState();
-}
-
-class _VerifiedScreenState extends State<VerifiedScreen> {
   @override
   Widget build(BuildContext context) {
     // Gather the contextual  theme data //
@@ -32,7 +27,7 @@ class _VerifiedScreenState extends State<VerifiedScreen> {
     // Return the build //
 
     return DotnetScaffold(
-      EzScreen(EzScrollView(mainAxisSize: MainAxisSize.min, children: <Widget>[
+      EzScreen(EzScrollView(children: <Widget>[
         EzHeader(),
 
         // Headline
@@ -81,36 +76,25 @@ class _VerifiedScreenState extends State<VerifiedScreen> {
           style: EzConfig.styles.headlineLarge,
           textAlign: TextAlign.center,
         ),
-        Wrap(
-          alignment: WrapAlignment.center,
-          runAlignment: WrapAlignment.center,
-          crossAxisAlignment: WrapCrossAlignment.center,
-          children: <Widget>[
-            Padding(
-              padding: wrapPadding,
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
-                  EzText(
-                    Products.openUI.name,
-                    style: EzConfig.styles.titleLarge,
-                  ),
-                  const OpenUILink(),
-                ],
+        EzWrap(children: <Widget>[
+          Padding(
+            padding: wrapPadding,
+            child: EzCol(children: <Widget>[
+              EzText(
+                Products.openUI.name,
+                style: EzConfig.styles.titleLarge,
               ),
-            ),
-            Padding(
-              padding: wrapPadding,
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
-                  EzText(Products.sos.name, style: EzConfig.styles.titleLarge),
-                  const SOSLink(),
-                ],
-              ),
-            ),
-          ],
-        ),
+              const OpenUILink(),
+            ]),
+          ),
+          Padding(
+            padding: wrapPadding,
+            child: EzCol(children: <Widget>[
+              EzText(Products.sos.name, style: EzConfig.styles.titleLarge),
+              const SOSLink(),
+            ]),
+          ),
+        ]),
 
         // 3rd party verified
         EzText(
@@ -118,13 +102,13 @@ class _VerifiedScreenState extends State<VerifiedScreen> {
           style: EzConfig.styles.headlineLarge,
           textAlign: TextAlign.center,
         ),
-        Row(
-          mainAxisSize: MainAxisSize.min,
+        EzRow(
+          reverseHands: false,
           children: <Widget>[
             SizedBox(
               height: loadingSize,
               width: loadingSize,
-              child: EmpathyLoading(semantics: l10n.vaWaiting),
+              child: EmpathyLoading(semantics: l10n.vaWaiting, colorScheme: EzConfig.colors),
             ),
             EzText(
               l10n.vaWillYou,
@@ -158,8 +142,7 @@ class _VerifiedScreenState extends State<VerifiedScreen> {
             ),
             EzInlineLink(
               l10n.gAnEmail,
-              url: Uri.parse(
-                  'mailto:$empathSupport?subject=Sharing%20an%20EFUI%20app'),
+              url: Uri.parse('mailto:$empathSupport?subject=Sharing%20an%20EFUI%20app'),
               hint: l10n.gEmailHint,
               style: EzConfig.styles.bodyLarge,
               textAlign: TextAlign.center,
@@ -186,11 +169,9 @@ class _VerifiedScreenState extends State<VerifiedScreen> {
           style: EzConfig.styles.bodyLarge,
           textAlign: TextAlign.center,
         ),
-
-        EzConfig.separator,
-        const EzTranslationsPendingNotice(),
+        const EzFooter(),
       ])),
-      fabs: <Widget>[EzConfig.spacer, SettingsFAB(() => setState(() {}))],
+      fabs: <Widget>[EzConfig.spacer, const SettingsFAB()],
     );
   }
 }

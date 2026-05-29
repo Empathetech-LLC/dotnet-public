@@ -14,14 +14,12 @@ class FaHBanner extends StatelessWidget {
   const FaHBanner({super.key});
 
   @override
-  Widget build(BuildContext context) => Column(
-        mainAxisSize: MainAxisSize.min,
+  Widget build(BuildContext context) => EzCol(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           // Description && links //
 
           EzRowCol.sym(
-            mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               // Icon
@@ -39,8 +37,7 @@ class FaHBanner extends StatelessWidget {
               const EzSwapSpacer(),
 
               // External links && info
-              EzTextBackground(Column(
-                mainAxisSize: MainAxisSize.min,
+              EzTextBackground(EzCol(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Text(

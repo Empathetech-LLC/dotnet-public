@@ -186,6 +186,9 @@ class LangEn extends Lang {
   String get psPageTitle => 'Products';
 
   @override
+  String get psTitleHint => 'Show list';
+
+  @override
   String get psShowDemo => 'Show demo';
 
   @override
@@ -300,11 +303,11 @@ class LangEn extends Lang {
 
   @override
   String get ouInternationalContent =>
-      'Empathetech apps have been translated to Spanish and French (so far).\nEFUI also provides the infrastructure for unlimited future translations.';
+      'Empathetech apps have been translated to 14 languages (so far).\nEFUI also provides the infrastructure for unlimited future translations.';
 
   @override
   String get ouInternationalContentFix =>
-      'Empathetic apps have been translated to Spanish and French (so far).\nEFUI also provides the infrastructure for unlimited future translations.';
+      'Empathetic apps have been translated to 14 languages (so far).\nEFUI also provides the infrastructure for unlimited future translations.';
 
   @override
   String get ouReliability => 'Reliability';
@@ -328,14 +331,11 @@ class LangEn extends Lang {
       'When built with EFUI, your apps can truly reach any audience!\n';
 
   @override
-  String get ouConsult => ' for consultation and contracting.';
-
-  @override
   String get sosPromoLabel => 'A promotional video for Insta SOS.';
 
   @override
   String get sosDescription =>
-      'A camera, SOS beacon, and list of your rights all in one place.\nIt\'s available in English, Arabic, Spanish, Filipino, French, Creole, Simplified Chinese, and supports screen readers.';
+      'A camera, SOS beacon, and list of your rights all in one place.\nIt\'s available in 14 languages and supports screen readers.';
 
   @override
   String get sosPrivate => 'InstaSOS has no accounts, cookies, or ads.\n';
@@ -348,15 +348,6 @@ class LangEn extends Lang {
 
   @override
   String get sosOpenSource => 'open source';
-
-  @override
-  String get sosWeAlso => 'We also made a ';
-
-  @override
-  String get sosSetupGuide => 'setup guide';
-
-  @override
-  String get sosSetupGuideHint => 'Open a link to the README';
 
   @override
   String get sosConsider => 'Please consider ';
@@ -423,6 +414,58 @@ class LangEn extends Lang {
 
   @override
   String get ssAPHint => 'Open a link to Activity Pub documentation';
+
+  @override
+  String get trWonder =>
+      'If you\'re wondering how a team of one supports 14 languages: LLM-ing responsibly.\nThe process is as follows...';
+
+  @override
+  String get trFirst => '1. Finalize && organize the (American) English ';
+
+  @override
+  String get trSource => 'source';
+
+  @override
+  String get trSecond => '2. Ask ';
+
+  @override
+  String get trBeNice =>
+      ' nicely to translate the entries.\nOne language per thread, so the context doesn\'t explode.';
+
+  @override
+  String get trThird => '3. Audit the results with ';
+
+  @override
+  String get trScript => 'this script';
+
+  @override
+  String get trReverse =>
+      'It reverse translates all languages, one entry at a time. I read every result and flag those that lost the original meaning.';
+
+  @override
+  String get trFourth =>
+      '4. Use Google Translate (Gemini off) to fix failures, one at a time. And/or...';
+
+  @override
+  String get trFifth =>
+      '5. Hire professionals for the important bits.\nFor example, the rights (rvX entries) in ';
+
+  @override
+  String get trBy => ' were translated by ';
+
+  @override
+  String get trHumans => 'humans';
+
+  @override
+  String get trProcess =>
+      'It\'s an imperfect process, but it\'s a lot more effort than an LLM plug-n-chug.\nAnd, honestly, it\'s what I can afford (for now).';
+
+  @override
+  String get trSpeaking => 'Speaking of which, please consider ';
+
+  @override
+  String get trEither =>
+      '.\nMoney, or time. I\'d guesstimate a 100% chance of (minor) mistakes.';
 
   @override
   String get vaIntro =>
@@ -538,24 +581,6 @@ class LangEn extends Lang {
 
   @override
   String get tsTranslators => 'Translators';
-
-  @override
-  String get tsAr => 'Arabic';
-
-  @override
-  String get tsEs => 'Spanish';
-
-  @override
-  String get tsFil => 'Filipino';
-
-  @override
-  String get tsFr => 'French';
-
-  @override
-  String get tsHt => 'Creole';
-
-  @override
-  String get tsZh => 'Chinese (simplified)';
 
   @override
   String tsProfile(Object name) {
@@ -810,6 +835,9 @@ class LangEnUs extends LangEn {
   String get psPageTitle => 'Products';
 
   @override
+  String get psTitleHint => 'Show list';
+
+  @override
   String get psShowDemo => 'Show demo';
 
   @override
@@ -924,11 +952,11 @@ class LangEnUs extends LangEn {
 
   @override
   String get ouInternationalContent =>
-      'Empathetech apps have been translated to Spanish and French (so far).\nEFUI also provides the infrastructure for unlimited future translations.';
+      'Empathetech apps have been translated to 14 languages (so far).\nEFUI also provides the infrastructure for unlimited future translations.';
 
   @override
   String get ouInternationalContentFix =>
-      'Empathetic apps have been translated to Spanish and French (so far).\nEFUI also provides the infrastructure for unlimited future translations.';
+      'Empathetic apps have been translated to 14 languages (so far).\nEFUI also provides the infrastructure for unlimited future translations.';
 
   @override
   String get ouReliability => 'Reliability';
@@ -952,14 +980,11 @@ class LangEnUs extends LangEn {
       'When built with EFUI, your apps can truly reach any audience!\n';
 
   @override
-  String get ouConsult => ' for consultation and contracting.';
-
-  @override
   String get sosPromoLabel => 'A promotional video for Insta SOS.';
 
   @override
   String get sosDescription =>
-      'A camera, SOS beacon, and list of your rights all in one place.\nIt\'s available in English, Arabic, Spanish, Filipino, French, Creole, Simplified Chinese, and supports screen readers.';
+      'A camera, SOS beacon, and list of your rights all in one place.\nIt\'s available in 14 languages and supports screen readers.';
 
   @override
   String get sosPrivate => 'InstaSOS has no accounts, cookies, or ads.\n';
@@ -972,15 +997,6 @@ class LangEnUs extends LangEn {
 
   @override
   String get sosOpenSource => 'open source';
-
-  @override
-  String get sosWeAlso => 'We also made a ';
-
-  @override
-  String get sosSetupGuide => 'setup guide';
-
-  @override
-  String get sosSetupGuideHint => 'Open a link to the README';
 
   @override
   String get sosConsider => 'Please consider ';
@@ -1047,6 +1063,58 @@ class LangEnUs extends LangEn {
 
   @override
   String get ssAPHint => 'Open a link to Activity Pub documentation';
+
+  @override
+  String get trWonder =>
+      'If you\'re wondering how a team of one supports 14 languages: LLM-ing responsibly.\nThe process is as follows...';
+
+  @override
+  String get trFirst => '1. Finalize && organize the (American) English ';
+
+  @override
+  String get trSource => 'source';
+
+  @override
+  String get trSecond => '2. Ask ';
+
+  @override
+  String get trBeNice =>
+      ' nicely to translate the entries.\nOne language per thread, so the context doesn\'t explode.';
+
+  @override
+  String get trThird => '3. Audit the results with ';
+
+  @override
+  String get trScript => 'this script';
+
+  @override
+  String get trReverse =>
+      'It reverse translates all languages, one entry at a time. I read every result and flag those that lost the original meaning.';
+
+  @override
+  String get trFourth =>
+      '4. Use Google Translate (Gemini off) to fix failures, one at a time. And/or...';
+
+  @override
+  String get trFifth =>
+      '5. Hire professionals for the important bits.\nFor example, the rights (rvX entries) in ';
+
+  @override
+  String get trBy => ' were translated by ';
+
+  @override
+  String get trHumans => 'humans';
+
+  @override
+  String get trProcess =>
+      'It\'s an imperfect process, but it\'s a lot more effort than an LLM plug-n-chug.\nAnd, honestly, it\'s what I can afford (for now).';
+
+  @override
+  String get trSpeaking => 'Speaking of which, please consider ';
+
+  @override
+  String get trEither =>
+      '.\nMoney, or time. I\'d guesstimate a 100% chance of (minor) mistakes.';
 
   @override
   String get vaIntro =>
@@ -1162,24 +1230,6 @@ class LangEnUs extends LangEn {
 
   @override
   String get tsTranslators => 'Translators';
-
-  @override
-  String get tsAr => 'Arabic';
-
-  @override
-  String get tsEs => 'Spanish';
-
-  @override
-  String get tsFil => 'Filipino';
-
-  @override
-  String get tsFr => 'French';
-
-  @override
-  String get tsHt => 'Creole';
-
-  @override
-  String get tsZh => 'Chinese (simplified)';
 
   @override
   String tsProfile(Object name) {

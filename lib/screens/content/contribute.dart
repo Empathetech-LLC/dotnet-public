@@ -12,24 +12,9 @@ import 'package:line_icons/line_icons.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 
-class ContributeScreen extends StatefulWidget {
+class ContributeScreen extends StatelessWidget {
   /// Time > Money > (electrical) Power
   ContributeScreen() : super(key: ValueKey<int>(EzConfig.seed));
-
-  @override
-  State<ContributeScreen> createState() => _ContributeScreenState();
-}
-
-class _ContributeScreenState extends State<ContributeScreen> {
-  // Set the page title //
-
-  @override
-  void initState() {
-    super.initState();
-    ezWindowNamer(EzConfig.l10n.csPageTitle);
-  }
-
-  // Return the build //
 
   @override
   Widget build(BuildContext context) => DotnetScaffold(
@@ -50,9 +35,7 @@ class _ContributeScreenState extends State<ContributeScreen> {
               l10n.gReachOut,
               style: EzConfig.styles.bodyLarge,
               textAlign: TextAlign.center,
-              url: Uri.parse(
-                'mailto:$empathCommunity?subject=Becoming%20a%20contributor',
-              ),
+              url: Uri.parse('mailto:$empathCommunity?subject=Becoming%20a%20contributor'),
               tooltip: l10n.gEmailTo(empathetechLLC),
               hint: l10n.gEmailTo(empatheticLLC),
             ),
@@ -82,15 +65,25 @@ class _ContributeScreenState extends State<ContributeScreen> {
 
           // Crowdfunding organizations
           EzRowCol.sym(
-            mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
+              // GoFundMe
               EzElevatedIconLink(
                 tooltip: empathGoFundMe,
                 hint: l10n.csOpenLink('GoFundMe'),
                 url: Uri.parse(empathGoFundMe),
-                icon: const Icon(Icons.wb_sunny_outlined),
+                icon: EzIcon(Icons.wb_sunny_outlined),
                 label: 'GoFundMe',
+              ),
+              const EzSwapSpacer(),
+
+              // Throne (wishlist)
+              EzElevatedIconLink(
+                tooltip: empathThrone,
+                hint: l10n.csOpenLink('Throne'),
+                url: Uri.parse(empathThrone),
+                icon: EzIcon(LineIcons.crown),
+                label: 'Throne',
               ),
             ],
           ),
@@ -98,7 +91,6 @@ class _ContributeScreenState extends State<ContributeScreen> {
 
           // Affiliate donations
           EzRowCol.sym(
-            mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               // Patreon
@@ -106,7 +98,7 @@ class _ContributeScreenState extends State<ContributeScreen> {
                 tooltip: empathPatreon,
                 hint: l10n.csOpenLink('Patreon'),
                 url: Uri.parse(empathPatreon),
-                icon: const Icon(LineIcons.patreon),
+                icon: EzIcon(LineIcons.patreon),
                 label: 'Patreon',
               ),
               const EzSwapSpacer(),
@@ -116,7 +108,7 @@ class _ContributeScreenState extends State<ContributeScreen> {
                 tooltip: empathCoffee,
                 hint: l10n.csOpenLink('Buy Me a Coffee'),
                 url: Uri.parse(empathCoffee),
-                icon: const Icon(LineIcons.coffee),
+                icon: EzIcon(LineIcons.coffee),
                 label: 'Buy Me a Coffee',
               ),
               const EzSwapSpacer(),
@@ -126,7 +118,7 @@ class _ContributeScreenState extends State<ContributeScreen> {
                 tooltip: empathKofi,
                 hint: l10n.csOpenLink('Ko-fi'),
                 url: Uri.parse(empathKofi),
-                icon: const Icon(LineIcons.coffee),
+                icon: EzIcon(LineIcons.coffee),
                 label: 'Ko-fi',
               ),
             ],
@@ -135,7 +127,6 @@ class _ContributeScreenState extends State<ContributeScreen> {
 
           // Direct donations
           EzRowCol.sym(
-            mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               // PayPal
@@ -143,7 +134,7 @@ class _ContributeScreenState extends State<ContributeScreen> {
                 tooltip: empathPayPal,
                 hint: l10n.csOpenLink('PayPal'),
                 url: Uri.parse(empathPayPal),
-                icon: const Icon(LineIcons.paypal),
+                icon: EzIcon(LineIcons.paypal),
                 label: 'PayPal',
               ),
               const EzSwapSpacer(),
@@ -187,10 +178,8 @@ class _ContributeScreenState extends State<ContributeScreen> {
             style: ezSubTitleStyle(),
             textAlign: TextAlign.center,
           ),
-          EzConfig.separator,
-
-          const EzTranslationsPendingNotice(),
+          const EzFooter(),
         ])),
-        fabs: <Widget>[EzConfig.spacer, SettingsFAB(() => setState(() {}))],
+        fabs: <Widget>[EzConfig.spacer, const SettingsFAB()],
       );
 }

@@ -9,16 +9,14 @@ import 'package:flutter/material.dart';
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 
 const Widget updater = EzUpdaterFAB(
-  appVersion: '6.0.4',
+  appVersion: '7.0.0',
   versionSource:
       'https://raw.githubusercontent.com/Empathetech-LLC/dotnet-public/refs/heads/main/APP_VERSION',
   isWeb: true,
 );
 
 class SettingsFAB extends StatelessWidget {
-  final void Function() redraw;
-
-  const SettingsFAB(this.redraw, {super.key});
+  const SettingsFAB({super.key});
 
   @override
   Widget build(BuildContext context) => EzFABLink(

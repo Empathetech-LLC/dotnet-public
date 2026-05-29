@@ -49,19 +49,19 @@ class IconLinks extends StatelessWidget {
   final IconLink gitHub = IconLink(
     url: Uri.parse(empathGitHub),
     tooltip: 'GitHub',
-    icon: Icon(LineIcons.github, color: EzConfig.colors.primary),
+    icon: EzIcon(LineIcons.github, color: EzConfig.colors.primary),
   );
 
   final IconLink newsletter = IconLink(
     url: Uri.parse(empathNewsletter),
     tooltip: l10n.gNewsletter,
-    icon: Icon(Icons.mail_outline, color: EzConfig.colors.primary),
+    icon: EzIcon(Icons.mail_outline, color: EzConfig.colors.primary),
   );
 
   final IconLink mastodon = IconLink(
     url: Uri.parse(empathMastodon),
     tooltip: 'Mastodon',
-    icon: Icon(LineIcons.mastodon, color: EzConfig.colors.primary),
+    icon: EzIcon(LineIcons.mastodon, color: EzConfig.colors.primary),
   );
 
   final IconLink bluesky = IconLink(
@@ -73,7 +73,7 @@ class IconLinks extends StatelessWidget {
   final IconLink linkedIn = IconLink(
     url: Uri.parse(empathLinkedIn),
     tooltip: 'LinkedIn',
-    icon: Icon(LineIcons.linkedin, color: EzConfig.colors.primary),
+    icon: EzIcon(LineIcons.linkedin, color: EzConfig.colors.primary),
   );
 
   // Define the getters //
@@ -103,8 +103,8 @@ class IconLinks extends StatelessWidget {
   // Return the build //
 
   @override
-  Widget build(BuildContext context) => Row(
-        mainAxisSize: MainAxisSize.min,
+  Widget build(BuildContext context) => EzRow(
+        reverseHands: false,
         mainAxisAlignment: MainAxisAlignment.center,
         children: children,
       );

@@ -13,24 +13,11 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 
-class TeamScreen extends StatefulWidget {
+class TeamScreen extends StatelessWidget {
   /// I believe
   /// I believe that
   /// I believe that we...
   TeamScreen() : super(key: ValueKey<int>(EzConfig.seed));
-
-  @override
-  State<TeamScreen> createState() => _TeamScreenState();
-}
-
-class _TeamScreenState extends State<TeamScreen> {
-  // Set the page title //
-
-  @override
-  void initState() {
-    super.initState();
-    ezWindowNamer(l10n.tsPageTitle);
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +31,6 @@ class _TeamScreenState extends State<TeamScreen> {
     final Widget mirror = _Member(
       title: l10n.tsBoardMember,
       name: l10n.tsYou,
-      l10n: l10n,
       hiring: true,
       imageSize: imageSize,
       decoration: const BoxDecoration(
@@ -65,7 +51,6 @@ class _TeamScreenState extends State<TeamScreen> {
         EzScrollView(
           startCentered: true,
           showScrollHint: true,
-          mainAxisSize: MainAxisSize.min,
           scrollDirection: Axis.horizontal,
           children: <Widget>[
             // Future Board Member
@@ -76,7 +61,6 @@ class _TeamScreenState extends State<TeamScreen> {
             _Member(
               title: l10n.tsTheFounder,
               name: mike,
-              l10n: l10n,
               imageSize: imageSize,
               child: EzImageLink(
                 image: founderImage,
@@ -151,10 +135,8 @@ class _TeamScreenState extends State<TeamScreen> {
         EzLink(
           l10n.tsCommunity,
           style: EzConfig.styles.headlineLarge,
-          padding: EzInsets.wrap(EzConfig.marginVal),
           textAlign: TextAlign.center,
           textColor: EzConfig.colors.onSurface,
-          decorationColor: EzConfig.colors.primary,
           url: Uri.parse(contributeURL),
           hint: l10n.gContributeHint,
         ),
@@ -178,25 +160,14 @@ class _TeamScreenState extends State<TeamScreen> {
           style: EzConfig.styles.titleLarge,
           textAlign: TextAlign.center,
         ),
-        Wrap(
-          alignment: WrapAlignment.center,
-          runAlignment: WrapAlignment.center,
-          crossAxisAlignment: WrapCrossAlignment.center,
-          children: <Widget>[
-            _Group(
-              titleStyle: subTitle,
-              freelancers: <Widget>[
-                _Freelancer(
-                  l10n: l10n,
-                  imageSize: imageSize,
-                  name: montanaM,
-                  link: montanaMLink,
-                  image: montanaImage,
-                ),
-              ],
-            ),
-          ],
-        ),
+        EzWrap(children: <Widget>[
+          _Group(
+            titleStyle: subTitle,
+            freelancers: <Widget>[
+              const _FreelancerCoin(montanaM),
+            ],
+          ),
+        ]),
         EzConfig.spacer,
 
         // Translators
@@ -205,114 +176,128 @@ class _TeamScreenState extends State<TeamScreen> {
           style: EzConfig.styles.titleLarge,
           textAlign: TextAlign.center,
         ),
-        Wrap(
-          alignment: WrapAlignment.center,
-          runAlignment: WrapAlignment.center,
-          crossAxisAlignment: WrapCrossAlignment.center,
-          children: <Widget>[
-            // Arabic
-            _Group(
-              title: l10n.tsAr,
-              titleStyle: subTitle,
-              freelancers: <_Freelancer>[
-                _Freelancer(
-                  l10n: l10n,
-                  imageSize: imageSize,
-                  name: yasminS,
-                  link: yasminSLink,
-                  image: yasminSProfile,
-                ),
-              ],
-            ),
+        EzWrap(children: <Widget>[
+          // ar
+          _Group(
+            title: ezLocaleName(arabic, context),
+            titleStyle: subTitle,
+            freelancers: <_FreelancerCoin>[
+              const _FreelancerCoin(yasminS),
+            ],
+          ),
 
-            // Spanish
-            _Group(
-              title: l10n.tsEs,
-              titleStyle: subTitle,
-              freelancers: <Widget>[
-                _Freelancer(
-                  l10n: l10n,
-                  imageSize: imageSize,
-                  name: saraH,
-                  link: saraHLink,
-                  image: saraHProfile,
-                ),
-              ],
-            ),
+          // de
+          _Group(
+            title: ezLocaleName(german, context),
+            titleStyle: subTitle,
+            freelancers: <Widget>[
+              const _FreelancerCoin(patrickKarban),
+            ],
+          ),
 
-            // Filipino
-            _Group(
-              title: l10n.tsFil,
-              titleStyle: subTitle,
-              freelancers: <Widget>[
-                _Freelancer(
-                  l10n: l10n,
-                  imageSize: imageSize,
-                  name: remalyn,
-                  link: remalynLink,
-                  image: remalynProfile,
-                ),
-              ],
-            ),
+          // es
+          _Group(
+            title: ezLocaleName(spanish, context),
+            titleStyle: subTitle,
+            freelancers: <Widget>[
+              const _FreelancerCoin(saraH),
+            ],
+          ),
 
-            // French
-            _Group(
-              title: l10n.tsFr,
-              titleStyle: subTitle,
-              freelancers: <Widget>[
-                _Freelancer(
-                  l10n: l10n,
-                  imageSize: imageSize,
-                  name: alexisN,
-                  link: alexisNLink,
-                  image: alexisNProfile,
-                ),
-              ],
-            ),
+          // fil
+          _Group(
+            title: ezLocaleName(filipino, context),
+            titleStyle: subTitle,
+            freelancers: <Widget>[
+              const _FreelancerCoin(remalyn),
+            ],
+          ),
 
-            // Haitian Creole
-            _Group(
-              title: l10n.tsHt,
-              titleStyle: subTitle,
-              freelancers: <Widget>[
-                _Freelancer(
-                  l10n: l10n,
-                  imageSize: imageSize,
-                  name: carly,
-                  link: carlyLink,
-                  image: carlyProfile,
-                ),
-              ],
-            ),
+          // fr
+          _Group(
+            title: ezLocaleName(french, context),
+            titleStyle: subTitle,
+            freelancers: <Widget>[
+              const _FreelancerCoin(alexisN),
+            ],
+          ),
 
-            // Simplified Chinese
-            _Group(
-              title: l10n.tsZh,
-              titleStyle: subTitle,
-              freelancers: <Widget>[
-                _Freelancer(
-                  l10n: l10n,
-                  imageSize: imageSize,
-                  name: leah,
-                  link: leahLink,
-                  image: leahProfile,
-                ),
-                _Freelancer(
-                  l10n: l10n,
-                  imageSize: imageSize,
-                  name: hilaria,
-                  link: hilariaLink,
-                  image: hilariaProfile,
-                ),
-              ],
-            ),
-          ],
-        ),
+          // hi
+          _Group(
+            title: ezLocaleName(hindi, context),
+            titleStyle: subTitle,
+            freelancers: <Widget>[
+              const _FreelancerCoin(priyankaS),
+            ],
+          ),
 
-        EzConfig.spacer,
-        const EzTranslationsPendingNotice(),
+          // ht
+          _Group(
+            title: ezLocaleName(creole, context),
+            titleStyle: subTitle,
+            freelancers: <Widget>[
+              const _FreelancerCoin(carly),
+            ],
+          ),
+
+          // ja
+          _Group(
+            title: ezLocaleName(japanese, context),
+            titleStyle: subTitle,
+            freelancers: <Widget>[
+              const _FreelancerCoin(hikaru),
+            ],
+          ),
+
+          // ko
+          _Group(
+            title: ezLocaleName(korean, context),
+            titleStyle: subTitle,
+            freelancers: <Widget>[
+              const _FreelancerCoin(superT),
+            ],
+          ),
+
+          // ru
+          _Group(
+            title: ezLocaleName(russian, context),
+            titleStyle: subTitle,
+            freelancers: <Widget>[
+              const _FreelancerCoin(anastasia),
+            ],
+          ),
+
+          // sw
+          _Group(
+            title: ezLocaleName(swahili, context),
+            titleStyle: subTitle,
+            freelancers: <Widget>[
+              const _FreelancerCoin(marieP),
+            ],
+          ),
+
+          // uk
+          _Group(
+            title: ezLocaleName(ukrainian, context),
+            titleStyle: subTitle,
+            freelancers: <Widget>[
+              const _FreelancerCoin(anastasia),
+            ],
+          ),
+
+          // zh
+          _Group(
+            title: ezLocaleName(chinese, context),
+            titleStyle: subTitle,
+            freelancers: <Widget>[
+              const _FreelancerCoin(leah),
+              const _FreelancerCoin(hilaria),
+            ],
+          ),
+        ]),
+        EzFooter(spacing: EzConfig.spacing),
       ])),
-      fabs: <Widget>[EzConfig.spacer, SettingsFAB(() => setState(() {}))],
+      fabs: <Widget>[EzConfig.spacer, const SettingsFAB()],
     );
   }
 }
@@ -320,7 +305,6 @@ class _TeamScreenState extends State<TeamScreen> {
 class _Member extends StatelessWidget {
   final String title;
   final String name;
-  final Lang l10n;
   final double imageSize;
   final BoxDecoration? decoration;
   final bool hiring;
@@ -329,7 +313,6 @@ class _Member extends StatelessWidget {
   const _Member({
     required this.title,
     required this.name,
-    required this.l10n,
     required this.imageSize,
     this.hiring = false,
     this.decoration,
@@ -337,8 +320,7 @@ class _Member extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext context) =>
-      Column(mainAxisSize: MainAxisSize.min, children: <Widget>[
+  Widget build(BuildContext context) => EzCol(children: <Widget>[
         hiring
             ? EzLinkWidget(
                 label: l10n.tsMirrorLabel,
@@ -349,13 +331,12 @@ class _Member extends StatelessWidget {
                       'U & Me => 501(c)(3)',
                       textAlign: TextAlign.center,
                     ),
-                    content:
-                        Text(l10n.tsNonProfit, textAlign: TextAlign.center),
+                    content: Text(l10n.tsNonProfit, textAlign: TextAlign.center),
                     actions: <EzMaterialAction>[
                       EzMaterialAction(
                         text: l10n.gEmail,
-                        onPressed: () => launchUrl(Uri.parse(
-                            'mailto:$empathFounder?subject=Becoming%20a%20member')),
+                        onPressed: () => launchUrl(
+                            Uri.parse('mailto:$empathFounder?subject=Becoming%20a%20member')),
                         isDefaultAction: true,
                       ),
                     ],
@@ -366,9 +347,7 @@ class _Member extends StatelessWidget {
                 child: Shimmer.fromColors(
                   baseColor: Colors.black,
                   highlightColor: Colors.white,
-                  direction: EzConfig.isLTR
-                      ? ShimmerDirection.ltr
-                      : ShimmerDirection.rtl,
+                  direction: EzConfig.isLTR ? ShimmerDirection.ltr : ShimmerDirection.rtl,
                   period: ezAnimDuration(mod: 2.0),
                   delay: const Duration(seconds: 4),
                   child: Container(
@@ -385,8 +364,8 @@ class _Member extends StatelessWidget {
               ),
         EzConfig.margin,
         MergeSemantics(
-          child: EzTextBackground(Column(
-            mainAxisSize: MainAxisSize.min,
+          child: EzTextBackground(EzCol(
+            mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Text(
@@ -405,38 +384,27 @@ class _Member extends StatelessWidget {
       ]);
 }
 
-class _Freelancer extends StatelessWidget {
-  final Lang l10n;
-  final double imageSize;
-  final String name;
-  final String link;
-  final ImageProvider image;
+class _FreelancerCoin extends StatelessWidget {
+  final Freelancer who;
 
-  const _Freelancer({
-    required this.l10n,
-    required this.imageSize,
-    required this.name,
-    required this.link,
-    required this.image,
-  });
+  const _FreelancerCoin(this.who);
 
   @override
-  Widget build(BuildContext context) => Column(
-        mainAxisSize: MainAxisSize.min,
+  Widget build(BuildContext context) => EzCol(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           // Avatar
           Container(
-            constraints: EzBox.sym(imageSize),
+            constraints: EzBox.sym(ezImageSize(context)),
             child: EzLinkWidget(
               isImage: true,
-              url: Uri.parse(link),
-              tooltip: link,
-              label: l10n.tsProfile(name),
-              hint: l10n.gFiverrPage(name),
+              url: Uri.parse(who.link),
+              tooltip: who.link,
+              label: l10n.tsProfile(who.name),
+              hint: l10n.gFiverrPage(who.name),
               child: ClipRRect(
-                borderRadius: BorderRadius.circular(imageSize),
-                child: Image(image: image, fit: BoxFit.contain),
+                borderRadius: BorderRadius.circular(ezImageSize(context)),
+                child: Image(image: who.image, fit: BoxFit.contain),
               ),
             ),
           ),
@@ -444,7 +412,7 @@ class _Freelancer extends StatelessWidget {
 
           // Name
           EzText(
-            name,
+            who.name,
             style: EzConfig.styles.bodyLarge,
             textAlign: TextAlign.center,
           ),
@@ -467,16 +435,11 @@ class _Group extends StatelessWidget {
   Widget build(BuildContext context) => (freelancers.length > 1)
       ? Padding(
           padding: EdgeInsets.all(EzConfig.spacing),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
+          child: EzCol(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              if (title != null)
-                EzText(title!, style: titleStyle, textAlign: TextAlign.center),
-              Wrap(
-                alignment: WrapAlignment.center,
-                runAlignment: WrapAlignment.center,
-                crossAxisAlignment: WrapCrossAlignment.center,
+              if (title != null) EzText(title!, style: titleStyle, textAlign: TextAlign.center),
+              EzWrap(
                 children: freelancers
                     .map((Widget freelancer) => Padding(
                           padding: EdgeInsets.only(
@@ -493,18 +456,11 @@ class _Group extends StatelessWidget {
         )
       : Padding(
           padding: EdgeInsets.all(EzConfig.spacing),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
+          child: EzCol(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              if (title != null)
-                EzText(title!, style: titleStyle, textAlign: TextAlign.center),
-              Wrap(
-                alignment: WrapAlignment.center,
-                runAlignment: WrapAlignment.center,
-                crossAxisAlignment: WrapCrossAlignment.center,
-                children: freelancers,
-              ),
+              if (title != null) EzText(title!, style: titleStyle, textAlign: TextAlign.center),
+              EzWrap(children: freelancers),
             ],
           ),
         );

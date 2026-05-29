@@ -189,6 +189,9 @@ class LangEs extends Lang {
   String get psPageTitle => 'Productos';
 
   @override
+  String get psTitleHint => 'Mostrar lista';
+
+  @override
   String get psShowDemo => 'Mostrar demo';
 
   @override
@@ -305,11 +308,11 @@ class LangEs extends Lang {
 
   @override
   String get ouInternationalContent =>
-      'Las aplicaciones de Empathetech se han traducido al español y al francés (hasta el momento).\nEFUI también proporciona la infraestructura para futuras traducciones ilimitadas.';
+      'Las aplicaciones de Empathetech se han traducido a 14 idiomas (hasta el momento).\nEFUI también proporciona la infraestructura para futuras traducciones ilimitadas.';
 
   @override
   String get ouInternationalContentFix =>
-      'Las aplicaciones de Empathetic se han traducido al español y al francés (hasta el momento).\nEFUI también proporciona la infraestructura para futuras traducciones ilimitadas.';
+      'Las aplicaciones de Empathetic se han traducido a 14 idiomas (hasta el momento).\nEFUI también proporciona la infraestructura para futuras traducciones ilimitadas.';
 
   @override
   String get ouReliability => 'Fiabilidad';
@@ -333,14 +336,11 @@ class LangEs extends Lang {
       '¡Cuando se construye con EFUI, tus apps pueden llegar a cualquier audiencia!\n';
 
   @override
-  String get ouConsult => ' para consultas y contrataciones.';
-
-  @override
   String get sosPromoLabel => 'Un video promocional de Insta SOS.';
 
   @override
   String get sosDescription =>
-      'Una cámara, una baliza SOS y una lista de tus derechos, todo en un solo lugar.\nEstá disponible en inglés, árabe, español, filipino, francés, criollo, chino simplificado, y admite lectores de pantalla.';
+      'Una cámara, una baliza SOS y una lista de tus derechos, todo en un solo lugar.\nEstá disponible en 14 idiomas y es compatible con lectores de pantalla.';
 
   @override
   String get sosPrivate => 'InstaSOS no tiene cuentas, cookies ni anuncios.\n';
@@ -354,15 +354,6 @@ class LangEs extends Lang {
 
   @override
   String get sosOpenSource => 'código abierto';
-
-  @override
-  String get sosWeAlso => 'También hicimos una ';
-
-  @override
-  String get sosSetupGuide => 'guía de instalación';
-
-  @override
-  String get sosSetupGuideHint => 'Abrir un enlace al README';
 
   @override
   String get sosConsider => 'Por favor, considere ';
@@ -429,6 +420,58 @@ class LangEs extends Lang {
 
   @override
   String get ssAPHint => 'Abrir un enlace a la documentación de Activity Pub';
+
+  @override
+  String get trWonder =>
+      'Si te preguntas cómo un equipo de una sola persona da soporte a 14 idiomas: usando LLMs de manera responsable.\nEl proceso es el siguiente...';
+
+  @override
+  String get trFirst => '1. Finalizar && organizar el inglés (estadounidense) ';
+
+  @override
+  String get trSource => 'de origen';
+
+  @override
+  String get trSecond => '2. Pedir ';
+
+  @override
+  String get trBeNice =>
+      ' amablemente que traduzca las entradas.\nUn idioma por hilo, para que el contexto no explote.';
+
+  @override
+  String get trThird => '3. Auditar los resultados con ';
+
+  @override
+  String get trScript => 'este script';
+
+  @override
+  String get trReverse =>
+      'Traduce a la inversa todos los idiomas, una entrada a la vez. Leo cada resultado y marco los que perdieron el significado original.';
+
+  @override
+  String get trFourth =>
+      '4. Usar el Traductor de Google (con Gemini desactivado) para corregir los fallos, uno por uno. Y/o...';
+
+  @override
+  String get trFifth =>
+      '5. Contratar profesionales para las partes importantes.\nPor ejemplo, los derechos (entradas rvX) en ';
+
+  @override
+  String get trBy => ' fueron traducidos por ';
+
+  @override
+  String get trHumans => 'humanos';
+
+  @override
+  String get trProcess =>
+      'Es un proceso imperfecto, pero requiere mucho más esfuerzo que simplemente usar un LLM en automático.\nY, sinceramente, es lo que puedo permitirme (por ahora).';
+
+  @override
+  String get trSpeaking => 'Hablando de eso, por favor considera ';
+
+  @override
+  String get trEither =>
+      '.\nDinero o tiempo. Calcularía que hay un 100% de probabilidad de que haya errores (menores).';
 
   @override
   String get vaIntro =>
@@ -545,24 +588,6 @@ class LangEs extends Lang {
 
   @override
   String get tsTranslators => 'Traductores';
-
-  @override
-  String get tsAr => 'Arabe';
-
-  @override
-  String get tsEs => 'Español';
-
-  @override
-  String get tsFil => 'Filipino';
-
-  @override
-  String get tsFr => 'Francés';
-
-  @override
-  String get tsHt => 'Criollo';
-
-  @override
-  String get tsZh => 'Chino (simplificado)';
 
   @override
   String tsProfile(Object name) {

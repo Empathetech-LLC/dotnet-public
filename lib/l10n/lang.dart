@@ -4,9 +4,20 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:intl/intl.dart' as intl;
 
+import 'lang_ar.dart' deferred as lang_ar;
+import 'lang_de.dart' deferred as lang_de;
 import 'lang_en.dart' deferred as lang_en;
 import 'lang_es.dart' deferred as lang_es;
+import 'lang_fil.dart' deferred as lang_fil;
 import 'lang_fr.dart' deferred as lang_fr;
+import 'lang_hi.dart' deferred as lang_hi;
+import 'lang_ht.dart' deferred as lang_ht;
+import 'lang_ja.dart' deferred as lang_ja;
+import 'lang_ko.dart' deferred as lang_ko;
+import 'lang_ru.dart' deferred as lang_ru;
+import 'lang_sw.dart' deferred as lang_sw;
+import 'lang_uk.dart' deferred as lang_uk;
+import 'lang_zh.dart' deferred as lang_zh;
 
 // ignore_for_file: type=lint
 
@@ -93,10 +104,23 @@ abstract class Lang {
 
   /// A list of this localizations delegate's supported locales.
   static const List<Locale> supportedLocales = <Locale>[
+    Locale('ar'),
+    Locale('ar', 'EG'),
+    Locale('de'),
     Locale('en'),
     Locale('en', 'US'),
     Locale('es'),
-    Locale('fr')
+    Locale('fil'),
+    Locale('fr'),
+    Locale('hi'),
+    Locale('ht'),
+    Locale('ja'),
+    Locale('ko'),
+    Locale('ru'),
+    Locale('sw'),
+    Locale('uk'),
+    Locale('zh'),
+    Locale('zh', 'CN')
   ];
 
   /// No description provided for @gEmpathLogoLabel.
@@ -405,6 +429,12 @@ abstract class Lang {
   /// **'Products'**
   String get psPageTitle;
 
+  /// No description provided for @psTitleHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Show list'**
+  String get psTitleHint;
+
   /// No description provided for @psShowDemo.
   ///
   /// In en, this message translates to:
@@ -618,13 +648,13 @@ abstract class Lang {
   /// No description provided for @ouInternationalContent.
   ///
   /// In en, this message translates to:
-  /// **'Empathetech apps have been translated to Spanish and French (so far).\nEFUI also provides the infrastructure for unlimited future translations.'**
+  /// **'Empathetech apps have been translated to 14 languages (so far).\nEFUI also provides the infrastructure for unlimited future translations.'**
   String get ouInternationalContent;
 
   /// No description provided for @ouInternationalContentFix.
   ///
   /// In en, this message translates to:
-  /// **'Empathetic apps have been translated to Spanish and French (so far).\nEFUI also provides the infrastructure for unlimited future translations.'**
+  /// **'Empathetic apps have been translated to 14 languages (so far).\nEFUI also provides the infrastructure for unlimited future translations.'**
   String get ouInternationalContentFix;
 
   /// No description provided for @ouReliability.
@@ -663,12 +693,6 @@ abstract class Lang {
   /// **'When built with EFUI, your apps can truly reach any audience!\n'**
   String get ouEFUITagLine;
 
-  /// No description provided for @ouConsult.
-  ///
-  /// In en, this message translates to:
-  /// **' for consultation and contracting.'**
-  String get ouConsult;
-
   /// No description provided for @sosPromoLabel.
   ///
   /// In en, this message translates to:
@@ -678,7 +702,7 @@ abstract class Lang {
   /// No description provided for @sosDescription.
   ///
   /// In en, this message translates to:
-  /// **'A camera, SOS beacon, and list of your rights all in one place.\nIt\'s available in English, Arabic, Spanish, Filipino, French, Creole, Simplified Chinese, and supports screen readers.'**
+  /// **'A camera, SOS beacon, and list of your rights all in one place.\nIt\'s available in 14 languages and supports screen readers.'**
   String get sosDescription;
 
   /// No description provided for @sosPrivate.
@@ -704,24 +728,6 @@ abstract class Lang {
   /// In en, this message translates to:
   /// **'open source'**
   String get sosOpenSource;
-
-  /// No description provided for @sosWeAlso.
-  ///
-  /// In en, this message translates to:
-  /// **'We also made a '**
-  String get sosWeAlso;
-
-  /// No description provided for @sosSetupGuide.
-  ///
-  /// In en, this message translates to:
-  /// **'setup guide'**
-  String get sosSetupGuide;
-
-  /// No description provided for @sosSetupGuideHint.
-  ///
-  /// In en, this message translates to:
-  /// **'Open a link to the README'**
-  String get sosSetupGuideHint;
 
   /// No description provided for @sosConsider.
   ///
@@ -836,6 +842,96 @@ abstract class Lang {
   /// In en, this message translates to:
   /// **'Open a link to Activity Pub documentation'**
   String get ssAPHint;
+
+  /// No description provided for @trWonder.
+  ///
+  /// In en, this message translates to:
+  /// **'If you\'re wondering how a team of one supports 14 languages: LLM-ing responsibly.\nThe process is as follows...'**
+  String get trWonder;
+
+  /// No description provided for @trFirst.
+  ///
+  /// In en, this message translates to:
+  /// **'1. Finalize && organize the (American) English '**
+  String get trFirst;
+
+  /// No description provided for @trSource.
+  ///
+  /// In en, this message translates to:
+  /// **'source'**
+  String get trSource;
+
+  /// No description provided for @trSecond.
+  ///
+  /// In en, this message translates to:
+  /// **'2. Ask '**
+  String get trSecond;
+
+  /// No description provided for @trBeNice.
+  ///
+  /// In en, this message translates to:
+  /// **' nicely to translate the entries.\nOne language per thread, so the context doesn\'t explode.'**
+  String get trBeNice;
+
+  /// No description provided for @trThird.
+  ///
+  /// In en, this message translates to:
+  /// **'3. Audit the results with '**
+  String get trThird;
+
+  /// No description provided for @trScript.
+  ///
+  /// In en, this message translates to:
+  /// **'this script'**
+  String get trScript;
+
+  /// No description provided for @trReverse.
+  ///
+  /// In en, this message translates to:
+  /// **'It reverse translates all languages, one entry at a time. I read every result and flag those that lost the original meaning.'**
+  String get trReverse;
+
+  /// No description provided for @trFourth.
+  ///
+  /// In en, this message translates to:
+  /// **'4. Use Google Translate (Gemini off) to fix failures, one at a time. And/or...'**
+  String get trFourth;
+
+  /// No description provided for @trFifth.
+  ///
+  /// In en, this message translates to:
+  /// **'5. Hire professionals for the important bits.\nFor example, the rights (rvX entries) in '**
+  String get trFifth;
+
+  /// No description provided for @trBy.
+  ///
+  /// In en, this message translates to:
+  /// **' were translated by '**
+  String get trBy;
+
+  /// No description provided for @trHumans.
+  ///
+  /// In en, this message translates to:
+  /// **'humans'**
+  String get trHumans;
+
+  /// No description provided for @trProcess.
+  ///
+  /// In en, this message translates to:
+  /// **'It\'s an imperfect process, but it\'s a lot more effort than an LLM plug-n-chug.\nAnd, honestly, it\'s what I can afford (for now).'**
+  String get trProcess;
+
+  /// No description provided for @trSpeaking.
+  ///
+  /// In en, this message translates to:
+  /// **'Speaking of which, please consider '**
+  String get trSpeaking;
+
+  /// No description provided for @trEither.
+  ///
+  /// In en, this message translates to:
+  /// **'.\nMoney, or time. I\'d guesstimate a 100% chance of (minor) mistakes.'**
+  String get trEither;
 
   /// No description provided for @vaIntro.
   ///
@@ -1041,42 +1137,6 @@ abstract class Lang {
   /// **'Translators'**
   String get tsTranslators;
 
-  /// No description provided for @tsAr.
-  ///
-  /// In en, this message translates to:
-  /// **'Arabic'**
-  String get tsAr;
-
-  /// No description provided for @tsEs.
-  ///
-  /// In en, this message translates to:
-  /// **'Spanish'**
-  String get tsEs;
-
-  /// No description provided for @tsFil.
-  ///
-  /// In en, this message translates to:
-  /// **'Filipino'**
-  String get tsFil;
-
-  /// No description provided for @tsFr.
-  ///
-  /// In en, this message translates to:
-  /// **'French'**
-  String get tsFr;
-
-  /// No description provided for @tsHt.
-  ///
-  /// In en, this message translates to:
-  /// **'Creole'**
-  String get tsHt;
-
-  /// No description provided for @tsZh.
-  ///
-  /// In en, this message translates to:
-  /// **'Chinese (simplified)'**
-  String get tsZh;
-
   /// No description provided for @tsProfile.
   ///
   /// In en, this message translates to:
@@ -1213,8 +1273,22 @@ class _LangDelegate extends LocalizationsDelegate<Lang> {
   }
 
   @override
-  bool isSupported(Locale locale) =>
-      <String>['en', 'es', 'fr'].contains(locale.languageCode);
+  bool isSupported(Locale locale) => <String>[
+        'ar',
+        'de',
+        'en',
+        'es',
+        'fil',
+        'fr',
+        'hi',
+        'ht',
+        'ja',
+        'ko',
+        'ru',
+        'sw',
+        'uk',
+        'zh'
+      ].contains(locale.languageCode);
 
   @override
   bool shouldReload(_LangDelegate old) => false;
@@ -1223,6 +1297,16 @@ class _LangDelegate extends LocalizationsDelegate<Lang> {
 Future<Lang> lookupLang(Locale locale) {
   // Lookup logic when language+country codes are specified.
   switch (locale.languageCode) {
+    case 'ar':
+      {
+        switch (locale.countryCode) {
+          case 'EG':
+            return lang_ar
+                .loadLibrary()
+                .then((dynamic _) => lang_ar.LangArEg());
+        }
+        break;
+      }
     case 'en':
       {
         switch (locale.countryCode) {
@@ -1233,16 +1317,48 @@ Future<Lang> lookupLang(Locale locale) {
         }
         break;
       }
+    case 'zh':
+      {
+        switch (locale.countryCode) {
+          case 'CN':
+            return lang_zh
+                .loadLibrary()
+                .then((dynamic _) => lang_zh.LangZhCn());
+        }
+        break;
+      }
   }
 
   // Lookup logic when only language code is specified.
   switch (locale.languageCode) {
+    case 'ar':
+      return lang_ar.loadLibrary().then((dynamic _) => lang_ar.LangAr());
+    case 'de':
+      return lang_de.loadLibrary().then((dynamic _) => lang_de.LangDe());
     case 'en':
       return lang_en.loadLibrary().then((dynamic _) => lang_en.LangEn());
     case 'es':
       return lang_es.loadLibrary().then((dynamic _) => lang_es.LangEs());
+    case 'fil':
+      return lang_fil.loadLibrary().then((dynamic _) => lang_fil.LangFil());
     case 'fr':
       return lang_fr.loadLibrary().then((dynamic _) => lang_fr.LangFr());
+    case 'hi':
+      return lang_hi.loadLibrary().then((dynamic _) => lang_hi.LangHi());
+    case 'ht':
+      return lang_ht.loadLibrary().then((dynamic _) => lang_ht.LangHt());
+    case 'ja':
+      return lang_ja.loadLibrary().then((dynamic _) => lang_ja.LangJa());
+    case 'ko':
+      return lang_ko.loadLibrary().then((dynamic _) => lang_ko.LangKo());
+    case 'ru':
+      return lang_ru.loadLibrary().then((dynamic _) => lang_ru.LangRu());
+    case 'sw':
+      return lang_sw.loadLibrary().then((dynamic _) => lang_sw.LangSw());
+    case 'uk':
+      return lang_uk.loadLibrary().then((dynamic _) => lang_uk.LangUk());
+    case 'zh':
+      return lang_zh.loadLibrary().then((dynamic _) => lang_zh.LangZh());
   }
 
   throw FlutterError(

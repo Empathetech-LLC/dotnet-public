@@ -27,17 +27,23 @@ class DotnetScaffold extends StatelessWidget {
   /// BYO spacing widgets
   final List<Widget>? fabs;
 
+  /// For [EzConfig.backFABs]
+  final bool home;
+
   /// Standardized [Scaffold] for all of empathetech dotnet's screens
-  const DotnetScaffold(this.body, {super.key, this.logo, this.fabs});
+  const DotnetScaffold(
+    this.body, {
+    super.key,
+    this.logo,
+    this.fabs,
+    this.home = false,
+  });
 
   // Define custom functions //
 
   double pageLinksWidth(BuildContext context) =>
       ezTextSize(
-        l10n.msPageTitle +
-            l10n.psPageTitle +
-            l10n.tsPageTitle +
-            l10n.csPageTitle,
+        l10n.msPageTitle + l10n.psPageTitle + l10n.tsPageTitle + l10n.csPageTitle,
         style: EzConfig.styles.headlineLarge,
         context: context,
       ).width +
@@ -47,8 +53,7 @@ class DotnetScaffold extends StatelessWidget {
   Widget build(BuildContext context) {
     // Gather the contextual theme data //
 
-    final double toolbarHeight =
-        ezToolbarHeight(context: context, title: l10n.csPageTitle);
+    final double toolbarHeight = ezToolbarHeight(context: context, title: l10n.csPageTitle);
 
     // Define custom widgets //
 
@@ -62,43 +67,34 @@ class DotnetScaffold extends StatelessWidget {
           child: SizedBox(
             width: toolbarHeight,
             height: toolbarHeight,
-            child: Logo(margin: EzConfig.marginVal),
+            child: Logo(margin: EzConfig.marginVal, colorScheme: EzConfig.colors),
           ),
         );
 
     final IconLinks iconLinks = IconLinks();
 
     final Widget iconLinksMenu = MenuAnchor(
-      builder: (_, MenuController controller, ___) => IconButton(
-        onPressed: () =>
-            controller.isOpen ? controller.close() : controller.open(),
+      builder: (_, MenuController controller, ___) => EzIconButton(
+        onPressed: () => controller.isOpen ? controller.close() : controller.open(),
         tooltip: l10n.gShare,
-        icon: const Icon(Icons.share),
+        icon: Icon(Icons.share, size: EzConfig.styles.titleLarge!.fontSize),
       ),
-      menuChildren: iconLinks.buttons.map((Widget button) {
-        switch (button.runtimeType) {
-          case const (IconLink):
-            button as IconLink;
-
-            return EzMenuLink(
-              uri: button.url,
-              icon: button.icon,
-              label: button.tooltip,
-            );
-          case const (EzIconButton):
-            button as EzIconButton;
-
-            return EzMenuButton(
-              onPressed: button.onPressed,
-              icon: button.icon,
-              label: button.tooltip!,
-            );
-          default:
-            throw Exception(
-              'Unsupported iconLinksMenu button type: ${button.runtimeType}',
-            );
-        }
-      }).toList(),
+      menuChildren: iconLinks.buttons
+          .map((Widget button) => switch (button.runtimeType) {
+                const (IconLink) => EzMenuLink(
+                    uri: (button as IconLink).url,
+                    icon: button.icon,
+                    label: button.tooltip,
+                  ),
+                const (EzIconButton) => EzMenuButton(
+                    onPressed: (button as EzIconButton).onPressed,
+                    icon: button.icon,
+                    label: button.tooltip!,
+                  ),
+                _ =>
+                  throw Exception('Unsupported iconLinksMenu button type: ${button.runtimeType}'),
+              })
+          .toList(),
     );
 
     // Define the build(s) //
@@ -106,10 +102,7 @@ class DotnetScaffold extends StatelessWidget {
     final List<Widget> finalFabs = <Widget>[
       updater,
       if (fabs != null) ...fabs!,
-      if (EzConfig.showBackFAB && ezRootNav.currentState!.canPop()) ...<Widget>[
-        EzConfig.spacer,
-        const EzBackFAB(),
-      ],
+      ...EzConfig.backFABs(home),
     ];
 
     final _RestrictedScaffold restricted = _RestrictedScaffold(
@@ -130,8 +123,7 @@ class DotnetScaffold extends StatelessWidget {
 
     // Return the build //
 
-    final double newSmall =
-        2 * (toolbarHeight + 2 * EzConfig.marginVal) + pageLinksWidth(context);
+    final double newSmall = 2 * (toolbarHeight + 2 * EzConfig.marginVal) + pageLinksWidth(context);
 
     return EzAdaptiveParent(
       small: restricted,
@@ -157,33 +149,20 @@ class _RestrictedScaffold extends Consumer<EzConfigProvider> {
     required this.body,
     required this.fabs,
   }) : super(
-          builder: (_, EzConfigProvider config, __) => Scaffold(
-            key: ValueKey<int>(config.seed),
+          builder: (_, EzConfigProvider config, __) => EzScaffold(
+            seed: config.seed,
             appBar: PreferredSize(
               preferredSize: Size(double.infinity, toolbarHeight),
-              child: AppBar(
-                excludeHeaderSemantics: true,
-                toolbarHeight: toolbarHeight,
-
-                // Title
+              child: EzAppBar(
+                height: toolbarHeight,
                 title: logo,
-                centerTitle: true,
-                titleSpacing: 0,
-
-                // Actions (aka trailing aka right)
-                actions:
-                    EzConfig.isLefty ? const <Widget>[EzBackAction()] : null,
+                actions: EzConfig.isLefty ? const <Widget>[EzBackAction()] : null,
               ),
             ),
             drawer: EzConfig.isLefty ? drawer : null,
             endDrawer: EzConfig.isLefty ? null : drawer,
             body: body,
-            floatingActionButton:
-                Column(mainAxisSize: MainAxisSize.min, children: fabs),
-            floatingActionButtonLocation: EzConfig.isLefty
-                ? FloatingActionButtonLocation.startFloat
-                : FloatingActionButtonLocation.endFloat,
-            resizeToAvoidBottomInset: false,
+            fabs: fabs,
           ),
         );
 }
@@ -205,35 +184,20 @@ class _ExpandedScaffold extends Consumer<EzConfigProvider> {
     required this.body,
     required this.fabs,
   }) : super(
-          builder: (_, EzConfigProvider config, __) => Scaffold(
-            key: ValueKey<int>(config.seed),
+          builder: (_, EzConfigProvider config, __) => EzScaffold(
+            seed: config.seed,
             appBar: PreferredSize(
               preferredSize: Size(double.infinity, toolbarHeight),
-              child: AppBar(
-                excludeHeaderSemantics: true,
-                toolbarHeight: toolbarHeight,
-
-                // Leading (aka left)
+              child: EzAppBar(
+                height: toolbarHeight,
                 leading: EzConfig.isLefty ? iconLinksMenu : logo,
                 leadingWidth: toolbarHeight,
-
-                // Title
                 title: const PageLinks(),
-                centerTitle: true,
-                titleSpacing: 0,
-
-                // Action (aka trailing aka right)
-                actions:
-                    EzConfig.isLefty ? <Widget>[logo] : <Widget>[iconLinksMenu],
+                actions: EzConfig.isLefty ? <Widget>[logo] : <Widget>[iconLinksMenu],
               ),
             ),
             body: body,
-            floatingActionButton:
-                Column(mainAxisSize: MainAxisSize.min, children: fabs),
-            floatingActionButtonLocation: EzConfig.isLefty
-                ? FloatingActionButtonLocation.startFloat
-                : FloatingActionButtonLocation.endFloat,
-            resizeToAvoidBottomInset: false,
+            fabs: fabs,
           ),
         );
 }
@@ -246,8 +210,7 @@ class DotNetDrawer extends StatelessWidget {
   final PageLinks _pageLinks;
 
   /// Universal [NavigationDrawer] for dotnet
-  const DotNetDrawer({super.key, required this.header})
-      : _pageLinks = const PageLinks();
+  const DotNetDrawer({super.key, required this.header}) : _pageLinks = const PageLinks();
 
   @override
   Widget build(BuildContext context) => NavigationDrawer(
@@ -258,28 +221,23 @@ class DotNetDrawer extends StatelessWidget {
             padding: EdgeInsets.zero,
             child: Center(
               child: EzScrollView(
-                mainAxisSize: MainAxisSize.min,
                 scrollDirection: Axis.horizontal,
                 showScrollHint: true,
                 thumbVisibility: false,
-                children: header.children.map((Widget child) {
-                  switch (child.runtimeType) {
-                    case const (EzIconButton):
-                      child as EzIconButton;
-
-                      return EzIconButton(
-                        style: child.style,
-                        onPressed: () {
-                          Navigator.of(context).pop();
-                          child.onPressed?.call();
-                        },
-                        tooltip: child.tooltip,
-                        icon: child.icon,
-                      );
-                    default:
-                      return child;
-                  }
-                }).toList(),
+                children: header.children
+                    .map((Widget child) => switch (child.runtimeType) {
+                          const (EzIconButton) => EzIconButton(
+                              style: (child as EzIconButton).style,
+                              onPressed: () {
+                                Navigator.of(context).pop();
+                                child.onPressed?.call();
+                              },
+                              tooltip: child.tooltip,
+                              icon: child.icon,
+                            ),
+                          _ => child,
+                        })
+                    .toList(),
               ),
             ),
           ),

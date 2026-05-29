@@ -74,6 +74,7 @@
 
   
   "psPageTitle": "Products",
+  "psTitleHint": "Show list",
 
   "psShowDemo": "Show demo",
   "psHideDemo": "Hide demo",
@@ -121,8 +122,8 @@
   "ouCustomContent": "The only way to be truly accessible to ALL customers is to empower them with the freedom of choice!\nEFUI provides an elegant UX for full control over an app's appearance.",
   
   "ouInternational": "Internationalization",
-  "ouInternationalContent": "Empathetech apps have been translated to Spanish and French (so far).\nEFUI also provides the infrastructure for unlimited future translations.",
-  "ouInternationalContentFix": "Empathetic apps have been translated to Spanish and French (so far).\nEFUI also provides the infrastructure for unlimited future translations.",
+  "ouInternationalContent": "Empathetech apps have been translated to 14 languages (so far).\nEFUI also provides the infrastructure for unlimited future translations.",
+  "ouInternationalContentFix": "Empathetic apps have been translated to 14 languages (so far).\nEFUI also provides the infrastructure for unlimited future translations.",
 
   "ouReliability": "Reliability",
   "ouReliabilityContent": "Empathetech software is built to last. This is NOT AI code generation.\nEmpathetech programmers are people. LLMs are rubber ducks.",
@@ -132,21 +133,16 @@
   "ouOpenUIIconLabel": "a settings sandbox.",
 
   "ouEFUITagLine": "When built with EFUI, your apps can truly reach any audience!\n",
-  
-  "ouConsult": " for consultation and contracting.",
 
 
 
   "sosPromoLabel": "A promotional video for Insta SOS.",
 
-  "sosDescription": "A camera, SOS beacon, and list of your rights all in one place.\nIt's available in English, Arabic, Spanish, Filipino, French, Creole, Simplified Chinese, and supports screen readers.",
+  "sosDescription": "A camera, SOS beacon, and list of your rights all in one place.\nIt's available in 14 languages and supports screen readers.",
   "sosPrivate": "InstaSOS has no accounts, cookies, or ads.\n",
   "sosPrivateFix": "Insta-SOS has no accounts, cookies, or ads.\n",
   "sosFree": "It's completely free and the code is ",
   "sosOpenSource": "open source",
-  "sosWeAlso": "We also made a ",
-  "sosSetupGuide": "setup guide",
-  "sosSetupGuideHint": "Open a link to the README",
   "sosConsider": "Please consider ",
   "sosContributing": "contributing",
   "sosSAPS": " to support software as a public service.",
@@ -178,7 +174,25 @@
   "ssAPHint": "Open a link to Activity Pub documentation",
 
 
+
+  "trWonder": "If you're wondering how a team of one supports 14 languages: LLM-ing responsibly.\nThe process is as follows...",
+  "trFirst": "1. Finalize && organize the (American) English ",
+  "trSource": "source",
+  "trSecond": "2. Ask ",
+  "trBeNice": " nicely to translate the entries.\nOne language per thread, so the context doesn't explode.",
+  "trThird": "3. Audit the results with ",
+  "trScript": "this script",
+  "trReverse": "It reverse translates all languages, one entry at a time. I read every result and flag those that lost the original meaning.",
+  "trFourth": "4. Use Google Translate (Gemini off) to fix failures, one at a time. And/or...",
+  "trFifth": "5. Hire professionals for the important bits.\nFor example, the rights (rvX entries) in ",
+  "trBy": " were translated by ",
+  "trHumans": "humans",
+  "trProcess": "It's an imperfect process, but it's a lot more effort than an LLM plug-n-chug.\nAnd, honestly, it's what I can afford (for now).",
+  "trSpeaking": "Speaking of which, please consider ",
+  "trEither": ".\nMoney, or time. I'd guesstimate a 100% chance of (minor) mistakes.",
   
+
+
   "vaIntro": "The way a technology is used cannot be decided by those who create it.",
   "vaTheBad": "Which can be a good thing, a bad thing, or an in-between thing.\nLet's take a moment to discuss the bad: scam apps.",
   "vaScamRisk": " massively reduces the difficulty for building production ready apps. Combined with AI coding tools, it's easier than ever for scammers to create apps that look and feel legitimate.\nTo help combat this, we'll maintain a list of verified apps.",
@@ -224,12 +238,6 @@
   "tsVideoProduction": "Video Production",
 
   "tsTranslators": "Translators",
-  "tsAr": "Arabic",
-  "tsEs": "Spanish",
-  "tsFil": "Filipino",
-  "tsFr": "French",
-  "tsHt": "Creole",
-  "tsZh": "Chinese (simplified)",
   "tsProfile": "{name}'s profile",
 
 

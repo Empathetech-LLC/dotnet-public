@@ -28,8 +28,6 @@ class _OpenUIScreenState extends State<OpenUIScreen> {
 
   // Define custom functions //
 
-  void redraw() => setState(() {});
-
   /// Set the download link
   void initUrl() async {
     switch (EzConfig.platform) {
@@ -52,7 +50,7 @@ class _OpenUIScreenState extends State<OpenUIScreen> {
 
     latest = await getLatest('empathetech_flutter_ui', efuiFallback);
     url = openUIDownload(dlType, latest);
-    redraw();
+    setState(() {});
   }
 
   // Init //
@@ -67,7 +65,6 @@ class _OpenUIScreenState extends State<OpenUIScreen> {
   Widget build(BuildContext context) => DotnetScaffold(
         EzScreen(
           EzScrollView(
-            mainAxisSize: MainAxisSize.min,
             children: <Widget>[
               // Headline && slogan (link)
               EzText(
@@ -78,7 +75,6 @@ class _OpenUIScreenState extends State<OpenUIScreen> {
               EzLink(
                 l10n.ouSlogan,
                 style: EzConfig.styles.headlineLarge!,
-                padding: EzInsets.wrap(EzConfig.marginVal),
                 textAlign: TextAlign.center,
                 url: url,
                 hint: l10n.gDownloadHint(openUI, dlType.name),
@@ -92,7 +88,7 @@ class _OpenUIScreenState extends State<OpenUIScreen> {
                 textAlign: TextAlign.center,
               ),
               EzConfig.margin,
-              EFUIDemo(redraw),
+              const EFUIDemo(),
               EzConfig.divider,
 
               // Use it in a sentence
@@ -139,8 +135,7 @@ class _OpenUIScreenState extends State<OpenUIScreen> {
                 textAlign: TextAlign.center,
               ),
               EzRichText(<InlineSpan>[
-                EzPlainText(
-                    text: l10n.ouEFUIsHow, style: EzConfig.styles.bodyLarge),
+                EzPlainText(text: l10n.ouEFUIsHow, style: EzConfig.styles.bodyLarge),
                 EzInlineLink(
                   efuiL,
                   richLabel: efuiLFix,
@@ -150,8 +145,7 @@ class _OpenUIScreenState extends State<OpenUIScreen> {
                   hint: EzConfig.l10n.gEFUISourceHint,
                 ),
                 EzPlainText(text: '.\n', style: EzConfig.styles.bodyLarge),
-                EzPlainText(
-                    text: l10n.ouSimplifies, style: EzConfig.styles.bodyLarge),
+                EzPlainText(text: l10n.ouSimplifies, style: EzConfig.styles.bodyLarge),
               ], textAlign: TextAlign.center),
               EzConfig.centerLine,
               EzConfig.centerLine,
@@ -261,17 +255,14 @@ class _OpenUIScreenState extends State<OpenUIScreen> {
 
               // Tag line && consultation call-out
               EzRichText(<InlineSpan>[
-                EzPlainText(
-                    text: l10n.ouEFUITagLine, style: EzConfig.styles.bodyLarge),
+                EzPlainText(text: l10n.ouEFUITagLine, style: EzConfig.styles.bodyLarge),
                 EzInlineLink(
                   l10n.gReachOut,
                   style: EzConfig.styles.bodyLarge,
                   textAlign: TextAlign.center,
                   url: Uri.parse(teamURL),
                   hint: l10n.gTeamHint,
-                ),
-                EzPlainText(
-                    text: l10n.ouConsult, style: EzConfig.styles.bodyLarge),
+                )
               ], textAlign: TextAlign.center),
               EzConfig.divider,
 
@@ -283,17 +274,15 @@ class _OpenUIScreenState extends State<OpenUIScreen> {
               ),
               EzConfig.margin,
               const OpenUILink(),
-
-              EzConfig.separator,
-              const EzTranslationsPendingNotice(),
+              const EzFooter(),
             ],
           ),
         ),
         fabs: <Widget>[
           EzConfig.spacer,
-          EzConfigFAB(context, appName: appName, androidPackage: null),
+          const EzConfigFAB(),
           EzConfig.spacer,
-          SettingsFAB(redraw),
+          const SettingsFAB(),
         ],
       );
 }
@@ -308,8 +297,7 @@ class _DemoVideo extends StatefulWidget {
 class _DemoVideoState extends State<_DemoVideo> {
   // Define the build data //
 
-  final VideoPlayerController controller =
-      VideoPlayerController.asset(openUIDemoPath);
+  final VideoPlayerController controller = VideoPlayerController.asset(openUIDemoPath);
 
   bool showVideo = false;
 
@@ -324,45 +312,42 @@ class _DemoVideoState extends State<_DemoVideo> {
   // Return the build //
 
   @override
-  Widget build(BuildContext context) => Column(
-        mainAxisSize: MainAxisSize.min,
-        children: <Widget>[
-          EzConfig.spacer,
+  Widget build(BuildContext context) => EzCol(children: <Widget>[
+        EzConfig.spacer,
 
-          // Video
-          Visibility(
-            visible: showVideo,
-            maintainState: true,
-            child: Padding(
-              padding: EdgeInsets.only(bottom: EzConfig.spacing),
-              child: EzVideoPlayer(
-                controller: controller,
-                aspectRatio: 34 / 19,
-                maxWidth: widthOf(context) * 0.90,
-                maxHeight: heightOf(context) * 0.80,
-                backgroundColor: Colors.black,
-                semantics: l10n.ouDemo,
-                volumeVis: EzButtonVis.alwaysOff,
-                variableVolume: false,
-                autoPlay: false,
-              ),
+        // Video
+        EzAnimVis(
+          mod: 0.75,
+          visible: showVideo,
+          forceType: EzTransitionType.zoom,
+          forceFade: false,
+          kid: Padding(
+            padding: EdgeInsets.only(bottom: EzConfig.spacing),
+            child: EzVideoPlayer(
+              controller: controller,
+              aspectRatio: 1300 / 1046,
+              maxWidth: widthOf(context) * 0.90,
+              maxHeight: heightOf(context) * 0.80,
+              semantics: l10n.ouDemo,
+              hasAudio: false,
+              autoPlay: false,
             ),
           ),
+        ),
 
-          // Show/Hide
-          showVideo
-              ? EzElevatedIconButton(
-                  onPressed: () => setState(() => showVideo = false),
-                  icon: const Icon(Icons.visibility_off),
-                  label: l10n.psHideDemo,
-                )
-              : EzElevatedIconButton(
-                  onPressed: () => setState(() => showVideo = true),
-                  icon: const Icon(Icons.visibility),
-                  label: l10n.psShowDemo,
-                ),
-        ],
-      );
+        // Show/Hide
+        showVideo
+            ? EzElevatedIconButton(
+                onPressed: () => setState(() => showVideo = false),
+                icon: EzIcon(Icons.visibility_off),
+                label: l10n.psHideDemo,
+              )
+            : EzElevatedIconButton(
+                onPressed: () => setState(() => showVideo = true),
+                icon: EzIcon(Icons.visibility),
+                label: l10n.psShowDemo,
+              ),
+      ]);
 
   @override
   void dispose() {

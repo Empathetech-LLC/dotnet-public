@@ -13,18 +13,17 @@ import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 
 //* Shared *//
 
-/// 11.1.1
-const String efuiFallback = '11.1.1';
+/// 12.0.0
+const String efuiFallback = '12.0.0';
 
-/// 2.0.3
-const String sosFallback = '2.0.3';
+/// 3.0.0
+const String sosFallback = '3.0.0';
 
 /// https://github.com/Empathetech-LLC
 const String _git = 'https://github.com/Empathetech-LLC';
 
 /// https://play.google.com/store/apps/details?id=net.empathetech
-const String _gPlay =
-    'https://play.google.com/store/apps/details?id=net.empathetech';
+const String _gPlay = 'https://play.google.com/store/apps/details?id=net.empathetech';
 
 /// https://apps.apple.com/us/app
 const String _appStore = 'https://apps.apple.com/us/app';
@@ -33,24 +32,15 @@ const String _appStore = 'https://apps.apple.com/us/app';
 enum DLType { gPlay, apk, iOS, macOS, windows, deb, rpm }
 
 extension Label on DLType {
-  String get name {
-    switch (this) {
-      case DLType.gPlay:
-        return 'Android (GPlay)';
-      case DLType.apk:
-        return 'Android (.apk)';
-      case DLType.iOS:
-        return 'iOS';
-      case DLType.macOS:
-        return 'macOS';
-      case DLType.windows:
-        return 'Windows';
-      case DLType.deb:
-        return 'Linux (.deb)';
-      case DLType.rpm:
-        return 'Linux (.rpm)';
-    }
-  }
+  String get name => switch (this) {
+        DLType.gPlay => 'Android (GPlay)',
+        DLType.apk => 'Android (.apk)',
+        DLType.iOS => 'iOS',
+        DLType.macOS => 'macOS',
+        DLType.windows => 'Windows',
+        DLType.deb => 'Linux (.deb)',
+        DLType.rpm => 'Linux (.rpm)',
+      };
 }
 
 /// Get the latest [String] version of [repo]
@@ -64,68 +54,20 @@ Future<String> getLatest(String repo, String fallback) async {
   return response.statusCode == 200 ? response.body.trim() : fallback;
 }
 
-//* EFUI *//
-
-class EFUIShoutOut extends StatelessWidget {
-  /// Don't Cha Wish...
-  const EFUIShoutOut({super.key});
-
-  @override
-  Widget build(BuildContext context) => Column(
-        mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          EzRichText(<InlineSpan>[
-            EzPlainText(
-              text: l10n.gDontChaWish,
-              style: EzConfig.styles.labelLarge,
-            ),
-            EzInlineLink(
-              l10n.gMeQ,
-              style: EzConfig.styles.labelLarge,
-              textAlign: TextAlign.center,
-              url: Uri.parse(settingsSource),
-              hint: EzConfig.l10n.gEFUISourceHint,
-              tooltip: settingsSource,
-            ),
-          ], textAlign: TextAlign.center),
-          EzLink(
-            l10n.gDontCha,
-            style: EzConfig.styles.labelLarge,
-            padding: EzInsets.wrap(EzConfig.marginVal),
-            textAlign: TextAlign.center,
-            url: Uri.parse(efuiSource),
-            hint: l10n.gDontChaHint,
-            tooltip: efuiSource,
-          ),
-        ],
-      );
-}
-
 //* Open UI *//
 
-/// Get a [Uri] to download the latest version of Open UI
-Uri openUIDownload(DLType dlType, String version) {
-  late final String releases =
-      '$_git/empathetech_flutter_ui/releases/download/$version';
+String ouRelease(String version) => '$_git/empathetech_flutter_ui/releases/download/$version';
 
-  switch (dlType) {
-    case DLType.gPlay:
-      return Uri.parse('$_gPlay.open_ui');
-    case DLType.apk:
-      return Uri.parse('$releases/open-ui-android.apk');
-    case DLType.iOS:
-      return Uri.parse('$_appStore/open-ui/id6499560244');
-    case DLType.macOS:
-      return Uri.parse('$releases/open-ui-mac.zip');
-    case DLType.windows:
-      return Uri.parse('$releases/open-ui-windows.exe');
-    case DLType.deb:
-      return Uri.parse('$releases/open-ui-linux.deb');
-    case DLType.rpm:
-      return Uri.parse('$releases/open-ui-linux.rpm');
-  }
-}
+/// Get a [Uri] to download the latest version of Open UI
+Uri openUIDownload(DLType dlType, String version) => switch (dlType) {
+      DLType.gPlay => Uri.parse('$_gPlay.open_ui'),
+      DLType.apk => Uri.parse('${ouRelease(version)}/open-ui-android.apk'),
+      DLType.iOS => Uri.parse('$_appStore/open-ui/id6499560244'),
+      DLType.macOS => Uri.parse('${ouRelease(version)}/open-ui-mac.zip'),
+      DLType.windows => Uri.parse('${ouRelease(version)}/open-ui-windows.exe'),
+      DLType.deb => Uri.parse('${ouRelease(version)}/open-ui-linux.deb'),
+      DLType.rpm => Uri.parse('${ouRelease(version)}/open-ui-linux.rpm'),
+    };
 
 class OpenUILink extends StatefulWidget {
   /// One link to empower them all
@@ -179,8 +121,7 @@ class _OpenUILinkState extends State<OpenUILink> {
   // Return the build //
 
   @override
-  Widget build(BuildContext context) => Column(
-        mainAxisSize: MainAxisSize.min,
+  Widget build(BuildContext context) => EzCol(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           // Icon link
@@ -203,6 +144,7 @@ class _OpenUILinkState extends State<OpenUILink> {
           EzDropdownMenu<DLType>(
             enableSearch: false,
             initialSelection: currDL,
+            widthEntry: DLType.apk.name,
             dropdownMenuEntries: DLType.values
                 .map(
                   (DLType dlType) => DropdownMenuEntry<DLType>(
@@ -227,18 +169,11 @@ class _OpenUILinkState extends State<OpenUILink> {
 //* (Insta)SOS *//
 
 /// Get a [Uri] to download the latest version of InstaSOS
-Uri sosDownload(DLType dlType, String version) {
-  late final String releases = '$_git/sos/releases/download/$version';
-
-  switch (dlType) {
-    case DLType.gPlay:
-      return Uri.parse('$_gPlay.sos');
-    case DLType.apk:
-      return Uri.parse('$releases/sos-android.apk');
-    default:
-      return Uri.parse('$_appStore/instasos/id6744280817');
-  }
-}
+Uri sosDownload(DLType dlType, String version) => switch (dlType) {
+      DLType.gPlay => Uri.parse('$_gPlay.sos'),
+      DLType.apk => Uri.parse('$_git/sos/releases/download/$version/sos-android.apk'),
+      _ => Uri.parse('$_appStore/instasos/id6744280817'),
+    };
 
 class SOSLink extends StatefulWidget {
   /// One link to empower them all
@@ -285,8 +220,7 @@ class _SOSLinkState extends State<SOSLink> {
   // Return the build //
 
   @override
-  Widget build(BuildContext context) => Column(
-        mainAxisSize: MainAxisSize.min,
+  Widget build(BuildContext context) => EzCol(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           // Icon link
@@ -309,19 +243,11 @@ class _SOSLinkState extends State<SOSLink> {
           EzDropdownMenu<DLType>(
             enableSearch: false,
             initialSelection: currDL,
+            widthEntry: DLType.apk.name,
             dropdownMenuEntries: <DropdownMenuEntry<DLType>>[
-              DropdownMenuEntry<DLType>(
-                value: DLType.gPlay,
-                label: DLType.gPlay.name,
-              ),
-              DropdownMenuEntry<DLType>(
-                value: DLType.apk,
-                label: DLType.apk.name,
-              ),
-              DropdownMenuEntry<DLType>(
-                value: DLType.iOS,
-                label: DLType.iOS.name,
-              ),
+              DropdownMenuEntry<DLType>(value: DLType.gPlay, label: DLType.gPlay.name),
+              DropdownMenuEntry<DLType>(value: DLType.apk, label: DLType.apk.name),
+              DropdownMenuEntry<DLType>(value: DLType.iOS, label: DLType.iOS.name),
             ],
             onSelected: (DLType? choice) {
               if (choice == null) return;

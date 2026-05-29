@@ -12,7 +12,6 @@ import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
-import 'package:flutter_localized_locales/flutter_localized_locales.dart';
 
 void main() async {
   // Configure the app //
@@ -21,6 +20,8 @@ void main() async {
   await SystemChrome.setPreferredOrientations(DeviceOrientation.values);
 
   EzConfig.init(
+    appName: 'dotnet',
+    androidPackage: null,
     assetPaths: assetPaths,
     defaults: isMobile() ? empathMobileConfig : empathDesktopConfig,
     localeFallback: americanEnglish,
@@ -55,70 +56,101 @@ class DotNet extends StatelessWidget {
     super.key,
   });
 
-  // Setup image cache //
+  // Cache images //
 
-  Future<void> precacheImages(BuildContext context) async {
-    // Products //
-
+  void precacheInternal(BuildContext context) {
     // Open UI
-    unawaited(precacheImage(openUIImage, context));
+    precacheImage(openUIImage, context);
 
     // SOS
-    unawaited(precacheImage(sosImage, context));
+    precacheImage(sosImage, context);
 
     // Liminal
-    unawaited(precacheImage(theHoodImage, context));
-    unawaited(precacheImage(lasRosasImage, context));
-    unawaited(precacheImage(laGrenouilleImage, context));
+    precacheImage(theHoodImage, context);
+    precacheImage(lasRosasImage, context);
+    precacheImage(laGrenouilleImage, context);
 
     // Smoke Signal
-    unawaited(precacheImage(smokeSignalImage, context));
+    precacheImage(smokeSignalImage, context);
 
-    // Team //
+    // Team
+    precacheImage(founderImage, context);
+    precacheImage(openSauce2025Image, context);
+    precacheImage(openSauceLogoImage, context);
+  }
 
-    // Core
-    unawaited(precacheImage(founderImage, context));
+  void precacheExternal(BuildContext context) {
+    // Team
+    precacheImage(fahImage, context);
+    precacheImage(montanaImage, context);
+    precacheImage(yasminSProfile, context);
+    precacheImage(patrickKarbanProfile, context);
+    precacheImage(saraHProfile, context);
+    precacheImage(remalynProfile, context);
+    precacheImage(alexisNProfile, context);
+    precacheImage(carlyProfile, context);
+    precacheImage(hikaruProfile, context);
+    precacheImage(superTProfile, context);
+    precacheImage(anastasiaProfile, context);
+    precacheImage(mariePProfile, context);
+    precacheImage(leahProfile, context);
+    precacheImage(hilariaProfile, context);
+  }
 
-    // IRL
-    unawaited(precacheImage(openSauce2025Image, context));
-    unawaited(precacheImage(openSauceLogoImage, context));
+  // Define URL redirects //
 
-    // Community
-    unawaited(precacheImage(fahImage, context));
+  FutureOr<String?> colorPath(BuildContext context, GoRouterState state) {
+    final List<String> segments = state.uri.pathSegments;
 
-    // Freelance
-    unawaited(precacheImage(montanaImage, context));
+    if (segments.contains(EzSubSetting.advColor.path)) {
+      return '/$settingsPath?$typeQP=$colorRedirect&$advQP=true';
+    } else if (segments.contains(EzSubSetting.qckColor.path)) {
+      return '/$settingsPath?$typeQP=$colorRedirect&$advQP=false';
+    } else {
+      return '/$settingsPath?$typeQP=$colorRedirect';
+    }
+  }
 
-    unawaited(precacheImage(yasminSProfile, context));
-    unawaited(precacheImage(saraHProfile, context));
-    unawaited(precacheImage(remalynProfile, context));
-    unawaited(precacheImage(alexisNProfile, context));
-    unawaited(precacheImage(carlyProfile, context));
-    unawaited(precacheImage(leahProfile, context));
-    unawaited(precacheImage(hilariaProfile, context));
+  FutureOr<String?> designPath(BuildContext context, GoRouterState state) {
+    final List<String> segments = state.uri.pathSegments;
+
+    if (segments.contains(EzSubSetting.pagDesign.path)) {
+      return '/$settingsPath?$typeQP=$designRedirect&$pageQP=true';
+    } else if (segments.contains(EzSubSetting.butDesign.path)) {
+      return '/$settingsPath?$typeQP=$designRedirect&$pageQP=false';
+    } else {
+      return '/$settingsPath?$typeQP=$designRedirect';
+    }
+  }
+
+  FutureOr<String?> textPath(BuildContext context, GoRouterState state) {
+    final List<String> segments = state.uri.pathSegments;
+
+    if (segments.contains(EzSubSetting.advText.path)) {
+      return '/$settingsPath?$typeQP=$textRedirect&$advQP=true';
+    } else if (segments.contains(EzSubSetting.qckText.path)) {
+      return '/$settingsPath?$typeQP=$textRedirect&$advQP=false';
+    } else {
+      return '/$settingsPath?$typeQP=$textRedirect';
+    }
   }
 
   // Return the app //
 
   @override
   Widget build(BuildContext context) {
-    precacheImages(context);
+    precacheInternal(context);
 
     return EzConfigurableApp(
-      localizationsDelegates: <LocalizationsDelegate<dynamic>>[
-        const LocaleNamesLocalizationsDelegate(),
-        ...EFUILang.localizationsDelegates,
-        ...Lang.localizationsDelegates,
-      ],
+      localizationsDelegates: ezLocalizationsDelegates(Lang.localizationsDelegates),
       supportedLocales: Lang.supportedLocales,
       locale: storedLocale,
       el10n: storedEFUILang,
       appCache: DotnetCache(storedLocale, storedLang),
-      appName: empathetech,
       routerConfig: GoRouter(
         navigatorKey: ezRootNav,
         initialLocation: homePath,
-        errorBuilder: (_, GoRouterState state) => ErrorScreen(state.error),
+        errorBuilder: (_, __) => ErrorScreen(),
         routes: <RouteBase>[
           // Home/intro
           GoRoute(
@@ -157,6 +189,11 @@ class DotNet extends StatelessWidget {
                 builder: (_, __) => SmokeSignalScreen(),
               ),
               GoRoute(
+                path: Products.translations.path,
+                name: Products.translations.path,
+                builder: (_, __) => TranslationsScreen(),
+              ),
+              GoRoute(
                 path: Products.verified.path,
                 name: Products.verified.path,
                 builder: (_, __) => VerifiedScreen(),
@@ -166,7 +203,10 @@ class DotNet extends StatelessWidget {
               GoRoute(
                 path: teamPath,
                 name: teamPath,
-                builder: (_, __) => TeamScreen(),
+                builder: (_, __) {
+                  precacheExternal(context);
+                  return TeamScreen();
+                },
               ),
 
               // Contribute
@@ -181,15 +221,14 @@ class DotNet extends StatelessWidget {
                 path: settingsPath,
                 name: settingsPath,
                 builder: (_, GoRouterState state) {
-                  final int? target = targetLookup[
-                      state.uri.queryParameters[typeQP]?.toLowerCase()];
-                  final bool? advanced = advancedLookup(
-                      state.uri.queryParameters[advQP]?.toLowerCase());
+                  final int? target =
+                      targetLookup[state.uri.queryParameters[typeQP]?.toLowerCase()];
+                  final bool? advanced = qbParse(state.uri.queryParameters[advQP]) ??
+                      qbParse(state.uri.queryParameters[pageQP]);
 
                   return SettingsHubScreen(
                     key: ValueKey<String>('${EzConfig.seed}:$target:$advanced'),
                     target: target,
-                    advanced: advanced,
                   );
                 },
                 routes: <RouteBase>[
@@ -197,100 +236,54 @@ class DotNet extends StatelessWidget {
                   // Color
                   GoRoute(
                     path: colorRedirect,
-                    redirect: (_, GoRouterState state) {
-                      final List<String> segments = state.uri.pathSegments;
-
-                      if (segments.contains(EzCSType.advanced.path)) {
-                        return '/$settingsPath?$typeQP=$colorRedirect&$advQP=true';
-                      } else if (segments.contains(EzCSType.quick.path)) {
-                        return '/$settingsPath?$typeQP=$colorRedirect&$advQP=false';
-                      } else {
-                        return '/$settingsPath?$typeQP=$colorRedirect';
-                      }
-                    },
+                    redirect: colorPath,
                     routes: <RouteBase>[
-                      GoRoute(path: EzCSType.quick.path),
-                      GoRoute(path: EzCSType.advanced.path),
+                      GoRoute(path: EzSubSetting.qckColor.path),
+                      GoRoute(path: EzSubSetting.advColor.path),
                     ],
                   ),
                   GoRoute(
                     path: colorSettingsPath,
-                    redirect: (_, GoRouterState state) {
-                      final List<String> segments = state.uri.pathSegments;
-
-                      if (segments.contains(EzCSType.advanced.path)) {
-                        return '/$settingsPath?$typeQP=$colorRedirect&$advQP=true';
-                      } else if (segments.contains(EzCSType.quick.path)) {
-                        return '/$settingsPath?$typeQP=$colorRedirect&$advQP=false';
-                      } else {
-                        return '/$settingsPath?$typeQP=$colorRedirect';
-                      }
-                    },
+                    redirect: colorPath,
                     routes: <RouteBase>[
-                      GoRoute(path: EzCSType.quick.path),
-                      GoRoute(path: EzCSType.advanced.path),
+                      GoRoute(path: EzSubSetting.qckColor.path),
+                      GoRoute(path: EzSubSetting.advColor.path),
                     ],
                   ),
 
                   // Design
                   GoRoute(
                     path: designRedirect,
-                    redirect: (_, __) =>
-                        '/$settingsPath?$typeQP=$designRedirect',
+                    redirect: designPath,
+                    routes: <RouteBase>[
+                      GoRoute(path: EzSubSetting.butDesign.path),
+                      GoRoute(path: EzSubSetting.pagDesign.path),
+                    ],
                   ),
                   GoRoute(
                     path: designSettingsPath,
-                    redirect: (_, __) =>
-                        '/$settingsPath?$typeQP=$designRedirect',
-                  ),
-
-                  // Layout
-                  GoRoute(
-                    path: layoutRedirect,
-                    redirect: (_, __) =>
-                        '/$settingsPath?$typeQP=$layoutRedirect',
-                  ),
-                  GoRoute(
-                    path: layoutSettingsPath,
-                    redirect: (_, __) =>
-                        '/$settingsPath?$typeQP=$layoutRedirect',
+                    redirect: designPath,
+                    routes: <RouteBase>[
+                      GoRoute(path: EzSubSetting.butDesign.path),
+                      GoRoute(path: EzSubSetting.pagDesign.path),
+                    ],
                   ),
 
                   // Text
                   GoRoute(
                     path: textRedirect,
-                    redirect: (_, GoRouterState state) {
-                      final List<String> segments = state.uri.pathSegments;
-
-                      if (segments.contains(EzTSType.advanced.path)) {
-                        return '/$settingsPath?$typeQP=$textRedirect&$advQP=true';
-                      } else if (segments.contains(EzTSType.quick.path)) {
-                        return '/$settingsPath?$typeQP=$textRedirect&$advQP=false';
-                      } else {
-                        return '/$settingsPath?$typeQP=$textRedirect';
-                      }
-                    },
+                    redirect: textPath,
                     routes: <RouteBase>[
-                      GoRoute(path: EzTSType.quick.path),
-                      GoRoute(path: EzTSType.advanced.path),
+                      GoRoute(path: EzSubSetting.qckText.path),
+                      GoRoute(path: EzSubSetting.advText.path),
                     ],
                   ),
                   GoRoute(
                     path: textSettingsPath,
-                    redirect: (_, GoRouterState state) {
-                      final List<String> segments = state.uri.pathSegments;
-
-                      if (segments.contains(EzTSType.advanced.path)) {
-                        return '/$settingsPath?$typeQP=$textRedirect&$advQP=true';
-                      } else if (segments.contains(EzTSType.quick.path)) {
-                        return '/$settingsPath?$typeQP=$textRedirect&$advQP=false';
-                      } else {
-                        return '/$settingsPath?$typeQP=$textRedirect';
-                      }
-                    },
+                    redirect: textPath,
                     routes: <RouteBase>[
-                      GoRoute(path: EzTSType.quick.path),
-                      GoRoute(path: EzTSType.advanced.path),
+                      GoRoute(path: EzSubSetting.qckText.path),
+                      GoRoute(path: EzSubSetting.advText.path),
                     ],
                   ),
                 ],

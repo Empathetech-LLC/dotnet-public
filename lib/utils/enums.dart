@@ -32,11 +32,11 @@ extension Config on Products {
       };
 
   String get url => switch (this) {
-        Products.openUI => 'https =>//www.empathetech.net/#/products/open-ui',
-        Products.sos => 'https =>//www.empathetech.net/#/products/sos',
-        Products.liminal => 'https =>//www.empathetech.net/#/products/liminal',
-        Products.smokeSignal => 'https =>//www.empathetech.net/#/products/smoke-signal',
-        Products.translations => 'https =>//www.empathetech.net/#/products/translations',
-        Products.verified => 'https =>//www.empathetech.net/#/products/verified',
+        Products.openUI => 'https://www.empathetech.net/#/products/open-ui',
+        Products.sos => 'https://www.empathetech.net/#/products/sos',
+        Products.liminal => 'https://www.empathetech.net/#/products/liminal',
+        Products.smokeSignal => 'https://www.empathetech.net/#/products/smoke-signal',
+        Products.translations => 'https://www.empathetech.net/#/products/translations',
+        Products.verified => 'https://www.empathetech.net/#/products/verified',
       };
 }

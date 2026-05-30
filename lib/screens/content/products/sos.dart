@@ -31,7 +31,9 @@ class SOSScreen extends StatelessWidget {
             EzConfig.margin,
 
             // Language selector
-            const EzLocaleSetting(),
+            EzLocaleSetting(
+              skip: <Locale>{arabic, english, chinese}, // dupes
+            ),
             EzConfig.spacer,
 
             // Description

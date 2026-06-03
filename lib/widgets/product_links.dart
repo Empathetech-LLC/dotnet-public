@@ -16,8 +16,8 @@ import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 /// 12.0.0
 const String efuiFallback = '12.0.0';
 
-/// 3.0.0
-const String sosFallback = '3.0.0';
+/// 3.0.1
+const String sosFallback = '3.0.1';
 
 /// https://github.com/Empathetech-LLC
 const String _git = 'https://github.com/Empathetech-LLC';

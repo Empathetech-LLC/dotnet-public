@@ -1,6 +1,6 @@
 name: dotnet
 description: "The Empathetech mission is to re-balance the power in tech by making self hosting more accessible."
-version: 7.0.1
+version: 7.0.2
 publish_to: 'none'
 
 environment:
@@ -13,7 +13,7 @@ dependencies:
     sdk: flutter
 
   # Flutter (Google)
-  go_router: ^17.2.3
+  go_router: ^17.3.0
   http: ^1.6.0
   intl: ^0.20.2
   shared_preferences: ^2.5.5
@@ -65,9 +65,20 @@ flutter:
     - assets/videos/open-ui-demo.mp4
     - assets/videos/sos-promo.mp4
     - assets/videos/sos-promo-vertical.mp4
+    - assets/videos/captions/sos-promo-ar.srt
+    - assets/videos/captions/sos-promo-de.srt
     - assets/videos/captions/sos-promo-en.srt
     - assets/videos/captions/sos-promo-es.srt
+    - assets/videos/captions/sos-promo-fil.srt
     - assets/videos/captions/sos-promo-fr.srt
+    - assets/videos/captions/sos-promo-hi.srt
+    - assets/videos/captions/sos-promo-ht.srt
+    - assets/videos/captions/sos-promo-ja.srt
+    - assets/videos/captions/sos-promo-ko.srt
+    - assets/videos/captions/sos-promo-ru.srt
+    - assets/videos/captions/sos-promo-sw.srt
+    - assets/videos/captions/sos-promo-uk.srt
+    - assets/videos/captions/sos-promo-zh.srt
 
 flutter_launcher_icons:
   image_path: assets/images/app-icon.png

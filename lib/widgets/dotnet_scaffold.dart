@@ -9,7 +9,6 @@ import '../screens/export.dart';
 import 'package:efui_bios/efui_bios.dart';
 
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 
 class DotnetScaffold extends StatelessWidget {
@@ -108,7 +107,7 @@ class DotnetScaffold extends StatelessWidget {
     final _RestrictedScaffold restricted = _RestrictedScaffold(
       toolbarHeight: toolbarHeight,
       logo: brandLogo,
-      drawer: DotNetDrawer(header: iconLinks),
+      swapDrawer: DotNetDrawer(header: iconLinks),
       body: body,
       fabs: finalFabs,
     );
@@ -133,47 +132,37 @@ class DotnetScaffold extends StatelessWidget {
   }
 }
 
-class _RestrictedScaffold extends Consumer<EzConfigProvider> {
+class _RestrictedScaffold extends EzScaffold {
   final double toolbarHeight;
   final Widget logo;
-  final DotNetDrawer drawer;
-  final Widget body;
-  final List<Widget> fabs;
+  final DotNetDrawer swapDrawer;
 
   /// [DotnetScaffold] for when there is limited screen space
   /// Has a mobile-like layout
   _RestrictedScaffold({
     required this.toolbarHeight,
     required this.logo,
-    required this.drawer,
-    required this.body,
-    required this.fabs,
+    required this.swapDrawer,
+    required super.body,
+    required super.fabs,
   }) : super(
-          builder: (_, EzConfigProvider config, __) => EzScaffold(
-            seed: config.seed,
-            appBar: PreferredSize(
-              preferredSize: Size(double.infinity, toolbarHeight),
-              child: EzAppBar(
-                height: toolbarHeight,
-                title: logo,
-                actions: EzConfig.isLefty ? const <Widget>[EzBackAction()] : null,
-              ),
+          appBar: PreferredSize(
+            preferredSize: Size(double.infinity, toolbarHeight),
+            child: EzAppBar(
+              height: toolbarHeight,
+              title: logo,
+              actions: EzConfig.isLefty ? const <Widget>[EzBackAction()] : null,
             ),
-            drawer: EzConfig.isLefty ? drawer : null,
-            endDrawer: EzConfig.isLefty ? null : drawer,
-            body: body,
-            fabs: fabs,
           ),
+          drawer: EzConfig.isLefty ? swapDrawer : null,
+          endDrawer: EzConfig.isLefty ? null : swapDrawer,
         );
 }
 
-class _ExpandedScaffold extends Consumer<EzConfigProvider> {
+class _ExpandedScaffold extends EzScaffold {
   final double toolbarHeight;
   final Widget logo;
-
   final Widget iconLinksMenu;
-  final Widget body;
-  final List<Widget> fabs;
 
   /// [DotnetScaffold] for when there is ample screen space
   /// Has a traditional footer-less web page layout
@@ -181,23 +170,18 @@ class _ExpandedScaffold extends Consumer<EzConfigProvider> {
     required this.toolbarHeight,
     required this.logo,
     required this.iconLinksMenu,
-    required this.body,
-    required this.fabs,
+    required super.body,
+    required super.fabs,
   }) : super(
-          builder: (_, EzConfigProvider config, __) => EzScaffold(
-            seed: config.seed,
-            appBar: PreferredSize(
-              preferredSize: Size(double.infinity, toolbarHeight),
-              child: EzAppBar(
-                height: toolbarHeight,
-                leading: EzConfig.isLefty ? iconLinksMenu : logo,
-                leadingWidth: toolbarHeight,
-                title: const PageLinks(),
-                actions: EzConfig.isLefty ? <Widget>[logo] : <Widget>[iconLinksMenu],
-              ),
+          appBar: PreferredSize(
+            preferredSize: Size(double.infinity, toolbarHeight),
+            child: EzAppBar(
+              height: toolbarHeight,
+              leading: EzConfig.isLefty ? iconLinksMenu : logo,
+              leadingWidth: toolbarHeight,
+              title: const PageLinks(),
+              actions: EzConfig.isLefty ? <Widget>[logo] : <Widget>[iconLinksMenu],
             ),
-            body: body,
-            fabs: fabs,
           ),
         );
 }

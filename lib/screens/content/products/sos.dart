@@ -9,6 +9,7 @@ import '../../../widgets/export.dart';
 import 'package:efui_bios/efui_bios.dart';
 
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:video_player/video_player.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -18,106 +19,106 @@ class SOSScreen extends StatelessWidget {
   SOSScreen() : super(key: ValueKey<int>(EzConfig.seed));
 
   @override
-  Widget build(BuildContext context) => DotnetScaffold(
-        EzScreen(
-          EzScrollView(children: <Widget>[
-            // Headline
-            EzText(
-              sosName,
-              semanticsLabel: sosLabel,
-              style: EzConfig.styles.displayLarge,
-              textAlign: TextAlign.center,
-            ),
-            EzConfig.margin,
-
-            // Language selector
-            EzLocaleSetting(
-              skip: <Locale>{arabic, english, chinese}, // dupes
-            ),
-            EzConfig.spacer,
-
-            // Description
-            EzText(
-              l10n.sosDescription,
-              style: EzConfig.styles.bodyLarge,
-              textAlign: TextAlign.center,
-            ),
-            EzConfig.centerLine,
-
-            // Safe to use
-            EzRichText(<InlineSpan>[
-              EzPlainText(
-                text: l10n.sosPrivate,
-                semanticsLabel: l10n.sosPrivateFix,
-                style: EzConfig.styles.bodyLarge,
-              ),
-              EzPlainText(
-                text: l10n.sosFree,
-                style: EzConfig.styles.bodyLarge,
-              ),
-              EzInlineLink(
-                l10n.sosOpenSource,
-                style: EzConfig.styles.bodyLarge,
+  Widget build(BuildContext context) => Consumer<EzConfigProvider>(
+        builder: (_, EzConfigProvider config, __) => DotnetScaffold(
+          EzScreen(
+            EzScrollView(children: <Widget>[
+              // Headline
+              EzText(
+                sosName,
+                semanticsLabel: sosLabel,
+                style: config.theme.textTheme.displayLarge,
                 textAlign: TextAlign.center,
-                url: Uri.parse(sosSource),
-                hint: l10n.gRepoHint,
               ),
-              EzPlainText(
-                text: '.',
-                style: EzConfig.styles.bodyLarge,
-              ),
-            ], textAlign: TextAlign.center),
-            EzConfig.centerLine,
+              config.layout.margin,
 
-            // Contribution call-out
-            EzRichText(<InlineSpan>[
-              EzPlainText(
-                text: l10n.sosConsider,
-                style: EzConfig.styles.bodyLarge,
+              // Language selector
+              EzLocaleSetting(
+                skip: <Locale>{arabic, english, chinese}, // dupes
               ),
-              EzInlineLink(
-                l10n.sosContributing,
-                style: EzConfig.styles.bodyLarge,
+              config.layout.spacer,
+
+              // Description
+              EzText(
+                l10n.sosDescription,
+                style: config.theme.textTheme.bodyLarge,
                 textAlign: TextAlign.center,
-                url: Uri.parse(contributeURL),
-                hint: l10n.gContributeHint,
               ),
-              EzPlainText(
-                text: l10n.sosSAPS,
-                style: EzConfig.styles.bodyLarge,
+              config.layout.centerLine,
+
+              // Safe to use
+              EzRichText(<InlineSpan>[
+                EzPlainText(
+                  text: l10n.sosPrivate,
+                  semanticsLabel: l10n.sosPrivateFix,
+                  style: config.theme.textTheme.bodyLarge,
+                ),
+                EzPlainText(
+                  text: l10n.sosFree,
+                  style: config.theme.textTheme.bodyLarge,
+                ),
+                EzInlineLink(
+                  l10n.sosOpenSource,
+                  style: config.theme.textTheme.bodyLarge,
+                  textAlign: TextAlign.center,
+                  url: Uri.parse(sosSource),
+                  hint: l10n.gRepoHint,
+                ),
+                EzPlainText(
+                  text: '.',
+                  style: config.theme.textTheme.bodyLarge,
+                ),
+              ], textAlign: TextAlign.center),
+              config.layout.centerLine,
+
+              // Contribution call-out
+              EzRichText(<InlineSpan>[
+                EzPlainText(
+                  text: l10n.sosConsider,
+                  style: config.theme.textTheme.bodyLarge,
+                ),
+                EzInlineLink(
+                  l10n.sosContributing,
+                  style: config.theme.textTheme.bodyLarge,
+                  textAlign: TextAlign.center,
+                  url: Uri.parse(contributeURL),
+                  hint: l10n.gContributeHint,
+                ),
+                EzPlainText(
+                  text: l10n.sosSAPS,
+                  style: config.theme.textTheme.bodyLarge,
+                ),
+              ], textAlign: TextAlign.center),
+
+              // Promo video
+              const _PromoVideo(),
+
+              // Download link(s)
+              EzText(
+                l10n.psDownloadNow,
+                style: ezSubTitleStyle(),
+                textAlign: TextAlign.center,
               ),
-            ], textAlign: TextAlign.center),
+              config.layout.margin,
+              const SOSLink(),
 
-            // Promo video
-            _PromoVideo(sosCaptions),
-
-            // Download link(s)
-            EzText(
-              l10n.psDownloadNow,
-              style: ezSubTitleStyle(),
-              textAlign: TextAlign.center,
-            ),
-            EzConfig.margin,
-            const SOSLink(),
-
-            // SOS web
-            EzConfig.separator,
-            EzText(
-              l10n.sosWeb,
-              style: EzConfig.styles.bodyLarge,
-              textAlign: TextAlign.center,
-            ),
-            const EzFooter(),
-          ]),
+              // SOS web
+              config.layout.separator,
+              EzText(
+                l10n.sosWeb,
+                style: config.theme.textTheme.bodyLarge,
+                textAlign: TextAlign.center,
+              ),
+              const EzFooter(),
+            ]),
+          ),
+          fabs: <Widget>[config.layout.spacer, const SettingsFAB()],
         ),
-        fabs: <Widget>[EzConfig.spacer, const SettingsFAB()],
       );
 }
 
 class _PromoVideo extends StatefulWidget {
-  final Future<ClosedCaptionFile>? captions;
-
-  const _PromoVideo(this.captions);
+  const _PromoVideo();
 
   @override
   State<_PromoVideo> createState() => _PromoVideoState();
@@ -128,11 +129,11 @@ class _PromoVideoState extends State<_PromoVideo> {
 
   late final VideoPlayerController normControl = VideoPlayerController.asset(
     sosPromoPath,
-    closedCaptionFile: widget.captions,
+    closedCaptionFile: sosCaptions,
   );
   late final VideoPlayerController vertControl = VideoPlayerController.asset(
     sosVerticalPromoPath,
-    closedCaptionFile: widget.captions,
+    closedCaptionFile: sosCaptions,
   );
 
   bool showVideo = true;

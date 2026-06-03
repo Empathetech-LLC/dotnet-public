@@ -23,7 +23,7 @@ void main() async {
     appName: 'dotnet',
     androidPackage: null,
     assetPaths: assetPaths,
-    defaults: isMobile() ? empathMobileConfig : empathDesktopConfig,
+    orientations: DeviceOrientation.values,
     localeFallback: americanEnglish,
     l10nFallback: await EFUILang.delegate.load(americanEnglish),
     preferences: await SharedPreferencesWithCache.create(
@@ -31,6 +31,7 @@ void main() async {
         allowList: allEZConfigKeys.keys.toSet(),
       ),
     ),
+    defaults: isMobile() ? empathMobileConfig : empathDesktopConfig,
   );
 
   // Run the app //
@@ -238,16 +239,16 @@ class DotNet extends StatelessWidget {
                     path: colorRedirect,
                     redirect: colorPath,
                     routes: <RouteBase>[
-                      GoRoute(path: EzSubSetting.qckColor.path),
-                      GoRoute(path: EzSubSetting.advColor.path),
+                      GoRoute(path: EzSubSetting.qckColor.path, redirect: colorPath),
+                      GoRoute(path: EzSubSetting.advColor.path, redirect: colorPath),
                     ],
                   ),
                   GoRoute(
                     path: colorSettingsPath,
                     redirect: colorPath,
                     routes: <RouteBase>[
-                      GoRoute(path: EzSubSetting.qckColor.path),
-                      GoRoute(path: EzSubSetting.advColor.path),
+                      GoRoute(path: EzSubSetting.qckColor.path, redirect: colorPath),
+                      GoRoute(path: EzSubSetting.advColor.path, redirect: colorPath),
                     ],
                   ),
 
@@ -256,16 +257,16 @@ class DotNet extends StatelessWidget {
                     path: designRedirect,
                     redirect: designPath,
                     routes: <RouteBase>[
-                      GoRoute(path: EzSubSetting.butDesign.path),
-                      GoRoute(path: EzSubSetting.pagDesign.path),
+                      GoRoute(path: EzSubSetting.butDesign.path, redirect: designPath),
+                      GoRoute(path: EzSubSetting.pagDesign.path, redirect: designPath),
                     ],
                   ),
                   GoRoute(
                     path: designSettingsPath,
                     redirect: designPath,
                     routes: <RouteBase>[
-                      GoRoute(path: EzSubSetting.butDesign.path),
-                      GoRoute(path: EzSubSetting.pagDesign.path),
+                      GoRoute(path: EzSubSetting.butDesign.path, redirect: designPath),
+                      GoRoute(path: EzSubSetting.pagDesign.path, redirect: designPath),
                     ],
                   ),
 
@@ -274,16 +275,16 @@ class DotNet extends StatelessWidget {
                     path: textRedirect,
                     redirect: textPath,
                     routes: <RouteBase>[
-                      GoRoute(path: EzSubSetting.qckText.path),
-                      GoRoute(path: EzSubSetting.advText.path),
+                      GoRoute(path: EzSubSetting.qckText.path, redirect: textPath),
+                      GoRoute(path: EzSubSetting.advText.path, redirect: textPath),
                     ],
                   ),
                   GoRoute(
                     path: textSettingsPath,
                     redirect: textPath,
                     routes: <RouteBase>[
-                      GoRoute(path: EzSubSetting.qckText.path),
-                      GoRoute(path: EzSubSetting.advText.path),
+                      GoRoute(path: EzSubSetting.qckText.path, redirect: textPath),
+                      GoRoute(path: EzSubSetting.advText.path, redirect: textPath),
                     ],
                   ),
                 ],

@@ -1,28 +1,23 @@
 /* dotnet
- * Copyright (c) 2026 Empathetech LLC. All rights reserved.
+ * Copyright (c) 2022 YWT (Empathetech LLC). All rights reserved.
  * See LICENSE for distribution and usage details.
  */
 
 //* Files *//
 
-export 'content/products/liminal.dart';
-export 'content/products/open_ui.dart';
-export 'content/products/smoke_signal.dart';
-export 'content/products/sos.dart';
-export 'content/products/translations.dart';
-export 'content/products/verified.dart';
+export 'products/liminal.dart';
+export 'products/open_ui.dart';
+export 'products/sos.dart';
+export 'products/verified.dart';
 
-export 'content/contribute.dart';
-export 'content/mission.dart';
-export 'content/team.dart';
-
+export 'contribute.dart';
 export 'error.dart';
 export 'home.dart';
 export 'settings.dart';
 
 //* Paths && URLs *//
 
-const String baseURL = 'https://www.empathetech.net/#/';
+const String baseURL = 'https://www.ywt.llc/#/';
 
 /// Type query parameter == 'type'
 const String typeQP = 'type';
@@ -35,27 +30,13 @@ const String pageQP = 'page';
 
 // Core //
 
-/// const String homePath = FROM_EFUI
-
-/// https://www.empathetech.net/#/?fin=true
-const String homeURL = '$baseURL?fin=true';
-
-/// mission
-const String missionPath = 'mission';
-
-/// https://www.empathetech.net/#/mission
-const String missionURL = '${baseURL}mission';
-
-/// team
-const String teamPath = 'team';
-
-/// https://www.empathetech.net/#/team
-const String teamURL = '${baseURL}team';
+/// https://www.ywt.llc/
+const String homeURL = 'https://www.ywt.llc/';
 
 /// contribute
 const String contributePath = 'contribute';
 
-/// https://www.empathetech.net/#/contribute
+/// https://www.ywt.llc/#/contribute
 const String contributeURL = '${baseURL}contribute';
 
 // Settings //
@@ -63,7 +44,7 @@ const String contributeURL = '${baseURL}contribute';
 /// settings
 const String settingsPath = 'settings';
 
-/// https://www.empathetech.net/#/settings
+/// https://www.ywt.llc/#/settings
 const String settingsURL = '${baseURL}settings';
 
 /// color-settings
@@ -72,7 +53,7 @@ const String colorSettingsPath = 'color-settings';
 /// color
 const String colorRedirect = 'color';
 
-/// https://www.empathetech.net/#/settings?type=color
+/// https://www.ywt.llc/#/settings?type=color
 const String colorSettingsURL = '$settingsURL?$typeQP=$colorRedirect';
 
 /// design-settings
@@ -81,7 +62,7 @@ const String designSettingsPath = 'design-settings';
 /// design
 const String designRedirect = 'design';
 
-/// https://www.empathetech.net/#/settings?type=design
+/// https://www.ywt.llc/#/settings?type=design
 const String designSettingsURL = '$settingsURL?$typeQP=$designRedirect';
 
 /// text-settings
@@ -90,7 +71,7 @@ const String textSettingsPath = 'text-settings';
 /// text
 const String textRedirect = 'text';
 
-/// https://www.empathetech.net/#/settings?type=text
+/// https://www.ywt.llc/#/settings?type=text
 const String textSettingsURL = '$settingsURL?$typeQP=$textRedirect';
 
 // Settings' lookups //

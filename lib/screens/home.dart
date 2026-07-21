@@ -1,24 +1,19 @@
 /* dotnet
- * Copyright (c) 2026 Empathetech LLC. All rights reserved.
+ * Copyright (c) 2022 YWT (Empathetech LLC). All rights reserved.
  * See LICENSE for distribution and usage details.
  */
 
-import './export.dart';
 import '../utils/export.dart';
 import '../widgets/export.dart';
-import 'package:efui_bios/efui_bios.dart';
+import 'package:oui_bios/oui_bios.dart';
 
-import 'dart:math';
+import 'package:open_ui/open_ui.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
+import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
-  /// Whether the animation should play
-  final bool fin;
-
   /// No place like it
-  HomeScreen({this.fin = false}) : super(key: ValueKey<int>(EzConfig.seed));
+  const HomeScreen({super.key});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -27,170 +22,265 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   // Define the build data //
 
-  late bool fin = widget.fin || GoRouter.of(context).state.uri.path != homePath;
+  bool fin = false;
+  int index = 0;
 
-  Widget animation({
-    required Lang l10n,
-    required double sloganHeight,
-    required double letterRatio,
-  }) =>
-      LogoAnimation(
-        key: ValueKey<double>(letterRatio),
-        margin: EzConfig.marginVal,
-        height: sloganHeight,
-        letterRatio: letterRatio,
-        colorScheme: EzConfig.colors,
-        finSpacing: EzConfig.spacing * 2,
-        slogan: l10n.hsSlogan,
-        sloganSemantics: l10n.hsSloganFix,
-        videoSemantics: l10n.hsVideoLabel,
-        play: mounted && !fin,
-        onComplete: () {
-          if (!fin) setState(() => fin = true);
-        },
+  /// Styles the index buttons based on [index]
+  StepStyle? _style(EzCP config, int indexTarget) {
+    if (index > indexTarget) {
+      // Passed
+      return StepStyle(
+        color: config.colors.secondary,
+        connectorColor: config.colors.secondary,
+        border: Border.all(
+          color: config.colors.secondaryContainer,
+          width: config.borderWidth,
+        ),
+        indexStyle: config.labelStyle?.copyWith(color: config.colors.onSecondary),
+      );
+    } else if (index == indexTarget) {
+      // Here
+      return StepStyle(
+        color: config.colors.primary,
+        connectorColor: config.colors.secondary,
+        border: Border.all(
+          color: config.colors.primaryContainer,
+          width: config.borderWidth,
+        ),
+        indexStyle: config.labelStyle?.copyWith(color: config.colors.onPrimary),
+      );
+    } else {
+      // Next
+      return StepStyle(
+        color: config.colors.surface,
+        connectorColor: config.colors.outline,
+        indexStyle: config.labelStyle?.copyWith(color: config.colors.onSurface),
+      );
+    }
+  }
+
+  /// Defines [Stepper] navigation buttons
+  List<Widget> stepButtons(EzCP config, ControlsDetails details) => switch (details.stepIndex) {
+        0 => <Widget>[
+            EzTextIconButton(
+              config,
+              onPressed: details.onStepContinue,
+              icon: EzIcon(config, Icons.arrow_downward),
+              label: l10n(config).hsmSoWe,
+            ),
+          ],
+        1 => <Widget>[
+            EzTextIconButton(
+              config,
+              onPressed: details.onStepContinue,
+              icon: EzIcon(config, Icons.arrow_downward),
+              label: l10n(config).hsmBy,
+            ),
+          ],
+        _ => <Widget>[
+            EzTextIconButton(
+              config,
+              onPressed: () => setState(() => index = 0),
+              icon: EzIcon(config, Icons.arrow_upward),
+              label: l10n(config).hsmFirst,
+            ),
+          ],
+      };
+
+  /// [Step] title wrapper
+  Widget _title(String title, TextStyle? style) =>
+      Text(title, style: style, textAlign: TextAlign.start);
+
+  /// [Step] content wrapper
+  Widget _content(Widget content) => SelectionArea(
+        child: Container(
+          width: double.infinity,
+          alignment: Alignment.centerLeft,
+          child: content,
+        ),
       );
 
-  // Set the page title //
+  // Define custom functions //
+
+  /// Decrement, min 0
+  void _onStepCancel() {
+    if (index > 0) setState(() => index -= 1);
+  }
+
+  /// Increment, max 2
+  void _onStepContinue() {
+    if (index < 2) setState(() => index += 1);
+  }
+
+  /// GoTo
+  void _onStepTapped(int step) => setState(() => index = step);
+
+  // Init //
 
   @override
   void initState() {
     super.initState();
-    ezWindowNamer(empathetech);
+    ezWindowNamer(ywt);
   }
+
+  // Return the build //
 
   @override
   Widget build(BuildContext context) {
-    // Gather the contextual theme data //
+    return Consumer<EzCP>(
+      builder: (_, EzCP config, __) => DotnetScaffold(
+        config,
+        body: EzScreen(
+          config,
+          margin: EdgeInsets.zero,
+          child: EzScrollView(config, children: <Widget>[
+            EzHeader(config),
 
-    final TextStyle? subTitle = ezSubTitleStyle();
-    final Widget newLine = EzNewLine(style: subTitle, textAlign: TextAlign.center);
-
-    /// 0.667 <= [displayScale] <= 1.5
-    final double displayScale = max(
-      0.667,
-      min(
-        1.5,
-        (EzConfig.styles.displayLarge?.fontSize ?? defaultDisplaySize) / defaultDisplaySize,
-      ),
-    );
-
-    final double toolbarHeight = ezToolbarHeight(context: context, title: l10n.csPageTitle);
-    final double sloganHeight = max(EzConfig.spacing * 7, (heightOf(context) / 3) * displayScale);
-
-    // Return the build //
-
-    return DotnetScaffold(
-      EzScreen(
-        EzScrollView(children: <Widget>[
-          // Video
-          Container(
-            color:
-                EzConfig.colors.surfaceContainer.withValues(alpha: EzConfig.textBackgroundOpacity),
-            constraints: BoxConstraints(
-              minWidth: double.infinity,
-              maxWidth: double.infinity,
-              minHeight: sloganHeight,
-              maxHeight: sloganHeight,
-            ),
-            child: EzAdaptiveWidget(
-              small: animation(
-                l10n: l10n,
-                sloganHeight: sloganHeight,
-                letterRatio: 0.9,
-              ),
-              medium: animation(
-                l10n: l10n,
-                sloganHeight: sloganHeight,
-                letterRatio: 0.75,
-              ),
-              large: animation(
-                l10n: l10n,
-                sloganHeight: sloganHeight,
-                letterRatio: 0.667,
-              ),
-            ),
-          ),
-          EzConfig.separator,
-
-          // Mini-mission statement
-          AnimatedOpacity(
-            opacity: fin ? 1.0 : 0.0,
-            duration: const Duration(milliseconds: logoAnimFade),
-            child: EzCol(children: <Widget>[
-              // People shouldn't be products
-              EzText(
-                l10n.hsPeople,
-                style: EzConfig.styles.headlineLarge,
-                textAlign: TextAlign.center,
-              ),
-              EzText(
-                l10n.hsWell,
-                style: subTitle,
-                textAlign: TextAlign.center,
-              ),
-              newLine,
-
-              // But our data is
-              EzRichText(<InlineSpan>[
-                EzPlainText(text: l10n.hsReality, style: subTitle),
-                EzPlainText(
-                  text: l10n.hsData,
-                  style: subTitle?.copyWith(fontStyle: FontStyle.italic),
+            // Animated logo && slogan
+            Center(
+              child: EzTextBackground(
+                config,
+                text: EzRow(
+                  config,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    LogoAnimation(
+                      colorScheme: config.colors,
+                      semantics: l10n(config).hsAnimLabel,
+                      height:
+                          ezTextSize('T\nT', context: context, style: config.displayStyle).height,
+                      onComplete: () => setState(() => fin = true),
+                    ),
+                    config.rowSpacer,
+                    Text(
+                      'Your Tech\nYour Way',
+                      textAlign: TextAlign.start,
+                      style: config.headlineStyle,
+                    ),
+                  ],
                 ),
-                EzPlainText(text: l10n.hsGold, style: subTitle),
-              ], textAlign: TextAlign.center),
-              newLine,
-
-              // How about !(move fast && break things)
-              EzText(
-                l10n.hsRush,
-                style: subTitle,
-                textAlign: TextAlign.center,
               ),
-              newLine,
-              EzRichText(
-                // Inclue a key for the selectable registrar
-                // ...tbhidkybiwsdri
-                key: UniqueKey(),
-                <InlineSpan>[
-                  EzPlainText(text: l10n.hsSlow, style: subTitle),
-                  EzInlineLink(
-                    l10n.hsPlan,
-                    style: subTitle,
-                    textAlign: TextAlign.center,
-                    url: Uri.parse(missionURL),
-                    hint: l10n.gMissionHint,
-                  ),
-                ],
-                textAlign: TextAlign.center,
-              ),
-            ]),
-          ),
-          const EzFooter(),
-        ]),
-        margin: EdgeInsets.zero,
-      ),
-      logo: Semantics(
-        image: true,
-        link: false,
-        button: false,
-        label: l10n.gLogoLabel(empatheticLLC),
-        enabled: fin,
-        excludeSemantics: !fin,
-        child: ExcludeSemantics(
-          child: AnimatedOpacity(
-            opacity: fin ? 1.0 : 0.0,
-            duration: const Duration(milliseconds: logoAnimFade),
-            child: SizedBox(
-              width: toolbarHeight,
-              height: toolbarHeight,
-              child: Logo(margin: EzConfig.marginVal, colorScheme: EzConfig.colors),
             ),
-          ),
+            config.separator,
+
+            EzAnimVis(
+              config,
+              visible: fin,
+              forceFade: true,
+              forceType: EzTransitionType.none,
+              kid: EzCol(children: <Widget>[
+                // How about !(move fast && break things)
+                EzText(
+                  config,
+                  text: l10n(config).hsChange,
+                  textAlign: TextAlign.center,
+                  style: ezSubTitleStyle(config.styles),
+                ),
+                config.divider,
+
+                // Mission
+                EzCol(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Stepper(
+                      physics: const BouncingScrollPhysics(),
+                      stepIconWidth: config.iconSize + config.padding,
+                      stepIconHeight: config.iconSize + config.padding,
+                      connectorColor: WidgetStateProperty.resolveWith(
+                        (Set<WidgetState> states) => (states.contains(WidgetState.selected)
+                            ? config.colors.secondary
+                            : config.colors.outline),
+                      ),
+                      steps: <Step>[
+                        // Step 1: Identify the problem
+                        Step(
+                          stepStyle: _style(config, 0),
+                          isActive: index >= 0,
+                          title: _title(l10n(config).hsmIDProblem, config.titleStyle),
+                          content: _content(EzText(
+                            config,
+                            text: l10n(config).hsmIDProblemContent,
+                            style: config.bodyStyle,
+                            textAlign: TextAlign.start,
+                          )),
+                        ),
+
+                        // Step 2: Be a part of the solution
+                        Step(
+                          stepStyle: _style(config, 1),
+                          isActive: index >= 1,
+                          title: _title(l10n(config).hsmFindSolution, config.titleStyle),
+                          content: _content(EzText(
+                            config,
+                            text: l10n(config).hsmFindSolutionContent,
+                            style: config.bodyStyle,
+                            textAlign: TextAlign.start,
+                          )),
+                        ),
+
+                        // Step 3: Provide value
+                        Step(
+                          stepStyle: _style(config, 2),
+                          isActive: index >= 2,
+                          title: _title(l10n(config).hsmProvideValue, config.titleStyle),
+                          content: _content(EzRichText(
+                            config,
+                            children: <InlineSpan>[
+                              EzPlainText(
+                                text: l10n(config).hsmProvideValueContent1,
+                                style: config.bodyStyle,
+                              ),
+                              EzInlineLink(
+                                config,
+                                text: openUI,
+                                style: config.bodyStyle,
+                                textAlign: TextAlign.start,
+                                url: Uri.parse(Products.openUI.url),
+                                hint: l10n(config).gProductsHint,
+                              ),
+                              EzPlainText(
+                                text: l10n(config).hsmProvideValueContent2,
+                                style: config.bodyStyle,
+                              ),
+                            ],
+                          )),
+                        ),
+                      ],
+                      currentStep: index,
+                      onStepCancel: _onStepCancel,
+                      onStepContinue: _onStepContinue,
+                      onStepTapped: _onStepTapped,
+                      controlsBuilder: (_, ControlsDetails details) => Align(
+                        alignment: Alignment.centerLeft,
+                        child: EzCol(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            config.spacer,
+                            EzScrollView(
+                              config,
+                              scrollDirection: Axis.horizontal,
+                              primary: false,
+                              children: stepButtons(config, details),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Container(
+                      alignment: config.isLTR ? Alignment.centerLeft : Alignment.centerRight,
+                      width: double.infinity,
+                      child: EzFooter(config, textAlign: TextAlign.start),
+                    ),
+                  ],
+                ),
+                EzFooter(config),
+              ]),
+            ),
+          ]),
         ),
+        fabs: <Widget>[config.spacer, SettingsFAB(config)],
+        isHome: true,
       ),
-      fabs: <Widget>[EzConfig.spacer, const SettingsFAB()],
-      home: true,
     );
   }
 }

@@ -1,5 +1,5 @@
 /* dotnet
- * Copyright (c) 2026 Empathetech LLC. All rights reserved.
+ * Copyright (c) 2022 YWT (Empathetech LLC). All rights reserved.
  * See LICENSE for distribution and usage details.
  */
 
@@ -8,7 +8,7 @@ import './export.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:video_player/video_player.dart';
-import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
+import 'package:open_ui/open_ui.dart';
 
 class DotnetCache extends EzAppCache {
   // Construct //
@@ -22,20 +22,20 @@ class DotnetCache extends EzAppCache {
       : _locale = locale,
         _l10n = l10n {
     _captionsLib = SOSCaptionsLib(
-      ar: rootBundle.loadString(sosArCaptionsPath).then((String data) => SubRipCaptionFile(data)),
-      de: rootBundle.loadString(sosDeCaptionsPath).then((String data) => SubRipCaptionFile(data)),
-      en: rootBundle.loadString(sosEnCaptionsPath).then((String data) => SubRipCaptionFile(data)),
-      es: rootBundle.loadString(sosEsCaptionsPath).then((String data) => SubRipCaptionFile(data)),
-      fil: rootBundle.loadString(sosFilCaptionsPath).then((String data) => SubRipCaptionFile(data)),
-      fr: rootBundle.loadString(sosFrCaptionsPath).then((String data) => SubRipCaptionFile(data)),
-      hi: rootBundle.loadString(sosHiCaptionsPath).then((String data) => SubRipCaptionFile(data)),
-      ht: rootBundle.loadString(sosHtCaptionsPath).then((String data) => SubRipCaptionFile(data)),
-      ja: rootBundle.loadString(sosJaCaptionsPath).then((String data) => SubRipCaptionFile(data)),
-      ko: rootBundle.loadString(sosKoCaptionsPath).then((String data) => SubRipCaptionFile(data)),
-      ru: rootBundle.loadString(sosRuCaptionsPath).then((String data) => SubRipCaptionFile(data)),
-      sw: rootBundle.loadString(sosSwCaptionsPath).then((String data) => SubRipCaptionFile(data)),
-      uk: rootBundle.loadString(sosUkCaptionsPath).then((String data) => SubRipCaptionFile(data)),
-      zh: rootBundle.loadString(sosZhCaptionsPath).then((String data) => SubRipCaptionFile(data)),
+      ar: rootBundle.loadString(sosArCCPath).then((String cc) => SubRipCaptionFile(cc)),
+      de: rootBundle.loadString(sosDeCCPath).then((String cc) => SubRipCaptionFile(cc)),
+      en: rootBundle.loadString(sosEnCCPath).then((String cc) => SubRipCaptionFile(cc)),
+      es: rootBundle.loadString(sosEsCCPath).then((String cc) => SubRipCaptionFile(cc)),
+      fil: rootBundle.loadString(sosFilCCPath).then((String cc) => SubRipCaptionFile(cc)),
+      fr: rootBundle.loadString(sosFrCCPath).then((String cc) => SubRipCaptionFile(cc)),
+      hi: rootBundle.loadString(sosHiCCPath).then((String cc) => SubRipCaptionFile(cc)),
+      ht: rootBundle.loadString(sosHtCCPath).then((String cc) => SubRipCaptionFile(cc)),
+      ja: rootBundle.loadString(sosJaCCPath).then((String cc) => SubRipCaptionFile(cc)),
+      ko: rootBundle.loadString(sosKoCCPath).then((String cc) => SubRipCaptionFile(cc)),
+      ru: rootBundle.loadString(sosRuCCPath).then((String cc) => SubRipCaptionFile(cc)),
+      sw: rootBundle.loadString(sosSwCCPath).then((String cc) => SubRipCaptionFile(cc)),
+      uk: rootBundle.loadString(sosUkCCPath).then((String cc) => SubRipCaptionFile(cc)),
+      zh: rootBundle.loadString(sosZhCCPath).then((String cc) => SubRipCaptionFile(cc)),
     );
   }
 
@@ -45,33 +45,33 @@ class DotnetCache extends EzAppCache {
   void init(_) {}
 
   @override
-  Future<void> rebuild() async {
-    if (_locale != EzConfig.locale) {
-      _locale = EzConfig.locale;
-      _l10n = await Lang.delegate.load(EzConfig.locale);
+  Future<void> rebuild(EzCP config) async {
+    if (_locale != config.locale) {
+      _locale = config.locale;
+      _l10n = await Lang.delegate.load(config.locale);
     }
   }
 }
 
-DotnetCache get _cache => EzConfig.appCache! as DotnetCache;
+DotnetCache _cache(EzCP config) => config.appCache! as DotnetCache;
 
-Lang get l10n => _cache._l10n;
+Lang l10n(EzCP config) => _cache(config)._l10n;
 
-Future<ClosedCaptionFile> get sosCaptions => switch (EzConfig.locale.languageCode) {
-      'ar' => _cache._captionsLib.ar,
-      'de' => _cache._captionsLib.de,
-      'es' => _cache._captionsLib.es,
-      'fil' => _cache._captionsLib.fil,
-      'fr' => _cache._captionsLib.fr,
-      'hi' => _cache._captionsLib.hi,
-      'ht' => _cache._captionsLib.ht,
-      'ja' => _cache._captionsLib.ja,
-      'ko' => _cache._captionsLib.ko,
-      'ru' => _cache._captionsLib.ru,
-      'sw' => _cache._captionsLib.sw,
-      'uk' => _cache._captionsLib.uk,
-      'zh' => _cache._captionsLib.zh,
-      'en' || _ => _cache._captionsLib.en,
+Future<ClosedCaptionFile> sosCaptions(EzCP config) => switch (config.locale.languageCode) {
+      'ar' => _cache(config)._captionsLib.ar,
+      'de' => _cache(config)._captionsLib.de,
+      'es' => _cache(config)._captionsLib.es,
+      'fil' => _cache(config)._captionsLib.fil,
+      'fr' => _cache(config)._captionsLib.fr,
+      'hi' => _cache(config)._captionsLib.hi,
+      'ht' => _cache(config)._captionsLib.ht,
+      'ja' => _cache(config)._captionsLib.ja,
+      'ko' => _cache(config)._captionsLib.ko,
+      'ru' => _cache(config)._captionsLib.ru,
+      'sw' => _cache(config)._captionsLib.sw,
+      'uk' => _cache(config)._captionsLib.uk,
+      'zh' => _cache(config)._captionsLib.zh,
+      _ => _cache(config)._captionsLib.en,
     };
 
 class SOSCaptionsLib {

@@ -1,18 +1,19 @@
 /* dotnet
- * Copyright (c) 2026 Empathetech LLC. All rights reserved.
+ * Copyright (c) 2022 YWT (Empathetech LLC). All rights reserved.
  * See LICENSE for distribution and usage details.
  */
 
-import '../utils/export.dart';
-import 'package:efui_bios/efui_bios.dart';
+import 'package:oui_bios/oui_bios.dart';
 
+import 'package:open_ui/open_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/link.dart';
 import 'package:line_icons/line_icons.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 
 class IconLink extends StatelessWidget {
+  /// EzConfig Provider
+  final EzCP config;
+
   /// Destination URL
   final Uri url;
 
@@ -22,7 +23,8 @@ class IconLink extends StatelessWidget {
   /// [IconButton.icon] passthrough
   final Icon icon;
 
-  const IconLink({
+  const IconLink(
+    this.config, {
     super.key,
     required this.url,
     required this.tooltip,
@@ -33,6 +35,7 @@ class IconLink extends StatelessWidget {
   Widget build(BuildContext context) => Link(
         uri: url,
         builder: (_, FollowLink? followLink) => EzIconButton(
+          config,
           onPressed: followLink,
           tooltip: tooltip,
           icon: icon,
@@ -41,71 +44,37 @@ class IconLink extends StatelessWidget {
 }
 
 class IconLinks extends StatelessWidget {
-  /// [Row] of [EzIconButton]s leading to all Empathetech contacts
-  IconLinks({super.key});
+  final EzCP config;
+
+  /// Links, in [Icon] form
+  IconLinks(this.config, {super.key});
 
   // Define the buttons //
 
-  final IconLink gitHub = IconLink(
-    url: Uri.parse(empathGitHub),
+  late final IconLink gitHub = IconLink(
+    config,
+    url: Uri.parse(ywtGitHub),
     tooltip: 'GitHub',
-    icon: EzIcon(LineIcons.github, color: EzConfig.colors.primary),
-  );
-
-  final IconLink newsletter = IconLink(
-    url: Uri.parse(empathNewsletter),
-    tooltip: l10n.gNewsletter,
-    icon: EzIcon(Icons.mail_outline, color: EzConfig.colors.primary),
-  );
-
-  final IconLink mastodon = IconLink(
-    url: Uri.parse(empathMastodon),
-    tooltip: 'Mastodon',
-    icon: EzIcon(LineIcons.mastodon, color: EzConfig.colors.primary),
-  );
-
-  final IconLink bluesky = IconLink(
-    url: Uri.parse(empathBluesky),
-    tooltip: 'Bluesky',
-    icon: FaIcon(FontAwesomeIcons.bluesky, color: EzConfig.colors.primary),
-  );
-
-  final IconLink linkedIn = IconLink(
-    url: Uri.parse(empathLinkedIn),
-    tooltip: 'LinkedIn',
-    icon: EzIcon(LineIcons.linkedin, color: EzConfig.colors.primary),
+    icon: Icon(
+      LineIcons.github,
+      color: config.colors.primary,
+      size: config.titleStyle!.fontSize,
+    ),
   );
 
   // Define the getters //
 
-  List<Widget> get buttons => <Widget>[
-        gitHub,
-        newsletter,
-        mastodon,
-        bluesky,
-        linkedIn,
-      ];
+  Widget get noSpacers => gitHub;
 
-  List<Widget> get children => <Widget>[
-        EzConfig.rowMargin,
-        gitHub,
-        EzConfig.rowSpacer,
-        newsletter,
-        EzConfig.rowSpacer,
-        mastodon,
-        EzConfig.rowSpacer,
-        bluesky,
-        EzConfig.rowSpacer,
-        linkedIn,
-        EzConfig.rowMargin,
-      ];
+  List<Widget> get yesSpacers => <Widget>[config.rowMargin, gitHub, config.rowMargin];
 
   // Return the build //
 
   @override
   Widget build(BuildContext context) => EzRow(
+        config,
         reverseHands: false,
         mainAxisAlignment: MainAxisAlignment.center,
-        children: children,
+        children: yesSpacers,
       );
 }

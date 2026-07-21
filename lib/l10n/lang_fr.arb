@@ -1,8 +1,8 @@
 {
   "@@locale": "fr",
 
-  "gEmpathLogoLabel": "un sablier en deux dimensions.",
-  "gEmpathLogoHint": "Activer pour accéder à la page d'accueil.",
+  "gYWTLogoLabel": "un sablier en deux dimensions.",
+  "gYWTLogoHint": "Activer pour accéder à la page d'accueil.",
 
   "gLearn": "En savoir plus sur {name}",
   "gHomeHint": "Ouvre la page d'accueil",
@@ -22,7 +22,7 @@
   "gIconLabel": "L'icône de {app} : ",
   "gDownloadHint": "Télécharger {app} pour {platform}.",
   "gRepoHint": "Ouvrir un lien vers le dépôt de développement.",
-  "gEmpathetechGitHint": "Ouvre la page GitHub d'Empathetic LLC",
+  "gYWTGitHint": "Ouvre la page GitHub d'YWT",
 
   "gImageCredit": "Crédit image : {creator}",
 
@@ -35,42 +35,25 @@
   "gDontChaHint": "Ouvre la page GitHub pour le code source de cette interface",
 
 
-
-  "hsSlogan": "Construisons ensemble un monde meilleur\nbit x bit",
-  "hsSloganFix": "Construisons ensemble un monde meilleur\npas à pas",
-  "hsVideoLabel": "Logo animé d'Empathetic LLC : les lettres d'Empathetic se transforment en un logo, un sablier en deux dimensions",
-
-  "hsPeople": "Les gens ne sont pas des produits.",
-  "hsWell": "Eh bien, ils ne devraient pas l'être.",
-
-  "hsReality": "La triste réalité est que nos identités, nos ",
-  "hsData": "données",
-  "hsGold": ", sont la nouvelle ruée vers l'or des grandes entreprises technologiques.",
-
-  "hsRush": "Et les grandes entreprises technologiques adorent se précipiter.\nGrâce à leur sprint sans fin, les films de science-fiction dystopiques deviennent réalité beaucoup trop rapidement.",
-  "hsSlow": "Il est temps de ralentir.\nIl est temps que nous ayons la propriété de notre moi numérique.\nIl est temps d'un meilleur ",
-  "hsPlan": "plan.",
+  
+  "hsAnimLabel": "Logo animé d'YWT : les lettres d'YWT se transforment en un logo, un sablier en deux dimensions",
+  "hsChange": "Il est temps de changer.",
 
 
 
-  "msPageTitle": "Mission",
+  "hsmIDProblem": "Identifier le problème",
+  "hsmIDProblemContent": "Les modèles économiques axés sur le profit ne sont pas durables.\n\nPar définition : Si le profit vient en premier, alors des choses comme travailler pour une mission, bien traiter les gens et consommer de manière responsable les ressources deviennent des sujets de second plan.\n\nEt cette cupidité n'a pas été maîtrisée dans les grandes entreprises technologiques. Les géants de la technologie ne se contentent plus de prendre notre argent. Ils créent désormais des produits qui ciblent nos identités et monopolisent nos esprits.",
+  "hsmSoWe": "Alors nous",
 
-  "msSoWe": "Alors nous",
-  "msBy": "Par",
-  "msFirst": "Par premier",
-
-  "msIDProblem": "Identifier le problème",
-  "msIDProblemContent": "Les modèles économiques axés sur le profit ne sont pas durables.\n\nPar définition : Si le profit vient en premier, alors des choses comme travailler pour une mission, bien traiter les gens et consommer de manière responsable les ressources deviennent des sujets de second plan.\n\nEt cette cupidité n'a pas été maîtrisée dans les grandes entreprises technologiques. Les géants de la technologie ne se contentent plus de prendre notre argent. Ils créent désormais des produits qui ciblent nos identités et monopolisent nos esprits.",
-
-  "msFindSolution": "Trouver une solution",
-  "msFindSolutionContent": "Heureusement, il existe partout dans le monde des technologues extraordinaires qui travaillent ensemble pour un meilleur récit.\nUn récit dans lequel les fournisseurs de services et les clients entretiennent une relation active, saine et mutuellement bénéfique.\n\nLa communauté open source.\n\nÀ la base, les logiciels open source sont librement disponibles pour que tout le monde puisse les consulter. De nombreux projets peuvent également être librement modifiés et redistribués.\nIl s'agit de logiciels qui n'ont rien à cacher, créés par des gens qui reconnaissent que les problèmes communs nécessitent des solutions communes.\n\nEt dans le monde merveilleux des logiciels open source, il existe une sous-catégorie : les logiciels auto-hébergés.\n\nL'auto-hébergement nous permet de prendre n'importe quel ordinateur non utilisé (y compris ceux de poche) et d'y stocker nos données.\nEn auto-hébergant, nous pouvons contrôler notre propre présence numérique, plutôt que de céder le contrôle à un serveur distant, appartenant à une société peu empathique.\n\nEt il existe des versions auto-hébergées de presque tout ! D'Adobe à Zoom, des hacktivistes passionnés créent des alternatives qui privilégient les personnes au profit.\n\nAlors, comment passe-t-on du profit/fermé à l'open source ? Comment commencent-ils à s'auto-héberger ?\nCela prend beaucoup de temps, d'énergie et de connaissances préalables.\n\nC'est là que nous intervenons.",
+  "hsmFindSolution": "Trouver une solution",
+  "hsmFindSolutionContent": "Heureusement, il existe partout dans le monde des technologues extraordinaires qui travaillent ensemble pour un meilleur récit.\nUn récit dans lequel les fournisseurs de services et les clients entretiennent une relation active, saine et mutuellement bénéfique.\n\nLa communauté open source.\n\nÀ la base, les logiciels open source sont librement disponibles pour que tout le monde puisse les consulter. De nombreux projets peuvent également être librement modifiés et redistribués.\nIl s'agit de logiciels qui n'ont rien à cacher, créés par des gens qui reconnaissent que les problèmes communs nécessitent des solutions communes.\n\nEt dans le monde merveilleux des logiciels open source, il existe une sous-catégorie : les logiciels auto-hébergés.\n\nL'auto-hébergement nous permet de prendre n'importe quel ordinateur non utilisé (y compris ceux de poche) et d'y stocker nos données.\nEn auto-hébergant, nous pouvons contrôler notre propre présence numérique, plutôt que de céder le contrôle à un serveur distant, appartenant à une société peu empathique.\n\nEt il existe des versions auto-hébergées de presque tout ! D'Adobe à Zoom, des hacktivistes passionnés créent des alternatives qui privilégient les personnes au profit.\n\nAlors, comment passe-t-on du profit/fermé à l'open source ? Comment commencent-ils à s'auto-héberger ?\nCela prend beaucoup de temps, d'énergie et de connaissances préalables.\n\nC'est là que nous intervenons.",
+  "hsmBy": "Par",
  
-  "msProvideValue": "Faire le travail",
-  "msProvideValueContent1": "La mission d'Empathetech est de rééquilibrer le pouvoir dans la technologie en rendant l'auto-hébergement plus accessible.\n\nNous allons construire des applications qui permettent à chacun de posséder sa propre identité numérique.\nNous allons construire des ponts entre la communauté open source et ceux qui n'ont pas le temps, l'énergie ou les connaissances préalables nécessaires.\n\nEt on ne peut pas construire de ponts (ou d'applications) sans fondations solides ! C'est pourquoi ",
-  "msProvideValueContent1Fix": "La mission d'Empathetic est de rééquilibrer le pouvoir dans la technologie en rendant l'auto-hébergement plus accessible.\n\nNous allons construire des applications qui permettent à chacun de posséder sa propre identité numérique.\nNous allons construire des ponts entre la communauté open source et ceux qui n'ont pas le temps, l'énergie ou les connaissances préalables nécessaires.\n\nEt on ne peut pas construire de ponts (ou d'applications) sans fondations solides ! C'est pourquoi ",
-  "msProvideValueContent2": " existe.\nEmpathetech est fier de joindre le geste à la parole et a rendu son interface utilisateur accessible open source.\n\nConstruisons ensemble un monde meilleur, petit à petit.",
-  "msProvideValueContent2Fix": " existe.\nEmpathetic est fier de joindre le geste à la parole et a rendu son interface utilisateur accessible open source.\n\nConstruisons ensemble un monde meilleur, petit à petit.",
-
+  "hsmProvideValue": "Faire le travail",
+  "hsmProvideValueContent1": "YWT rééquilibre la technologie en rendant l'auto-hébergement plus accessible.\n\nNous créerons des applications qui permettent à chacun de posséder son identité numérique.\nNous construirons des ponts entre la communauté open source et ceux qui n'ont pas le temps, l'énergie ou les connaissances préalables nécessaires.\n\nEt on ne peut pas construire des ponts (ou des applications) sans des fondations solides ! C'est pourquoi ",
+  "hsmProvideValueContent2": " existe.\nNous sommes fiers de joindre le geste à la parole et avons rendu notre interface utilisateur accessible en open source.\n\nConstruisons ensemble un monde meilleur, bit par bit.",
+  "hsmFirst": "Par premier",
+  
 
 
   "psPageTitle": "Produits",
@@ -100,39 +83,34 @@
   "ouLocal": "Tout fonctionne sur votre ordinateur. Il n'y a pas d'identifiants, de cartes de crédit ou de cookies.",
   "ouRequirements": "Les seules exigences sont une connexion Internet et une idée.",
   "ouFlutterToo": "...et Flutter...",
-
-  "ouHow": "Comment ça marche ?",
-  "ouEFUIsHow": "Open UI vous permet de démarrer avec, ",
-  "ouSimplifies": "EFUI est une bibliothèque permettant de créer des applications véritablement accessibles. Cela simplifie...",
+  
+  "ouSimplifies": "Cela simplifie :",
   
   "ouPlatform": "Multiplateforme",
-  "ouPlatformContent": "Vous pouvez utiliser EFUI pour créer sur Android, iOS, Linux, macOS, Windows et Web !",
+  "ouPlatformContent": "Vous pouvez utiliser Open UI pour créer sur Android, iOS, Linux, macOS, Windows et Web !",
 
   "ouResponsive": "Design réactif",
   "ouResponsiveContent": "Pour voir cela en action, jouez avec la fenêtre que vous utilisez actuellement !",
 
   "ouScreen": "Prise en charge du lecteur d'écran",
-  "ouScreenContent": "Les applications Empathetech soutiennent les utilisateurs qui en ont besoin ",
-  "ouScreenContentFix": "Les applications Empathetic soutiennent les utilisateurs qui en ont besoin",
+  "ouScreenContent": "Les applications YWT soutiennent les utilisateurs qui en ont besoin ",
   "ouTalkBackHint": "Ouvre un lien vers la documentation TalkBack",
   "ouAnd": " et ",
   "ouVoiceOverHint": "Ouvre un lien vers la documentation VoiceOver",
 
   "ouCustom": "Personnalisation utilisateur",
-  "ouCustomContent": "La seule façon d'être véritablement accessible à TOUS les clients est de leur donner la liberté de choix !\nEFUI fournit une expérience utilisateur élégante pour un contrôle total sur l'apparence d'une application.",
+  "ouCustomContent": "La seule façon d'être véritablement accessible à TOUS les clients est de leur donner la liberté de choix !\nOpen UI fournit une expérience utilisateur élégante pour un contrôle total sur l'apparence d'une application.",
 
   "ouInternational": "Internationalisation",
-  "ouInternationalContent": "Les applications Empathetech ont été traduites en 14 langues (jusqu'à présent).\nEFUI fournit également l'infrastructure pour des traductions futures illimitées.",
-  "ouInternationalContentFix": "Les applications Empathetic ont été traduites en 14 langues (jusqu'à présent).\nEFUI fournit également l'infrastructure pour des traductions futures illimitées.",
+  "ouInternationalContent": "Les applications YWT ont été traduites en 14 langues (jusqu'à présent).\nOpen UI fournit également l'infrastructure pour des traductions futures illimitées.",
   
   "ouReliability": "Fiabilité",
-  "ouReliabilityContent": "Les logiciels Empathetech sont conçus pour durer. Il ne s’agit PAS d’une génération de code IA.\nLes programmeurs d’Empathetech sont des personnes. Les LLM sont des canards en caoutchouc.",
-  "ouReliabilityContentFix": "Les logiciels Empathetic sont conçus pour durer. Il ne s’agit PAS d’une génération de code IA.\nLes programmeurs d’Empathetic sont des personnes. Les LLM sont des canards en caoutchouc.",
+  "ouReliabilityContent": "Les logiciels YWT sont conçus pour durer. Il ne s’agit PAS d’une génération de code IA.\nLes programmeurs sont des personnes. Les LLM sont des canards en caoutchouc.",
   
   "ouGetStarted": "Testez-le en direct",
-  "ouOpenUIIconLabel": "un paramètres bac à sable.",
+  "ouIconLabel": "un paramètres bac à sable.",
 
-  "ouEFUITagLine": "En utilisant EFUI, vos applications peuvent toucher tous les publics !\n",
+  "ouTagLine": "En utilisant Open UI, vos applications peuvent toucher tous les publics !\n",
 
 
 
@@ -140,7 +118,6 @@
 
   "sosDescription": "Une caméra, une balise SOS et une liste de vos droits, le tout au même endroit.\nIl est disponible en 14 langues et prend en charge les lecteurs d'écran.",
   "sosPrivate": "InstaSOS n'a pas de comptes, de cookies ou de publicités.\n",
-  "sosPrivateFix": "Insta-SOS n'a pas de comptes, de cookies ou de publicités.\n",
   "sosFree": "C'est totalement gratuit et le code est ",
   "sosOpenSource": "open source",
   "sosConsider": "Veuillez envisager de ",
@@ -150,10 +127,7 @@
   "sosIconLabel": "Une icône de notification aux couleurs vives.",
   "sosWeb": "Une façon spécifique, et à fort impact, de contribuer serait de régler la facture de l'hébergement d'InstaSOS en ligne.\n\nLes propriétaires des boutiques d'applications ont clairement affiché la couleur quant à leurs alliances, et InstaSOS risque d'être retiré si/quand il gagnera du terrain.\nLes utilisateurs d'Android auront toujours la possibilité de l'installer manuellement, mais la seule alternative viable pour les utilisateurs d'iOS serait une application web.\n\nHeureusement, les applications Flutter effectuent leurs calculs côté client, la facture serait donc peu élevée.\nNous n'aurions (vous n'auriez) à payer que pour la gestion du trafic.",
 
-
-
-  "llDescription": "Un lanceur Android Empathetech.",
-  "llDescriptionFix": "Un lanceur Android Empathetic.",
+  
 
   "llInDev": "Liminal est en cours de développement.\nSon design tend vers le minimalisme, car nos téléphones devraient être des outils que nous utilisons, et non l'inverse.",
   "llBut": "Mais, c’est un lanceur minimaliste conçu avec ",
@@ -165,33 +139,7 @@
 
   "llModel": "Liminal sera publié selon un modèle « payez ce que vous pouvez ».\nLa version Google Play sera payante, car le (bon) code ne s’écrit pas tout seul.\nLe dépôt GitHub proposera également un APK gratuit, car une relation saine avec la technologie ne devrait pas être réservée à ceux qui ont un revenu disponible.",
 
-
-
-  "ssPreview1": "La prochaine application d'Empathetech, ",
-  "ssPreview1Fix": "La prochaine application d'Empathetic, ",
-  "ssPreview2": ", est en cours de développement.\nSmoke Signal est une application de réseau social conçue pour nous éloigner de nos écrans.",
-  "ssPreview3": "Smoke Signal sera également entièrement auto-hébergée, grâce à ",
-  "ssAPHint": "Ouvrir un lien vers la documentation d'Activity Pub",
-
-
-
-  "trWonder": "Si vous vous demandez comment une équipe d'une seule personne gère 14 langues : en utilisant les LLM de manière responsable.\nLe processus est le suivant...",
-  "trFirst": "1. Finaliser && organiser l'anglais (américain) ",
-  "trSource": "source",
-  "trSecond": "2. Demander à ",
-  "trBeNice": " gentiment de traduire les entrées.\nUne langue par discussion, pour que le contexte n'explose pas.",
-  "trThird": "3. Auditer les résultats avec ",
-  "trScript": "ce script",
-  "trReverse": "Il effectue une traduction inversée pour toutes les langues, une entrée à la fois. Je lis chaque résultat et je signale ceux qui ont perdu leur sens d'origine.",
-  "trFourth": "4. Utiliser Google Traduction (sans Gemini) pour corriger les erreurs, une par une. Et/ou...",
-  "trFifth": "5. Engager des professionnels pour les parties importantes.\nPar exemple, les droits (entrées rvX) dans ",
-  "trBy": " ont été traduits par ",
-  "trHumans": "des humains",
-  "trProcess": "C'est un processus imparfait, mais cela demande beaucoup plus d'efforts qu'une simple génération à la chaîne par LLM.\nEt, honnêtement, c'est ce que je peux m'offrir (pour l'instant).",
-  "trSpeaking": "À ce propos, veuillez envisager de ",
-  "trEither": ".\nDe l'argent, ou du temps. J'estime à 100 % le risque d'erreurs (mineures).",
   
-
 
   "vaIntro": "La manière dont une technologie est utilisée ne peut pas être décidée par ceux qui la créent.",
   "vaTheBad": "Ce qui peut être une bonne chose, une mauvaise chose, ou quelque chose entre les deux.\nPrenons un moment pour parler du mauvais : les applications frauduleuses.",
@@ -210,36 +158,6 @@
   "vaPrivateFree": "Si votre application n’est pas disponible publiquement, ne vous inquiétez pas !\nMais si des personnes que vous ne connaissez pas peuvent la télécharger, informez-nous pour que nous puissions la vérifier.",
   "vaDoYourPart": "Si nous n’avons pas eu de vos nouvelles, nous supposerons que votre produit est une arnaque jusqu’à preuve du contraire.\nSi cela vous semble sévère, réfléchissez-y. Open UI représente des années de travail, partagées librement. Envoyer un e-mail est le minimum que vous puissiez faire.",
 
-  
-  
-  "tsPageTitle": "Équipe",
-
-  "tsCore": "Cœur",
-  "tsTheFounderLabel": "Un photo en deux dimensions de Michael Waldron.",
-  "tsTheFounderHint": "Activez pour lui envoyer un email.",
-  "tsTheFounder": "Le fondateur",
-  "tsBoardMember": "Membre du conseil",
-  "tsYou": "Toi?",
-  "tsMirrorLabel": "Un cercle noir avec un éclat, pour imiter un miroir.",
-  "tsMirrorTip": "Activez pour nous envoyer un courriel",
-  "tsMirrorHint": "Demandez comment rejoindre l'équipe.",
-  "tsNonProfit": "La seule chose qui empêche Empathetech de devenir une véritable organisation à but non lucratif est le nombre de personnes.\nSi vous croyez en la mission que j’ai présentée et que vous avez quelques heures par semaine à consacrer, contactez-nous !\n\nCe sera entièrement bénévole au début. Je ne suis pas payé (pas encore) non plus.\nMais je ne ferais pas cela si je n’avais pas aussi un bon plan pour cela.\n\nTous ceux qui sont intéressés sont encouragés à nous contacter, mais il existe un besoin particulier de personnes ayant de l'expérience dans les domaines suivants :\ngestion des médias sociaux, collecte de fonds, et rédaction de subventions.",
-
-  "tsWild": "Dans la nature",
-  "ts2025BoothLabel": "Le stand Empathetech pour Open Sauce 2025.",
-  "ts2025BoothHint": "Activez pour ouvrir la page des expositions Open Sauce.",
-  "ts2025BoothDescription": "Open Sauce (2025) a été un blast !\nIl a été difficile de revenir à la vie normale, après avoir été entouré de tant de personnes gentilles, motivées, intelligentes et créatives.\nMerci encore si vous êtes passé par le stand Empathetech, et à l'année prochaine !",
-  "ts2025BoothDescriptionFix": "Open Sauce (2025) a été un blast !\nIl a été difficile de revenir à la vie normale, après avoir été entouré de tant de personnes gentilles, motivées, intelligentes et créatives.\nMerci encore si vous êtes passé par le stand Empathetic, et à l'année prochaine !",
-
-  "tsCommunity": "Communauté",
-
-  "tsFreelance": "Free-lance",
-
-  "tsVideoProduction": "Production vidéo",
-
-  "tsTranslators": "Traducteurs",
-  "tsProfile": "Profil de {name}",
-
 
 
   "fahJoin": "Rejoignez le Fold",
@@ -249,7 +167,7 @@
 
   "fahIntro1": "Rejoignez ",
   "fahIntro2": " Folding@home !",
-  "fahTeamHint": "Ouvre la page de l'équipe Empathetic de folding at home",
+  "fahTeamHint": "Ouvre la page de l'équipe YWT de folding at home",
 
   "fahWhats": "Qu'est-ce que ",
   "fahName": "Folding@home ?",
@@ -261,15 +179,14 @@
 
   "csPageTitle": "Contribuer",
 
-  "csEveryBit": "Chaque petit don que vous faites à Empathetech représente une perte pour les grandes entreprises technologiques.",
-  "csEveryBitFix": "Chaque petit don que vous faites à Empathetic représente une perte pour les grandes entreprises technologiques.",
-
+  "csEveryBit": "Pour nous, chaque bit est à un octet de distance des géants de la tech.",
+  
   "csTime": "Du temps",
   "csBecome": " pour devenir un ",
   "csGit": "contributeur GitHub",
 
   "csMoney": "De l'argent",
-  "csOpenLink": "Ouvrir un lien vers {page} de Empathetic",
+  "csOpenLink": "Ouvrir un lien vers {page} de YWT",
 
   "csPower": "De l'énergie",
 

@@ -1,5 +1,5 @@
 /* dotnet
- * Copyright (c) 2026 Empathetech LLC. All rights reserved.
+ * Copyright (c) 2022 YWT (Empathetech LLC). All rights reserved.
  * See LICENSE for distribution and usage details.
  */
 
@@ -11,7 +11,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
+import 'package:open_ui/open_ui.dart';
 
 void main() async {
   // Configure the app //
@@ -19,40 +19,40 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await SystemChrome.setPreferredOrientations(DeviceOrientation.values);
 
-  EzConfig.init(
+  EzCM.init(
     appName: 'dotnet',
     androidPackage: null,
     assetPaths: assetPaths,
     orientations: DeviceOrientation.values,
     localeFallback: americanEnglish,
-    l10nFallback: await EFUILang.delegate.load(americanEnglish),
+    l10nFallback: await OUILang.delegate.load(americanEnglish),
     preferences: await SharedPreferencesWithCache.create(
       cacheOptions: SharedPreferencesWithCacheOptions(
         allowList: allEZConfigKeys.keys.toSet(),
       ),
     ),
-    defaults: isMobile() ? empathMobileConfig : empathDesktopConfig,
+    defaults: isMobile() ? ywtMobileConfig : ywtDesktopConfig,
   );
 
   // Run the app //
 
-  final (Locale storedLocale, EFUILang storedEFUILang) = await ezStoredL10n();
+  final (Locale storedLocale, OUILang storedOUILang) = await ezStoredL10n();
 
   runApp(DotNet(
     storedLocale,
-    storedEFUILang,
+    storedOUILang,
     await Lang.delegate.load(storedLocale),
   ));
 }
 
 class DotNet extends StatelessWidget {
   final Locale storedLocale;
-  final EFUILang storedEFUILang;
+  final OUILang storedOUILang;
   final Lang storedLang;
 
   const DotNet(
     this.storedLocale,
-    this.storedEFUILang,
+    this.storedOUILang,
     this.storedLang, {
     super.key,
   });
@@ -71,37 +71,14 @@ class DotNet extends StatelessWidget {
     precacheImage(lasRosasImage, context);
     precacheImage(laGrenouilleImage, context);
 
-    // Smoke Signal
-    precacheImage(smokeSignalImage, context);
-
-    // Team
-    precacheImage(founderImage, context);
-    precacheImage(openSauce2025Image, context);
-    precacheImage(openSauceLogoImage, context);
-  }
-
-  void precacheExternal(BuildContext context) {
-    // Team
+    // Contribute
     precacheImage(fahImage, context);
-    precacheImage(montanaImage, context);
-    precacheImage(yasminSProfile, context);
-    precacheImage(patrickKarbanProfile, context);
-    precacheImage(saraHProfile, context);
-    precacheImage(remalynProfile, context);
-    precacheImage(alexisNProfile, context);
-    precacheImage(carlyProfile, context);
-    precacheImage(hikaruProfile, context);
-    precacheImage(superTProfile, context);
-    precacheImage(anastasiaProfile, context);
-    precacheImage(mariePProfile, context);
-    precacheImage(leahProfile, context);
-    precacheImage(hilariaProfile, context);
   }
 
   // Define URL redirects //
 
-  FutureOr<String?> colorPath(BuildContext context, GoRouterState state) {
-    final List<String> segments = state.uri.pathSegments;
+  FutureOr<String?> colorPath(BuildContext pbc, GoRouterState pbs) {
+    final List<String> segments = pbs.uri.pathSegments;
 
     if (segments.contains(EzSubSetting.advColor.path)) {
       return '/$settingsPath?$typeQP=$colorRedirect&$advQP=true';
@@ -112,8 +89,8 @@ class DotNet extends StatelessWidget {
     }
   }
 
-  FutureOr<String?> designPath(BuildContext context, GoRouterState state) {
-    final List<String> segments = state.uri.pathSegments;
+  FutureOr<String?> designPath(BuildContext pbc, GoRouterState pbs) {
+    final List<String> segments = pbs.uri.pathSegments;
 
     if (segments.contains(EzSubSetting.pagDesign.path)) {
       return '/$settingsPath?$typeQP=$designRedirect&$pageQP=true';
@@ -124,8 +101,8 @@ class DotNet extends StatelessWidget {
     }
   }
 
-  FutureOr<String?> textPath(BuildContext context, GoRouterState state) {
-    final List<String> segments = state.uri.pathSegments;
+  FutureOr<String?> textPath(BuildContext pbc, GoRouterState pbs) {
+    final List<String> segments = pbs.uri.pathSegments;
 
     if (segments.contains(EzSubSetting.advText.path)) {
       return '/$settingsPath?$typeQP=$textRedirect&$advQP=true';
@@ -146,75 +123,46 @@ class DotNet extends StatelessWidget {
       localizationsDelegates: ezLocalizationsDelegates(Lang.localizationsDelegates),
       supportedLocales: Lang.supportedLocales,
       locale: storedLocale,
-      el10n: storedEFUILang,
+      el10n: storedOUILang,
       appCache: DotnetCache(storedLocale, storedLang),
       routerConfig: GoRouter(
         navigatorKey: ezRootNav,
         initialLocation: homePath,
-        errorBuilder: (_, __) => ErrorScreen(),
+        errorBuilder: (_, __) => const ErrorScreen(),
         routes: <RouteBase>[
           // Home/intro
           GoRoute(
             path: homePath,
             name: homePath,
-            builder: (_, GoRouterState state) => HomeScreen(
-              fin: state.uri.queryParameters['fin']?.toLowerCase() == 'true',
-            ),
+            builder: (_, GoRouterState state) => const HomeScreen(),
             routes: <RouteBase>[
-              // Mission
-              GoRoute(
-                path: missionPath,
-                name: missionPath,
-                builder: (_, __) => MissionScreen(),
-              ),
-
               // Products
               GoRoute(
                 path: Products.openUI.path,
                 name: Products.openUI.path,
-                builder: (_, __) => OpenUIScreen(),
+                builder: (_, __) => const OpenUIScreen(),
               ),
               GoRoute(
                 path: Products.sos.path,
                 name: Products.sos.path,
-                builder: (_, __) => SOSScreen(),
+                builder: (_, __) => const SOSScreen(),
               ),
               GoRoute(
                 path: Products.liminal.path,
                 name: Products.liminal.path,
-                builder: (_, __) => LiminalScreen(),
-              ),
-              GoRoute(
-                path: Products.smokeSignal.path,
-                name: Products.smokeSignal.path,
-                builder: (_, __) => SmokeSignalScreen(),
-              ),
-              GoRoute(
-                path: Products.translations.path,
-                name: Products.translations.path,
-                builder: (_, __) => TranslationsScreen(),
+                builder: (_, __) => const LiminalScreen(),
               ),
               GoRoute(
                 path: Products.verified.path,
                 name: Products.verified.path,
-                builder: (_, __) => VerifiedScreen(),
-              ),
-
-              // Team
-              GoRoute(
-                path: teamPath,
-                name: teamPath,
-                builder: (_, __) {
-                  precacheExternal(context);
-                  return TeamScreen();
-                },
+                builder: (_, __) => const VerifiedScreen(),
               ),
 
               // Contribute
               GoRoute(
                 path: contributePath,
                 name: contributePath,
-                builder: (_, __) => ContributeScreen(),
+                builder: (_, __) => const ContributeScreen(),
               ),
 
               // Settings
@@ -228,7 +176,7 @@ class DotNet extends StatelessWidget {
                       qbParse(state.uri.queryParameters[pageQP]);
 
                   return SettingsHubScreen(
-                    key: ValueKey<String>('${EzConfig.seed}:$target:$advanced'),
+                    key: ValueKey<String>('$target:$advanced'),
                     target: target,
                   );
                 },

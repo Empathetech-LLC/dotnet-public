@@ -1,29 +1,29 @@
 /* dotnet
- * Copyright (c) 2026 Empathetech LLC. All rights reserved.
+ * Copyright (c) 2022 YWT (Empathetech LLC). All rights reserved.
  * See LICENSE for distribution and usage details.
  */
 
 import '../utils/export.dart';
-import 'package:efui_bios/efui_bios.dart';
+import 'package:oui_bios/oui_bios.dart';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:url_launcher/url_launcher.dart';
-import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
+import 'package:open_ui/open_ui.dart';
 
 //* Shared *//
 
 /// 12.0.0
-const String efuiFallback = '12.0.0';
+const String ouiFallback = '12.0.0';
 
-/// 3.0.1
-const String sosFallback = '3.0.1';
+/// 3.0.2
+const String sosFallback = '3.0.2';
 
-/// https://github.com/Empathetech-LLC
-const String _git = 'https://github.com/Empathetech-LLC';
+/// https://github.com/YWT-LLC
+const String _git = 'https://github.com/YWT-LLC';
 
-/// https://play.google.com/store/apps/details?id=net.empathetech
-const String _gPlay = 'https://play.google.com/store/apps/details?id=net.empathetech';
+/// https://play.google.com/store/apps/details?id=llc.ywt
+const String _gPlay = 'https://play.google.com/store/apps/details?id=llc.ywt';
 
 /// https://apps.apple.com/us/app
 const String _appStore = 'https://apps.apple.com/us/app';
@@ -47,7 +47,7 @@ extension Label on DLType {
 Future<String> getLatest(String repo, String fallback) async {
   final http.Response response = await http.get(
     Uri.parse(
-      'https://raw.githubusercontent.com/Empathetech-LLC/$repo/refs/heads/main/APP_VERSION',
+      'https://raw.githubusercontent.com/YWT-LLC/$repo/refs/heads/main/APP_VERSION',
     ),
   );
 
@@ -56,7 +56,7 @@ Future<String> getLatest(String repo, String fallback) async {
 
 //* Open UI *//
 
-String ouRelease(String version) => '$_git/empathetech_flutter_ui/releases/download/$version';
+String ouRelease(String version) => '$_git/open_ui/releases/download/$version';
 
 /// Get a [Uri] to download the latest version of Open UI
 Uri openUIDownload(DLType dlType, String version) => switch (dlType) {
@@ -70,8 +70,10 @@ Uri openUIDownload(DLType dlType, String version) => switch (dlType) {
     };
 
 class OpenUILink extends StatefulWidget {
+  final EzCP config;
+
   /// One link to empower them all
-  const OpenUILink({super.key});
+  const OpenUILink(this.config, {super.key});
 
   @override
   State<OpenUILink> createState() => _OpenUILinkState();
@@ -87,26 +89,16 @@ class _OpenUILinkState extends State<OpenUILink> {
   // Define custom functions //
 
   /// Set an initial download link
-  void initUrl() async {
-    switch (EzConfig.platform) {
-      case TargetPlatform.android:
-        currDL = DLType.gPlay;
-        break;
-      case TargetPlatform.iOS:
-        currDL = DLType.iOS;
-        break;
-      case TargetPlatform.macOS:
-        currDL = DLType.macOS;
-        break;
-      case TargetPlatform.windows:
-        currDL = DLType.windows;
-        break;
-      default:
-        currDL = DLType.deb;
-        break;
-    }
+  Future<void> initUrl() async {
+    currDL = switch (EzCM.platform) {
+      TargetPlatform.android => DLType.gPlay,
+      TargetPlatform.iOS => DLType.iOS,
+      TargetPlatform.macOS => DLType.macOS,
+      TargetPlatform.windows => DLType.windows,
+      _ => DLType.deb,
+    };
 
-    latest = await getLatest('empathetech_flutter_ui', efuiFallback);
+    latest = await getLatest('open_ui', ouiFallback);
     url = openUIDownload(currDL, latest);
   }
 
@@ -126,22 +118,24 @@ class _OpenUILinkState extends State<OpenUILink> {
         children: <Widget>[
           // Icon link
           Container(
-            constraints: EzBox.sym(ezImageSize(context)),
+            constraints: EzBox.sym(ezImageSize(widget.config, context: context)),
             child: EzLinkWidget(
+              widget.config,
               onTap: () => launchUrl(url ?? Uri.parse(openUIReleases)),
-              tooltip: l10n.gDownloadHint(openUI, currDL.name),
-              label: l10n.gIconLabel(openUI) + l10n.ouOpenUIIconLabel,
-              hint: l10n.gDownloadHint(openUI, currDL.name),
+              tooltip: l10n(widget.config).gDownloadHint(openUI, currDL.name),
+              label: l10n(widget.config).gIconLabel(openUI) + l10n(widget.config).ouIconLabel,
+              hint: l10n(widget.config).gDownloadHint(openUI, currDL.name),
               child: ClipRRect(
-                borderRadius: BorderRadius.circular(ezImageSize(context)),
+                borderRadius: BorderRadius.circular(ezImageSize(widget.config, context: context)),
                 child: const Image(image: openUIImage, fit: BoxFit.contain),
               ),
             ),
           ),
-          EzConfig.margin,
+          widget.config.margin,
 
           // Destination selector
           EzDropdownMenu<DLType>(
+            widget.config,
             enableSearch: false,
             initialSelection: currDL,
             widthEntry: DLType.apk.name,
@@ -176,8 +170,10 @@ Uri sosDownload(DLType dlType, String version) => switch (dlType) {
     };
 
 class SOSLink extends StatefulWidget {
+  final EzCP config;
+
   /// One link to empower them all
-  const SOSLink({super.key});
+  const SOSLink(this.config, {super.key});
 
   @override
   State<SOSLink> createState() => _SOSLinkState();
@@ -193,17 +189,11 @@ class _SOSLinkState extends State<SOSLink> {
   // Define custom functions //
 
   /// Set an initial download link
-  void initUrl() async {
-    switch (EzConfig.platform) {
-      case TargetPlatform.iOS:
-      case TargetPlatform.macOS:
-        currDL = DLType.iOS;
-        break;
-
-      default:
-        currDL = DLType.gPlay;
-        break;
-    }
+  Future<void> initUrl() async {
+    currDL = switch (EzCM.platform) {
+      TargetPlatform.iOS || TargetPlatform.macOS => DLType.iOS,
+      _ => DLType.gPlay,
+    };
 
     latest = await getLatest('sos', sosFallback);
     url = sosDownload(currDL, latest);
@@ -225,22 +215,24 @@ class _SOSLinkState extends State<SOSLink> {
         children: <Widget>[
           // Icon link
           Container(
-            constraints: EzBox.sym(ezImageSize(context)),
+            constraints: EzBox.sym(ezImageSize(widget.config, context: context)),
             child: EzLinkWidget(
+              widget.config,
               onTap: () => launchUrl(url ?? Uri.parse(sosReleases)),
-              tooltip: l10n.gDownloadHint(sosName, currDL.name),
-              label: l10n.gIconLabel(sosLabel) + l10n.sosIconLabel,
-              hint: l10n.gDownloadHint(sosLabel, currDL.name),
+              tooltip: l10n(widget.config).gDownloadHint(sosName, currDL.name),
+              label: l10n(widget.config).gIconLabel(sosLabel) + l10n(widget.config).sosIconLabel,
+              hint: l10n(widget.config).gDownloadHint(sosLabel, currDL.name),
               child: ClipRRect(
-                borderRadius: BorderRadius.circular(ezImageSize(context)),
+                borderRadius: BorderRadius.circular(ezImageSize(widget.config, context: context)),
                 child: const Image(image: sosImage, fit: BoxFit.contain),
               ),
             ),
           ),
-          EzConfig.margin,
+          widget.config.margin,
 
           // Destination selector
           EzDropdownMenu<DLType>(
+            widget.config,
             enableSearch: false,
             initialSelection: currDL,
             widthEntry: DLType.apk.name,

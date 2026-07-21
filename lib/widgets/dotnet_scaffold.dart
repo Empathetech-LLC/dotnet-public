@@ -1,128 +1,99 @@
 /* dotnet
- * Copyright (c) 2026 Empathetech LLC. All rights reserved.
+ * Copyright (c) 2022 YWT (Empathetech LLC). All rights reserved.
  * See LICENSE for distribution and usage details.
  */
 
 import './export.dart';
 import '../utils/export.dart';
 import '../screens/export.dart';
-import 'package:efui_bios/efui_bios.dart';
+import 'package:oui_bios/oui_bios.dart';
 
 import 'package:flutter/material.dart';
-import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
+import 'package:open_ui/open_ui.dart';
 
 class DotnetScaffold extends StatelessWidget {
-  /// Large screen:
-  ///   default: [logo] is [AppBar] top left
-  ///   EzConfig.isLefty: [logo] is [AppBar] top right
-  /// Small screen:
-  ///   [logo] is [AppBar] center
+  final EzCP config;
   final Widget? logo;
-
-  /// [Scaffold.body] passthrough
   final Widget body;
-
-  /// [FloatingActionButton]s to add on top of the [EzUpdaterFAB]
-  /// BYO spacing widgets
   final List<Widget>? fabs;
+  final bool isHome;
 
-  /// For [EzConfig.backFABs]
-  final bool home;
-
-  /// Standardized [Scaffold] for all of empathetech dotnet's screens
+  /// Standardized [Scaffold] for Open UI screens
   const DotnetScaffold(
-    this.body, {
+    this.config, {
     super.key,
     this.logo,
+    required this.body,
     this.fabs,
-    this.home = false,
+    this.isHome = false,
   });
 
   // Define custom functions //
 
   double pageLinksWidth(BuildContext context) =>
       ezTextSize(
-        l10n.msPageTitle + l10n.psPageTitle + l10n.tsPageTitle + l10n.csPageTitle,
-        style: EzConfig.styles.headlineLarge,
+        l10n(config).psPageTitle + l10n(config).csPageTitle,
+        style: config.headlineStyle,
         context: context,
       ).width +
-      EzConfig.spacing * 5;
+      config.spacing * 3;
 
   @override
   Widget build(BuildContext context) {
     // Gather the contextual theme data //
 
-    final double toolbarHeight = ezToolbarHeight(context: context, title: l10n.csPageTitle);
+    final double toolbarHeight =
+        ezToolbarHeight(config, context: context, title: l10n(config).csPageTitle);
 
     // Define custom widgets //
 
-    final Widget brandLogo = logo ??
-        EzLinkWidget(
-          isImage: true,
-          url: Uri.parse(homeURL),
-          label: l10n.gLogoLabel(empatheticLLC),
-          hint: l10n.gEmpathLogoHint,
-          tooltip: l10n.gHomeHint,
-          child: SizedBox(
-            width: toolbarHeight,
-            height: toolbarHeight,
-            child: Logo(margin: EzConfig.marginVal, colorScheme: EzConfig.colors),
-          ),
-        );
-
-    final IconLinks iconLinks = IconLinks();
-
-    final Widget iconLinksMenu = MenuAnchor(
-      builder: (_, MenuController controller, ___) => EzIconButton(
-        onPressed: () => controller.isOpen ? controller.close() : controller.open(),
-        tooltip: l10n.gShare,
-        icon: Icon(Icons.share, size: EzConfig.styles.titleLarge!.fontSize),
+    final Widget linkLogo = EzLinkWidget(
+      config,
+      isImage: true,
+      url: Uri.parse(homeURL),
+      label: l10n(config).gLogoLabel(ywt),
+      hint: l10n(config).gYWTLogoHint,
+      tooltip: l10n(config).gHomeHint,
+      child: SizedBox(
+        width: toolbarHeight,
+        height: toolbarHeight,
+        child: Logo(margin: config.marginVal, colorScheme: config.colors),
       ),
-      menuChildren: iconLinks.buttons
-          .map((Widget button) => switch (button.runtimeType) {
-                const (IconLink) => EzMenuLink(
-                    uri: (button as IconLink).url,
-                    icon: button.icon,
-                    label: button.tooltip,
-                  ),
-                const (EzIconButton) => EzMenuButton(
-                    onPressed: (button as EzIconButton).onPressed,
-                    icon: button.icon,
-                    label: button.tooltip!,
-                  ),
-                _ =>
-                  throw Exception('Unsupported iconLinksMenu button type: ${button.runtimeType}'),
-              })
-          .toList(),
     );
+
+    final IconLinks iconLinks = IconLinks(config);
 
     // Define the build(s) //
 
     final List<Widget> finalFabs = <Widget>[
-      updater,
+      updater(config),
       if (fabs != null) ...fabs!,
-      ...EzConfig.backFABs(home),
+      ...config.backFABs(isHome),
     ];
 
     final _RestrictedScaffold restricted = _RestrictedScaffold(
+      config,
       toolbarHeight: toolbarHeight,
-      logo: brandLogo,
-      swapDrawer: DotNetDrawer(header: iconLinks),
+      linkLogo: linkLogo,
+      swapDrawer: DotNetDrawer(config, header: iconLinks),
       body: body,
       fabs: finalFabs,
+      isHome: isHome,
     );
 
     final _ExpandedScaffold expanded = _ExpandedScaffold(
+      config,
       toolbarHeight: toolbarHeight,
-      logo: brandLogo,
-      iconLinksMenu: iconLinksMenu,
+      linkLogo: linkLogo,
+      iconLinksMenu: iconLinks.noSpacers,
       body: body,
       fabs: finalFabs,
+      isHome: isHome,
     );
 
     // Return the build //
 
-    final double newSmall = 2 * (toolbarHeight + 2 * EzConfig.marginVal) + pageLinksWidth(context);
+    final double newSmall = 2 * (toolbarHeight + 2 * config.marginVal) + pageLinksWidth(context);
 
     return EzAdaptiveParent(
       small: restricted,
@@ -134,67 +105,75 @@ class DotnetScaffold extends StatelessWidget {
 
 class _RestrictedScaffold extends EzScaffold {
   final double toolbarHeight;
-  final Widget logo;
+  final Widget linkLogo;
   final DotNetDrawer swapDrawer;
+  final bool isHome;
 
   /// [DotnetScaffold] for when there is limited screen space
   /// Has a mobile-like layout
-  _RestrictedScaffold({
+  _RestrictedScaffold(
+    super.config, {
     required this.toolbarHeight,
-    required this.logo,
+    required this.linkLogo,
     required this.swapDrawer,
     required super.body,
     required super.fabs,
+    required this.isHome,
   }) : super(
           appBar: PreferredSize(
             preferredSize: Size(double.infinity, toolbarHeight),
             child: EzAppBar(
+              config,
               height: toolbarHeight,
-              title: logo,
-              actions: EzConfig.isLefty ? const <Widget>[EzBackAction()] : null,
+              title: isHome ? const SizedBox.shrink() : linkLogo,
+              actions: config.isLefty ? <Widget>[EzBackAction(config)] : null,
             ),
           ),
-          drawer: EzConfig.isLefty ? swapDrawer : null,
-          endDrawer: EzConfig.isLefty ? null : swapDrawer,
+          drawer: config.isLefty ? swapDrawer : null,
+          endDrawer: config.isLefty ? null : swapDrawer,
         );
 }
 
 class _ExpandedScaffold extends EzScaffold {
   final double toolbarHeight;
-  final Widget logo;
+  final Widget linkLogo;
   final Widget iconLinksMenu;
+  final bool isHome;
 
   /// [DotnetScaffold] for when there is ample screen space
   /// Has a traditional footer-less web page layout
-  _ExpandedScaffold({
+  _ExpandedScaffold(
+    super.config, {
     required this.toolbarHeight,
-    required this.logo,
+    required this.linkLogo,
     required this.iconLinksMenu,
     required super.body,
     required super.fabs,
+    required this.isHome,
   }) : super(
           appBar: PreferredSize(
             preferredSize: Size(double.infinity, toolbarHeight),
             child: EzAppBar(
+              config,
               height: toolbarHeight,
-              leading: EzConfig.isLefty ? iconLinksMenu : logo,
-              leadingWidth: toolbarHeight,
-              title: const PageLinks(),
-              actions: EzConfig.isLefty ? <Widget>[logo] : <Widget>[iconLinksMenu],
+              leading: config.isLefty ? iconLinksMenu : (isHome ? null : linkLogo),
+              leadingWidth: isHome ? null : toolbarHeight,
+              title: PageLinks(config),
+              actions:
+                  config.isLefty ? (isHome ? null : <Widget>[linkLogo]) : <Widget>[iconLinksMenu],
             ),
           ),
         );
 }
 
 class DotNetDrawer extends StatelessWidget {
-  /// [IconLinks] to be displayed in the [DrawerHeader]
+  final EzCP config;
   final IconLinks header;
+  late final PageLinks _pageLinks;
 
-  /// [PageLinks] to be displayed in the [NavigationDrawer]
-  final PageLinks _pageLinks;
-
-  /// Universal [NavigationDrawer] for dotnet
-  const DotNetDrawer({super.key, required this.header}) : _pageLinks = const PageLinks();
+  DotNetDrawer(this.config, {super.key, required this.header}) {
+    _pageLinks = PageLinks(config);
+  }
 
   @override
   Widget build(BuildContext context) => NavigationDrawer(
@@ -205,12 +184,14 @@ class DotNetDrawer extends StatelessWidget {
             padding: EdgeInsets.zero,
             child: Center(
               child: EzScrollView(
+                config,
                 scrollDirection: Axis.horizontal,
                 showScrollHint: true,
                 thumbVisibility: false,
-                children: header.children
+                children: header.yesSpacers
                     .map((Widget child) => switch (child.runtimeType) {
                           const (EzIconButton) => EzIconButton(
+                              config,
                               style: (child as EzIconButton).style,
                               onPressed: () {
                                 Navigator.of(context).pop();
@@ -225,13 +206,9 @@ class DotNetDrawer extends StatelessWidget {
               ),
             ),
           ),
-          EzConfig.spacer,
-          _pageLinks.mission,
-          EzConfig.spacer,
-          _pageLinks.products,
-          EzConfig.spacer,
-          _pageLinks.team,
-          EzConfig.spacer,
+          config.spacer,
+          ..._pageLinks.products(config),
+          config.spacer,
           _pageLinks.contribute,
         ],
       );

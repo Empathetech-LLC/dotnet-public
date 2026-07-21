@@ -1,24 +1,14 @@
 /* dotnet
- * Copyright (c) 2026 Empathetech LLC. All rights reserved.
+ * Copyright (c) 2022 YWT (Empathetech LLC). All rights reserved.
  * See LICENSE for distribution and usage details.
  */
 
-import './export.dart';
 import 'package:flutter/material.dart';
 
 // Titles //
 
-/// Empathetech
-const String empathetech = 'Empathetech';
-
-/// Empathetic
-const String empathetic = 'Empathetic';
-
-/// Empathetech LLC
-const String empathetechLLC = 'Empathetech LLC';
-
-/// Empathetic LLC
-const String empatheticLLC = 'Empathetic LLC';
+/// YWT
+const String ywt = 'YWT';
 
 /// Open UI
 const String openUI = 'Open UI';
@@ -28,9 +18,6 @@ const String sosName = 'InstaSOS';
 
 /// Insta SOS
 const String sosLabel = 'Insta SOS';
-
-/// Smoke Signal
-const String smokeSignal = 'Smoke Signal';
 
 // Image assets //
 
@@ -64,30 +51,6 @@ const String laGrenouillePath = 'assets/images/la-grenouille.png';
 /// [AssetImage] of [laGrenouillePath]
 const ImageProvider laGrenouilleImage = AssetImage(laGrenouillePath);
 
-/// assets/images/smoke-signal-icon.png
-const String smokeSignalIconPath = 'assets/images/smoke-signal-icon.png';
-
-/// [AssetImage] of [smokeSignalIconPath]
-const ImageProvider smokeSignalImage = AssetImage(smokeSignalIconPath);
-
-/// assets/images/founder.png
-const String founderIconPath = 'assets/images/founder.png';
-
-/// [AssetImage] of [founderIconPath]
-const ImageProvider founderImage = AssetImage(founderIconPath);
-
-/// assets/images/open-sauce-2025.jpg
-const String openSauce2025Path = 'assets/images/open-sauce-2025.jpg';
-
-/// [AssetImage] of [openSauce2025Path]
-const ImageProvider openSauce2025Image = AssetImage(openSauce2025Path);
-
-/// assets/images/open-sauce-logo.png
-const String openSauceLogoPath = 'assets/images/open-sauce-logo.png';
-
-/// [AssetImage] of [openSauceLogoPath]
-const ImageProvider openSauceLogoImage = AssetImage(openSauceLogoPath);
-
 /// assets/images/fah.png
 const String fahIconPath = 'assets/images/fah.png';
 
@@ -101,38 +64,35 @@ const String sosPromoPath = 'assets/videos/sos-promo.mp4';
 
 const String sosVerticalPromoPath = 'assets/videos/sos-promo-vertical.mp4';
 
-const String sosArCaptionsPath = 'assets/videos/captions/sos-promo-ar.srt';
-const String sosDeCaptionsPath = 'assets/videos/captions/sos-promo-de.srt';
-const String sosEnCaptionsPath = 'assets/videos/captions/sos-promo-en.srt';
-const String sosEsCaptionsPath = 'assets/videos/captions/sos-promo-es.srt';
-const String sosFilCaptionsPath = 'assets/videos/captions/sos-promo-fil.srt';
-const String sosFrCaptionsPath = 'assets/videos/captions/sos-promo-fr.srt';
-const String sosHiCaptionsPath = 'assets/videos/captions/sos-promo-hi.srt';
-const String sosHtCaptionsPath = 'assets/videos/captions/sos-promo-ht.srt';
-const String sosJaCaptionsPath = 'assets/videos/captions/sos-promo-ja.srt';
-const String sosKoCaptionsPath = 'assets/videos/captions/sos-promo-ko.srt';
-const String sosRuCaptionsPath = 'assets/videos/captions/sos-promo-ru.srt';
-const String sosSwCaptionsPath = 'assets/videos/captions/sos-promo-sw.srt';
-const String sosUkCaptionsPath = 'assets/videos/captions/sos-promo-uk.srt';
-const String sosZhCaptionsPath = 'assets/videos/captions/sos-promo-zh.srt';
+const String sosArCCPath = 'assets/videos/captions/sos-promo-ar.srt';
+const String sosDeCCPath = 'assets/videos/captions/sos-promo-de.srt';
+const String sosEnCCPath = 'assets/videos/captions/sos-promo-en.srt';
+const String sosEsCCPath = 'assets/videos/captions/sos-promo-es.srt';
+const String sosFilCCPath = 'assets/videos/captions/sos-promo-fil.srt';
+const String sosFrCCPath = 'assets/videos/captions/sos-promo-fr.srt';
+const String sosHiCCPath = 'assets/videos/captions/sos-promo-hi.srt';
+const String sosHtCCPath = 'assets/videos/captions/sos-promo-ht.srt';
+const String sosJaCCPath = 'assets/videos/captions/sos-promo-ja.srt';
+const String sosKoCCPath = 'assets/videos/captions/sos-promo-ko.srt';
+const String sosRuCCPath = 'assets/videos/captions/sos-promo-ru.srt';
+const String sosSwCCPath = 'assets/videos/captions/sos-promo-sw.srt';
+const String sosUkCCPath = 'assets/videos/captions/sos-promo-uk.srt';
+const String sosZhCCPath = 'assets/videos/captions/sos-promo-zh.srt';
 
 // Local links //
 
-/// https://github.com/Empathetech-LLC/dotnet-public/blob/main/lib/screens/settings_home.dart
+/// https://github.com/YWT-LLC/web-mirror/blob/main/lib/screens/settings_home.dart
 const String settingsSource =
-    'https://github.com/Empathetech-LLC/dotnet-public/blob/main/lib/screens/settings/settings_home.dart';
+    'https://github.com/YWT-LLC/web-mirror/blob/main/lib/screens/settings/settings_home.dart';
 
-/// https://github.com/Empathetech-LLC/empathetech_flutter_ui
-const String efuiSource = 'https://github.com/Empathetech-LLC/empathetech_flutter_ui';
+/// https://github.com/YWT-LLC/open_ui
+const String ouiSource = 'https://github.com/YWT-LLC/open_ui';
 
-/// https://github.com/Empathetech-LLC/sos
-const String sosSource = 'https://github.com/Empathetech-LLC/sos';
+/// https://github.com/YWT-LLC/sos
+const String sosSource = 'https://github.com/YWT-LLC/sos';
 
-/// https://github.com/Empathetech-LLC/liminal_launcher
-const String liminalSource = 'https://github.com/Empathetech-LLC/liminal_launcher';
-
-/// https://github.com/Empathetech-LLC/smoke_signal
-const String smokeSignalSource = 'https://github.com/Empathetech-LLC/smoke_signal';
+/// https://github.com/YWT-LLC/liminal_launcher
+const String liminalSource = 'https://github.com/YWT-LLC/liminal_launcher';
 
 // External links //
 
@@ -151,12 +111,7 @@ const Set<String> assetPaths = <String>{
   theHoodPath,
   lasRosasPath,
   laGrenouillePath,
-  smokeSignalIconPath,
-  founderIconPath,
-  openSauce2025Path,
-  openSauceLogoPath,
   fahIconPath,
-  montanaHeadshotPath,
 
   // Videos
   openUIDemoPath,
@@ -167,20 +122,22 @@ const Set<String> assetPaths = <String>{
 /// aka assetSources
 final Map<String, String> credits = <String, String>{
   // Images
-  openUIIconPath: '$mike & Google Gemini',
+  openUIIconPath: founder,
   sosIconPath: 'https://fonts.google.com/icons',
-  theHoodPath: '$crosby & $mike',
-  lasRosasPath: mike,
-  laGrenouillePath: '$nikkolas & $mike',
-  smokeSignalIconPath: '$mike & $pimenLink',
-  founderIconPath: '$mike & $dunvekLink',
-  openSauce2025Path: mike,
-  openSauceLogoPath: 'https://opensauce.com/',
+  theHoodPath: crosby,
+  lasRosasPath: founder,
+  laGrenouillePath: nikkolas,
   fahIconPath: faHLink,
-  montanaHeadshotPath: montanaM.name,
 
   // Videos
-  openUIDemoPath: mike,
-  sosPromoPath: '$montanaM & $mike',
-  sosVerticalPromoPath: '$montanaM & $mike',
+  openUIDemoPath: founder,
+  sosPromoPath: '$founder & $montana',
+  sosVerticalPromoPath: '$founder & $montana',
 };
+
+// Credits //
+
+const String founder = 'Founder';
+const String crosby = 'Kevin Crosby';
+const String nikkolas = 'Nikkolas Smith';
+const String montana = 'Montana Monardes';

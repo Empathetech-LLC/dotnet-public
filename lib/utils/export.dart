@@ -1,10 +1,9 @@
 /* dotnet
- * Copyright (c) 2026 Empathetech LLC. All rights reserved.
+ * Copyright (c) 2022 YWT (Empathetech LLC). All rights reserved.
  * See LICENSE for distribution and usage details.
  */
 
 export 'consts.dart';
-export 'contributors.dart';
 export 'dotnet_cache.dart';
 export 'enums.dart';
 

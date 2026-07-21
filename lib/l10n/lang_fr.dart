@@ -9,10 +9,10 @@ class LangFr extends Lang {
   LangFr([String locale = 'fr']) : super(locale);
 
   @override
-  String get gEmpathLogoLabel => 'un sablier en deux dimensions.';
+  String get gYWTLogoLabel => 'un sablier en deux dimensions.';
 
   @override
-  String get gEmpathLogoHint => 'Activer pour accéder à la page d\'accueil.';
+  String get gYWTLogoHint => 'Activer pour accéder à la page d\'accueil.';
 
   @override
   String gLearn(Object name) {
@@ -73,7 +73,7 @@ class LangFr extends Lang {
   String get gRepoHint => 'Ouvrir un lien vers le dépôt de développement.';
 
   @override
-  String get gEmpathetechGitHint => 'Ouvre la page GitHub d\'Empathetic LLC';
+  String get gYWTGitHint => 'Ouvre la page GitHub d\'YWT';
 
   @override
   String gImageCredit(Object creator) {
@@ -103,87 +103,45 @@ class LangFr extends Lang {
       'Ouvre la page GitHub pour le code source de cette interface';
 
   @override
-  String get hsSlogan => 'Construisons ensemble un monde meilleur\nbit x bit';
+  String get hsAnimLabel =>
+      'Logo animé d\'YWT : les lettres d\'YWT se transforment en un logo, un sablier en deux dimensions';
 
   @override
-  String get hsSloganFix =>
-      'Construisons ensemble un monde meilleur\npas à pas';
+  String get hsChange => 'Il est temps de changer.';
 
   @override
-  String get hsVideoLabel =>
-      'Logo animé d\'Empathetic LLC : les lettres d\'Empathetic se transforment en un logo, un sablier en deux dimensions';
+  String get hsmIDProblem => 'Identifier le problème';
 
   @override
-  String get hsPeople => 'Les gens ne sont pas des produits.';
-
-  @override
-  String get hsWell => 'Eh bien, ils ne devraient pas l\'être.';
-
-  @override
-  String get hsReality => 'La triste réalité est que nos identités, nos ';
-
-  @override
-  String get hsData => 'données';
-
-  @override
-  String get hsGold =>
-      ', sont la nouvelle ruée vers l\'or des grandes entreprises technologiques.';
-
-  @override
-  String get hsRush =>
-      'Et les grandes entreprises technologiques adorent se précipiter.\nGrâce à leur sprint sans fin, les films de science-fiction dystopiques deviennent réalité beaucoup trop rapidement.';
-
-  @override
-  String get hsSlow =>
-      'Il est temps de ralentir.\nIl est temps que nous ayons la propriété de notre moi numérique.\nIl est temps d\'un meilleur ';
-
-  @override
-  String get hsPlan => 'plan.';
-
-  @override
-  String get msPageTitle => 'Mission';
-
-  @override
-  String get msSoWe => 'Alors nous';
-
-  @override
-  String get msBy => 'Par';
-
-  @override
-  String get msFirst => 'Par premier';
-
-  @override
-  String get msIDProblem => 'Identifier le problème';
-
-  @override
-  String get msIDProblemContent =>
+  String get hsmIDProblemContent =>
       'Les modèles économiques axés sur le profit ne sont pas durables.\n\nPar définition : Si le profit vient en premier, alors des choses comme travailler pour une mission, bien traiter les gens et consommer de manière responsable les ressources deviennent des sujets de second plan.\n\nEt cette cupidité n\'a pas été maîtrisée dans les grandes entreprises technologiques. Les géants de la technologie ne se contentent plus de prendre notre argent. Ils créent désormais des produits qui ciblent nos identités et monopolisent nos esprits.';
 
   @override
-  String get msFindSolution => 'Trouver une solution';
+  String get hsmSoWe => 'Alors nous';
 
   @override
-  String get msFindSolutionContent =>
+  String get hsmFindSolution => 'Trouver une solution';
+
+  @override
+  String get hsmFindSolutionContent =>
       'Heureusement, il existe partout dans le monde des technologues extraordinaires qui travaillent ensemble pour un meilleur récit.\nUn récit dans lequel les fournisseurs de services et les clients entretiennent une relation active, saine et mutuellement bénéfique.\n\nLa communauté open source.\n\nÀ la base, les logiciels open source sont librement disponibles pour que tout le monde puisse les consulter. De nombreux projets peuvent également être librement modifiés et redistribués.\nIl s\'agit de logiciels qui n\'ont rien à cacher, créés par des gens qui reconnaissent que les problèmes communs nécessitent des solutions communes.\n\nEt dans le monde merveilleux des logiciels open source, il existe une sous-catégorie : les logiciels auto-hébergés.\n\nL\'auto-hébergement nous permet de prendre n\'importe quel ordinateur non utilisé (y compris ceux de poche) et d\'y stocker nos données.\nEn auto-hébergant, nous pouvons contrôler notre propre présence numérique, plutôt que de céder le contrôle à un serveur distant, appartenant à une société peu empathique.\n\nEt il existe des versions auto-hébergées de presque tout ! D\'Adobe à Zoom, des hacktivistes passionnés créent des alternatives qui privilégient les personnes au profit.\n\nAlors, comment passe-t-on du profit/fermé à l\'open source ? Comment commencent-ils à s\'auto-héberger ?\nCela prend beaucoup de temps, d\'énergie et de connaissances préalables.\n\nC\'est là que nous intervenons.';
 
   @override
-  String get msProvideValue => 'Faire le travail';
+  String get hsmBy => 'Par';
 
   @override
-  String get msProvideValueContent1 =>
-      'La mission d\'Empathetech est de rééquilibrer le pouvoir dans la technologie en rendant l\'auto-hébergement plus accessible.\n\nNous allons construire des applications qui permettent à chacun de posséder sa propre identité numérique.\nNous allons construire des ponts entre la communauté open source et ceux qui n\'ont pas le temps, l\'énergie ou les connaissances préalables nécessaires.\n\nEt on ne peut pas construire de ponts (ou d\'applications) sans fondations solides ! C\'est pourquoi ';
+  String get hsmProvideValue => 'Faire le travail';
 
   @override
-  String get msProvideValueContent1Fix =>
-      'La mission d\'Empathetic est de rééquilibrer le pouvoir dans la technologie en rendant l\'auto-hébergement plus accessible.\n\nNous allons construire des applications qui permettent à chacun de posséder sa propre identité numérique.\nNous allons construire des ponts entre la communauté open source et ceux qui n\'ont pas le temps, l\'énergie ou les connaissances préalables nécessaires.\n\nEt on ne peut pas construire de ponts (ou d\'applications) sans fondations solides ! C\'est pourquoi ';
+  String get hsmProvideValueContent1 =>
+      'YWT rééquilibre la technologie en rendant l\'auto-hébergement plus accessible.\n\nNous créerons des applications qui permettent à chacun de posséder son identité numérique.\nNous construirons des ponts entre la communauté open source et ceux qui n\'ont pas le temps, l\'énergie ou les connaissances préalables nécessaires.\n\nEt on ne peut pas construire des ponts (ou des applications) sans des fondations solides ! C\'est pourquoi ';
 
   @override
-  String get msProvideValueContent2 =>
-      ' existe.\nEmpathetech est fier de joindre le geste à la parole et a rendu son interface utilisateur accessible open source.\n\nConstruisons ensemble un monde meilleur, petit à petit.';
+  String get hsmProvideValueContent2 =>
+      ' existe.\nNous sommes fiers de joindre le geste à la parole et avons rendu notre interface utilisateur accessible en open source.\n\nConstruisons ensemble un monde meilleur, bit par bit.';
 
   @override
-  String get msProvideValueContent2Fix =>
-      ' existe.\nEmpathetic est fier de joindre le geste à la parole et a rendu son interface utilisateur accessible open source.\n\nConstruisons ensemble un monde meilleur, petit à petit.';
+  String get hsmFirst => 'Par premier';
 
   @override
   String get psPageTitle => 'Produits';
@@ -253,21 +211,14 @@ class LangFr extends Lang {
   String get ouFlutterToo => '...et Flutter...';
 
   @override
-  String get ouHow => 'Comment ça marche ?';
-
-  @override
-  String get ouEFUIsHow => 'Open UI vous permet de démarrer avec, ';
-
-  @override
-  String get ouSimplifies =>
-      'EFUI est une bibliothèque permettant de créer des applications véritablement accessibles. Cela simplifie...';
+  String get ouSimplifies => 'Cela simplifie :';
 
   @override
   String get ouPlatform => 'Multiplateforme';
 
   @override
   String get ouPlatformContent =>
-      'Vous pouvez utiliser EFUI pour créer sur Android, iOS, Linux, macOS, Windows et Web !';
+      'Vous pouvez utiliser Open UI pour créer sur Android, iOS, Linux, macOS, Windows et Web !';
 
   @override
   String get ouResponsive => 'Design réactif';
@@ -281,11 +232,7 @@ class LangFr extends Lang {
 
   @override
   String get ouScreenContent =>
-      'Les applications Empathetech soutiennent les utilisateurs qui en ont besoin ';
-
-  @override
-  String get ouScreenContentFix =>
-      'Les applications Empathetic soutiennent les utilisateurs qui en ont besoin';
+      'Les applications YWT soutiennent les utilisateurs qui en ont besoin ';
 
   @override
   String get ouTalkBackHint => 'Ouvre un lien vers la documentation TalkBack';
@@ -301,39 +248,31 @@ class LangFr extends Lang {
 
   @override
   String get ouCustomContent =>
-      'La seule façon d\'être véritablement accessible à TOUS les clients est de leur donner la liberté de choix !\nEFUI fournit une expérience utilisateur élégante pour un contrôle total sur l\'apparence d\'une application.';
+      'La seule façon d\'être véritablement accessible à TOUS les clients est de leur donner la liberté de choix !\nOpen UI fournit une expérience utilisateur élégante pour un contrôle total sur l\'apparence d\'une application.';
 
   @override
   String get ouInternational => 'Internationalisation';
 
   @override
   String get ouInternationalContent =>
-      'Les applications Empathetech ont été traduites en 14 langues (jusqu\'à présent).\nEFUI fournit également l\'infrastructure pour des traductions futures illimitées.';
-
-  @override
-  String get ouInternationalContentFix =>
-      'Les applications Empathetic ont été traduites en 14 langues (jusqu\'à présent).\nEFUI fournit également l\'infrastructure pour des traductions futures illimitées.';
+      'Les applications YWT ont été traduites en 14 langues (jusqu\'à présent).\nOpen UI fournit également l\'infrastructure pour des traductions futures illimitées.';
 
   @override
   String get ouReliability => 'Fiabilité';
 
   @override
   String get ouReliabilityContent =>
-      'Les logiciels Empathetech sont conçus pour durer. Il ne s’agit PAS d’une génération de code IA.\nLes programmeurs d’Empathetech sont des personnes. Les LLM sont des canards en caoutchouc.';
-
-  @override
-  String get ouReliabilityContentFix =>
-      'Les logiciels Empathetic sont conçus pour durer. Il ne s’agit PAS d’une génération de code IA.\nLes programmeurs d’Empathetic sont des personnes. Les LLM sont des canards en caoutchouc.';
+      'Les logiciels YWT sont conçus pour durer. Il ne s’agit PAS d’une génération de code IA.\nLes programmeurs sont des personnes. Les LLM sont des canards en caoutchouc.';
 
   @override
   String get ouGetStarted => 'Testez-le en direct';
 
   @override
-  String get ouOpenUIIconLabel => 'un paramètres bac à sable.';
+  String get ouIconLabel => 'un paramètres bac à sable.';
 
   @override
-  String get ouEFUITagLine =>
-      'En utilisant EFUI, vos applications peuvent toucher tous les publics !\n';
+  String get ouTagLine =>
+      'En utilisant Open UI, vos applications peuvent toucher tous les publics !\n';
 
   @override
   String get sosPromoLabel => 'Une vidéo promotionnelle pour Insta SOS.';
@@ -345,10 +284,6 @@ class LangFr extends Lang {
   @override
   String get sosPrivate =>
       'InstaSOS n\'a pas de comptes, de cookies ou de publicités.\n';
-
-  @override
-  String get sosPrivateFix =>
-      'Insta-SOS n\'a pas de comptes, de cookies ou de publicités.\n';
 
   @override
   String get sosFree => 'C\'est totalement gratuit et le code est ';
@@ -371,12 +306,6 @@ class LangFr extends Lang {
   @override
   String get sosWeb =>
       'Une façon spécifique, et à fort impact, de contribuer serait de régler la facture de l\'hébergement d\'InstaSOS en ligne.\n\nLes propriétaires des boutiques d\'applications ont clairement affiché la couleur quant à leurs alliances, et InstaSOS risque d\'être retiré si/quand il gagnera du terrain.\nLes utilisateurs d\'Android auront toujours la possibilité de l\'installer manuellement, mais la seule alternative viable pour les utilisateurs d\'iOS serait une application web.\n\nHeureusement, les applications Flutter effectuent leurs calculs côté client, la facture serait donc peu élevée.\nNous n\'aurions (vous n\'auriez) à payer que pour la gestion du trafic.';
-
-  @override
-  String get llDescription => 'Un lanceur Android Empathetech.';
-
-  @override
-  String get llDescriptionFix => 'Un lanceur Android Empathetic.';
 
   @override
   String get llInDev =>
@@ -404,75 +333,6 @@ class LangFr extends Lang {
   @override
   String get llModel =>
       'Liminal sera publié selon un modèle « payez ce que vous pouvez ».\nLa version Google Play sera payante, car le (bon) code ne s’écrit pas tout seul.\nLe dépôt GitHub proposera également un APK gratuit, car une relation saine avec la technologie ne devrait pas être réservée à ceux qui ont un revenu disponible.';
-
-  @override
-  String get ssPreview1 => 'La prochaine application d\'Empathetech, ';
-
-  @override
-  String get ssPreview1Fix => 'La prochaine application d\'Empathetic, ';
-
-  @override
-  String get ssPreview2 =>
-      ', est en cours de développement.\nSmoke Signal est une application de réseau social conçue pour nous éloigner de nos écrans.';
-
-  @override
-  String get ssPreview3 =>
-      'Smoke Signal sera également entièrement auto-hébergée, grâce à ';
-
-  @override
-  String get ssAPHint => 'Ouvrir un lien vers la documentation d\'Activity Pub';
-
-  @override
-  String get trWonder =>
-      'Si vous vous demandez comment une équipe d\'une seule personne gère 14 langues : en utilisant les LLM de manière responsable.\nLe processus est le suivant...';
-
-  @override
-  String get trFirst => '1. Finaliser && organiser l\'anglais (américain) ';
-
-  @override
-  String get trSource => 'source';
-
-  @override
-  String get trSecond => '2. Demander à ';
-
-  @override
-  String get trBeNice =>
-      ' gentiment de traduire les entrées.\nUne langue par discussion, pour que le contexte n\'explose pas.';
-
-  @override
-  String get trThird => '3. Auditer les résultats avec ';
-
-  @override
-  String get trScript => 'ce script';
-
-  @override
-  String get trReverse =>
-      'Il effectue une traduction inversée pour toutes les langues, une entrée à la fois. Je lis chaque résultat et je signale ceux qui ont perdu leur sens d\'origine.';
-
-  @override
-  String get trFourth =>
-      '4. Utiliser Google Traduction (sans Gemini) pour corriger les erreurs, une par une. Et/ou...';
-
-  @override
-  String get trFifth =>
-      '5. Engager des professionnels pour les parties importantes.\nPar exemple, les droits (entrées rvX) dans ';
-
-  @override
-  String get trBy => ' ont été traduits par ';
-
-  @override
-  String get trHumans => 'des humains';
-
-  @override
-  String get trProcess =>
-      'C\'est un processus imparfait, mais cela demande beaucoup plus d\'efforts qu\'une simple génération à la chaîne par LLM.\nEt, honnêtement, c\'est ce que je peux m\'offrir (pour l\'instant).';
-
-  @override
-  String get trSpeaking => 'À ce propos, veuillez envisager de ';
-
-  @override
-  String get trEither =>
-      '.\nDe l\'argent, ou du temps. J\'estime à 100 % le risque d\'erreurs (mineures).';
 
   @override
   String get vaIntro =>
@@ -526,77 +386,6 @@ class LangFr extends Lang {
       'Si nous n’avons pas eu de vos nouvelles, nous supposerons que votre produit est une arnaque jusqu’à preuve du contraire.\nSi cela vous semble sévère, réfléchissez-y. Open UI représente des années de travail, partagées librement. Envoyer un e-mail est le minimum que vous puissiez faire.';
 
   @override
-  String get tsPageTitle => 'Équipe';
-
-  @override
-  String get tsCore => 'Cœur';
-
-  @override
-  String get tsTheFounderLabel =>
-      'Un photo en deux dimensions de Michael Waldron.';
-
-  @override
-  String get tsTheFounderHint => 'Activez pour lui envoyer un email.';
-
-  @override
-  String get tsTheFounder => 'Le fondateur';
-
-  @override
-  String get tsBoardMember => 'Membre du conseil';
-
-  @override
-  String get tsYou => 'Toi?';
-
-  @override
-  String get tsMirrorLabel =>
-      'Un cercle noir avec un éclat, pour imiter un miroir.';
-
-  @override
-  String get tsMirrorTip => 'Activez pour nous envoyer un courriel';
-
-  @override
-  String get tsMirrorHint => 'Demandez comment rejoindre l\'équipe.';
-
-  @override
-  String get tsNonProfit =>
-      'La seule chose qui empêche Empathetech de devenir une véritable organisation à but non lucratif est le nombre de personnes.\nSi vous croyez en la mission que j’ai présentée et que vous avez quelques heures par semaine à consacrer, contactez-nous !\n\nCe sera entièrement bénévole au début. Je ne suis pas payé (pas encore) non plus.\nMais je ne ferais pas cela si je n’avais pas aussi un bon plan pour cela.\n\nTous ceux qui sont intéressés sont encouragés à nous contacter, mais il existe un besoin particulier de personnes ayant de l\'expérience dans les domaines suivants :\ngestion des médias sociaux, collecte de fonds, et rédaction de subventions.';
-
-  @override
-  String get tsWild => 'Dans la nature';
-
-  @override
-  String get ts2025BoothLabel => 'Le stand Empathetech pour Open Sauce 2025.';
-
-  @override
-  String get ts2025BoothHint =>
-      'Activez pour ouvrir la page des expositions Open Sauce.';
-
-  @override
-  String get ts2025BoothDescription =>
-      'Open Sauce (2025) a été un blast !\nIl a été difficile de revenir à la vie normale, après avoir été entouré de tant de personnes gentilles, motivées, intelligentes et créatives.\nMerci encore si vous êtes passé par le stand Empathetech, et à l\'année prochaine !';
-
-  @override
-  String get ts2025BoothDescriptionFix =>
-      'Open Sauce (2025) a été un blast !\nIl a été difficile de revenir à la vie normale, après avoir été entouré de tant de personnes gentilles, motivées, intelligentes et créatives.\nMerci encore si vous êtes passé par le stand Empathetic, et à l\'année prochaine !';
-
-  @override
-  String get tsCommunity => 'Communauté';
-
-  @override
-  String get tsFreelance => 'Free-lance';
-
-  @override
-  String get tsVideoProduction => 'Production vidéo';
-
-  @override
-  String get tsTranslators => 'Traducteurs';
-
-  @override
-  String tsProfile(Object name) {
-    return 'Profil de $name';
-  }
-
-  @override
   String get fahJoin => 'Rejoignez le Fold';
 
   @override
@@ -613,8 +402,7 @@ class LangFr extends Lang {
   String get fahIntro2 => ' Folding@home !';
 
   @override
-  String get fahTeamHint =>
-      'Ouvre la page de l\'équipe Empathetic de folding at home';
+  String get fahTeamHint => 'Ouvre la page de l\'équipe YWT de folding at home';
 
   @override
   String get fahWhats => 'Qu\'est-ce que ';
@@ -634,11 +422,7 @@ class LangFr extends Lang {
 
   @override
   String get csEveryBit =>
-      'Chaque petit don que vous faites à Empathetech représente une perte pour les grandes entreprises technologiques.';
-
-  @override
-  String get csEveryBitFix =>
-      'Chaque petit don que vous faites à Empathetic représente une perte pour les grandes entreprises technologiques.';
+      'Pour nous, chaque bit est à un octet de distance des géants de la tech.';
 
   @override
   String get csTime => 'Du temps';
@@ -654,7 +438,7 @@ class LangFr extends Lang {
 
   @override
   String csOpenLink(Object page) {
-    return 'Ouvrir un lien vers $page de Empathetic';
+    return 'Ouvrir un lien vers $page de YWT';
   }
 
   @override

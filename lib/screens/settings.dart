@@ -1,5 +1,5 @@
 /* dotnet
- * Copyright (c) 2026 Empathetech LLC. All rights reserved.
+ * Copyright (c) 2022 YWT (Empathetech LLC). All rights reserved.
  * See LICENSE for distribution and usage details.
  */
 
@@ -7,107 +7,115 @@ import '../../widgets/export.dart';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
+import 'package:open_ui/open_ui.dart';
 
 class SettingsHubScreen extends StatelessWidget {
-  /// [EzSettingsHub.target] passthrough
   final int? target;
 
   const SettingsHubScreen({required super.key, this.target});
 
   @override
-  Widget build(BuildContext context) => Consumer<EzConfigProvider>(
-        builder: (_, EzConfigProvider config, __) => DotnetScaffold(
-          EzScreen(EzSettingsHub(
+  Widget build(BuildContext context) {
+    return Consumer<EzCP>(
+      builder: (_, EzCP config, __) => DotnetScaffold(
+        config,
+        body: EzScreen(
+          config,
+          child: EzSettingsHub(
+            config,
             pages: <EzSettingsSection>[
               // Global //
 
               EzSettingsSection(
                 position: 0,
-                title: EzConfig.l10n.gGlobal,
+                title: config.ezL10n.gGlobal,
                 icon: EzIcon(
-                  config.onMobile
-                      ? config.platform == TargetPlatform.iOS
+                  config,
+                  EzCM.onMobile
+                      ? EzCM.platform == TargetPlatform.iOS
                           ? Icons.phone_iphone
                           : Icons.phone_android
                       : Icons.computer,
-                  semanticLabel: EzConfig.l10n.gGlobal,
+                  semanticLabel: config.ezL10n.gGlobal,
                 ),
                 subSettings: <EzSubSetting>[],
                 fromStorage: () => EzSubSetting.blank,
-                build: (_) => const EzGlobalSettings(),
+                build: (_) => EzGlobalSettings(config),
               ),
 
               // Color //
 
               EzSettingsSection(
                 position: 1,
-                title: EzConfig.l10n.gColor,
+                title: config.ezL10n.gColor,
                 icon: EzIcon(
+                  config,
                   Icons.palette,
-                  semanticLabel: EzConfig.l10n.gColor,
+                  semanticLabel: config.ezL10n.gColor,
                 ),
                 subSettings: <EzSubSetting>[
                   EzSubSetting.qckColor,
                   EzSubSetting.advColor,
                 ],
-                fromStorage: () => EzConfig.get(advancedColorsKey) == true
+                fromStorage: () => EzCM.get(advancedColorsKey) == true
                     ? EzSubSetting.advColor
                     : EzSubSetting.qckColor,
-                build: (EzSubSetting subSec) => EzColorSettings(target: subSec),
+                build: (EzSubSetting subSec) => EzColorSettings(config, target: subSec),
               ),
 
               // Design //
 
               EzSettingsSection(
                 position: 2,
-                title: EzConfig.l10n.gDesign,
+                title: config.ezL10n.gDesign,
                 icon: EzIcon(
+                  config,
                   Icons.design_services,
-                  semanticLabel: EzConfig.l10n.gDesign,
+                  semanticLabel: config.ezL10n.gDesign,
                 ),
                 subSettings: <EzSubSetting>[
                   EzSubSetting.butDesign,
                   EzSubSetting.pagDesign,
                 ],
-                fromStorage: () => EzConfig.get(pageTabKey) == true
-                    ? EzSubSetting.pagDesign
-                    : EzSubSetting.butDesign,
-                build: (EzSubSetting subSec) => EzDesignSettings(target: subSec),
+                fromStorage: () =>
+                    EzCM.get(pageTabKey) == true ? EzSubSetting.pagDesign : EzSubSetting.butDesign,
+                build: (EzSubSetting subSec) => EzDesignSettings(config, target: subSec),
               ),
 
               // Text //
 
               EzSettingsSection(
                 position: 3,
-                title: EzConfig.l10n.gText,
+                title: config.ezL10n.gText,
                 icon: EzIcon(
+                  config,
                   Icons.text_format,
-                  semanticLabel: EzConfig.l10n.gText,
+                  semanticLabel: config.ezL10n.gText,
                 ),
                 subSettings: <EzSubSetting>[
                   EzSubSetting.qckText,
                   EzSubSetting.advText,
                 ],
-                fromStorage: () => EzConfig.get(advancedTextKey) == true
-                    ? EzSubSetting.advText
-                    : EzSubSetting.qckText,
-                build: (EzSubSetting subSec) => EzTextSettings(target: subSec),
+                fromStorage: () =>
+                    EzCM.get(advancedTextKey) == true ? EzSubSetting.advText : EzSubSetting.qckText,
+                build: (EzSubSetting subSec) => EzTextSettings(config, target: subSec),
               ),
             ],
             target: target,
-          )),
-          fabs: <Widget>[
-            // Rebuild (conditional)
-            if (config.needsRebuild) ...<Widget>[
-              config.layout.spacer,
-              const EzRebuildFAB(),
-            ],
-
-            // Save/upload config
-            config.layout.spacer,
-            const EzConfigFAB(),
-          ],
+          ),
         ),
-      );
+        fabs: <Widget>[
+          // Rebuild (conditional)
+          if (config.needsRebuild) ...<Widget>[
+            config.spacer,
+            EzRebuildFAB(config),
+          ],
+
+          // Save/upload config
+          config.spacer,
+          EzConfigFAB(config),
+        ],
+      ),
+    );
+  }
 }

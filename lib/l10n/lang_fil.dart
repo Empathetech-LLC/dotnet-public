@@ -9,10 +9,10 @@ class LangFil extends Lang {
   LangFil([String locale = 'fil']) : super(locale);
 
   @override
-  String get gEmpathLogoLabel => 'isang two-dimensional na orasa.';
+  String get gYWTLogoLabel => 'isang two-dimensional na orasa.';
 
   @override
-  String get gEmpathLogoHint => 'I-activate para pumunta sa home page.';
+  String get gYWTLogoHint => 'I-activate para pumunta sa home page.';
 
   @override
   String gLearn(Object name) {
@@ -73,8 +73,7 @@ class LangFil extends Lang {
   String get gRepoHint => 'Buksan ang link sa development repo.';
 
   @override
-  String get gEmpathetechGitHint =>
-      'Buksan ang GitHub page para sa Empathetic LLC';
+  String get gYWTGitHint => 'Buksan ang GitHub page para sa YWT';
 
   @override
   String gImageCredit(Object creator) {
@@ -104,88 +103,45 @@ class LangFil extends Lang {
       'Buksan ang GitHub page para sa source code ng screen na ito';
 
   @override
-  String get hsSlogan =>
-      'Bumuo tayo ng mas magandang mundo nang magkasama\nbit x bit';
+  String get hsAnimLabel =>
+      'Animated na logo ng YWT: ang mga titik sa YWT ay nagiging two-dimensional na logo ng orasa';
 
   @override
-  String get hsSloganFix =>
-      'Bumuo tayo ng mas magandang mundo nang magkasama\nunti-unti';
+  String get hsChange => 'Panahon na para sa pagbabago.';
 
   @override
-  String get hsVideoLabel =>
-      'Animated na logo ng Empathetic LLC: ang mga titik sa Empathetic ay nagiging two-dimensional na logo ng orasa';
+  String get hsmIDProblem => 'Pag-alam sa problema';
 
   @override
-  String get hsPeople => 'Ang mga tao ay hindi produkto.';
-
-  @override
-  String get hsWell => 'Well, hindi sila dapat maging ganon.';
-
-  @override
-  String get hsReality =>
-      'Ang nakakalungkot na katotohanan ay ang ating mga pagkakakilanlan, ang ating ';
-
-  @override
-  String get hsData => 'datos';
-
-  @override
-  String get hsGold => ', ang pinakabagong gold rush ng malalaking tech.';
-
-  @override
-  String get hsRush =>
-      'At gustong-gusto talagang magmadali ng malalaking tech.\nDahil sa kanilang walang-katapusang pagmamadali, masyadong mabilis na nagkakatotoo ang mga dystopian sci-fi na pelikula.';
-
-  @override
-  String get hsSlow =>
-      'Panahon na para bumagal.\nPanahon na para magkaroon tayo ng pagmamay-ari sa ating mga digital na sarili.\nPanahon na para sa mas magandang ';
-
-  @override
-  String get hsPlan => 'plano.';
-
-  @override
-  String get msPageTitle => 'Misyon';
-
-  @override
-  String get msSoWe => 'Kaya tayo';
-
-  @override
-  String get msBy => 'Sa pamamagitan ng';
-
-  @override
-  String get msFirst => 'Sa pamamagitan muna ng';
-
-  @override
-  String get msIDProblem => 'Pag-alam sa problema';
-
-  @override
-  String get msIDProblemContent =>
+  String get hsmIDProblemContent =>
       'Ang mga business model na inuuna ang kita ay hindi napapanatili.\n\nSa madaling salita: kung kita ang inuuna, ang mga bagay tulad ng paggawa para sa isang misyon, tamang pagtrato sa mga tao, at responsableng paggamit ng mga mapagkukunan ay nagiging pangalawang prayoridad na lamang.\n\nAt ang kasakimang ito ay hindi nakontrol sa malalaking tech. Ang mga tech giant ay hindi na nakukuntento sa ating pera, at gumagawa sila ng mga produkto para puntiryahin ang ating mga pagkakakilanlan at kontrolin ang ating isipan.';
 
   @override
-  String get msFindSolution => 'Humanap ng solusyon';
+  String get hsmSoWe => 'Kaya tayo';
 
   @override
-  String get msFindSolutionContent =>
+  String get hsmFindSolution => 'Humanap ng solusyon';
+
+  @override
+  String get hsmFindSolutionContent =>
       'Sa kabutihang palad, may mga kahanga-hangang technologist sa buong mundo na nagtutulungan tungo sa mas magandang naratibo.\nIsang naratibo kung saan ang mga service provider at ang mga customer ay may aktibo, malusog, at kapwa kapaki-pakinabang na relasyon.\n\nAng komunidad ng open source.\n\nSa kaibuturan nito, ang open source software ay malayang nakikita ng sinuman. Maraming proyekto ang maaari ring malayang baguhin at ipamahagi muli.\nIto ay software na walang tinatago, ginawa ng mga taong kinikilala na ang mga ibinahaging problema ay nangangailangan ng mga ibinahaging solusyon.\n\nAt sa magandang mundo ng open source software, mayroong isang sub category: ang self-hosting software.\n\nAng self-hosting ay nagbibigay-daan sa atin na gumamit ng anumang hindi ginagamit na computer (kahit ang mga kasing-laki ng bulsa) at i-store ang ating datos doon.\nSa pamamagitan ng self-hosting, makokontrol natin ang ating sariling digital presence, sa halip na ipaubaya ang kontrol sa isang malayong server na pagmamay-ari ng isang walang-empatayang korporasyon.\n\nAt may mga self-hosted na bersyon para sa halos lahat ng bagay! Mula Adobe hanggang Zoom, may mga dedikadong hacktivist na gumagawa ng mga alternatibo na inuuna ang tao kaysa kita.\n\nKaya, paano lumipat mula sa kita-muna/closed source patungo sa open source? Paano sila magsisimulang mag-self-host?\nNangangailangan ito ng maraming oras, enerhiya, at kaalaman.\n\nDiyan kami papasok.';
 
   @override
-  String get msProvideValue => 'Paggawa ng trabaho';
+  String get hsmBy => 'Sa pamamagitan ng';
 
   @override
-  String get msProvideValueContent1 =>
-      'Ang misyon ng Empathetech ay balansehin muli ang kapangyarihan sa tech sa pamamagitan ng paggawa sa self-hosting na mas madaling ma-access.\n\nGagawa kami ng mga app na magbibigay-daan sa sinuman na magkaroon ng sarili nilang digital na pagkakakilanlan.\nBubuo kami ng mga tulay sa pagitan ng komunidad ng open source at ng mga taong walang sapat na oras, enerhiya, o dating kaalaman.\n\nAt hindi ka makakabuo ng mga tulay (o mga app) nang walang matibay na pundasyon! Iyan ang dahilan kung bakit ';
+  String get hsmProvideValue => 'Paggawa ng trabaho';
 
   @override
-  String get msProvideValueContent1Fix =>
-      'Ang misyon ng Empathetic ay balansehin muli ang kapangyarihan sa tech sa pamamagitan ng paggawa sa self-hosting na mas madaling ma-access.\n\nGagawa kami ng mga app na magbibigay-daan sa sinuman na magkaroon ng sarili nilang digital na pagkakakilanlan.\nBubuo kami ng mga tulay sa pagitan ng komunidad ng open source at ng mga taong walang sapat na oras, enerhiya, o dating kaalaman.\n\nAt hindi ka makakabuo ng mga tulay (o mga app) nang walang matibay na pundasyon! Iyan ang dahilan kung bakit ';
+  String get hsmProvideValueContent1 =>
+      'Binabalanse muli ng YWT ang teknolohiya sa pamamagitan ng paggawa sa self-hosting na mas madaling ma-access.\n\nGagawa kami ng mga app na nagbibigay-kakayahan sa sinuman na magkaroon ng sarili nilang digital na pagkakakilanlan.\nGagawa kami ng mga tulay sa pagitan ng open source community at ng mga walang sapat na oras, lakas, o paunang kaalaman.\n\nAt hindi ka makakabuo ng mga tulay (o mga app) nang walang matibay na pundasyon! Iyan ang dahilan kung bakit ang ';
 
   @override
-  String get msProvideValueContent2 =>
-      ' ay umiiral.\nIpinagmamalaki ng Empathetech ang pagtupad sa mga salita sa pamamagitan ng gawa, at ginawa naming open source ang aming accessible UI.\n\nBumuo tayo ng mas magandang mundo nang magkasama, unti-unti.';
+  String get hsmProvideValueContent2 =>
+      ' ay nabuo.\nIpinagmamalaki namin ang pagtupad sa aming mga salita sa pamamagitan ng gawa, at ginawa naming open source ang aming accessible na UI.\n\nBumuo tayo ng mas magandang mundo nang magkasama, unti-unti.';
 
   @override
-  String get msProvideValueContent2Fix =>
-      ' ay umiiral.\nIpinagmamalaki ng Empathetic ang pagtupad sa mga salita sa pamamagitan ng gawa, at ginawa naming open source ang aming accessible UI.\n\nBumuo tayo ng mas magandang mundo nang magkasama, unti-unti.';
+  String get hsmFirst => 'Sa pamamagitan muna ng';
 
   @override
   String get psPageTitle => 'Mga Produkto';
@@ -254,22 +210,14 @@ class LangFil extends Lang {
   String get ouFlutterToo => '...at Flutter...';
 
   @override
-  String get ouHow => 'Paano ito gumagana?';
-
-  @override
-  String get ouEFUIsHow =>
-      'Ang Open UI ay nakabuo sa, at magpapasimula sa iyo sa, ';
-
-  @override
-  String get ouSimplifies =>
-      'Ang EFUI ay isang library para sa pagbuo ng totoong accessible na mga app. Pinapasimple nito...';
+  String get ouSimplifies => 'Pinapasimple nito:';
 
   @override
   String get ouPlatform => 'Availability sa platform';
 
   @override
   String get ouPlatformContent =>
-      'Maaari mong gamitin ang EFUI upang bumuo sa Android, iOS, Linux, macOS, Windows at Web!';
+      'Maaari mong gamitin ang Open UI upang bumuo sa Android, iOS, Linux, macOS, Windows at Web!';
 
   @override
   String get ouResponsive => 'Responsive na disenyo';
@@ -283,11 +231,7 @@ class LangFil extends Lang {
 
   @override
   String get ouScreenContent =>
-      'Sinusuportahan ng mga Empathetech app ang mga user na nangangailangan ng ';
-
-  @override
-  String get ouScreenContentFix =>
-      'Sinusuportahan ng mga Empathetic app ang mga user na nangangailangan ng ';
+      'Sinusuportahan ng mga YWT app ang mga user na nangangailangan ng ';
 
   @override
   String get ouTalkBackHint => 'Buksan ang link sa TalkBack documentation';
@@ -303,39 +247,31 @@ class LangFil extends Lang {
 
   @override
   String get ouCustomContent =>
-      'Ang tanging paraan upang maging totoong accessible sa LAHAT ng customer ay bigyan sila ng kalayaang pumili!\nNagbibigay ang EFUI ng eleganteng UX para sa ganap na kontrol sa anyo ng app.';
+      'Ang tanging paraan upang maging totoong accessible sa LAHAT ng customer ay bigyan sila ng kalayaang pumili!\nNagbibigay ang Open UI ng eleganteng UX para sa ganap na kontrol sa anyo ng app.';
 
   @override
   String get ouInternational => 'Internasyonalisasyon';
 
   @override
   String get ouInternationalContent =>
-      'Ang mga Empathetech app ay naisalin na sa 14 na wika (sa ngayon).\nNagbibigay rin ang EFUI ng imprastraktura para sa walang limitasyong pagsasalin sa hinaharap.';
-
-  @override
-  String get ouInternationalContentFix =>
-      'Ang mga Empathetic app ay naisalin na sa 14 na wika (sa ngayon).\nNagbibigay rin ang EFUI ng imprastraktura para sa walang limitasyong pagsasalin sa hinaharap.';
+      'Ang mga YWT app ay naisalin na sa 14 na wika (sa ngayon).\nNagbibigay rin ang Open UI ng imprastraktura para sa walang limitasyong pagsasalin sa hinaharap.';
 
   @override
   String get ouReliability => 'Pagiging maaasahan';
 
   @override
   String get ouReliabilityContent =>
-      'Ang Empathetech software ay ginawa para tumagal. HINDI ito AI code generation.\nAng mga Empathetech programmer ay mga tao. Ang mga LLM ay mga rubber duck.';
-
-  @override
-  String get ouReliabilityContentFix =>
-      'Ang Empathetic software ay ginawa para tumagal. HINDI ito AI code generation.\nAng mga Empathetic programmer ay mga tao. Ang mga LLM ay mga rubber duck.';
+      'Ang YWT software ay ginawa para tumagal. HINDI ito AI code generation.\nAng mga programmer ay mga tao. Ang mga LLM ay mga rubber duck.';
 
   @override
   String get ouGetStarted => 'Magsimula';
 
   @override
-  String get ouOpenUIIconLabel => 'isang sandbox para sa mga setting.';
+  String get ouIconLabel => 'isang sandbox para sa mga setting.';
 
   @override
-  String get ouEFUITagLine =>
-      'Kapag binuo gamit ang EFUI, ang iyong mga app ay totoong makakaabot sa anumang madla!\n';
+  String get ouTagLine =>
+      'Kapag binuo gamit ang Open UI, ang iyong mga app ay totoong makakaabot sa anumang madla!\n';
 
   @override
   String get sosPromoLabel => 'Isang promotional video para sa Insta SOS.';
@@ -347,10 +283,6 @@ class LangFil extends Lang {
   @override
   String get sosPrivate =>
       'Ang InstaSOS ay walang accounts, cookies, o mga ad.\n';
-
-  @override
-  String get sosPrivateFix =>
-      'Ang Insta-SOS ay walang accounts, cookies, o mga ad.\n';
 
   @override
   String get sosFree => 'Ito ay ganap na libre at ang code ay ';
@@ -374,12 +306,6 @@ class LangFil extends Lang {
   @override
   String get sosWeb =>
       'Isang tiyak, at napakaimpluwensyang paraan upang makatulong ay ang pagbabayad para sa hosting ng InstaSOS online.\n\nMalinaw na ang kinikilingan ng mga may-ari ng app store, at maaaring alisin ang InstaSOS kung/kapag nakakuha ito ng traksyon.\nLaging may opsyon ang mga user ng Android na mag-install nang sarili, ngunit ang tanging mabubuhay na alternatibo para sa mga user ng iOS ay isang web app.\n\nSa kabutihang palad, ang mga Flutter app ay client side compute, kaya\'t mababa lang ang bayarin.\nKailangan lang naming (ninyong) magbayad para sa traffic management.';
-
-  @override
-  String get llDescription => 'Isang Empathetech Android Launcher.';
-
-  @override
-  String get llDescriptionFix => 'Isang Empathetic Android Launcher.';
 
   @override
   String get llInDev =>
@@ -408,75 +334,6 @@ class LangFil extends Lang {
   @override
   String get llModel =>
       'Ipapalabas ang Liminal sa ilalim ng modelong \"magbayad kung magkano ang kaya mo\".\nAng bersyon sa Google Play ay may bayad, dahil ang (magandang) code ay hindi nagsusulat ng kusa.\nAng GitHub repo ay magkakaroon din ng libre at available na APK, dahil ang malusog na ugnayan sa teknolohiya ay hindi dapat eksklusibo lamang para sa mga may sobrang pera.';
-
-  @override
-  String get ssPreview1 => 'Isa pang Empathetech app, ';
-
-  @override
-  String get ssPreview1Fix => 'Isa pang Empathetic app, ';
-
-  @override
-  String get ssPreview2 =>
-      ', ay in-development.\nAng Smoke Signal ay isang social network app na idinisenyo upang ilayo tayo sa ating mga screen.';
-
-  @override
-  String get ssPreview3 =>
-      'Ang Smoke Signal ay magiging fully self-hosted din, salamat sa ';
-
-  @override
-  String get ssAPHint => 'Buksan ang link sa Activity Pub documentation';
-
-  @override
-  String get trWonder =>
-      'Kung nagtataka ka kung paano nasusuportahan ng isang tao ang 14 na wika: responsableng paggamit ng LLM.\nAng proseso ay ang mga sumusunod...';
-
-  @override
-  String get trFirst => '1. Tapusin && ayusin ang (Amerikanong) Ingles na ';
-
-  @override
-  String get trSource => 'pinagmulan';
-
-  @override
-  String get trSecond => '2. Pakiusapan ';
-
-  @override
-  String get trBeNice =>
-      ' nang maayos na isalin ang mga entry.\nIsang wika bawat thread, para hindi sumabog ang konteksto.';
-
-  @override
-  String get trThird => '3. I-audit ang mga resulta gamit ang ';
-
-  @override
-  String get trScript => 'script na ito';
-
-  @override
-  String get trReverse =>
-      'Pabaliktad nitong isinasalin ang lahat ng wika, isa-isang entry. Binabasa ko ang bawat resulta at minamarkahan ang mga nawalan ng orihinal na kahulugan.';
-
-  @override
-  String get trFourth =>
-      '4. Gumamit ng Google Translate (naka-off ang Gemini) para ayusin ang mga sablay, nang isa-isa. At/o...';
-
-  @override
-  String get trFifth =>
-      '5. Kumuha ng mga propesyonal para sa mga mahahalagang bahagi.\nHalimbawa, ang mga karapatan (mga rvX entry) sa ';
-
-  @override
-  String get trBy => ' ay isinalin ng mga ';
-
-  @override
-  String get trHumans => 'tao';
-
-  @override
-  String get trProcess =>
-      'Hindi perpekto ang prosesong ito, pero mas pinaghirapan ito kaysa sa simpleng plug-n-chug ng LLM.\nAt, sa totoo lang, ito lang ang kaya kong tustusan (sa ngayon).';
-
-  @override
-  String get trSpeaking => 'Kaugnay nito, mangyaring isaalang-alang ang ';
-
-  @override
-  String get trEither =>
-      '.\nPera, o oras. Tinatantiya ko na may 100% na posibilidad ng mga (maliliit na) pagkakamali.';
 
   @override
   String get vaIntro =>
@@ -515,7 +372,7 @@ class LangFil extends Lang {
 
   @override
   String get vaPublished =>
-      'Kung nag-publish ka ng app gamit ang EFUI, padalhan kami ng ';
+      'Kung nag-publish ka ng app gamit ang Open UI, padalhan kami ng ';
 
   @override
   String get vaDoNoHarm =>
@@ -528,78 +385,6 @@ class LangFil extends Lang {
   @override
   String get vaDoYourPart =>
       'Kung wala kaming narinig mula sa iyo, ipapalagay naming isang scam ang iyong produkto hanggang mapatunayang hindi.\nKung sa tingin mo ay matindi iyon, mag-isip kang muli. Ang Open UI ay resulta ng maraming taong trabaho, na ibinabahagi nang libre. Ang pagpapadala ng email ay ang pinakamaliit na bagay na magagawa mo.';
-
-  @override
-  String get tsPageTitle => 'Team';
-
-  @override
-  String get tsCore => 'Core';
-
-  @override
-  String get tsTheFounderLabel =>
-      'Isang two-dimensional na profile ni Michael Waldron.';
-
-  @override
-  String get tsTheFounderHint => 'I-activate para padalhan siya ng email.';
-
-  @override
-  String get tsTheFounder => 'Ang Founder';
-
-  @override
-  String get tsBoardMember => 'Board Member';
-
-  @override
-  String get tsYou => 'Ikaw?';
-
-  @override
-  String get tsMirrorLabel =>
-      'Isang itim na bilog na may kislap, upang gayahin ang isang salamin.';
-
-  @override
-  String get tsMirrorTip => 'I-activate para padalhan kami ng email';
-
-  @override
-  String get tsMirrorHint => 'Magtanong tungkol sa pagsali sa team.';
-
-  @override
-  String get tsNonProfit =>
-      'Ang tanging hadlang upang maging isang ganap na nonprofit ang Empathetech ay ang bilang ng mga tao.\nKung naniniwala ka sa misyong inilatag ko, at may ilang oras sa isang linggo na mailalaan, mangyaring makipag-ugnayan!\n\nIto ay magsisimula bilang fully volunteer. Hindi pa rin ako sumusuweldo (sa ngayon).\nNgunit, hindi ko ito gagawin kung wala rin akong magandang plano para diyan.\n\nHinihikayat ang lahat ng interesado na makipag-ugnayan, ngunit may partikular na pangangailangan para sa mga taong may karanasan sa:\nsocial media management, fundraising, at paggawa ng proposal para sa grant.';
-
-  @override
-  String get tsWild => 'Sa labas';
-
-  @override
-  String get ts2025BoothLabel =>
-      'Ang Empathetech booth para sa Open Sauce 2025.';
-
-  @override
-  String get ts2025BoothHint =>
-      'I-activate para buksan ang page ng mga exhibit ng Open Sauce.';
-
-  @override
-  String get ts2025BoothDescription =>
-      'Naging napakasaya ng Open Sauce (2025)!\nMahirap bumalik sa normal na buhay, matapos mapalibutan ng napakaraming mababait, determinado, matatalino, at malikhaing tao.\nSalamat muli kung dumaan ka sa Empathetech booth, at para sa susunod na taon!';
-
-  @override
-  String get ts2025BoothDescriptionFix =>
-      'Naging napakasaya ng Open Sauce (2025)!\nMahirap bumalik sa normal na buhay, matapos mapalibutan ng napakaraming mababait, determinado, matatalino, at malikhaing tao.\nSalamat muli kung dumaan ka sa Empathetic booth, at para sa susunod na taon!';
-
-  @override
-  String get tsCommunity => 'Komunidad';
-
-  @override
-  String get tsFreelance => 'Freelance';
-
-  @override
-  String get tsVideoProduction => 'Video Production';
-
-  @override
-  String get tsTranslators => 'Mga Tagasalin';
-
-  @override
-  String tsProfile(Object name) {
-    return 'Profile ni $name';
-  }
 
   @override
   String get fahJoin => 'Sumali sa Fold';
@@ -617,8 +402,7 @@ class LangFil extends Lang {
   String get fahIntro2 => ' Folding@home team!';
 
   @override
-  String get fahTeamHint =>
-      'Buksan ang page ng Empathetic folding at home team';
+  String get fahTeamHint => 'Buksan ang page ng YWT folding at home team';
 
   @override
   String get fahWhats => 'Ano ang ';
@@ -638,11 +422,7 @@ class LangFil extends Lang {
 
   @override
   String get csEveryBit =>
-      'Ang bawat bit na ibinibigay mo sa Empathetech ay kumukuha ng isang byte mula sa malalaking tech.';
-
-  @override
-  String get csEveryBitFix =>
-      'Ang bawat bit na ibinibigay mo sa Empathetic ay kumukuha ng isang byte mula sa malalaking tech.';
+      'Bawat piraso para sa atin ay isang byte ang layo mula sa malalaking teknolohiya.';
 
   @override
   String get csTime => 'Oras';
@@ -658,7 +438,7 @@ class LangFil extends Lang {
 
   @override
   String csOpenLink(Object page) {
-    return 'Buksan ang link sa $page ng Empathetic';
+    return 'Buksan ang link sa $page ng YWT';
   }
 
   @override

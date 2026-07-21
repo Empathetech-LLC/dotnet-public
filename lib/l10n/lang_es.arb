@@ -1,8 +1,8 @@
 {
   "@@locale": "es",
 
-  "gEmpathLogoLabel": "un reloj de arena bidimensional.",
-  "gEmpathLogoHint": "Activar para ir a la página de inicio.",
+  "gYWTLogoLabel": "un reloj de arena bidimensional.",
+  "gYWTLogoHint": "Activar para ir a la página de inicio.",
 
   "gLearn": "Conozca más sobre {name}",
   "gHomeHint": "Abrir la página de inicio",
@@ -22,7 +22,7 @@
   "gIconLabel": "El icono de {app}: ",
   "gDownloadHint": "Descargar {app} para {platform}.",
   "gRepoHint": "Abre un enlace al repositorio de desarrollo.",
-  "gEmpathetechGitHint": "Abrir la página de GitHub de Empathetic LLC",
+  "gYWTGitHint": "Abrir la página de GitHub de YWT",
 
   "gImageCredit": "Crédito de la imagen: {creator}",
 
@@ -36,41 +36,24 @@
 
 
 
-  "hsSlogan": "Construyamos juntos un mundo mejor\nbit x bit",
-  "hsSloganFix": "Construyamos juntos un mundo mejor\npoco a poco",
-  "hsVideoLabel": "Logotipo animado de Empathetic LLC: las letras de Empathetic se transforman en el logotipo bidimensional del reloj de arena",
-
-  "hsPeople": "Las personas no son productos.",
-  "hsWell": "Bueno, no deberían serlo.",
-
-  "hsReality": "La desafortunada realidad es que nuestras identidades, nuestros ",
-  "hsData": "datos",
-  "hsGold": ", son la última fiebre del oro de las grandes tecnológicas.",
+  "hsAnimLabel": "Logotipo animado de YWT: las letras de YWT se transforman en el logotipo bidimensional del reloj de arena",
+  "hsChange": "Es hora de cambiar",
   
-  "hsRush": "Y a las grandes tecnológicas les encanta correr.\nGracias a su carrera sin fin, las películas distópicas de ciencia ficción se están haciendo realidad demasiado rápido.",
-  "hsSlow": "Es hora de reducir la velocidad.\nEs hora de que tengamos la propiedad de nuestro yo digital.\nEs hora de un mejor ",
-  "hsPlan": "plan.",
 
-
-
-  "msPageTitle": "Misión",
   
-  "msSoWe": "Así que nosotros",
-  "msBy": "Por",
-  "msFirst": "Por primera vez",
+  "hsmIDProblem": "Identificación del problema",
+  "hsmIDProblemContent": "Los modelos de negocio que dan prioridad al beneficio no son sostenibles.\n\nPor definición, cosas como trabajar por una misión, tratar bien a las personas y consumir recursos de forma responsable pasan a un segundo plano.\n\nLos gigantes tecnológicos no se conforman con llevarse nuestro dinero. Ahora construyen productos para captar nuestras identidades y monopolizar nuestras mentes. Y nadie les dice nada.",
+  "hsmSoWe": "Así que nosotros",
   
-  "msIDProblem": "Identificación del problema",
-  "msIDProblemContent": "Los modelos de negocio que dan prioridad al beneficio no son sostenibles.\n\nPor definición, cosas como trabajar por una misión, tratar bien a las personas y consumir recursos de forma responsable pasan a un segundo plano.\n\nLos gigantes tecnológicos no se conforman con llevarse nuestro dinero. Ahora construyen productos para captar nuestras identidades y monopolizar nuestras mentes. Y nadie les dice nada.",
+  "hsmFindSolution": "Encuentra una solución",
+  "hsmFindSolutionContent": "Afortunadamente, hay tecnólogos increíbles en todo el mundo que trabajan juntos para lograr una mejor narrativa.\nUna en la que los proveedores de servicios y los clientes tengan una relación activa, saludable y mutuamente beneficiosa.\n\nLa comunidad de código abierto.\n\nEn esencia, el software de código abierto está disponible de forma gratuita para que cualquiera lo vea. Muchos proyectos también se pueden modificar y redistribuir libremente.\nEs un software que no tiene nada que ocultar, creado por gente que reconoce que los problemas compartidos requieren soluciones compartidas.\n\nY en el maravilloso mundo del software de código abierto, existe una subcategoría: el software de alojamiento propio.\n\nEl alojamiento propio nos permite tomar cualquier computadora que no esté en uso (incluso las de bolsillo) y almacenar allí nuestros datos.\nAl alojarnos nosotros mismos, podemos controlar nuestra propia presencia digital, en lugar de ceder el control a un servidor lejano, propiedad de una corporación poco empática.\n\n¡Y existen versiones alojadas por nosotros mismos de casi todo! Desde Adobe hasta Zoom, hay hacktivistas apasionados que crean alternativas que priorizan a las personas por sobre las ganancias.\n\nEntonces, ¿cómo se hace la transición de un código cerrado que prioriza las ganancias a un código abierto? ¿Cómo empiezan a alojar sus propios archivos?\nRequiere mucho tiempo, energía y conocimientos previos.\n\nAhí es donde entramos nosotros.",
+  "hsmBy": "Por",
   
-  "msFindSolution": "Encuentra una solución",
-  "msFindSolutionContent": "Afortunadamente, hay tecnólogos increíbles en todo el mundo que trabajan juntos para lograr una mejor narrativa.\nUna en la que los proveedores de servicios y los clientes tengan una relación activa, saludable y mutuamente beneficiosa.\n\nLa comunidad de código abierto.\n\nEn esencia, el software de código abierto está disponible de forma gratuita para que cualquiera lo vea. Muchos proyectos también se pueden modificar y redistribuir libremente.\nEs un software que no tiene nada que ocultar, creado por gente que reconoce que los problemas compartidos requieren soluciones compartidas.\n\nY en el maravilloso mundo del software de código abierto, existe una subcategoría: el software de alojamiento propio.\n\nEl alojamiento propio nos permite tomar cualquier computadora que no esté en uso (incluso las de bolsillo) y almacenar allí nuestros datos.\nAl alojarnos nosotros mismos, podemos controlar nuestra propia presencia digital, en lugar de ceder el control a un servidor lejano, propiedad de una corporación poco empática.\n\n¡Y existen versiones alojadas por nosotros mismos de casi todo! Desde Adobe hasta Zoom, hay hacktivistas apasionados que crean alternativas que priorizan a las personas por sobre las ganancias.\n\nEntonces, ¿cómo se hace la transición de un código cerrado que prioriza las ganancias a un código abierto? ¿Cómo empiezan a alojar sus propios archivos?\nRequiere mucho tiempo, energía y conocimientos previos.\n\nAhí es donde entramos nosotros.",
+  "hsmProvideValue": "Haciendo el trabajo",
+  "hsmProvideValueContent1": "YWT está reequilibrando la tecnología al hacer que el autohospedaje sea más accesible.\n\nConstruiremos aplicaciones que permitan a cualquiera ser dueño de su identidad digital.\nConstruiremos puentes entre la comunidad de código abierto y aquellos sin el tiempo, la energía o los conocimientos previos requeridos.\n\n¡Y no se pueden construir puentes (ni aplicaciones) sin una base sólida! Es por eso que ",
+  "hsmProvideValueContent2": " existe.\nNos enorgullece respaldar las palabras con acciones y hemos hecho que nuestra interfaz de usuario accesible sea de código abierto.\n\nConstruyamos juntos un mundo mejor, bit a bit.",
+  "hsmFirst": "Por primera vez",
   
-  "msProvideValue": "Haciendo el trabajo",
-  "msProvideValueContent1": "La misión de Empathetech es reequilibrar el poder en la tecnología al hacer que el autohospedaje sea más accesible.\n\nCrearemos aplicaciones que permitan a cualquier persona ser dueña de su identidad digital.\nConstruiremos puentes entre la comunidad de código abierto y aquellos que no tienen el tiempo, la energía o el conocimiento previo necesarios.\n\n¡Y no se pueden construir puentes (o aplicaciones) sin una base sólida! Es por eso que ",
-  "msProvideValueContent1Fix": "La misión de Empathetic es reequilibrar el poder en la tecnología al hacer que el autohospedaje sea más accesible.\n\nCrearemos aplicaciones que permitan a cualquier persona ser dueña de su identidad digital.\nConstruiremos puentes entre la comunidad de código abierto y aquellos que no tienen el tiempo, la energía o el conocimiento previo necesarios.\n\n¡Y no se pueden construir puentes (o aplicaciones) sin una base sólida! Es por eso que ",
-  "msProvideValueContent2": " existe.\nEmpathetech se enorgullece de cumplir las palabras con acciones y ha hecho que nuestra interfaz de usuario accesible sea de código abierto.\n\nConstruyamos un mundo mejor juntos, poco a poco.",
-  "msProvideValueContent2Fix": " existe.\nEmpathetic se enorgullece de cumplir las palabras con acciones y ha hecho que nuestra interfaz de usuario accesible sea de código abierto.\n\nConstruyamos un mundo mejor juntos, poco a poco.",
-
 
 
   "psPageTitle": "Productos",
@@ -101,38 +84,33 @@
   "ouRequirements": "Los únicos requisitos son una conexión a Internet y una idea.",
   "ouFlutterToo": "...y Flutter...",
 
-  "ouHow": "¿Cómo funciona?",
-  "ouEFUIsHow": "Open UI te ayuda a empezar a utilizar, ",
-  "ouSimplifies": "EFUI es una biblioteca para crear aplicaciones verdaderamente accesibles. Se simplifica...",
+  "ouSimplifies": "Simplifica:",
   
   "ouPlatform": "Disponibilidad de plataforma",
-  "ouPlatformContent": "¡Puedes usar EFUI para crear apps de Android, iOS, Linux, macOS, Windows y Web!",
+  "ouPlatformContent": "¡Puedes usar Open UI para crear apps de Android, iOS, Linux, macOS, Windows y Web!",
   
   "ouResponsive": "Diseño adaptativo",
   "ouResponsiveContent": "Para verlo en acción, ¡interactúa con la ventana que estás usando ahora mismo!",
 
   "ouScreen": "Soporte para lectores de pantalla",
-  "ouScreenContent": "Las apps de Empathetech ayudan a los usuarios que lo necesitan ",
-  "ouScreenContentFix": "Las apps de Empathetic ayudan a los usuarios que lo necesitan ",
+  "ouScreenContent": "Las apps de YWT ayudan a los usuarios que lo necesitan ",
   "ouTalkBackHint": "Abrir un enlace a la documentación de TalkBack",
   "ouAnd": " y ",
   "ouVoiceOverHint": "Abrir un enlace a la documentación de VoiceOver",
   
   "ouCustom": "Personalización del usuario",
-  "ouCustomContent": "¡La única forma de ser verdaderamente accesible para TODOS los clientes es brindarles la libertad de elección!\nEFUI proporciona una UX elegante para un control total sobre la apariencia de una aplicación.",
+  "ouCustomContent": "¡La única forma de ser verdaderamente accesible para TODOS los clientes es brindarles la libertad de elección!\nOpen UI proporciona una UX elegante para un control total sobre la apariencia de una aplicación.",
   
   "ouInternational": "Internacionalización",
-  "ouInternationalContent": "Las aplicaciones de Empathetech se han traducido a 14 idiomas (hasta el momento).\nEFUI también proporciona la infraestructura para futuras traducciones ilimitadas.",
-  "ouInternationalContentFix": "Las aplicaciones de Empathetic se han traducido a 14 idiomas (hasta el momento).\nEFUI también proporciona la infraestructura para futuras traducciones ilimitadas.",
-    
+  "ouInternationalContent": "Las aplicaciones de YWT se han traducido a 14 idiomas (hasta el momento).\nOpen UI también proporciona la infraestructura para futuras traducciones ilimitadas.",
+  
   "ouReliability": "Fiabilidad",
-  "ouReliabilityContent": "El software de Empathetech está diseñado para durar. Esto NO es generación de código de IA.\nLas programadoras Empathetech son personas. Los LLM son como patos de goma.",
-  "ouReliabilityContentFix": "El software de Empathetic está diseñado para durar. Esto NO es generación de código de IA.\nLas programadoras Empathetic son personas. Los LLM son como patos de goma.",
+  "ouReliabilityContent": "El software de YWT está diseñado para durar. Esto NO es generación de código de IA.\nLas programadoras son personas. Los LLM son como patos de goma.",
 
   "ouGetStarted": "Velo en directo",
-  "ouOpenUIIconLabel": "un configuración sandbox.",
+  "ouIconLabel": "un configuración sandbox.",
 
-  "ouEFUITagLine": "¡Cuando se construye con EFUI, tus apps pueden llegar a cualquier audiencia!\n",
+  "ouTagLine": "¡Cuando se construye con Open UI, tus apps pueden llegar a cualquier audiencia!\n",
 
 
 
@@ -140,7 +118,6 @@
 
   "sosDescription": "Una cámara, una baliza SOS y una lista de tus derechos, todo en un solo lugar.\nEstá disponible en 14 idiomas y es compatible con lectores de pantalla.",
   "sosPrivate": "InstaSOS no tiene cuentas, cookies ni anuncios.\n",
-  "sosPrivateFix": "Insta-SOS no tiene cuentas, cookies ni anuncios.\n",
   "sosFree": "Es completamente gratuito y el código es de ",
   "sosOpenSource": "código abierto",
   "sosConsider": "Por favor, considere ",
@@ -150,10 +127,7 @@
   "sosIconLabel": "Un icono de notificación de color fuerte.",
   "sosWeb": "Una forma específica y de gran impacto de contribuir sería asumir el costo de alojar InstaSOS en línea.\n\nLos dueños de las tiendas de aplicaciones han dejado claras sus lealtades, e InstaSOS podría ser eliminada si/cuando gane tracción.\nLos usuarios de Android siempre tendrán la opción de instalarla manualmente, pero la única alternativa viable para los usuarios de iOS sería una aplicación web.\n\nAfortunadamente, el procesamiento de las aplicaciones hechas en Flutter se realiza del lado del cliente, por lo que la factura sería baja.\nSolo tendríamos (tendrías) que pagar por la gestión del tráfico.",
 
-
-
-  "llDescription": "Un lanzador de Android Empathetech.",
-  "llDescriptionFix": "Un lanzador de Android empático.",
+  
 
   "llInDev": "Liminal está en desarrollo.\nSu diseño se inclina hacia el minimalismo, porque nuestros teléfonos deberían ser herramientas para que las usemos, no al revés.",
   "llBut": "Pero es un lanzador minimalista creado con ",
@@ -164,32 +138,6 @@
   "llFrogAndPigs": "Una pantalla de inicio de muestra con una foto de la fauna de Portland.",
 
   "llModel": "Liminal se lanzará bajo un modelo de \"paga lo que puedas\".\nLa versión de Google Play será de pago, porque el (buen) código no se escribe solo.\nEl repositorio de GitHub también tendrá un APK disponible de forma gratuita, porque una relación saludable con la tecnología no debería ser exclusiva de quienes tienen ingresos disponibles.",
-  
-
-
-  "ssPreview1": "La próxima aplicación de Empathetech, ",
-  "ssPreview1Fix": "La próxima aplicación de Empathetic, ",
-  "ssPreview2": ", está en desarrollo.\n es una aplicación de red social diseñada para mantenernos alejados de las pantallas.\n",
-  "ssPreview3": "Smoke Signal también estará alojada completamente por el usuario, gracias a ",
-  "ssAPHint": "Abrir un enlace a la documentación de Activity Pub",
-
-
-
-  "trWonder": "Si te preguntas cómo un equipo de una sola persona da soporte a 14 idiomas: usando LLMs de manera responsable.\nEl proceso es el siguiente...",
-  "trFirst": "1. Finalizar && organizar el inglés (estadounidense) ",
-  "trSource": "de origen",
-  "trSecond": "2. Pedir ",
-  "trBeNice": " amablemente que traduzca las entradas.\nUn idioma por hilo, para que el contexto no explote.",
-  "trThird": "3. Auditar los resultados con ",
-  "trScript": "este script",
-  "trReverse": "Traduce a la inversa todos los idiomas, una entrada a la vez. Leo cada resultado y marco los que perdieron el significado original.",
-  "trFourth": "4. Usar el Traductor de Google (con Gemini desactivado) para corregir los fallos, uno por uno. Y/o...",
-  "trFifth": "5. Contratar profesionales para las partes importantes.\nPor ejemplo, los derechos (entradas rvX) en ",
-  "trBy": " fueron traducidos por ",
-  "trHumans": "humanos",
-  "trProcess": "Es un proceso imperfecto, pero requiere mucho más esfuerzo que simplemente usar un LLM en automático.\nY, sinceramente, es lo que puedo permitirme (por ahora).",
-  "trSpeaking": "Hablando de eso, por favor considera ",
-  "trEither": ".\nDinero o tiempo. Calcularía que hay un 100% de probabilidad de que haya errores (menores).",
 
 
 
@@ -210,36 +158,6 @@
   "vaPrivateFree": "Si tu aplicación no está disponible públicamente, ¡no te preocupes!\nPero si personas que no conoces pueden descargarla, avísanos para que podamos verificarla.",
   "vaDoYourPart": "Si no hemos tenido noticias tuyas, asumiremos que tu producto es una estafa hasta que se demuestre lo contrario.\nSi crees que eso es exagerado, piénsalo bien. Open UI son años de trabajo, compartidos libremente. Enviar un correo electrónico es lo mínimo que puedes hacer.",
 
-  
-
-  "tsPageTitle": "Equipo",
-  
-  "tsCore": "Núcleo",
-  "tsTheFounderLabel": "Perfil bidimensional de Michael Waldron.",
-  "tsTheFounderHint": "Activar para enviarle un E-mail.",
-  "tsTheFounder": "Fundador",
-  "tsBoardMember": "Miembro de la Junta",
-  "tsYou": "¿Tú?",
-  "tsMirrorLabel": "Un círculo negro con un brillo, para imitar un espejo.",
-  "tsMirrorTip": "Activa para enviarnos un correo electrónico",
-  "tsMirrorHint": "Pregunta sobre cómo unirte al equipo.",
-  "tsNonProfit": "Lo único que impide que Empathetech se convierta en una organización sin fines de lucro adecuada es el número de personas.\nSi crees en la misión que he expuesto y tienes unas horas libres a la semana, ¡ponte en contacto!\n\nSerá completamente voluntario al principio. Yo tampoco estoy recibiendo pago (todavía).\nPero no haría esto si no tuviera un buen plan para eso también.\n\nSe anima a todos los interesados ​​a que se pongan en contacto, pero existe una necesidad particular de personas con experiencia en:\ngestión de redes sociales, recaudación de fondos, y redacción de subvenciones.",
-
-  "tsWild": "En la naturaleza",
-  "ts2025BoothLabel": "El stand de Empathetech en Open Sauce 2025.",
-  "ts2025BoothHint": "Activar para abrir la página de los expositores de Open Sauce.",
-  "ts2025BoothDescription": "¡Open Sauce (2025) fue increíble!\nFue difícil volver a la vida normal, después de estar rodeado de tantas personas amables, motivadas, inteligentes y creativas.\n¡Gracias de nuevo si pasaste por el stand de Empathetech, y hasta el próximo año!",
-  "ts2025BoothDescriptionFix": "¡Open Sauce (2025) fue increíble!\nFue difícil volver a la vida normal, después de estar rodeado de tantas personas amables, motivadas, inteligentes y creativas.\n¡Gracias de nuevo si pasaste por el stand de Empathetic, y hasta el próximo año!",
-
-  "tsCommunity": "Comunidad",
-
-  "tsFreelance": "Independiente",
-
-  "tsVideoProduction": "Producción de video",
-
-  "tsTranslators": "Traductores",
-  "tsProfile": "Perfil de {name}",
-
 
 
   "fahJoin": "Únete a Fold",
@@ -249,7 +167,7 @@
   
   "fahIntro1": "¡Únete al ",
   "fahIntro2": " equipo de Folding@home!",
-  "fahTeamHint": "Abre la página del equipo Empathetic folding at home",
+  "fahTeamHint": "Abre la página del equipo YWT folding at home",
   
   "fahWhats": "¿Qué es ",
   "fahName": "Folding@home?",
@@ -261,15 +179,14 @@
 
   "csPageTitle": "Contribuir",
   
-  "csEveryBit": "Cada bit que das a Empathetech le quitas un byte a los gigantes tecnológicos.",
-  "csEveryBitFix": "Cada bit que das a Empathetic le quitas un byte a los gigantes tecnológicos.",
+  "csEveryBit": "Cada bit que das a nos le quitas un byte a los gigantes tecnológicos.",
   
   "csTime": "Tiempo",
   "csBecome": " acerca de convertirse en un ",
   "csGit": "colaborador de GitHub",
   
   "csMoney": "Dinero",
-  "csOpenLink": "Abre un enlace al {page} de Empathetic",
+  "csOpenLink": "Abre un enlace al {page} de YWT",
   
   "csPower": "Poder",
   

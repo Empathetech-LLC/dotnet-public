@@ -1,27 +1,30 @@
 /* dotnet
- * Copyright (c) 2026 Empathetech LLC. All rights reserved.
+ * Copyright (c) 2022 YWT (Empathetech LLC). All rights reserved.
  * See LICENSE for distribution and usage details.
  */
 
 import '../screens/export.dart';
 
 import 'package:flutter/material.dart';
-import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
+import 'package:open_ui/open_ui.dart';
 
-const Widget updater = EzUpdaterFAB(
-  appVersion: '7.0.2',
-  versionSource:
-      'https://raw.githubusercontent.com/Empathetech-LLC/dotnet-public/refs/heads/main/APP_VERSION',
-  isWeb: true,
-);
+EzUpdaterFAB updater(EzCP config) => EzUpdaterFAB(
+      config,
+      appVersion: '8.0.0',
+      versionSource:
+          'https://raw.githubusercontent.com/YWT-LLC/web-mirror/refs/heads/main/APP_VERSION',
+      isWeb: true,
+    );
 
 class SettingsFAB extends StatelessWidget {
-  const SettingsFAB({super.key});
+  final EzCP config;
+
+  const SettingsFAB(this.config, {super.key});
 
   @override
   Widget build(BuildContext context) => EzFABLink(
         uri: Uri.parse(settingsURL),
-        tooltip: EzConfig.l10n.ssNavHint,
-        child: EzIcon(Icons.settings),
+        tooltip: config.ezL10n.ssNavHint,
+        child: EzIcon(config, Icons.settings),
       );
 }

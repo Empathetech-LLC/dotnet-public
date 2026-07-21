@@ -1,17 +1,19 @@
 /* dotnet
- * Copyright (c) 2026 Empathetech LLC. All rights reserved.
+ * Copyright (c) 2022 YWT (Empathetech LLC). All rights reserved.
  * See LICENSE for distribution and usage details.
  */
 
 import '../utils/export.dart';
-import 'package:efui_bios/efui_bios.dart';
+import 'package:oui_bios/oui_bios.dart';
 
+import 'package:open_ui/open_ui.dart';
 import 'package:flutter/material.dart';
-import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
 
 class FaHBanner extends StatelessWidget {
+  final EzCP config;
+
   /// Fold proteins as Ez as folding clothes
-  const FaHBanner({super.key});
+  const FaHBanner(this.config, {super.key});
 
   @override
   Widget build(BuildContext context) => EzCol(
@@ -20,75 +22,86 @@ class FaHBanner extends StatelessWidget {
           // Description && links //
 
           EzRowCol.sym(
+            config,
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               // Icon
               Container(
-                constraints: EzBox.sym(ezImageSize(context)),
+                constraints: EzBox.sym(ezImageSize(config, context: context)),
                 child: EzImageLink(
+                  config,
                   image: fahImage,
                   fit: BoxFit.contain,
                   url: Uri.parse(faHLink),
-                  label: l10n.gIconLabel('Folding at Home') + l10n.fahIconLabel,
-                  hint: l10n.fahIconHint,
+                  label: l10n(config).gIconLabel('Folding at Home') + l10n(config).fahIconLabel,
+                  hint: l10n(config).fahIconHint,
                   tooltip: faHLink,
                 ),
               ),
-              const EzSwapSpacer(),
+              config.swapSpacer,
 
               // External links && info
-              EzTextBackground(EzCol(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Text(
-                    l10n.fahJoin,
-                    style: EzConfig.styles.titleLarge,
-                    textAlign: TextAlign.center,
-                  ),
-                  EzConfig.margin,
-                  EzRichText(<InlineSpan>[
-                    EzPlainText(
-                      text: l10n.fahIntro1,
-                      style: EzConfig.styles.bodyLarge,
-                    ),
-                    EzInlineLink(
-                      empathetech,
-                      style: EzConfig.styles.bodyLarge,
-                      textAlign: TextAlign.center,
-                      url: Uri.parse(empathFoldingTeam),
-                      hint: l10n.fahTeamHint,
-                      richLabel: empathetic,
-                      tooltip: empathFoldingTeam,
-                    ),
-                    EzPlainText(
-                      text: l10n.fahIntro2,
-                      style: EzConfig.styles.bodyLarge,
-                    ),
-                  ], textAlign: TextAlign.center, textBackground: false),
-                  EzRichText(<InlineSpan>[
-                    EzPlainText(
-                      text: l10n.fahWhats,
-                      style: EzConfig.styles.bodyLarge,
-                    ),
-                    EzInlineLink(
-                      l10n.fahName,
-                      style: EzConfig.styles.bodyLarge,
-                      textAlign: TextAlign.center,
-                      url: Uri.parse(aboutFaHLink),
-                      hint: l10n.fahNameHint,
-                      tooltip: aboutFaHLink,
-                    ),
-                  ], textAlign: TextAlign.center, textBackground: false),
-                ],
-              )),
+              EzTextBackground(config,
+                  text: EzCol(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Text(
+                        l10n(config).fahJoin,
+                        style: config.titleStyle,
+                        textAlign: TextAlign.center,
+                      ),
+                      config.margin,
+                      EzRichText(config,
+                          children: <InlineSpan>[
+                            EzPlainText(
+                              text: l10n(config).fahIntro1,
+                              style: config.bodyStyle,
+                            ),
+                            EzInlineLink(
+                              config,
+                              text: ywt,
+                              style: config.bodyStyle,
+                              textAlign: TextAlign.center,
+                              url: Uri.parse(ywtFoldingTeam),
+                              hint: l10n(config).fahTeamHint,
+                              tooltip: ywtFoldingTeam,
+                            ),
+                            EzPlainText(
+                              text: l10n(config).fahIntro2,
+                              style: config.bodyStyle,
+                            ),
+                          ],
+                          textAlign: TextAlign.center,
+                          textBackground: false),
+                      EzRichText(config,
+                          children: <InlineSpan>[
+                            EzPlainText(
+                              text: l10n(config).fahWhats,
+                              style: config.bodyStyle,
+                            ),
+                            EzInlineLink(
+                              config,
+                              text: l10n(config).fahName,
+                              style: config.bodyStyle,
+                              textAlign: TextAlign.center,
+                              url: Uri.parse(aboutFaHLink),
+                              hint: l10n(config).fahNameHint,
+                              tooltip: aboutFaHLink,
+                            ),
+                          ],
+                          textAlign: TextAlign.center,
+                          textBackground: false),
+                    ],
+                  )),
             ],
           ),
-          EzConfig.spacer,
+          config.spacer,
 
           // "Live" stats //
           EzText(
-            l10n.fahStats,
-            style: EzConfig.styles.bodyLarge,
+            config,
+            text: l10n(config).fahStats,
+            style: config.bodyStyle,
             textAlign: TextAlign.center,
           ),
         ],

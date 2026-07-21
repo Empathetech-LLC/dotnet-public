@@ -9,10 +9,10 @@ class LangSw extends Lang {
   LangSw([String locale = 'sw']) : super(locale);
 
   @override
-  String get gEmpathLogoLabel => 'Kipima saa cha mchanga cha pande mbili.';
+  String get gYWTLogoLabel => 'Kipima saa cha mchanga cha pande mbili.';
 
   @override
-  String get gEmpathLogoHint => 'Washa ili uende kwenye ukurasa wa mwanzo.';
+  String get gYWTLogoHint => 'Washa ili uende kwenye ukurasa wa mwanzo.';
 
   @override
   String gLearn(Object name) {
@@ -73,8 +73,7 @@ class LangSw extends Lang {
   String get gRepoHint => 'Fungua kiungo cha hifadhi ya uundaji.';
 
   @override
-  String get gEmpathetechGitHint =>
-      'Fungua ukurasa wa GitHub wa Empathetic LLC';
+  String get gYWTGitHint => 'Fungua ukurasa wa GitHub wa YWT';
 
   @override
   String gImageCredit(Object creator) {
@@ -104,86 +103,45 @@ class LangSw extends Lang {
       'Fungua ukurasa wa GitHub kwa ajili ya msimbo wa skrini hii';
 
   @override
-  String get hsSlogan => 'Tujenge ulimwengu bora pamoja\nbiti x biti';
+  String get hsAnimLabel =>
+      'Nembo ya uhuishaji ya YWT: herufi katika YWT zinabadilika na kuwa nembo ya kipima saa cha mchanga cha pande mbili';
 
   @override
-  String get hsSloganFix => 'Tujenge ulimwengu bora pamoja\nkidogo kidogo';
+  String get hsChange => 'Ni wakati wa mabadiliko.';
 
   @override
-  String get hsVideoLabel =>
-      'Nembo ya uhuishaji ya Empathetic LLC: herufi katika Empathetic zinabadilika na kuwa nembo ya kipima saa cha mchanga cha pande mbili';
+  String get hsmIDProblem => 'Kutambua tatizo';
 
   @override
-  String get hsPeople => 'Watu si bidhaa.';
-
-  @override
-  String get hsWell => 'Kweli, hawapaswi kuwa hivyo.';
-
-  @override
-  String get hsReality => 'Ukweli wa kusikitisha ni kwamba utambulisho wetu, ';
-
-  @override
-  String get hsData => 'data zetu';
-
-  @override
-  String get hsGold =>
-      ', ndiyo biashara mpya inayoingiza faida kubwa kwa kampuni kubwa za teknolojia.';
-
-  @override
-  String get hsRush =>
-      'Na kampuni kubwa za teknolojia kwa hakika zinapenda kuharakisha.\nKutokana na mbio zao zisizoisha, filamu za kutisha za sayansi ya kubuni zinatimia haraka mno.';
-
-  @override
-  String get hsSlow =>
-      'Ni wakati wa kupunguza kasi.\nNi wakati wa kuwa na umiliki wa nafsi zetu za kidijitali.\nNi wakati wa kuwa na ';
-
-  @override
-  String get hsPlan => 'mpango bora.';
-
-  @override
-  String get msPageTitle => 'Dhamira';
-
-  @override
-  String get msSoWe => 'Hivyo basi sisi';
-
-  @override
-  String get msBy => 'Kwa';
-
-  @override
-  String get msFirst => 'Kwa kuanza na';
-
-  @override
-  String get msIDProblem => 'Kutambua tatizo';
-
-  @override
-  String get msIDProblemContent =>
+  String get hsmIDProblemContent =>
       'Mifumo ya biashara inayotanguliza faida si endelevu.\n\nKimsingi: ikiwa faida itatangulizwa, mambo kama vile kufanyia kazi dhamira, kuwatendea watu haki, na matumizi ya rasilimali kwa njia inayofaa huwa mambo ya ziada tu.\n\nNa uchoyo huu umekithiri katika kampuni kubwa za teknolojia. Miamba ya teknolojia hawaridhishwi tena na pesa zetu, na wanaunda bidhaa ili kulenga utambulisho wetu na kutawala akili zetu.';
 
   @override
-  String get msFindSolution => 'Kutafuta suluhu';
+  String get hsmSoWe => 'Hivyo basi sisi';
 
   @override
-  String get msFindSolutionContent =>
+  String get hsmFindSolution => 'Kutafuta suluhu';
+
+  @override
+  String get hsmFindSolutionContent =>
       'Kwa bahati nzuri, kuna wataalamu wa teknolojia wa ajabu duniani kote wanaofanya kazi pamoja ili kujenga mwelekeo bora zaidi.\nAmbapo watoa huduma na wateja wana uhusiano hai, thabiti, na wenye manufaa kwa pande zote mbili.\n\nJumuiya ya programu huria (open source).\n\nKimsingi, programu huria inapatikana bila malipo kwa mtu yeyote kuangalia. Miradi mingi pia inaweza kurekebishwa na kusambazwa tena bila malipo.\nNi programu isiyo na siri yoyote, inayoundwa na watu wanaotambua kuwa matatizo ya pamoja yanahitaji masuluhisho ya pamoja.\n\nNa katika ulimwengu mzuri wa programu huria, kuna aina ndogo: programu za kujihifadhi (self-hosting).\n\nKujihifadhi kunaturuhusu kuchukua kompyuta yoyote isiyotumika (hata za ukubwa wa mfukoni) na kuhifadhi data zetu hapo.\nKwa kujihifadhi, tunaweza kudhibiti uwepo wetu wa kidijitali, badala ya kutoa udhibiti kwa seva iliyo mbali, inayomilikiwa na shirika lisilo na huruma.\n\nNa kuna matoleo ya kujihifadhi kwa karibu kila kitu! Kuanzia Adobe hadi Zoom, kuna wanaharakati wa teknolojia wenye shauku wanaounda mbadala zinazowatanguliza watu badala ya faida.\n\nHivyo basi, mtu anafanyaje mabadiliko kutoka kwenye programu inayotanguliza faida/isiyo huria na kwenda kwenye programu huria? Wanaanzaje kujihifadhi?\nInachukua muda mwingi, nguvu, na ujuzi wa awali.\n\nHapo ndipo tunapoingia.';
 
   @override
-  String get msProvideValue => 'Kufanya kazi';
+  String get hsmBy => 'Kwa';
 
   @override
-  String get msProvideValueContent1 =>
-      'Dhamira ya Empathetech ni kusawazisha nguvu katika teknolojia kwa kufanya upangishaji binafsi (self-hosting) kufikika zaidi.\n\nTutaunda programu zinazomwezesha mtu yeyote kumiliki utambulisho wake wa kidijitali.\nTutajenga madaraja kati ya jumuiya ya programu huria na wale wasio na muda, nguvu, au ujuzi wa awali unaohitajika.\n\nNa huwezi kujenga madaraja (au programu) bila msingi imara! Ndiyo maana ';
+  String get hsmProvideValue => 'Kufanya kazi';
 
   @override
-  String get msProvideValueContent1Fix =>
-      'Dhamira ya Empathetic ni kusawazisha nguvu katika teknolojia kwa kufanya upangishaji binafsi (self-hosting) kufikika zaidi.\n\nTutaunda programu zinazomwezesha mtu yeyote kumiliki utambulisho wake wa kidijitali.\nTutajenga madaraja kati ya jumuiya ya programu huria na wale wasio na muda, nguvu, au ujuzi wa awali unaohitajika.\n\nNa huwezi kujenga madaraja (au programu) bila msingi imara! Ndiyo maana ';
+  String get hsmProvideValueContent1 =>
+      'YWT inaleta usawa katika teknolojia kwa kufanya upangishaji-kibinafsi kufikika kwa urahisi zaidi.\n\nTutaunda programu zinazomwezesha yeyote kumiliki utambulisho wao wa kidijitali.\nTutajenga madaraja kati ya jamii ya chanzo huria na wale ambao hawana muda, nguvu, au ujuzi wa awali unaohitajika.\n\nNa huwezi kujenga madaraja (au programu) bila msingi imara! Ndiyo maana ';
 
   @override
-  String get msProvideValueContent2 =>
-      ' ipo.\nEmpathetech inajivunia kuweka maneno katika vitendo, na imefanya kiolesura chetu (UI) kinachofikika kwa wote kuwa programu huria.\n\nTujenge ulimwengu bora pamoja, kidogo kidogo.';
+  String get hsmProvideValueContent2 =>
+      ' ipo.\nTunajivunia kutimiza maneno yetu kwa vitendo, na tumefanya kiolesura chetu kinachofikika kwa urahisi kuwa cha chanzo huria.\n\nTuijenge dunia bora pamoja, hatua kwa hatua.';
 
   @override
-  String get msProvideValueContent2Fix =>
-      ' ipo.\nEmpathetic inajivunia kuweka maneno katika vitendo, na imefanya kiolesura chetu (UI) kinachofikika kwa wote kuwa programu huria.\n\nTujenge ulimwengu bora pamoja, kidogo kidogo.';
+  String get hsmFirst => 'Kwa kuanza na';
 
   @override
   String get psPageTitle => 'Bidhaa';
@@ -252,21 +210,14 @@ class LangSw extends Lang {
   String get ouFlutterToo => '...na Flutter...';
 
   @override
-  String get ouHow => 'Inafanyaje kazi?';
-
-  @override
-  String get ouEFUIsHow => 'Open UI imejengwa juu ya, na inakufanya uanze na, ';
-
-  @override
-  String get ouSimplifies =>
-      'EFUI ni maktaba (library) ya kuunda programu zinazofikika kwa wote kweli. Inarahisisha...';
+  String get ouSimplifies => 'Inafanya iwe rahisi:';
 
   @override
   String get ouPlatform => 'Upatikanaji kwenye mifumo';
 
   @override
   String get ouPlatformContent =>
-      'Unaweza kutumia EFUI kuunda kwenye Android, iOS, Linux, macOS, Windows na Wavuti!';
+      'Unaweza kutumia Open UI kuunda kwenye Android, iOS, Linux, macOS, Windows na Wavuti!';
 
   @override
   String get ouResponsive => 'Muundo unaobadilika';
@@ -280,11 +231,7 @@ class LangSw extends Lang {
 
   @override
   String get ouScreenContent =>
-      'Programu za Empathetech zinasaidia watumiaji wanaohitaji ';
-
-  @override
-  String get ouScreenContentFix =>
-      'Programu za Empathetic zinasaidia watumiaji wanaohitaji ';
+      'Programu za YWT zinasaidia watumiaji wanaohitaji ';
 
   @override
   String get ouTalkBackHint => 'Fungua kiungo cha nyaraka za TalkBack';
@@ -300,40 +247,32 @@ class LangSw extends Lang {
 
   @override
   String get ouCustomContent =>
-      'Njia pekee ya kufikika kikweli na wateja WOTE ni kuwawezesha kwa uhuru wa kuchagua!\nEFUI hutoa muundo bora wa mtumiaji (UX) kwa udhibiti kamili wa mwonekano wa programu.';
+      'Njia pekee ya kufikika kikweli na wateja WOTE ni kuwawezesha kwa uhuru wa kuchagua!\nOpen UI hutoa muundo bora wa mtumiaji (UX) kwa udhibiti kamili wa mwonekano wa programu.';
 
   @override
   String get ouInternational => 'Uboreshaji wa kimataifa';
 
   @override
   String get ouInternationalContent =>
-      'Programu za Empathetech zimetafsiriwa kwa lugha 14 (kufikia sasa).\nEFUI pia inatoa miundombinu ya tafsiri zisizo na kikomo za baadaye.';
-
-  @override
-  String get ouInternationalContentFix =>
-      'Programu za Empathetic zimetafsiriwa kwa lugha 14 (kufikia sasa).\nEFUI pia inatoa miundombinu ya tafsiri zisizo na kikomo za baadaye.';
+      'Programu za YWT zimetafsiriwa kwa lugha 14 (kufikia sasa).\nOpen UI pia inatoa miundombinu ya tafsiri zisizo na kikomo za baadaye.';
 
   @override
   String get ouReliability => 'Utegemezi';
 
   @override
   String get ouReliabilityContent =>
-      'Programu za Empathetech zimeundwa kudumu. Hii SIO uundaji wa msimbo kwa kutumia AI.\nWaandaaji wa programu wa Empathetech ni watu. LLM ni mabata wa mpira (rubber ducks).';
-
-  @override
-  String get ouReliabilityContentFix =>
-      'Programu za Empathetic zimeundwa kudumu. Hii SIO uundaji wa msimbo kwa kutumia AI.\nWaandaaji wa programu wa Empathetic ni watu. LLM ni mabata wa mpira.';
+      'Programu za YWT zimeundwa kudumu. Hii SIO uundaji wa msimbo kwa kutumia AI.\nWaandaaji wa programu wa ni watu. LLM ni mabata wa mpira (rubber ducks).';
 
   @override
   String get ouGetStarted => 'Anza';
 
   @override
-  String get ouOpenUIIconLabel =>
+  String get ouIconLabel =>
       'kikasha mchanga cha mipangilio (settings sandbox).';
 
   @override
-  String get ouEFUITagLine =>
-      'Zinapoundwa kwa EFUI, programu zako zinaweza kuwafikia watu wa aina yoyote kweli!\n';
+  String get ouTagLine =>
+      'Zinapoundwa kwa Open UI, programu zako zinaweza kuwafikia watu wa aina yoyote kweli!\n';
 
   @override
   String get sosPromoLabel => 'Video ya matangazo ya Insta SOS.';
@@ -344,10 +283,6 @@ class LangSw extends Lang {
 
   @override
   String get sosPrivate => 'InstaSOS haina akaunti, vidakuzi, au matangazo.\n';
-
-  @override
-  String get sosPrivateFix =>
-      'Insta-SOS haina akaunti, vidakuzi, au matangazo.\n';
 
   @override
   String get sosFree => 'Ni bure kabisa na msimbo huu ni ';
@@ -370,14 +305,6 @@ class LangSw extends Lang {
   @override
   String get sosWeb =>
       'Njia moja hususa, na yenye athari kubwa ya kuchangia itakuwa kulipia gharama za kuweka InstaSOS mtandaoni.\n\nWamiliki wa maduka ya programu wameweka wazi utiifu wao, na InstaSOS inaweza kuondolewa ikiwa/wakati itakapopata umaarufu.\nWatumiaji wa Android kila wakati watakuwa na chaguo la kusakinisha wenyewe, lakini mbadala pekee unaofaa kwa watumiaji wa iOS itakuwa ni programu ya wavuti.\n\nTunashukuru, programu za Flutter hufanya kazi upande wa mteja, kwa hivyo bili itakuwa ndogo.\nSisi (Wewe) tutahitaji tu kulipia usimamizi wa trafiki ya mtandao.';
-
-  @override
-  String get llDescription =>
-      'Kianzishi (Launcher) cha Android cha Empathetech.';
-
-  @override
-  String get llDescriptionFix =>
-      'Kianzishi (Launcher) cha Android cha Empathetic.';
 
   @override
   String get llInDev =>
@@ -405,75 +332,6 @@ class LangSw extends Lang {
   @override
   String get llModel =>
       'Liminal itatolewa chini ya mfumo wa \"lipa unachoweza\".\nToleo la Google Play litauzwa, kwa sababu msimbo (mzuri) haujiandiki wenyewe.\nHifadhi ya GitHub pia itakuwa na APK inayopatikana bila malipo, kwa sababu uhusiano mzuri na teknolojia haupaswi kuwa tu kwa wale walio na kipato cha ziada.';
-
-  @override
-  String get ssPreview1 => 'Programu nyingine ya Empathetech, ';
-
-  @override
-  String get ssPreview1Fix => 'Programu nyingine ya Empathetic, ';
-
-  @override
-  String get ssPreview2 =>
-      ', inaundwa.\nSmoke Signal ni programu ya mtandao wa kijamii iliyoundwa ili kutuweka mbali na skrini zetu.';
-
-  @override
-  String get ssPreview3 =>
-      'Smoke Signal pia itakuwa ya kujihifadhi kikamilifu, kutokana na ';
-
-  @override
-  String get ssAPHint => 'Fungua kiungo cha nyaraka za Activity Pub';
-
-  @override
-  String get trWonder =>
-      'Ikiwa unajiuliza jinsi timu ya mtu mmoja inavyohudumia lugha 14: Kutumia LLM kwa uwajibikaji.\nMchakato ni kama ifuatavyo...';
-
-  @override
-  String get trFirst => '1. Kamilisha && panga Kiingereza (cha Marekani) cha ';
-
-  @override
-  String get trSource => 'chanzo';
-
-  @override
-  String get trSecond => '2. Omba ';
-
-  @override
-  String get trBeNice =>
-      ' kwa hisani kutafsiri maingizo.\nLugha moja kwa kila uzi, ili muktadha usivurugike.';
-
-  @override
-  String get trThird => '3. Kagua matokeo ukitumia ';
-
-  @override
-  String get trScript => 'skripti hii';
-
-  @override
-  String get trReverse =>
-      'Inatafsiri kinyume lugha zote, ingizo moja kwa wakati. Ninasoma kila tokeo na kuweka alama kwa yale yaliyopoteza maana ya asili.';
-
-  @override
-  String get trFourth =>
-      '4. Tumia Google Translate (Gemini ikiwa imezimwa) kurekebisha makosa, moja kwa wakati. Na/au...';
-
-  @override
-  String get trFifth =>
-      '5. Ajiri wataalamu kwa sehemu muhimu.\nKwa mfano, haki (maingizo ya rvX) katika ';
-
-  @override
-  String get trBy => ' zilitafsiriwa na ';
-
-  @override
-  String get trHumans => 'binadamu';
-
-  @override
-  String get trProcess =>
-      'Ni mchakato usio kamilifu, lakini inahitaji juhudi kubwa zaidi kuliko kutumia LLM tu bila kufikiri.\nNa, kusema kweli, ndicho ninachoweza kumudu (kwa sasa).';
-
-  @override
-  String get trSpeaking => 'Kuhusiana na hilo, tafadhali fikiria ';
-
-  @override
-  String get trEither =>
-      '.\nPesa, au muda. Ninakadiria asilimia 100 ya uwezekano wa makosa (madogo).';
 
   @override
   String get vaIntro =>
@@ -512,7 +370,7 @@ class LangSw extends Lang {
 
   @override
   String get vaPublished =>
-      'Ikiwa umechapisha programu kwa kutumia EFUI, tutumie ';
+      'Ikiwa umechapisha programu kwa kutumia Open UI, tutumie ';
 
   @override
   String get vaDoNoHarm =>
@@ -525,75 +383,6 @@ class LangSw extends Lang {
   @override
   String get vaDoYourPart =>
       'Ikiwa hutasikia kutoka kwetu, tutachukulia kuwa bidhaa yako ni tapeli hadi ithibitishwe vinginevyo.\nIkiwa unafikiri hilo ni kali, fikiria tena. Open UI ni kazi ya miaka mingi, iliyoshirikiwa bila malipo. Kutuma barua pepe ni jambo dogo sana unaloweza kufanya.';
-
-  @override
-  String get tsPageTitle => 'Timu';
-
-  @override
-  String get tsCore => 'Msingi';
-
-  @override
-  String get tsTheFounderLabel => 'Wasifu wa pande mbili wa Michael Waldron.';
-
-  @override
-  String get tsTheFounderHint => 'Washa ili kumtumia barua pepe.';
-
-  @override
-  String get tsTheFounder => 'Mwanzilishi';
-
-  @override
-  String get tsBoardMember => 'Mjumbe wa Bodi';
-
-  @override
-  String get tsYou => 'Wewe?';
-
-  @override
-  String get tsMirrorLabel => 'Mduara mweusi unaong\'aa, ili kuiga kioo.';
-
-  @override
-  String get tsMirrorTip => 'Washa ili kututumia barua pepe';
-
-  @override
-  String get tsMirrorHint => 'Uliza kuhusu kujiunga na timu.';
-
-  @override
-  String get tsNonProfit =>
-      'Kitu pekee kinachozuia Empathetech kuwa shirika kamili lisilo la faida ni idadi ya watu.\nIkiwa unaamini katika dhamira niliyoelezea, na una saa chache kwa wiki za kujitolea, tafadhali wasiliana nasi!\n\nItakuwa ni ya kujitolea kikamilifu kwa kuanzia. Silipwi (bado) pia.\nLakini, nisingekuwa ninafanya hivi kama nisingekuwa na mpango mzuri wa hilo pia.\n\nWote wanaovutiwa wanahimizwa kuwasiliana, lakini kuna uhitaji maalum kwa watu wenye uzoefu katika:\nusimamizi wa mitandao ya kijamii, kuchangisha fedha, na kuandika mapendekezo ya ruzuku.';
-
-  @override
-  String get tsWild => 'Huko nje';
-
-  @override
-  String get ts2025BoothLabel => 'Kibanda cha Empathetech cha Open Sauce 2025.';
-
-  @override
-  String get ts2025BoothHint =>
-      'Washa ili kufungua ukurasa wa maonyesho wa Open Sauce.';
-
-  @override
-  String get ts2025BoothDescription =>
-      'Open Sauce (2025) ilikuwa ya kufurahisha sana!\nIlikuwa vigumu kurudi kwenye maisha ya kawaida, baada ya kuzungukwa na watu wengi wazuri, wenye msukumo, wenye akili, na wabunifu.\nAsante tena ikiwa ulipitia kwenye kibanda cha Empathetech, na tunatazamia kwa hamu mwaka ujao!';
-
-  @override
-  String get ts2025BoothDescriptionFix =>
-      'Open Sauce (2025) ilikuwa ya kufurahisha sana!\nIlikuwa vigumu kurudi kwenye maisha ya kawaida, baada ya kuzungukwa na watu wengi wazuri, wenye msukumo, wenye akili, na wabunifu.\nAsante tena ikiwa ulipitia kwenye kibanda cha Empathetic, na tunatazamia kwa hamu mwaka ujao!';
-
-  @override
-  String get tsCommunity => 'Jumuiya';
-
-  @override
-  String get tsFreelance => 'Wafanyakazi Huru';
-
-  @override
-  String get tsVideoProduction => 'Uzalishaji wa Video';
-
-  @override
-  String get tsTranslators => 'Watafsiri';
-
-  @override
-  String tsProfile(Object name) {
-    return 'Wasifu wa $name';
-  }
 
   @override
   String get fahJoin => 'Jiunge na Kundi';
@@ -611,8 +400,7 @@ class LangSw extends Lang {
   String get fahIntro2 => ' timu ya Folding@home!';
 
   @override
-  String get fahTeamHint =>
-      'Fungua ukurasa wa timu ya Empathetic wa folding at home';
+  String get fahTeamHint => 'Fungua ukurasa wa timu ya YWT wa folding at home';
 
   @override
   String get fahWhats => 'Nini maana ya ';
@@ -632,11 +420,7 @@ class LangSw extends Lang {
 
   @override
   String get csEveryBit =>
-      'Kila biti unayotoa kwa Empathetech huondoa baiti kutoka kwa makampuni makubwa ya teknolojia.';
-
-  @override
-  String get csEveryBitFix =>
-      'Kila biti unayotoa kwa Empathetic huondoa baiti kutoka kwa makampuni makubwa ya teknolojia.';
+      'Kila biti unayotoa kwa sisi huondoa baiti kutoka kwa makampuni makubwa ya teknolojia.';
 
   @override
   String get csTime => 'Muda';
@@ -652,7 +436,7 @@ class LangSw extends Lang {
 
   @override
   String csOpenLink(Object page) {
-    return 'Fungua kiungo cha $page ya Empathetic';
+    return 'Fungua kiungo cha $page ya YWT';
   }
 
   @override

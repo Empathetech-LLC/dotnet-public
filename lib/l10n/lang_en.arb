@@ -1,8 +1,8 @@
 {
   "@@locale": "en",
 
-  "gEmpathLogoLabel": "a two dimensional hourglass.",
-  "gEmpathLogoHint": "Activate to go to the home page.",
+  "gYWTLogoLabel": "a two dimensional hourglass.",
+  "gYWTLogoHint": "Activate to go to the home page.",
 
   "gLearn": "Learn about {name}",
   "gHomeHint": "Open the home page",
@@ -22,7 +22,7 @@
   "gIconLabel": "The icon for {app}: ",
   "gDownloadHint": "Download {app} for {platform}.",
   "gRepoHint": "Open a link to the development repo.",
-  "gEmpathetechGitHint": "Open the GitHub page for Empathetic LLC",
+  "gYWTGitHint": "Open the GitHub page for YWT",
 
   "gImageCredit": "Image credit: {creator}",
 
@@ -36,40 +36,23 @@
 
 
 
-  "hsSlogan": "Let's build a better world together\nbit x bit",
-  "hsSloganFix": "Let's build a better world together\nbit by bit",
-  "hsVideoLabel": "Empathetic LLC animated logo: the letters in Empathetic transform into the two dimensional hourglass logo",
-
-  "hsPeople": "People aren't products.",
-  "hsWell": "Well, they shouldn't be.",
-
-  "hsReality": "The unfortunate reality is our identities, our ",
-  "hsData": "data",
-  "hsGold": ", is big tech's latest gold rush.",
-
-  "hsRush": "And big tech sure does love to rush.\nThanks to their never-ending sprint, the dystopian sci-fi movies are coming true far too quickly.",
-  "hsSlow": "It's time to slow down.\nIt's time we had ownership of our digital selves.\nIt's time for a better ",
-  "hsPlan": "plan.",
-
-
-
-  "msPageTitle": "Mission",
+  "hsAnimLabel": "YWT animated logo: the letters YWT transform into a two dimensional hourglass",
+  "hsChange": "It's time for change.",
   
-  "msSoWe": "So we",
-  "msBy": "By",
-  "msFirst": "By first",
+
+
+  "hsmIDProblem": "Identifying the problem",
+  "hsmIDProblemContent": "Profit first business models aren't sustainable.\n\nBy definition: if profit comes first, then things like working towards a mission, treating people right, and responsible consumption of resources all become afterthoughts.\n\nAnd this greed has gone unchecked in big tech. The tech giants have grown dissatisfied with our money, and are building products to target our identities and monopolize our minds.",
+  "hsmSoWe": "So we",
   
-  "msIDProblem": "Identifying the problem",
-  "msIDProblemContent": "Profit first business models aren't sustainable.\n\nBy definition: if profit comes first, then things like working towards a mission, treating people right, and responsible consumption of resources all become afterthoughts.\n\nAnd this greed has gone unchecked in big tech. The tech giants have grown dissatisfied with our money, and are building products to target our identities and monopolize our minds.",
+  "hsmFindSolution": "Find a solution",
+  "hsmFindSolutionContent": "Fortunately, there are amazing technologists all over the world working together towards a better narrative.\nOne where the service providers and the customers have an active, healthy, and mutually beneficial relationship.\n\nThe open source community.\n\nAt its core, open source software is freely available for anyone to view. Many projects can also be freely modified and redistributed.\nIt's software with nothing to hide, built by folks who recognize shared problems require shared solutions.\n\nAnd in the wonderful world of open source software, there lies a sub category: self-hosting software.\n\nSelf-hosting lets us take any not-in-use computer (pocket sized ones too) and store our data there.\nBy self-hosting, we can control our own digital presence, rather than sign away control to some far away server, owned by an un-empathetic corporation.\n\nAnd there are self-hosted versions of just about everything! From Adobe to Zoom, there are passionate hacktivists building alternatives that put people over profits.\n\nSo, how does one make the switch from profit first/closed source to open source? How do they start self-hosting?\nIt takes a lot of time, energy, and prior knowledge.\n\nThat's where we come in.",
+  "hsmBy": "By",
   
-  "msFindSolution": "Find a solution",
-  "msFindSolutionContent": "Fortunately, there are amazing technologists all over the world working together towards a better narrative.\nOne where the service providers and the customers have an active, healthy, and mutually beneficial relationship.\n\nThe open source community.\n\nAt its core, open source software is freely available for anyone to view. Many projects can also be freely modified and redistributed.\nIt's software with nothing to hide, built by folks who recognize shared problems require shared solutions.\n\nAnd in the wonderful world of open source software, there lies a sub category: self-hosting software.\n\nSelf-hosting lets us take any not-in-use computer (pocket sized ones too) and store our data there.\nBy self-hosting, we can control our own digital presence, rather than sign away control to some far away server, owned by an un-empathetic corporation.\n\nAnd there are self-hosted versions of just about everything! From Adobe to Zoom, there are passionate hacktivists building alternatives that put people over profits.\n\nSo, how does one make the switch from profit first/closed source to open source? How do they start self-hosting?\nIt takes a lot of time, energy, and prior knowledge.\n\nThat's where we come in.",
-  
-  "msProvideValue": "Doing the work",
-  "msProvideValueContent1": "The Empathetech mission is to re-balance the power in tech by making self-hosting more accessible.\n\nWe will build apps that enable anyone to own their digital identity.\nWe will build bridges between the open source community and those without the required time, energy, or prior knowledge.\n\nAnd you can't build bridges (or apps) without a strong foundation! That's why ",
-  "msProvideValueContent1Fix": "The Empathetic mission is to re-balance the power in tech by making self-hosting more accessible.\n\nWe will build apps that enable anyone to own their digital identity.\nWe will build bridges between the open source community and those without the required time, energy, or prior knowledge.\n\nAnd you can't build bridges (or apps) without a strong foundation! That's why ",
-  "msProvideValueContent2": " exists.\nEmpathetech takes pride in meeting words with actions, and have made our accessible UI open source.\n\nLet's build a better world together, bit by bit.",
-  "msProvideValueContent2Fix": " exists.\nEmpathetic takes pride in meeting words with actions, and have made our accessible UI open source.\n\nLet's build a better world together, bit by bit.",
+  "hsmProvideValue": "Doing the work",
+  "hsmProvideValueContent1": "YWT is re-balancing tech by making self-hosting more accessible.\n\nWe will build apps that enable anyone to own their digital identity.\nWe will build bridges between the open source community and those without the required time, energy, or prior knowledge.\n\nAnd you can't build bridges (or apps) without a strong foundation! That's why ",
+  "hsmProvideValueContent2": " exists.\nWe take pride in meeting words with actions, and have made our accessible UI open source.\n\nLet's build a better world together, bit by bit.",
+  "hsmFirst": "By first",
 
 
   
@@ -101,38 +84,33 @@
   "ouRequirements": "The only requirements are an internet connection and an idea.",
   "ouFlutterToo": "...and Flutter...",
 
-  "ouHow": "How does it work?",
-  "ouEFUIsHow": "Open UI is built upon, and get's you started with, ",
-  "ouSimplifies": "EFUI is a library for building truly accessible apps. It simplifies...",
-  
+  "ouSimplifies": "It simplifies:",
+ 
   "ouPlatform": "Platform availability",
-  "ouPlatformContent": "You can use EFUI to create on Android, iOS, Linux, macOS, Windows and Web!",
+  "ouPlatformContent": "You can use Open UI to create on Android, iOS, Linux, macOS, Windows and Web!",
   
   "ouResponsive": "Responsive design",
   "ouResponsiveContent": "To see it in action, play with the window you're using right now!",
 
   "ouScreen": "Screen reader support",
-  "ouScreenContent": "Empathetech apps support users who need ",
-  "ouScreenContentFix": "Empathetic apps support users who need ",
+  "ouScreenContent": "YWT apps support users who need ",
   "ouTalkBackHint": "Open a link to TalkBack documentation",
   "ouAnd": " and ",
   "ouVoiceOverHint": "Open a link to VoiceOver documentation",
   
   "ouCustom": "User customization",
-  "ouCustomContent": "The only way to be truly accessible to ALL customers is to empower them with the freedom of choice!\nEFUI provides an elegant UX for full control over an app's appearance.",
+  "ouCustomContent": "The only way to be truly accessible to ALL customers is to empower them with the freedom of choice!\nOpen UI provides an elegant UX for full control over an app's appearance.",
   
   "ouInternational": "Internationalization",
-  "ouInternationalContent": "Empathetech apps have been translated to 14 languages (so far).\nEFUI also provides the infrastructure for unlimited future translations.",
-  "ouInternationalContentFix": "Empathetic apps have been translated to 14 languages (so far).\nEFUI also provides the infrastructure for unlimited future translations.",
+  "ouInternationalContent": "YWT apps have been translated to 14 languages (so far).\nOpen UI also provides the infrastructure for unlimited future translations.",
 
   "ouReliability": "Reliability",
-  "ouReliabilityContent": "Empathetech software is built to last. This is NOT AI code generation.\nEmpathetech programmers are people. LLMs are rubber ducks.",
-  "ouReliabilityContentFix": "Empathetic software is built to last. This is NOT AI code generation.\nEmpathetic programmers are people. LLMs are rubber ducks.",
+  "ouReliabilityContent": "YWT software is built to last. This is NOT AI code generation.\nProgrammers are people. LLMs are rubber ducks.",
     
   "ouGetStarted": "Get started",
-  "ouOpenUIIconLabel": "a settings sandbox.",
+  "ouIconLabel": "a settings sandbox.",
 
-  "ouEFUITagLine": "When built with EFUI, your apps can truly reach any audience!\n",
+  "ouTagLine": "When built with Open UI, your apps can truly reach any audience!\n",
 
 
 
@@ -140,7 +118,6 @@
 
   "sosDescription": "A camera, SOS beacon, and list of your rights all in one place.\nIt's available in 14 languages and supports screen readers.",
   "sosPrivate": "InstaSOS has no accounts, cookies, or ads.\n",
-  "sosPrivateFix": "Insta-SOS has no accounts, cookies, or ads.\n",
   "sosFree": "It's completely free and the code is ",
   "sosOpenSource": "open source",
   "sosConsider": "Please consider ",
@@ -152,9 +129,6 @@
 
 
 
-  "llDescription": "An Empathetech Android Launcher.",
-  "llDescriptionFix": "An Empathetic Android Launcher.",
-
   "llInDev": "Liminal is in development.\nIt's design leans towards minimalism, because our phones should be tools for us to use, not the other way around.",
   "llBut": "But, it's a minimalist launcher built with ",
   "llWhimsy": ".\nSo, your home screen will be free of clutter and distractions, AND be limitlessly customizable. With a bit of whimsy to boot.",
@@ -164,32 +138,6 @@
   "llFrogAndPigs": "A sample home screen with a picture of Portland's wildlife.",
 
   "llModel": "Liminal will be released under a \"pay what you can\" model.\nThe Google Play version will be paid, because (good) code doesn't write itself.\nThe GitHub repo will also have a freely available APK, because a healthy relationship with technology shouldn't be exclusive to those with expendable income.",
-
-  
-
-  "ssPreview1": "Another Empathetech app, ",
-  "ssPreview1Fix": "Another Empathetic app, ",
-  "ssPreview2": ", is in development.\nSmoke Signal is a social network app designed to keep us off our screens.",
-  "ssPreview3": "Smoke Signal will also be fully self-hosted, thanks to ",
-  "ssAPHint": "Open a link to Activity Pub documentation",
-
-
-
-  "trWonder": "If you're wondering how a team of one supports 14 languages: LLM-ing responsibly.\nThe process is as follows...",
-  "trFirst": "1. Finalize && organize the (American) English ",
-  "trSource": "source",
-  "trSecond": "2. Ask ",
-  "trBeNice": " nicely to translate the entries.\nOne language per thread, so the context doesn't explode.",
-  "trThird": "3. Audit the results with ",
-  "trScript": "this script",
-  "trReverse": "It reverse translates all languages, one entry at a time. I read every result and flag those that lost the original meaning.",
-  "trFourth": "4. Use Google Translate (Gemini off) to fix failures, one at a time. And/or...",
-  "trFifth": "5. Hire professionals for the important bits.\nFor example, the rights (rvX entries) in ",
-  "trBy": " were translated by ",
-  "trHumans": "humans",
-  "trProcess": "It's an imperfect process, but it's a lot more effort than an LLM plug-n-chug.\nAnd, honestly, it's what I can afford (for now).",
-  "trSpeaking": "Speaking of which, please consider ",
-  "trEither": ".\nMoney, or time. I'd guesstimate a 100% chance of (minor) mistakes.",
   
 
 
@@ -205,40 +153,10 @@
   "vaKnown": "Known scams",
   "vaSoGood": "So far, so good!\nPlease don't be the first :)",
 
-  "vaPublished": "If you've published an app using EFUI, send us ",
+  "vaPublished": "If you've published an app using Open UI, send us ",
   "vaDoNoHarm": ".\nWe don't have to love the app, and we're not publicly reviewing it.\nWe'll check the code, and as long as it doesn't cause harm, it'll be verified.",
   "vaPrivateFree": "If your app isn't publicly available, don't worry!\nBut if people you don't know can download it, let us know so we can verify it.",
   "vaDoYourPart": "If we haven't heard from you, we'll assume your product is a scam until proven otherwise.\nIf you think that's intense, think again. Open UI is years of work, shared freely. Sending an email is the least you can do.",
-
-  
-
-  "tsPageTitle": "Team",
-  
-  "tsCore": "Core",
-  "tsTheFounderLabel": "A two dimensional profile of Michael Waldron.",
-  "tsTheFounderHint": "Activate to send him an email.",
-  "tsTheFounder": "The Founder",
-  "tsBoardMember": "Board Member",
-  "tsYou": "You?",
-  "tsMirrorLabel": "A black circle with a shimmer, to mimic a mirror.",
-  "tsMirrorTip": "Activate to send us an email",
-  "tsMirrorHint": "Ask about joining the team.",
-  "tsNonProfit": "The only thing in the way of Empathetech becoming a proper nonprofit is the head count.\nIf you believe in the mission I've laid out, and have a few hours a week to spare, please reach out!\n\nIt will be fully volunteer to start. I'm not getting paid (yet) either.\nBut, I wouldn't be doing this if I didn't have a good plan for that too.\n\nAll who are interested are encouraged to reach out, but there is a particular need for folks with experience in:\nsocial media management, fundraising, and grant writing.",
-
-  "tsWild": "In the wild",
-  "ts2025BoothLabel": "The Empathetech booth for Open Sauce 2025.",
-  "ts2025BoothHint": "Activate to open the Open Sauce exhibits page.",
-  "ts2025BoothDescription": "Open Sauce (2025) was a blast!\nIt was difficult to return to normal life, after being surrounded by so many kind, driven, intelligent, and creative people.\nThanks again if you stopped by the Empathetech booth, and here's to next year!",
-  "ts2025BoothDescriptionFix": "Open Sauce (2025) was a blast!\nIt was difficult to return to normal life, after being surrounded by so many kind, driven, intelligent, and creative people.\nThanks again if you stopped by the Empathetic booth, and here's to next year!",
-
-  "tsCommunity": "Community",
-
-  "tsFreelance": "Freelance",
-
-  "tsVideoProduction": "Video Production",
-
-  "tsTranslators": "Translators",
-  "tsProfile": "{name}'s profile",
 
 
 
@@ -249,7 +167,7 @@
   
   "fahIntro1": "Join the ",
   "fahIntro2": " Folding@home team!",
-  "fahTeamHint": "Open the Empathetic folding at home team page",
+  "fahTeamHint": "Open the YWT folding at home team page",
   
   "fahWhats": "What's ",
   "fahName": "Folding@home?",
@@ -261,15 +179,14 @@
 
   "csPageTitle": "Contribute",
   
-  "csEveryBit": "Every bit you give to Empathetech takes a byte out of big tech.",
-  "csEveryBitFix": "Every bit you give to Empathetic takes a byte out of big tech.",
+  "csEveryBit": "Every bit to us is a byte out of big tech.",
   
   "csTime": "Time",
   "csBecome": " about becoming a ",
   "csGit": "GitHub contributor",
   
   "csMoney": "Money",
-  "csOpenLink": "Open a link to Empathetic's {page}",
+  "csOpenLink": "Open a link to YWT's {page}",
   
   "csPower": "Power",
 

@@ -123,17 +123,17 @@ abstract class Lang {
     Locale('zh', 'CN')
   ];
 
-  /// No description provided for @gEmpathLogoLabel.
+  /// No description provided for @gYWTLogoLabel.
   ///
   /// In en, this message translates to:
   /// **'a two dimensional hourglass.'**
-  String get gEmpathLogoLabel;
+  String get gYWTLogoLabel;
 
-  /// No description provided for @gEmpathLogoHint.
+  /// No description provided for @gYWTLogoHint.
   ///
   /// In en, this message translates to:
   /// **'Activate to go to the home page.'**
-  String get gEmpathLogoHint;
+  String get gYWTLogoHint;
 
   /// No description provided for @gLearn.
   ///
@@ -231,11 +231,11 @@ abstract class Lang {
   /// **'Open a link to the development repo.'**
   String get gRepoHint;
 
-  /// No description provided for @gEmpathetechGitHint.
+  /// No description provided for @gYWTGitHint.
   ///
   /// In en, this message translates to:
-  /// **'Open the GitHub page for Empathetic LLC'**
-  String get gEmpathetechGitHint;
+  /// **'Open the GitHub page for YWT'**
+  String get gYWTGitHint;
 
   /// No description provided for @gImageCredit.
   ///
@@ -279,149 +279,77 @@ abstract class Lang {
   /// **'Open the GitHub page for this screen\'s source code'**
   String get gDontChaHint;
 
-  /// No description provided for @hsSlogan.
+  /// No description provided for @hsAnimLabel.
   ///
   /// In en, this message translates to:
-  /// **'Let\'s build a better world together\nbit x bit'**
-  String get hsSlogan;
+  /// **'YWT animated logo: the letters YWT transform into a two dimensional hourglass'**
+  String get hsAnimLabel;
 
-  /// No description provided for @hsSloganFix.
+  /// No description provided for @hsChange.
   ///
   /// In en, this message translates to:
-  /// **'Let\'s build a better world together\nbit by bit'**
-  String get hsSloganFix;
+  /// **'It\'s time for change.'**
+  String get hsChange;
 
-  /// No description provided for @hsVideoLabel.
-  ///
-  /// In en, this message translates to:
-  /// **'Empathetic LLC animated logo: the letters in Empathetic transform into the two dimensional hourglass logo'**
-  String get hsVideoLabel;
-
-  /// No description provided for @hsPeople.
-  ///
-  /// In en, this message translates to:
-  /// **'People aren\'t products.'**
-  String get hsPeople;
-
-  /// No description provided for @hsWell.
-  ///
-  /// In en, this message translates to:
-  /// **'Well, they shouldn\'t be.'**
-  String get hsWell;
-
-  /// No description provided for @hsReality.
-  ///
-  /// In en, this message translates to:
-  /// **'The unfortunate reality is our identities, our '**
-  String get hsReality;
-
-  /// No description provided for @hsData.
-  ///
-  /// In en, this message translates to:
-  /// **'data'**
-  String get hsData;
-
-  /// No description provided for @hsGold.
-  ///
-  /// In en, this message translates to:
-  /// **', is big tech\'s latest gold rush.'**
-  String get hsGold;
-
-  /// No description provided for @hsRush.
-  ///
-  /// In en, this message translates to:
-  /// **'And big tech sure does love to rush.\nThanks to their never-ending sprint, the dystopian sci-fi movies are coming true far too quickly.'**
-  String get hsRush;
-
-  /// No description provided for @hsSlow.
-  ///
-  /// In en, this message translates to:
-  /// **'It\'s time to slow down.\nIt\'s time we had ownership of our digital selves.\nIt\'s time for a better '**
-  String get hsSlow;
-
-  /// No description provided for @hsPlan.
-  ///
-  /// In en, this message translates to:
-  /// **'plan.'**
-  String get hsPlan;
-
-  /// No description provided for @msPageTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Mission'**
-  String get msPageTitle;
-
-  /// No description provided for @msSoWe.
-  ///
-  /// In en, this message translates to:
-  /// **'So we'**
-  String get msSoWe;
-
-  /// No description provided for @msBy.
-  ///
-  /// In en, this message translates to:
-  /// **'By'**
-  String get msBy;
-
-  /// No description provided for @msFirst.
-  ///
-  /// In en, this message translates to:
-  /// **'By first'**
-  String get msFirst;
-
-  /// No description provided for @msIDProblem.
+  /// No description provided for @hsmIDProblem.
   ///
   /// In en, this message translates to:
   /// **'Identifying the problem'**
-  String get msIDProblem;
+  String get hsmIDProblem;
 
-  /// No description provided for @msIDProblemContent.
+  /// No description provided for @hsmIDProblemContent.
   ///
   /// In en, this message translates to:
   /// **'Profit first business models aren\'t sustainable.\n\nBy definition: if profit comes first, then things like working towards a mission, treating people right, and responsible consumption of resources all become afterthoughts.\n\nAnd this greed has gone unchecked in big tech. The tech giants have grown dissatisfied with our money, and are building products to target our identities and monopolize our minds.'**
-  String get msIDProblemContent;
+  String get hsmIDProblemContent;
 
-  /// No description provided for @msFindSolution.
+  /// No description provided for @hsmSoWe.
+  ///
+  /// In en, this message translates to:
+  /// **'So we'**
+  String get hsmSoWe;
+
+  /// No description provided for @hsmFindSolution.
   ///
   /// In en, this message translates to:
   /// **'Find a solution'**
-  String get msFindSolution;
+  String get hsmFindSolution;
 
-  /// No description provided for @msFindSolutionContent.
+  /// No description provided for @hsmFindSolutionContent.
   ///
   /// In en, this message translates to:
   /// **'Fortunately, there are amazing technologists all over the world working together towards a better narrative.\nOne where the service providers and the customers have an active, healthy, and mutually beneficial relationship.\n\nThe open source community.\n\nAt its core, open source software is freely available for anyone to view. Many projects can also be freely modified and redistributed.\nIt\'s software with nothing to hide, built by folks who recognize shared problems require shared solutions.\n\nAnd in the wonderful world of open source software, there lies a sub category: self-hosting software.\n\nSelf-hosting lets us take any not-in-use computer (pocket sized ones too) and store our data there.\nBy self-hosting, we can control our own digital presence, rather than sign away control to some far away server, owned by an un-empathetic corporation.\n\nAnd there are self-hosted versions of just about everything! From Adobe to Zoom, there are passionate hacktivists building alternatives that put people over profits.\n\nSo, how does one make the switch from profit first/closed source to open source? How do they start self-hosting?\nIt takes a lot of time, energy, and prior knowledge.\n\nThat\'s where we come in.'**
-  String get msFindSolutionContent;
+  String get hsmFindSolutionContent;
 
-  /// No description provided for @msProvideValue.
+  /// No description provided for @hsmBy.
+  ///
+  /// In en, this message translates to:
+  /// **'By'**
+  String get hsmBy;
+
+  /// No description provided for @hsmProvideValue.
   ///
   /// In en, this message translates to:
   /// **'Doing the work'**
-  String get msProvideValue;
+  String get hsmProvideValue;
 
-  /// No description provided for @msProvideValueContent1.
+  /// No description provided for @hsmProvideValueContent1.
   ///
   /// In en, this message translates to:
-  /// **'The Empathetech mission is to re-balance the power in tech by making self-hosting more accessible.\n\nWe will build apps that enable anyone to own their digital identity.\nWe will build bridges between the open source community and those without the required time, energy, or prior knowledge.\n\nAnd you can\'t build bridges (or apps) without a strong foundation! That\'s why '**
-  String get msProvideValueContent1;
+  /// **'YWT is re-balancing tech by making self-hosting more accessible.\n\nWe will build apps that enable anyone to own their digital identity.\nWe will build bridges between the open source community and those without the required time, energy, or prior knowledge.\n\nAnd you can\'t build bridges (or apps) without a strong foundation! That\'s why '**
+  String get hsmProvideValueContent1;
 
-  /// No description provided for @msProvideValueContent1Fix.
+  /// No description provided for @hsmProvideValueContent2.
   ///
   /// In en, this message translates to:
-  /// **'The Empathetic mission is to re-balance the power in tech by making self-hosting more accessible.\n\nWe will build apps that enable anyone to own their digital identity.\nWe will build bridges between the open source community and those without the required time, energy, or prior knowledge.\n\nAnd you can\'t build bridges (or apps) without a strong foundation! That\'s why '**
-  String get msProvideValueContent1Fix;
+  /// **' exists.\nWe take pride in meeting words with actions, and have made our accessible UI open source.\n\nLet\'s build a better world together, bit by bit.'**
+  String get hsmProvideValueContent2;
 
-  /// No description provided for @msProvideValueContent2.
+  /// No description provided for @hsmFirst.
   ///
   /// In en, this message translates to:
-  /// **' exists.\nEmpathetech takes pride in meeting words with actions, and have made our accessible UI open source.\n\nLet\'s build a better world together, bit by bit.'**
-  String get msProvideValueContent2;
-
-  /// No description provided for @msProvideValueContent2Fix.
-  ///
-  /// In en, this message translates to:
-  /// **' exists.\nEmpathetic takes pride in meeting words with actions, and have made our accessible UI open source.\n\nLet\'s build a better world together, bit by bit.'**
-  String get msProvideValueContent2Fix;
+  /// **'By first'**
+  String get hsmFirst;
 
   /// No description provided for @psPageTitle.
   ///
@@ -549,22 +477,10 @@ abstract class Lang {
   /// **'...and Flutter...'**
   String get ouFlutterToo;
 
-  /// No description provided for @ouHow.
-  ///
-  /// In en, this message translates to:
-  /// **'How does it work?'**
-  String get ouHow;
-
-  /// No description provided for @ouEFUIsHow.
-  ///
-  /// In en, this message translates to:
-  /// **'Open UI is built upon, and get\'s you started with, '**
-  String get ouEFUIsHow;
-
   /// No description provided for @ouSimplifies.
   ///
   /// In en, this message translates to:
-  /// **'EFUI is a library for building truly accessible apps. It simplifies...'**
+  /// **'It simplifies:'**
   String get ouSimplifies;
 
   /// No description provided for @ouPlatform.
@@ -576,7 +492,7 @@ abstract class Lang {
   /// No description provided for @ouPlatformContent.
   ///
   /// In en, this message translates to:
-  /// **'You can use EFUI to create on Android, iOS, Linux, macOS, Windows and Web!'**
+  /// **'You can use Open UI to create on Android, iOS, Linux, macOS, Windows and Web!'**
   String get ouPlatformContent;
 
   /// No description provided for @ouResponsive.
@@ -600,14 +516,8 @@ abstract class Lang {
   /// No description provided for @ouScreenContent.
   ///
   /// In en, this message translates to:
-  /// **'Empathetech apps support users who need '**
+  /// **'YWT apps support users who need '**
   String get ouScreenContent;
-
-  /// No description provided for @ouScreenContentFix.
-  ///
-  /// In en, this message translates to:
-  /// **'Empathetic apps support users who need '**
-  String get ouScreenContentFix;
 
   /// No description provided for @ouTalkBackHint.
   ///
@@ -636,7 +546,7 @@ abstract class Lang {
   /// No description provided for @ouCustomContent.
   ///
   /// In en, this message translates to:
-  /// **'The only way to be truly accessible to ALL customers is to empower them with the freedom of choice!\nEFUI provides an elegant UX for full control over an app\'s appearance.'**
+  /// **'The only way to be truly accessible to ALL customers is to empower them with the freedom of choice!\nOpen UI provides an elegant UX for full control over an app\'s appearance.'**
   String get ouCustomContent;
 
   /// No description provided for @ouInternational.
@@ -648,14 +558,8 @@ abstract class Lang {
   /// No description provided for @ouInternationalContent.
   ///
   /// In en, this message translates to:
-  /// **'Empathetech apps have been translated to 14 languages (so far).\nEFUI also provides the infrastructure for unlimited future translations.'**
+  /// **'YWT apps have been translated to 14 languages (so far).\nOpen UI also provides the infrastructure for unlimited future translations.'**
   String get ouInternationalContent;
-
-  /// No description provided for @ouInternationalContentFix.
-  ///
-  /// In en, this message translates to:
-  /// **'Empathetic apps have been translated to 14 languages (so far).\nEFUI also provides the infrastructure for unlimited future translations.'**
-  String get ouInternationalContentFix;
 
   /// No description provided for @ouReliability.
   ///
@@ -666,14 +570,8 @@ abstract class Lang {
   /// No description provided for @ouReliabilityContent.
   ///
   /// In en, this message translates to:
-  /// **'Empathetech software is built to last. This is NOT AI code generation.\nEmpathetech programmers are people. LLMs are rubber ducks.'**
+  /// **'YWT software is built to last. This is NOT AI code generation.\nProgrammers are people. LLMs are rubber ducks.'**
   String get ouReliabilityContent;
-
-  /// No description provided for @ouReliabilityContentFix.
-  ///
-  /// In en, this message translates to:
-  /// **'Empathetic software is built to last. This is NOT AI code generation.\nEmpathetic programmers are people. LLMs are rubber ducks.'**
-  String get ouReliabilityContentFix;
 
   /// No description provided for @ouGetStarted.
   ///
@@ -681,17 +579,17 @@ abstract class Lang {
   /// **'Get started'**
   String get ouGetStarted;
 
-  /// No description provided for @ouOpenUIIconLabel.
+  /// No description provided for @ouIconLabel.
   ///
   /// In en, this message translates to:
   /// **'a settings sandbox.'**
-  String get ouOpenUIIconLabel;
+  String get ouIconLabel;
 
-  /// No description provided for @ouEFUITagLine.
+  /// No description provided for @ouTagLine.
   ///
   /// In en, this message translates to:
-  /// **'When built with EFUI, your apps can truly reach any audience!\n'**
-  String get ouEFUITagLine;
+  /// **'When built with Open UI, your apps can truly reach any audience!\n'**
+  String get ouTagLine;
 
   /// No description provided for @sosPromoLabel.
   ///
@@ -710,12 +608,6 @@ abstract class Lang {
   /// In en, this message translates to:
   /// **'InstaSOS has no accounts, cookies, or ads.\n'**
   String get sosPrivate;
-
-  /// No description provided for @sosPrivateFix.
-  ///
-  /// In en, this message translates to:
-  /// **'Insta-SOS has no accounts, cookies, or ads.\n'**
-  String get sosPrivateFix;
 
   /// No description provided for @sosFree.
   ///
@@ -759,18 +651,6 @@ abstract class Lang {
   /// **'One specific, and highly impactful, way to contribute would be to foot the bill for hosting InstaSOS online.\n\nThe app store owners have made their allegiances clear, and InstaSOS may be removed if/when it gains traction.\nAndroid users will always have the option to self install, but the only viable alternative for iOS users would be a web app.\n\nThankfully, Flutter apps are client side compute, so the bill would be low.\nWe\'d (you\'d) only need to pay for traffic management.'**
   String get sosWeb;
 
-  /// No description provided for @llDescription.
-  ///
-  /// In en, this message translates to:
-  /// **'An Empathetech Android Launcher.'**
-  String get llDescription;
-
-  /// No description provided for @llDescriptionFix.
-  ///
-  /// In en, this message translates to:
-  /// **'An Empathetic Android Launcher.'**
-  String get llDescriptionFix;
-
   /// No description provided for @llInDev.
   ///
   /// In en, this message translates to:
@@ -812,126 +692,6 @@ abstract class Lang {
   /// In en, this message translates to:
   /// **'Liminal will be released under a \"pay what you can\" model.\nThe Google Play version will be paid, because (good) code doesn\'t write itself.\nThe GitHub repo will also have a freely available APK, because a healthy relationship with technology shouldn\'t be exclusive to those with expendable income.'**
   String get llModel;
-
-  /// No description provided for @ssPreview1.
-  ///
-  /// In en, this message translates to:
-  /// **'Another Empathetech app, '**
-  String get ssPreview1;
-
-  /// No description provided for @ssPreview1Fix.
-  ///
-  /// In en, this message translates to:
-  /// **'Another Empathetic app, '**
-  String get ssPreview1Fix;
-
-  /// No description provided for @ssPreview2.
-  ///
-  /// In en, this message translates to:
-  /// **', is in development.\nSmoke Signal is a social network app designed to keep us off our screens.'**
-  String get ssPreview2;
-
-  /// No description provided for @ssPreview3.
-  ///
-  /// In en, this message translates to:
-  /// **'Smoke Signal will also be fully self-hosted, thanks to '**
-  String get ssPreview3;
-
-  /// No description provided for @ssAPHint.
-  ///
-  /// In en, this message translates to:
-  /// **'Open a link to Activity Pub documentation'**
-  String get ssAPHint;
-
-  /// No description provided for @trWonder.
-  ///
-  /// In en, this message translates to:
-  /// **'If you\'re wondering how a team of one supports 14 languages: LLM-ing responsibly.\nThe process is as follows...'**
-  String get trWonder;
-
-  /// No description provided for @trFirst.
-  ///
-  /// In en, this message translates to:
-  /// **'1. Finalize && organize the (American) English '**
-  String get trFirst;
-
-  /// No description provided for @trSource.
-  ///
-  /// In en, this message translates to:
-  /// **'source'**
-  String get trSource;
-
-  /// No description provided for @trSecond.
-  ///
-  /// In en, this message translates to:
-  /// **'2. Ask '**
-  String get trSecond;
-
-  /// No description provided for @trBeNice.
-  ///
-  /// In en, this message translates to:
-  /// **' nicely to translate the entries.\nOne language per thread, so the context doesn\'t explode.'**
-  String get trBeNice;
-
-  /// No description provided for @trThird.
-  ///
-  /// In en, this message translates to:
-  /// **'3. Audit the results with '**
-  String get trThird;
-
-  /// No description provided for @trScript.
-  ///
-  /// In en, this message translates to:
-  /// **'this script'**
-  String get trScript;
-
-  /// No description provided for @trReverse.
-  ///
-  /// In en, this message translates to:
-  /// **'It reverse translates all languages, one entry at a time. I read every result and flag those that lost the original meaning.'**
-  String get trReverse;
-
-  /// No description provided for @trFourth.
-  ///
-  /// In en, this message translates to:
-  /// **'4. Use Google Translate (Gemini off) to fix failures, one at a time. And/or...'**
-  String get trFourth;
-
-  /// No description provided for @trFifth.
-  ///
-  /// In en, this message translates to:
-  /// **'5. Hire professionals for the important bits.\nFor example, the rights (rvX entries) in '**
-  String get trFifth;
-
-  /// No description provided for @trBy.
-  ///
-  /// In en, this message translates to:
-  /// **' were translated by '**
-  String get trBy;
-
-  /// No description provided for @trHumans.
-  ///
-  /// In en, this message translates to:
-  /// **'humans'**
-  String get trHumans;
-
-  /// No description provided for @trProcess.
-  ///
-  /// In en, this message translates to:
-  /// **'It\'s an imperfect process, but it\'s a lot more effort than an LLM plug-n-chug.\nAnd, honestly, it\'s what I can afford (for now).'**
-  String get trProcess;
-
-  /// No description provided for @trSpeaking.
-  ///
-  /// In en, this message translates to:
-  /// **'Speaking of which, please consider '**
-  String get trSpeaking;
-
-  /// No description provided for @trEither.
-  ///
-  /// In en, this message translates to:
-  /// **'.\nMoney, or time. I\'d guesstimate a 100% chance of (minor) mistakes.'**
-  String get trEither;
 
   /// No description provided for @vaIntro.
   ///
@@ -996,7 +756,7 @@ abstract class Lang {
   /// No description provided for @vaPublished.
   ///
   /// In en, this message translates to:
-  /// **'If you\'ve published an app using EFUI, send us '**
+  /// **'If you\'ve published an app using Open UI, send us '**
   String get vaPublished;
 
   /// No description provided for @vaDoNoHarm.
@@ -1016,132 +776,6 @@ abstract class Lang {
   /// In en, this message translates to:
   /// **'If we haven\'t heard from you, we\'ll assume your product is a scam until proven otherwise.\nIf you think that\'s intense, think again. Open UI is years of work, shared freely. Sending an email is the least you can do.'**
   String get vaDoYourPart;
-
-  /// No description provided for @tsPageTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Team'**
-  String get tsPageTitle;
-
-  /// No description provided for @tsCore.
-  ///
-  /// In en, this message translates to:
-  /// **'Core'**
-  String get tsCore;
-
-  /// No description provided for @tsTheFounderLabel.
-  ///
-  /// In en, this message translates to:
-  /// **'A two dimensional profile of Michael Waldron.'**
-  String get tsTheFounderLabel;
-
-  /// No description provided for @tsTheFounderHint.
-  ///
-  /// In en, this message translates to:
-  /// **'Activate to send him an email.'**
-  String get tsTheFounderHint;
-
-  /// No description provided for @tsTheFounder.
-  ///
-  /// In en, this message translates to:
-  /// **'The Founder'**
-  String get tsTheFounder;
-
-  /// No description provided for @tsBoardMember.
-  ///
-  /// In en, this message translates to:
-  /// **'Board Member'**
-  String get tsBoardMember;
-
-  /// No description provided for @tsYou.
-  ///
-  /// In en, this message translates to:
-  /// **'You?'**
-  String get tsYou;
-
-  /// No description provided for @tsMirrorLabel.
-  ///
-  /// In en, this message translates to:
-  /// **'A black circle with a shimmer, to mimic a mirror.'**
-  String get tsMirrorLabel;
-
-  /// No description provided for @tsMirrorTip.
-  ///
-  /// In en, this message translates to:
-  /// **'Activate to send us an email'**
-  String get tsMirrorTip;
-
-  /// No description provided for @tsMirrorHint.
-  ///
-  /// In en, this message translates to:
-  /// **'Ask about joining the team.'**
-  String get tsMirrorHint;
-
-  /// No description provided for @tsNonProfit.
-  ///
-  /// In en, this message translates to:
-  /// **'The only thing in the way of Empathetech becoming a proper nonprofit is the head count.\nIf you believe in the mission I\'ve laid out, and have a few hours a week to spare, please reach out!\n\nIt will be fully volunteer to start. I\'m not getting paid (yet) either.\nBut, I wouldn\'t be doing this if I didn\'t have a good plan for that too.\n\nAll who are interested are encouraged to reach out, but there is a particular need for folks with experience in:\nsocial media management, fundraising, and grant writing.'**
-  String get tsNonProfit;
-
-  /// No description provided for @tsWild.
-  ///
-  /// In en, this message translates to:
-  /// **'In the wild'**
-  String get tsWild;
-
-  /// No description provided for @ts2025BoothLabel.
-  ///
-  /// In en, this message translates to:
-  /// **'The Empathetech booth for Open Sauce 2025.'**
-  String get ts2025BoothLabel;
-
-  /// No description provided for @ts2025BoothHint.
-  ///
-  /// In en, this message translates to:
-  /// **'Activate to open the Open Sauce exhibits page.'**
-  String get ts2025BoothHint;
-
-  /// No description provided for @ts2025BoothDescription.
-  ///
-  /// In en, this message translates to:
-  /// **'Open Sauce (2025) was a blast!\nIt was difficult to return to normal life, after being surrounded by so many kind, driven, intelligent, and creative people.\nThanks again if you stopped by the Empathetech booth, and here\'s to next year!'**
-  String get ts2025BoothDescription;
-
-  /// No description provided for @ts2025BoothDescriptionFix.
-  ///
-  /// In en, this message translates to:
-  /// **'Open Sauce (2025) was a blast!\nIt was difficult to return to normal life, after being surrounded by so many kind, driven, intelligent, and creative people.\nThanks again if you stopped by the Empathetic booth, and here\'s to next year!'**
-  String get ts2025BoothDescriptionFix;
-
-  /// No description provided for @tsCommunity.
-  ///
-  /// In en, this message translates to:
-  /// **'Community'**
-  String get tsCommunity;
-
-  /// No description provided for @tsFreelance.
-  ///
-  /// In en, this message translates to:
-  /// **'Freelance'**
-  String get tsFreelance;
-
-  /// No description provided for @tsVideoProduction.
-  ///
-  /// In en, this message translates to:
-  /// **'Video Production'**
-  String get tsVideoProduction;
-
-  /// No description provided for @tsTranslators.
-  ///
-  /// In en, this message translates to:
-  /// **'Translators'**
-  String get tsTranslators;
-
-  /// No description provided for @tsProfile.
-  ///
-  /// In en, this message translates to:
-  /// **'{name}\'s profile'**
-  String tsProfile(Object name);
 
   /// No description provided for @fahJoin.
   ///
@@ -1176,7 +810,7 @@ abstract class Lang {
   /// No description provided for @fahTeamHint.
   ///
   /// In en, this message translates to:
-  /// **'Open the Empathetic folding at home team page'**
+  /// **'Open the YWT folding at home team page'**
   String get fahTeamHint;
 
   /// No description provided for @fahWhats.
@@ -1212,14 +846,8 @@ abstract class Lang {
   /// No description provided for @csEveryBit.
   ///
   /// In en, this message translates to:
-  /// **'Every bit you give to Empathetech takes a byte out of big tech.'**
+  /// **'Every bit to us is a byte out of big tech.'**
   String get csEveryBit;
-
-  /// No description provided for @csEveryBitFix.
-  ///
-  /// In en, this message translates to:
-  /// **'Every bit you give to Empathetic takes a byte out of big tech.'**
-  String get csEveryBitFix;
 
   /// No description provided for @csTime.
   ///
@@ -1248,7 +876,7 @@ abstract class Lang {
   /// No description provided for @csOpenLink.
   ///
   /// In en, this message translates to:
-  /// **'Open a link to Empathetic\'s {page}'**
+  /// **'Open a link to YWT\'s {page}'**
   String csOpenLink(Object page);
 
   /// No description provided for @csPower.

@@ -1,5 +1,5 @@
 /* dotnet
- * Copyright (c) 2026 Empathetech LLC. All rights reserved.
+ * Copyright (c) 2022 YWT (Empathetech LLC). All rights reserved.
  * See LICENSE for distribution and usage details.
  */
 
@@ -9,25 +9,70 @@ import '../utils/export.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:empathetech_flutter_ui/empathetech_flutter_ui.dart';
+import 'package:open_ui/open_ui.dart';
 
 class PageLinks extends StatelessWidget {
+  final EzCP config;
+
   /// Internal page links to put in the [AppBar]
-  const PageLinks({super.key});
+  const PageLinks(this.config, {super.key});
 
   // Define the build(s) //
 
-  Widget get mission => EzLink(
-        l10n.msPageTitle,
-        style: EzConfig.styles.headlineLarge,
-        textAlign: TextAlign.center,
-        url: Uri.parse(missionURL),
-        hint: l10n.gMissionHint,
-        textColor: EzConfig.colors.onSurface,
-        backgroundColor: Colors.transparent,
-      );
+  List<Widget> products(EzCP config) => <Widget>[
+        // Open UI
+        EzLink(
+          config,
+          text: Products.openUI.name,
+          style: config.headlineStyle,
+          textColor: config.colors.onSurface,
+          backgroundColor: Colors.transparent,
+          textAlign: TextAlign.center,
+          url: Uri.parse(Products.openUI.url),
+          hint: l10n(config).gLearn(Products.openUI.name),
+        ),
+        config.spacer,
 
-  Widget get products {
+        // SOS
+        EzLink(
+          config,
+          text: Products.sos.name,
+          style: config.headlineStyle,
+          textColor: config.colors.onSurface,
+          backgroundColor: Colors.transparent,
+          textAlign: TextAlign.center,
+          url: Uri.parse(Products.sos.url),
+          hint: l10n(config).gLearn(Products.sos.name),
+        ),
+        config.spacer,
+
+        // Liminal
+        EzLink(
+          config,
+          text: Products.liminal.name,
+          style: config.headlineStyle,
+          textColor: config.colors.onSurface,
+          backgroundColor: Colors.transparent,
+          textAlign: TextAlign.center,
+          url: Uri.parse(Products.liminal.url),
+          hint: l10n(config).gLearn(Products.liminal.name),
+        ),
+        config.spacer,
+
+        // Verified
+        EzLink(
+          config,
+          text: Products.verified.name,
+          style: config.headlineStyle,
+          textColor: config.colors.onSurface,
+          backgroundColor: Colors.transparent,
+          textAlign: TextAlign.center,
+          url: Uri.parse(Products.verified.url),
+          hint: l10n(config).gLearn(Products.verified.name),
+        ),
+      ];
+
+  Widget get productMenu {
     final MenuController controller = MenuController();
 
     Timer? dontClose;
@@ -68,12 +113,13 @@ class PageLinks extends StatelessWidget {
       child: MenuAnchor(
         controller: controller,
         builder: (_, __, ___) => EzLink(
-          l10n.psPageTitle,
-          style: EzConfig.styles.headlineLarge,
-          textColor: EzConfig.colors.onSurface,
+          config,
+          text: l10n(config).psPageTitle,
+          style: config.headlineStyle,
+          textColor: config.colors.onSurface,
           backgroundColor: Colors.transparent,
           textAlign: TextAlign.center,
-          hint: l10n.psTitleHint,
+          hint: l10n(config).psTitleHint,
           onTap: () {
             autoClose?.cancel();
 
@@ -88,73 +134,53 @@ class PageLinks extends StatelessWidget {
         menuChildren: <Widget>[
           // Open UI
           EzLink(
-            Products.openUI.name,
-            style: EzConfig.styles.titleLarge,
-            textColor: EzConfig.colors.onSurface,
+            config,
+            text: Products.openUI.name,
+            style: config.titleStyle,
+            textColor: config.colors.onSurface,
             backgroundColor: Colors.transparent,
             textAlign: TextAlign.center,
             url: Uri.parse(Products.openUI.url),
-            hint: l10n.gLearn(Products.openUI.name),
+            hint: l10n(config).gLearn(Products.openUI.name),
             onHover: setAutoClose,
           ),
 
           // SOS
           EzLink(
-            Products.sos.name,
-            style: EzConfig.styles.titleLarge,
-            textColor: EzConfig.colors.onSurface,
+            config,
+            text: Products.sos.name,
+            style: config.titleStyle,
+            textColor: config.colors.onSurface,
             backgroundColor: Colors.transparent,
             textAlign: TextAlign.center,
             url: Uri.parse(Products.sos.url),
-            hint: l10n.gLearn(Products.sos.name),
+            hint: l10n(config).gLearn(Products.sos.name),
             onHover: setAutoClose,
           ),
 
           // Liminal
           EzLink(
-            Products.liminal.name,
-            style: EzConfig.styles.titleLarge,
-            textColor: EzConfig.colors.onSurface,
+            config,
+            text: Products.liminal.name,
+            style: config.titleStyle,
+            textColor: config.colors.onSurface,
             backgroundColor: Colors.transparent,
             textAlign: TextAlign.center,
             url: Uri.parse(Products.liminal.url),
-            hint: l10n.gLearn(Products.liminal.name),
-            onHover: setAutoClose,
-          ),
-
-          // Smoke Signal
-          EzLink(
-            Products.smokeSignal.name,
-            style: EzConfig.styles.titleLarge,
-            textColor: EzConfig.colors.onSurface,
-            backgroundColor: Colors.transparent,
-            textAlign: TextAlign.center,
-            url: Uri.parse(Products.smokeSignal.url),
-            hint: l10n.gLearn(Products.smokeSignal.name),
-            onHover: setAutoClose,
-          ),
-
-          // Translations
-          EzLink(
-            Products.translations.name,
-            style: EzConfig.styles.titleLarge,
-            textColor: EzConfig.colors.onSurface,
-            backgroundColor: Colors.transparent,
-            textAlign: TextAlign.center,
-            url: Uri.parse(Products.translations.url),
-            hint: l10n.gLearn(Products.translations.name),
+            hint: l10n(config).gLearn(Products.liminal.name),
             onHover: setAutoClose,
           ),
 
           // Verified
           EzLink(
-            Products.verified.name,
-            style: EzConfig.styles.titleLarge,
-            textColor: EzConfig.colors.onSurface,
+            config,
+            text: Products.verified.name,
+            style: config.titleStyle,
+            textColor: config.colors.onSurface,
             backgroundColor: Colors.transparent,
             textAlign: TextAlign.center,
             url: Uri.parse(Products.verified.url),
-            hint: l10n.gLearn(Products.verified.name),
+            hint: l10n(config).gLearn(Products.verified.name),
             onHover: setAutoClose,
           ),
         ],
@@ -162,39 +188,27 @@ class PageLinks extends StatelessWidget {
     );
   }
 
-  Widget get team => EzLink(
-        l10n.tsPageTitle,
-        style: EzConfig.styles.headlineLarge,
-        textColor: EzConfig.colors.onSurface,
-        backgroundColor: Colors.transparent,
-        textAlign: TextAlign.center,
-        url: Uri.parse(teamURL),
-        hint: l10n.gTeamHint,
-      );
-
   Widget get contribute => EzLink(
-        l10n.csPageTitle,
-        style: EzConfig.styles.headlineLarge,
-        textColor: EzConfig.colors.onSurface,
+        config,
+        text: l10n(config).csPageTitle,
+        style: config.headlineStyle,
+        textColor: config.colors.onSurface,
         backgroundColor: Colors.transparent,
         textAlign: TextAlign.center,
         url: Uri.parse(contributeURL),
-        hint: l10n.gContributeHint,
+        hint: l10n(config).gContributeHint,
       );
 
   // Return the build //
 
   @override
   Widget build(BuildContext context) => EzRow(
+        config,
         reverseHands: false,
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          mission,
-          EzConfig.rowSpacer,
-          products,
-          EzConfig.rowSpacer,
-          team,
-          EzConfig.rowSpacer,
+          productMenu,
+          config.rowSpacer,
           contribute,
         ],
       );

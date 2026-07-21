@@ -1,6 +1,6 @@
 name: dotnet
-description: "The Empathetech mission is to re-balance the power in tech by making self hosting more accessible."
-version: 7.0.2
+description: "YWT is re-balancing tech by making self-hosting more accessible."
+version: 8.0.0
 publish_to: 'none'
 
 environment:
@@ -18,21 +18,17 @@ dependencies:
   intl: ^0.20.2
   shared_preferences: ^2.5.5
   url_launcher: ^6.3.2
-  video_player: ^2.11.1
+  video_player: ^2.13.0
 
   # Community
-  font_awesome_flutter: ^11.0.0
   line_icons: ^2.0.3
   provider: ^6.1.5+1
-  shimmer:
-    git: 
-      url: https://github.com/jinyus/flutter_shimmer
   
-  # Empathetech
-  efui_bios:
-    path: ../efui_bios
-  empathetech_flutter_ui:
-    path: ../empathetech_flutter_ui
+  # YWT
+  oui_bios:
+    path: ../oui_bios
+  open_ui:
+    path: ../open_ui
 
 dev_dependencies:
   dependency_validator: ^5.0.5
@@ -45,26 +41,18 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/
-    - assets/images/
     - assets/images/app-icon.png
     - assets/images/fah.png
-    - assets/images/founder.png
     - assets/images/la-grenouille.png
     - assets/images/las-rosas.png
     - assets/images/loading-dark.gif
     - assets/images/loading-light.gif
-    - assets/images/montana-headshot.jpg
-    - assets/images/open-sauce-2025.jpg
-    - assets/images/open-sauce-logo.png
     - assets/images/open-ui-icon.png
-    - assets/images/smoke-signal-icon.png
     - assets/images/sos-icon.png
     - assets/images/the-hood.png
-    - assets/videos/
     - assets/videos/open-ui-demo.mp4
-    - assets/videos/sos-promo.mp4
     - assets/videos/sos-promo-vertical.mp4
+    - assets/videos/sos-promo.mp4
     - assets/videos/captions/sos-promo-ar.srt
     - assets/videos/captions/sos-promo-de.srt
     - assets/videos/captions/sos-promo-en.srt

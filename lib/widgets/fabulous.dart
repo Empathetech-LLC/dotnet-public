@@ -10,7 +10,7 @@ import 'package:open_ui/open_ui.dart';
 
 EzUpdaterFAB updater(EzCP config) => EzUpdaterFAB(
       config,
-      appVersion: '8.0.0',
+      appVersion: '8.0.1',
       versionSource:
           'https://raw.githubusercontent.com/YWT-LLC/web-mirror/refs/heads/main/APP_VERSION',
       isWeb: true,

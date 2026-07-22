@@ -126,161 +126,166 @@ class _HomeScreenState extends State<HomeScreen> {
   // Return the build //
 
   @override
-  Widget build(BuildContext context) {
-    return Consumer<EzCP>(
-      builder: (_, EzCP config, __) => DotnetScaffold(
-        config,
-        body: EzScreen(
-          config,
-          margin: EdgeInsets.zero,
-          child: EzScrollView(config, children: <Widget>[
-            EzHeader(config),
+  Widget build(BuildContext context) => Consumer<EzCP>(
+        builder: (_, EzCP config, __) {
+          final Widget logoAnim = LogoAnimation(
+            colorScheme: config.colors,
+            semantics: l10n(config).hsAnimLabel,
+            height: ezTextSize('T\nT', context: context, style: config.displayStyle).height,
+            onComplete: () => setState(() => fin = true),
+          );
+          final Widget slogan = Text(
+            'Your Tech\nYour Way',
+            textAlign: TextAlign.start,
+            style: config.headlineStyle,
+          );
 
-            // Animated logo && slogan
-            Center(
-              child: EzTextBackground(
-                config,
-                text: EzRow(
-                  config,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    LogoAnimation(
-                      colorScheme: config.colors,
-                      semantics: l10n(config).hsAnimLabel,
-                      height:
-                          ezTextSize('T\nT', context: context, style: config.displayStyle).height,
-                      onComplete: () => setState(() => fin = true),
-                    ),
-                    config.rowSpacer,
-                    Text(
-                      'Your Tech\nYour Way',
-                      textAlign: TextAlign.start,
-                      style: config.headlineStyle,
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            config.separator,
-
-            EzAnimVis(
+          return DotnetScaffold(
+            config,
+            body: EzScreen(
               config,
-              visible: fin,
-              forceFade: true,
-              forceType: EzTransitionType.none,
-              kid: EzCol(children: <Widget>[
-                // How about !(move fast && break things)
-                EzText(
-                  config,
-                  text: l10n(config).hsChange,
-                  textAlign: TextAlign.center,
-                  style: ezSubTitleStyle(config.styles),
-                ),
-                config.divider,
+              margin: EdgeInsets.zero,
+              child: EzScrollView(config, children: <Widget>[
+                EzHeader(config),
 
-                // Mission
-                EzCol(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    Stepper(
-                      physics: const BouncingScrollPhysics(),
-                      stepIconWidth: config.iconSize + config.padding,
-                      stepIconHeight: config.iconSize + config.padding,
-                      connectorColor: WidgetStateProperty.resolveWith(
-                        (Set<WidgetState> states) => (states.contains(WidgetState.selected)
-                            ? config.colors.secondary
-                            : config.colors.outline),
+                // Animated logo && slogan
+                Center(
+                  child: EzTextBackground(
+                    config,
+                    text: EzRowCol(
+                      row: EzRow(
+                        config,
+                        reverseHands: false,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[logoAnim, config.rowSpacer, slogan],
                       ),
-                      steps: <Step>[
-                        // Step 1: Identify the problem
-                        Step(
-                          stepStyle: _style(config, 0),
-                          isActive: index >= 0,
-                          title: _title(l10n(config).hsmIDProblem, config.titleStyle),
-                          content: _content(EzText(
-                            config,
-                            text: l10n(config).hsmIDProblemContent,
-                            style: config.bodyStyle,
-                            textAlign: TextAlign.start,
-                          )),
-                        ),
+                      col: EzCol(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[logoAnim, config.spacer, slogan],
+                      ),
+                    ),
+                  ),
+                ),
+                config.separator,
 
-                        // Step 2: Be a part of the solution
-                        Step(
-                          stepStyle: _style(config, 1),
-                          isActive: index >= 1,
-                          title: _title(l10n(config).hsmFindSolution, config.titleStyle),
-                          content: _content(EzText(
-                            config,
-                            text: l10n(config).hsmFindSolutionContent,
-                            style: config.bodyStyle,
-                            textAlign: TextAlign.start,
-                          )),
-                        ),
+                EzAnimVis(
+                  config,
+                  visible: fin,
+                  forceFade: true,
+                  forceType: EzTransitionType.none,
+                  kid: EzCol(children: <Widget>[
+                    // How about !(move fast && break things)
+                    EzText(
+                      config,
+                      text: l10n(config).hsChange,
+                      textAlign: TextAlign.center,
+                      style: ezSubTitleStyle(config.styles),
+                    ),
+                    config.divider,
 
-                        // Step 3: Provide value
-                        Step(
-                          stepStyle: _style(config, 2),
-                          isActive: index >= 2,
-                          title: _title(l10n(config).hsmProvideValue, config.titleStyle),
-                          content: _content(EzRichText(
-                            config,
-                            children: <InlineSpan>[
-                              EzPlainText(
-                                text: l10n(config).hsmProvideValueContent1,
-                                style: config.bodyStyle,
-                              ),
-                              EzInlineLink(
+                    // Mission
+                    EzCol(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Stepper(
+                          physics: const BouncingScrollPhysics(),
+                          stepIconWidth: config.iconSize + config.padding,
+                          stepIconHeight: config.iconSize + config.padding,
+                          connectorColor: WidgetStateProperty.resolveWith(
+                            (Set<WidgetState> states) => (states.contains(WidgetState.selected)
+                                ? config.colors.secondary
+                                : config.colors.outline),
+                          ),
+                          steps: <Step>[
+                            // Step 1: Identify the problem
+                            Step(
+                              stepStyle: _style(config, 0),
+                              isActive: index >= 0,
+                              title: _title(l10n(config).hsmIDProblem, config.titleStyle),
+                              content: _content(EzText(
                                 config,
-                                text: openUI,
+                                text: l10n(config).hsmIDProblemContent,
                                 style: config.bodyStyle,
                                 textAlign: TextAlign.start,
-                                url: Uri.parse(Products.openUI.url),
-                                hint: l10n(config).gProductsHint,
-                              ),
-                              EzPlainText(
-                                text: l10n(config).hsmProvideValueContent2,
+                              )),
+                            ),
+
+                            // Step 2: Be a part of the solution
+                            Step(
+                              stepStyle: _style(config, 1),
+                              isActive: index >= 1,
+                              title: _title(l10n(config).hsmFindSolution, config.titleStyle),
+                              content: _content(EzText(
+                                config,
+                                text: l10n(config).hsmFindSolutionContent,
                                 style: config.bodyStyle,
-                              ),
-                            ],
-                          )),
-                        ),
-                      ],
-                      currentStep: index,
-                      onStepCancel: _onStepCancel,
-                      onStepContinue: _onStepContinue,
-                      onStepTapped: _onStepTapped,
-                      controlsBuilder: (_, ControlsDetails details) => Align(
-                        alignment: Alignment.centerLeft,
-                        child: EzCol(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: <Widget>[
-                            config.spacer,
-                            EzScrollView(
-                              config,
-                              scrollDirection: Axis.horizontal,
-                              primary: false,
-                              children: stepButtons(config, details),
+                                textAlign: TextAlign.start,
+                              )),
+                            ),
+
+                            // Step 3: Provide value
+                            Step(
+                              stepStyle: _style(config, 2),
+                              isActive: index >= 2,
+                              title: _title(l10n(config).hsmProvideValue, config.titleStyle),
+                              content: _content(EzRichText(
+                                config,
+                                children: <InlineSpan>[
+                                  EzPlainText(
+                                    text: l10n(config).hsmProvideValueContent1,
+                                    style: config.bodyStyle,
+                                  ),
+                                  EzInlineLink(
+                                    config,
+                                    text: openUI,
+                                    style: config.bodyStyle,
+                                    textAlign: TextAlign.start,
+                                    url: Uri.parse(Products.openUI.url),
+                                    hint: l10n(config).gProductsHint,
+                                  ),
+                                  EzPlainText(
+                                    text: l10n(config).hsmProvideValueContent2,
+                                    style: config.bodyStyle,
+                                  ),
+                                ],
+                              )),
                             ),
                           ],
+                          currentStep: index,
+                          onStepCancel: _onStepCancel,
+                          onStepContinue: _onStepContinue,
+                          onStepTapped: _onStepTapped,
+                          controlsBuilder: (_, ControlsDetails details) => Align(
+                            alignment: Alignment.centerLeft,
+                            child: EzCol(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                                config.spacer,
+                                EzScrollView(
+                                  config,
+                                  scrollDirection: Axis.horizontal,
+                                  primary: false,
+                                  children: stepButtons(config, details),
+                                ),
+                              ],
+                            ),
+                          ),
                         ),
-                      ),
+                        Container(
+                          alignment: config.isLTR ? Alignment.centerLeft : Alignment.centerRight,
+                          width: double.infinity,
+                          child: EzFooter(config, textAlign: TextAlign.start),
+                        ),
+                      ],
                     ),
-                    Container(
-                      alignment: config.isLTR ? Alignment.centerLeft : Alignment.centerRight,
-                      width: double.infinity,
-                      child: EzFooter(config, textAlign: TextAlign.start),
-                    ),
-                  ],
+                    EzFooter(config),
+                  ]),
                 ),
-                EzFooter(config),
               ]),
             ),
-          ]),
-        ),
-        fabs: <Widget>[config.spacer, SettingsFAB(config)],
-        isHome: true,
-      ),
-    );
-  }
+            fabs: <Widget>[config.spacer, SettingsFAB(config)],
+            isHome: true,
+          );
+        },
+      );
 }

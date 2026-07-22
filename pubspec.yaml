@@ -1,6 +1,6 @@
 name: dotnet
 description: "YWT is re-balancing tech by making self-hosting more accessible."
-version: 8.0.0
+version: 8.0.1
 publish_to: 'none'
 
 environment:

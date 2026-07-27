@@ -3,6 +3,8 @@
  * See LICENSE for distribution and usage details.
  */
 
+import './export.dart';
+
 import 'package:flutter/material.dart';
 
 // Titles //
@@ -38,6 +40,12 @@ const String theHoodPath = 'assets/images/the-hood.png';
 
 /// [AssetImage] of [theHoodPath]
 const ImageProvider theHoodImage = AssetImage(theHoodPath);
+
+/// assets/images/duck-duck-fetch.png
+const String duckDuckFetchPath = 'assets/images/duck-duck-fetch.png';
+
+/// [AssetImage] of [duckDuckFetchPath]
+const ImageProvider duckDuckFetchImage = AssetImage(duckDuckFetchPath);
 
 /// assets/images/las-rosas.png
 const String lasRosasPath = 'assets/images/las-rosas.png';
@@ -109,6 +117,7 @@ const Set<String> assetPaths = <String>{
   openUIIconPath,
   sosIconPath,
   theHoodPath,
+  duckDuckFetchPath,
   lasRosasPath,
   laGrenouillePath,
   fahIconPath,
@@ -125,6 +134,7 @@ final Map<String, String> credits = <String, String>{
   openUIIconPath: founder,
   sosIconPath: 'https://fonts.google.com/icons',
   theHoodPath: crosby,
+  duckDuckFetchPath: elinaV,
   lasRosasPath: founder,
   laGrenouillePath: nikkolas,
   fahIconPath: faHLink,
@@ -134,10 +144,3 @@ final Map<String, String> credits = <String, String>{
   sosPromoPath: '$founder & $montana',
   sosVerticalPromoPath: '$founder & $montana',
 };
-
-// Credits //
-
-const String founder = 'Founder';
-const String crosby = 'Kevin Crosby';
-const String nikkolas = 'Nikkolas Smith';
-const String montana = 'Montana Monardes';

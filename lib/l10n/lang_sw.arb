@@ -27,6 +27,7 @@
   "gImageCredit": "Hisani ya picha: {creator}",
 
   "gReachOut": "Wasiliana",
+  "gProfile": "Wasifu wa {name}",
   "gFiverrPage": "Fungua ukurasa wa Fiverr wa {user}",
 
   "gDontChaWish": "Hutamani upande wako wa mbele wa programu uwe wa kufurahisha ", 
@@ -84,8 +85,6 @@
   "ouRequirements": "Mahitaji pekee ni muunganisho wa intaneti na wazo.",
   "ouFlutterToo": "...na Flutter...",
   
-  "ouSimplifies": "Inafanya iwe rahisi:",
-  
   "ouPlatform": "Upatikanaji kwenye mifumo",
   "ouPlatformContent": "Unaweza kutumia Open UI kuunda kwenye Android, iOS, Linux, macOS, Windows na Wavuti!",
   
@@ -93,7 +92,7 @@
   "ouResponsiveContent": "Ili kuona jinsi inavyofanya kazi, cheza na dirisha unalotumia sasa hivi!",
 
   "ouScreen": "Usaidizi wa kisoma skrini",
-  "ouScreenContent": "Programu za YWT zinasaidia watumiaji wanaohitaji ",
+  "ouScreenContent": "Programu za OUI zinasaidia watumiaji wanaohitaji ",
   "ouTalkBackHint": "Fungua kiungo cha nyaraka za TalkBack",
   "ouAnd": " na ",
   "ouVoiceOverHint": "Fungua kiungo cha nyaraka za VoiceOver",
@@ -102,7 +101,7 @@
   "ouCustomContent": "Njia pekee ya kufikika kikweli na wateja WOTE ni kuwawezesha kwa uhuru wa kuchagua!\nOpen UI hutoa muundo bora wa mtumiaji (UX) kwa udhibiti kamili wa mwonekano wa programu.",
   
   "ouInternational": "Uboreshaji wa kimataifa",
-  "ouInternationalContent": "Programu za YWT zimetafsiriwa kwa lugha 14 (kufikia sasa).\nOpen UI pia inatoa miundombinu ya tafsiri zisizo na kikomo za baadaye.",
+  "ouInternationalContent": "Programu za OUI zimetafsiriwa kwa lugha 14 (kufikia sasa).\nOUI pia inatoa miundombinu ya tafsiri zisizo na kikomo za baadaye.",
   
   "ouReliability": "Utegemezi",
   "ouReliabilityContent": "Programu za YWT zimeundwa kudumu. Hii SIO uundaji wa msimbo kwa kutumia AI.\nWaandaaji wa programu wa ni watu. LLM ni mabata wa mpira (rubber ducks).",
@@ -126,37 +125,18 @@
 
   "sosIconLabel": "kengele ya arifa yenye rangi inayong'aa sana.",
   "sosWeb": "Njia moja hususa, na yenye athari kubwa ya kuchangia itakuwa kulipia gharama za kuweka InstaSOS mtandaoni.\n\nWamiliki wa maduka ya programu wameweka wazi utiifu wao, na InstaSOS inaweza kuondolewa ikiwa/wakati itakapopata umaarufu.\nWatumiaji wa Android kila wakati watakuwa na chaguo la kusakinisha wenyewe, lakini mbadala pekee unaofaa kwa watumiaji wa iOS itakuwa ni programu ya wavuti.\n\nTunashukuru, programu za Flutter hufanya kazi upande wa mteja, kwa hivyo bili itakuwa ndogo.\nSisi (Wewe) tutahitaji tu kulipia usimamizi wa trafiki ya mtandao.",
+  "sosTranslators": "Watafsiri",
 
   
 
-  "llInDev": "Liminal inaundwa.\nMuundo wake unaegemea kwenye urahisi, kwa sababu simu zetu zinapaswa kuwa zana za sisi kutumia, na sio kinyume chake.",
-  "llBut": "Lakini, ni kianzishi chepesi kilichoundwa na ",
-  "llWhimsy": ".\nHivyo, skrini yako ya mwanzo haitakuwa na msongamano na usumbufu, NA itaweza kugeuzwa kukufaa bila kikomo. Pamoja na ucheshi kidogo wa kuanzia.",
-
+  "llInDev": "Liminal bado inatengenezwa.\nMuundo wake unaelekea kwenye usahili, lakini, imeundwa na ",
+  "llWhimsy": "Kwa hivyo, skrini yako ya nyumbani haitakuwa na msongamano na usumbufu, NA itaweza kubinafsishwa bila kikomo.\nPamoja na mguso kidogo wa kufurahisha pia.",
+  
   "llTheHood": "Sampuli ya skrini ya mwanzo yenye picha ya Mlima Hood wa Portland.",
   "llLasRosas": "Sampuli ya skrini ya mwanzo yenye picha ya bustani ya Mawaridi ya Portland.",
   "llFrogAndPigs": "Sampuli ya skrini ya mwanzo yenye picha ya wanyamapori wa Portland.",
 
   "llModel": "Liminal itatolewa chini ya mfumo wa \"lipa unachoweza\".\nToleo la Google Play litauzwa, kwa sababu msimbo (mzuri) haujiandiki wenyewe.\nHifadhi ya GitHub pia itakuwa na APK inayopatikana bila malipo, kwa sababu uhusiano mzuri na teknolojia haupaswi kuwa tu kwa wale walio na kipato cha ziada.",
-
-
-  
-  "vaIntro": "Jinsi teknolojia inavyotumika haiwezi kuamuliwa na wale wanaoiunda.",
-  "vaTheBad": "Jambo ambalo linaweza kuwa zuri, baya, au katikati.\nHebu tuchukue muda kujadili mabaya: programu za utapeli.",
-  "vaScamRisk": " hupunguza kwa kiasi kikubwa ugumu wa kuunda programu zilizo tayari kwa matumizi. Ikichanganywa na zana za uandishi wa msimbo za AI, ni rahisi zaidi kuliko hapo awali kwa matapeli kuunda programu zinazoonekana halali.\nIli kusaidia kupambana na hili, tutadumisha orodha ya programu zilizothibitishwa.",
-  "vaCheckIn": "Ukiona programu inayotumia UI yetu, angalia hapa kwanza. Ikiwa haijathibitishwa, ushauri wetu ni: usiipakue.\nZaidi ya hayo, hii si orodha ya mapendekezo. Sharti pekee la kuwa kwenye orodha hii, ni kutokuwa tapeli.\nBaada ya kueleza hayo, ulimwengu wa UI unaojulikana una...",
-
-  "vaFirst": "Mhusika wa kwanza",
-  "vaThird": "Mhusika wa tatu aliyethibitishwa",
-  "vaWaiting": "Inasubiri",
-  "vaWillYou": "Utakuwa wa kwanza?",
-  "vaKnown": "Matapeli wanaojulikana",
-  "vaSoGood": "Hadi sasa, mambo ni mazuri!\nTafadhali usiwe wa kwanza :)",
-
-  "vaPublished": "Ikiwa umechapisha programu kwa kutumia Open UI, tutumie ",
-  "vaDoNoHarm": ".\nHatuhitaji kuipenda programu, na hatuifanyii uhakiki hadharani.\nTutakagua msimbo, na mradi tu hausababishi madhara, itathibitishwa.",
-  "vaPrivateFree": "Ikiwa programu yako haipatikani kwa umma, usijali!\nLakini ikiwa watu usiowajua wanaweza kuipakua, tujulishe ili tuweze kuithibitisha.",
-  "vaDoYourPart": "Ikiwa hutasikia kutoka kwetu, tutachukulia kuwa bidhaa yako ni tapeli hadi ithibitishwe vinginevyo.\nIkiwa unafikiri hilo ni kali, fikiria tena. Open UI ni kazi ya miaka mingi, iliyoshirikiwa bila malipo. Kutuma barua pepe ni jambo dogo sana unaloweza kufanya.",
 
 
 

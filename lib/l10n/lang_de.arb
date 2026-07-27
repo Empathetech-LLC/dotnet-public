@@ -27,6 +27,7 @@
   "gImageCredit": "Bildnachweis: {creator}",
 
   "gReachOut": "Kontakt aufnehmen",
+  "gProfile": "{name} Profil",
   "gFiverrPage": "Fiverr-Seite von {user} öffnen",
 
   "gDontChaWish": "Wünschst du dir nicht auch, dein Frontend würde so viel Spaß machen ", 
@@ -83,8 +84,6 @@
   "ouLocal": "Alles läuft auf deinem Computer. Es gibt keine Zugangsdaten, Kreditkarten oder Cookies.",
   "ouRequirements": "Die einzigen Voraussetzungen sind eine Internetverbindung und eine Idee.",
   "ouFlutterToo": "...und Flutter...",
-
-  "ouSimplifies": "Es vereinfacht:",
  
   "ouPlatform": "Plattformverfügbarkeit",
   "ouPlatformContent": "Du kannst Open UI verwenden, um für Android, iOS, Linux, macOS, Windows und das Web zu entwickeln!",
@@ -93,7 +92,7 @@
   "ouResponsiveContent": "Um es in Aktion zu sehen, spiele mit dem Fenster, das du gerade benutzt!",
 
   "ouScreen": "Screenreader-Unterstützung",
-  "ouScreenContent": "YWT-Apps unterstützen Nutzer, die ",
+  "ouScreenContent": "OUI-Apps unterstützen Nutzer, die ",
   "ouTalkBackHint": "Link zur TalkBack-Dokumentation öffnen",
   "ouAnd": " und ",
   "ouVoiceOverHint": "Link zur VoiceOver-Dokumentation öffnen",
@@ -102,7 +101,7 @@
   "ouCustomContent": "Der einzige Weg, um für ALLE Kunden wirklich barrierefrei zu sein, ist ihnen die Freiheit der Wahl zu geben!\nOpen UI bietet eine elegante UX für die volle Kontrolle über das Erscheinungsbild einer App.",
   
   "ouInternational": "Internationalisierung",
-  "ouInternationalContent": "YWT-Apps wurden (bisher) in 14 Sprachen übersetzt.\nOpen UI bietet zudem die Infrastruktur für unbegrenzte zukünftige Übersetzungen.",
+  "ouInternationalContent": "OUI-Apps wurden (bisher) in 14 Sprachen übersetzt.\nOUI bietet zudem die Infrastruktur für unbegrenzte zukünftige Übersetzungen.",
 
   "ouReliability": "Zuverlässigkeit",
   "ouReliabilityContent": "YWT-Software ist für die Ewigkeit gebaut. Dies ist KEINE KI-Codegenerierung.\nProgrammierer sind Menschen. LLMs sind Quietscheentchen.",
@@ -126,37 +125,18 @@
 
   "sosIconLabel": "eine knallbunte Benachrichtigungsglocke.",
   "sosWeb": "Eine spezifische und sehr wirkungsvolle Möglichkeit, einen Beitrag zu leisten, bestünde darin, die Kosten für das Online-Hosting von InstaSOS zu übernehmen.\n\nDie App-Store-Betreiber haben ihre Loyalitäten deutlich gemacht, und InstaSOS könnte entfernt werden, wenn es an Zugkraft gewinnt.\nAndroid-Nutzer werden immer die Möglichkeit haben, es selbst zu installieren, aber die einzige praktikable Alternative für iOS-Nutzer wäre eine Web-App.\n\nZum Glück werden Flutter-Apps clientseitig berechnet, sodass die Rechnung niedrig ausfallen würde.\nWir (du) müssten nur für das Traffic-Management bezahlen.",
+  "sosTranslators": "Übersetzer",
 
   
 
-  "llInDev": "Liminal befindet sich in der Entwicklung.\nSein Design tendiert zum Minimalismus, denn unsere Telefone sollten Werkzeuge sein, die wir nutzen, und nicht umgekehrt.",
-  "llBut": "Aber es ist ein minimalistischer Launcher, gebaut mit ",
-  "llWhimsy": ".\nSo ist dein Startbildschirm frei von Unordnung und Ablenkungen UND grenzenlos anpassbar. Mit einer Prise Verspieltheit obendrein.",
+  "llInDev": "Liminal befindet sich in der Entwicklung.\nDas Design tendiert zum Minimalismus, aber es ist gebaut mit ",
+  "llWhimsy": "So wird dein Startbildschirm frei von Unordnung und Ablenkungen sein UND grenzenlos anpassbar.\nMit einer Prise Verspieltheit obendrein.",
 
   "llTheHood": "Ein Beispiel-Startbildschirm mit einem Bild von Portlands Mount Hood.",
   "llLasRosas": "Ein Beispiel-Startbildschirm mit einem Bild von Portlands Rosengarten.",
   "llFrogAndPigs": "Ein Beispiel-Startbildschirm mit einem Bild von Portlands Tierwelt.",
 
   "llModel": "Liminal wird nach einem \"Zahl, was du kannst\"-Modell veröffentlicht.\nDie Google Play-Version wird kostenpflichtig sein, da sich (guter) Code nicht von selbst schreibt.\nDas GitHub-Repository wird auch eine frei verfügbare APK enthalten, denn eine gesunde Beziehung zu Technologie sollte nicht nur denjenigen vorbehalten sein, die über ein verfügbares Einkommen verfügen.",
-
-
-
-  "vaIntro": "Die Art und Weise, wie eine Technologie genutzt wird, kann nicht von denjenigen bestimmt werden, die sie erschaffen.",
-  "vaTheBad": "Was eine gute, eine schlechte oder eine Sache dazwischen sein kann.\nLass uns einen Moment über das Schlechte sprechen: Betrugs-Apps.",
-  "vaScamRisk": " reduziert die Schwierigkeit, produktionsbereite Apps zu erstellen, massiv. In Kombination mit KI-Codierungswerkzeugen ist es für Betrüger einfacher denn je, Apps zu erstellen, die legitim aussehen und sich auch so anfühlen.\nUm dem entgegenzuwirken, führen wir eine Liste verifizierter Apps.",
-  "vaCheckIn": "Wenn du eine App siehst, die unsere UI verwendet, schau zuerst hier nach. Wenn sie nicht verifiziert ist, lautet unser Rat: Lade sie nicht herunter.\nDarüber hinaus ist dies keine Empfehlungsliste. Die einzige Voraussetzung, um auf dieser Liste zu stehen, ist, kein Betrug zu sein.\nDa das nun geklärt ist, enthält das bekannte UIniversum...",
-
-  "vaFirst": "Erstanbieter",
-  "vaThird": "Verifizierte Drittanbieter",
-  "vaWaiting": "Wartend",
-  "vaWillYou": "Wirst du der Erste sein?",
-  "vaKnown": "Bekannter Betrug",
-  "vaSoGood": "So weit, so gut!\nBitte sei nicht der Erste :)",
-
-  "vaPublished": "Wenn du eine App veröffentlicht hast, die Open UI nutzt, sende uns ",
-  "vaDoNoHarm": ".\nWir müssen die App nicht lieben und wir bewerten sie nicht öffentlich.\nWir prüfen den Code und solange sie keinen Schaden anrichtet, wird sie verifiziert.",
-  "vaPrivateFree": "Wenn deine App nicht öffentlich zugänglich ist, keine Sorge!\nAber wenn Leute, die du nicht kennst, sie herunterladen können, lass es uns wissen, damit wir sie verifizieren können.",
-  "vaDoYourPart": "Wenn wir nichts von dir gehört haben, gehen wir davon aus, dass dein Produkt ein Betrug ist, bis das Gegenteil bewiesen ist.\nWenn du denkst, dass das hart ist, denk nochmal nach. Open UI ist jahrelange Arbeit, die kostenlos geteilt wird. Eine E-Mail zu senden ist das Mindeste, was du tun kannst.",
 
 
 

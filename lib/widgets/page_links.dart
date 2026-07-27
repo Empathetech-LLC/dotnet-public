@@ -57,19 +57,6 @@ class PageLinks extends StatelessWidget {
           url: Uri.parse(Products.liminal.url),
           hint: l10n(config).gLearn(Products.liminal.name),
         ),
-        config.spacer,
-
-        // Verified
-        EzLink(
-          config,
-          text: Products.verified.name,
-          style: config.headlineStyle,
-          textColor: config.colors.onSurface,
-          backgroundColor: Colors.transparent,
-          textAlign: TextAlign.center,
-          url: Uri.parse(Products.verified.url),
-          hint: l10n(config).gLearn(Products.verified.name),
-        ),
       ];
 
   Widget get productMenu {
@@ -168,19 +155,6 @@ class PageLinks extends StatelessWidget {
             textAlign: TextAlign.center,
             url: Uri.parse(Products.liminal.url),
             hint: l10n(config).gLearn(Products.liminal.name),
-            onHover: setAutoClose,
-          ),
-
-          // Verified
-          EzLink(
-            config,
-            text: Products.verified.name,
-            style: config.titleStyle,
-            textColor: config.colors.onSurface,
-            backgroundColor: Colors.transparent,
-            textAlign: TextAlign.center,
-            url: Uri.parse(Products.verified.url),
-            hint: l10n(config).gLearn(Products.verified.name),
             onHover: setAutoClose,
           ),
         ],

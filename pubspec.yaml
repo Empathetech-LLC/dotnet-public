@@ -1,6 +1,6 @@
 name: dotnet
 description: "YWT is re-balancing tech by making self-hosting more accessible."
-version: 8.0.1
+version: 8.0.2
 publish_to: 'none'
 
 environment:
@@ -42,6 +42,7 @@ flutter:
 
   assets:
     - assets/images/app-icon.png
+    - assets/images/duck-duck-fetch.png
     - assets/images/fah.png
     - assets/images/la-grenouille.png
     - assets/images/las-rosas.png

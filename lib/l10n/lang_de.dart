@@ -84,6 +84,11 @@ class LangDe extends Lang {
   String get gReachOut => 'Kontakt aufnehmen';
 
   @override
+  String gProfile(Object name) {
+    return '$name Profil';
+  }
+
+  @override
   String gFiverrPage(Object user) {
     return 'Fiverr-Seite von $user öffnen';
   }
@@ -211,9 +216,6 @@ class LangDe extends Lang {
   String get ouFlutterToo => '...und Flutter...';
 
   @override
-  String get ouSimplifies => 'Es vereinfacht:';
-
-  @override
   String get ouPlatform => 'Plattformverfügbarkeit';
 
   @override
@@ -231,7 +233,7 @@ class LangDe extends Lang {
   String get ouScreen => 'Screenreader-Unterstützung';
 
   @override
-  String get ouScreenContent => 'YWT-Apps unterstützen Nutzer, die ';
+  String get ouScreenContent => 'OUI-Apps unterstützen Nutzer, die ';
 
   @override
   String get ouTalkBackHint => 'Link zur TalkBack-Dokumentation öffnen';
@@ -254,7 +256,7 @@ class LangDe extends Lang {
 
   @override
   String get ouInternationalContent =>
-      'YWT-Apps wurden (bisher) in 14 Sprachen übersetzt.\nOpen UI bietet zudem die Infrastruktur für unbegrenzte zukünftige Übersetzungen.';
+      'OUI-Apps wurden (bisher) in 14 Sprachen übersetzt.\nOUI bietet zudem die Infrastruktur für unbegrenzte zukünftige Übersetzungen.';
 
   @override
   String get ouReliability => 'Zuverlässigkeit';
@@ -307,15 +309,15 @@ class LangDe extends Lang {
       'Eine spezifische und sehr wirkungsvolle Möglichkeit, einen Beitrag zu leisten, bestünde darin, die Kosten für das Online-Hosting von InstaSOS zu übernehmen.\n\nDie App-Store-Betreiber haben ihre Loyalitäten deutlich gemacht, und InstaSOS könnte entfernt werden, wenn es an Zugkraft gewinnt.\nAndroid-Nutzer werden immer die Möglichkeit haben, es selbst zu installieren, aber die einzige praktikable Alternative für iOS-Nutzer wäre eine Web-App.\n\nZum Glück werden Flutter-Apps clientseitig berechnet, sodass die Rechnung niedrig ausfallen würde.\nWir (du) müssten nur für das Traffic-Management bezahlen.';
 
   @override
-  String get llInDev =>
-      'Liminal befindet sich in der Entwicklung.\nSein Design tendiert zum Minimalismus, denn unsere Telefone sollten Werkzeuge sein, die wir nutzen, und nicht umgekehrt.';
+  String get sosTranslators => 'Übersetzer';
 
   @override
-  String get llBut => 'Aber es ist ein minimalistischer Launcher, gebaut mit ';
+  String get llInDev =>
+      'Liminal befindet sich in der Entwicklung.\nDas Design tendiert zum Minimalismus, aber es ist gebaut mit ';
 
   @override
   String get llWhimsy =>
-      '.\nSo ist dein Startbildschirm frei von Unordnung und Ablenkungen UND grenzenlos anpassbar. Mit einer Prise Verspieltheit obendrein.';
+      'So wird dein Startbildschirm frei von Unordnung und Ablenkungen sein UND grenzenlos anpassbar.\nMit einer Prise Verspieltheit obendrein.';
 
   @override
   String get llTheHood =>
@@ -332,56 +334,6 @@ class LangDe extends Lang {
   @override
   String get llModel =>
       'Liminal wird nach einem \"Zahl, was du kannst\"-Modell veröffentlicht.\nDie Google Play-Version wird kostenpflichtig sein, da sich (guter) Code nicht von selbst schreibt.\nDas GitHub-Repository wird auch eine frei verfügbare APK enthalten, denn eine gesunde Beziehung zu Technologie sollte nicht nur denjenigen vorbehalten sein, die über ein verfügbares Einkommen verfügen.';
-
-  @override
-  String get vaIntro =>
-      'Die Art und Weise, wie eine Technologie genutzt wird, kann nicht von denjenigen bestimmt werden, die sie erschaffen.';
-
-  @override
-  String get vaTheBad =>
-      'Was eine gute, eine schlechte oder eine Sache dazwischen sein kann.\nLass uns einen Moment über das Schlechte sprechen: Betrugs-Apps.';
-
-  @override
-  String get vaScamRisk =>
-      ' reduziert die Schwierigkeit, produktionsbereite Apps zu erstellen, massiv. In Kombination mit KI-Codierungswerkzeugen ist es für Betrüger einfacher denn je, Apps zu erstellen, die legitim aussehen und sich auch so anfühlen.\nUm dem entgegenzuwirken, führen wir eine Liste verifizierter Apps.';
-
-  @override
-  String get vaCheckIn =>
-      'Wenn du eine App siehst, die unsere UI verwendet, schau zuerst hier nach. Wenn sie nicht verifiziert ist, lautet unser Rat: Lade sie nicht herunter.\nDarüber hinaus ist dies keine Empfehlungsliste. Die einzige Voraussetzung, um auf dieser Liste zu stehen, ist, kein Betrug zu sein.\nDa das nun geklärt ist, enthält das bekannte UIniversum...';
-
-  @override
-  String get vaFirst => 'Erstanbieter';
-
-  @override
-  String get vaThird => 'Verifizierte Drittanbieter';
-
-  @override
-  String get vaWaiting => 'Wartend';
-
-  @override
-  String get vaWillYou => 'Wirst du der Erste sein?';
-
-  @override
-  String get vaKnown => 'Bekannter Betrug';
-
-  @override
-  String get vaSoGood => 'So weit, so gut!\nBitte sei nicht der Erste :)';
-
-  @override
-  String get vaPublished =>
-      'Wenn du eine App veröffentlicht hast, die Open UI nutzt, sende uns ';
-
-  @override
-  String get vaDoNoHarm =>
-      '.\nWir müssen die App nicht lieben und wir bewerten sie nicht öffentlich.\nWir prüfen den Code und solange sie keinen Schaden anrichtet, wird sie verifiziert.';
-
-  @override
-  String get vaPrivateFree =>
-      'Wenn deine App nicht öffentlich zugänglich ist, keine Sorge!\nAber wenn Leute, die du nicht kennst, sie herunterladen können, lass es uns wissen, damit wir sie verifizieren können.';
-
-  @override
-  String get vaDoYourPart =>
-      'Wenn wir nichts von dir gehört haben, gehen wir davon aus, dass dein Produkt ein Betrug ist, bis das Gegenteil bewiesen ist.\nWenn du denkst, dass das hart ist, denk nochmal nach. Open UI ist jahrelange Arbeit, die kostenlos geteilt wird. Eine E-Mail zu senden ist das Mindeste, was du tun kannst.';
 
   @override
   String get fahJoin => 'Mach mit';

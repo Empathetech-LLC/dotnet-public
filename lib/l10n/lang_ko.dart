@@ -84,6 +84,11 @@ class LangKo extends Lang {
   String get gReachOut => '연락하기';
 
   @override
+  String gProfile(Object name) {
+    return '$name의 프로필';
+  }
+
+  @override
   String gFiverrPage(Object user) {
     return '$user의 Fiverr 페이지 열기';
   }
@@ -205,9 +210,6 @@ class LangKo extends Lang {
   String get ouFlutterToo => '...그리고 Flutter...';
 
   @override
-  String get ouSimplifies => '이는 단순화합니다:';
-
-  @override
   String get ouPlatform => '플랫폼 호환성';
 
   @override
@@ -224,7 +226,7 @@ class LangKo extends Lang {
   String get ouScreen => '화면 판독기 지원';
 
   @override
-  String get ouScreenContent => 'YWT 앱은 다음이 필요한 사용자를 지원합니다: ';
+  String get ouScreenContent => 'OUI 앱은 다음이 필요한 사용자를 지원합니다: ';
 
   @override
   String get ouTalkBackHint => 'TalkBack 문서 링크 열기';
@@ -247,7 +249,7 @@ class LangKo extends Lang {
 
   @override
   String get ouInternationalContent =>
-      'YWT 앱은 (현재까지) 14개 언어로 번역되었습니다.\nOpen UI는 미래에 무제한의 번역을 제공할 수 있는 인프라도 제공합니다.';
+      'OUI 앱은 (현재까지) 14개 언어로 번역되었습니다.\nOUI는 미래에 무제한의 번역을 제공할 수 있는 인프라도 제공합니다.';
 
   @override
   String get ouReliability => '신뢰성';
@@ -298,15 +300,14 @@ class LangKo extends Lang {
       '크게 기여할 수 있는 구체적이고 매우 영향력 있는 방법 중 하나는 InstaSOS를 온라인에 호스팅하는 비용을 지불하는 것입니다.\n\n앱 스토어 소유자들은 자신들의 입장을 명확히 밝혔으며, InstaSOS가 인기를 얻게 되면 제거될 수 있습니다.\nAndroid 사용자는 항상 직접 설치할 수 있는 옵션이 있지만, iOS 사용자에게 실행 가능한 유일한 대안은 웹 앱뿐입니다.\n\n다행히 Flutter 앱은 클라이언트 측 컴퓨팅이므로 비용이 낮습니다.\n우리는(당신은) 트래픽 관리 비용만 지불하면 됩니다.';
 
   @override
-  String get llInDev =>
-      'Liminal은 현재 개발 중입니다.\n이 디자인은 미니멀리즘을 지향합니다. 왜냐하면 우리의 휴대폰은 우리가 사용하는 도구여야지, 그 반대가 되어서는 안 되기 때문입니다.';
+  String get sosTranslators => '번역가';
 
   @override
-  String get llBut => '하지만, 이것은 다음을 사용하여 만든 미니멀리스트 런처입니다: ';
+  String get llInDev => 'Liminal은 개발 중입니다.\n디자인은 미니멀리즘을 지향하지만, 다음으로 제작되었습니다 ';
 
   @override
   String get llWhimsy =>
-      '.\n따라서 홈 화면은 불필요한 것과 방해 요소가 없으면서도 무한히 사용자 지정할 수 있습니다. 약간의 기발함도 더했습니다.';
+      '따라서 홈 화면은 번잡함과 방해 요소 없이 깔끔할 것이며, 무한한 커스터마이징이 가능합니다.\n거기에 약간의 재치도 더했습니다.';
 
   @override
   String get llTheHood => '포틀랜드 후드산(Mount Hood)의 사진이 있는 샘플 홈 화면.';
@@ -320,54 +321,6 @@ class LangKo extends Lang {
   @override
   String get llModel =>
       'Liminal은 \"지불 가능한 만큼 지불(pay what you can)\" 모델로 출시될 예정입니다.\nGoogle Play 버전은 유료입니다. 왜냐하면 (좋은) 코드는 저절로 쓰여지지 않기 때문입니다.\n기술과의 건전한 관계가 여유 자금이 있는 사람들에게만 독점되어서는 안 되므로, GitHub 리포지토리에도 무료로 사용할 수 있는 APK가 제공될 것입니다.';
-
-  @override
-  String get vaIntro => '기술이 사용되는 방식은 기술을 만드는 사람들에 의해 결정될 수 없습니다.';
-
-  @override
-  String get vaTheBad =>
-      '이것은 좋은 일일 수도, 나쁜 일일 수도, 혹은 그 중간일 수도 있습니다.\n잠시 시간을 내어 나쁜 점에 대해 이야기해 봅시다. 바로 스캠(사기) 앱입니다.';
-
-  @override
-  String get vaScamRisk =>
-      '은(는) 프로덕션 레디 앱을 구축하는 어려움을 엄청나게 줄여줍니다. AI 코딩 도구와 결합하면 스캐머들이 진짜처럼 보이고 느껴지는 앱을 만드는 것이 그 어느 때보다 쉬워집니다.\n이를 방지하기 위해 우리는 검증된 앱 목록을 유지할 것입니다.';
-
-  @override
-  String get vaCheckIn =>
-      '우리 UI를 사용하는 앱을 본다면 여기를 먼저 확인하세요. 확인되지 않은 앱이라면 다운로드하지 않는 것이 좋습니다.\n그 외에, 이것은 추천 목록이 아닙니다. 이 목록에 포함되기 위한 유일한 요건은 스캠이 아니어야 한다는 것뿐입니다.\n이 점을 숙지하신 상태에서, 알려진 UIniverse에는 다음이 포함됩니다...';
-
-  @override
-  String get vaFirst => '자사 (First party)';
-
-  @override
-  String get vaThird => '제3자 검증됨';
-
-  @override
-  String get vaWaiting => '대기 중';
-
-  @override
-  String get vaWillYou => '첫 번째가 되시겠습니까?';
-
-  @override
-  String get vaKnown => '알려진 스캠';
-
-  @override
-  String get vaSoGood => '지금까지는 아주 좋습니다!\n부디 첫 번째 스캠이 되지 말아 주세요 :)';
-
-  @override
-  String get vaPublished => 'Open UI를 사용하여 앱을 퍼블리시했다면 저희에게 보내주세요 ';
-
-  @override
-  String get vaDoNoHarm =>
-      '.\n우리가 그 앱을 사랑할 필요는 없고, 공개적으로 리뷰하는 것도 아닙니다.\n코드를 확인할 것이며, 해를 끼치지 않는 한 검증될 것입니다.';
-
-  @override
-  String get vaPrivateFree =>
-      '앱이 공개적으로 사용 가능하지 않아도 걱정하지 마세요!\n하지만 당신이 모르는 사람들이 앱을 다운로드할 수 있다면, 우리가 검증할 수 있도록 알려주세요.';
-
-  @override
-  String get vaDoYourPart =>
-      '아무런 연락을 받지 못했다면, 반증이 없는 한 귀하의 제품을 스캠으로 간주할 것입니다.\n그것이 너무 강경하다고 생각하신다면 다시 생각해 보세요. 오픈 UI는 수년간의 노력 끝에 자유롭게 공유된 것입니다. 이메일을 보내는 것은 당신이 할 수 있는 최소한의 일입니다.';
 
   @override
   String get fahJoin => '동참하기';

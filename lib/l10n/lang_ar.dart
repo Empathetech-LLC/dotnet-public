@@ -84,6 +84,11 @@ class LangAr extends Lang {
   String get gReachOut => 'تواصل معنا';
 
   @override
+  String gProfile(Object name) {
+    return 'الملف الشخصي لـ $name';
+  }
+
+  @override
   String gFiverrPage(Object user) {
     return 'فتح صفحة Fiverr الخاصة بـ $user';
   }
@@ -207,9 +212,6 @@ class LangAr extends Lang {
   String get ouFlutterToo => '...و Flutter...';
 
   @override
-  String get ouSimplifies => 'إنه يُبسِّط:';
-
-  @override
   String get ouPlatform => 'توفر المنصات';
 
   @override
@@ -228,7 +230,7 @@ class LangAr extends Lang {
 
   @override
   String get ouScreenContent =>
-      'تطبيقات YWT تدعم المستخدمين الذين يحتاجون إلى ';
+      'تطبيقات OUI تدعم المستخدمين الذين يحتاجون إلى ';
 
   @override
   String get ouTalkBackHint => 'فتح رابط لوثائق TalkBack';
@@ -251,7 +253,7 @@ class LangAr extends Lang {
 
   @override
   String get ouInternationalContent =>
-      'تُرجمت تطبيقات YWT إلى 14 لغة (حتى الآن).\nتوفر Open UI أيضًا البنية التحتية لترجمات مستقبلية غير محدودة.';
+      'تُرجمت تطبيقات OUI إلى 14 لغة (حتى الآن).\nتوفر OUI أيضًا البنية التحتية لترجمات مستقبلية غير محدودة.';
 
   @override
   String get ouReliability => 'الموثوقية';
@@ -304,15 +306,15 @@ class LangAr extends Lang {
       'إحدى الطرق المحددة وعالية التأثير للمساهمة هي تغطية فاتورة استضافة InstaSOS عبر الإنترنت.\n\nلقد أوضح مالكو متاجر التطبيقات ولاءاتهم، وقد تتم إزالة InstaSOS إذا/عندما يكتسب شعبية.\nسيكون لدى مستخدمي Android دائمًا خيار التثبيت الذاتي، لكن البديل الوحيد القابل للتطبيق لمستخدمي iOS هو تطبيق ويب.\n\nلحسن الحظ، تعتمد تطبيقات Flutter على حوسبة جانب العميل، لذا ستكون الفاتورة منخفضة.\nسنحتاج (أنت) فقط إلى الدفع مقابل إدارة حركة المرور.';
 
   @override
-  String get llInDev =>
-      'Liminal قيد التطوير.\nيميل تصميمه نحو التبسيط، لأن هواتفنا يجب أن تكون أدوات نستخدمها، وليس العكس.';
+  String get sosTranslators => 'مترجمون';
 
   @override
-  String get llBut => 'ولكن، إنه مشغل مبسط مبني باستخدام ';
+  String get llInDev =>
+      'ليمينال قيد التطوير.\nيميل تصميمه إلى البساطة، ولكنه مبني بـ ';
 
   @override
   String get llWhimsy =>
-      '.\nلذا، ستكون شاشتك الرئيسية خالية من الفوضى والمشتتات، وقابلة للتخصيص بلا حدود. مع قليل من المرح أيضًا.';
+      'لذا، ستكون شاشتك الرئيسية خالية من الفوضى والمشتتات، وقابلة للتخصيص بلا حدود.\nمع لمسة من المرح أيضاً.';
 
   @override
   String get llTheHood => 'عينة لشاشة رئيسية مع صورة لجبل هود في بورتلاند.';
@@ -328,57 +330,6 @@ class LangAr extends Lang {
   @override
   String get llModel =>
       'سيتم إصدار Liminal وفق نموذج \"ادفع ما تستطيع\".\nستكون نسخة Google Play مدفوعة، لأن الكود (الجيد) لا يكتب نفسه.\nسيحتوي مستودع GitHub أيضًا على ملف APK متاح مجانًا، لأن العلاقة الصحية مع التكنولوجيا لا ينبغي أن تقتصر على أولئك الذين لديهم دخل فائض.';
-
-  @override
-  String get vaIntro =>
-      'لا يمكن لأولئك الذين يبتكرون التكنولوجيا تحديد كيفية استخدامها.';
-
-  @override
-  String get vaTheBad =>
-      'والذي يمكن أن يكون شيئًا جيدًا، أو سيئًا، أو شيئًا بينهما.\nدعنا نأخذ لحظة لمناقشة الجانب السيئ: تطبيقات الاحتيال.';
-
-  @override
-  String get vaScamRisk =>
-      ' يقلل بشكل كبير من صعوبة بناء تطبيقات جاهزة للإنتاج. بالاقتران مع أدوات البرمجة بالذكاء الاصطناعي، أصبح من الأسهل من أي وقت مضى على المحتالين إنشاء تطبيقات تبدو حقيقية.\nللمساعدة في مكافحة ذلك، سنحتفظ بقائمة بالتطبيقات التي تم التحقق منها.';
-
-  @override
-  String get vaCheckIn =>
-      'إذا رأيت تطبيقًا يستخدم واجهة المستخدم الخاصة بنا، فتحقق هنا أولاً. إذا لم يتم التحقق منه، فنصيحتنا هي: لا تقم بتنزيله.\nبعيدًا عن ذلك، هذه ليست قائمة بالتوصيات. المطلب الوحيد للتواجد في هذه القائمة هو ألا يكون التطبيق احتياليًا.\nمع تغطية ذلك، يحتوي عالم UIniverse المعروف على...';
-
-  @override
-  String get vaFirst => 'الطرف الأول';
-
-  @override
-  String get vaThird => 'طرف ثالث تم التحقق منه';
-
-  @override
-  String get vaWaiting => 'قيد الانتظار';
-
-  @override
-  String get vaWillYou => 'هل ستكون الأول؟';
-
-  @override
-  String get vaKnown => 'عمليات احتيال معروفة';
-
-  @override
-  String get vaSoGood =>
-      'حتى الآن، كل شيء على ما يرام!\nمن فضلك لا تكن الأول :)';
-
-  @override
-  String get vaPublished =>
-      'إذا كنت قد نشرت تطبيقًا باستخدام Open UI، فأرسل لنا ';
-
-  @override
-  String get vaDoNoHarm =>
-      '.\nليس علينا أن نحب التطبيق، ولا نقوم بمراجعته علنًا.\nسنتحقق من الكود، وطالما أنه لا يسبب ضررًا، فسيتم التحقق منه.';
-
-  @override
-  String get vaPrivateFree =>
-      'إذا كان تطبيقك غير متاح للجمهور، فلا تقلق!\nولكن إذا كان بإمكان أشخاص لا تعرفهم تنزيله، فأخبرنا حتى نتمكن من التحقق منه.';
-
-  @override
-  String get vaDoYourPart =>
-      'إذا لم نسمع منك، فسنفترض أن منتجك هو عملية احتيال حتى يثبت العكس.\nإذا كنت تعتقد أن هذا مبالغ فيه، فكر مرة أخرى. Open UI هي نتاج سنوات من العمل، تمت مشاركتها بحرية. إرسال بريد إلكتروني هو أقل ما يمكنك فعله.';
 
   @override
   String get fahJoin => 'انضم إلى الفريق';
@@ -522,6 +473,11 @@ class LangArEg extends LangAr {
   String get gReachOut => 'تواصل معنا';
 
   @override
+  String gProfile(Object name) {
+    return 'الملف الشخصي لـ $name';
+  }
+
+  @override
   String gFiverrPage(Object user) {
     return 'فتح صفحة Fiverr الخاصة بـ $user';
   }
@@ -645,9 +601,6 @@ class LangArEg extends LangAr {
   String get ouFlutterToo => '...و Flutter...';
 
   @override
-  String get ouSimplifies => 'إنه يُبسِّط:';
-
-  @override
   String get ouPlatform => 'توفر المنصات';
 
   @override
@@ -666,7 +619,7 @@ class LangArEg extends LangAr {
 
   @override
   String get ouScreenContent =>
-      'تطبيقات YWT تدعم المستخدمين الذين يحتاجون إلى ';
+      'تطبيقات OUI تدعم المستخدمين الذين يحتاجون إلى ';
 
   @override
   String get ouTalkBackHint => 'فتح رابط لوثائق TalkBack';
@@ -689,7 +642,7 @@ class LangArEg extends LangAr {
 
   @override
   String get ouInternationalContent =>
-      'تُرجمت تطبيقات YWT إلى 14 لغة (حتى الآن).\nتوفر Open UI أيضًا البنية التحتية لترجمات مستقبلية غير محدودة.';
+      'تُرجمت تطبيقات OUI إلى 14 لغة (حتى الآن).\nتوفر OUI أيضًا البنية التحتية لترجمات مستقبلية غير محدودة.';
 
   @override
   String get ouReliability => 'الموثوقية';
@@ -742,15 +695,15 @@ class LangArEg extends LangAr {
       'إحدى الطرق المحددة وعالية التأثير للمساهمة هي تغطية فاتورة استضافة InstaSOS عبر الإنترنت.\n\nلقد أوضح مالكو متاجر التطبيقات ولاءاتهم، وقد تتم إزالة InstaSOS إذا/عندما يكتسب شعبية.\nسيكون لدى مستخدمي Android دائمًا خيار التثبيت الذاتي، لكن البديل الوحيد القابل للتطبيق لمستخدمي iOS هو تطبيق ويب.\n\nلحسن الحظ، تعتمد تطبيقات Flutter على حوسبة جانب العميل، لذا ستكون الفاتورة منخفضة.\nسنحتاج (أنت) فقط إلى الدفع مقابل إدارة حركة المرور.';
 
   @override
-  String get llInDev =>
-      'Liminal قيد التطوير.\nيميل تصميمه نحو التبسيط، لأن هواتفنا يجب أن تكون أدوات نستخدمها، وليس العكس.';
+  String get sosTranslators => 'مترجمون';
 
   @override
-  String get llBut => 'ولكن، إنه مشغل مبسط مبني باستخدام ';
+  String get llInDev =>
+      'ليمينال قيد التطوير.\nيميل تصميمه إلى البساطة، ولكنه مبني بـ ';
 
   @override
   String get llWhimsy =>
-      '.\nلذا، ستكون شاشتك الرئيسية خالية من الفوضى والمشتتات، وقابلة للتخصيص بلا حدود. مع قليل من المرح أيضًا.';
+      'لذا، ستكون شاشتك الرئيسية خالية من الفوضى والمشتتات، وقابلة للتخصيص بلا حدود.\nمع لمسة من المرح أيضاً.';
 
   @override
   String get llTheHood => 'عينة لشاشة رئيسية مع صورة لجبل هود في بورتلاند.';
@@ -766,57 +719,6 @@ class LangArEg extends LangAr {
   @override
   String get llModel =>
       'سيتم إصدار Liminal وفق نموذج \"ادفع ما تستطيع\".\nستكون نسخة Google Play مدفوعة، لأن الكود (الجيد) لا يكتب نفسه.\nسيحتوي مستودع GitHub أيضًا على ملف APK متاح مجانًا، لأن العلاقة الصحية مع التكنولوجيا لا ينبغي أن تقتصر على أولئك الذين لديهم دخل فائض.';
-
-  @override
-  String get vaIntro =>
-      'لا يمكن لأولئك الذين يبتكرون التكنولوجيا تحديد كيفية استخدامها.';
-
-  @override
-  String get vaTheBad =>
-      'والذي يمكن أن يكون شيئًا جيدًا، أو سيئًا، أو شيئًا بينهما.\nدعنا نأخذ لحظة لمناقشة الجانب السيئ: تطبيقات الاحتيال.';
-
-  @override
-  String get vaScamRisk =>
-      ' يقلل بشكل كبير من صعوبة بناء تطبيقات جاهزة للإنتاج. بالاقتران مع أدوات البرمجة بالذكاء الاصطناعي، أصبح من الأسهل من أي وقت مضى على المحتالين إنشاء تطبيقات تبدو حقيقية.\nللمساعدة في مكافحة ذلك، سنحتفظ بقائمة بالتطبيقات التي تم التحقق منها.';
-
-  @override
-  String get vaCheckIn =>
-      'إذا رأيت تطبيقًا يستخدم واجهة المستخدم الخاصة بنا، فتحقق هنا أولاً. إذا لم يتم التحقق منه، فنصيحتنا هي: لا تقم بتنزيله.\nبعيدًا عن ذلك، هذه ليست قائمة بالتوصيات. المطلب الوحيد للتواجد في هذه القائمة هو ألا يكون التطبيق احتياليًا.\nمع تغطية ذلك، يحتوي عالم UIniverse المعروف على...';
-
-  @override
-  String get vaFirst => 'الطرف الأول';
-
-  @override
-  String get vaThird => 'طرف ثالث تم التحقق منه';
-
-  @override
-  String get vaWaiting => 'قيد الانتظار';
-
-  @override
-  String get vaWillYou => 'هل ستكون الأول؟';
-
-  @override
-  String get vaKnown => 'عمليات احتيال معروفة';
-
-  @override
-  String get vaSoGood =>
-      'حتى الآن، كل شيء على ما يرام!\nمن فضلك لا تكن الأول :)';
-
-  @override
-  String get vaPublished =>
-      'إذا كنت قد نشرت تطبيقًا باستخدام Open UI، فأرسل لنا ';
-
-  @override
-  String get vaDoNoHarm =>
-      '.\nليس علينا أن نحب التطبيق، ولا نقوم بمراجعته علنًا.\nسنتحقق من الكود، وطالما أنه لا يسبب ضررًا، فسيتم التحقق منه.';
-
-  @override
-  String get vaPrivateFree =>
-      'إذا كان تطبيقك غير متاح للجمهور، فلا تقلق!\nولكن إذا كان بإمكان أشخاص لا تعرفهم تنزيله، فأخبرنا حتى نتمكن من التحقق منه.';
-
-  @override
-  String get vaDoYourPart =>
-      'إذا لم نسمع منك، فسنفترض أن منتجك هو عملية احتيال حتى يثبت العكس.\nإذا كنت تعتقد أن هذا مبالغ فيه، فكر مرة أخرى. Open UI هي نتاج سنوات من العمل، تمت مشاركتها بحرية. إرسال بريد إلكتروني هو أقل ما يمكنك فعله.';
 
   @override
   String get fahJoin => 'انضم إلى الفريق';

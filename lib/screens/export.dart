@@ -8,7 +8,6 @@
 export 'products/liminal.dart';
 export 'products/open_ui.dart';
 export 'products/sos.dart';
-export 'products/verified.dart';
 
 export 'contribute.dart';
 export 'error.dart';

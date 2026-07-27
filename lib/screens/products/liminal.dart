@@ -34,18 +34,11 @@ class LiminalScreen extends StatelessWidget {
             config.centerLine,
 
             // In dev
-            EzText(
-              config,
-              text: l10n(config).llInDev,
-              style: config.bodyStyle,
-              textAlign: TextAlign.center,
-            ),
-            config.centerLine,
             EzRichText(
               config,
               children: <InlineSpan>[
                 EzPlainText(
-                  text: l10n(config).llBut,
+                  text: l10n(config).llInDev,
                   style: config.bodyStyle,
                 ),
                 EzInlineLink(
@@ -56,6 +49,8 @@ class LiminalScreen extends StatelessWidget {
                   style: config.bodyStyle,
                   textAlign: TextAlign.center,
                 ),
+                EzPlainText(text: '.\n', style: config.bodyStyle),
+                config.richLine,
                 EzPlainText(
                   text: l10n(config).llWhimsy,
                   style: config.bodyStyle,
@@ -68,11 +63,11 @@ class LiminalScreen extends StatelessWidget {
 
             EzScrollView(
               config,
-              startCentered: true,
               showScrollHint: true,
               scrollDirection: Axis.horizontal,
-              mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
+                config.rowMargin,
+
                 // Mt Hood
                 Tooltip(
                   message: '${l10n(config).llTheHood}\n${l10n(config).gImageCredit(crosby)}',
@@ -80,6 +75,17 @@ class LiminalScreen extends StatelessWidget {
                     width: ezImageSize(config, context: context) * 1.5,
                     image: theHoodImage,
                     semanticLabel: l10n(config).llTheHood,
+                  ),
+                ),
+                config.rowSpacer,
+
+                // DuckDuckFetch
+                Tooltip(
+                  message: 'Duck-Duck-Fetch\n${l10n(config).gImageCredit(elinaV)}',
+                  child: EzImage(
+                    width: ezImageSize(config, context: context) * 1.5,
+                    image: duckDuckFetchImage,
+                    semanticLabel: 'Duck-Duck-Fetch',
                   ),
                 ),
                 config.rowSpacer,
@@ -104,6 +110,7 @@ class LiminalScreen extends StatelessWidget {
                     semanticLabel: l10n(config).llFrogAndPigs,
                   ),
                 ),
+                config.rowMargin,
               ],
             ),
             config.separator,

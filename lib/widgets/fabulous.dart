@@ -5,12 +5,12 @@
 
 import '../screens/export.dart';
 
-import 'package:flutter/material.dart';
 import 'package:open_ui/open_ui.dart';
+import 'package:flutter/material.dart';
 
 EzUpdaterFAB updater(EzCP config) => EzUpdaterFAB(
       config,
-      appVersion: '8.0.1',
+      appVersion: '8.0.2',
       versionSource:
           'https://raw.githubusercontent.com/YWT-LLC/web-mirror/refs/heads/main/APP_VERSION',
       isWeb: true,

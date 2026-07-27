@@ -57,24 +57,6 @@ class DotNet extends StatelessWidget {
     super.key,
   });
 
-  // Cache images //
-
-  void precacheInternal(BuildContext context) {
-    // Open UI
-    precacheImage(openUIImage, context);
-
-    // SOS
-    precacheImage(sosImage, context);
-
-    // Liminal
-    precacheImage(theHoodImage, context);
-    precacheImage(lasRosasImage, context);
-    precacheImage(laGrenouilleImage, context);
-
-    // Contribute
-    precacheImage(fahImage, context);
-  }
-
   // Define URL redirects //
 
   FutureOr<String?> colorPath(BuildContext pbc, GoRouterState pbs) {
@@ -116,131 +98,122 @@ class DotNet extends StatelessWidget {
   // Return the app //
 
   @override
-  Widget build(BuildContext context) {
-    precacheInternal(context);
+  Widget build(BuildContext context) => EzConfigurableApp(
+        localizationsDelegates: ezLocalizationsDelegates(Lang.localizationsDelegates),
+        supportedLocales: Lang.supportedLocales,
+        locale: storedLocale,
+        el10n: storedOUILang,
+        appCache: DotnetCache(storedLocale, storedLang),
+        routerConfig: GoRouter(
+          navigatorKey: ezRootNav,
+          initialLocation: homePath,
+          errorBuilder: (_, __) => const ErrorScreen(),
+          routes: <RouteBase>[
+            // Home/intro
+            GoRoute(
+              path: homePath,
+              name: homePath,
+              builder: (_, GoRouterState state) => const HomeScreen(),
+              routes: <RouteBase>[
+                // Products
+                GoRoute(
+                  path: Products.openUI.path,
+                  name: Products.openUI.path,
+                  builder: (_, __) => const OpenUIScreen(),
+                ),
+                GoRoute(
+                  path: Products.sos.path,
+                  name: Products.sos.path,
+                  builder: (_, __) => const SOSScreen(),
+                ),
+                GoRoute(
+                  path: Products.liminal.path,
+                  name: Products.liminal.path,
+                  builder: (_, __) => const LiminalScreen(),
+                ),
 
-    return EzConfigurableApp(
-      localizationsDelegates: ezLocalizationsDelegates(Lang.localizationsDelegates),
-      supportedLocales: Lang.supportedLocales,
-      locale: storedLocale,
-      el10n: storedOUILang,
-      appCache: DotnetCache(storedLocale, storedLang),
-      routerConfig: GoRouter(
-        navigatorKey: ezRootNav,
-        initialLocation: homePath,
-        errorBuilder: (_, __) => const ErrorScreen(),
-        routes: <RouteBase>[
-          // Home/intro
-          GoRoute(
-            path: homePath,
-            name: homePath,
-            builder: (_, GoRouterState state) => const HomeScreen(),
-            routes: <RouteBase>[
-              // Products
-              GoRoute(
-                path: Products.openUI.path,
-                name: Products.openUI.path,
-                builder: (_, __) => const OpenUIScreen(),
-              ),
-              GoRoute(
-                path: Products.sos.path,
-                name: Products.sos.path,
-                builder: (_, __) => const SOSScreen(),
-              ),
-              GoRoute(
-                path: Products.liminal.path,
-                name: Products.liminal.path,
-                builder: (_, __) => const LiminalScreen(),
-              ),
-              GoRoute(
-                path: Products.verified.path,
-                name: Products.verified.path,
-                builder: (_, __) => const VerifiedScreen(),
-              ),
+                // Contribute
+                GoRoute(
+                  path: contributePath,
+                  name: contributePath,
+                  builder: (_, __) => const ContributeScreen(),
+                ),
 
-              // Contribute
-              GoRoute(
-                path: contributePath,
-                name: contributePath,
-                builder: (_, __) => const ContributeScreen(),
-              ),
+                // Settings
+                GoRoute(
+                  path: settingsPath,
+                  name: settingsPath,
+                  builder: (_, GoRouterState state) {
+                    final int? target =
+                        targetLookup[state.uri.queryParameters[typeQP]?.toLowerCase()];
+                    final bool? advanced = qbParse(state.uri.queryParameters[advQP]) ??
+                        qbParse(state.uri.queryParameters[pageQP]);
 
-              // Settings
-              GoRoute(
-                path: settingsPath,
-                name: settingsPath,
-                builder: (_, GoRouterState state) {
-                  final int? target =
-                      targetLookup[state.uri.queryParameters[typeQP]?.toLowerCase()];
-                  final bool? advanced = qbParse(state.uri.queryParameters[advQP]) ??
-                      qbParse(state.uri.queryParameters[pageQP]);
+                    return SettingsHubScreen(
+                      key: ValueKey<String>('$target:$advanced'),
+                      target: target,
+                    );
+                  },
+                  routes: <RouteBase>[
+                    // Redirects //
+                    // Color
+                    GoRoute(
+                      path: colorRedirect,
+                      redirect: colorPath,
+                      routes: <RouteBase>[
+                        GoRoute(path: EzSubSetting.qckColor.path, redirect: colorPath),
+                        GoRoute(path: EzSubSetting.advColor.path, redirect: colorPath),
+                      ],
+                    ),
+                    GoRoute(
+                      path: colorSettingsPath,
+                      redirect: colorPath,
+                      routes: <RouteBase>[
+                        GoRoute(path: EzSubSetting.qckColor.path, redirect: colorPath),
+                        GoRoute(path: EzSubSetting.advColor.path, redirect: colorPath),
+                      ],
+                    ),
 
-                  return SettingsHubScreen(
-                    key: ValueKey<String>('$target:$advanced'),
-                    target: target,
-                  );
-                },
-                routes: <RouteBase>[
-                  // Redirects //
-                  // Color
-                  GoRoute(
-                    path: colorRedirect,
-                    redirect: colorPath,
-                    routes: <RouteBase>[
-                      GoRoute(path: EzSubSetting.qckColor.path, redirect: colorPath),
-                      GoRoute(path: EzSubSetting.advColor.path, redirect: colorPath),
-                    ],
-                  ),
-                  GoRoute(
-                    path: colorSettingsPath,
-                    redirect: colorPath,
-                    routes: <RouteBase>[
-                      GoRoute(path: EzSubSetting.qckColor.path, redirect: colorPath),
-                      GoRoute(path: EzSubSetting.advColor.path, redirect: colorPath),
-                    ],
-                  ),
+                    // Design
+                    GoRoute(
+                      path: designRedirect,
+                      redirect: designPath,
+                      routes: <RouteBase>[
+                        GoRoute(path: EzSubSetting.butDesign.path, redirect: designPath),
+                        GoRoute(path: EzSubSetting.pagDesign.path, redirect: designPath),
+                      ],
+                    ),
+                    GoRoute(
+                      path: designSettingsPath,
+                      redirect: designPath,
+                      routes: <RouteBase>[
+                        GoRoute(path: EzSubSetting.butDesign.path, redirect: designPath),
+                        GoRoute(path: EzSubSetting.pagDesign.path, redirect: designPath),
+                      ],
+                    ),
 
-                  // Design
-                  GoRoute(
-                    path: designRedirect,
-                    redirect: designPath,
-                    routes: <RouteBase>[
-                      GoRoute(path: EzSubSetting.butDesign.path, redirect: designPath),
-                      GoRoute(path: EzSubSetting.pagDesign.path, redirect: designPath),
-                    ],
-                  ),
-                  GoRoute(
-                    path: designSettingsPath,
-                    redirect: designPath,
-                    routes: <RouteBase>[
-                      GoRoute(path: EzSubSetting.butDesign.path, redirect: designPath),
-                      GoRoute(path: EzSubSetting.pagDesign.path, redirect: designPath),
-                    ],
-                  ),
-
-                  // Text
-                  GoRoute(
-                    path: textRedirect,
-                    redirect: textPath,
-                    routes: <RouteBase>[
-                      GoRoute(path: EzSubSetting.qckText.path, redirect: textPath),
-                      GoRoute(path: EzSubSetting.advText.path, redirect: textPath),
-                    ],
-                  ),
-                  GoRoute(
-                    path: textSettingsPath,
-                    redirect: textPath,
-                    routes: <RouteBase>[
-                      GoRoute(path: EzSubSetting.qckText.path, redirect: textPath),
-                      GoRoute(path: EzSubSetting.advText.path, redirect: textPath),
-                    ],
-                  ),
-                ],
-              ),
-            ],
-          ),
-        ],
-      ),
-    );
-  }
+                    // Text
+                    GoRoute(
+                      path: textRedirect,
+                      redirect: textPath,
+                      routes: <RouteBase>[
+                        GoRoute(path: EzSubSetting.qckText.path, redirect: textPath),
+                        GoRoute(path: EzSubSetting.advText.path, redirect: textPath),
+                      ],
+                    ),
+                    GoRoute(
+                      path: textSettingsPath,
+                      redirect: textPath,
+                      routes: <RouteBase>[
+                        GoRoute(path: EzSubSetting.qckText.path, redirect: textPath),
+                        GoRoute(path: EzSubSetting.advText.path, redirect: textPath),
+                      ],
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ],
+        ),
+      );
 }

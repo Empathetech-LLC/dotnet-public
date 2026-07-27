@@ -84,6 +84,11 @@ class LangZh extends Lang {
   String get gReachOut => '联系我们';
 
   @override
+  String gProfile(Object name) {
+    return '$name的个人资料';
+  }
+
+  @override
   String gFiverrPage(Object user) {
     return '打开 $user 的 Fiverr 页面';
   }
@@ -204,9 +209,6 @@ class LangZh extends Lang {
   String get ouFlutterToo => '...还有 Flutter...';
 
   @override
-  String get ouSimplifies => '它简化了：';
-
-  @override
   String get ouPlatform => '平台可用性';
 
   @override
@@ -223,7 +225,7 @@ class LangZh extends Lang {
   String get ouScreen => '屏幕阅读器支持';
 
   @override
-  String get ouScreenContent => 'YWT 应用程序支持需要 ';
+  String get ouScreenContent => 'OUI 应用程序支持需要 ';
 
   @override
   String get ouTalkBackHint => '打开 TalkBack 文档的链接';
@@ -246,7 +248,7 @@ class LangZh extends Lang {
 
   @override
   String get ouInternationalContent =>
-      'YWT 应用程序已被翻译成 14 种语言（截至目前）。\nOpen UI 也为未来无限的翻译提供了基础设施。';
+      'OUI 应用程序已被翻译成 14 种语言（截至目前）。\nOUI 也为未来无限的翻译提供了基础设施。';
 
   @override
   String get ouReliability => '可靠性';
@@ -296,14 +298,13 @@ class LangZh extends Lang {
       '一种具体的、具有巨大影响力的贡献方式，是为 InstaSOS 在线托管买单。\n\n应用商店所有者已经表明了他们的立场，如果/当 InstaSOS 获得关注时，它可能会被移除。\nAndroid 用户将始终可以选择自行安装，但 iOS 用户唯一可行的替代方案将是 Web 应用程序。\n\n值得庆幸的是，Flutter 应用程序是客户端计算，所以账单会很低。\n我们 (你) 只需要支付流量管理费用。';
 
   @override
-  String get llInDev =>
-      'Liminal 正在开发中。\n它的设计倾向于极简主义，因为我们的手机应该是供我们使用的工具，而不是反过来。';
+  String get sosTranslators => '译者';
 
   @override
-  String get llBut => '但是，它是一个极简主义的启动器，由 ';
+  String get llInDev => 'Liminal 正在开发中。\n它的设计偏向极简主义，但，它的构建融入了 ';
 
   @override
-  String get llWhimsy => ' 构建。\n因此，您的主屏幕将免受混乱和干扰，并且可以无限制地自定义。还能带点奇思妙想。';
+  String get llWhimsy => '因此，您的主屏幕将告别杂乱与干扰，并且支持无限制的自定义。\n同时还带有一丝奇思妙想。';
 
   @override
   String get llTheHood => '一张以波特兰胡德山 (Mount Hood) 为背景的示例主屏幕。';
@@ -317,54 +318,6 @@ class LangZh extends Lang {
   @override
   String get llModel =>
       'Liminal 将在“按能力付费”的模式下发布。\nGoogle Play 版本将是付费的，因为 (好的) 代码不会自己编写。\nGitHub 代码库也将有一个免费提供的 APK，因为与技术保持健康的关系不应该只是那些有闲钱的人的专属。';
-
-  @override
-  String get vaIntro => '技术的使用方式不能由创造它的人来决定。';
-
-  @override
-  String get vaTheBad =>
-      '这可能是一件好事，也可能是一件坏事，或者是介于两者之间的事情。\n让我们花点时间来讨论一下坏处：诈骗应用程序。';
-
-  @override
-  String get vaScamRisk =>
-      ' 极大地降低了构建生产就绪应用程序的难度。结合 AI 编码工具，诈骗者比以往任何时候都更容易创建看起来和用起来都很合法的应用程序。\n为了帮助打击这种情况，我们将维护一个经过验证的应用程序列表。';
-
-  @override
-  String get vaCheckIn =>
-      '如果您看到使用我们 UI 的应用程序，请先在此处查看。如果未经验证，我们的建议是：不要下载它。\n除此之外，这不是一个推荐列表。在这个列表上的唯一要求，就是不能是诈骗。\n讲完这些，已知的 UI 宇宙 (UIniverse) 包含...';
-
-  @override
-  String get vaFirst => '第一方';
-
-  @override
-  String get vaThird => '第三方验证';
-
-  @override
-  String get vaWaiting => '等待中';
-
-  @override
-  String get vaWillYou => '你会成为第一个吗？';
-
-  @override
-  String get vaKnown => '已知诈骗';
-
-  @override
-  String get vaSoGood => '目前为止，一切都好！\n请不要成为第一个 :)';
-
-  @override
-  String get vaPublished => '如果您使用 Open UI 发布了应用程序，请发送给我们 ';
-
-  @override
-  String get vaDoNoHarm =>
-      '。\n我们不必非得喜欢这款应用，也不会对其进行公开审查。\n我们将检查代码，只要它不会造成损害，就会被验证。';
-
-  @override
-  String get vaPrivateFree =>
-      '如果您的应用程序未公开提供，请不要担心！\n但是，如果您不认识的人可以下载它，请告诉我们，以便我们验证它。';
-
-  @override
-  String get vaDoYourPart =>
-      '如果我们没有收到您的消息，除非另有证明，否则我们将假定您的产品是骗局。\n如果您认为这太激烈了，请再想一想。Open UI 是经过多年的努力工作并免费分享的。发一封电子邮件是您最起码能做的事。';
 
   @override
   String get fahJoin => '加入行列';
@@ -506,6 +459,11 @@ class LangZhCn extends LangZh {
   String get gReachOut => '联系我们';
 
   @override
+  String gProfile(Object name) {
+    return '$name的个人资料';
+  }
+
+  @override
   String gFiverrPage(Object user) {
     return '打开 $user 的 Fiverr 页面';
   }
@@ -626,9 +584,6 @@ class LangZhCn extends LangZh {
   String get ouFlutterToo => '...还有 Flutter...';
 
   @override
-  String get ouSimplifies => '它简化了：';
-
-  @override
   String get ouPlatform => '平台可用性';
 
   @override
@@ -645,7 +600,7 @@ class LangZhCn extends LangZh {
   String get ouScreen => '屏幕阅读器支持';
 
   @override
-  String get ouScreenContent => 'YWT 应用程序支持需要 ';
+  String get ouScreenContent => 'OUI 应用程序支持需要 ';
 
   @override
   String get ouTalkBackHint => '打开 TalkBack 文档的链接';
@@ -668,7 +623,7 @@ class LangZhCn extends LangZh {
 
   @override
   String get ouInternationalContent =>
-      'YWT 应用程序已被翻译成 14 种语言（截至目前）。\nOpen UI 也为未来无限的翻译提供了基础设施。';
+      'OUI 应用程序已被翻译成 14 种语言（截至目前）。\nOUI 也为未来无限的翻译提供了基础设施。';
 
   @override
   String get ouReliability => '可靠性';
@@ -718,14 +673,13 @@ class LangZhCn extends LangZh {
       '一种具体的、具有巨大影响力的贡献方式，是为 InstaSOS 在线托管买单。\n\n应用商店所有者已经表明了他们的立场，如果/当 InstaSOS 获得关注时，它可能会被移除。\nAndroid 用户将始终可以选择自行安装，但 iOS 用户唯一可行的替代方案将是 Web 应用程序。\n\n值得庆幸的是，Flutter 应用程序是客户端计算，所以账单会很低。\n我们 (你) 只需要支付流量管理费用。';
 
   @override
-  String get llInDev =>
-      'Liminal 正在开发中。\n它的设计倾向于极简主义，因为我们的手机应该是供我们使用的工具，而不是反过来。';
+  String get sosTranslators => '译者';
 
   @override
-  String get llBut => '但是，它是一个极简主义的启动器，由 ';
+  String get llInDev => 'Liminal 正在开发中。\n它的设计偏向极简主义，但，它的构建融入了 ';
 
   @override
-  String get llWhimsy => ' 构建。\n因此，您的主屏幕将免受混乱和干扰，并且可以无限制地自定义。还能带点奇思妙想。';
+  String get llWhimsy => '因此，您的主屏幕将告别杂乱与干扰，并且支持无限制的自定义。\n同时还带有一丝奇思妙想。';
 
   @override
   String get llTheHood => '一张以波特兰胡德山 (Mount Hood) 为背景的示例主屏幕。';
@@ -739,54 +693,6 @@ class LangZhCn extends LangZh {
   @override
   String get llModel =>
       'Liminal 将在“按能力付费”的模式下发布。\nGoogle Play 版本将是付费的，因为 (好的) 代码不会自己编写。\nGitHub 代码库也将有一个免费提供的 APK，因为与技术保持健康的关系不应该只是那些有闲钱的人的专属。';
-
-  @override
-  String get vaIntro => '技术的使用方式不能由创造它的人来决定。';
-
-  @override
-  String get vaTheBad =>
-      '这可能是一件好事，也可能是一件坏事，或者是介于两者之间的事情。\n让我们花点时间来讨论一下坏处：诈骗应用程序。';
-
-  @override
-  String get vaScamRisk =>
-      ' 极大地降低了构建生产就绪应用程序的难度。结合 AI 编码工具，诈骗者比以往任何时候都更容易创建看起来和用起来都很合法的应用程序。\n为了帮助打击这种情况，我们将维护一个经过验证的应用程序列表。';
-
-  @override
-  String get vaCheckIn =>
-      '如果您看到使用我们 UI 的应用程序，请先在此处查看。如果未经验证，我们的建议是：不要下载它。\n除此之外，这不是一个推荐列表。在这个列表上的唯一要求，就是不能是诈骗。\n讲完这些，已知的 UI 宇宙 (UIniverse) 包含...';
-
-  @override
-  String get vaFirst => '第一方';
-
-  @override
-  String get vaThird => '第三方验证';
-
-  @override
-  String get vaWaiting => '等待中';
-
-  @override
-  String get vaWillYou => '你会成为第一个吗？';
-
-  @override
-  String get vaKnown => '已知诈骗';
-
-  @override
-  String get vaSoGood => '目前为止，一切都好！\n请不要成为第一个 :)';
-
-  @override
-  String get vaPublished => '如果您使用 Open UI 发布了应用程序，请发送给我们 ';
-
-  @override
-  String get vaDoNoHarm =>
-      '。\n我们不必非得喜欢这款应用，也不会对其进行公开审查。\n我们将检查代码，只要它不会造成损害，就会被验证。';
-
-  @override
-  String get vaPrivateFree =>
-      '如果您的应用程序未公开提供，请不要担心！\n但是，如果您不认识的人可以下载它，请告诉我们，以便我们验证它。';
-
-  @override
-  String get vaDoYourPart =>
-      '如果我们没有收到您的消息，除非另有证明，否则我们将假定您的产品是骗局。\n如果您认为这太激烈了，请再想一想。Open UI 是经过多年的努力工作并免费分享的。发一封电子邮件是您最起码能做的事。';
 
   @override
   String get fahJoin => '加入行列';

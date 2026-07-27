@@ -249,6 +249,12 @@ abstract class Lang {
   /// **'Reach out'**
   String get gReachOut;
 
+  /// No description provided for @gProfile.
+  ///
+  /// In en, this message translates to:
+  /// **'{name}\'s profile'**
+  String gProfile(Object name);
+
   /// No description provided for @gFiverrPage.
   ///
   /// In en, this message translates to:
@@ -477,12 +483,6 @@ abstract class Lang {
   /// **'...and Flutter...'**
   String get ouFlutterToo;
 
-  /// No description provided for @ouSimplifies.
-  ///
-  /// In en, this message translates to:
-  /// **'It simplifies:'**
-  String get ouSimplifies;
-
   /// No description provided for @ouPlatform.
   ///
   /// In en, this message translates to:
@@ -516,7 +516,7 @@ abstract class Lang {
   /// No description provided for @ouScreenContent.
   ///
   /// In en, this message translates to:
-  /// **'YWT apps support users who need '**
+  /// **'OUI apps support users who need '**
   String get ouScreenContent;
 
   /// No description provided for @ouTalkBackHint.
@@ -558,7 +558,7 @@ abstract class Lang {
   /// No description provided for @ouInternationalContent.
   ///
   /// In en, this message translates to:
-  /// **'YWT apps have been translated to 14 languages (so far).\nOpen UI also provides the infrastructure for unlimited future translations.'**
+  /// **'OUI has been translated to 14 languages (so far).\nOUI also provides the infrastructure for unlimited future translations.'**
   String get ouInternationalContent;
 
   /// No description provided for @ouReliability.
@@ -651,22 +651,22 @@ abstract class Lang {
   /// **'One specific, and highly impactful, way to contribute would be to foot the bill for hosting InstaSOS online.\n\nThe app store owners have made their allegiances clear, and InstaSOS may be removed if/when it gains traction.\nAndroid users will always have the option to self install, but the only viable alternative for iOS users would be a web app.\n\nThankfully, Flutter apps are client side compute, so the bill would be low.\nWe\'d (you\'d) only need to pay for traffic management.'**
   String get sosWeb;
 
+  /// No description provided for @sosTranslators.
+  ///
+  /// In en, this message translates to:
+  /// **'Translators'**
+  String get sosTranslators;
+
   /// No description provided for @llInDev.
   ///
   /// In en, this message translates to:
-  /// **'Liminal is in development.\nIt\'s design leans towards minimalism, because our phones should be tools for us to use, not the other way around.'**
+  /// **'Liminal is in development.\nIts design leans towards minimalism, but it\'s built with '**
   String get llInDev;
-
-  /// No description provided for @llBut.
-  ///
-  /// In en, this message translates to:
-  /// **'But, it\'s a minimalist launcher built with '**
-  String get llBut;
 
   /// No description provided for @llWhimsy.
   ///
   /// In en, this message translates to:
-  /// **'.\nSo, your home screen will be free of clutter and distractions, AND be limitlessly customizable. With a bit of whimsy to boot.'**
+  /// **'So, your home screen will be free of clutter and distractions, AND be limitlessly customizable.\nWith a bit of whimsy to boot.'**
   String get llWhimsy;
 
   /// No description provided for @llTheHood.
@@ -690,92 +690,8 @@ abstract class Lang {
   /// No description provided for @llModel.
   ///
   /// In en, this message translates to:
-  /// **'Liminal will be released under a \"pay what you can\" model.\nThe Google Play version will be paid, because (good) code doesn\'t write itself.\nThe GitHub repo will also have a freely available APK, because a healthy relationship with technology shouldn\'t be exclusive to those with expendable income.'**
+  /// **'Liminal will be released under a \"pay what you can\" model.\nThe Google Play version will be paid, because (good) code doesn\'t write itself.\nThe APK will also be on GitHub, because a healthy relationship with technology shouldn\'t be exclusive to those with expendable income.'**
   String get llModel;
-
-  /// No description provided for @vaIntro.
-  ///
-  /// In en, this message translates to:
-  /// **'The way a technology is used cannot be decided by those who create it.'**
-  String get vaIntro;
-
-  /// No description provided for @vaTheBad.
-  ///
-  /// In en, this message translates to:
-  /// **'Which can be a good thing, a bad thing, or an in-between thing.\nLet\'s take a moment to discuss the bad: scam apps.'**
-  String get vaTheBad;
-
-  /// No description provided for @vaScamRisk.
-  ///
-  /// In en, this message translates to:
-  /// **' massively reduces the difficulty for building production ready apps. Combined with AI coding tools, it\'s easier than ever for scammers to create apps that look and feel legitimate.\nTo help combat this, we\'ll maintain a list of verified apps.'**
-  String get vaScamRisk;
-
-  /// No description provided for @vaCheckIn.
-  ///
-  /// In en, this message translates to:
-  /// **'If you see an app that uses our UI, check here first. If it\'s not verified, our advice is: don\'t download it.\nBeyond that, this is not a list of recommendations. The only requirement to be on this list, is to not be a scam.\nWith that covered, the known UIniverse contains...'**
-  String get vaCheckIn;
-
-  /// No description provided for @vaFirst.
-  ///
-  /// In en, this message translates to:
-  /// **'First party'**
-  String get vaFirst;
-
-  /// No description provided for @vaThird.
-  ///
-  /// In en, this message translates to:
-  /// **'Third party verified'**
-  String get vaThird;
-
-  /// No description provided for @vaWaiting.
-  ///
-  /// In en, this message translates to:
-  /// **'Waiting'**
-  String get vaWaiting;
-
-  /// No description provided for @vaWillYou.
-  ///
-  /// In en, this message translates to:
-  /// **'Will you be the first?'**
-  String get vaWillYou;
-
-  /// No description provided for @vaKnown.
-  ///
-  /// In en, this message translates to:
-  /// **'Known scams'**
-  String get vaKnown;
-
-  /// No description provided for @vaSoGood.
-  ///
-  /// In en, this message translates to:
-  /// **'So far, so good!\nPlease don\'t be the first :)'**
-  String get vaSoGood;
-
-  /// No description provided for @vaPublished.
-  ///
-  /// In en, this message translates to:
-  /// **'If you\'ve published an app using Open UI, send us '**
-  String get vaPublished;
-
-  /// No description provided for @vaDoNoHarm.
-  ///
-  /// In en, this message translates to:
-  /// **'.\nWe don\'t have to love the app, and we\'re not publicly reviewing it.\nWe\'ll check the code, and as long as it doesn\'t cause harm, it\'ll be verified.'**
-  String get vaDoNoHarm;
-
-  /// No description provided for @vaPrivateFree.
-  ///
-  /// In en, this message translates to:
-  /// **'If your app isn\'t publicly available, don\'t worry!\nBut if people you don\'t know can download it, let us know so we can verify it.'**
-  String get vaPrivateFree;
-
-  /// No description provided for @vaDoYourPart.
-  ///
-  /// In en, this message translates to:
-  /// **'If we haven\'t heard from you, we\'ll assume your product is a scam until proven otherwise.\nIf you think that\'s intense, think again. Open UI is years of work, shared freely. Sending an email is the least you can do.'**
-  String get vaDoYourPart;
 
   /// No description provided for @fahJoin.
   ///

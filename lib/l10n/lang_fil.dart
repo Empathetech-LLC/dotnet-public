@@ -84,6 +84,11 @@ class LangFil extends Lang {
   String get gReachOut => 'Makipag-ugnayan';
 
   @override
+  String gProfile(Object name) {
+    return 'Profile ni $name';
+  }
+
+  @override
   String gFiverrPage(Object user) {
     return 'Buksan ang Fiverr page ni $user';
   }
@@ -210,9 +215,6 @@ class LangFil extends Lang {
   String get ouFlutterToo => '...at Flutter...';
 
   @override
-  String get ouSimplifies => 'Pinapasimple nito:';
-
-  @override
   String get ouPlatform => 'Availability sa platform';
 
   @override
@@ -231,7 +233,7 @@ class LangFil extends Lang {
 
   @override
   String get ouScreenContent =>
-      'Sinusuportahan ng mga YWT app ang mga user na nangangailangan ng ';
+      'Sinusuportahan ng mga OUI app ang mga user na nangangailangan ng ';
 
   @override
   String get ouTalkBackHint => 'Buksan ang link sa TalkBack documentation';
@@ -254,7 +256,7 @@ class LangFil extends Lang {
 
   @override
   String get ouInternationalContent =>
-      'Ang mga YWT app ay naisalin na sa 14 na wika (sa ngayon).\nNagbibigay rin ang Open UI ng imprastraktura para sa walang limitasyong pagsasalin sa hinaharap.';
+      'Ang mga OUI app ay naisalin na sa 14 na wika (sa ngayon).\nNagbibigay rin ang OUI ng imprastraktura para sa walang limitasyong pagsasalin sa hinaharap.';
 
   @override
   String get ouReliability => 'Pagiging maaasahan';
@@ -308,16 +310,15 @@ class LangFil extends Lang {
       'Isang tiyak, at napakaimpluwensyang paraan upang makatulong ay ang pagbabayad para sa hosting ng InstaSOS online.\n\nMalinaw na ang kinikilingan ng mga may-ari ng app store, at maaaring alisin ang InstaSOS kung/kapag nakakuha ito ng traksyon.\nLaging may opsyon ang mga user ng Android na mag-install nang sarili, ngunit ang tanging mabubuhay na alternatibo para sa mga user ng iOS ay isang web app.\n\nSa kabutihang palad, ang mga Flutter app ay client side compute, kaya\'t mababa lang ang bayarin.\nKailangan lang naming (ninyong) magbayad para sa traffic management.';
 
   @override
-  String get llInDev =>
-      'Ang Liminal ay nasa in-development pa.\nAng disenyo nito ay nakaayon sa minimalism, dahil ang ating mga telepono ay dapat na mga kagamitang gagamitin natin, hindi pabaligtad.';
+  String get sosTranslators => 'Mga Tagasalin';
 
   @override
-  String get llBut =>
-      'Ngunit, ito ay isang minimalist launcher na binuo gamit ang ';
+  String get llInDev =>
+      'Kasalukuyang binubuo pa ang Liminal.\nAng disenyo nito ay nakahilig sa minimalismo, ngunit, binuo ito na may ';
 
   @override
   String get llWhimsy =>
-      '.\nKaya, ang iyong home screen ay malaya sa kalat at mga panggambala, AT walang limitasyon sa pag-customize. May kasama ring kaunting kakatuwaan.';
+      'Kaya, magiging malaya sa kalat at mga sagabal ang iyong home screen, AT maaaring i-customize nang walang limitasyon.\nNa may dagdag pang kaunting aliw.';
 
   @override
   String get llTheHood =>
@@ -334,57 +335,6 @@ class LangFil extends Lang {
   @override
   String get llModel =>
       'Ipapalabas ang Liminal sa ilalim ng modelong \"magbayad kung magkano ang kaya mo\".\nAng bersyon sa Google Play ay may bayad, dahil ang (magandang) code ay hindi nagsusulat ng kusa.\nAng GitHub repo ay magkakaroon din ng libre at available na APK, dahil ang malusog na ugnayan sa teknolohiya ay hindi dapat eksklusibo lamang para sa mga may sobrang pera.';
-
-  @override
-  String get vaIntro =>
-      'Ang paraan ng paggamit sa teknolohiya ay hindi maaaring pagpasyahan ng mga lumikha nito.';
-
-  @override
-  String get vaTheBad =>
-      'Na maaaring maging isang magandang bagay, masamang bagay, o nasa gitna.\nMaglaan tayo ng sandali upang talakayin ang masama: mga scam na app.';
-
-  @override
-  String get vaScamRisk =>
-      ' ay lubos na nakakabawas sa hirap ng pagbuo ng mga production ready na app. Kapag isinama sa mga AI coding tool, mas madali na ngayon para sa mga scammer na gumawa ng mga app na mukha at pakiramdam ay lehitimo.\nUpang makatulong na labanan ito, magpapanatili kami ng listahan ng mga na-verify na app.';
-
-  @override
-  String get vaCheckIn =>
-      'Kung nakakita ka ng app na gumagamit ng aming UI, suriin muna dito. Kung hindi ito na-verify, ang payo namin ay: huwag itong i-download.\nBukod doon, hindi ito listahan ng mga rekomendasyon. Ang tanging requirement upang mapabilang sa listahang ito, ay huwag maging isang scam.\nPagkatapos malinaw iyon, ang kilalang UIniverse ay naglalaman ng...';
-
-  @override
-  String get vaFirst => 'First party';
-
-  @override
-  String get vaThird => 'Third party na na-verify';
-
-  @override
-  String get vaWaiting => 'Naghahintay';
-
-  @override
-  String get vaWillYou => 'Ikaw ba ang magiging una?';
-
-  @override
-  String get vaKnown => 'Mga kilalang scam';
-
-  @override
-  String get vaSoGood =>
-      'Ayos pa naman sa ngayon!\nSana ay huwag kang maging una :)';
-
-  @override
-  String get vaPublished =>
-      'Kung nag-publish ka ng app gamit ang Open UI, padalhan kami ng ';
-
-  @override
-  String get vaDoNoHarm =>
-      '.\nHindi namin kailangang magustuhan ang app, at hindi namin ito ire-review nang pampubliko.\nSusuriin namin ang code, at basta walang itong dulot na pinsala, maive-verify ito.';
-
-  @override
-  String get vaPrivateFree =>
-      'Kung hindi pampubliko ang iyong app, huwag mag-alala!\nNgunit kung mada-download ito ng mga taong hindi mo kilala, ipaalam sa amin upang ma-verify namin ito.';
-
-  @override
-  String get vaDoYourPart =>
-      'Kung wala kaming narinig mula sa iyo, ipapalagay naming isang scam ang iyong produkto hanggang mapatunayang hindi.\nKung sa tingin mo ay matindi iyon, mag-isip kang muli. Ang Open UI ay resulta ng maraming taong trabaho, na ibinabahagi nang libre. Ang pagpapadala ng email ay ang pinakamaliit na bagay na magagawa mo.';
 
   @override
   String get fahJoin => 'Sumali sa Fold';

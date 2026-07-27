@@ -8,10 +8,10 @@ import '../../utils/export.dart';
 import '../../widgets/export.dart';
 import 'package:oui_bios/oui_bios.dart';
 
+import 'package:open_ui/open_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:video_player/video_player.dart';
-import 'package:open_ui/open_ui.dart';
 
 class OpenUIScreen extends StatefulWidget {
   const OpenUIScreen({super.key});
@@ -130,18 +130,7 @@ class _OpenUIScreenState extends State<OpenUIScreen> {
               ),
               config.divider,
 
-              // Open UI //
-
-              // How it works
-              EzText(
-                config,
-                text: l10n(config).ouSimplifies,
-                style: config.headlineStyle,
-                textAlign: TextAlign.center,
-              ),
-              config.centerLine,
-              config.centerLine,
-
+              // The pillars //
               // Platform availability
               EzText(
                 config,
@@ -257,7 +246,7 @@ class _OpenUIScreenState extends State<OpenUIScreen> {
               config.centerLine,
               config.centerLine,
 
-              // Tag line && consultation call-out
+              // Tag line && call-out
               EzRichText(config,
                   children: <InlineSpan>[
                     EzPlainText(text: l10n(config).ouTagLine, style: config.bodyStyle),

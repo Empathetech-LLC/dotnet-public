@@ -131,13 +131,8 @@ class _HomeScreenState extends State<HomeScreen> {
           final Widget logoAnim = LogoAnimation(
             colorScheme: config.colors,
             semantics: l10n(config).hsAnimLabel,
-            height: ezTextSize('T\nT', context: context, style: config.displayStyle).height,
+            height: ezTextSize('Y\nY', context: context, style: config.displayStyle).height,
             onComplete: () => setState(() => fin = true),
-          );
-          final Widget slogan = Text(
-            'Your Tech\nYour Way',
-            textAlign: TextAlign.start,
-            style: config.headlineStyle,
           );
 
           return DotnetScaffold(
@@ -157,11 +152,27 @@ class _HomeScreenState extends State<HomeScreen> {
                         config,
                         reverseHands: false,
                         mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[logoAnim, config.rowSpacer, slogan],
+                        children: <Widget>[
+                          logoAnim,
+                          config.rowSpacer,
+                          SloganAnimation(
+                            style: config.headlineStyle,
+                            calcSize: (String text) =>
+                                ezTextSize(text, context: context, style: config.headlineStyle),
+                          ),
+                        ],
                       ),
                       col: EzCol(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[logoAnim, config.spacer, slogan],
+                        children: <Widget>[
+                          logoAnim,
+                          config.spacer,
+                          SloganAnimation(
+                            style: config.headlineStyle,
+                            calcSize: (String text) =>
+                                ezTextSize(text, context: context, style: config.headlineStyle),
+                          ),
+                        ],
                       ),
                     ),
                   ),

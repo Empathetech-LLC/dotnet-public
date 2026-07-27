@@ -84,6 +84,11 @@ class LangSw extends Lang {
   String get gReachOut => 'Wasiliana';
 
   @override
+  String gProfile(Object name) {
+    return 'Wasifu wa $name';
+  }
+
+  @override
   String gFiverrPage(Object user) {
     return 'Fungua ukurasa wa Fiverr wa $user';
   }
@@ -210,9 +215,6 @@ class LangSw extends Lang {
   String get ouFlutterToo => '...na Flutter...';
 
   @override
-  String get ouSimplifies => 'Inafanya iwe rahisi:';
-
-  @override
   String get ouPlatform => 'Upatikanaji kwenye mifumo';
 
   @override
@@ -231,7 +233,7 @@ class LangSw extends Lang {
 
   @override
   String get ouScreenContent =>
-      'Programu za YWT zinasaidia watumiaji wanaohitaji ';
+      'Programu za OUI zinasaidia watumiaji wanaohitaji ';
 
   @override
   String get ouTalkBackHint => 'Fungua kiungo cha nyaraka za TalkBack';
@@ -254,7 +256,7 @@ class LangSw extends Lang {
 
   @override
   String get ouInternationalContent =>
-      'Programu za YWT zimetafsiriwa kwa lugha 14 (kufikia sasa).\nOpen UI pia inatoa miundombinu ya tafsiri zisizo na kikomo za baadaye.';
+      'Programu za OUI zimetafsiriwa kwa lugha 14 (kufikia sasa).\nOUI pia inatoa miundombinu ya tafsiri zisizo na kikomo za baadaye.';
 
   @override
   String get ouReliability => 'Utegemezi';
@@ -307,15 +309,15 @@ class LangSw extends Lang {
       'Njia moja hususa, na yenye athari kubwa ya kuchangia itakuwa kulipia gharama za kuweka InstaSOS mtandaoni.\n\nWamiliki wa maduka ya programu wameweka wazi utiifu wao, na InstaSOS inaweza kuondolewa ikiwa/wakati itakapopata umaarufu.\nWatumiaji wa Android kila wakati watakuwa na chaguo la kusakinisha wenyewe, lakini mbadala pekee unaofaa kwa watumiaji wa iOS itakuwa ni programu ya wavuti.\n\nTunashukuru, programu za Flutter hufanya kazi upande wa mteja, kwa hivyo bili itakuwa ndogo.\nSisi (Wewe) tutahitaji tu kulipia usimamizi wa trafiki ya mtandao.';
 
   @override
-  String get llInDev =>
-      'Liminal inaundwa.\nMuundo wake unaegemea kwenye urahisi, kwa sababu simu zetu zinapaswa kuwa zana za sisi kutumia, na sio kinyume chake.';
+  String get sosTranslators => 'Watafsiri';
 
   @override
-  String get llBut => 'Lakini, ni kianzishi chepesi kilichoundwa na ';
+  String get llInDev =>
+      'Liminal bado inatengenezwa.\nMuundo wake unaelekea kwenye usahili, lakini, imeundwa na ';
 
   @override
   String get llWhimsy =>
-      '.\nHivyo, skrini yako ya mwanzo haitakuwa na msongamano na usumbufu, NA itaweza kugeuzwa kukufaa bila kikomo. Pamoja na ucheshi kidogo wa kuanzia.';
+      'Kwa hivyo, skrini yako ya nyumbani haitakuwa na msongamano na usumbufu, NA itaweza kubinafsishwa bila kikomo.\nPamoja na mguso kidogo wa kufurahisha pia.';
 
   @override
   String get llTheHood =>
@@ -332,57 +334,6 @@ class LangSw extends Lang {
   @override
   String get llModel =>
       'Liminal itatolewa chini ya mfumo wa \"lipa unachoweza\".\nToleo la Google Play litauzwa, kwa sababu msimbo (mzuri) haujiandiki wenyewe.\nHifadhi ya GitHub pia itakuwa na APK inayopatikana bila malipo, kwa sababu uhusiano mzuri na teknolojia haupaswi kuwa tu kwa wale walio na kipato cha ziada.';
-
-  @override
-  String get vaIntro =>
-      'Jinsi teknolojia inavyotumika haiwezi kuamuliwa na wale wanaoiunda.';
-
-  @override
-  String get vaTheBad =>
-      'Jambo ambalo linaweza kuwa zuri, baya, au katikati.\nHebu tuchukue muda kujadili mabaya: programu za utapeli.';
-
-  @override
-  String get vaScamRisk =>
-      ' hupunguza kwa kiasi kikubwa ugumu wa kuunda programu zilizo tayari kwa matumizi. Ikichanganywa na zana za uandishi wa msimbo za AI, ni rahisi zaidi kuliko hapo awali kwa matapeli kuunda programu zinazoonekana halali.\nIli kusaidia kupambana na hili, tutadumisha orodha ya programu zilizothibitishwa.';
-
-  @override
-  String get vaCheckIn =>
-      'Ukiona programu inayotumia UI yetu, angalia hapa kwanza. Ikiwa haijathibitishwa, ushauri wetu ni: usiipakue.\nZaidi ya hayo, hii si orodha ya mapendekezo. Sharti pekee la kuwa kwenye orodha hii, ni kutokuwa tapeli.\nBaada ya kueleza hayo, ulimwengu wa UI unaojulikana una...';
-
-  @override
-  String get vaFirst => 'Mhusika wa kwanza';
-
-  @override
-  String get vaThird => 'Mhusika wa tatu aliyethibitishwa';
-
-  @override
-  String get vaWaiting => 'Inasubiri';
-
-  @override
-  String get vaWillYou => 'Utakuwa wa kwanza?';
-
-  @override
-  String get vaKnown => 'Matapeli wanaojulikana';
-
-  @override
-  String get vaSoGood =>
-      'Hadi sasa, mambo ni mazuri!\nTafadhali usiwe wa kwanza :)';
-
-  @override
-  String get vaPublished =>
-      'Ikiwa umechapisha programu kwa kutumia Open UI, tutumie ';
-
-  @override
-  String get vaDoNoHarm =>
-      '.\nHatuhitaji kuipenda programu, na hatuifanyii uhakiki hadharani.\nTutakagua msimbo, na mradi tu hausababishi madhara, itathibitishwa.';
-
-  @override
-  String get vaPrivateFree =>
-      'Ikiwa programu yako haipatikani kwa umma, usijali!\nLakini ikiwa watu usiowajua wanaweza kuipakua, tujulishe ili tuweze kuithibitisha.';
-
-  @override
-  String get vaDoYourPart =>
-      'Ikiwa hutasikia kutoka kwetu, tutachukulia kuwa bidhaa yako ni tapeli hadi ithibitishwe vinginevyo.\nIkiwa unafikiri hilo ni kali, fikiria tena. Open UI ni kazi ya miaka mingi, iliyoshirikiwa bila malipo. Kutuma barua pepe ni jambo dogo sana unaloweza kufanya.';
 
   @override
   String get fahJoin => 'Jiunge na Kundi';

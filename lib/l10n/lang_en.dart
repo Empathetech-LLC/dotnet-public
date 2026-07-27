@@ -84,6 +84,11 @@ class LangEn extends Lang {
   String get gReachOut => 'Reach out';
 
   @override
+  String gProfile(Object name) {
+    return '$name\'s profile';
+  }
+
+  @override
   String gFiverrPage(Object user) {
     return 'Open $user\'s Fiverr page';
   }
@@ -209,9 +214,6 @@ class LangEn extends Lang {
   String get ouFlutterToo => '...and Flutter...';
 
   @override
-  String get ouSimplifies => 'It simplifies:';
-
-  @override
   String get ouPlatform => 'Platform availability';
 
   @override
@@ -229,7 +231,7 @@ class LangEn extends Lang {
   String get ouScreen => 'Screen reader support';
 
   @override
-  String get ouScreenContent => 'YWT apps support users who need ';
+  String get ouScreenContent => 'OUI apps support users who need ';
 
   @override
   String get ouTalkBackHint => 'Open a link to TalkBack documentation';
@@ -252,7 +254,7 @@ class LangEn extends Lang {
 
   @override
   String get ouInternationalContent =>
-      'YWT apps have been translated to 14 languages (so far).\nOpen UI also provides the infrastructure for unlimited future translations.';
+      'OUI has been translated to 14 languages (so far).\nOUI also provides the infrastructure for unlimited future translations.';
 
   @override
   String get ouReliability => 'Reliability';
@@ -304,15 +306,15 @@ class LangEn extends Lang {
       'One specific, and highly impactful, way to contribute would be to foot the bill for hosting InstaSOS online.\n\nThe app store owners have made their allegiances clear, and InstaSOS may be removed if/when it gains traction.\nAndroid users will always have the option to self install, but the only viable alternative for iOS users would be a web app.\n\nThankfully, Flutter apps are client side compute, so the bill would be low.\nWe\'d (you\'d) only need to pay for traffic management.';
 
   @override
-  String get llInDev =>
-      'Liminal is in development.\nIt\'s design leans towards minimalism, because our phones should be tools for us to use, not the other way around.';
+  String get sosTranslators => 'Translators';
 
   @override
-  String get llBut => 'But, it\'s a minimalist launcher built with ';
+  String get llInDev =>
+      'Liminal is in development.\nIts design leans towards minimalism, but it\'s built with ';
 
   @override
   String get llWhimsy =>
-      '.\nSo, your home screen will be free of clutter and distractions, AND be limitlessly customizable. With a bit of whimsy to boot.';
+      'So, your home screen will be free of clutter and distractions, AND be limitlessly customizable.\nWith a bit of whimsy to boot.';
 
   @override
   String get llTheHood =>
@@ -328,57 +330,7 @@ class LangEn extends Lang {
 
   @override
   String get llModel =>
-      'Liminal will be released under a \"pay what you can\" model.\nThe Google Play version will be paid, because (good) code doesn\'t write itself.\nThe GitHub repo will also have a freely available APK, because a healthy relationship with technology shouldn\'t be exclusive to those with expendable income.';
-
-  @override
-  String get vaIntro =>
-      'The way a technology is used cannot be decided by those who create it.';
-
-  @override
-  String get vaTheBad =>
-      'Which can be a good thing, a bad thing, or an in-between thing.\nLet\'s take a moment to discuss the bad: scam apps.';
-
-  @override
-  String get vaScamRisk =>
-      ' massively reduces the difficulty for building production ready apps. Combined with AI coding tools, it\'s easier than ever for scammers to create apps that look and feel legitimate.\nTo help combat this, we\'ll maintain a list of verified apps.';
-
-  @override
-  String get vaCheckIn =>
-      'If you see an app that uses our UI, check here first. If it\'s not verified, our advice is: don\'t download it.\nBeyond that, this is not a list of recommendations. The only requirement to be on this list, is to not be a scam.\nWith that covered, the known UIniverse contains...';
-
-  @override
-  String get vaFirst => 'First party';
-
-  @override
-  String get vaThird => 'Third party verified';
-
-  @override
-  String get vaWaiting => 'Waiting';
-
-  @override
-  String get vaWillYou => 'Will you be the first?';
-
-  @override
-  String get vaKnown => 'Known scams';
-
-  @override
-  String get vaSoGood => 'So far, so good!\nPlease don\'t be the first :)';
-
-  @override
-  String get vaPublished =>
-      'If you\'ve published an app using Open UI, send us ';
-
-  @override
-  String get vaDoNoHarm =>
-      '.\nWe don\'t have to love the app, and we\'re not publicly reviewing it.\nWe\'ll check the code, and as long as it doesn\'t cause harm, it\'ll be verified.';
-
-  @override
-  String get vaPrivateFree =>
-      'If your app isn\'t publicly available, don\'t worry!\nBut if people you don\'t know can download it, let us know so we can verify it.';
-
-  @override
-  String get vaDoYourPart =>
-      'If we haven\'t heard from you, we\'ll assume your product is a scam until proven otherwise.\nIf you think that\'s intense, think again. Open UI is years of work, shared freely. Sending an email is the least you can do.';
+      'Liminal will be released under a \"pay what you can\" model.\nThe Google Play version will be paid, because (good) code doesn\'t write itself.\nThe APK will also be on GitHub, because a healthy relationship with technology shouldn\'t be exclusive to those with expendable income.';
 
   @override
   String get fahJoin => 'Join the Fold';
@@ -521,6 +473,11 @@ class LangEnUs extends LangEn {
   String get gReachOut => 'Reach out';
 
   @override
+  String gProfile(Object name) {
+    return '$name\'s profile';
+  }
+
+  @override
   String gFiverrPage(Object user) {
     return 'Open $user\'s Fiverr page';
   }
@@ -646,9 +603,6 @@ class LangEnUs extends LangEn {
   String get ouFlutterToo => '...and Flutter...';
 
   @override
-  String get ouSimplifies => 'It simplifies:';
-
-  @override
   String get ouPlatform => 'Platform availability';
 
   @override
@@ -666,7 +620,7 @@ class LangEnUs extends LangEn {
   String get ouScreen => 'Screen reader support';
 
   @override
-  String get ouScreenContent => 'YWT apps support users who need ';
+  String get ouScreenContent => 'OUI apps support users who need ';
 
   @override
   String get ouTalkBackHint => 'Open a link to TalkBack documentation';
@@ -689,7 +643,7 @@ class LangEnUs extends LangEn {
 
   @override
   String get ouInternationalContent =>
-      'YWT apps have been translated to 14 languages (so far).\nOpen UI also provides the infrastructure for unlimited future translations.';
+      'OUI has been translated to 14 languages (so far).\nOUI also provides the infrastructure for unlimited future translations.';
 
   @override
   String get ouReliability => 'Reliability';
@@ -741,15 +695,15 @@ class LangEnUs extends LangEn {
       'One specific, and highly impactful, way to contribute would be to foot the bill for hosting InstaSOS online.\n\nThe app store owners have made their allegiances clear, and InstaSOS may be removed if/when it gains traction.\nAndroid users will always have the option to self install, but the only viable alternative for iOS users would be a web app.\n\nThankfully, Flutter apps are client side compute, so the bill would be low.\nWe\'d (you\'d) only need to pay for traffic management.';
 
   @override
-  String get llInDev =>
-      'Liminal is in development.\nIt\'s design leans towards minimalism, because our phones should be tools for us to use, not the other way around.';
+  String get sosTranslators => 'Translators';
 
   @override
-  String get llBut => 'But, it\'s a minimalist launcher built with ';
+  String get llInDev =>
+      'Liminal is in development.\nIts design leans towards minimalism, but it\'s built with ';
 
   @override
   String get llWhimsy =>
-      '.\nSo, your home screen will be free of clutter and distractions, AND be limitlessly customizable. With a bit of whimsy to boot.';
+      'So, your home screen will be free of clutter and distractions, AND be limitlessly customizable.\nWith a bit of whimsy to boot.';
 
   @override
   String get llTheHood =>
@@ -765,57 +719,7 @@ class LangEnUs extends LangEn {
 
   @override
   String get llModel =>
-      'Liminal will be released under a \"pay what you can\" model.\nThe Google Play version will be paid, because (good) code doesn\'t write itself.\nThe GitHub repo will also have a freely available APK, because a healthy relationship with technology shouldn\'t be exclusive to those with expendable income.';
-
-  @override
-  String get vaIntro =>
-      'The way a technology is used cannot be decided by those who create it.';
-
-  @override
-  String get vaTheBad =>
-      'Which can be a good thing, a bad thing, or an in-between thing.\nLet\'s take a moment to discuss the bad: scam apps.';
-
-  @override
-  String get vaScamRisk =>
-      ' massively reduces the difficulty for building production ready apps. Combined with AI coding tools, it\'s easier than ever for scammers to create apps that look and feel legitimate.\nTo help combat this, we\'ll maintain a list of verified apps.';
-
-  @override
-  String get vaCheckIn =>
-      'If you see an app that uses our UI, check here first. If it\'s not verified, our advice is: don\'t download it.\nBeyond that, this is not a list of recommendations. The only requirement to be on this list, is to not be a scam.\nWith that covered, the known UIniverse contains...';
-
-  @override
-  String get vaFirst => 'First party';
-
-  @override
-  String get vaThird => 'Third party verified';
-
-  @override
-  String get vaWaiting => 'Waiting';
-
-  @override
-  String get vaWillYou => 'Will you be the first?';
-
-  @override
-  String get vaKnown => 'Known scams';
-
-  @override
-  String get vaSoGood => 'So far, so good!\nPlease don\'t be the first :)';
-
-  @override
-  String get vaPublished =>
-      'If you\'ve published an app using Open UI, send us ';
-
-  @override
-  String get vaDoNoHarm =>
-      '.\nWe don\'t have to love the app, and we\'re not publicly reviewing it.\nWe\'ll check the code, and as long as it doesn\'t cause harm, it\'ll be verified.';
-
-  @override
-  String get vaPrivateFree =>
-      'If your app isn\'t publicly available, don\'t worry!\nBut if people you don\'t know can download it, let us know so we can verify it.';
-
-  @override
-  String get vaDoYourPart =>
-      'If we haven\'t heard from you, we\'ll assume your product is a scam until proven otherwise.\nIf you think that\'s intense, think again. Open UI is years of work, shared freely. Sending an email is the least you can do.';
+      'Liminal will be released under a \"pay what you can\" model.\nThe Google Play version will be paid, because (good) code doesn\'t write itself.\nThe APK will also be on GitHub, because a healthy relationship with technology shouldn\'t be exclusive to those with expendable income.';
 
   @override
   String get fahJoin => 'Join the Fold';

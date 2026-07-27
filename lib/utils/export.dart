@@ -6,5 +6,6 @@
 export 'consts.dart';
 export 'dotnet_cache.dart';
 export 'enums.dart';
+export 'externals.dart';
 
 export '../l10n/lang.dart';

@@ -84,6 +84,11 @@ class LangJa extends Lang {
   String get gReachOut => '連絡する';
 
   @override
+  String gProfile(Object name) {
+    return '$nameのプロフィール';
+  }
+
+  @override
   String gFiverrPage(Object user) {
     return '$userのFiverrページを開く';
   }
@@ -206,9 +211,6 @@ class LangJa extends Lang {
   String get ouFlutterToo => '...そしてFlutter...';
 
   @override
-  String get ouSimplifies => '以下をシンプルにします：';
-
-  @override
   String get ouPlatform => 'プラットフォームの可用性';
 
   @override
@@ -225,7 +227,7 @@ class LangJa extends Lang {
   String get ouScreen => 'スクリーンリーダーのサポート';
 
   @override
-  String get ouScreenContent => 'YWTアプリは次を必要とするユーザーをサポートします: ';
+  String get ouScreenContent => 'OUIアプリは次を必要とするユーザーをサポートします: ';
 
   @override
   String get ouTalkBackHint => 'TalkBackのドキュメントへのリンクを開く';
@@ -248,7 +250,7 @@ class LangJa extends Lang {
 
   @override
   String get ouInternationalContent =>
-      'YWTのアプリは、（これまでに）14の言語に翻訳されています。\nOpen UIは、将来の無制限の翻訳のためのインフラも提供します。';
+      'OUIのアプリは、（これまでに）14の言語に翻訳されています。\nOUIは、将来の無制限の翻訳のためのインフラも提供します。';
 
   @override
   String get ouReliability => '信頼性';
@@ -299,15 +301,14 @@ class LangJa extends Lang {
       '貢献の1つの具体的かつ非常に影響力のある方法は、InstaSOSをオンラインでホストする費用を負担することです。\n\nアプリストアの運営者は自分たちの立場を明確にしており、InstaSOSが普及した場合、削除される可能性があります。\nAndroidユーザーには常に自分でインストールする選択肢がありますが、iOSユーザーにとって唯一の実行可能な代替案はWebアプリとなります。\n\nありがたいことに、Flutterアプリはクライアントサイドでの計算処理となるため、費用は低く抑えられます。\n私たち（あなた）が支払う必要があるのはトラフィック管理の費用のみです。';
 
   @override
-  String get llInDev =>
-      'Liminalは開発中です。\n私たちのスマートフォンは私たちが使用するためのツールであるべきであり、その逆であってはならないため、そのデザインはミニマリズムに傾倒しています。';
+  String get sosTranslators => '翻訳者';
 
   @override
-  String get llBut => 'しかし、これは以下で構築されたミニマリストランチャーです: ';
+  String get llInDev => 'Liminalは現在開発中です。\nデザインはミニマリズムを指向していますが、次を用いて作られています： ';
 
   @override
   String get llWhimsy =>
-      '。\nそのため、ホーム画面から雑然としたものや気が散るものがなくなり、かつ無限にカスタマイズ可能になります。少しの遊び心も添えて。';
+      'そのため、ホーム画面は不要なものや気を散らすものがなくなり、しかも無限にカスタマイズ可能です。\nおまけに、ちょっとした遊び心もプラスされています。';
 
   @override
   String get llTheHood => 'ポートランドのマウント・フッドの写真を使用したホーム画面のサンプル。';
@@ -321,54 +322,6 @@ class LangJa extends Lang {
   @override
   String get llModel =>
       'Liminalは「支払える額だけ支払う（pay what you can）」モデルでリリースされる予定です。\n（優れた）コードは勝手に書かれるものではないため、Google Play版は有料となります。\nテクノロジーとの健全な関係は、自由に使える収入がある人だけのものであるべきではないため、GitHubリポジトリには無料で利用できるAPKも用意されます。';
-
-  @override
-  String get vaIntro => 'テクノロジーがどのように使用されるかは、それを作成した人々が決定することはできません。';
-
-  @override
-  String get vaTheBad =>
-      'それは良いことでもあり、悪いことでもあり、あるいはその中間でもあります。\n少し時間を取って、悪い側面である詐欺アプリについて話し合いましょう。';
-
-  @override
-  String get vaScamRisk =>
-      ' は、実稼働環境向けのアプリを構築する難易度を大幅に下げます。AIコーディングツールと組み合わせることで、詐欺師が本物のように見え、機能するアプリを作成することがこれまで以上に容易になっています。\nこれに対抗するため、私たちは検証済みアプリのリストを管理します。';
-
-  @override
-  String get vaCheckIn =>
-      '私たちのUIを使用しているアプリを見かけた場合は、まずここで確認してください。もし検証されていなければ、私たちの助言は「ダウンロードしないこと」です。\nそれ以上の意味合いにおいて、これは推奨リストではありません。このリストに載るための唯一の要件は、詐欺ではないということです。\n前置きはこのくらいにして、既知のUIniverse（UIの世界）に含まれるのは...';
-
-  @override
-  String get vaFirst => 'ファーストパーティ';
-
-  @override
-  String get vaThird => 'サードパーティ（検証済み）';
-
-  @override
-  String get vaWaiting => '待機中';
-
-  @override
-  String get vaWillYou => 'あなたが最初の1人になりますか？';
-
-  @override
-  String get vaKnown => '既知の詐欺';
-
-  @override
-  String get vaSoGood => '今のところは問題ありません！\n最初の1人にはならないでくださいね :)';
-
-  @override
-  String get vaPublished => 'Open UIを使用してアプリを公開した場合は、以下を送信してください: ';
-
-  @override
-  String get vaDoNoHarm =>
-      '。\n私たちがそのアプリを気に入る必要はありませんし、公開レビューするわけでもありません。\nコードを確認し、害を及ぼさない限り、検証済みとなります。';
-
-  @override
-  String get vaPrivateFree =>
-      'アプリが一般公開されていない場合は心配無用です！\nしかし、あなたの知らない人がダウンロードできる状態であれば、検証できるように私たちにお知らせください。';
-
-  @override
-  String get vaDoYourPart =>
-      'ご連絡がない場合、そうでないと証明されるまで、あなたの製品を詐欺とみなします。\n厳しすぎると感じるなら、もう一度考えてみてください。Open UIは何年もの労力の結晶であり、それが無料で共有されているのです。メールを送るくらいは最低限できるはずです。';
 
   @override
   String get fahJoin => 'Foldに参加する';

@@ -27,6 +27,7 @@
   "gImageCredit": "Image credit: {creator}",
 
   "gReachOut": "Reach out",
+  "gProfile": "{name}'s profile",
   "gFiverrPage": "Open {user}'s Fiverr page",
 
   "gDontChaWish": "Don't cha wish your frontend was fun ", 
@@ -83,8 +84,6 @@
   "ouLocal": "Everything runs on your computer. There are no credentials, credit cards, or cookies.",
   "ouRequirements": "The only requirements are an internet connection and an idea.",
   "ouFlutterToo": "...and Flutter...",
-
-  "ouSimplifies": "It simplifies:",
  
   "ouPlatform": "Platform availability",
   "ouPlatformContent": "You can use Open UI to create on Android, iOS, Linux, macOS, Windows and Web!",
@@ -93,7 +92,7 @@
   "ouResponsiveContent": "To see it in action, play with the window you're using right now!",
 
   "ouScreen": "Screen reader support",
-  "ouScreenContent": "YWT apps support users who need ",
+  "ouScreenContent": "OUI apps support users who need ",
   "ouTalkBackHint": "Open a link to TalkBack documentation",
   "ouAnd": " and ",
   "ouVoiceOverHint": "Open a link to VoiceOver documentation",
@@ -102,7 +101,7 @@
   "ouCustomContent": "The only way to be truly accessible to ALL customers is to empower them with the freedom of choice!\nOpen UI provides an elegant UX for full control over an app's appearance.",
   
   "ouInternational": "Internationalization",
-  "ouInternationalContent": "YWT apps have been translated to 14 languages (so far).\nOpen UI also provides the infrastructure for unlimited future translations.",
+  "ouInternationalContent": "OUI has been translated to 14 languages (so far).\nOUI also provides the infrastructure for unlimited future translations.",
 
   "ouReliability": "Reliability",
   "ouReliabilityContent": "YWT software is built to last. This is NOT AI code generation.\nProgrammers are people. LLMs are rubber ducks.",
@@ -126,39 +125,20 @@
 
   "sosIconLabel": "a loudly colored notification bell.",
   "sosWeb": "One specific, and highly impactful, way to contribute would be to foot the bill for hosting InstaSOS online.\n\nThe app store owners have made their allegiances clear, and InstaSOS may be removed if/when it gains traction.\nAndroid users will always have the option to self install, but the only viable alternative for iOS users would be a web app.\n\nThankfully, Flutter apps are client side compute, so the bill would be low.\nWe'd (you'd) only need to pay for traffic management.",
+  "sosTranslators": "Translators",
 
 
 
-  "llInDev": "Liminal is in development.\nIt's design leans towards minimalism, because our phones should be tools for us to use, not the other way around.",
-  "llBut": "But, it's a minimalist launcher built with ",
-  "llWhimsy": ".\nSo, your home screen will be free of clutter and distractions, AND be limitlessly customizable. With a bit of whimsy to boot.",
+  "llInDev": "Liminal is in development.\nIts design leans towards minimalism, but it's built with ",
+  "llWhimsy": "So, your home screen will be free of clutter and distractions, AND be limitlessly customizable.\nWith a bit of whimsy to boot.",
 
   "llTheHood": "A sample home screen with a picture of Portland's Mount Hood.",
   "llLasRosas": "A sample home screen with a picture of Portland's Rose garden.",
   "llFrogAndPigs": "A sample home screen with a picture of Portland's wildlife.",
 
-  "llModel": "Liminal will be released under a \"pay what you can\" model.\nThe Google Play version will be paid, because (good) code doesn't write itself.\nThe GitHub repo will also have a freely available APK, because a healthy relationship with technology shouldn't be exclusive to those with expendable income.",
+  "llModel": "Liminal will be released under a \"pay what you can\" model.\nThe Google Play version will be paid, because (good) code doesn't write itself.\nThe APK will also be on GitHub, because a healthy relationship with technology shouldn't be exclusive to those with expendable income.",
   
-
-
-  "vaIntro": "The way a technology is used cannot be decided by those who create it.",
-  "vaTheBad": "Which can be a good thing, a bad thing, or an in-between thing.\nLet's take a moment to discuss the bad: scam apps.",
-  "vaScamRisk": " massively reduces the difficulty for building production ready apps. Combined with AI coding tools, it's easier than ever for scammers to create apps that look and feel legitimate.\nTo help combat this, we'll maintain a list of verified apps.",
-  "vaCheckIn": "If you see an app that uses our UI, check here first. If it's not verified, our advice is: don't download it.\nBeyond that, this is not a list of recommendations. The only requirement to be on this list, is to not be a scam.\nWith that covered, the known UIniverse contains...",
-
-  "vaFirst": "First party",
-  "vaThird": "Third party verified",
-  "vaWaiting": "Waiting",
-  "vaWillYou": "Will you be the first?",
-  "vaKnown": "Known scams",
-  "vaSoGood": "So far, so good!\nPlease don't be the first :)",
-
-  "vaPublished": "If you've published an app using Open UI, send us ",
-  "vaDoNoHarm": ".\nWe don't have to love the app, and we're not publicly reviewing it.\nWe'll check the code, and as long as it doesn't cause harm, it'll be verified.",
-  "vaPrivateFree": "If your app isn't publicly available, don't worry!\nBut if people you don't know can download it, let us know so we can verify it.",
-  "vaDoYourPart": "If we haven't heard from you, we'll assume your product is a scam until proven otherwise.\nIf you think that's intense, think again. Open UI is years of work, shared freely. Sending an email is the least you can do.",
-
-
+  
 
   "fahJoin": "Join the Fold",
 

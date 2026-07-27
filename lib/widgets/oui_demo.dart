@@ -5,9 +5,9 @@
 
 import '../utils/export.dart';
 
+import 'package:open_ui/open_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
-import 'package:open_ui/open_ui.dart';
 
 class OUIDemo extends StatelessWidget {
   final EzCP config;
@@ -30,7 +30,7 @@ class OUIDemo extends StatelessWidget {
             config,
             onPressed: () => config.rebuildUI(
               allECT,
-              changes: () => EzBigButtonsConfig.onPressed(config, false),
+              changes: () async => await EzBigButtonsConfig.onPressed(config, false),
             ),
             icon: EzIcon(config, Icons.touch_app),
             label: l10n(config).ouAccessible,
@@ -46,7 +46,8 @@ class OUIDemo extends StatelessWidget {
             config,
             onPressed: () => config.rebuildUI(
               allECT,
-              changes: () => EzHighVisibilityConfig.onPressed(config, false, monoChrome: true),
+              changes: () async =>
+                  await EzHighVisibilityConfig.onPressed(config, false, monoChrome: true),
             ),
             icon: EzIcon(config, Icons.contrast),
             label: l10n(config).ouZeroStrain,
@@ -69,7 +70,10 @@ class OUIDemo extends StatelessWidget {
           excludeFromSemantics: true,
           child: EzTextIconButton(
             config,
-            onPressed: () => config.rebuildUI(allECT, changes: () => EzCM.randomize(config.isDark)),
+            onPressed: () => config.rebuildUI(
+              allECT,
+              changes: () async => await EzCM.randomize(config.isDark),
+            ),
             icon: EzIcon(config, LineIcons.diceD6),
             label: l10n(config).ouEverything,
           ),
@@ -79,8 +83,10 @@ class OUIDemo extends StatelessWidget {
       config.spacer,
       EzElevatedIconButton(
         config,
-        onPressed: () =>
-            config.rebuildUI(allECT, changes: () => EzCM.reset(config.isDark, forceOne: true)),
+        onPressed: () => config.rebuildUI(
+          allECT,
+          changes: () async => await EzCM.reset(config.isDark, forceOne: true),
+        ),
         icon: EzIcon(config, Icons.refresh),
         label: config.ezL10n.gReset,
       ),

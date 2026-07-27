@@ -84,6 +84,11 @@ class LangHt extends Lang {
   String get gReachOut => 'Kontakte nou';
 
   @override
+  String gProfile(Object name) {
+    return 'Pwofil $name la';
+  }
+
+  @override
   String gFiverrPage(Object user) {
     return 'Louvri paj Fiverr $user la';
   }
@@ -208,9 +213,6 @@ class LangHt extends Lang {
   String get ouFlutterToo => '...ak Flutter...';
 
   @override
-  String get ouSimplifies => 'Li senplifye:';
-
-  @override
   String get ouPlatform => 'Disponiblite sou platfòm';
 
   @override
@@ -228,7 +230,7 @@ class LangHt extends Lang {
   String get ouScreen => 'Sipò pou lektè ekran';
 
   @override
-  String get ouScreenContent => 'Aplikasyon YWT yo sipòte itilizatè ki bezwen ';
+  String get ouScreenContent => 'Aplikasyon OUI yo sipòte itilizatè ki bezwen ';
 
   @override
   String get ouTalkBackHint => 'Louvri yon lyen nan dokimantasyon TalkBack la';
@@ -252,7 +254,7 @@ class LangHt extends Lang {
 
   @override
   String get ouInternationalContent =>
-      'Aplikasyon YWT yo te tradui nan 14 lang (jiskaprezan).\nOpen UI bay tou enfrastrikti pou yon kantite tradiksyon illimité alavni.';
+      'Aplikasyon OUI yo te tradui nan 14 lang (jiskaprezan).\nOUI bay tou enfrastrikti pou yon kantite tradiksyon illimité alavni.';
 
   @override
   String get ouReliability => 'Fiyabilite';
@@ -304,15 +306,15 @@ class LangHt extends Lang {
       'Yon fason espesifik, epi ki gen anpil enpak, pou kontribye se ta peye bòdwo pou ebèje InstaSOS sou entènèt.\n\nPropriyetè magazen aplikasyon yo deja fè konnen ki bò yo kanpe, epi yo gendwa retire InstaSOS si/lè li vin popilè.\nItilizatè Android yo ap toujou gen opsyon pou yo enstale li tèt yo, men sèl altènatif solid pou itilizatè iOS yo t ap yon aplikasyon wèb.\n\nErezman, aplikasyon Flutter yo fè kalkil yo sou bò kliyan an, donk bòdwo a t ap ba.\nNou t ap (ou t ap) sèlman bezwen peye pou jesyon trafik la.';
 
   @override
-  String get llInDev =>
-      'Liminal nan faz devlopman.\nKonsepsyon li panche sou minimalis, paske telefòn nou yo ta dwe zouti pou nou itilize, pa envès la.';
+  String get sosTranslators => 'Tradiktè yo';
 
   @override
-  String get llBut => 'Men, li se yon lanse minimalis ki bati avèk ';
+  String get llInDev =>
+      'Liminal nan devlopman.\nKonsepsyon li panche sou minimalis, men, li bati ak ';
 
   @override
   String get llWhimsy =>
-      '.\nDonk, ekran akèy ou a ap lib de tout dezòd ak distraksyon, EPI w ap ka pèsonalize l san limit. Avèk yon ti jan fantezi tou.';
+      'Konsa, ekran akèy ou a ap lib de tout dezòd ak distraksyon, EPI l ap ka pèsonalize san limit.\nAk yon ti fantezi anplis.';
 
   @override
   String get llTheHood =>
@@ -329,57 +331,6 @@ class LangHt extends Lang {
   @override
   String get llModel =>
       'Liminal pral soti anba yon modèl \"peye sa ou kapab\".\nVèsyon Google Play la ap peye, paske (bon) kòd pa ekri tèt li poukont li.\nDepo GitHub la ap gen yon APK ki disponib gratis tou, paske yon relasyon an sante ak teknoloji pa ta dwe eksklizif sèlman pou moun ki gen mwayen finansye.';
-
-  @override
-  String get vaIntro =>
-      'Fason yo itilize yon teknoloji pa ka deside pa moun ki kreye li a.';
-
-  @override
-  String get vaTheBad =>
-      'Ki kapab yon bon bagay, yon move bagay, oswa yon bagay nan mitan.\nAnn pran yon ti moman pou diskite sou sa k mal la: aplikasyon ki fè magouy (scam apps).';
-
-  @override
-  String get vaScamRisk =>
-      ' redwi anpil difikilte pou bati aplikasyon ki pare pou pwodiksyon. Avèk zouti kodaj AI yo, li pi fasil pase janm anvan pou moun k ap fè fwod yo kreye aplikasyon ki sanble lejitim.\nPou ede konbat sa, n ap kenbe yon lis aplikasyon ki verifye.';
-
-  @override
-  String get vaCheckIn =>
-      'Si w wè yon aplikasyon ki itilize entèfas nou an (UI), tcheke la a an premye. Si li pa verifye, konsèy nou se: pa telechaje li.\nAnplis sa, sa a pa yon lis rekòmandasyon. Sèl kondisyon pou nan lis sa a, se pa yon aplikasyon magouy.\nAvèk sa klè, UInivè (UIniverse) ki koni an gen ladan l...';
-
-  @override
-  String get vaFirst => 'Premye pati';
-
-  @override
-  String get vaThird => 'Twazyèm pati verifye';
-
-  @override
-  String get vaWaiting => 'Ap tann';
-
-  @override
-  String get vaWillYou => 'Èske ou ap premye a?';
-
-  @override
-  String get vaKnown => 'Magouy yo konnen';
-
-  @override
-  String get vaSoGood =>
-      'Jiskaprezan, tout bagay anfòm!\nTanpri pa vin premye a :)';
-
-  @override
-  String get vaPublished =>
-      'Si ou te pibliye yon aplikasyon avèk Open UI, voye ';
-
-  @override
-  String get vaDoNoHarm =>
-      ' ban nou.\nNou pa bezwen renmen aplikasyon an, epi nou p ap evalye l an piblik.\nNou pral verifye kòd la, epi toutotan li pa fè okenn domaj, li ap verifye.';
-
-  @override
-  String get vaPrivateFree =>
-      'Si aplikasyon w lan pa disponib an piblik, pa enkyete w!\nMen si moun ou pa konnen ka telechaje li, fè nou konnen pou nou ka verifye li.';
-
-  @override
-  String get vaDoYourPart =>
-      'Si nou poko tande anyen de ou, n ap sipoze pwodwi w la se yon magouy jiskaske yo pwouve lekontrè.\nSi w panse sa egzajere, reflechi ankò. Open UI se rezilta plizyè ane travay, pataje gratis. Voye yon imèl se ti bagay la ou ka fè.';
 
   @override
   String get fahJoin => 'Rejwenn Gwoup la';

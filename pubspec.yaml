@@ -1,6 +1,6 @@
 name: website
 description: "YWT is re-balancing tech by making self-hosting more accessible."
-version: 8.0.3
+version: 8.0.4
 publish_to: 'none'
 
 environment:

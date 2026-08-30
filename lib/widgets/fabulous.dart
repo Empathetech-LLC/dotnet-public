@@ -1,4 +1,4 @@
-/* dotnet
+/* website
  * Copyright (c) 2022 YWT (Empathetech LLC). All rights reserved.
  * See LICENSE for distribution and usage details.
  */
@@ -10,7 +10,7 @@ import 'package:flutter/material.dart';
 
 EzUpdaterFAB updater(EzCP config) => EzUpdaterFAB(
       config,
-      appVersion: '8.0.2',
+      appVersion: '8.0.3',
       versionSource:
           'https://raw.githubusercontent.com/YWT-LLC/web-mirror/refs/heads/main/APP_VERSION',
       isWeb: true,

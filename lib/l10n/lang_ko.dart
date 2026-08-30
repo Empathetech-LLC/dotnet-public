@@ -303,24 +303,29 @@ class LangKo extends Lang {
   String get sosTranslators => '번역가';
 
   @override
-  String get llInDev => 'Liminal은 개발 중입니다.\n디자인은 미니멀리즘을 지향하지만, 다음으로 제작되었습니다 ';
+  String get llSlogan => 'The last launcher you\'ll ever load.';
+
+  @override
+  String get llDesign =>
+      'Its design leans towards minimalism, but it\'s built with ';
 
   @override
   String get llWhimsy =>
-      '따라서 홈 화면은 번잡함과 방해 요소 없이 깔끔할 것이며, 무한한 커스터마이징이 가능합니다.\n거기에 약간의 재치도 더했습니다.';
+      'So, your home screen will be free of clutter and distractions, AND be limitlessly customizable.\nWith a bit of whimsy to boot.';
 
   @override
-  String get llTheHood => '포틀랜드 후드산(Mount Hood)의 사진이 있는 샘플 홈 화면.';
+  String get llModel => 'Liminal has a \"pay what you can\" model.\nThe ';
 
   @override
-  String get llLasRosas => '포틀랜드 장미 정원 사진이 있는 샘플 홈 화면.';
+  String get llPaid =>
+      ' version is \$4.99, because (good) code doesn\'t write itself.\nThe APK is also available ';
 
   @override
-  String get llFrogAndPigs => '포틀랜드 야생 동물의 사진이 있는 샘플 홈 화면.';
+  String get llGit => 'on GitHub';
 
   @override
-  String get llModel =>
-      'Liminal은 \"지불 가능한 만큼 지불(pay what you can)\" 모델로 출시될 예정입니다.\nGoogle Play 버전은 유료입니다. 왜냐하면 (좋은) 코드는 저절로 쓰여지지 않기 때문입니다.\n기술과의 건전한 관계가 여유 자금이 있는 사람들에게만 독점되어서는 안 되므로, GitHub 리포지토리에도 무료로 사용할 수 있는 APK가 제공될 것입니다.';
+  String get llFree =>
+      ', because a healthy relationship with technology shouldn\'t be exclusive to those with expendable income.';
 
   @override
   String get fahJoin => '동참하기';

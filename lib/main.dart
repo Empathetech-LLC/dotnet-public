@@ -1,4 +1,4 @@
-/* dotnet
+/* website
  * Copyright (c) 2022 YWT (Empathetech LLC). All rights reserved.
  * See LICENSE for distribution and usage details.
  */
@@ -7,11 +7,11 @@ import './screens/export.dart';
 import './utils/export.dart';
 
 import 'dart:async';
+import 'package:open_ui/open_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:open_ui/open_ui.dart';
 
 void main() async {
   // Configure the app //
@@ -20,16 +20,14 @@ void main() async {
   await SystemChrome.setPreferredOrientations(DeviceOrientation.values);
 
   EzCM.init(
-    appName: 'dotnet',
+    appName: 'website',
     androidPackage: null,
     assetPaths: assetPaths,
     orientations: DeviceOrientation.values,
     localeFallback: americanEnglish,
     l10nFallback: await OUILang.delegate.load(americanEnglish),
     preferences: await SharedPreferencesWithCache.create(
-      cacheOptions: SharedPreferencesWithCacheOptions(
-        allowList: allEZConfigKeys.keys.toSet(),
-      ),
+      cacheOptions: SharedPreferencesWithCacheOptions(allowList: allEZConfigKeys.keys.toSet()),
     ),
     defaults: isMobile() ? ywtMobileConfig : ywtDesktopConfig,
   );
@@ -38,24 +36,15 @@ void main() async {
 
   final (Locale storedLocale, OUILang storedOUILang) = await ezStoredL10n();
 
-  runApp(DotNet(
-    storedLocale,
-    storedOUILang,
-    await Lang.delegate.load(storedLocale),
-  ));
+  runApp(Website(storedLocale, storedOUILang, await Lang.delegate.load(storedLocale)));
 }
 
-class DotNet extends StatelessWidget {
+class Website extends StatelessWidget {
   final Locale storedLocale;
   final OUILang storedOUILang;
   final Lang storedLang;
 
-  const DotNet(
-    this.storedLocale,
-    this.storedOUILang,
-    this.storedLang, {
-    super.key,
-  });
+  const Website(this.storedLocale, this.storedOUILang, this.storedLang, {super.key});
 
   // Define URL redirects //
 
@@ -103,7 +92,7 @@ class DotNet extends StatelessWidget {
         supportedLocales: Lang.supportedLocales,
         locale: storedLocale,
         el10n: storedOUILang,
-        appCache: DotnetCache(storedLocale, storedLang),
+        appCache: WebsiteCache(storedLocale, storedLang),
         routerConfig: GoRouter(
           navigatorKey: ezRootNav,
           initialLocation: homePath,
@@ -146,12 +135,13 @@ class DotNet extends StatelessWidget {
                   builder: (_, GoRouterState state) {
                     final int? target =
                         targetLookup[state.uri.queryParameters[typeQP]?.toLowerCase()];
-                    final bool? advanced = qbParse(state.uri.queryParameters[advQP]) ??
+                    final bool? secondary = qbParse(state.uri.queryParameters[advQP]) ??
                         qbParse(state.uri.queryParameters[pageQP]);
 
                     return SettingsHubScreen(
-                      key: ValueKey<String>('$target:$advanced'),
+                      key: ValueKey<String>('$target:$secondary'),
                       target: target,
+                      secondary: secondary,
                     );
                   },
                   routes: <RouteBase>[

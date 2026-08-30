@@ -304,24 +304,29 @@ class LangJa extends Lang {
   String get sosTranslators => '翻訳者';
 
   @override
-  String get llInDev => 'Liminalは現在開発中です。\nデザインはミニマリズムを指向していますが、次を用いて作られています： ';
+  String get llSlogan => 'The last launcher you\'ll ever load.';
+
+  @override
+  String get llDesign =>
+      'Its design leans towards minimalism, but it\'s built with ';
 
   @override
   String get llWhimsy =>
-      'そのため、ホーム画面は不要なものや気を散らすものがなくなり、しかも無限にカスタマイズ可能です。\nおまけに、ちょっとした遊び心もプラスされています。';
+      'So, your home screen will be free of clutter and distractions, AND be limitlessly customizable.\nWith a bit of whimsy to boot.';
 
   @override
-  String get llTheHood => 'ポートランドのマウント・フッドの写真を使用したホーム画面のサンプル。';
+  String get llModel => 'Liminal has a \"pay what you can\" model.\nThe ';
 
   @override
-  String get llLasRosas => 'ポートランドのローズガーデンの写真を使用したホーム画面のサンプル。';
+  String get llPaid =>
+      ' version is \$4.99, because (good) code doesn\'t write itself.\nThe APK is also available ';
 
   @override
-  String get llFrogAndPigs => 'ポートランドの野生動物の写真を使用したホーム画面のサンプル。';
+  String get llGit => 'on GitHub';
 
   @override
-  String get llModel =>
-      'Liminalは「支払える額だけ支払う（pay what you can）」モデルでリリースされる予定です。\n（優れた）コードは勝手に書かれるものではないため、Google Play版は有料となります。\nテクノロジーとの健全な関係は、自由に使える収入がある人だけのものであるべきではないため、GitHubリポジトリには無料で利用できるAPKも用意されます。';
+  String get llFree =>
+      ', because a healthy relationship with technology shouldn\'t be exclusive to those with expendable income.';
 
   @override
   String get fahJoin => 'Foldに参加する';

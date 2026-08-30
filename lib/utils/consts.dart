@@ -1,4 +1,4 @@
-/* dotnet
+/* website
  * Copyright (c) 2022 YWT (Empathetech LLC). All rights reserved.
  * See LICENSE for distribution and usage details.
  */
@@ -10,7 +10,7 @@ import 'package:flutter/material.dart';
 // Titles //
 
 /// YWT
-const String ywt = 'YWT';
+const String ywtName = 'YWT';
 
 /// Open UI
 const String openUI = 'Open UI';
@@ -23,69 +23,64 @@ const String sosLabel = 'Insta SOS';
 
 // Image assets //
 
-/// assets/images/open-ui-icon.png
-const String openUIIconPath = 'assets/images/open-ui-icon.png';
-
-/// [AssetImage] of [openUIIconPath]
+// Open UI
+const String openUIIconPath = 'assets/images/open-ui/app-icon.png';
 const ImageProvider openUIImage = AssetImage(openUIIconPath);
 
-/// assets/images/sos-icon.png
-const String sosIconPath = 'assets/images/sos-icon.png';
-
-/// [AssetImage] of [sosImage]
+// SOS
+const String sosIconPath = 'assets/images/sos/sos-icon.png';
 const ImageProvider sosImage = AssetImage(sosIconPath);
 
-/// assets/images/the-hood.png
-const String theHoodPath = 'assets/images/the-hood.png';
+// Liminal
+const String cleanNebulaPath = 'assets/images/liminal/clean-nebula.png';
+const ImageProvider cleanNebulaImage = AssetImage(cleanNebulaPath);
 
-/// [AssetImage] of [theHoodPath]
-const ImageProvider theHoodImage = AssetImage(theHoodPath);
-
-/// assets/images/duck-duck-fetch.png
-const String duckDuckFetchPath = 'assets/images/duck-duck-fetch.png';
-
-/// [AssetImage] of [duckDuckFetchPath]
+const String duckDuckFetchPath = 'assets/images/liminal/duck-duck-fetch.png';
 const ImageProvider duckDuckFetchImage = AssetImage(duckDuckFetchPath);
 
-/// assets/images/las-rosas.png
-const String lasRosasPath = 'assets/images/las-rosas.png';
-
-/// [AssetImage] of [lasRosasPath]
+const String lasRosasPath = 'assets/images/liminal/las-rosas.png';
 const ImageProvider lasRosasImage = AssetImage(lasRosasPath);
 
-/// assets/images/la-grenouille.png
-const String laGrenouillePath = 'assets/images/la-grenouille.png';
+const String natureIsFabPath = 'assets/images/liminal/nature-is-fab.png';
+const ImageProvider natureIsFabImage = AssetImage(natureIsFabPath);
 
-/// [AssetImage] of [laGrenouillePath]
-const ImageProvider laGrenouilleImage = AssetImage(laGrenouillePath);
+const String productivityPath = 'assets/images/liminal/productivity.png';
+const ImageProvider productivityImage = AssetImage(productivityPath);
 
-/// assets/images/fah.png
-const String fahIconPath = 'assets/images/fah.png';
+const String seaBombCleanerPath = 'assets/images/liminal/sea-bomb-cleaner.png';
+const ImageProvider seaBombCleanerImage = AssetImage(seaBombCleanerPath);
 
-/// [AssetImage] of [fahIconPath]
+const String theHoodPath = 'assets/images/liminal/the-hood.png';
+const ImageProvider theHoodImage = AssetImage(theHoodPath);
+
+const String twoDoorsPath = 'assets/images/liminal/two-doors.png';
+const ImageProvider twoDoorsImage = AssetImage(twoDoorsPath);
+
+// Community
+const String fahIconPath = 'assets/images/community/fah.png';
 const ImageProvider fahImage = AssetImage(fahIconPath);
 
 // Video assets //
 
-const String openUIDemoPath = 'assets/videos/open-ui-demo.mp4';
-const String sosPromoPath = 'assets/videos/sos-promo.mp4';
+const String openUIDemoPath = 'assets/videos/open-ui/demo.mp4';
 
-const String sosVerticalPromoPath = 'assets/videos/sos-promo-vertical.mp4';
+const String sosPromoPath = 'assets/videos/sos/promo.mp4';
+const String sosVerticalPromoPath = 'assets/videos/sos/vertical-promo.mp4';
 
-const String sosArCCPath = 'assets/videos/captions/sos-promo-ar.srt';
-const String sosDeCCPath = 'assets/videos/captions/sos-promo-de.srt';
-const String sosEnCCPath = 'assets/videos/captions/sos-promo-en.srt';
-const String sosEsCCPath = 'assets/videos/captions/sos-promo-es.srt';
-const String sosFilCCPath = 'assets/videos/captions/sos-promo-fil.srt';
-const String sosFrCCPath = 'assets/videos/captions/sos-promo-fr.srt';
-const String sosHiCCPath = 'assets/videos/captions/sos-promo-hi.srt';
-const String sosHtCCPath = 'assets/videos/captions/sos-promo-ht.srt';
-const String sosJaCCPath = 'assets/videos/captions/sos-promo-ja.srt';
-const String sosKoCCPath = 'assets/videos/captions/sos-promo-ko.srt';
-const String sosRuCCPath = 'assets/videos/captions/sos-promo-ru.srt';
-const String sosSwCCPath = 'assets/videos/captions/sos-promo-sw.srt';
-const String sosUkCCPath = 'assets/videos/captions/sos-promo-uk.srt';
-const String sosZhCCPath = 'assets/videos/captions/sos-promo-zh.srt';
+const String sosArCCPath = 'assets/videos/sos/captions/sos-promo-ar.srt';
+const String sosDeCCPath = 'assets/videos/sos/captions/sos-promo-de.srt';
+const String sosEnCCPath = 'assets/videos/sos/captions/sos-promo-en.srt';
+const String sosEsCCPath = 'assets/videos/sos/captions/sos-promo-es.srt';
+const String sosFilCCPath = 'assets/videos/sos/captions/sos-promo-fil.srt';
+const String sosFrCCPath = 'assets/videos/sos/captions/sos-promo-fr.srt';
+const String sosHiCCPath = 'assets/videos/sos/captions/sos-promo-hi.srt';
+const String sosHtCCPath = 'assets/videos/sos/captions/sos-promo-ht.srt';
+const String sosJaCCPath = 'assets/videos/sos/captions/sos-promo-ja.srt';
+const String sosKoCCPath = 'assets/videos/sos/captions/sos-promo-ko.srt';
+const String sosRuCCPath = 'assets/videos/sos/captions/sos-promo-ru.srt';
+const String sosSwCCPath = 'assets/videos/sos/captions/sos-promo-sw.srt';
+const String sosUkCCPath = 'assets/videos/sos/captions/sos-promo-uk.srt';
+const String sosZhCCPath = 'assets/videos/sos/captions/sos-promo-zh.srt';
 
 // Local links //
 
@@ -119,7 +114,6 @@ const Set<String> assetPaths = <String>{
   theHoodPath,
   duckDuckFetchPath,
   lasRosasPath,
-  laGrenouillePath,
   fahIconPath,
 
   // Videos
@@ -136,7 +130,6 @@ final Map<String, String> credits = <String, String>{
   theHoodPath: crosby,
   duckDuckFetchPath: elinaV,
   lasRosasPath: founder,
-  laGrenouillePath: nikkolas,
   fahIconPath: faHLink,
 
   // Videos

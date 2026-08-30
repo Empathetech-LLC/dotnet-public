@@ -1,4 +1,4 @@
-/* dotnet
+/* website
  * Copyright (c) 2022 YWT (Empathetech LLC). All rights reserved.
  * See LICENSE for distribution and usage details.
  */
@@ -6,12 +6,12 @@
 import './export.dart';
 import '../utils/export.dart';
 import '../screens/export.dart';
-import 'package:oui_bios/oui_bios.dart';
+import 'package:ywt_private/ywt_private.dart' as ywt;
 
 import 'package:flutter/material.dart';
 import 'package:open_ui/open_ui.dart';
 
-class DotnetScaffold extends StatelessWidget {
+class WebsiteScaffold extends StatelessWidget {
   final EzCP config;
   final Widget? logo;
   final Widget body;
@@ -19,7 +19,7 @@ class DotnetScaffold extends StatelessWidget {
   final bool isHome;
 
   /// Standardized [Scaffold] for Open UI screens
-  const DotnetScaffold(
+  const WebsiteScaffold(
     this.config, {
     super.key,
     this.logo,
@@ -32,9 +32,10 @@ class DotnetScaffold extends StatelessWidget {
 
   double pageLinksWidth(BuildContext context) =>
       ezTextSize(
-        l10n(config).psPageTitle + l10n(config).csPageTitle,
+        config,
+        text: l10n(config).psPageTitle + l10n(config).csPageTitle,
         style: config.headlineStyle,
-        context: context,
+        textScaler: MediaQuery.textScalerOf(context),
       ).width +
       config.spacing * 3;
 
@@ -42,8 +43,11 @@ class DotnetScaffold extends StatelessWidget {
   Widget build(BuildContext context) {
     // Gather the contextual theme data //
 
-    final double toolbarHeight =
-        ezToolbarHeight(config, context: context, title: l10n(config).csPageTitle);
+    final double toolbarHeight = ezToolbarHeight(
+      config,
+      context: context,
+      title: l10n(config).csPageTitle,
+    );
 
     // Define custom widgets //
 
@@ -51,13 +55,13 @@ class DotnetScaffold extends StatelessWidget {
       config,
       isImage: true,
       url: Uri.parse(homeURL),
-      label: l10n(config).gLogoLabel(ywt),
+      label: l10n(config).gLogoLabel(ywtName),
       hint: l10n(config).gYWTLogoHint,
       tooltip: l10n(config).gHomeHint,
       child: SizedBox(
         width: toolbarHeight,
         height: toolbarHeight,
-        child: Logo(margin: config.marginVal, colorScheme: config.colors),
+        child: ywt.Logo(margin: config.marginVal, colorScheme: config.colors),
       ),
     );
 
@@ -75,7 +79,7 @@ class DotnetScaffold extends StatelessWidget {
       config,
       toolbarHeight: toolbarHeight,
       linkLogo: linkLogo,
-      swapDrawer: DotNetDrawer(config, header: iconLinks),
+      swapDrawer: WebsiteDrawer(config, header: iconLinks),
       body: body,
       fabs: finalFabs,
       isHome: isHome,
@@ -106,10 +110,10 @@ class DotnetScaffold extends StatelessWidget {
 class _RestrictedScaffold extends EzScaffold {
   final double toolbarHeight;
   final Widget linkLogo;
-  final DotNetDrawer swapDrawer;
+  final WebsiteDrawer swapDrawer;
   final bool isHome;
 
-  /// [DotnetScaffold] for when there is limited screen space
+  /// [WebsiteScaffold] for when there is limited screen space
   /// Has a mobile-like layout
   _RestrictedScaffold(
     super.config, {
@@ -140,7 +144,7 @@ class _ExpandedScaffold extends EzScaffold {
   final Widget iconLinksMenu;
   final bool isHome;
 
-  /// [DotnetScaffold] for when there is ample screen space
+  /// [WebsiteScaffold] for when there is ample screen space
   /// Has a traditional footer-less web page layout
   _ExpandedScaffold(
     super.config, {
@@ -166,12 +170,12 @@ class _ExpandedScaffold extends EzScaffold {
         );
 }
 
-class DotNetDrawer extends StatelessWidget {
+class WebsiteDrawer extends StatelessWidget {
   final EzCP config;
   final IconLinks header;
   late final PageLinks _pageLinks;
 
-  DotNetDrawer(this.config, {super.key, required this.header}) {
+  WebsiteDrawer(this.config, {super.key, required this.header}) {
     _pageLinks = PageLinks(config);
   }
 

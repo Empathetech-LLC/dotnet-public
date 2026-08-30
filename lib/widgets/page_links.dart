@@ -1,4 +1,4 @@
-/* dotnet
+/* website
  * Copyright (c) 2022 YWT (Empathetech LLC). All rights reserved.
  * See LICENSE for distribution and usage details.
  */
@@ -69,10 +69,7 @@ class PageLinks extends StatelessWidget {
       if (focused) {
         autoClose?.cancel();
       } else {
-        autoClose = Timer(
-          const Duration(milliseconds: 750),
-          () => controller.close(),
-        );
+        autoClose = Timer(const Duration(milliseconds: 750), () => controller.close());
       }
     }
 
@@ -92,10 +89,7 @@ class PageLinks extends StatelessWidget {
         if (!controller.isOpen) return;
 
         autoClose?.cancel();
-        autoClose = Timer(
-          const Duration(milliseconds: 750),
-          () => controller.close(),
-        );
+        autoClose = Timer(const Duration(milliseconds: 750), () => controller.close());
       },
       child: MenuAnchor(
         controller: controller,
@@ -180,10 +174,6 @@ class PageLinks extends StatelessWidget {
         config,
         reverseHands: false,
         mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          productMenu,
-          config.rowSpacer,
-          contribute,
-        ],
+        children: <Widget>[productMenu, config.rowSpacer, contribute],
       );
 }

@@ -1,4 +1,4 @@
-/* dotnet
+/* website
  * Copyright (c) 2022 YWT (Empathetech LLC). All rights reserved.
  * See LICENSE for distribution and usage details.
  */
@@ -11,16 +11,23 @@ import 'package:flutter/material.dart';
 // Artists/Assets creators //
 
 /// Kevin Crosby, photographer
-/// The Hood
 const String crosby = 'Kevin Crosby';
 
 /// Elina Volkova, photographer
-/// Duck Duck Fetch
+/// https://www.pexels.com/@miami302/
 const String elinaV = 'Elina Volkova';
 
-/// Nikkolas Smith, artist
-/// La Grenouille
-const String nikkolas = 'Nikkolas Smith';
+/// Jeremy Müller, photographer
+/// https://www.pexels.com/@jmueller/
+const String jMuller = 'Jeremy Müller';
+
+/// Flux, photographer
+/// https://www.pexels.com/@flux-1140230780/
+const String flux = 'Flux';
+
+/// Nesrin Öztürk, photographer
+/// https://www.pexels.com/@nesrin-ozturk-213162154/
+const String nesrin = 'Nesrin Öztürk';
 
 // Translators //
 
@@ -33,7 +40,8 @@ const Freelancer alexisN = Freelancer(
 );
 
 const ImageProvider alexisNProfile = NetworkImage(
-    'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_original/v1/attachments/profile/photo/fa4ca8fc941f2c5e25aaa1814867e90c-1672317477265/e9da2515-5e39-4384-b6bc-2d6eec587f33.png');
+  'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_original/v1/attachments/profile/photo/fa4ca8fc941f2c5e25aaa1814867e90c-1672317477265/e9da2515-5e39-4384-b6bc-2d6eec587f33.png',
+);
 
 /// Anastasia
 /// Freelance Ukrainian (uk) && Russian (ru) translator
@@ -44,7 +52,8 @@ const Freelancer anastasia = Freelancer(
 );
 
 const ImageProvider anastasiaProfile = NetworkImage(
-    'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_original/v1/attachments/profile/photo/d3c56829b3f159ab82a3d19aba8a218c-1610614975876/d0977cfb-808b-42a0-a287-46f8586d3710.jpg');
+  'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_original/v1/attachments/profile/photo/d3c56829b3f159ab82a3d19aba8a218c-1610614975876/d0977cfb-808b-42a0-a287-46f8586d3710.jpg',
+);
 
 /// Carly
 /// Freelance Creole (ht) translator
@@ -55,7 +64,8 @@ const Freelancer carly = Freelancer(
 );
 
 const ImageProvider carlyProfile = NetworkImage(
-    'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_original/v1/attachments/profile/photo/e753d4d365edb4f2a8a8e4aa0eb1f8de-1526514773546/6b5a9b8d-07b4-46d6-a33b-3c352a6b1204.png');
+  'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_original/v1/attachments/profile/photo/e753d4d365edb4f2a8a8e4aa0eb1f8de-1526514773546/6b5a9b8d-07b4-46d6-a33b-3c352a6b1204.png',
+);
 
 /// Hikaru
 /// Freelance Japanese (ja) translator
@@ -66,7 +76,8 @@ const Freelancer hikaru = Freelancer(
 );
 
 const ImageProvider hikaruProfile = NetworkImage(
-    'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_original/v1/attachments/profile/photo/26453ad1d505b50459b1091982c7640d-1758531967962/e7b996d1-6c27-4e45-bc4e-67a8380af610.png');
+  'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_original/v1/attachments/profile/photo/26453ad1d505b50459b1091982c7640d-1758531967962/e7b996d1-6c27-4e45-bc4e-67a8380af610.png',
+);
 
 /// Leah
 /// Freelance Simplified Chinese (zh) translator
@@ -77,7 +88,8 @@ const Freelancer leah = Freelancer(
 );
 
 const ImageProvider leahProfile = NetworkImage(
-    'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_original/v1/attachments/profile/photo/219bf43d14dd11d4a38a1820b39b5f44-1579491837074/a6d9cf14-d70e-40bf-b263-b6de546b09bf.png');
+  'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_original/v1/attachments/profile/photo/219bf43d14dd11d4a38a1820b39b5f44-1579491837074/a6d9cf14-d70e-40bf-b263-b6de546b09bf.png',
+);
 
 /// Marie P
 /// Freelance Swahili (sw) translator
@@ -88,7 +100,8 @@ const Freelancer marieP = Freelancer(
 );
 
 const ImageProvider mariePProfile = NetworkImage(
-    'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_original/v1/attachments/profile/photo/bc2f6b44c37fc9d039463543e352353c-1614945995810/80f01e8d-6459-4766-81cc-86862dd58b1c.jpg');
+  'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_original/v1/attachments/profile/photo/bc2f6b44c37fc9d039463543e352353c-1614945995810/80f01e8d-6459-4766-81cc-86862dd58b1c.jpg',
+);
 
 /// Patrick Karban
 /// Freelance German (de) translator
@@ -99,7 +112,8 @@ const Freelancer patrickKarban = Freelancer(
 );
 
 const ImageProvider patrickKarbanProfile = NetworkImage(
-    'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_original/v1/attachments/profile/photo/c71e9b91fb04dd042fbd96b5920c36b8-1656526562463/48c38cd8-7461-4626-9882-b7d5e25d4aa9.png');
+  'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_original/v1/attachments/profile/photo/c71e9b91fb04dd042fbd96b5920c36b8-1656526562463/48c38cd8-7461-4626-9882-b7d5e25d4aa9.png',
+);
 
 /// Priyanka S
 /// Freelance Hindi (hi) translator
@@ -110,7 +124,8 @@ const Freelancer priyankaS = Freelancer(
 );
 
 const ImageProvider priyankaSProfile = NetworkImage(
-    'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_original/v1/attachments/profile/photo/045ac88494dda8b1534cad24a9977506-23343401768640660.167742/0F9704F5-D49A-45C6-A773-2A3421716DA8');
+  'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_original/v1/attachments/profile/photo/045ac88494dda8b1534cad24a9977506-23343401768640660.167742/0F9704F5-D49A-45C6-A773-2A3421716DA8',
+);
 
 /// Remalyn
 /// Freelance Filipino (fil) translator
@@ -121,7 +136,8 @@ const Freelancer remalyn = Freelancer(
 );
 
 const ImageProvider remalynProfile = NetworkImage(
-    'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_original/v1/attachments/profile/photo/ee71fe7797d38e2952c2b878acb71d5c-1706369353865/a2720aad-2b18-4907-8a7c-f1f6b4b18054.jpg');
+  'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_original/v1/attachments/profile/photo/ee71fe7797d38e2952c2b878acb71d5c-1706369353865/a2720aad-2b18-4907-8a7c-f1f6b4b18054.jpg',
+);
 
 /// Sara Herrera
 /// Freelance Spanish (es) translator
@@ -132,7 +148,8 @@ const Freelancer saraH = Freelancer(
 );
 
 const ImageProvider saraHProfile = NetworkImage(
-    'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_original/v1/attachments/profile/photo/caeeca93d8d9dba80063f3bd7a58d4cb-1644185296216/02ace6d1-a57f-47c6-8a4e-68e491d55f60.jpg');
+  'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_original/v1/attachments/profile/photo/caeeca93d8d9dba80063f3bd7a58d4cb-1644185296216/02ace6d1-a57f-47c6-8a4e-68e491d55f60.jpg',
+);
 
 /// Super T
 /// Freelance Korean (ko) translator
@@ -143,7 +160,8 @@ const Freelancer superT = Freelancer(
 );
 
 const ImageProvider superTProfile = NetworkImage(
-    'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_original/v1/attachments/profile/photo/bd169d92aa246ac823db3362a02cec39-1592531022319/13265c58-222c-413d-bfc3-76d469468069.jpg');
+  'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_original/v1/attachments/profile/photo/bd169d92aa246ac823db3362a02cec39-1592531022319/13265c58-222c-413d-bfc3-76d469468069.jpg',
+);
 
 /// Yasmin Sid
 /// Freelance Arabic (ar) translator
@@ -154,7 +172,8 @@ const Freelancer yasminS = Freelancer(
 );
 
 const ImageProvider yasminSProfile = NetworkImage(
-    'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_original/v1/attachments/profile/photo/9272e7a04390711a68fdde232f04e1b4-1560632522775/1a69d9e8-2c06-42e6-b79d-03e5d790032f.jpg');
+  'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_original/v1/attachments/profile/photo/9272e7a04390711a68fdde232f04e1b4-1560632522775/1a69d9e8-2c06-42e6-b79d-03e5d790032f.jpg',
+);
 
 // Video production //
 
@@ -175,22 +194,14 @@ class Freelancer {
   final String link;
   final ImageProvider image;
 
-  const Freelancer({
-    required this.name,
-    required this.link,
-    required this.image,
-  });
+  const Freelancer({required this.name, required this.link, required this.image});
 }
 
 class FreelancerCoin extends StatelessWidget {
   final EzCP config;
   final Freelancer who;
 
-  const FreelancerCoin(
-    this.config,
-    this.who, {
-    super.key,
-  });
+  const FreelancerCoin(this.config, this.who, {super.key});
 
   @override
   Widget build(BuildContext context) => EzCol(
@@ -211,12 +222,7 @@ class FreelancerCoin extends StatelessWidget {
               ),
             ),
           ),
-          EzText(
-            config,
-            text: who.name,
-            style: config.bodyStyle,
-            textAlign: TextAlign.center,
-          ),
+          EzText(config, text: who.name, style: config.bodyStyle, textAlign: TextAlign.center),
         ],
       );
 }
@@ -243,31 +249,23 @@ class Group extends StatelessWidget {
           children: switch (members.length) {
             0 => <Widget>[const SizedBox.shrink()],
             1 => <Widget>[
-                EzText(
-                  config,
-                  text: title,
-                  style: titleStyle,
-                  textAlign: TextAlign.center,
-                ),
+                EzText(config, text: title, style: titleStyle, textAlign: TextAlign.center),
                 members[0],
               ],
             _ => <Widget>[
-                EzText(
-                  config,
-                  text: title,
-                  style: titleStyle,
-                  textAlign: TextAlign.center,
-                ),
+                EzText(config, text: title, style: titleStyle, textAlign: TextAlign.center),
                 EzWrap(
                   children: members
-                      .map((Widget freelancer) => Padding(
-                            padding: EdgeInsets.only(
-                              left: config.spacing / 2,
-                              right: config.spacing / 2,
-                              bottom: config.spacing,
-                            ),
-                            child: freelancer,
-                          ))
+                      .map(
+                        (Widget freelancer) => Padding(
+                          padding: EdgeInsets.only(
+                            left: config.spacing / 2,
+                            right: config.spacing / 2,
+                            bottom: config.spacing,
+                          ),
+                          child: freelancer,
+                        ),
+                      )
                       .toList(),
                 ),
               ],

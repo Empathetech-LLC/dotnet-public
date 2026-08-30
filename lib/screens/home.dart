@@ -1,11 +1,11 @@
-/* dotnet
+/* website
  * Copyright (c) 2022 YWT (Empathetech LLC). All rights reserved.
  * See LICENSE for distribution and usage details.
  */
 
 import '../utils/export.dart';
 import '../widgets/export.dart';
-import 'package:oui_bios/oui_bios.dart';
+import 'package:ywt_private/ywt_private.dart' as ywt;
 
 import 'package:open_ui/open_ui.dart';
 import 'package:flutter/material.dart';
@@ -32,10 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
       return StepStyle(
         color: config.colors.secondary,
         connectorColor: config.colors.secondary,
-        border: Border.all(
-          color: config.colors.secondaryContainer,
-          width: config.borderWidth,
-        ),
+        border: Border.all(color: config.colors.secondaryContainer, width: config.borderWidth),
         indexStyle: config.labelStyle?.copyWith(color: config.colors.onSecondary),
       );
     } else if (index == indexTarget) {
@@ -43,10 +40,7 @@ class _HomeScreenState extends State<HomeScreen> {
       return StepStyle(
         color: config.colors.primary,
         connectorColor: config.colors.secondary,
-        border: Border.all(
-          color: config.colors.primaryContainer,
-          width: config.borderWidth,
-        ),
+        border: Border.all(color: config.colors.primaryContainer, width: config.borderWidth),
         indexStyle: config.labelStyle?.copyWith(color: config.colors.onPrimary),
       );
     } else {
@@ -120,7 +114,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
-    ezWindowNamer(ywt);
+    ezWindowNamer(ywtName);
   }
 
   // Return the build //
@@ -128,14 +122,19 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) => Consumer<EzCP>(
         builder: (_, EzCP config, __) {
-          final Widget logoAnim = LogoAnimation(
+          final Widget logoAnim = ywt.LogoAnimation(
             colorScheme: config.colors,
             semantics: l10n(config).hsAnimLabel,
-            height: ezTextSize('Y\nY', context: context, style: config.displayStyle).height,
+            height: ezTextSize(
+              config,
+              text: 'Y',
+              style: config.displayStyle,
+              textScaler: MediaQuery.textScalerOf(context),
+            ).height,
             onComplete: () => setState(() => fin = true),
           );
 
-          return DotnetScaffold(
+          return WebsiteScaffold(
             config,
             body: EzScreen(
               config,
@@ -155,10 +154,14 @@ class _HomeScreenState extends State<HomeScreen> {
                         children: <Widget>[
                           logoAnim,
                           config.rowSpacer,
-                          SloganAnimation(
+                          ywt.SloganAnimation(
                             style: config.headlineStyle,
-                            calcSize: (String text) =>
-                                ezTextSize(text, context: context, style: config.headlineStyle),
+                            calcSize: (String text) => ezTextSize(
+                              config,
+                              text: text,
+                              style: config.headlineStyle,
+                              textScaler: MediaQuery.textScalerOf(context),
+                            ),
                           ),
                         ],
                       ),
@@ -167,10 +170,14 @@ class _HomeScreenState extends State<HomeScreen> {
                         children: <Widget>[
                           logoAnim,
                           config.spacer,
-                          SloganAnimation(
+                          ywt.SloganAnimation(
                             style: config.headlineStyle,
-                            calcSize: (String text) =>
-                                ezTextSize(text, context: context, style: config.headlineStyle),
+                            calcSize: (String text) => ezTextSize(
+                              config,
+                              text: text,
+                              style: config.headlineStyle,
+                              textScaler: MediaQuery.textScalerOf(context),
+                            ),
                           ),
                         ],
                       ),

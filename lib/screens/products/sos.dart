@@ -1,4 +1,4 @@
-/* dotnet
+/* website
  * Copyright (c) 2022 YWT (Empathetech LLC). All rights reserved.
  * See LICENSE for distribution and usage details.
  */
@@ -19,7 +19,7 @@ class SOSScreen extends StatelessWidget {
   Widget build(BuildContext context) => Consumer<EzCP>(builder: (_, EzCP config, __) {
         final TextStyle? subTitle = ezSubTitleStyle(config.styles);
 
-        return DotnetScaffold(
+        return WebsiteScaffold(
           config,
           body: EzScreen(
             config,
@@ -51,53 +51,42 @@ class SOSScreen extends StatelessWidget {
               config.centerLine,
 
               // Safe to use
-              EzRichText(config,
-                  children: <InlineSpan>[
-                    EzPlainText(
-                      text: l10n(config).sosPrivate,
-                      style: config.bodyStyle,
-                    ),
-                    EzPlainText(
-                      text: l10n(config).sosFree,
-                      style: config.bodyStyle,
-                    ),
-                    EzInlineLink(
-                      config,
-                      text: l10n(config).sosOpenSource,
-                      style: config.bodyStyle,
-                      textAlign: TextAlign.center,
-                      url: Uri.parse(sosSource),
-                      hint: l10n(config).gRepoHint,
-                    ),
-                    EzPlainText(
-                      text: '.',
-                      style: config.bodyStyle,
-                    ),
-                  ],
-                  textAlign: TextAlign.center),
+              EzRichText(
+                config,
+                children: <InlineSpan>[
+                  EzPlainText(text: l10n(config).sosPrivate, style: config.bodyStyle),
+                  EzPlainText(text: l10n(config).sosFree, style: config.bodyStyle),
+                  EzInlineLink(
+                    config,
+                    text: l10n(config).sosOpenSource,
+                    style: config.bodyStyle,
+                    textAlign: TextAlign.center,
+                    url: Uri.parse(sosSource),
+                    hint: l10n(config).gRepoHint,
+                  ),
+                  EzPlainText(text: '.', style: config.bodyStyle),
+                ],
+                textAlign: TextAlign.center,
+              ),
               config.centerLine,
 
               // Contribution call-out
-              EzRichText(config,
-                  children: <InlineSpan>[
-                    EzPlainText(
-                      text: l10n(config).sosConsider,
-                      style: config.bodyStyle,
-                    ),
-                    EzInlineLink(
-                      config,
-                      text: l10n(config).sosContributing,
-                      style: config.bodyStyle,
-                      textAlign: TextAlign.center,
-                      url: Uri.parse(contributeURL),
-                      hint: l10n(config).gContributeHint,
-                    ),
-                    EzPlainText(
-                      text: l10n(config).sosSAPS,
-                      style: config.bodyStyle,
-                    ),
-                  ],
-                  textAlign: TextAlign.center),
+              EzRichText(
+                config,
+                children: <InlineSpan>[
+                  EzPlainText(text: l10n(config).sosConsider, style: config.bodyStyle),
+                  EzInlineLink(
+                    config,
+                    text: l10n(config).sosContributing,
+                    style: config.bodyStyle,
+                    textAlign: TextAlign.center,
+                    url: Uri.parse(contributeURL),
+                    hint: l10n(config).gContributeHint,
+                  ),
+                  EzPlainText(text: l10n(config).sosSAPS, style: config.bodyStyle),
+                ],
+                textAlign: TextAlign.center,
+              ),
 
               // Promo video
               _PromoVideo(config),
@@ -320,7 +309,6 @@ class _PromoVideoState extends State<_PromoVideo> {
         ),
 
         // Hide/Show
-
         ...showVideo
             ? <Widget>[
                 EzElevatedIconButton(
@@ -329,7 +317,7 @@ class _PromoVideoState extends State<_PromoVideo> {
                   icon: EzIcon(widget.config, Icons.visibility_off),
                   label: l10n(widget.config).psHidePromo,
                 ),
-                widget.config.divider
+                widget.config.divider,
               ]
             : <Widget>[
                 EzElevatedIconButton(

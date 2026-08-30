@@ -127,17 +127,6 @@
   "sosWeb": "Une façon spécifique, et à fort impact, de contribuer serait de régler la facture de l'hébergement d'InstaSOS en ligne.\n\nLes propriétaires des boutiques d'applications ont clairement affiché la couleur quant à leurs alliances, et InstaSOS risque d'être retiré si/quand il gagnera du terrain.\nLes utilisateurs d'Android auront toujours la possibilité de l'installer manuellement, mais la seule alternative viable pour les utilisateurs d'iOS serait une application web.\n\nHeureusement, les applications Flutter effectuent leurs calculs côté client, la facture serait donc peu élevée.\nNous n'aurions (vous n'auriez) à payer que pour la gestion du trafic.",
   "sosTranslators": "Traducteurs",
 
-  
-
-  "llInDev": "Liminal est en cours de développement.\nSon design tend vers le minimalisme, mais il est conçu avec ",
-  "llWhimsy": "Ainsi, votre écran d'accueil sera exempt d'encombrement et de distractions, ET sera personnalisable à l'infini.\nAvec un brin de fantaisie en prime.",
-  
-  "llTheHood": "Un écran d’accueil exemple avec une photo du mont Hood de Portland.",
-  "llLasRosas": "Un écran d’accueil exemple avec une photo du jardin des roses de Portland.",
-  "llFrogAndPigs": "Un écran d’accueil exemple avec une photo des faune de Portland.",
-
-  "llModel": "Liminal sera publié selon un modèle « payez ce que vous pouvez ».\nLa version Google Play sera payante, car le (bon) code ne s’écrit pas tout seul.\nLe dépôt GitHub proposera également un APK gratuit, car une relation saine avec la technologie ne devrait pas être réservée à ceux qui ont un revenu disponible.",
-  
 
 
   "fahJoin": "Rejoignez le Fold",

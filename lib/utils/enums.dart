@@ -1,4 +1,4 @@
-/* dotnet
+/* website
  * Copyright (c) 2022 YWT (Empathetech LLC). All rights reserved.
  * See LICENSE for distribution and usage details.
  */
@@ -19,8 +19,8 @@ extension Config on Products {
       };
 
   String get url => switch (this) {
-        Products.openUI => 'https://www.ywt.llc/#/products/open-ui',
-        Products.sos => 'https://www.ywt.llc/#/products/sos',
-        Products.liminal => 'https://www.ywt.llc/#/products/liminal',
+        Products.openUI => 'https://ywt.llc/#/products/open-ui',
+        Products.sos => 'https://ywt.llc/#/products/sos',
+        Products.liminal => 'https://ywt.llc/#/products/liminal',
       };
 }

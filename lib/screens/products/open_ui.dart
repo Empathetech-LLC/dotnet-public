@@ -1,4 +1,4 @@
-/* dotnet
+/* website
  * Copyright (c) 2022 YWT (Empathetech LLC). All rights reserved.
  * See LICENSE for distribution and usage details.
  */
@@ -6,7 +6,7 @@
 import '../export.dart';
 import '../../utils/export.dart';
 import '../../widgets/export.dart';
-import 'package:oui_bios/oui_bios.dart';
+import 'package:ywt_private/ywt_private.dart' as ywt;
 
 import 'package:open_ui/open_ui.dart';
 import 'package:flutter/material.dart';
@@ -25,7 +25,7 @@ class _OpenUIScreenState extends State<OpenUIScreen> {
 
   late final DLType dlType;
   late final String latest;
-  Uri url = Uri.parse(openUIReleases);
+  Uri url = Uri.parse(ywt.openUIReleases);
 
   // Define custom functions //
 
@@ -55,7 +55,7 @@ class _OpenUIScreenState extends State<OpenUIScreen> {
   @override
   Widget build(BuildContext context) {
     return Consumer<EzCP>(
-      builder: (_, EzCP config, __) => DotnetScaffold(
+      builder: (_, EzCP config, __) => WebsiteScaffold(
         config,
         body: EzScreen(
           config,
@@ -63,12 +63,7 @@ class _OpenUIScreenState extends State<OpenUIScreen> {
             config,
             children: <Widget>[
               // Headline && slogan (link)
-              EzText(
-                config,
-                text: openUI,
-                style: config.displayStyle,
-                textAlign: TextAlign.center,
-              ),
+              EzText(config, text: openUI, style: config.displayStyle, textAlign: TextAlign.center),
               EzLink(
                 config,
                 text: l10n(config).ouSlogan,
@@ -168,36 +163,35 @@ class _OpenUIScreenState extends State<OpenUIScreen> {
                 style: config.titleStyle,
                 textAlign: TextAlign.center,
               ),
-              EzRichText(config,
-                  children: <InlineSpan>[
-                    EzPlainText(
-                      text: l10n(config).ouScreenContent,
-                      style: config.bodyStyle,
+              EzRichText(
+                config,
+                children: <InlineSpan>[
+                  EzPlainText(text: l10n(config).ouScreenContent, style: config.bodyStyle),
+                  EzInlineLink(
+                    config,
+                    text: 'TalkBack',
+                    style: config.bodyStyle,
+                    textAlign: TextAlign.center,
+                    url: Uri.parse(
+                      'https://support.google.com/accessibility/android/answer/6006598?hl=en',
                     ),
-                    EzInlineLink(
-                      config,
-                      text: 'TalkBack',
-                      style: config.bodyStyle,
-                      textAlign: TextAlign.center,
-                      url: Uri.parse(
-                        'https://support.google.com/accessibility/android/answer/6006598?hl=en',
-                      ),
-                      hint: l10n(config).ouTalkBackHint,
+                    hint: l10n(config).ouTalkBackHint,
+                  ),
+                  EzPlainText(text: l10n(config).ouAnd, style: config.bodyStyle),
+                  EzInlineLink(
+                    config,
+                    text: 'VoiceOver',
+                    style: config.bodyStyle,
+                    textAlign: TextAlign.center,
+                    url: Uri.parse(
+                      'https://support.apple.com/guide/iphone/turn-on-and-practice-voiceover-iph3e2e415f/ios',
                     ),
-                    EzPlainText(text: l10n(config).ouAnd, style: config.bodyStyle),
-                    EzInlineLink(
-                      config,
-                      text: 'VoiceOver',
-                      style: config.bodyStyle,
-                      textAlign: TextAlign.center,
-                      url: Uri.parse(
-                        'https://support.apple.com/guide/iphone/turn-on-and-practice-voiceover-iph3e2e415f/ios',
-                      ),
-                      hint: l10n(config).ouVoiceOverHint,
-                    ),
-                    EzPlainText(text: '.', style: config.bodyStyle),
-                  ],
-                  textAlign: TextAlign.center),
+                    hint: l10n(config).ouVoiceOverHint,
+                  ),
+                  EzPlainText(text: '.', style: config.bodyStyle),
+                ],
+                textAlign: TextAlign.center,
+              ),
               config.centerLine,
 
               // User customization
@@ -247,19 +241,21 @@ class _OpenUIScreenState extends State<OpenUIScreen> {
               config.centerLine,
 
               // Tag line && call-out
-              EzRichText(config,
-                  children: <InlineSpan>[
-                    EzPlainText(text: l10n(config).ouTagLine, style: config.bodyStyle),
-                    EzInlineLink(
-                      config,
-                      text: l10n(config).gReachOut,
-                      style: config.bodyStyle,
-                      textAlign: TextAlign.center,
-                      url: Uri.parse(contributeURL),
-                      hint: l10n(config).gTeamHint,
-                    )
-                  ],
-                  textAlign: TextAlign.center),
+              EzRichText(
+                config,
+                children: <InlineSpan>[
+                  EzPlainText(text: l10n(config).ouTagLine, style: config.bodyStyle),
+                  EzInlineLink(
+                    config,
+                    text: l10n(config).gReachOut,
+                    style: config.bodyStyle,
+                    textAlign: TextAlign.center,
+                    url: Uri.parse(contributeURL),
+                    hint: l10n(config).gTeamHint,
+                  ),
+                ],
+                textAlign: TextAlign.center,
+              ),
               config.divider,
 
               // Download Open UI (again) //

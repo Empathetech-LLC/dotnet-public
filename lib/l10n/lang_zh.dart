@@ -301,23 +301,29 @@ class LangZh extends Lang {
   String get sosTranslators => '译者';
 
   @override
-  String get llInDev => 'Liminal 正在开发中。\n它的设计偏向极简主义，但，它的构建融入了 ';
+  String get llSlogan => 'The last launcher you\'ll ever load.';
 
   @override
-  String get llWhimsy => '因此，您的主屏幕将告别杂乱与干扰，并且支持无限制的自定义。\n同时还带有一丝奇思妙想。';
+  String get llDesign =>
+      'Its design leans towards minimalism, but it\'s built with ';
 
   @override
-  String get llTheHood => '一张以波特兰胡德山 (Mount Hood) 为背景的示例主屏幕。';
+  String get llWhimsy =>
+      'So, your home screen will be free of clutter and distractions, AND be limitlessly customizable.\nWith a bit of whimsy to boot.';
 
   @override
-  String get llLasRosas => '一张以波特兰玫瑰园为背景的示例主屏幕。';
+  String get llModel => 'Liminal has a \"pay what you can\" model.\nThe ';
 
   @override
-  String get llFrogAndPigs => '一张以波特兰野生动物为背景的示例主屏幕。';
+  String get llPaid =>
+      ' version is \$4.99, because (good) code doesn\'t write itself.\nThe APK is also available ';
 
   @override
-  String get llModel =>
-      'Liminal 将在“按能力付费”的模式下发布。\nGoogle Play 版本将是付费的，因为 (好的) 代码不会自己编写。\nGitHub 代码库也将有一个免费提供的 APK，因为与技术保持健康的关系不应该只是那些有闲钱的人的专属。';
+  String get llGit => 'on GitHub';
+
+  @override
+  String get llFree =>
+      ', because a healthy relationship with technology shouldn\'t be exclusive to those with expendable income.';
 
   @override
   String get fahJoin => '加入行列';
@@ -674,25 +680,6 @@ class LangZhCn extends LangZh {
 
   @override
   String get sosTranslators => '译者';
-
-  @override
-  String get llInDev => 'Liminal 正在开发中。\n它的设计偏向极简主义，但，它的构建融入了 ';
-
-  @override
-  String get llWhimsy => '因此，您的主屏幕将告别杂乱与干扰，并且支持无限制的自定义。\n同时还带有一丝奇思妙想。';
-
-  @override
-  String get llTheHood => '一张以波特兰胡德山 (Mount Hood) 为背景的示例主屏幕。';
-
-  @override
-  String get llLasRosas => '一张以波特兰玫瑰园为背景的示例主屏幕。';
-
-  @override
-  String get llFrogAndPigs => '一张以波特兰野生动物为背景的示例主屏幕。';
-
-  @override
-  String get llModel =>
-      'Liminal 将在“按能力付费”的模式下发布。\nGoogle Play 版本将是付费的，因为 (好的) 代码不会自己编写。\nGitHub 代码库也将有一个免费提供的 APK，因为与技术保持健康的关系不应该只是那些有闲钱的人的专属。';
 
   @override
   String get fahJoin => '加入行列';

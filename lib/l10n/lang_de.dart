@@ -312,28 +312,29 @@ class LangDe extends Lang {
   String get sosTranslators => 'Übersetzer';
 
   @override
-  String get llInDev =>
-      'Liminal befindet sich in der Entwicklung.\nDas Design tendiert zum Minimalismus, aber es ist gebaut mit ';
+  String get llSlogan => 'The last launcher you\'ll ever load.';
+
+  @override
+  String get llDesign =>
+      'Its design leans towards minimalism, but it\'s built with ';
 
   @override
   String get llWhimsy =>
-      'So wird dein Startbildschirm frei von Unordnung und Ablenkungen sein UND grenzenlos anpassbar.\nMit einer Prise Verspieltheit obendrein.';
+      'So, your home screen will be free of clutter and distractions, AND be limitlessly customizable.\nWith a bit of whimsy to boot.';
 
   @override
-  String get llTheHood =>
-      'Ein Beispiel-Startbildschirm mit einem Bild von Portlands Mount Hood.';
+  String get llModel => 'Liminal has a \"pay what you can\" model.\nThe ';
 
   @override
-  String get llLasRosas =>
-      'Ein Beispiel-Startbildschirm mit einem Bild von Portlands Rosengarten.';
+  String get llPaid =>
+      ' version is \$4.99, because (good) code doesn\'t write itself.\nThe APK is also available ';
 
   @override
-  String get llFrogAndPigs =>
-      'Ein Beispiel-Startbildschirm mit einem Bild von Portlands Tierwelt.';
+  String get llGit => 'on GitHub';
 
   @override
-  String get llModel =>
-      'Liminal wird nach einem \"Zahl, was du kannst\"-Modell veröffentlicht.\nDie Google Play-Version wird kostenpflichtig sein, da sich (guter) Code nicht von selbst schreibt.\nDas GitHub-Repository wird auch eine frei verfügbare APK enthalten, denn eine gesunde Beziehung zu Technologie sollte nicht nur denjenigen vorbehalten sein, die über ein verfügbares Einkommen verfügen.';
+  String get llFree =>
+      ', because a healthy relationship with technology shouldn\'t be exclusive to those with expendable income.';
 
   @override
   String get fahJoin => 'Mach mit';

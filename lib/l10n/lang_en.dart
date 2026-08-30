@@ -309,28 +309,29 @@ class LangEn extends Lang {
   String get sosTranslators => 'Translators';
 
   @override
-  String get llInDev =>
-      'Liminal is in development.\nIts design leans towards minimalism, but it\'s built with ';
+  String get llSlogan => 'The last launcher you\'ll ever load.';
+
+  @override
+  String get llDesign =>
+      'Its design leans towards minimalism, but it\'s built with ';
 
   @override
   String get llWhimsy =>
       'So, your home screen will be free of clutter and distractions, AND be limitlessly customizable.\nWith a bit of whimsy to boot.';
 
   @override
-  String get llTheHood =>
-      'A sample home screen with a picture of Portland\'s Mount Hood.';
+  String get llModel => 'Liminal has a \"pay what you can\" model.\nThe ';
 
   @override
-  String get llLasRosas =>
-      'A sample home screen with a picture of Portland\'s Rose garden.';
+  String get llPaid =>
+      ' version is \$4.99, because (good) code doesn\'t write itself.\nThe APK is also available ';
 
   @override
-  String get llFrogAndPigs =>
-      'A sample home screen with a picture of Portland\'s wildlife.';
+  String get llGit => 'on GitHub';
 
   @override
-  String get llModel =>
-      'Liminal will be released under a \"pay what you can\" model.\nThe Google Play version will be paid, because (good) code doesn\'t write itself.\nThe APK will also be on GitHub, because a healthy relationship with technology shouldn\'t be exclusive to those with expendable income.';
+  String get llFree =>
+      ', because a healthy relationship with technology shouldn\'t be exclusive to those with expendable income.';
 
   @override
   String get fahJoin => 'Join the Fold';
@@ -698,28 +699,29 @@ class LangEnUs extends LangEn {
   String get sosTranslators => 'Translators';
 
   @override
-  String get llInDev =>
-      'Liminal is in development.\nIts design leans towards minimalism, but it\'s built with ';
+  String get llSlogan => 'The last launcher you\'ll ever load.';
+
+  @override
+  String get llDesign =>
+      'Its design leans towards minimalism, but it\'s built with ';
 
   @override
   String get llWhimsy =>
       'So, your home screen will be free of clutter and distractions, AND be limitlessly customizable.\nWith a bit of whimsy to boot.';
 
   @override
-  String get llTheHood =>
-      'A sample home screen with a picture of Portland\'s Mount Hood.';
+  String get llModel => 'Liminal has a \"pay what you can\" model.\nThe ';
 
   @override
-  String get llLasRosas =>
-      'A sample home screen with a picture of Portland\'s Rose garden.';
+  String get llPaid =>
+      ' version is \$4.99, because (good) code doesn\'t write itself.\nThe APK is also available ';
 
   @override
-  String get llFrogAndPigs =>
-      'A sample home screen with a picture of Portland\'s wildlife.';
+  String get llGit => 'on GitHub';
 
   @override
-  String get llModel =>
-      'Liminal will be released under a \"pay what you can\" model.\nThe Google Play version will be paid, because (good) code doesn\'t write itself.\nThe APK will also be on GitHub, because a healthy relationship with technology shouldn\'t be exclusive to those with expendable income.';
+  String get llFree =>
+      ', because a healthy relationship with technology shouldn\'t be exclusive to those with expendable income.';
 
   @override
   String get fahJoin => 'Join the Fold';

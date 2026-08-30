@@ -1,11 +1,11 @@
-/* dotnet
+/* website
  * Copyright (c) 2022 YWT (Empathetech LLC). All rights reserved.
  * See LICENSE for distribution and usage details.
  */
 
 import '../utils/export.dart';
 import '../widgets/export.dart';
-import 'package:oui_bios/oui_bios.dart';
+import 'package:ywt_private/ywt_private.dart' as ywt;
 
 import 'package:open_ui/open_ui.dart';
 import 'package:flutter/material.dart';
@@ -21,7 +21,7 @@ class ContributeScreen extends StatelessWidget {
         final EdgeInsets wrapPadding = EzInsets.wrap(config.spacing);
         final EzSpacer halfSpacer = EzSpacer(config.spacing / 2);
 
-        return DotnetScaffold(
+        return WebsiteScaffold(
           config,
           body: EzScreen(
             config,
@@ -46,22 +46,19 @@ class ContributeScreen extends StatelessWidget {
                     text: l10n(config).gReachOut,
                     style: config.bodyStyle,
                     textAlign: TextAlign.center,
-                    url: Uri.parse('mailto:$ywtCommunity?subject=Becoming%20a%20contributor'),
-                    tooltip: l10n(config).gEmailTo(ywt),
-                    hint: l10n(config).gEmailTo(ywt),
+                    url: Uri.parse('mailto:${ywt.ywtCommunity}?subject=Becoming%20a%20contributor'),
+                    tooltip: l10n(config).gEmailTo(ywtName),
+                    hint: l10n(config).gEmailTo(ywtName),
                   ),
-                  EzPlainText(
-                    text: l10n(config).csBecome,
-                    style: config.bodyStyle,
-                  ),
+                  EzPlainText(text: l10n(config).csBecome, style: config.bodyStyle),
                   EzInlineLink(
                     config,
                     text: l10n(config).csGit,
                     style: config.bodyStyle,
                     textAlign: TextAlign.center,
-                    url: Uri.parse(ywtGitHub),
+                    url: Uri.parse(ywt.ywtGitHub),
                     hint: l10n(config).gYWTGitHint,
-                    tooltip: ywtGitHub,
+                    tooltip: ywt.ywtGitHub,
                   ),
                 ],
                 textAlign: TextAlign.center,
@@ -85,9 +82,9 @@ class ContributeScreen extends StatelessWidget {
                   padding: wrapPadding,
                   child: EzElevatedIconLink(
                     config,
-                    tooltip: ywtCoffee,
+                    tooltip: ywt.ywtCoffee,
                     hint: l10n(config).csOpenLink('Buy Me a Coffee'),
-                    url: Uri.parse(ywtCoffee),
+                    url: Uri.parse(ywt.ywtCoffee),
                     icon: EzIcon(config, LineIcons.coffee),
                     label: 'Buy Me a Coffee',
                   ),
@@ -98,9 +95,9 @@ class ContributeScreen extends StatelessWidget {
                   padding: wrapPadding,
                   child: EzElevatedIconLink(
                     config,
-                    tooltip: ywtKofi,
+                    tooltip: ywt.ywtKofi,
                     hint: l10n(config).csOpenLink('Ko-fi'),
-                    url: Uri.parse(ywtKofi),
+                    url: Uri.parse(ywt.ywtKofi),
                     icon: EzIcon(config, LineIcons.coffee),
                     label: 'Ko-fi',
                   ),
@@ -111,9 +108,9 @@ class ContributeScreen extends StatelessWidget {
                   padding: wrapPadding,
                   child: EzElevatedIconLink(
                     config,
-                    tooltip: ywtPatreon,
+                    tooltip: ywt.ywtPatreon,
                     hint: l10n(config).csOpenLink('Patreon'),
-                    url: Uri.parse(ywtPatreon),
+                    url: Uri.parse(ywt.ywtPatreon),
                     icon: EzIcon(config, LineIcons.patreon),
                     label: 'Patreon',
                   ),
@@ -124,16 +121,16 @@ class ContributeScreen extends StatelessWidget {
                   padding: wrapPadding,
                   child: EzElevatedIconLink(
                     config,
-                    tooltip: ywtPayPal,
+                    tooltip: ywt.ywtPayPal,
                     hint: l10n(config).csOpenLink('PayPal'),
-                    url: Uri.parse(ywtPayPal),
+                    url: Uri.parse(ywt.ywtPayPal),
                     icon: EzIcon(config, LineIcons.paypal),
                     label: 'PayPal',
                   ),
                 ),
               ]),
               halfSpacer,
-              EzDivider(config.spacing),
+              EzDivider(height: config.spacing),
               config.spacer,
 
               // Power //

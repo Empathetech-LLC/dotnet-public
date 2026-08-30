@@ -127,17 +127,6 @@
   "sosWeb": "Isang tiyak, at napakaimpluwensyang paraan upang makatulong ay ang pagbabayad para sa hosting ng InstaSOS online.\n\nMalinaw na ang kinikilingan ng mga may-ari ng app store, at maaaring alisin ang InstaSOS kung/kapag nakakuha ito ng traksyon.\nLaging may opsyon ang mga user ng Android na mag-install nang sarili, ngunit ang tanging mabubuhay na alternatibo para sa mga user ng iOS ay isang web app.\n\nSa kabutihang palad, ang mga Flutter app ay client side compute, kaya't mababa lang ang bayarin.\nKailangan lang naming (ninyong) magbayad para sa traffic management.",
   "sosTranslators": "Mga Tagasalin",
 
-
-
-  "llInDev": "Kasalukuyang binubuo pa ang Liminal.\nAng disenyo nito ay nakahilig sa minimalismo, ngunit, binuo ito na may ",
-  "llWhimsy": "Kaya, magiging malaya sa kalat at mga sagabal ang iyong home screen, AT maaaring i-customize nang walang limitasyon.\nNa may dagdag pang kaunting aliw.",
-  
-  "llTheHood": "Isang halimbawang home screen na may larawan ng Mount Hood sa Portland.",
-  "llLasRosas": "Isang halimbawang home screen na may larawan ng Rose garden sa Portland.",
-  "llFrogAndPigs": "Isang halimbawang home screen na may larawan ng wildlife sa Portland.",
-
-  "llModel": "Ipapalabas ang Liminal sa ilalim ng modelong \"magbayad kung magkano ang kaya mo\".\nAng bersyon sa Google Play ay may bayad, dahil ang (magandang) code ay hindi nagsusulat ng kusa.\nAng GitHub repo ay magkakaroon din ng libre at available na APK, dahil ang malusog na ugnayan sa teknolohiya ay hindi dapat eksklusibo lamang para sa mga may sobrang pera.",
-
   
 
   "fahJoin": "Sumali sa Fold",

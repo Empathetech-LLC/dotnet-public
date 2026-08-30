@@ -314,28 +314,29 @@ class LangUk extends Lang {
   String get sosTranslators => 'Перекладачі';
 
   @override
-  String get llInDev =>
-      'Liminal знаходиться в розробці.\nЙого дизайн тяжіє до мінімалізму, але він створений із ';
+  String get llSlogan => 'The last launcher you\'ll ever load.';
+
+  @override
+  String get llDesign =>
+      'Its design leans towards minimalism, but it\'s built with ';
 
   @override
   String get llWhimsy =>
-      'Тож ваш головний екран буде позбавлений безладу та відволікань, І буде безмежно настроюваним.\nЗ ноткою химерності на додачу.';
+      'So, your home screen will be free of clutter and distractions, AND be limitlessly customizable.\nWith a bit of whimsy to boot.';
 
   @override
-  String get llTheHood =>
-      'Приклад головного екрана із зображенням гори Худ у Портленді.';
+  String get llModel => 'Liminal has a \"pay what you can\" model.\nThe ';
 
   @override
-  String get llLasRosas =>
-      'Приклад головного екрана із зображенням розарію в Портленді.';
+  String get llPaid =>
+      ' version is \$4.99, because (good) code doesn\'t write itself.\nThe APK is also available ';
 
   @override
-  String get llFrogAndPigs =>
-      'Приклад головного екрана із зображенням дикої природи Портленда.';
+  String get llGit => 'on GitHub';
 
   @override
-  String get llModel =>
-      'Liminal буде випущено за моделлю \"плати, скільки можеш\".\nВерсія в Google Play буде платною, оскільки (хороший) код сам себе не пише.\nУ репозиторії GitHub також буде у вільному доступі APK-файл, оскільки здорові стосунки з технологіями не повинні бути ексклюзивом лише для тих, хто має вільні гроші.';
+  String get llFree =>
+      ', because a healthy relationship with technology shouldn\'t be exclusive to those with expendable income.';
 
   @override
   String get fahJoin => 'Приєднуйтесь до спільноти';

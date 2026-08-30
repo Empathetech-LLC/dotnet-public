@@ -309,27 +309,29 @@ class LangAr extends Lang {
   String get sosTranslators => 'مترجمون';
 
   @override
-  String get llInDev =>
-      'ليمينال قيد التطوير.\nيميل تصميمه إلى البساطة، ولكنه مبني بـ ';
+  String get llSlogan => 'The last launcher you\'ll ever load.';
+
+  @override
+  String get llDesign =>
+      'Its design leans towards minimalism, but it\'s built with ';
 
   @override
   String get llWhimsy =>
-      'لذا، ستكون شاشتك الرئيسية خالية من الفوضى والمشتتات، وقابلة للتخصيص بلا حدود.\nمع لمسة من المرح أيضاً.';
+      'So, your home screen will be free of clutter and distractions, AND be limitlessly customizable.\nWith a bit of whimsy to boot.';
 
   @override
-  String get llTheHood => 'عينة لشاشة رئيسية مع صورة لجبل هود في بورتلاند.';
+  String get llModel => 'Liminal has a \"pay what you can\" model.\nThe ';
 
   @override
-  String get llLasRosas =>
-      'عينة لشاشة رئيسية مع صورة لحديقة الورود في بورتلاند.';
+  String get llPaid =>
+      ' version is \$4.99, because (good) code doesn\'t write itself.\nThe APK is also available ';
 
   @override
-  String get llFrogAndPigs =>
-      'عينة لشاشة رئيسية مع صورة للحياة البرية في بورتلاند.';
+  String get llGit => 'on GitHub';
 
   @override
-  String get llModel =>
-      'سيتم إصدار Liminal وفق نموذج \"ادفع ما تستطيع\".\nستكون نسخة Google Play مدفوعة، لأن الكود (الجيد) لا يكتب نفسه.\nسيحتوي مستودع GitHub أيضًا على ملف APK متاح مجانًا، لأن العلاقة الصحية مع التكنولوجيا لا ينبغي أن تقتصر على أولئك الذين لديهم دخل فائض.';
+  String get llFree =>
+      ', because a healthy relationship with technology shouldn\'t be exclusive to those with expendable income.';
 
   @override
   String get fahJoin => 'انضم إلى الفريق';
@@ -696,29 +698,6 @@ class LangArEg extends LangAr {
 
   @override
   String get sosTranslators => 'مترجمون';
-
-  @override
-  String get llInDev =>
-      'ليمينال قيد التطوير.\nيميل تصميمه إلى البساطة، ولكنه مبني بـ ';
-
-  @override
-  String get llWhimsy =>
-      'لذا، ستكون شاشتك الرئيسية خالية من الفوضى والمشتتات، وقابلة للتخصيص بلا حدود.\nمع لمسة من المرح أيضاً.';
-
-  @override
-  String get llTheHood => 'عينة لشاشة رئيسية مع صورة لجبل هود في بورتلاند.';
-
-  @override
-  String get llLasRosas =>
-      'عينة لشاشة رئيسية مع صورة لحديقة الورود في بورتلاند.';
-
-  @override
-  String get llFrogAndPigs =>
-      'عينة لشاشة رئيسية مع صورة للحياة البرية في بورتلاند.';
-
-  @override
-  String get llModel =>
-      'سيتم إصدار Liminal وفق نموذج \"ادفع ما تستطيع\".\nستكون نسخة Google Play مدفوعة، لأن الكود (الجيد) لا يكتب نفسه.\nسيحتوي مستودع GitHub أيضًا على ملف APK متاح مجانًا، لأن العلاقة الصحية مع التكنولوجيا لا ينبغي أن تقتصر على أولئك الذين لديهم دخل فائض.';
 
   @override
   String get fahJoin => 'انضم إلى الفريق';

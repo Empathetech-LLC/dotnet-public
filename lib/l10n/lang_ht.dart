@@ -309,28 +309,29 @@ class LangHt extends Lang {
   String get sosTranslators => 'Tradiktè yo';
 
   @override
-  String get llInDev =>
-      'Liminal nan devlopman.\nKonsepsyon li panche sou minimalis, men, li bati ak ';
+  String get llSlogan => 'The last launcher you\'ll ever load.';
+
+  @override
+  String get llDesign =>
+      'Its design leans towards minimalism, but it\'s built with ';
 
   @override
   String get llWhimsy =>
-      'Konsa, ekran akèy ou a ap lib de tout dezòd ak distraksyon, EPI l ap ka pèsonalize san limit.\nAk yon ti fantezi anplis.';
+      'So, your home screen will be free of clutter and distractions, AND be limitlessly customizable.\nWith a bit of whimsy to boot.';
 
   @override
-  String get llTheHood =>
-      'Yon egzanp ekran akèy ki gen yon foto Mòn Hood nan Portland.';
+  String get llModel => 'Liminal has a \"pay what you can\" model.\nThe ';
 
   @override
-  String get llLasRosas =>
-      'Yon egzanp ekran akèy ki gen yon foto Jaden Woz nan Portland.';
+  String get llPaid =>
+      ' version is \$4.99, because (good) code doesn\'t write itself.\nThe APK is also available ';
 
   @override
-  String get llFrogAndPigs =>
-      'Yon egzanp ekran akèy ki gen yon foto bèt sovaj nan Portland.';
+  String get llGit => 'on GitHub';
 
   @override
-  String get llModel =>
-      'Liminal pral soti anba yon modèl \"peye sa ou kapab\".\nVèsyon Google Play la ap peye, paske (bon) kòd pa ekri tèt li poukont li.\nDepo GitHub la ap gen yon APK ki disponib gratis tou, paske yon relasyon an sante ak teknoloji pa ta dwe eksklizif sèlman pou moun ki gen mwayen finansye.';
+  String get llFree =>
+      ', because a healthy relationship with technology shouldn\'t be exclusive to those with expendable income.';
 
   @override
   String get fahJoin => 'Rejwenn Gwoup la';

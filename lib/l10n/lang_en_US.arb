@@ -129,14 +129,14 @@
 
 
 
-  "llInDev": "Liminal is in development.\nIts design leans towards minimalism, but it's built with ",
+  "llSlogan": "The last launcher you'll ever load.",
+  "llDesign": "Its design leans towards minimalism, but it's built with ",
   "llWhimsy": "So, your home screen will be free of clutter and distractions, AND be limitlessly customizable.\nWith a bit of whimsy to boot.",
 
-  "llTheHood": "A sample home screen with a picture of Portland's Mount Hood.",
-  "llLasRosas": "A sample home screen with a picture of Portland's Rose garden.",
-  "llFrogAndPigs": "A sample home screen with a picture of Portland's wildlife.",
-
-  "llModel": "Liminal will be released under a \"pay what you can\" model.\nThe Google Play version will be paid, because (good) code doesn't write itself.\nThe APK will also be on GitHub, because a healthy relationship with technology shouldn't be exclusive to those with expendable income.",
+  "llModel": "Liminal has a \"pay what you can\" model.\nThe ",
+  "llPaid": " version is $4.99, because (good) code doesn't write itself.\nThe APK is also available ",
+  "llGit": "on GitHub",
+  "llFree": ", because a healthy relationship with technology shouldn't be exclusive to those with expendable income.",
   
   
 

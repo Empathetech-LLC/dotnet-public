@@ -312,28 +312,29 @@ class LangHi extends Lang {
   String get sosTranslators => 'अनुवादकों';
 
   @override
-  String get llInDev =>
-      'Liminal अभी विकास में है।\nइसका डिज़ाइन सादगी की ओर झुका है, लेकिन, इसे बनाया गया है ';
+  String get llSlogan => 'The last launcher you\'ll ever load.';
+
+  @override
+  String get llDesign =>
+      'Its design leans towards minimalism, but it\'s built with ';
 
   @override
   String get llWhimsy =>
-      'इसलिए, आपकी होम स्क्रीन अव्यवस्था और ध्यान भटकाने वाली चीज़ों से मुक्त होगी, और इसे असीमित रूप से कस्टमाइज़ किया जा सकेगा।\nसाथ ही, इसमें थोड़ा अनोखापन भी होगा।';
+      'So, your home screen will be free of clutter and distractions, AND be limitlessly customizable.\nWith a bit of whimsy to boot.';
 
   @override
-  String get llTheHood =>
-      'पोर्टलैंड के माउंट हूड की तस्वीर वाली एक नमूना होम स्क्रीन।';
+  String get llModel => 'Liminal has a \"pay what you can\" model.\nThe ';
 
   @override
-  String get llLasRosas =>
-      'पोर्टलैंड के रोज़ गार्डन की तस्वीर वाली एक नमूना होम स्क्रीन।';
+  String get llPaid =>
+      ' version is \$4.99, because (good) code doesn\'t write itself.\nThe APK is also available ';
 
   @override
-  String get llFrogAndPigs =>
-      'पोर्टलैंड के वन्यजीवों की तस्वीर वाली एक नमूना होम स्क्रीन।';
+  String get llGit => 'on GitHub';
 
   @override
-  String get llModel =>
-      'Liminal को \"pay what you can\" (जो आप दे सकते हैं वो दें) मॉडल के तहत रिलीज़ किया जाएगा।\nGoogle Play संस्करण सशुल्क (paid) होगा, क्योंकि (अच्छा) कोड खुद नहीं लिखा जाता।\nGitHub रेपो पर एक मुफ्त में उपलब्ध APK भी होगा, क्योंकि तकनीक के साथ एक स्वस्थ संबंध केवल उनके लिए ही सीमित नहीं होना चाहिए जिनके पास खर्च करने योग्य आय है।';
+  String get llFree =>
+      ', because a healthy relationship with technology shouldn\'t be exclusive to those with expendable income.';
 
   @override
   String get fahJoin => 'फोल्ड (Fold) से जुड़ें';

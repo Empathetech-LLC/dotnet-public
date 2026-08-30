@@ -1,4 +1,4 @@
-/* dotnet
+/* website
  * Copyright (c) 2022 YWT (Empathetech LLC). All rights reserved.
  * See LICENSE for distribution and usage details.
  */
@@ -10,7 +10,7 @@ import 'package:flutter/services.dart';
 import 'package:video_player/video_player.dart';
 import 'package:open_ui/open_ui.dart';
 
-class DotnetCache extends EzAppCache {
+class WebsiteCache extends EzAppCache {
   // Construct //
 
   Locale _locale;
@@ -18,7 +18,7 @@ class DotnetCache extends EzAppCache {
 
   late final SOSCaptionsLib _captionsLib;
 
-  DotnetCache(Locale locale, Lang l10n)
+  WebsiteCache(Locale locale, Lang l10n)
       : _locale = locale,
         _l10n = l10n {
     _captionsLib = SOSCaptionsLib(
@@ -53,7 +53,7 @@ class DotnetCache extends EzAppCache {
   }
 }
 
-DotnetCache _cache(EzCP config) => config.appCache! as DotnetCache;
+WebsiteCache _cache(EzCP config) => config.appCache! as WebsiteCache;
 
 Lang l10n(EzCP config) => _cache(config)._l10n;
 

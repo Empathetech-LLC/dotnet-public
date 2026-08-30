@@ -1,10 +1,10 @@
-/* dotnet
+/* website
  * Copyright (c) 2022 YWT (Empathetech LLC). All rights reserved.
  * See LICENSE for distribution and usage details.
  */
 
 import '../utils/export.dart';
-import 'package:oui_bios/oui_bios.dart';
+import 'package:ywt_private/ywt_private.dart' as ywt;
 
 import 'package:open_ui/open_ui.dart';
 import 'package:flutter/material.dart';
@@ -41,58 +41,52 @@ class FaHBanner extends StatelessWidget {
               config.swapSpacer,
 
               // External links && info
-              EzTextBackground(config,
-                  text: EzCol(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Text(
-                        l10n(config).fahJoin,
-                        style: config.titleStyle,
-                        textAlign: TextAlign.center,
-                      ),
-                      config.margin,
-                      EzRichText(config,
-                          children: <InlineSpan>[
-                            EzPlainText(
-                              text: l10n(config).fahIntro1,
-                              style: config.bodyStyle,
-                            ),
-                            EzInlineLink(
-                              config,
-                              text: ywt,
-                              style: config.bodyStyle,
-                              textAlign: TextAlign.center,
-                              url: Uri.parse(ywtFoldingTeam),
-                              hint: l10n(config).fahTeamHint,
-                              tooltip: ywtFoldingTeam,
-                            ),
-                            EzPlainText(
-                              text: l10n(config).fahIntro2,
-                              style: config.bodyStyle,
-                            ),
-                          ],
+              EzTextBackground(
+                config,
+                text: EzCol(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Text(l10n(config).fahJoin,
+                        style: config.titleStyle, textAlign: TextAlign.center),
+                    config.margin,
+                    EzRichText(
+                      config,
+                      children: <InlineSpan>[
+                        EzPlainText(text: l10n(config).fahIntro1, style: config.bodyStyle),
+                        EzInlineLink(
+                          config,
+                          text: ywtName,
+                          style: config.bodyStyle,
                           textAlign: TextAlign.center,
-                          textBackground: false),
-                      EzRichText(config,
-                          children: <InlineSpan>[
-                            EzPlainText(
-                              text: l10n(config).fahWhats,
-                              style: config.bodyStyle,
-                            ),
-                            EzInlineLink(
-                              config,
-                              text: l10n(config).fahName,
-                              style: config.bodyStyle,
-                              textAlign: TextAlign.center,
-                              url: Uri.parse(aboutFaHLink),
-                              hint: l10n(config).fahNameHint,
-                              tooltip: aboutFaHLink,
-                            ),
-                          ],
+                          url: Uri.parse(ywt.ywtFoldingTeam),
+                          hint: l10n(config).fahTeamHint,
+                          tooltip: ywt.ywtFoldingTeam,
+                        ),
+                        EzPlainText(text: l10n(config).fahIntro2, style: config.bodyStyle),
+                      ],
+                      textAlign: TextAlign.center,
+                      textBackground: false,
+                    ),
+                    EzRichText(
+                      config,
+                      children: <InlineSpan>[
+                        EzPlainText(text: l10n(config).fahWhats, style: config.bodyStyle),
+                        EzInlineLink(
+                          config,
+                          text: l10n(config).fahName,
+                          style: config.bodyStyle,
                           textAlign: TextAlign.center,
-                          textBackground: false),
-                    ],
-                  )),
+                          url: Uri.parse(aboutFaHLink),
+                          hint: l10n(config).fahNameHint,
+                          tooltip: aboutFaHLink,
+                        ),
+                      ],
+                      textAlign: TextAlign.center,
+                      textBackground: false,
+                    ),
+                  ],
+                ),
+              ),
             ],
           ),
           config.spacer,

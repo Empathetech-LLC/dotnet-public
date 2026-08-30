@@ -1,9 +1,9 @@
-/* dotnet
+/* website
  * Copyright (c) 2022 YWT (Empathetech LLC). All rights reserved.
  * See LICENSE for distribution and usage details.
  */
 
-import 'package:oui_bios/oui_bios.dart';
+import 'package:ywt_private/ywt_private.dart' as ywt;
 
 import 'package:open_ui/open_ui.dart';
 import 'package:flutter/material.dart';
@@ -53,7 +53,7 @@ class IconLinks extends StatelessWidget {
 
   late final IconLink gitHub = IconLink(
     config,
-    url: Uri.parse(ywtGitHub),
+    url: Uri.parse(ywt.ywtGitHub),
     tooltip: 'GitHub',
     icon: Icon(
       LineIcons.github,

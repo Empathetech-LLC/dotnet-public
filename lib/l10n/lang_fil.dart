@@ -313,28 +313,29 @@ class LangFil extends Lang {
   String get sosTranslators => 'Mga Tagasalin';
 
   @override
-  String get llInDev =>
-      'Kasalukuyang binubuo pa ang Liminal.\nAng disenyo nito ay nakahilig sa minimalismo, ngunit, binuo ito na may ';
+  String get llSlogan => 'The last launcher you\'ll ever load.';
+
+  @override
+  String get llDesign =>
+      'Its design leans towards minimalism, but it\'s built with ';
 
   @override
   String get llWhimsy =>
-      'Kaya, magiging malaya sa kalat at mga sagabal ang iyong home screen, AT maaaring i-customize nang walang limitasyon.\nNa may dagdag pang kaunting aliw.';
+      'So, your home screen will be free of clutter and distractions, AND be limitlessly customizable.\nWith a bit of whimsy to boot.';
 
   @override
-  String get llTheHood =>
-      'Isang halimbawang home screen na may larawan ng Mount Hood sa Portland.';
+  String get llModel => 'Liminal has a \"pay what you can\" model.\nThe ';
 
   @override
-  String get llLasRosas =>
-      'Isang halimbawang home screen na may larawan ng Rose garden sa Portland.';
+  String get llPaid =>
+      ' version is \$4.99, because (good) code doesn\'t write itself.\nThe APK is also available ';
 
   @override
-  String get llFrogAndPigs =>
-      'Isang halimbawang home screen na may larawan ng wildlife sa Portland.';
+  String get llGit => 'on GitHub';
 
   @override
-  String get llModel =>
-      'Ipapalabas ang Liminal sa ilalim ng modelong \"magbayad kung magkano ang kaya mo\".\nAng bersyon sa Google Play ay may bayad, dahil ang (magandang) code ay hindi nagsusulat ng kusa.\nAng GitHub repo ay magkakaroon din ng libre at available na APK, dahil ang malusog na ugnayan sa teknolohiya ay hindi dapat eksklusibo lamang para sa mga may sobrang pera.';
+  String get llFree =>
+      ', because a healthy relationship with technology shouldn\'t be exclusive to those with expendable income.';
 
   @override
   String get fahJoin => 'Sumali sa Fold';

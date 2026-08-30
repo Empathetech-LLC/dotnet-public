@@ -313,28 +313,29 @@ class LangRu extends Lang {
   String get sosTranslators => 'Переводчики';
 
   @override
-  String get llInDev =>
-      'Liminal находится в разработке.\nЕго дизайн тяготеет к минимализму, но он создается с ';
+  String get llSlogan => 'The last launcher you\'ll ever load.';
+
+  @override
+  String get llDesign =>
+      'Its design leans towards minimalism, but it\'s built with ';
 
   @override
   String get llWhimsy =>
-      'Так что ваш домашний экран будет свободен от беспорядка и отвлекающих факторов, И при этом будет безгранично настраиваемым.\nС легкой ноткой причудливости в придачу.';
+      'So, your home screen will be free of clutter and distractions, AND be limitlessly customizable.\nWith a bit of whimsy to boot.';
 
   @override
-  String get llTheHood =>
-      'Пример домашнего экрана с фотографией горы Маунт-Худ в Портленде.';
+  String get llModel => 'Liminal has a \"pay what you can\" model.\nThe ';
 
   @override
-  String get llLasRosas =>
-      'Пример домашнего экрана с фотографией Розового сада в Портленде.';
+  String get llPaid =>
+      ' version is \$4.99, because (good) code doesn\'t write itself.\nThe APK is also available ';
 
   @override
-  String get llFrogAndPigs =>
-      'Пример домашнего экрана с фотографией дикой природы Портленда.';
+  String get llGit => 'on GitHub';
 
   @override
-  String get llModel =>
-      'Liminal будет выпущен по модели \"плати, сколько сможешь\".\nВерсия в Google Play будет платной, потому что (хороший) код не пишется сам по себе.\nВ репозитории на GitHub также будет свободно доступный APK, потому что здоровые отношения с технологиями не должны быть доступны только тем, у кого есть лишние деньги.';
+  String get llFree =>
+      ', because a healthy relationship with technology shouldn\'t be exclusive to those with expendable income.';
 
   @override
   String get fahJoin => 'Присоединяйтесь к фолдингу';

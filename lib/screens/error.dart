@@ -1,4 +1,4 @@
-/* dotnet
+/* website
  * Copyright (c) 2022 YWT (Empathetech LLC). All rights reserved.
  * See LICENSE for distribution and usage details.
  */
@@ -15,7 +15,7 @@ class ErrorScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Consumer<EzCP>(
-      builder: (_, EzCP config, __) => DotnetScaffold(
+      builder: (_, EzCP config, __) => WebsiteScaffold(
         config,
         body: EzScreen(
           config,
@@ -41,7 +41,7 @@ class ErrorScreen extends StatelessWidget {
                 style: config.labelStyle,
                 textAlign: TextAlign.center,
               ),
-              EzFooter(config, spacing: 0)
+              EzFooter(config, spacing: 0),
             ]),
           ),
         ),

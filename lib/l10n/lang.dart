@@ -657,11 +657,17 @@ abstract class Lang {
   /// **'Translators'**
   String get sosTranslators;
 
-  /// No description provided for @llInDev.
+  /// No description provided for @llSlogan.
   ///
   /// In en, this message translates to:
-  /// **'Liminal is in development.\nIts design leans towards minimalism, but it\'s built with '**
-  String get llInDev;
+  /// **'The last launcher you\'ll ever load.'**
+  String get llSlogan;
+
+  /// No description provided for @llDesign.
+  ///
+  /// In en, this message translates to:
+  /// **'Its design leans towards minimalism, but it\'s built with '**
+  String get llDesign;
 
   /// No description provided for @llWhimsy.
   ///
@@ -669,29 +675,29 @@ abstract class Lang {
   /// **'So, your home screen will be free of clutter and distractions, AND be limitlessly customizable.\nWith a bit of whimsy to boot.'**
   String get llWhimsy;
 
-  /// No description provided for @llTheHood.
-  ///
-  /// In en, this message translates to:
-  /// **'A sample home screen with a picture of Portland\'s Mount Hood.'**
-  String get llTheHood;
-
-  /// No description provided for @llLasRosas.
-  ///
-  /// In en, this message translates to:
-  /// **'A sample home screen with a picture of Portland\'s Rose garden.'**
-  String get llLasRosas;
-
-  /// No description provided for @llFrogAndPigs.
-  ///
-  /// In en, this message translates to:
-  /// **'A sample home screen with a picture of Portland\'s wildlife.'**
-  String get llFrogAndPigs;
-
   /// No description provided for @llModel.
   ///
   /// In en, this message translates to:
-  /// **'Liminal will be released under a \"pay what you can\" model.\nThe Google Play version will be paid, because (good) code doesn\'t write itself.\nThe APK will also be on GitHub, because a healthy relationship with technology shouldn\'t be exclusive to those with expendable income.'**
+  /// **'Liminal has a \"pay what you can\" model.\nThe '**
   String get llModel;
+
+  /// No description provided for @llPaid.
+  ///
+  /// In en, this message translates to:
+  /// **' version is \$4.99, because (good) code doesn\'t write itself.\nThe APK is also available '**
+  String get llPaid;
+
+  /// No description provided for @llGit.
+  ///
+  /// In en, this message translates to:
+  /// **'on GitHub'**
+  String get llGit;
+
+  /// No description provided for @llFree.
+  ///
+  /// In en, this message translates to:
+  /// **', because a healthy relationship with technology shouldn\'t be exclusive to those with expendable income.'**
+  String get llFree;
 
   /// No description provided for @fahJoin.
   ///

@@ -1,23 +1,26 @@
-/* dotnet
+/* website
  * Copyright (c) 2022 YWT (Empathetech LLC). All rights reserved.
  * See LICENSE for distribution and usage details.
  */
 
 import '../utils/export.dart';
-import 'package:oui_bios/oui_bios.dart';
+import 'package:ywt_private/ywt_private.dart' as ywt;
 
+import 'package:open_ui/open_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:url_launcher/url_launcher.dart';
-import 'package:open_ui/open_ui.dart';
 
 //* Shared *//
 
-/// 12.0.0
-const String ouiFallback = '12.0.0';
+/// 13.0.0
+const String ouiFallback = '13.0.0';
 
-/// 3.0.2
-const String sosFallback = '3.0.2';
+/// 3.0.3
+const String sosFallback = '3.0.3';
+
+/// 1.0.0
+const String liminalFallback = '1.0.0';
 
 /// https://github.com/YWT-LLC
 const String _git = 'https://github.com/YWT-LLC';
@@ -46,9 +49,7 @@ extension Label on DLType {
 /// Get the latest [String] version of [repo]
 Future<String> getLatest(String repo, String fallback) async {
   final http.Response response = await http.get(
-    Uri.parse(
-      'https://raw.githubusercontent.com/YWT-LLC/$repo/refs/heads/main/APP_VERSION',
-    ),
+    Uri.parse('https://raw.githubusercontent.com/YWT-LLC/$repo/refs/heads/main/APP_VERSION'),
   );
 
   return response.statusCode == 200 ? response.body.trim() : fallback;
@@ -64,10 +65,10 @@ Uri openUIDownload(DLType dlType, String version) => switch (dlType) {
       DLType.apk => Uri.parse('${ouRelease(version)}/open-ui-android.apk'),
       DLType.iOS => Uri.parse('$_appStore/open-ui/id6499560244'),
       DLType.macOS => Uri.parse('${ouRelease(version)}/open-ui-mac.zip'),
-      DLType.windows => Uri.parse('${ouRelease(version)}/open-ui-windows.exe'),
-      DLType.deb => Uri.parse('${ouRelease(version)}/open-ui-linux.deb'),
-      DLType.rpm => Uri.parse('${ouRelease(version)}/open-ui-linux.rpm'),
-    };
+      DLType.windows => Uri.parse('${ouRelease('12.0.0')}/open-ui-windows.exe'),
+      DLType.deb => Uri.parse('${ouRelease('12.0.0')}/open-ui-linux.deb'),
+      DLType.rpm => Uri.parse('${ouRelease('12.0.0')}/open-ui-linux.rpm'),
+    }; // Having some server troubles, win && deb will be back on track asap (small asap == long asap)
 
 class OpenUILink extends StatefulWidget {
   final EzCP config;
@@ -121,7 +122,7 @@ class _OpenUILinkState extends State<OpenUILink> {
             constraints: EzBox.sym(ezImageSize(widget.config, context: context)),
             child: EzLinkWidget(
               widget.config,
-              onTap: () => launchUrl(url ?? Uri.parse(openUIReleases)),
+              onTap: () => launchUrl(url ?? Uri.parse(ywt.openUIReleases)),
               tooltip: l10n(widget.config).gDownloadHint(openUI, currDL.name),
               label: l10n(widget.config).gIconLabel(openUI) + l10n(widget.config).ouIconLabel,
               hint: l10n(widget.config).gDownloadHint(openUI, currDL.name),
@@ -136,16 +137,15 @@ class _OpenUILinkState extends State<OpenUILink> {
           // Destination selector
           EzDropdownMenu<DLType>(
             widget.config,
+            label: null,
             enableSearch: false,
             initialSelection: currDL,
             widthEntry: DLType.apk.name,
             dropdownMenuEntries: DLType.values
-                .map(
-                  (DLType dlType) => DropdownMenuEntry<DLType>(
-                    value: dlType,
-                    label: dlType.name,
-                  ),
-                )
+                .map((DLType dlType) => DropdownMenuEntry<DLType>(
+                      value: dlType,
+                      label: dlType.name,
+                    ))
                 .toList(),
             onSelected: (DLType? choice) {
               if (choice == null) return;
@@ -218,7 +218,7 @@ class _SOSLinkState extends State<SOSLink> {
             constraints: EzBox.sym(ezImageSize(widget.config, context: context)),
             child: EzLinkWidget(
               widget.config,
-              onTap: () => launchUrl(url ?? Uri.parse(sosReleases)),
+              onTap: () => launchUrl(url ?? Uri.parse(ywt.sosReleases)),
               tooltip: l10n(widget.config).gDownloadHint(sosName, currDL.name),
               label: l10n(widget.config).gIconLabel(sosLabel) + l10n(widget.config).sosIconLabel,
               hint: l10n(widget.config).gDownloadHint(sosLabel, currDL.name),
@@ -233,6 +233,7 @@ class _SOSLinkState extends State<SOSLink> {
           // Destination selector
           EzDropdownMenu<DLType>(
             widget.config,
+            label: null,
             enableSearch: false,
             initialSelection: currDL,
             widthEntry: DLType.apk.name,

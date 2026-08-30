@@ -1,4 +1,4 @@
-/* dotnet
+/* website
  * Copyright (c) 2022 YWT (Empathetech LLC). All rights reserved.
  * See LICENSE for distribution and usage details.
  */
@@ -16,7 +16,7 @@ export 'settings.dart';
 
 //* Paths && URLs *//
 
-const String baseURL = 'https://www.ywt.llc/#/';
+const String baseURL = 'https://ywt.llc/#/';
 
 /// Type query parameter == 'type'
 const String typeQP = 'type';
@@ -29,13 +29,13 @@ const String pageQP = 'page';
 
 // Core //
 
-/// https://www.ywt.llc/
-const String homeURL = 'https://www.ywt.llc/';
+/// https://ywt.llc/
+const String homeURL = 'https://ywt.llc/';
 
 /// contribute
 const String contributePath = 'contribute';
 
-/// https://www.ywt.llc/#/contribute
+/// https://ywt.llc/#/contribute
 const String contributeURL = '${baseURL}contribute';
 
 // Settings //
@@ -43,7 +43,7 @@ const String contributeURL = '${baseURL}contribute';
 /// settings
 const String settingsPath = 'settings';
 
-/// https://www.ywt.llc/#/settings
+/// https://ywt.llc/#/settings
 const String settingsURL = '${baseURL}settings';
 
 /// color-settings
@@ -52,7 +52,7 @@ const String colorSettingsPath = 'color-settings';
 /// color
 const String colorRedirect = 'color';
 
-/// https://www.ywt.llc/#/settings?type=color
+/// https://ywt.llc/#/settings?type=color
 const String colorSettingsURL = '$settingsURL?$typeQP=$colorRedirect';
 
 /// design-settings
@@ -61,7 +61,7 @@ const String designSettingsPath = 'design-settings';
 /// design
 const String designRedirect = 'design';
 
-/// https://www.ywt.llc/#/settings?type=design
+/// https://ywt.llc/#/settings?type=design
 const String designSettingsURL = '$settingsURL?$typeQP=$designRedirect';
 
 /// text-settings
@@ -70,7 +70,7 @@ const String textSettingsPath = 'text-settings';
 /// text
 const String textRedirect = 'text';
 
-/// https://www.ywt.llc/#/settings?type=text
+/// https://ywt.llc/#/settings?type=text
 const String textSettingsURL = '$settingsURL?$typeQP=$textRedirect';
 
 // Settings' lookups //

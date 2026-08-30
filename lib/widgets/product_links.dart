@@ -19,8 +19,8 @@ const String ouiFallback = '13.0.0';
 /// 3.0.3
 const String sosFallback = '3.0.3';
 
-/// 1.0.0
-const String liminalFallback = '1.0.0';
+/// 1.0.1
+const String liminalFallback = '1.0.1';
 
 /// https://github.com/YWT-LLC
 const String _git = 'https://github.com/YWT-LLC';

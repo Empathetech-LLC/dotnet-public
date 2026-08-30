@@ -38,6 +38,7 @@ class LiminalScreen extends StatelessWidget {
                 config,
                 children: <InlineSpan>[
                   EzPlainText(text: l10n(config).llSlogan, style: config.bodyStyle),
+                  config.richLine,
                   EzPlainText(text: l10n(config).llDesign, style: config.bodyStyle),
                   EzInlineLink(
                     config,
